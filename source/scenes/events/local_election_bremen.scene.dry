@@ -479,7 +479,7 @@ go-to: bremen_coalition_menu
 
 {!<svg id="bremen_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
-{!</table>!} 
+{!<table>!}
 {!<tr><td>Party</th><th>Vote share</th><th>Landtag Seats</th></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!<td><td!} **[+ spd_bremen_elections_vote +]%** {!<td><td!} **[+ spd_r_bremen +]%** {!/<tr></tr>!}
 
