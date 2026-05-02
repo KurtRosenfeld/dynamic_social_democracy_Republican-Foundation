@@ -1,6 +1,6 @@
 title: Brüning should not be chancellor
 subtitle: wtf
-view-if: chacellor == "Brüning" and year <= 1927
+view-if: chancellor == "Brüning" and year <= 1927
 new-page: true
 on-arrival: inflation -= 1
 face-image: img/portraits/BrüningHeinrich.jpg
