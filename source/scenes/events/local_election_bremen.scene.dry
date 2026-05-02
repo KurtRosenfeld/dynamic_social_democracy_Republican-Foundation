@@ -505,7 +505,7 @@ go-to: bremen_coalition_menu
 
 [? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td!} **[+ kvp_bremen_elections_vote +]%** {!</td><td!} **[+ kvp_r_bremen +]%**  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!/<td><td!} **[+ dnvp_bremen_elections_vote +]%** {!</td><td!} **[+ dnvp_r_bremen +]%**  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td!} **[+ dnvp_bremen_elections_vote +]%** {!</td><td!} **[+ dnvp_r_bremen +]%**  {!</td></tr>!}
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td!} **[+ dnf_bremen_elections_vote +]%** {!</td><td!} **[+ dnf_r_bremen +]%**  {!</td></tr>!} ?]
 
