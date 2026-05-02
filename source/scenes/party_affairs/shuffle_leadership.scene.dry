@@ -221,6 +221,16 @@ go-to: rm_main_menu
 
 Woytinsky has been removed as an advisor. The Labor faction disapproves.
 
+
+@remove_tarnow
+title: Remove Tarnow
+view-if: tarnow_advisor = 1
+tags: remove_advisor
+on-arrival: tarnow_advisor = 0; labor_dissent += 7; n_advisors -= 1
+go-to: rm_main_menu
+
+Tarnow has been removed as an advisor. The Labor faction disapproves.
+
 # left
 
 @remove_levi
@@ -344,6 +354,15 @@ Baade has been removed as an advisor.
 
 #The Reformist faction disapproves.
 
+
+@remove_schmidt
+title: Remove Schmidt
+view-if: schmidt_advisor = 1
+tags: remove_advisor
+on-arrival: schmidt_advisor = 0; n_advisors -= 1
+go-to: rm_main_menu
+
+Schmidt has been removed as an advisor.
 
 @remove_hirschfeld
 title: Remove Hirschfeld
@@ -715,6 +734,18 @@ go-to: advisor_menu
 Wladimir Woytinsky is now an advisor.
 
 
+@add_tarnow
+title: Fritz Tarnow
+subtitle: Fritz Tarnow is a trade union economist with an interest in Economic Democracy. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
+is-card: true
+card-image: img/portraits/TarnowFritz.jpg
+tags: labor_advisor
+view-if: tarnow_advisor = 0 and n_advisors < 4 and unions_independent = 0
+on-arrival: tarnow_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 4
+go-to: advisor_menu
+
+Fritz Tarnow is now an advisor.
+
 # neorevisionist leaders
 
 @add_mierendorff
@@ -768,6 +799,17 @@ tags: neorev_advisor
 Joseph Wirth is now an advisor.
 
 # Nonfactional advisors
+
+@add_schmidt
+title: Robert Schmidt
+subtitle: Robert Schmidt is the typical non-factional of any party. {!<br><br>!}[? if difficulty < 0 : Actions - Econ, Agricultural Policy, Crisis stuff ?]
+is-card: true
+card-image: img/portraits/SchmidtRobert.jpg
+view-if: schmidt_advisor = 0 and n_advisors < 4
+on-arrival: schmidt_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+tags: nonfactional_advisor
+
 
 @add_baade
 title: Fritz Baade
@@ -823,7 +865,7 @@ Friedrich Stampfer is now an advisor.
 
 @add_sollmann
 title: Wilhelm Sollman
-subtitle: Wilhelm Sollmann is a German-American party member. !<br><br>!}[? if difficulty < 0 : Actions - Rhineland Campaign, Police Affaires ?]
+subtitle: Wilhelm Sollmann is a German-American party member. {!<br><br>!}[? if difficulty < 0 : Actions - Rhineland Campaign, Police Affaires ?]
 is-card: true
 card-image: img/portraits/BaadeFritz.jpg
 view-if: sollmann_advisor = 0 and n_advisors < 4
