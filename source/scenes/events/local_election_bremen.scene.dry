@@ -1,5 +1,5 @@
 title: Bremen Landtag Election
-view-if: (year == 1922 and month == 6 and not bremen_election_seen) or (bremen_election_2_trigger_time == time and bremen_election_seen_time != time)
+view-if: (year == 1923 and month == 11 and not bremen_election_seen) or (bremen_election_2_trigger_time == time and bremen_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: bremen_election_seen += 1 if bremen_election_seen; bremen_election_seen = 1 if not bremen_election_seen; bremen_election_seen_time = time
