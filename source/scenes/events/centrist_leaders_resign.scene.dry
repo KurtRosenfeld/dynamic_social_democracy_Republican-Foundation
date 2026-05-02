@@ -43,9 +43,11 @@ if (Q.reformists_resign == 1) {
 if (Q.left_split == 1) {
     if (Q.breitscheid_advisor == 1) Q.n_advisors -= 1;
     if (Q.crispien_advisor == 1) Q.n_advisors -= 1;
-    
+    if (Q.sender_advisor == 1) Q.n_advisors -= 1;
+
     Q.breitscheid_advisor = 0;
     Q.crispien_advisor = 0;
+    Q.sender_advisor = 0;
 }
 Q.centrists_resign = 1; 
 if (Q.hilferding_advisor == 1) Q.n_advisors -= 1;
