@@ -4,7 +4,7 @@ is-card: true
 tags: govt_affairs
 on-arrival: social_welfare_timer = 10; month_actions += 1
 view-if: spd_in_government = 1 and social_welfare_timer = 0
-card-image: img/portraits/JuchaczMarie.jpg
+card-image: img/MinWelfare.jpg
 
 = Social Welfare Policy
 
