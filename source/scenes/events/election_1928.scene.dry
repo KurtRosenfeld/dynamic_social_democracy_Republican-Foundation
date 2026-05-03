@@ -2214,52 +2214,52 @@ tags: socdem_ministries
 choose-if: leverage >= 10 
 view-if: economic_minister_party != "SPD"
 
-- @appoint_schmidt
-- @appoint_hilfdering
-- @appoint_tarnow
-- @appoint_sender
-- @cancel_economic
+- @socdem_appoint_schmidt
+- @socdem_appoint_hilfdering
+- @socdem_appoint_tarnow
+- @socdem_appoint_sender
+- @socdem_cancel_economic
 
-@appoint_schmidt
+@socdem_appoint_schmidt
 title: Robert Schmidt
 subtitle: (non-factional).
 choose-if: leverage >= 10
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: economic_minister = "Schmidt"; leverage -= 5; economic_minister_party = "SPD"
-go-to: ministries
+go-to: socdem_ministries
 
 Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
 
-@appoint_hilfdering
+@socdem_appoint_hilfdering
 title: Rudolf Hilferding
 subtitle: (centrist).
 choose-if: leverage >= 10
 view-if: uspd_joined > 0 and centrists_regin == 0
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 10; economic_minister = "Hilferding"; economic_minister_party = "SPD"
-go-to: ministries
+go-to: socdem_ministries
 
 Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
 
-@appoint_tarnow
+@socdem_appoint_tarnow
 title: Fritz Tarnow
 subtitle: (labor).
 choose-if: leverage >= 10
 unavailable-subtitle: We do not have enough leverage.
 view-if: unions_independent == 0
 on-arrival: leverage -= 10; economic_minister = "Tarnow"; economic_minister_party = "SPD"
-go-to: ministries
+go-to: socdem_ministries
 
 Fritz Tarnow of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
 
-@appoint_sender
+@socdem_appoint_sender
 title: Tony Sender
 subtitle: (left).
 choose-if: leverage >= 5
 view-if: uspd_joined > 0 and left_split == 0
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 5; economic_minister = "Sender"; economic_minister_party = "SPD"
-go-to: ministries
+go-to: socdem_ministries
 
 Tony Sender of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
 
