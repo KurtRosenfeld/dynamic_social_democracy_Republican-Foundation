@@ -300,7 +300,7 @@ Q.other_r_meck_schwe = Q.wp_r_meck_schwe + Q.true_other_r_meck_schwe;
 
 Q.left_coalition_meck_schwe = parseFloat((Q.spd_r_meck_schwe + Q.kpd_r_meck_schwe + Q.sapd_r_meck_schwe + Q.uspd_r_meck_schwe).toFixed(1));
 Q.bourgeois_coalition_meck_schwe = parseFloat((Q.ddp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.kvp_r_meck_schwe + Q.other_r_meck_schwe + Q.dnvp_r_meck_schwe).toFixed(1));
-Q.right_coalition_meck_schwe = parseFloat((Q.dnvp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.dvfp_r_meck_schwe).toFixed(1));
+Q.right_coalition_meck_schwe = parseFloat((Q.dnvp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.dvfp_r_meck_schwe + Q.nsdap_r_meck_schwe).toFixed(1));
 Q.true_bourgeois_coalition_meck_schwe = parseFloat((Q.ddp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.kvp_r_meck_schwe + Q.other_r_meck_schwe + Q.dnvp_r_meck_schwe).toFixed(1));
 Q.social_liberal_coalition_meck_schwe = parseFloat((Q.spd_r_meck_schwe + Q.ddp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.dvp_r_meck_schwe).toFixed(1));
 
@@ -542,7 +542,7 @@ on-arrival: meck_schwe_election_2_trigger_time = time + 48; workers_spd += 1; wo
 @right_wing_coalition_meck_schwe
 title: The DNVP and DVP are tolerated by the DVFP?
 subtitle: WTF!!!!!!!!!!!!!!!!!!
-choose-if: right_coalition_meck_schwe > 50
+choose-if: right_coalition_meck_schwe > 50 or if (social_liberal_coalition_meck_schwe < 50 and right_coalition_meck_schwe < 50 and right_coalition_meck_schwe < 50) (right_coalition_meck_schwe + wp_r_meck_schwe) > 50
 view-if: right_coalition_meck_schwe > 50
 on-arrival: meck_schwe_election_2_trigger_time = time + 48; rural_nsdap += 1; dvp_relation -= 3
 
