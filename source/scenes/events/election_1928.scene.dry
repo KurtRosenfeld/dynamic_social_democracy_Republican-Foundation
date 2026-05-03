@@ -4453,12 +4453,12 @@ Julius Leber of the <span style="color: #c00000;">**SPD**</span> has been appoin
 @no_more
 title: No more ministries.
 on-arrival: {!
-if (Q.labor_minister_party !== "SPD") Q.labor_minister_party = "Z"; Q.labor_minister = "Stegerwald";
+if (Q.labor_minister_party !== "SPD") {Q.labor_minister_party = "Z"; Q.labor_minister = "Stegerwald"};
 
-if (Q.labor_minister_party !== "SPD" && Q.in_social_liberal_coalition) Q.labor_minister_party = Q.ddp_name; Q.labor_minister = "Lemmer";
-if (Q.labor_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.labor_minister_party = "LVP"; Q.labor_minister = "Lemmer";
+if (Q.labor_minister_party !== "SPD" && Q.in_social_liberal_coalition) {Q.labor_minister_party = Q.ddp_name; Q.labor_minister = "Lemmer"};
+if (Q.labor_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) {Q.labor_minister_party = "LVP"; Q.labor_minister = "Lemmer"};
 
-if (Q.interior_minister_party !== "SPD") Q.interior_minister_party = "Z"; Q.interior_minister = "Wirth";
+if (Q.interior_minister_party !== "SPD") {Q.interior_minister_party = "Z"; Q.interior_minister = "Wirth"};
 
 if (Q.interior_minister_party !== "SPD" && Q.in_social_liberal_coalition) Q.interior_minister_party = Q.ddp_name; Q.interior_minister = "Külz";
 if (Q.interior_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.interior_minister_party = "LVP"; Q.interior_minister = "Külz";
