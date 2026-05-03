@@ -4433,11 +4433,11 @@ if (Q.labor_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_f
 if (Q.labor_minister !== "Wissell" && Q.in_social_liberal_coalition) Q.labor_minister = "Lemmer";
 
 if (Q.interior_minister_party !== "SPD") Q.interior_minister_party = "Z";
-if (Q.interior_minister !== "Severing") Q.interior_minister = "Wirth";
+if (Q.interior_minister !== "Severing" && Q.interior_minister !== "Sollmann") Q.interior_minister = "Wirth";
 
 if (Q.interior_minister_party !== "SPD" && Q.in_social_liberal_coalition) Q.interior_minister_party = Q.ddp_name;
 if (Q.interior_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.interior_minister_party = "LVP";
-if (Q.interior_minister !== "Severing" && Q.in_social_liberal_coalition) Q.interior_minister = "Külz";
+if (Q.interior_minister !== "Severing" && Q.interior_minister !== "Sollmann" && Q.in_social_liberal_coalition) Q.interior_minister = "Külz";
 
 if (Q.finance_minister_party !== "SPD" && Q.in_grand_coalition && !Q.lvp_formed) {
     Q.finance_minister_party = "DVP";
