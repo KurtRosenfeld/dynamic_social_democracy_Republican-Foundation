@@ -539,7 +539,7 @@ Q.adjustmentFactors_votes_kvp = 1.0;
 Q.adjustmentFactors_votes_other = 1.0;
 
 Q.adjustmentFactors_spd_prussia = 1.0;
-Q.adjustmentFactors_uspd_prussia = 0.83;
+Q.adjustmentFactors_uspd_prussia = 1.0;
 Q.adjustmentFactors_sapd_prussia = 1.0;
 Q.adjustmentFactors_kpd_prussia = 1.0;
 Q.adjustmentFactors_z_prussia = 1.0;
