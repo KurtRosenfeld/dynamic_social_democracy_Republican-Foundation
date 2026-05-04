@@ -4,6 +4,6 @@ new-page: true
 is-card: true
 is-pinned-card: true
 on-arrival: month_activities += 1
-card-image: img/portraits/SchmidtRobert.jpg
+card-image: img/MinEconProg.jpg
 go-to: economic_policy
 
