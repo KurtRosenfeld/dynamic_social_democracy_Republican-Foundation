@@ -882,7 +882,7 @@ go-to: coalition_menu
 
 @new_election_jjj
 title: Why does the first one never work?!?
-on-arrival: Q.next_election_time_prussia = Q.time + 1;
+on-arrival: next_election_time_prussia = time + 1;
 
 @schleicher_majority_coalition_prussia
 title: Schleicher forms a majority government with only the <span style="color: #BFC8CC;">**DNEF**</span>.
