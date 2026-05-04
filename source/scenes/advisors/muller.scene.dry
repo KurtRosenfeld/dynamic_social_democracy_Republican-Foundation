@@ -14,6 +14,7 @@ Müller is a former [? if chancellor = "Müller": and current ?] Chancellor, and
 - @toleration
 - @muller_foreign
 - @snap_election
+- @bufff
 - @root: Return to main
 
 @coalition
@@ -51,3 +52,8 @@ choose-if: advisor_action_timer == 0 and chancellor == "Müller"
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 
 We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+
+@bufff
+title: Little Cheat
+subtitle: It has gotten so hard to test this stuff
+on-arrival: rural_spd += 10; catholic_spd += 9; new_middle_spd += 2
