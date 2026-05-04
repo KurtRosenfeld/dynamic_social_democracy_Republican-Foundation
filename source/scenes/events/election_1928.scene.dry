@@ -4373,6 +4373,8 @@ if (Q.postal_minister_party !== "SPD" && !Q.in_grand_coalition) {Q.postal_minist
 
 if (Q.labor_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.labor_minister_party = "USPD"; Q.labor_minister = "Aufhäuser"};
 
+if (Q.interior_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.interior_minister_party = "USPD"; Q.interior_minister = "Levi"};
+
 if (Q.finance_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.finance_minister_party = "USPD"; Q.finance_minister = "Hilferding"};
 
 if (Q.economic_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.economic_minister_party = "USPD"; Q.economic_minister = "Hilferding"};
