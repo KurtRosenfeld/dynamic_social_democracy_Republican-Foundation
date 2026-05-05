@@ -4366,7 +4366,7 @@ if (Q.agriculture_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q
 
 if (Q.reichswehr_minister_party !== "SPD") {Q.reichswehr_minister_party = "I"; Q.reichswehr_minister = "Groener"};
 
-if (Q.transport_minister_party !== "SPD") {Q.postal_minister_party = "DDP"; Q.postal_minister = "Oeser"};
+if (Q.transport_minister_party !== "SPD") {Q.transport_minister_party = "DDP"; Q.transport_minister = "Oeser"};
 
 if (Q.postal_minister_party !== "SPD" && Q.in_grand_coalition) {Q.postal_minister_party = "BVP"; Q.postal_minister = "Schätzel"};
 if (Q.postal_minister_party !== "SPD" && !Q.in_grand_coalition) {Q.postal_minister_party = "Z"; Q.postal_minister = "Höfle"};
