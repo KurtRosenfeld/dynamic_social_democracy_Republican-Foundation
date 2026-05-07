@@ -1,4 +1,4 @@
-title: Bavvaria Landtag Election
+title: Bavaria Landtag Election
 view-if: (year == 1922 and month == 5 and not bavaria_election_seen) or (bavaria_election_2_trigger_time == time and bavaria_election_seen_time != time)
 new-page: true
 tags: event
@@ -176,7 +176,7 @@ Q.non_farm_r_bavaria = Q.other_r_bavaria*0.2
 
 let bvp_share = 0.95;
 let z_share = 0.3;
-let csp_share 0.2;
+let csp_share = 0.2;
 
 if (Q.chancellor = "Hindenburg") bvp_share += 0.03;
 if (Q.z_leader = "Stegerwald") z_share += 0.1;
@@ -190,16 +190,16 @@ let total_z_share = bvp_share + z_share + csp_share;
 
 z_share = (z_share / total_z_share);
 bvp_share = (bvp_share / total_z_share);
-csp_share = (csp_share / total_csp_share);
+csp_share = (csp_share / total_z_share);
 
-Q.z_saxony_elections_vote = Q.z_saxony_elections_vote*z_share;
-Q.z_r_saxony = Q.z_r_saxony*sz_share;
+Q.z_bavaria_elections_vote = Q.z_bavaria_elections_vote*z_share;
+Q.z_r_bavaria = Q.z_r_bavaria*z_share;
 
-Q.bvp_saxony_elections_vote = Q.z_saxony_elections_vote*z_share;
-Q.bvp_r_saxony = Q.z_r_saxony*bvp_share;
+Q.bvp_bavaria_elections_vote = Q.z_bavaria_elections_vote*z_share;
+Q.bvp_r_bavaria = Q.z_r_bavaria*bvp_share;
 
-Q.csp_saxony_elections_vote = Q.z_saxony_elections_vote*z_share;
-Q.csp_r_saxony = Q.z_r_saxony*csp_share;
+Q.csp_bavaria_elections_vote = Q.z_bavaria_elections_vote*z_share;
+Q.csp_r_bavaria = Q.z_r_bavaria*csp_share;
 
 function allocateSeats(percentages, totalSeats = 128) {
     const exactSeats = {};
@@ -237,6 +237,8 @@ const inputPercentages = {
     ddp_r_bavaria: Q.ddp_r_bavaria,
     lvp_r_bavaria: Q.lvp_r_bavaria,
     z_r_bavaria: Q.z_r_bavaria,
+    bvp_r_bavaria: Q.bvp_r_bavaria,
+    csp_r_bavaria: Q.csp_r_bavaria,
     dvp_r_bavaria: Q.dvp_r_bavaria,
     dnvp_r_bavaria: Q.dnvp_r_bavaria,
     nsdap_r_bavaria: Q.nsdap_r_bavaria,
@@ -265,11 +267,11 @@ Q.non_farm_bavaria_elections_vote = (Q.non_farm_bavaria_elections_vote != undefi
 Q.bvp_bavaria_elections_vote = (Q.bvp_bavaria_elections_vote != undefined ? parseFloat(Q.bvp_bavaria_elections_vote.toFixed(1)) : 0);
 Q.z_bavaria_elections_vote = (Q.z_bavaria_elections_vote != undefined ? parseFloat(Q.z_bavaria_elections_vote.toFixed(1)) : 0);
 Q.csp_bavaria_elections_vote = (Q.csp_bavaria_elections_vote != undefined ? parseFloat(Q.csp_bavaria_elections_vote.toFixed(1)) : 0);
-Q.farm_r_bavria = (Q.farm_r_bavria != undefined ? parseFloat(Q.farm_r_bavaria.toFixed(1)) : 0);
-Q.non_farm_r_bavria = (Q.non_farm_r_bavria != undefined ? parseFloat(Q.non_farm_r_bavaria.toFixed(1)) : 0);
+Q.farm_r_bavaria = (Q.farm_r_bavaria != undefined ? parseFloat(Q.farm_r_bavaria.toFixed(1)) : 0);
+Q.non_farm_r_bavaria = (Q.non_farm_r_bavaria != undefined ? parseFloat(Q.non_farm_r_bavaria.toFixed(1)) : 0);
 Q.bvp_r_bavaria = (Q.bvp_r_bavaria != undefined ? parseFloat(Q.bvp_r_bavaria.toFixed(1)) : 0);
 Q.z_r_bavaria = (Q.z_r_bavaria != undefined ? parseFloat(Q.z_r_bavaria.toFixed(1)) : 0);
-Q.csp_r_bavria = (Q.csp_r_bavria != undefined ? parseFloat(Q.csp_r_bavaria.toFixed(1)) : 0);
+Q.csp_r_bavaria = (Q.csp_r_bavaria != undefined ? parseFloat(Q.csp_r_bavaria.toFixed(1)) : 0);
 
 !}
 on-display: {!
@@ -347,12 +349,13 @@ if (Q.farm_r_bavaria) {
             "seats": Math.round(Q.farm_r_bavaria * 1.28),
         });
 
-if (Q.non_farm_r_bavaria) {
+f (Q.non_farm_r_bavaria) {
         data.push({
             "id": "other",
             "legend": "Other",
             "name": "Other",
             "seats": Math.round(Q.non_farm_r_bavaria * 1.28),
+        });
 
 data = data.concat([{
         "id": "bvp",
@@ -465,7 +468,7 @@ The <span style="color: #38C538;">Bavarian Peasants’ League</span> serves as t
 <hr id="read-marker">
 United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_bavaria +]% 
 
-Traffic Light Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span>): [+ spd_coalition_bavaria +]% 
+Traffic Light Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span>): [+ traffic_coalition_bavaria +]% 
 
 [? if not kvp_formed: Bourgeois Coalition (<span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?]?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ bourgeois_coalition_bavaria +]% ?]
 
