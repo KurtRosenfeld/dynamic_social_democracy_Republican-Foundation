@@ -174,6 +174,12 @@ Q.farm_r_bavaria = Q.other_r_bavaria*0.8
 Q.non_farm_bavaria_elections_vote = Q.other_bavaria_elections_vote*0.2
 Q.non_farm_r_bavaria = Q.other_r_bavaria*0.2
 
+let other_share = farm_share + non_farm_share;
+
+farm_share = (farm_share / other_share);
+non_farm_share = (non_farm_share / other_share);
+
+
 let bvp_share = 0.95;
 let z_share = 0.3;
 let csp_share = 0.2;
