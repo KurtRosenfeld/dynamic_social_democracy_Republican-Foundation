@@ -534,6 +534,7 @@ Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span styl
 - @grand_coalition_hamburg
 - @bourgeois_coalition_hamburg
 - @left_coalition_hamburg
+- @kpd_majority_hamburg
 - @spd_majority_hamburg
 - @right_wing_coalition_hamburg
 - @no_coalition_hamburg
@@ -559,6 +560,13 @@ title: A Coalition of the Left will be formed
 subtitle: We will work alongside the KPD
 choose-if: left_coalition_hamburg > 50 and kpd_relation >= 40
 on-arrival: hamburg_election_2_trigger_time = time + 48; unemployed_kpd += 3; new_middle_others -= 2; new_middle_dvp -= 1; new_middle_spd += 1
+
+@kpd_majority_hamburg
+title: KPD majority
+subtitle: The KPD will form a local revolutionary stronghold
+view-if: kpd_r_hamburg > 40
+choose-if: kpd_r_hamburg > 50
+on-arrival: hamburg_election_2_trigger_time = time + 48; workers_kpd += 3; new_middle_spd -= 2; 
 
 @spd_majority_hamburg
 title: SPD majority
