@@ -438,6 +438,7 @@ if (Q.dnf_formed && Q.dnf_r_bavaria) {
     });
 }
 
+if (Q.nsfb_exists && Q.nsfb_r_bavaria) {
 data.push({
     "id": "nsfb",
     "legend": "NSFB",
