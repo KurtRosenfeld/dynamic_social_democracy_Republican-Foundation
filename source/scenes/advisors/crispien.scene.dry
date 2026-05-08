@@ -47,8 +47,8 @@ We have enforced party discipline to reduce dissent among former members of the 
 title: Contact former <span style="color: #AA0000;">USPD</span> members.
 view-if: uspd_joined < 3
 subtitle: Crispien used to be head of the <span style="color: #AA0000;">USPD</span>, he can try to leverage his contacts.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] This is not coded yet
+choose-if: advisor_action_timer == 0 nsdap_relation >= 1933
 on-arrival: advisor_action_timer = 6
 
 Who should be contacted?
