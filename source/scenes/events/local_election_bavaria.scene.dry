@@ -211,7 +211,7 @@ let bvp_share = 0.95;
 let z_share = 0.3;
 let csp_share = 0.2;
 
-if (Q.chancellor == "Hindenburg") bvp_share += 0.03;
+if (Q.president == "Hindenburg") bvp_share += 0.03;
 if (Q.z_leader == "Stegerwald") z_share += 0.1;
 if (Q.nsdap >= 25){
 z_share = 0; 
@@ -445,6 +445,7 @@ data.push({
     "name": "NSFB",
     "seats": Math.round(Q.nsfb_r_bavaria * 1.28),
 });
+}
 
 data.push({
     "id": "nsdap",
