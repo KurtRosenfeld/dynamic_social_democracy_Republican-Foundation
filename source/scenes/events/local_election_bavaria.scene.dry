@@ -40,7 +40,7 @@ var bavaria_adjustment_factors = {
     nsdap: 1.0,
     other: 1.3,
     kvp: 0.3,
-    dnf: 0.2
+    dnf: 0.2,
     nsfb: 3.7
 };
 
@@ -84,7 +84,7 @@ Q.nsfb_bavaria_elections_vote = 0;
 
 if (Q.catholics_spd_normalized >= 30) bavaria_adjustment_factors.spd += 0.2;
 if (Q.uspd_votes >= 5) bavaria_adjustment_factors.uspd += 0.7;
-if (Q.uspd_leader = "Crispien") bavaria_adjustment_factors.uspd += 0.1;
+if (Q.uspd_leader == "Crispien") bavaria_adjustment_factors.uspd += 0.1;
 if (Q.sapd_votes >= 5) bavaria_adjustment_factors.sapd += 0.48;
 if (Q.rural_spd_normalized >= 30) bavaria_adjustment_factors.spd += 0.2;
 if (Q.ddp_votes >= 3) bavaria_adjustment_factors.ddp = 0.4;
@@ -211,8 +211,8 @@ let bvp_share = 0.95;
 let z_share = 0.3;
 let csp_share = 0.2;
 
-if (Q.chancellor = "Hindenburg") bvp_share += 0.03;
-if (Q.z_leader = "Stegerwald") z_share += 0.1;
+if (Q.chancellor == "Hindenburg") bvp_share += 0.03;
+if (Q.z_leader == "Stegerwald") z_share += 0.1;
 if (Q.nsdap >= 25){
 z_share = 0; 
 csp_share = 1;
