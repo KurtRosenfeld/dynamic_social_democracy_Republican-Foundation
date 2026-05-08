@@ -208,8 +208,8 @@ Q.non_farm_r_bavaria = Q.other_r_bavaria*non_farm_share;
 
 
 let bvp_share = 0.95;
-let true_z_share = 0.3;
-let csp_share = 0.2;
+let true_z_share = 0.03;
+let csp_share = 0.02;
 
 if (Q.president == "Hindenburg") bvp_share += 0.03;
 if (Q.z_leader == "Stegerwald") true_z_share += 0.1;
