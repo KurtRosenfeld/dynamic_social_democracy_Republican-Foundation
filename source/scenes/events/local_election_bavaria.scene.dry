@@ -370,21 +370,21 @@ if (Q.lvp_r_bavaria && Q.lvp_formed) {
     });
 }
 
-if (Q.true_z_r_bavaria) {
-    data.push({
-        "id": "z",
-        "legend": "Z",
-        "name": "Z",
-        "seats": Math.round(Q.true_z_r_bavaria * 1.28),
-    });
-}
-
 if (Q.farm_r_bavaria) {
     data.push({
         "id": "farm",
         "legend": "Farm",
         "name": "Farm",
         "seats": Math.round(Q.farm_r_bavaria * 1.28),
+    });
+}
+
+if (Q.true_z_r_bavaria) {
+    data.push({
+        "id": "z",
+        "legend": "Z",
+        "name": "Z",
+        "seats": Math.round(Q.true_z_r_bavaria * 1.28),
     });
 }
 
@@ -495,9 +495,9 @@ go-to: bavaria_coalition_menu
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_bavaria_elections_vote +]% {!</td><td>!} [+ lvp_r_bavaria +]%  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ true_z_bavaria_elections_vote +]% {!</td><td>!} [+ true_z_r_bavaria +]%  {!</td></tr>!}
-
 {!<tr><td><div class="box" style='background-color:#38C538'> </div> !} Peasants: {!</td><td>!} [+ farm_bavaria_elections_vote +]% {!</td><td>!} [+ farm_r_bavaria +]%  {!</td></tr>!}
+
+[? if true_z_bavaria_elections_vote > 0.5: {!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ true_z_bavaria_elections_vote +]% {!</td><td>!} [+ true_z_r_bavaria +]%  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ non_farm_bavaria_elections_vote +]% {!</td><td>!} [+ non_farm_r_bavaria +]%  {!</td></tr>!}
 
