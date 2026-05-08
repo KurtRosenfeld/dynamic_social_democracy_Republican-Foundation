@@ -10,7 +10,7 @@ on-display: {!
 
     var image = new Image();  
     image.className = "face-img";  
-    image.src = "img/Reichsexekution.png";  
+    image.src = "img/Reichsexekution.jpg";  
 
     cardEl.appendChild(image);  
     var contentDiv = document.querySelector("#page #mid_panel #content");
