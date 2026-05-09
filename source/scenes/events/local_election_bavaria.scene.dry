@@ -521,7 +521,7 @@ The <span style="color: #38C538;">Bavarian Peasants’ League</span> serves as t
 <hr id="read-marker">
 United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_bavaria +]% 
 
-[? if traffic_coalition_bavaria < 40: Traffic Light Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span>): [+ traffic_coalition_bavaria +]% ?]
+[? if traffic_coalition_bavaria > 40: Traffic Light Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span>): [+ traffic_coalition_bavaria +]% ?]
 
 [? if traffic_coalition_bavaria < 50: Anti-<span style="color: #A2D8E0;">**BVP**</span> Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #79209D;">**CSP**</span> + <span style="color: #AA0000;">**USPD**</span> + <span style="color: #AFAFAF;">**Others**</span>) [+ broad_coalition_bavaria +]% ?]
 
