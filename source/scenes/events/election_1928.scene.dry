@@ -2185,15 +2185,15 @@ go-to: ministries
 
 @uspd_toleration
 title: Get the USPD to tolerate us.
-choose-if: (weimar_coalition + uspd_r) > 50 and uspd_relation >= 65
-unavailable-subtitle: They don't have enough seats to back us.
+choose-if: (weimar_coalition + uspd_r) > 50 and uspd_relation >= 55
+unavailable-subtitle: We do not have adequate relations.
 go-to: ministries
 
 @dvp_toleration
 title: Get the DVP to tolerate us.
 subtitle: -2 ressources
-choose-if: (weimar_coalition + uspd_r) > 50 and dvp_relation >= 50
-unavailable-subtitle: They don't have enough seats to back us.
+choose-if: (weimar_coalition + uspd_r) > 50 and dvp_relation >= 40
+unavailable-subtitle: We do not have adequate relations.
 on-arrival: ressources -= 2
 go-to: ministries
 
@@ -4275,7 +4275,7 @@ title: Agricultural Ministry
 subtitle: This is not our usual domain.
 unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Agricultural Ministry. ?]
 choose-if: leverage >= 10 and not cvp_ministers_accepted
-view-if: agriculture_minister_party != "SPD"
+view-if: agriculture_minister_party != "SPD" and agriculture_minister_party != "BB"
 tags: mins_1928
 
 - @appoint_baade
