@@ -685,14 +685,13 @@ on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 
     </g>
     <g
        id="g81"
+[? if wurttemberg_gov == "Bourgeois": style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?][? if wurttemberg_gov == "Weimar": style="display:inline;fill:#FC6D6D;fill-opacity:1;stroke-width:20.0315" ?][? if wurttemberg_gov == "SPD": style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?][? if wurttemberg_gov == "Left": style="display:inline;fill:#8E0000;fill-opacity:1;stroke-width:20.0315" ?]
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
-         style="fill:#c8ab37;fill-opacity:1;stroke-width:20.0315"
          d="m 95.43379,247.33638 1.445966,-0.30442 1.141553,-0.91324 1.141552,0.30442 0.228311,1.29375 0.684928,-0.1522 0.98935,-0.83714 0.30441,-1.06545 -1.14155,-0.76103 0.15221,-0.91325 0.91324,-0.53272 0.15221,-3.88128 v -2.89193 l -0.60883,-3.12025 -0.913244,-0.91324 -0.304414,-2.2831 -0.913242,-1.67428 -0.608828,-1.67428 0.989346,-1.14155 1.445962,-1.21766 1.59818,-0.38051 1.06545,-0.98935 1.29376,-0.0761 0.83714,-0.30442 v -1.29376 l -1.36987,-0.83713 -0.53272,-1.06545 -0.15221,-1.06545 1.14155,-0.60883 0.68493,0.60883 1.29376,0.38052 0.98935,0.1522 1.21766,-0.22831 -0.38052,-1.14155 -0.91324,-0.76104 -0.45662,-1.36986 0.38051,-1.36986 0.30442,-1.97869 -0.68493,-1.82649 -1.36987,-1.29376 -0.91324,-0.30441 -1.14155,-0.45662 -0.68493,-0.98935 0.60882,-0.76103 0.30442,-0.45662 -0.68493,-0.83714 -0.53273,-0.45662 -0.38052,-0.91324 -0.1522,-1.21766 -0.68493,-0.30441 0.76103,-0.83714 0.38052,-0.91324 -0.22831,-1.59818 0.60883,-0.68493 0.30441,-1.36986 -0.76103,-0.83714 -0.30442,-0.98935 -0.15221,-0.98934 -0.53272,0.30441 -0.22831,0.60883 -0.45662,0.91324 h -0.837141 l -0.913242,0.0761 -0.532724,-0.76103 -0.152207,-1.06545 -0.380518,-1.59817 -0.608828,0.91324 -1.065449,0.98934 -1.293759,1.14156 -0.684932,0.60883 -0.22831,1.29375 -1.826484,0.83714 -0.761035,-0.30441 -1.217656,-0.76104 -0.532725,1.06545 -1.065449,0.30442 -0.837138,-0.60883 -1.29376,0.68493 v 0.76104 l 0.456621,0.83713 1.065449,1.29376 -2.587519,-0.22831 -0.608828,-0.98934 -0.989345,-0.76104 -0.761035,0.76104 -2.359209,0.76103 0.304414,2.73973 -0.684931,1.06545 -0.761035,0.76103 -2.130898,0.45662 -0.761035,0.68494 -0.608828,0.76103 -0.0761,0.68493 0.837139,1.29376 0.913242,1.36986 -0.152207,0.98935 -2.130898,1.75038 -0.532725,-0.60883 -0.532724,-1.52207 -0.532725,-1.14155 -0.532724,-0.0761 -1.902588,1.75038 -0.989345,0.45662 h -0.380518 l -0.0761,1.59817 0.152207,1.82649 -0.228311,2.2831 -1.674277,0.98935 -1.141552,0.53272 -1.826484,0.38052 0.532724,1.14155 1.52207,1.75038 0.0761,1.97869 1.293759,1.90259 -1.293759,1.06545 -1.217656,1.14155 1.293759,0.83714 1.369863,1.21766 1.598174,0.1522 0.989345,1.75038 -0.22831,0.83714 -0.684932,0.15221 0.532725,1.52207 1.369863,0.98934 1.369863,0.76104 0.684931,1.06545 1.29376,0.15221 1.293759,-0.60883 1.217656,0.38051 1.065449,0.0761 0.761035,-1.82649 -0.380517,-1.29376 -0.304414,-0.98934 -1.29376,-0.91324 -0.152207,-0.38052 0.456621,-0.60883 1.52207,-0.22831 0.380518,-0.60883 0.989345,-1.21765 -0.304414,-0.68493 -0.304414,-0.68494 -1.674277,-0.68493 -1.445966,-0.22831 -1.217656,-0.30441 -0.913242,-0.68493 -1.141553,0.45662 -1.256345,-0.91394 -0.683888,-0.83621 -0.799493,-1.29399 0.495079,-0.95112 1.14132,0.0383 1.369631,0.95112 2.016801,0.57049 0.761035,0.91324 1.52207,0.22831 1.978691,0.45662 0.380518,0.68493 h 1.75038 l 0.913242,-0.0761 0.837139,0.0764 1.369863,0.68458 -0.456621,0.60883 0.304414,0.91324 0.304414,0.91324 -0.761035,0.45663 -0.532725,0.68493 -0.22831,0.83714 0.304182,1.25611 0.07599,0.72223 -0.151859,1.0658 -0.532724,0.83713 1.293759,0.53273 1.29376,0.98969 1.065449,0.45627 -0.304414,0.68494 -0.532725,0.1522 -0.22831,1.36987 -0.761035,-0.15221 1.065449,1.14155 1.217656,1.14155 0.380517,1.06545 -0.608828,0.68493 -0.684931,1.21766 0.0761,0.98935 0.913242,0.76103 1.065449,0.83714 0.761035,0.60883 1.445967,0.0761 0.989345,-0.60883 0.837139,-0.83714 0.913242,-0.1522 z"
          id="path34"
          sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
       <path
-         style="display:inline;fill:#c8ab37;stroke-width:20.031"
          d="m 83.71266,228.80512 -0.782361,0.14225 0.497866,0.92461 1.70697,-0.21337 -0.497866,-0.56899 z"
          id="path81" />
     </g>
@@ -710,7 +709,7 @@ on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 
     </g>
     <g
        id="g5"
-       style="display:inline"
+[? if hamburg_gov == "Bourgeois": style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?][? if hamburg_gov == "Weimar": style="display:inline;fill:#FC6D6D;fill-opacity:1;stroke-width:20.0315" ?][? if hamburg_gov == "SPD": style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?][? if hamburg_gov == "Left": style="display:inline;fill:#8E0000;fill-opacity:1;stroke-width:20.0315" ?]
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          style="fill:#800000;fill-opacity:1;stroke-width:20.0315"
@@ -727,7 +726,7 @@ on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 
     </g>
     <g
        id="g2"
-       style="display:inline"
+[? if thuringia_gov == "Bourgeois": style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?][? if thuringia_gov == "Weimar": style="display:inline;fill:#FC6D6D;fill-opacity:1;stroke-width:20.0315" ?][? if thurnigia_gov == "SPD": style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?][? if thuringia_gov == "Left": style="display:inline;fill:#8E0000;fill-opacity:1;stroke-width:20.0315" ?][? if thuringia_gov == "Social-Democratic": style="display:inline;fill:#A10000;fill-opacity:1;stroke-width:20.0315" ?][? if thuringia_gov == "Right": style="display:inline;fill:#0F4989;fill-opacity:1;stroke-width:20.0315" ?]
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          style="display:inline;fill:#ccffaa;fill-opacity:1;stroke-width:20.0315"
@@ -749,6 +748,7 @@ on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 
     </g>
     <g
        id="g12"
+       [? if in_grand_coalition_prussia: style="display:inline;fill:#A2B725;fill-opacity:1;stroke-width:20.0315" ?][? if in_spd_majority_prussia: style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?][? if in_bourgeois_coalition_prussia: style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?]
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          style="display:inline;fill:#c8c4b7;fill-opacity:1;stroke-width:20.0315"
