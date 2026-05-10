@@ -1772,6 +1772,10 @@ go-to: achievement_check_e
 
 [? if dnef_formed: <tr><td colspan="5" style="text-align: center;"><hr id="read-marker"></td></tr> ?]
 
+{!<tr><td><div class="box2" style='background-color:#AA861F'> </div> !} WP (test): {!</td><td>!} [+ wp_votes +]% {!</td><td>!} [+ wp_r +]% {!</td><tr>!}
+
+{!<tr><td><div class="box2" style='background-color:#AA861F'> </div> !} DHP (test): {!</td><td>!} [+ dhp_votes +]% {!</td><td>!} [+ dhp_r +]% {!</td><tr>!}
+
 [? if dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F;'> </div> !} SPD: {!</td><td>!} [+ spd_votes +]% {!</td><td>!} [+ str_votes_change_spd +] {!</td><td>!} [+ spd_r +]% {!</td><td>!} [+ str_change_spd +] {!</td></tr>!} ?]
 
 [? if lvp_formed and rdp_list: {!<tr><td><div class="box2" style='background-color:#E0B0FF'> </div> !} RDP: {!</td><td>!} [+ rdp_votes +]% {!</td><td>!} [+ str_votes_change_rdp +] {!</td><td>!} [+ rdp_r +]% {!</td><td>!} [+ str_change_rdp +] {!</td></tr>!} ?]
@@ -2154,7 +2158,7 @@ Our allies approve of this choice.
 title: Another minority Weimar-Coalition
 view-if: weimar_coalition < 50 and year <= 1923
 subtitle: This is the most sensible option.
-on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; in_weimar_coalition = 1; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; spd_in_goverment = 1
+on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; in_weimar_coalition = 1; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; spd_in_government = 1
 go-to: ministries if vspd_parliament; begging_toleration if vspd_parliament == 0
 
 Wirth is the only chancellor acceptable. We need to secure some majority
