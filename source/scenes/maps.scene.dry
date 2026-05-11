@@ -557,7 +557,7 @@ on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 
 <div class="box" style='background-color:#A2B725'> </div> Grand Coalition
 <div class="box" style='background-color:#818181'> </div> Bourgeois Coalition
 [? if bavaria_gov == "BVP": <div class="box" style='background-color:#11EDEA'> </div> BVP-majority ?]
-<div class="box" style='background-color:#0F4989'> can I write here? </div> Right Coalition
+<div class="box" style='background-color:#0F4989'> </div> Right Coalition
 [? if nsdap_votes >= 25: <div class="box" style='background-color:#563129'> </div> NSDAP-majority ?]
 
 <svg
