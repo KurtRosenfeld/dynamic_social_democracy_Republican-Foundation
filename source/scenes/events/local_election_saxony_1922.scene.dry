@@ -119,7 +119,7 @@ if (Q.uspd_saxony_elections_vote >= 1.4) Q.uspd_r_saxony = Q.uspd_saxony_electio
 if (Q.kpd_saxony_elections_vote >= 1.4) Q.kpd_r_saxony = Q.kpd_saxony_elections_vote;
 if (Q.ddp_saxony_elections_vote >= 1.4) Q.ddp_r_saxony = Q.ddp_saxony_elections_vote;
 if (Q.lvp_saxony_elections_vote >= 1.4) Q.lvp_r_saxony = Q.lvp_saxony_elections_vote;
-if (Q.z_saxony_elections_vote >= 0.9) Q.z_r_saxony = Q.z_saxony_elections_vote;
+if (Q.z_saxony_elections_vote >= 1.1) Q.z_r_saxony = Q.z_saxony_elections_vote;
 if (Q.dvp_saxony_elections_vote >= 1.4) Q.dvp_r_saxony = Q.dvp_saxony_elections_vote;
 if (Q.dnvp_saxony_elections_vote >= 1.4) Q.dnvp_r_saxony = Q.dnvp_saxony_elections_vote;
 if (Q.nsdap_saxony_elections_vote >= 1.4) Q.nsdap_r_saxony = Q.nsdap_saxony_elections_vote;
@@ -437,13 +437,13 @@ Right Coalition (<span style="color: #C0A054;">**DVP**</span>[? if wp_r_saxony: 
 @united_left_coalition_saxony
 title: [? if uspd_r_saxony >= 1: A <span style="color: #c00000;">**Red**</span>-<span style="color: #A10000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition?? ?][? if uspd_r_saxony == 0: A new kind of <span style="color: #c00000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition? ?]
 subtitle: We will work alongside the KPD for the first time ever.
-choose-if: left_coalition_saxony >= 50 and kpd_relation >= 35 and uspd_relation >= 40 and ddp_relation <= 50
+choose-if: left_coalition_saxony >= 50 and kpd_relation >= 35 and uspd_relation >= 30 and ddp_relation <= 50
 on-arrival: saxony_gov = "Left"; ddp_relation -= 8; z_relation -= 10; dvp_relation -= 12; workers_kpd += 5; workers_spd += 1; kpd_relation += 10; uspd_relation += 5
 
 @social_democratic_coalition_saxony
 title:  Another Social-Democratic Coalition
 subtitle: The KPD will tolerate our coalition.
-choose-if: left_coalition_saxony >= 50 and kpd_relation >= 15 and uspd_relation >= 40
+choose-if: left_coalition_saxony >= 50 and kpd_relation >= 15 and uspd_relation >= 20
 view-if: uspd_r_saxony > 0
 on-arrival: saxony_gov = "Social-Democratic"; z_relation -= 2; dvp_relation -= 3; workers_uspd += 2; workers_spd += 1; kpd_relation += 1; uspd_relation += 8
 
