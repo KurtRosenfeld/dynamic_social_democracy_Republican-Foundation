@@ -39,20 +39,25 @@ if (Q.reformist_strength < 10) {
 Q.reformist_strength *= 0.3; 
 
 Q.n_advisors_start = Q.n_advisors; 
-if (Q.braun_advisor == 1) Q.n_advisors -= 1; 
-if (Q.severing_advisor == 1) Q.n_advisors -= 1; 
-Q.braun_advisor = 0; 
+if (Q.juchaz_advisor == 1) Q.n_advisors -= 1; 
+if (Q.ebert_advisor == 1) Q.n_advisors -= 1; 
+Q.juchaz_advisor = 0; 
 Q.ebert_advisor = 0;
-Q.severing_advisor = 0; 
 Q.reformists_resign = 1; 
 if (Q.centrists_resign == 1) {
     if (Q.wels_advisor == 1) Q.n_advisors -= 1;
     if (Q.muller_advisor == 1) Q.n_advisors -= 1;
     if (Q.scheidemann_advisor == 1) Q.n_advisors -= 1;
+    if (Q.braun_advisor == 1) Q.n_advisors -= 1; 
+    if (Q.severing_advisor == 1) Q.n_advisors -= 1; 
+    if (Q.pfluf_advisor == 1) Q.n_advisors -= 1;
 
     Q.wels_advisor = 0;
     Q.muller_advisor = 0;
     Q.scheidemann_advisor = 0;
+    Q.braun_advisor = 0; 
+    Q.severing_advisor = 0; 
+    Q.pfluf_advisor = 0;
 }
 if (Q.n_advisors < Q.n_advisors_start) Q.shuffle_leadership_timer = 0;
 !}
