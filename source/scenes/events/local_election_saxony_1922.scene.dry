@@ -415,7 +415,7 @@ Text to be added
 <hr id="read-marker">
 United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if uspd_r: + <span style="color: #A10000;">**USPD**</span>?]): [+ left_coalition_saxony +]% 
 
-Social-Democratic Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #A10000;">**USPD**</span>): [+ social_democratic_coalition_saxony +]% 
+[? if uspd_r_saxony >= 1: Social-Democratic Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #A10000;">**USPD**</span>): [+ social_democratic_coalition_saxony +]% ?]
 
 Social-Liberal Coalition (<span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #c10000;">**SPD**</span>): [+ spd_ddp_coalition_saxony +]%
 
@@ -443,12 +443,14 @@ on-arrival: saxony_gov = "Left"; ddp_relation -= 8; z_relation -= 10; dvp_relati
 title:  Another Social-Democratic Coalition
 subtitle: The KPD will tolerate our coalition.
 choose-if: left_coalition_saxony >= 50 and kpd_relation >= 10 and uspd_relation >= 20
+view-if: uspd_r_saxony > 0
 on-arrival: saxony_gov = "Social-Democratic"; z_relation -= 2; dvp_relation -= 3; workers_uspd += 2; workers_spd += 1; kpd_relation += 1; uspd_relation += 8
 
 @spd_alone_saxony
 title: An SPD only government?
 subtitle: The KPD will tolerate us.
 choose-if: left_coalition_saxony >= 50 and kpd_relation >= 10
+view-if: uspd_r_saxony = 0
 on-arrival: saxony_gov = "SPD"; workers_spd += 2; kpd_relation += 1
 
 @spd_ddp_coalition_saxony
