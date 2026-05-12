@@ -2,6 +2,7 @@ title: Saxony Landtag Election
 view-if: year == 1922 and month == 11 
 new-page: true
 tags: event
+max-visits: 1
 priority: 2
 on-display: {!  
     var cardEl = document.createElement('div');  
