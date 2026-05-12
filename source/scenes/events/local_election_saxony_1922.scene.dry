@@ -30,11 +30,11 @@ var saxony_adjustment_factors = {
     spd: 1.53,
     uspd: 0.1,
     kpd: 1.2,
-    ddp: 1.2,
-    lvp: 1.27,
+    ddp: 1.25,
+    lvp: 1.28,
     z: 0.52,
-    dvp: 1.3,
-    dnvp: 1.07,
+    dvp: 1.31,
+    dnvp: 1.06,
     nsdap: 0.0,
     other: 0.1,
 };
@@ -68,6 +68,7 @@ Q.spd_saxony_elections_vote = Q.spd_votes*saxony_adjustment_factors.spd;
 Q.uspd_saxony_elections_vote = Q.uspd_votes*saxony_adjustment_factors.uspd;
 Q.kpd_saxony_elections_vote = Q.kpd_votes*saxony_adjustment_factors.kpd;
 Q.ddp_saxony_elections_vote = Q.ddp_votes*saxony_adjustment_factors.ddp;
+Q.z_saxony_elections_vote = Q.z_votes*saxony_adjustment_factors.z;
 Q.lvp_saxony_elections_vote = Q.lvp_votes*saxony_adjustment_factors.lvp;
 Q.dvp_saxony_elections_vote = Q.dvp_votes*saxony_adjustment_factors.dvp;
 Q.dnvp_saxony_elections_vote = Q.dnvp_votes*saxony_adjustment_factors.dnvp;
@@ -142,6 +143,7 @@ Q.uspd_r_saxony = Q.uspd_r_saxony*saxony_adjustment_r_factors.uspd;
 Q.kpd_r_saxony = Q.kpd_r_saxony*saxony_adjustment_r_factors.kpd;
 if (Q.stolper_program_adopted) saxony_adjustment_r_factors.ddp += 0.04;
 Q.ddp_r_saxony = Q.ddp_r_saxony*saxony_adjustment_r_factors.ddp;
+Q.z_r_saxony = Q.z_r_saxony*saxony_adjustment_r_factors.z;
 Q.lvp_r_saxony = Q.lvp_r_saxony*saxony_adjustment_r_factors.lvp;
 Q.dvp_r_saxony = Q.dvp_r_saxony*saxony_adjustment_r_factors.dvp;
 Q.dnvp_r_saxony = Q.dnvp_r_saxony*saxony_adjustment_r_factors.dnvp;
@@ -459,8 +461,9 @@ choose-if: spd_ddp_coalition_saxony >= 50 and ddp_relation >= 65 and (left_coali
 on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 5; ddp_realtion += 10; dvp_relation += 2; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; workers_uspd += 3; wirth_concession += 1
 
 @weimar_coalition_saxony
-title: A Social-Liberal Coalition???
+title: A Weimar Coalition in Saxony.
 subtitle: Wirth would surely like this
+view-if: z_r_saxony >= 1
 choose-if: weimar_coalition_saxony >= 50 and ddp_relation >= 60 and (left_coalition_saxony <= 49 or (kpd_relation < 30 and uspd_relation < 45)) and z_relation >= 40
 on-arrival: saxony_gov = "Weimar"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 7; ddp_realtion += 10; dvp_relation += 2; z_relation += 6; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; workers_z += 2; workers_uspd += 3; wirth_concession += 1
 
