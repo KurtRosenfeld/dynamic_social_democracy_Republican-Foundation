@@ -457,7 +457,7 @@ on-arrival: saxony_gov = "SPD"; workers_spd += 2; kpd_relation += 1
 title: A Social-Liberal Coalition???
 subtitle: It wouldn't be the first time...
 choose-if: spd_ddp_coalition_saxony >= 50 and ddp_relation >= 65 and kpd_relation < 20
-on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 5; ddp_realtion += 10; dvp_relation += 2; new_middle_ddp += 2; old_middle_ddp += 3 unemployed_spd -= 2;
+on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 5; ddp_realtion += 10; dvp_relation += 2; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2;
 
 @bourgeois_coalition_saxony
 title: A Bourgeois Coalition
