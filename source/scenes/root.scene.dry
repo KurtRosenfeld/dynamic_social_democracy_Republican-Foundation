@@ -284,27 +284,27 @@ Q.workers_nsdap = 2;
 Q.workers_dvfp = 0;
 Q.workers_other = 2;
 
-Q.new_middle_spd = 9;
+Q.new_middle_spd = 7;
 Q.new_middle_uspd = 1;
 Q.new_middle_kpd = 0;
 Q.new_middle_z = 12;
-Q.new_middle_ddp = 30;
+Q.new_middle_ddp = 32;
 Q.new_middle_dvp = 31;
 Q.new_middle_dnvp = 9;
 Q.new_middle_nsdap = 1;
 Q.new_middle_dvfp = 0;
 Q.new_middle_other = 4;
 
-Q.old_middle_spd = 5;
+Q.old_middle_spd = 3;
 Q.old_middle_uspd = 0;
 Q.old_middle_kpd = 0;
 Q.old_middle_z = 7;
-Q.old_middle_ddp = 27;
+Q.old_middle_ddp = 29;
 Q.old_middle_dvp = 35;
 Q.old_middle_dnvp = 15;
 Q.old_middle_nsdap = 1;
 Q.old_middle_dvfp = 0;
-Q.old_middle_other = 4;
+Q.old_middle_other = 5;
 
 Q.rural_spd = 7;
 Q.rural_uspd = 0;
@@ -317,7 +317,7 @@ Q.rural_nsdap = 1;
 Q.rural_dvfp = 0;
 Q.rural_other = 5;
 
-Q.unemployed_spd = 20;
+Q.unemployed_spd = 21;
 Q.unemployed_uspd = 25;
 Q.unemployed_kpd = 28;
 Q.unemployed_z = 3;
@@ -326,25 +326,25 @@ Q.unemployed_dvp = 0;
 Q.unemployed_dnvp = 8;
 Q.unemployed_nsdap = 3;
 Q.unemployed_dvfp = 1;
-Q.unemployed_other = 3;
+Q.unemployed_other = 2;
 
-Q.catholics_spd = 17;
+Q.catholics_spd = 15;
 Q.catholics_uspd = 4;
 Q.catholics_kpd = 1;
-Q.catholics_z = 60;
+Q.catholics_z = 61;
 Q.catholics_ddp = 0;
 Q.catholics_dvp = 8;
-Q.catholics_dnvp = 6;
-Q.catholics_nsdap = 2;
+Q.catholics_dnvp = 4;
+Q.catholics_nsdap = 3;
 Q.catholics_dvfp = 0;
-Q.catholics_other = 5;
+Q.catholics_other = 7;
 
-Q.workers_spd_old = 39;
-Q.new_middle_spd_old = 8;
-Q.old_middle_spd_old = 5;
-Q.rural_spd_old = 8;
-Q.unemployed_spd_old = 15;
-Q.catholics_spd_old = 16;
+Q.workers_spd_old = 42;
+Q.new_middle_spd_old = 7;
+Q.old_middle_spd_old = 3;
+Q.rural_spd_old = 7;
+Q.unemployed_spd_old = 21;
+Q.catholics_spd_old = 15;
 
 // Current Reichstag composition
 // % of Reichstag in April 1922
