@@ -4,6 +4,7 @@ new-page: true
 tags: event
 max-visits: 1
 priority: 2
+on-arrival: unemployed_uspd -= 4; workers_uspd -= 3
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  
