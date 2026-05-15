@@ -1063,7 +1063,7 @@ for (let i = 0; i <= 100; i++) {
 }
 
 // local governments
-Q.bavaria_gov = 'Bourgeois';
+Q.bavaria_gov = 'Right';
 Q.saxony_gov = 'Social-Democratic';
 Q.thuringia_gov = 'Social-Democratic';
 Q.baden_gov = 'Weimar';
