@@ -512,7 +512,7 @@ go-to: bavaria_coalition_menu
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_bavaria_elections_vote +]% {!</td><td>!} [+ dnf_r_bavaria +]%  {!</td></tr>!} ?]
 
-[? if nsfb_exists: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSFB: {!</td><td>!} [+ nsfb_bavaria_elections_vote +]% {!</td><td>!} [+ nsfb_r_bavaria +]%  {!</td></tr>!} ?]
+[? if nsfb_exists: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} VSB: {!</td><td>!} [+ nsfb_bavaria_elections_vote +]% {!</td><td>!} [+ nsfb_r_bavaria +]%  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_bavaria_elections_vote +]% {!</td><td>!} [+ nsdap_r_bavaria +]%  {!</td></tr>!}
 {!</table>!}
@@ -565,7 +565,7 @@ Heinrich Held, the incumbent Minister-President and a pro-democratic member of t
 title: The <span style="color: #7A3C00;">**NSDAP**</span> wins a majority?
 subtitle: How did it come to this...?
 view-if: (nsdap_r_bavaria + dnf_r_bavaria >= 50 and dnvp_ideology == "Moderate") or (nsdap_r_bavaria + dnvp_r_bavaria >= 50 and dnvp_ideology == "Radical")
-on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "NSDAP"; new_middle_nsdap += 6; old_middle_nsdap += 6; rural_nsdap += 6; new_middle_z -= 4; old_middle_z -= 4; rural_z -= 4; pro_republic -= 10
+on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "Far-Right"; new_middle_nsdap += 6; old_middle_nsdap += 6; rural_nsdap += 6; new_middle_z -= 4; old_middle_z -= 4; rural_z -= 4; pro_republic -= 10
 
 How the hell.
 
@@ -573,7 +573,7 @@ How the hell.
 title: The <span style="color: #A2D8E0;">**BVP**</span> coalitions with the <span style="color: #38C538;">Bavarian Peasants’ League</span> and various bourgeois parties.
 subtitle: The <span style="color: #A2D8E0;">BVP</span> will make amends with the <span style="color: #38C538;">farmers</span>.
 view-if: bourgeois_coalition_bavaria >= 50
-on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "Right-Bourgeois"; new_middle_nsdap -= 2; old_middle_nsdap -= 2; catholics_nsdap -= 2; rural_nsdap -= 3; rural_other += 3; pro_republic += 3
+on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "Right"; new_middle_nsdap -= 2; old_middle_nsdap -= 2; catholics_nsdap -= 2; rural_nsdap -= 3; rural_other += 3; pro_republic += 3
 
 The former incumbent coalition consisting of the <span style="color: #A2D8E0;">**BVP**</span>, <span style="color: #38C538;">Bavarian Peasants’ League</span>, and the various smaller bourgeois parties has continued. This show of stability will weaken the <span style="color: #7A3C00;">Nazis</span>.
 
