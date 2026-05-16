@@ -23,7 +23,7 @@ At the <span style="color: #D50032;">Labor and Socialist International</span>, w
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; west_relation += 1; reformist_strength += 3; pacifism += 1; moderate_plan_support += 1; international_socialist_support += 1
+on-arrival: resources -= 1; france_relation += 1; uk_relation += 2; belgium_relation += 2; netherlands_relation += 1; reformist_strength += 3; pacifism += 1; moderate_plan_support += 1; international_socialist_support += 1
 
 The <span style="color: #f0456a;">socialists</span> of <span style="color: #002654;">France</span> and <span style="color: #C8102E;">Britain</span> can influence their governments to be friendlier towards Germany. Hopefully they will reduce our reparations burden.
 
@@ -44,7 +44,7 @@ Our Reichsbanner can learn much in paramilitary organization and training from t
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: reformist_strength += 3; wtb_support += 1; resources -= 1; moderate_plan_support += 1
+on-arrival: reformist_strength += 3; wtb_support += 1; resources -= 1; moderate_plan_support += 1; sweden_relation += 2; denmark_relation += 2; norway_relation += 2;
 
 The programs of the Nordic <span style="color: #D70926;">socialists</span> involve active government intervention in the economy. We can learn from their economic strategies, and how they moved beyond their working-class base to attract a broader set of constituents.
 
