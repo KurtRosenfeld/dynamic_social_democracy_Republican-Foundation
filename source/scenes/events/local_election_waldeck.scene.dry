@@ -33,12 +33,13 @@ var waldeck_adjustment_factors = {
     ddp: 1.3,
     lvp: 0.9,
     dvp: 0.8,
-    dnvp: 0.9,
+    dnvp: 0.76,
     other: 4.1,
 };
 
-if (Q.year == 1922) other_waldeck_adjustment_factor += 8
-if (Q.year == 1925) spd_waldeck_adjustment_factor += 0.1
+if (Q.year == 1922) other_waldeck_adjustment_factor += 8;
+if (Q.year == 1925) spd_waldeck_adjustment_factor += 0.1;
+if (Q.year == 1922) dnvp_waldeck_adjustment_factor = 0;
 
 
 Q.spd_r_waldeck = 0;
