@@ -28,7 +28,7 @@ title: Fund the Workers International Relief.
 subtitle: -2 resources
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 2: We do not have enough resources. ?]
 choose-if: advisor_action_timer = 0 and resources > 1
-on-arrival: advisor_action_timer = 6; resources -= 2; workers_spd += 4; unemployed_spd += 4; soviet_relation += 1; kpd_relation += 7; rb_strength += 100*(1-dissent); rfb_strength += 10
+on-arrival: advisor_action_timer = 6; resources -= 2; workers_spd += 4; unemployed_spd += 4; soviet_relation += 3; kpd_relation += 7; rb_strength += 100*(1-dissent); rfb_strength += 10
 
 @snap_election
 title: Snap Election
