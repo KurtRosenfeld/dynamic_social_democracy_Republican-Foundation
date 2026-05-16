@@ -57,11 +57,9 @@ Q.other_waldeck_elections_vote = 0;
 if (Q.year == 1922) Q.dnvp_waldeck_elections_vote = 0;
 
 if (Q.rural_spd_normalized) waldeck_adjustment_factors.spd += 0.1;
-if (Q.spd_r < 100) waldeck_adjustment_factors.uspd += 0.01;
-if (Q.spd_r < 70) waldeck_adjustment_factors.kpd += 0.01;
 if (Q.workers_spd_normalized >= 70) waldeck_adjustment_factors.spd += 0.02;
-if (Q.year == 1922) other_waldeck_adjustment_factor += 8;
-if (Q.year == 1925) spd_waldeck_adjustment_factor += 0.1;
+if (Q.year == 1922) waldeck_adjustment_factors.other += 8;
+if (Q.year == 1925) waldeck_adjustment_factor.spd += 0.1;
 Q.spd_waldeck_elections_vote = Q.spd_votes*waldeck_adjustment_factors.spd;
 Q.uspd_waldeck_elections_vote = Q.uspd_votes*waldeck_adjustment_factors.uspd;
 Q.kpd_waldeck_elections_vote = Q.kpd_votes*waldeck_adjustment_factors.kpd;
@@ -229,7 +227,7 @@ data = [{
     "id": "kpd",
     "legend": "KPD",
     "name": "KPD",
-    "seats": Math.round(Q.kpd_r_meck_schwe * 0),
+    "seats": Math.round(Q.kpd_r * 0),
 }];
 
 if (Q.uspd_r_waldeck) {
@@ -307,7 +305,7 @@ data = data.concat([{
     "id": "nsdap",
     "legend": "NSDAP",
     "name": "NSDAP",
-    "seats": Math.round(Q.nsdap_r_meck_schwe * 0),
+    "seats": Math.round(Q.nsdap_r * 0),
 }]);
 
 if (window && d3) {
