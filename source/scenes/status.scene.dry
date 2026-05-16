@@ -416,9 +416,9 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 <span style="color: #11457E;">**Eastern**</span> <span style="color: #D7141A;">**Neighbours**</span>: [+ east_relation : relationships +]
 
-<span style="color: #DC143C;">**Pol**</span><span style="color: #FFFFFF;">**and**</span>: [+ poland_relation : relationships +]
+<span style="color: #DC143C;">**Pol**</span><span style="color: #D3D3D3;">**and**</span>: [+ poland_relation : relationships +]
 
-<span style="color: #11457E;">**Czech**</span><span style="color: #FFFFFF;">**oslo**</span><span style="color: #D7141A;">**vakia**</span>: [+ czech_relation : relationships +]
+<span style="color: #11457E;">**Czech**</span><span style="color: #D3D3D3;">**oslo**</span><span style="color: #D7141A;">**vakia**</span>: [+ czech_relation : relationships +]
 
 <span style="color: #8CB73F;">**Hungary**</span>: [+ hungary_relation : relationships +]
 
