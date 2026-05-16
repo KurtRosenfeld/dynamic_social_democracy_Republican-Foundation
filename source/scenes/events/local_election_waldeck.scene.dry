@@ -164,7 +164,7 @@ Q.spd_waldeck_elections_vote = Q.spd_waldeck_elections_vote*spd_share;
 Q.spd_r_waldeck = Q.spd_r_waldeck*spd_share;
 
 Q.hb_waldeck_elections_vote = Q.spd_waldeck_elections_vote*hb_share;
-Q.hb_r_saxony = Q.spd_r_waldeck*hb_share;
+Q.hb_r_waldeck = Q.spd_r_waldeck*hb_share;
 
 function allocateSeats(percentages, totalSeats = 17) {
     const exactSeats = {};
@@ -222,7 +222,7 @@ Q.spd_r_waldeck = (Q.spd_r_waldeck != undefined ? parseFloat(Q.spd_r_waldeck.toF
 
 !}
 on-display: {!
-
+var data = [];
 if (Q.uspd_r_waldeck) {
     data.push({
         "id": "uspd",
