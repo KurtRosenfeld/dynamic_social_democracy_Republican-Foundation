@@ -336,7 +336,7 @@ go-to: waldeck_coalition_menu
 
 [? if uspd_joined < 3 and uspd_r_waldeck > 0: {!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td!} **[+ uspd_waldeck_elections_vote +]%** {!</td><td!} **[+ uspd_r_waldeck +]%** {!</td></tr>!} ?]
 
-[? if hb_votes_waldeck > 0: {!<tr><td><div class="box" style='background-color:#CB7F00'> </div> !} Craftsmen: {!</td><td!} **[+ hb_waldeck_elections_vote +]%** {!</td><td!} **[+ hb_r_waldeck +]%**  {!</td></tr>!} ?]
+[? if hb_r_waldeck > 0: {!<tr><td><div class="box" style='background-color:#CB7F00'> </div> !} Craftsmen: {!</td><td!} **[+ hb_waldeck_elections_vote +]%** {!</td><td!} **[+ hb_r_waldeck +]%**  {!</td></tr>!} ?]
 
 [? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td!} **[+ ddp_waldeck_elections_vote +]%** {!</td><td!} **[+ ddp_r_waldeck +]%**  {!</td></tr>!} ?]
 
