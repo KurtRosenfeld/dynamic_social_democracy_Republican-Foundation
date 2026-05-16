@@ -242,6 +242,14 @@ if (Q.unemployed <= 1) {
     Q.unemployed = 1;
 }
 
+// foreign relations I guess
+Q.west_relation = (Q.us_relation + Q.uk_relation + Q.france_relation + Q.belgium_relation + Q.netherlands_relation)/5;
+
+Q.east_relation = (Q.poland_relation + Q.czech_relation + Q.austria_relation + Q.hungary_relation)/5;
+
+Q.north_relation = (Q.sweden_relation + Q.denmark_realtion + Q.norway_relation + Q.iceland_relation + Q.iceland_relation)/5;
+
+
 // re-calculate dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
 if (Q.neorevisionism) {
