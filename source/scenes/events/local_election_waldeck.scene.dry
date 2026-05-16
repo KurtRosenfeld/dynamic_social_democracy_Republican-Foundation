@@ -1,5 +1,5 @@
 title: Waldeck Landtag Election
-view-if: (year == 1922 and month == 5 and not waldeck_election_seen) or (year == 1925 and month == 5 and not waldeck_election_seen == 1)
+view-if: (year == 1922 and month == 5 and not waldeck_election_seen) or (year == 1925 and month == 5 and waldeck_election_seen == 1)
 new-page: true
 tags: event
 on-arrival: waldeck_election_seen += 1 if waldeck_election_seen; waldeck_election_seen = 1 if not waldeck_election_seen
