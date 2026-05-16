@@ -222,7 +222,13 @@ Q.spd_r_waldeck = (Q.spd_r_waldeck != undefined ? parseFloat(Q.spd_r_waldeck.toF
 
 !}
 on-display: {!
-var data = [];
+data = [{
+    "id": "kpd",
+    "legend": "KPD",
+    "name": "KPD",
+    "seats": Math.round(Q.kpd_r_meck_schwe * 0),
+}];
+
 if (Q.uspd_r_waldeck) {
     data.push({
         "id": "uspd",
@@ -293,6 +299,13 @@ if (Q.other_r_waldeck) {
     });
 }
 
+
+data = data.concat([{
+    "id": "nsdap",
+    "legend": "NSDAP",
+    "name": "NSDAP",
+    "seats": Math.round(Q.nsdap_r_meck_schwe * 0),
+}]);
 
 if (window && d3) {
     var width = 500;
