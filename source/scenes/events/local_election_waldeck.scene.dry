@@ -334,7 +334,7 @@ go-to: waldeck_coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td!} **[+ spd_waldeck_elections_vote +]%** {!</td><td!} **[+ spd_r_waldeck +]%** {!</td></tr>!}
 
-[? if uspd_joined < 3 and uspd_votes_waldeck > 0: {!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td!} **[+ uspd_waldeck_elections_vote +]%** {!</td><td!} **[+ uspd_r_waldeck +]%** {!</td></tr>!} ?]
+[? if uspd_joined < 3 and uspd_r_waldeck > 0: {!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td!} **[+ uspd_waldeck_elections_vote +]%** {!</td><td!} **[+ uspd_r_waldeck +]%** {!</td></tr>!} ?]
 
 [? if hb_votes_waldeck > 0: {!<tr><td><div class="box" style='background-color:#CB7F00'> </div> !} Craftsmen: {!</td><td!} **[+ hb_waldeck_elections_vote +]%** {!</td><td!} **[+ hb_r_waldeck +]%**  {!</td></tr>!} ?]
 
