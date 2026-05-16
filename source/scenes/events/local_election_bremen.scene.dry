@@ -372,6 +372,7 @@ if (Q.lvp_r_bremen && Q.lvp_formed) {
     });
 }
 
+if (Q.z_r_bremen) {
 data.push({
     "id": "z",
     "legend": "Z",
@@ -379,6 +380,7 @@ data.push({
     "seats": Math.round(Q.z_r_bremen * 1.2),
     "color": "#3D3D3D"
 });
+}
 
 if (Q.hb_r_bremen) {
     data.push({
