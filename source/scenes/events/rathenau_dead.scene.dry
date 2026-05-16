@@ -22,7 +22,7 @@ The Foreign Minister who the right considers an "Erfüllungspolitiker" has been 
 on-arrival: ddp_relation += 3; z_relation += 3; pro_republic += 1
 
 @defend_repub_2
-on-arrival: ddp_relation += 9; z_relation += 9; kpd_relation -= 4; uspd_relation -= 1; pro_republic += 1
+on-arrival: ddp_relation += 9; z_relation += 9; kpd_relation -= 4; dvp_relation -= 1; uspd_relation += 1; pro_republic += 1
 
 We show that we stand firmly behind the republic and the Wirth course.
 
@@ -33,12 +33,12 @@ We show that we stand firmly behind the republic and the Wirth course.
 - @contact_both: Contact both
 
 @contact_uspd
-on-arrival: uspd_relation += 5; left_dissent -= 2; left_strength += 2
+on-arrival: uspd_relation += 7; left_dissent -= 2; left_strength += 2
 
 The USPD is laregly open towards cooperation with us.
 
 @contact_kpd
-on-arrival: kpd_relation += 1; left_dissent -= 2; left_strength += 4; reformist_dissent += 3
+on-arrival: kpd_relation += 2; left_dissent -= 2; left_strength += 4; reformist_dissent += 3; ddp_relation -= 4
 
 The KPD is reluctant to cooperate with us.
 
