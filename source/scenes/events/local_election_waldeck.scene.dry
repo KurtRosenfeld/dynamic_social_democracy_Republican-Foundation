@@ -202,7 +202,7 @@ const inputPercentages = {
     dvp_r_waldeck: Q.dvp_r_waldeck,
     dnvp_r_waldeck: Q.dnvp_r_waldeck,
     hb_r_waldeck: Q.hb_r_waldeck,
-    other_r_waldeck: Q.lb_r_waldeck,
+    other_r_waldeck: Q.other_r_waldeck,
 };
 
 const allocatedSeats = allocateSeats(inputPercentages);
