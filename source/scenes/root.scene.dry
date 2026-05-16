@@ -1079,7 +1079,7 @@ Q.anhalt_gov = 'Social-Liberal';
 Q.brunswick_gov = 'Social-Liberal';
 Q.schaum_lippe_gov = 'Social-Liberal';
 Q.lippe_gov = 'Social-Liberal';
-Q.waldeck_gov = 'Right';
+Q.waldeck_gov = 'Bourgeois';
 
 // membership
 Q.wels_in = 'SPD';
