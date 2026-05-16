@@ -400,20 +400,33 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 Western Powers: [+ west_relation +]
 
-USA:
+<span style="color: #28CFDD;">USA</span>:
 
-France:
+<span style="color: #650C23;">UK</span>:
 
-UK:
+<span style="color: #1334A8;">France</span>:
+
+<span style="color: #D39E1C;">Belgium</span>:
+
+<span style="color: #DD6B22;">Netherlands</span>:
+
 
 Eastern Neighbours: [+ east_relation +]
 
-Poland:
+<span style="color: #DC143C;">Pol</span><span style="color: #FFFFFF;">and</span>:
 
-Czechoslovakia:
+<span style="color: #11457E;">Czech</span><span style="color: #FFFFFF;">oslo</span><span style="color: #D7141A;">vakia</span>:
 
-USSR: [+ soviet_relation +]
+<span style="color: #8CB73F;">Hungary</span>:
 
-Italy: 
+<span style="color: #DDBAC3;">Austria</span>:
+
+
+<span style="color: #750e0e;">USSR</span>: [+ soviet_relation +]
+
+<span style="color: #1C470C;">**Italy**</span>: 
+
+<span style="color: #EAD90C;">**Spain**</span>: 
+
 
 
