@@ -244,6 +244,7 @@ if (Q.unemployed <= 1) {
 
 //hyperinflation removed because of weird time loops
 
+
 // foreign relations I guess
 Q.west_relation = (Q.us_relation + Q.uk_relation + Q.france_relation + Q.belgium_relation + Q.netherlands_relation)/5;
 
@@ -251,8 +252,8 @@ Q.east_relation = (Q.poland_relation + Q.czech_relation + Q.austria_relation + Q
 
 Q.north_relation = (Q.sweden_relation + Q.denmark_relation + Q.norway_relation + Q.finland_relation + Q.iceland_relation)/5;
 
-// media stuuuuuff
 
+// media stuuuuuff
 
 Q.left_media = (Q.anarchist_media + Q.communist_media);
 if (Q.editorial_line == "Left") Q.left_media = (Q.anarchist_media + Q.communist_media + Q.socdem_media);
@@ -260,7 +261,7 @@ if (Q.editorial_line == "Left") Q.left_media = (Q.anarchist_media + Q.communist_
 Q.republican_media = (Q.liberal_media + Q.catholic_media + Q.socdem_media);
 if (Q.editorial_line == "Left") Q.republican_media = (Q.liberal_media + Q.catholic_media);
 
-Q.far_right_media = (Q.volkisch_media + Q.monarchist_media);
+Q.far_right_media = (Q.volkisch_media + Q.monarchist_media + Q.conservative_media);
 
 
 // re-calculate dissent.
