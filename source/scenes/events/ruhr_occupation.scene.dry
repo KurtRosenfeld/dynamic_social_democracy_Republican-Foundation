@@ -4,7 +4,7 @@ view-if: year == 1923 and month == 1 and ruhr_occupation_imminent == 1
 max-visits: 1 
 tags: event 
 new-page: true 
-on-arrival: ruhr_occupied = 1; nationalism += 2; pacifism -= 1; old_middle_dvfp += 2; new_middle_nsdap += 1; inflation += 20
+on-arrival: ruhr_occupied = 1; nationalism += 2; pacifism -= 1; old_middle_dvfp += 2; new_middle_nsdap += 1; inflation += 20; france_relation -= 5
 face-image: img/portraits/CunoWilhelm.jpg 
   
 = France occupies the Ruhr
@@ -15,7 +15,7 @@ The US and UK denounce this assault on the Republic. Chancellor [+ chancellor +]
 The mayor of Essen Hans Luther (I) has refused to welcome the occupying officers for hours turning him into a national icon.
 The politican Karl Jarres (DVP) refused to leave the area and was brought before a Belgian court of war.
 
-The passive resistance strategy is in already common place. Workers begin striking upon seeing French troops. Who knows how long this strategy will be possibly sustained...
+The passive resistance strategy is in already common place. Workers begin to stike upon seeing French troops. Who knows how long this strategy will be possibly sustained...
 
 - @continue: Continue
 
