@@ -314,9 +314,11 @@ if (Q.prussia_leader == "Braun") {
 Q.chancellor = 'Müller'; 
 Q.chancellor_party = muller_in; 
 }
-!}
-spd_in_government = 1; z_relation -= 5; dvp_relation -= 5
 
+Q.spd_in_government = 1; 
+Q.z_relation -= 5; 
+Q.dvp_relation -= 5
+!}
 The bourgeois parties agreed to let [+ chancellor +] ([+ chancellor_party +]) be chancellor.
 
 @fuck_monarchism
