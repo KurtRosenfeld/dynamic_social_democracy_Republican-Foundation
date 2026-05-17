@@ -22,7 +22,7 @@ In our media and campaign materials, who should we consider as our main opponent
 - @easy_discard
 
 @anti_dem
-on-arrival: enemies = "anti-democratic parties"; center_strength += 5; reformist_strength += 5; left_dissent += 5; workers_kpd -= 1.5; workers_nsdap -= 2; workers_dnvp -= 1 if dnvp_ideology == "Radical"; workers_dnf -= 1; unemployed_kpd -= 2; unemployed_nsdap -= 2; kpd_relation -= 10
+on-arrival: enemies = "anti-republican parties"; center_strength += 5; reformist_strength += 5; left_dissent += 5; workers_kpd -= 1.5; workers_nsdap -= 2; workers_dnvp -= 1 if dnvp_ideology == "Radical"; workers_dnf -= 1; unemployed_kpd -= 2; unemployed_nsdap -= 2; kpd_relation -= 10
 
 Attacking the <span style="color: #7A3C00;">far</span>-[? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">right</span>?][? if dnvp_ideology == "Moderate": <span style="color: #003755;">right</span>?] and <span style="color: #700000;">left</span> is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the <span style="color: #700000;">**KPD**</span> in the future.
 
@@ -42,7 +42,7 @@ on-arrival: enemies = "KPD"; reformist_strength += 5; left_dissent += 8; reformi
 Attacking the <span style="color: #700000;">**KPD**</span> is supported by all but the most left-wing <span style="color: #c00000;">socialists</span>, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the <span style="color: #700000;">**KPD**</span>, this may not be the best choice.
 
 @left_wing
-on-arrival: enemies = "left"; reformist_strength += 5; left_dissent += 10; reformist_dissent -= 5; kpd_relation -= 15; uspd_relation -= 10; dvp_relation += 5; ddp_relation += 3; z_relation += 5; lvp_relation += 5; workers_kpd -= 3*(1-dissent); unemployed_kpd -= 3*(1-dissent); dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1; workers_uspd -= 4; workers_spd -= 3*(1-dissent); unemployed_spd -= 1
+on-arrival: enemies = "parties to our left"; reformist_strength += 5; left_dissent += 10; reformist_dissent -= 5; kpd_relation -= 15; uspd_relation -= 10; dvp_relation += 5; ddp_relation += 3; z_relation += 5; lvp_relation += 5; workers_kpd -= 3*(1-dissent); unemployed_kpd -= 3*(1-dissent); dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1; workers_uspd -= 4; workers_spd -= 3*(1-dissent); unemployed_spd -= 1
 
 Attacking the <span style="color: #AA0000;">**Left**</span> is supported by the bourgeois parties. However, If we are to reconcile with the [? if not uspd_joined = 3: <span style="color: #AA0000;">**USPD**</span>?] and <span style="color: #700000;">**KPD**</span>, this is a poor choice. Some among our base disapprove.
 
