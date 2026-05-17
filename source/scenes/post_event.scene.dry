@@ -251,6 +251,12 @@ Q.east_relation = (Q.poland_relation + Q.czech_relation + Q.austria_relation + Q
 
 Q.north_relation = (Q.sweden_relation + Q.denmark_relation + Q.norway_relation + Q.finland_relation + Q.iceland_relation)/5;
 
+// media stuuuuuff
+
+Q.left_media = (Q.anarchist_media + Q.communist_media + Q.socdem_media if editorial_line == "Left");
+Q.republican_media = (Q.liberal_media + Q.catholic_media + Q.socdem_media if editorial_line !== "Left");
+Q.far_right_media = (Q.volkisch_media + Q.monarchist_media);
+
 
 // re-calculate dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
