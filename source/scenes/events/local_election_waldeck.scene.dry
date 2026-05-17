@@ -28,8 +28,8 @@ subtitle: May we not do our worst...
 on-arrival: {!
 
 var waldeck_adjustment_factors = {
-    spd: 0.8,
-    uspd: 1.03,
+    spd: 0.7,
+    uspd: 1.17,
     ddp: 1.3,
     lvp: 0.9,
     dvp: 0.8,
@@ -58,15 +58,15 @@ if (Q.year == 1922) Q.dnvp_waldeck_elections_vote = 0;
 
 if (Q.rural_spd_normalized) waldeck_adjustment_factors.spd += 0.1;
 if (Q.workers_spd_normalized >= 70) waldeck_adjustment_factors.spd += 0.02;
-if (Q.year == 1922) waldeck_adjustment_factors.other += 9;
-if (Q.year == 1925) waldeck_adjustment_factors.spd += 0.1;
+if (Q.year == 1922) waldeck_adjustment_factors.other += 9.3;
+if (Q.year == 1925) waldeck_adjustment_factors.spd += 0.2;
 Q.spd_waldeck_elections_vote = Q.spd_votes*waldeck_adjustment_factors.spd;
 Q.uspd_waldeck_elections_vote = Q.uspd_votes*waldeck_adjustment_factors.uspd;
 Q.kpd_waldeck_elections_vote = Q.kpd_votes*waldeck_adjustment_factors.kpd;
-if (Q.year == 1922) waldeck_adjustment_factors.ddp += 0.25;
+if (Q.year == 1922) waldeck_adjustment_factors.ddp += 0.32;
 Q.ddp_waldeck_elections_vote = Q.ddp_votes*waldeck_adjustment_factors.ddp;
 Q.lvp_waldeck_elections_vote = Q.lvp_votes*waldeck_adjustment_factors.lvp;
-if (Q.year == 1922) waldeck_adjustment_factors.dvp -= 0.05;
+if (Q.year == 1922) waldeck_adjustment_factors.dvp -= 0.07;
 Q.dvp_waldeck_elections_vote = Q.dvp_votes*waldeck_adjustment_factors.dvp;
 if (Q.dnvp_ideology == "Moderate") waldeck_adjustment_factors.dnvp -= 0.1;
 Q.dnvp_waldeck_elections_vote = Q.dnvp_votes*waldeck_adjustment_factors.dnvp;
