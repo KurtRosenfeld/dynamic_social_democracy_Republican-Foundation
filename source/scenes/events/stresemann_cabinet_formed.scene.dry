@@ -319,6 +319,7 @@ Q.spd_in_government = 1;
 Q.z_relation -= 5; 
 Q.dvp_relation -= 5
 !}
+
 The bourgeois parties agreed to let [+ chancellor +] ([+ chancellor_party +]) be chancellor.
 
 @fuck_monarchism
