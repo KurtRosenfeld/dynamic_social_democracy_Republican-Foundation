@@ -1,0 +1,318 @@
+title: Stresemann new Chancellor
+subtitle: Ebert appoints Gustav Stresemann of the DVP chnacellor.
+view-if: cuno_slapped
+max-visits: 1 
+tags: event 
+new-page: true 
+on-arrival: chancellor = 'Stresemann'; chancellor_party = 'DVP'; in_weimar_coalition = 0; in_toleration = 0; in_grand_coalition = 1; foreign_minister = 'Stresemann'; foreign_minister_party = 'DVP'; interior_minister = 'Jarres'; interior_minister_party = 'DVP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Raumer'; economic_minister_party = 'DVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Luther'; agriculture_minister_party = 'I'; transport_minister = 'Oeser'; transport_minister_party = 'DDP'; postal_minister = 'Höfle'; postal_minister_party = 'Z'; workers_kpd += 2
+face-image: img/portraits/StresemannGustav.jpg 
+  
+= Stresemann to be Chancellor
+
+The failure of Cuno has led Ebert to try out something new again.
+
+- @join_stresemann: The SPD joins the Stresemann government.
+- @tolerate_stress: The SPD tolerates Stresemann but won't participate.
+- @braunermuell: The SPD will demand the chancellorship.
+- @fuck_monarchism: Maybe the DNVP should have a try at ruining their electoral performance for once...
+  
+@join_stresemann
+on-arrival: spd_in_government = 1; dvp_in_government = 1; z_in_government = 1; ddp_in_government = 1; in_grand_coalition = 1; leverage = spd_votes
+choose-if: reformist_strength >= (left_strength) and early_dvp_cooperation >= 1 and dvp_relation >= 30
+
+The SPD agress to join the Stresemann government.
+
+- @selection_of_ministries_stresemann
+
+@selection_of_ministries_stresemann
+title: Select our ministries
+
+We can choose a few ministries. Controlling a ministry allows us to directly effect policy in that area.
+
+- @labor
+- @interior_main
+- @finance
+- @economic
+- @justice
+- @foreign
+- @agriculture
+- @reichswehr
+- @transport
+- @done_stress
+  
+@labor
+title: Labor Ministry
+subtitle: Taking the Labor Ministry is expected of us.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 5
+view-if: labor_minister_party != "SPD"
+on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
+go-to: selection_of_ministries_stresemann
+
+Rudolf Wissell of the <span style="color: #c00000;">**SPD**</span> has been appointed labor minister.
+
+@interior_main
+title: Interior Ministry
+subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 5
+view-if: interior_minister_party != "SPD"
+
+- @appoint_severing
+- @appoint_sollmann
+- @cancel_interior
+
+@appoint_severing
+title: Carl Severing
+subtitle: (reformist).
+choose-if: leverage >= 5
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: interior_minister = "Severing"; leverage -= 5; interior_minister_party = "SPD"
+go-to: selection_of_ministries_stresemann
+Carl Severing has been appointed Interior Minister.
+
+@appoint_sollmann
+title: Wilhelm Sollmann
+subtitle: (non-factional).
+choose-if: leverage >= 5
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 20; interior_minister = "Sollmann"; interior_minister_party = "SPD"
+go-to: selection_of_ministries_stresemann
+
+Wilhelm Sollmann has been appointed Interior Minister.
+
+@cancel_interior
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: interior_minister_party = "DDP"; interior_minister = "Oeser"
+go-to: selection_of_ministries_stresemann
+
+@finance
+title: Finance Ministry
+subtitle: The Finance Ministry controls the government budget and taxes.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 10 
+view-if: finance_minister_party != "SPD"
+on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
+go-to: selection_of_ministries_stresemann
+
+Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been appointed Finance Minister.
+
+@economic
+title: Economic Ministry
+subtitle: The Economic Ministry controls broader economic policy.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 10 
+view-if: economic_minister_party != "SPD"
+
+- @appoint_schmidt
+- @appoint_hilfdering
+- @appoint_tarnow
+- @appoint_sender
+- @cancel_economic
+
+@appoint_schmidt
+title: Robert Schmidt
+subtitle: (non-factional).
+choose-if: leverage >= 15
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: economic_minister = "Schmidt"; leverage -= 15; economic_minister_party = "SPD"
+go-to: selection_of_ministries_stresemann
+
+Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+
+@appoint_hilfdering
+title: Rudolf Hilferding
+subtitle: (centrist).
+choose-if: leverage >= 15
+view-if: hilferdin_in == "SPD"
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 15; economic_minister = "Hilferding"; economic_minister_party = "SPD"
+go-to: selection_of_ministries_stresemann
+
+Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+
+@appoint_tarnow
+title: Fritz Tarnow
+subtitle: (labor).
+choose-if: leverage >= 15
+unavailable-subtitle: We do not have enough leverage.
+view-if: Tarnow_in = "SPD"
+on-arrival: leverage -= 15; economic_minister = "Tarnow"; economic_minister_party = "SPD"
+go-to: selection_of_ministries_stresemann
+
+Fritz Tarnow of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+
+@appoint_sender
+title: Tony Sender
+subtitle: (left).
+choose-if: leverage >= 50
+view-if: Sender_in == "SPD"
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 50; economic_minister = "Sender"; economic_minister_party = "SPD"
+go-to: selection_of_ministries_stresemann
+
+Tony Sender of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+
+@cancel_economic
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: economic_minister_party = "DVP"; economic_minister_party = "LVP"; economic_minister = "Raumer"
+go-to: selection_of_ministries_stresemann
+
+@justice
+title: Justice Ministry
+subtitle: The Justice Ministry controls the courts.
+unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Justice Ministry. ?]
+choose-if: leverage >= 10 and not cvp_ministers_accepted
+view-if: justice_minister_party != "SPD"
+on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
+go-to: selection_of_ministries_stresemann
+
+Gustav Radbruch of the <span style="color: #c00000;">**SPD**</span> has been appointed Justice Minister.
+
+@foreign
+title: Foreign Ministry
+subtitle: [? if stresemann_dead = 0: This is usually the domain of Gustav Stresemann of the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]?][? if stresemann_dead = 1: This is usually the domain of the [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if not lvp_formed and not dvp_exist: former <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] ?].
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 25
+view-if: foreign_minister_party != "SPD"
+
+- @appoint_muller
+- @appoint_breitscheid
+- @cancel_foreign
+
+@appoint_muller
+title: Hermann Müller
+subtitle: (centrist).
+choose-if: leverage >= 25
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: foreign_minister = "Müller"; leverage -= 25; foreign_minister_party = "SPD"
+go-to: selection_of_ministries_stresemann
+
+Hermann Müller of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
+
+@appoint_breitscheid
+title: Rudolf Breitscheid
+subtitle: (centrist).
+choose-if: leverage >= 25
+view-if: uspd_joined >= 1
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 25; foreign_minister = "Breitscheid"; foreign_minister_party = "SPD"
+go-to: selection_of_ministries_stresemann
+
+Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
+
+@cancel_foreign
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: foreign_minister_party = "DVP"; foreign_minister = "Stresemann"front
+go-to: selection_of_ministries_stresemann
+
+
+@agriculture
+title: Agricultural Ministry
+subtitle: This is not our usual domain.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 10 and not cvp_ministers_accepted
+view-if: agriculture_minister_party != "SPD"
+
+- @appoint_baade
+- @appoint_schmidt_agr
+- @appoint_braun
+- @cancel_agriculture
+
+@appoint_baade
+title: Fritz Baade
+subtitle: (non-factional).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: agriculture_minister = "Baade"; leverage -= 10; agriculture_minister_party = "SPD"
+go-to: selection_of_ministries_stresemann
+
+Fritz Baade of the <span style="color: #c00000;">**SPD**</span> has been appointed Agricultural Minister.
+
+@appoint_schmidt_agr
+title: Robert Schmidt
+subtitle: (non-factional).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: agriculture_minister = "Schmidt"; leverage -= 10; agriculture_minister_party = "SPD"
+go-to: selection_of_ministries_stresemann
+
+Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Agricultural Minister.
+
+@appoint_braun
+title: Otto Braun
+subtitle: (reformist).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: agriculture_minister = "Braun"; leverage -= 10; agriculture_minister_party = "SPD"
+go-to: selection_of_ministries_stresemann
+
+Otto Braun of the <span style="color: #c00000;">**SPD**</span> has been appointed Agricultural Minister.
+
+@cancel_agriculture
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: agriculture_minister_party = "I"; agriculture_minister = "Luther";
+go-to: selection_of_ministries_stresemann
+
+@reichswehr
+title: Reichswehr Ministry
+subtitle: The Ministry responsible for the armed forces is not typically our domain; General Groener and the bourgeois-conservatives will be displeased[? if president = "Hindenburg" or president_ideology != "Left":&nbsp;along with President [+ president +]?].
+unavailable-subtitle: [? if leverage < 15: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Reichswehr Ministry. ?]
+choose-if: leverage >= 15 and not cvp_ministers_accepted
+view-if: reichswehr_minister_party != "SPD"
+on-arrival: leverage -= 15; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"; hindenburg_angry += 10
+go-to: selection_of_ministries_stresemann
+
+Julius Leber of the <span style="color: #c00000;">**SPD**</span> has been appointed Reichswehr Minister.
+
+@transport
+title: Transport Ministry
+subtitle: Who knows...?
+unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?]
+choose-if: leverage >= 10
+view-if: transport_minister_party != "SPD"
+on-arrival: leverage -= 10; transport_minister_party = "SPD"; transport_minister = "Schmidt"
+go-to: selection_of_ministries_stresemann
+
+Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Transport Minister.
+
+@postal
+title: Postal Ministry
+subtitle: Postal affaires.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 5 and not in_grand_coalition
+view-if: postal_minister_party != "SPD"
+on-arrival: leverage -= 5; postal_minister_party = "SPD"; postal_minister = "Schmidt"
+go-to: selection_of_ministries_stresemann
+
+Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Postal Minister.
+
+@done_stress
+title: End negotiations
+
+@tolerate_stress
+
+@braunermuell
+subtitle: We would surely be denied any ministries.
+choose-if: z_relation >= 60 and dvp_relation >= 40
+unavailable-subtitle: Our partners don't even consider this option.
+on-arrival: (chancellor = 'Braun'; chancellor_party = braun_in) if prussia_leader != "Braun"; (chancellor = 'Müller'; chancellor_party = muller_in) if prussia_leader == "Braun"; spd_in_government = 1; z_relation -= 5; dvp_relation -= 5
+
+The bourgeois parties agreed to let [+ chancellor +] ([+ chancellor_party +]) be chancellor.
+
+@fuck_monarchism
+choose-if: ddp_relation <= 50
+on-arrival: dnvp_in_government; workers_dnvp -= 5; workers_nsdap += 6; workers_kpd += 4; unemployed_nsdap += 2; rural_nsdap += 5; new_middle_ddp -= 3 pro_republic -= 3; nationalism += 2; interior_minister = 'Schiele'; interior_minister_party = 'DNVP'; agriculture_minister = 'Schiele'; agriculture_minister_party = 'DNVP'
+
+The DNVP just entered a national government...
+
+
+
