@@ -473,27 +473,29 @@ Current primary objective: elections
 
 <h4> <span style="color: #A00000;">Left</span>: [+ left_media +]%
 
-<span style="color: #00000f;">Anarchist papers</span>: [+ anarchist_media +]%
+<span style="color: #00000f;">Anarchist media</span>: [+ anarchist_media +]%
 
-<span style="color: #700000;">Communist papers</span>: [+ communist_media +]%
+<span style="color: #700000;">Communist media</span>: [+ communist_media +]%
 
-[? if editorial_line == "Left": <span style="color: #c00000;">Socialist papers</span>: [+ socdem_media +]% ?]
+[? if editorial_line == "Left": <span style="color: #c00000;">Socialist media</span>: [+ socdem_media +]% ?]
 
 <h4> <span style="color: #000000;">Rep</span><span style="color: #DD0000;">upli</span><span style="color: #FFCC00;">can</span>: [+ republican_media +]%
 
-<span style="color: #000000;">Catholic papers</span>: [+ catholic_media +]%
+<span style="color: #000000;">Catholic media</span>: [+ catholic_media +]%
 
-[? if editorial_line == "Center": <span style="color: #c00000;">Socialist papers</span>: [+ socdem_media +]% ?]
-[? if editorial_line == "Labor": <span style="color: #c00000;">Socialist papers</span>: [+ socdem_media +]% ?]
-[? if editorial_line == "Reformists": <span style="color: #c00000;">Socialist papers</span>: [+ socdem_media +]% ?]
+[? if editorial_line == "Center": <span style="color: #c00000;">Socialist media</span>: [+ socdem_media +]% ?]
+[? if editorial_line == "Labor": <span style="color: #c00000;">Socialist media</span>: [+ socdem_media +]% ?]
+[? if editorial_line == "Reformists": <span style="color: #c00000;">Socialist media</span>: [+ socdem_media +]% ?]
 
 <span style="color: #D3C24D;">Liberal papers</span>: [+ liberal_media +]%
 
-<h4> <span style="color: #000000;">Far</span> <span style="color: #D3D3D3;">Rri</span><span style="color: #A00000;">ght</span>: [+ far_right_media +]%
+<h4> [? if year >= 1930: <span style="color: #000000;">Far</span> <span style="color: #D3D3D3;">Ri</span><span style="color: #A00000;">ght</span>?][? if year < 1929: <span style="color: #000000;">Ri</span><span style="color: #D3D3D3;">g</span><span style="color: #A00000;">ht</span>?]: [+ far_right_media +]%
 
-<span style="color: #3E88B3;">Monarchist papers</span>: [+ monarchist_media +]%
+<span style="color: #3E88B3;">Conservative media</span>: [+ conservative_media +]%
 
-<span style="color: #7A3C00;">Völkisch papers</span>: [+ volkisch_media +]%
+<span style="color: #3E88B3;">Monarchist media</span>: [+ monarchist_media +]%
+
+<span style="color: #7A3C00;">Völkisch media</span>: [+ volkisch_media +]%
 
 
 @left
