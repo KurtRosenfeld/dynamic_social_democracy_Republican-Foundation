@@ -210,7 +210,7 @@ Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span> has been 
 title: Cancel & Go Back
 subtitle: Return without appointing
 choose-if: true
-on-arrival: foreign_minister_party = "DVP"; foreign_minister = "Stresemann"front
+on-arrival: foreign_minister_party = "DVP"; foreign_minister = "Stresemann"
 go-to: selection_of_ministries_stresemann
 
 
