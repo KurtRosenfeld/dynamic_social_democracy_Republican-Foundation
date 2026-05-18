@@ -55,7 +55,7 @@ The murder of Rathenau shows how we need to stick together.
 
 @uspd_concession
 view-if: uspd_joined >= 1
-on-arrival: unemployed_spd += 2; left_dissent -= 4; center_dissent -= 3; labor_dissent -= 2; reformist_dissent += 3; left_strength += 2; center_strength += 2; unemployed_kpd -= 1
+on-arrival: unemployed_spd += 1; left_dissent -= 4; center_dissent -= 3; labor_dissent -= 2; reformist_dissent += 3; left_strength += 2; center_strength += 2; uspd_concession += 1
 
 We make some concession to the former USPD members in our party to prevent workers from enterring the KPD.
 
