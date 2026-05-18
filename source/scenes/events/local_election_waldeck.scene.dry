@@ -57,13 +57,13 @@ Q.other_waldeck_elections_vote = 0;
 if (Q.year == 1922) Q.dnvp_waldeck_elections_vote = 0;
 
 if (Q.rural_spd_normalized) waldeck_adjustment_factors.spd += 0.1;
-if (Q.workers_spd_normalized >= 70) waldeck_adjustment_factors.spd += 0.02;
-if (Q.year == 1922) waldeck_adjustment_factors.other += 8.2;
+if (Q.rural_spd_normalized >= 40) waldeck_adjustment_factors.spd += 0.2;
+if (Q.year == 1922) waldeck_adjustment_factors.other += 8.8;
 if (Q.year == 1925) waldeck_adjustment_factors.spd += 0.25;
 Q.spd_waldeck_elections_vote = Q.spd_votes*waldeck_adjustment_factors.spd;
 Q.uspd_waldeck_elections_vote = Q.uspd_votes*waldeck_adjustment_factors.uspd;
 Q.kpd_waldeck_elections_vote = Q.kpd_votes*waldeck_adjustment_factors.kpd;
-if (Q.year == 1922) waldeck_adjustment_factors.ddp += 0.9;
+if (Q.year == 1922) waldeck_adjustment_factors.ddp += 0.94;
 Q.ddp_waldeck_elections_vote = Q.ddp_votes*waldeck_adjustment_factors.ddp;
 Q.lvp_waldeck_elections_vote = Q.lvp_votes*waldeck_adjustment_factors.lvp;
 if (Q.year == 1922) waldeck_adjustment_factors.dvp -= 0.07;
