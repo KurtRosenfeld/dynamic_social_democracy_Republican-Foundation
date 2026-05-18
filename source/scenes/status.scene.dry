@@ -554,15 +554,15 @@ Orientation: [+ kpd_ideology +] ([+ kpd_leader +])
 
 <span class="tooltip-text" title="Communist Worker's Party of Germany (Line of Berlin)" style="color: #3A0000;">**KAPD (B)**</span>: [+ kapd_relation : relationships +]
 
-influence: marginal
+influence: weak
 
-Orientation: Revloutionary Council Communism
+Orientation: Left Council Communism
 
 <span class="tooltip-text" title="Communist Worker's Party of Germany (Line of Essen)" style="color: #3A0000;">**KAPD (E)**</span>: [+ kapd_relation : relationships +]
 
 influence: marginal
 
-Orientation: Immediate Revloutionary Council Communism
+Orientation: Revloutionary Council Communism
 
 
 
