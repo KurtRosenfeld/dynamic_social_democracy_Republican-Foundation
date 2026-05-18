@@ -178,9 +178,11 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if dnf_formed : <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: [+ dnf_relation : relationships +] ?]
 
-[? if dvfp_formed = 1: <span class="tooltip-text" title="German Völkisch Freedom Party" style="color: #3D3D3D;">**DVFP**</span>: [+ dvfp_relation : relationships +] ?]
+[? if dvfp_formed = 1 and not nsfb_exists: <span class="tooltip-text" title="German Völkisch Freedom Party" style="color: #3D3D3D;">**DVFP**</span>: [+ dvfp_relation : relationships +] ?] 
 
-<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>[? if nsdap_split: (and its splinters)?]: [+ nsdap_relation : relationships +]
+[? if not nsfb_exists: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>[? if nsdap_split: (and its splinters)?]: [+ nsdap_relation : relationships +] ?]
+
+[? if nsfb_exists: <span class="tooltip-text" title="National-Socialist Freedom Movement" style="color: #7A3C00;">**NSFB**</span>: [+ nsfb_relation : relationships +] ?]
 
 = Party Leadership
 
@@ -216,11 +218,13 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if dnf_formed : <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: Authoritarian Conservatism (Hugenberg) ?]
 
-[? if dvfp_formed = 1: <span class="tooltip-text" title="German Völkisch Freedom Party" style="color: #3D3D3D;">**DVFP**</span>: Völkisch Nationalism ([+ dvfp_leader +])?]
+[? if dvfp_formed = 1 and not nsfb_esists: <span class="tooltip-text" title="German Völkisch Freedom Party" style="color: #3D3D3D;">**DVFP**</span>: Völkisch Nationalism ([+ dvfp_leader +])?]
 
 [? if dsu_exist: <span class="tooltip-text" title="German Social Union" style="color: #6A1E1E;">**DSU**</span>: [? if not dsu_alt: Strasserism?][? if dsu_alt: Center Nazism?] ([+ dsu_leader +])?]
 
-[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: National Socialism ([+ nsdap_leader +])?]
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0 and not nsfb_exists: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: National Socialism ([+ nsdap_leader +])?]
+
+[? if nsfb_exists: <span class="tooltip-text" title="National-Socialist Freedom Movement" style="color: #7A3C00;">**NSFB**</span>: Big Tent ([+ nsfb_leader +])?]
 
 [? if nvf_exist: <span class="tooltip-text" title="National People's Front" style="color: #142e20;">**NVF**</span>: Revolutionary Volkism (Röhm)?]
 
@@ -364,13 +368,13 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
 [? if dnf_formed: <span style="color: #003755;">**DNF**</span>: [+ dnf_votes +]% ?]
 
-[? if dvfp_formed = 1 and nsfb_exists = 0: <span style="color: #3D3D3D;">**DVFP**</span>: [+ dvfp_votes +]% ?]
+[? if dvfp_formed = 1 and nsfb_exists == 0: <span style="color: #3D3D3D;">**DVFP**</span>: [+ dvfp_votes +]% ?]
 
 [? if nsfb_exists = 1: <span style="color: #7A3C00;">**NSFB**</span>: [+ nsfb_votes +]% ?]
 
 [? if dsu_exist: <span style="color: #6A1E1E;">**DSU**</span>: [+ dsu_votes +]% ?]
 
-[? if not nsdap_split and nsfb_exists = 0: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_votes +]% ?]
+[? if not nsdap_split and nsfb_exists == 0: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_votes +]% ?]
 
 [? if nsdap_split: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_hitler_votes +]% ?]
 
