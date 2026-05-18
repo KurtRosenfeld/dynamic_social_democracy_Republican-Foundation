@@ -47,7 +47,7 @@ on-departure: ideology = "reformist"; reformist_strength += 8; democratization +
 The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties. Changing our ideology was unpopular with the other factions.
 
 @socpat
-view-if: social_patriot and ´not ideology == "socpat"
+view-if: social_patriot and not ideology == "socpat"
 on-departure: ideology = "socpat"; social_patriot_strength += 10; left_dissent += 15; center_dissent += 15; reformist_dissent += 10; labor_dissent += 7; z_relation += 6; dvp_relation += 6; ddp_relation += 6; lvp_relation += 6; kpd_relation -= 15; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1
 
 The social patriot wing of the party, widely regarded as Schleicher's puppets, is the most supportive of the <span style='color: #c00000;'>**SPD**</span> and ADGB adopting a more nationalist stance. Changing our ideology was heavily unpopular with the other factions.
