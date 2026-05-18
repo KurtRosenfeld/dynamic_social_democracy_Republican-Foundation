@@ -408,7 +408,7 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 <span style="color: #002654;">**Western**</span> <span style="color: #D7141A;">**Allies**</span>: [+ west_relation : relationships +]
 
-<span style="color: #28CFDD;">**USA**</span>: [+ us_relation : relationships +]
+<span style="color: #002654;">**U**</span><span style="color: #D3D3D3;">**S**</span><span style="color: #D7141A;">**A**</span>: [+ us_relation : relationships +]
 
 <span style="color: #650C23;">**UK**</span>: [+ uk_relation : relationships +]
 
