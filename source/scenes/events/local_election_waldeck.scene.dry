@@ -288,7 +288,7 @@ if (Q.wv_r_waldeck) {
         "id": "hb",
         "legend": "WV",
         "name": "WV",
-        "seats": Math.round(Q.dvp_r_waldeck * 0.17),
+        "seats": Math.round(Q.wv_r_waldeck * 0.17),
     });
 }
 
@@ -315,7 +315,7 @@ if (Q.rl_r_waldeck) {
         "id": "rl",
         "legend": "RL",
         "name": "RL",
-        "seats": Math.round(Q.other_r_waldeck * 0.17),
+        "seats": Math.round(Q.rl_r_waldeck * 0.17),
     });
 }
 
@@ -406,7 +406,7 @@ choose-if: social_liberal_coalition_waldeck >= 50 and ddp_relation >= 20
 on-arrival: ddp_relation += 3; waldeck_gov = "Social-Liberal"; rural_spd += 1; rural_other -= 2; rural_dnvp -= 1; pro_republic += 1
 
 @right_coalition_waldeck
-title: The right forms a government led by the <span style="color: #006400;">**Agricultural League**</span>[? if year == 1922:  within a Reich List?].
+title: The right forms a <span style="color: #567098;">**Reich List**</span> government led by the <span style="color: #006400;">**Agricultural League**</span>.
 subtitle: This came as expected...
 choose-if: right_coalition_waldeck >= 50
 on-arrival: waldeck_gov = "Right"; rural_spd -= 1; rural_other += 2; rural_dnvp -= 1
