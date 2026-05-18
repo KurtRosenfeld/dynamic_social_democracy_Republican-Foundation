@@ -710,6 +710,15 @@ if (Q.kag_r) {
     });
 }
 
+if (Q.indep_left_r) {
+    data.push({
+        "id": "indep_left",
+        "legend": "Indepleft",
+        "name": "Indepleft",
+        "seats": Math.round(Q.indep_left_r * Q.reichstag_size),
+    });
+}
+
 if (Q.uspd_r) {
     data.push({
         "id": "uspd",
