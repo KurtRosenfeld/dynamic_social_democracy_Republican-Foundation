@@ -504,29 +504,47 @@ Current primary objective: elections
 
 <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_relation : relationships +]
 
+support: [+ kpd_votes +]%
+
 [? if not uspd_joined = 3: <span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [+ uspd_relation : relationships +] ?]
+
+[? if not uspd_joined = 3: support: [+ uspd_votes +]% ?]
 
 [? if sapd_formed: <span class="tooltip-text" title="Socialist Worker's Party of Germany" style="color: #9B0000;">**SAPD**</span> ?]
 
-[? if aspd_r_saxony: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: #fe9e00;">**ASPD**</span>: cool ?]
+[? if sapd_formed: support: [+ sapd_votes +]% ?]
+
+[? if aspd_r: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: #fe9e00;">**ASPD**</span>: cool ?]
+
+[? if aspd_r: support: [+ aspd_votes +]% ?]
 
 = Splinters
 
-<span class="tooltip-text" title="Communist Party Opposition" style="color: #C43988;">**KPO**</span>: [+ kpo_relation : relationships +]
+[? if aspd_r_saxony and aspd_r == 0: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: #fe9e00;">**ASPD**</span>: cool ?]
+
+[? if aspd_r_saxony and aspd_r == 0: indluence: [+ aspd_saxony_votes +]% in Saxony ?]
+
+[? if kpo_exists: <span class="tooltip-text" title="Communist Party Opposition" style="color: #C43988;">**KPO**</span>: [+ kpo_relation : relationships +] ?]
+
+[? if kpo_exists: influence: [? if kpo_r_hesse == 0: marginal ?][? if kpo_r_hesse > 0: weak ?] ?]
+
+[? if leninbund_exists: <span class="tooltip-text" title="Leninbund (Left Communists)" style="color: #D00B0B;">**Leninbund**</span>: [+ leninbund_relation : relationships +] ?]
+
+[? if leninbund_exists: influence: marginal ?]
+
+<span class="tooltip-text" title="Communist Worker's Party of Germany (Line of Berlin)" style="color: #3A0000;">**KAPD (B)**</span>: [+ kapd_relation : relationships +]
 
 influence: marginal
 
-<span class="tooltip-text" title="Leninbund (Left Communists)" style="color: #D00B0B;">**Leninbund**</span>: [+ leninbund_relation : relationships +]
-
-influence: marginal
-
-<span class="tooltip-text" title="Communist Worker's Party of Germany" style="color: #3A0000;">**KAPD**</span>: [+ kapd_relation : relationships +]
+<span class="tooltip-text" title="Communist Worker's Party of Germany (Line of Essen)" style="color: #3A0000;">**KAPD (E)**</span>: [+ kapd_relation : relationships +]
 
 influence: marginal
 
 [? if sb_formed: <span class="tooltip-text" title="Socialist League" style="color: #B4143D;">**SB**</span>: [+ sb_relation : relationships +] ?]
 
 [? if sb_formed: influence: marginal ?]
+
+Test: <span class="tooltip-rectangle"</span>
 
 
 
