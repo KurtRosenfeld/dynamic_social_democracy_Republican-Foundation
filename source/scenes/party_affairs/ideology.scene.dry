@@ -23,66 +23,37 @@ The <span style="color: #c00000;">**SPD**</span> is torn between many different 
 - @easy_discard
 
 @class_struggle
-view-if: uspd_joined >= 1 or seydewitz_advisor == 1
-on-arrival: {!
-if (Q.ideology && Q.ideology != "left") {
-    Q.changed = 1;
-}
-!}
-go-to: changed if changed = 1
-on-departure: ideology = "left"; left_strength += 8; communist_coalition += 1; left_dissent -= 5; reformist_dissent += 5; z_relation -= 3; dvp_relation -= 5; ddp_relation -= 3; lvp_relation -= 3; ddp_cohesion -= 0.5; nationalization_support += 1; kpd_relation += 3; ddp_right += 1; dvp_right += 1.5; lvp_right += 1
+view-if: (uspd_joined >= 1 or seydewitz_advisor == 1) and not ideology == "left"
+on-departure: ideology = "left"; left_strength += 8; communist_coalition += 1; left_dissent -= 5; reformist_dissent += 10; center_dissent += 5; labor_dissent += 5; z_relation -= 3; dvp_relation -= 5; ddp_relation -= 3; lvp_relation -= 3; ddp_cohesion -= 0.5; nationalization_support += 1; kpd_relation += 3; ddp_right += 1; dvp_right += 1.5; lvp_right += 1
 
-The radical left of the party supports a course of class struggle, and potentially a reconciliation with the <span style="color: #700000;">**Communists**</span>.
+The radical left of the party supports a course of class struggle, and potentially a reconciliation with the <span style="color: #700000;">**Communists**</span>. Changing our ideology was unpopular with the other factions.
 
 @centrist
-on-arrival: {!
-if (Q.ideology && Q.ideology != "centrist") {
-    Q.changed = 1;
-}
-!}
-go-to: changed if changed = 1
+view-if: not ideology == "centrist"
 on-departure: ideology = "centrist"; center_strength += 8; center_dissent -= 10; left_dissent -= 5; reformist_dissent -= 5
 
-The Center Marxists, represented by Kautsky and Hilferding, support a middle course of preparing for revolution while building up the consciousness of the working class.
+The Center Marxists, represented by Kautsky and Hilferding, support a middle course of preparing for revolution while building up the consciousness of the working class. Changing our ideology was unpopular with the other factions.
 
 @labor
-on-arrival: {!
-if (Q.ideology && Q.ideology != "labor") {
-    Q.changed = 1;
-}
-!}
-go-to: changed if changed = 1
-on-departure: ideology = "labor"; labor_strength += 8; center_dissent += 5; wtb_support += 1; labor_dissent -= 5; kpd_relation -= 3
+view-if: not ideology == "labor"
+on-departure: ideology = "labor"; labor_strength += 8; center_dissent += 8; left_dissent += 5; reformist_dissent += 5; wtb_support += 1; labor_dissent -= 5; kpd_relation -= 3
 
-The labor wing of the party supports continued participation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
+The labor wing of the party supports continued participation in government in order to provide benefits to the workers, and the creation of public works programs for employment. Changing our ideology was unpopular with the other factions.
 
 @reform
-on-arrival: {!
-if (Q.ideology && Q.ideology != "reformist") {
-    Q.changed = 1;
-}
-!}
-go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 8; democratization += 1; reformist_dissent -= 5; left_dissent += 5; z_relation += 5; dvp_relation += 5; ddp_relation += 5; lvp_relation += 5; kpd_relation -= 8; moderate_plan_support += 1; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1
+view-if: not ideology == "reformist"
+on-departure: ideology = "reformist"; reformist_strength += 8; democratization += 1; reformist_dissent -= 5; left_dissent += 10; labor_dissent += 5; reformist_dissent += 5; z_relation += 5; dvp_relation += 5; ddp_relation += 5; lvp_relation += 5; kpd_relation -= 8; moderate_plan_support += 1; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1
 
-The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties.
+The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties. Changing our ideology was unpopular with the other factions.
 
 @socpat
-view-if: social_patriot
-on-arrival: {!
-if (Q.ideology && Q.ideology != "socpat") {
-    Q.changed = 1;
-}
-!}
-go-to: changed if changed = 1
-on-departure: ideology = "socpat"; social_patriot_strength += 10; left_dissent += 10; center_dissent += 10; reformist_dissent += 5; z_relation += 6; dvp_relation += 6; ddp_relation += 6; lvp_relation += 6; kpd_relation -= 15; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1
+view-if: social_patriot and ´not ideology == "socpat"
+on-departure: ideology = "socpat"; social_patriot_strength += 10; left_dissent += 15; center_dissent += 15; reformist_dissent += 10; labor_dissent += 7; z_relation += 6; dvp_relation += 6; ddp_relation += 6; lvp_relation += 6; kpd_relation -= 15; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1
 
-The social patriot wing of the party, widely regarded as Schleicher's puppets, is the most supportive of the <span style='color: #c00000;'>**SPD**</span> and ADGB adopting a more nationalist stance.
+The social patriot wing of the party, widely regarded as Schleicher's puppets, is the most supportive of the <span style='color: #c00000;'>**SPD**</span> and ADGB adopting a more nationalist stance. Changing our ideology was heavily unpopular with the other factions.
 
 @no_change
-subtitle: (The old system didn't work properly. Let's hope this will be at least temporarily better)
+subtitle: We're doing fine.
+on-arrival: center_dissent -= 1; labor_dissent -= 1; reformist_dissent -= 1; left_dissent -= 1
 
-@changed
-on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; reformist_dissent += 5
-
-We have changed ideologies. Many in the party feel unmoored.
+There is no reason to change our current course.
