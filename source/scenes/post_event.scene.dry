@@ -242,6 +242,12 @@ if (Q.unemployed <= 1) {
     Q.unemployed = 1;
 }
 
+// USPD relation update
+
+if (Q.kpd_relation > 60) Q.uspd_relation += 1;
+if (Q.kpd_relation > 60) Q.sapd_relation += 1;
+
+
 //hyperinflation removed because of weird time loops
 
 
