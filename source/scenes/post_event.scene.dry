@@ -242,10 +242,11 @@ if (Q.unemployed <= 1) {
     Q.unemployed = 1;
 }
 
+
 // USPD relation update
 
-if (Q.kpd_relation > 60) Q.uspd_relation += 1;
-if (Q.kpd_relation > 60) Q.sapd_relation += 1;
+if (Q.kpd_relation > 60) Q.uspd_relation += 2;
+if (Q.kpd_relation > 60) Q.sapd_relation += 3;
 
 
 //hyperinflation removed because of weird time loops
@@ -257,6 +258,21 @@ Q.west_relation = (Q.us_relation + Q.uk_relation + Q.france_relation + Q.belgium
 Q.east_relation = (Q.poland_relation + Q.czech_relation + Q.austria_relation + Q.hungary_relation)/4;
 
 Q.north_relation = (Q.sweden_relation + Q.denmark_relation + Q.norway_relation + Q.finland_relation + Q.iceland_relation)/5;
+
+
+// Foreign Relation update
+
+if (Q.foreign_minister == "Stresemann") {
+Q.france_relation += 3/7;
+Q.poland_relation -= 0.5;
+}
+if (Q.foreign_minister == "Breitscheid") {
+Q.france_relation += 2/7;
+Q.poland_relation += 2/7;
+Q.belgium_relation += 3/7;
+}
+if (Q.chancellor == "Cuno") Q.us_relation += 3/7;
+
 
 
 // media stuuuuuff
