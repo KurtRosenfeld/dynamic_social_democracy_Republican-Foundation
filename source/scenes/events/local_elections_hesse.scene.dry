@@ -612,6 +612,7 @@ subtitle: This should not have happened
 choose-if: right_coalition_hesse > 50
 view-if: right_coalition_hesse > 50
 on-arrival: hesse_election_2_trigger_time = time + 48; rural_nsdap += 2; dvp_relation -= 2; hesse_gov = "Far-Right"; pro_republic -= 5
+
 This can't end well...
 
 @right_bourgeois_coalition_hesse
@@ -620,9 +621,11 @@ choose-if: bourgeois_coalition_hesse > 50
 view-if: weaimar_coalition_hesse < 50 and right_coalition_hesse < 50
 on-arrival: hesse_election_2_trigger_time = time + 48; hesse_gov = "Right"; pro_republic -= 2
 
+Where is this going...?
+
 @no_coalition_hesse
 title: There is no possible government arrangement
 subtitle: New elections will be called...
-on-arrival: hesse_election_2_trigger_time = time + 3; new_middle_dnvp += 1
+on-arrival: hesse_election_2_trigger_time = time + 3; new_middle_dnvp += 1; catholic_others += 2; workers_kpd += 2 if kpd_votes >= 10
 view-if: weimar_coalition_hesse < 50 and right_coalition_hesse < 50
 
