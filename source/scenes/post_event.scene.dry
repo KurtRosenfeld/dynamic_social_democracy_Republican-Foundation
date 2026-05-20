@@ -2658,6 +2658,9 @@ if (!Q.wtb_adopted && Q.black_thursday_seen) {
     if (Q.woytinsky_advisor) {
         Q.wtb_points_gain += Q.labor_strength/50;
     }
+if (Q.tarnow_advisor) {
+        Q.wtb_points_gain += Q.labor_strength/80;
+    }
     Q.wtb_points_gain += Q.leipart_advisor + Q.baade_advisor;
     if (Q.inflation < -2) Q.wtb_points_gain += ((Q.inflation/8)*-1);
     if (Q.economic_growth < -2) Q.wtb_points_gain += ((Q.economic_growth/15)*-1);
