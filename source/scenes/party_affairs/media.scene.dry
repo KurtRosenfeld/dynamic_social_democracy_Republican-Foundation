@@ -25,7 +25,7 @@ The <span style="color: #c00000;">**SPD**</span> runs a veritable media empire, 
 @commercial
 title: Make our newspapers more commercialized by broadening their appeal beyond party supporters.
 subtitle: This might upset ideological purists, but it may bring in more funds and perhaps expose the middle class to <span style="color: #c00000;">socialist</span> views.
-on-arrival: resources += 1; commercialized_media += 1; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1-dissent); left_dissent += 10; labor_dissent += 10; pro_republic += 1*(1-dissent); nationalism -= 1*(1 - dissent);
+on-arrival: resources += 1; commercialized_media += 1; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1-dissent); left_dissent += 10; labor_dissent += 10; pro_republic += 1*(1-dissent); nationalism -= 1*(1 - dissent); factional_bias += 2; factional_bias += 3 if editorial_line == "Reformist"
 
 Our commercialized newspapers are able to bring in more funds. However, the left and labor factions express their displeasure.
 
