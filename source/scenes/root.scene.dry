@@ -148,13 +148,13 @@ Q.stegerwald_path = 0;
 Q.nsdap_leader = "Hitler";
 Q.nsdap_chancellor = "Hitler";
 Q.dvfp_leader = "Graefe";
-Q.spd_party_leader_1 = "Wels"
-Q.spd_party_leader_2 = "Müller"
-Q.spd_party_leader_3 = "vacant"
-Q.spd_party_leader_n = 2
+Q.spd_party_leader_1 = "Wels";
+Q.spd_party_leader_2 = "Müller";
+Q.spd_party_leader_3 = "vacant";
+Q.spd_party_leader_n = 2;
 Q.ideology = "reformist";
 Q.editorial_line = "center";
-Q.factional_representation = 2;
+Q.factional_bias = 20;
 Q.enemies = "diverse";
 
 // hmm... maybe we can play nice with Hindenburg???
