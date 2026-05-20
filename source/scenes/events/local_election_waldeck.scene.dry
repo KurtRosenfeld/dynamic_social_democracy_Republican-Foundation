@@ -72,6 +72,7 @@ Q.lvp_waldeck_elections_vote = Q.lvp_votes*waldeck_adjustment_factors.lvp;
 if (Q.year == 1922) waldeck_adjustment_factors.dvp += 0.1;
 Q.dvp_waldeck_elections_vote = Q.dvp_votes*waldeck_adjustment_factors.dvp;
 if (Q.dnvp_ideology == "Moderate") waldeck_adjustment_factors.dnvp -= 0.1;
+if (Q.year == 1922) waldeck_adjustment_factors.dnvp = 0;
 Q.dnvp_waldeck_elections_vote = Q.dnvp_votes*waldeck_adjustment_factors.dnvp;
 Q.other_waldeck_elections_vote = Q.other_votes*waldeck_adjustment_factors.other;
 
