@@ -136,6 +136,7 @@ Q.dnvp_relation = 5;
 Q.dvfp_relation = 0;
 Q.nsdap_relation = 0;
 Q.lvp_relation = 0;
+Q.nsfb_relation = 0;
 
 Q.kpd_leader = "Brandler";
 Q.kpd_ideology = "Sparticism";
@@ -147,6 +148,8 @@ Q.cvp_ideology = "Moderate";
 Q.stegerwald_path = 0;
 Q.nsdap_leader = "Hitler";
 Q.nsdap_chancellor = "Hitler";
+Q.nsfb_leader =  "Ludendorff";
+Q.nsfb_ideology = "National Soicalism";
 Q.dvfp_leader = "Graefe";
 Q.spd_party_leader_1 = "Wels";
 Q.spd_party_leader_2 = "Müller";
@@ -267,8 +270,8 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'dvfp', 'nsdap', 'other'];
-Q.parties_graph = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'dvfp', 'nsdap', 'other'];
+Q.parties = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'dvfp', 'nsdap', 'other', 'nsfb'];
+Q.parties_graph = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'dvfp', 'nsdap', 'other', 'nsfb'];
 
 Q.sapd_formed = 0;
 Q.dnf_formed = 0;
@@ -289,6 +292,7 @@ Q.workers_dnvp = 6;
 Q.workers_nsdap = 3;
 Q.workers_dvfp = 0;
 Q.workers_other = 2;
+Q.workers_nsfb = 0;
 
 Q.new_middle_spd = 7;
 Q.new_middle_uspd = 1;
@@ -300,6 +304,7 @@ Q.new_middle_dnvp = 8;
 Q.new_middle_nsdap = 1;
 Q.new_middle_dvfp = 0;
 Q.new_middle_other = 6;
+Q.new_middle_nsfb = 0;
 
 Q.old_middle_spd = 3;
 Q.old_middle_uspd = 0;
@@ -311,6 +316,7 @@ Q.old_middle_dnvp = 15;
 Q.old_middle_nsdap = 1;
 Q.old_middle_dvfp = 0;
 Q.old_middle_other = 7;
+Q.old_middle_nsfb = 0;
 
 Q.rural_spd = 7;
 Q.rural_uspd = 0;
@@ -322,6 +328,7 @@ Q.rural_dnvp = 60;
 Q.rural_nsdap = 1;
 Q.rural_dvfp = 0;
 Q.rural_other = 5;
+Q.rural_nsfb = 0;
 
 Q.unemployed_spd = 21;
 Q.unemployed_uspd = 29;
@@ -333,6 +340,7 @@ Q.unemployed_dnvp = 8;
 Q.unemployed_nsdap = 4;
 Q.unemployed_dvfp = 0;
 Q.unemployed_other = 1;
+Q.unemployed_nsfb = 0;
 
 Q.catholics_spd = 15;
 Q.catholics_uspd = 4;
@@ -344,6 +352,7 @@ Q.catholics_dnvp = 4;
 Q.catholics_nsdap = 3;
 Q.catholics_dvfp = 0;
 Q.catholics_other = 7;
+Q.catholics_nsfb = 0;
 
 Q.workers_spd_old = 44;
 Q.new_middle_spd_old = 7;
@@ -365,6 +374,7 @@ Q.dvp_r = 14.2;
 Q.dnvp_r = 15.2;
 Q.dvfp_r = 0;
 Q.nsdap_r = 0;
+Q.nsfb_r = 0;
 Q.other_r = 2.6;
 Q.bvp_r = 4.3;
 Q.wp_r = 0;
@@ -428,6 +438,7 @@ Q.dvp_r_prussia = 14.2;
 Q.dnvp_r_prussia = 18.1;
 Q.dvfp_r_prussia = 0;
 Q.nsdap_r_prussia = 0;
+Q.nsfb_r_prussia = 0;
 Q.other_r_prussia = 4.0;
 
 // diff from prev PRUSSIA
