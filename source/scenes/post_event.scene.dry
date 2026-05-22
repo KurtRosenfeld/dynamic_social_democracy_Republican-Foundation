@@ -282,6 +282,7 @@ Q.hungary_relation -= 0.4;
 Q.poland_relation -= 0.4;
 }
 
+// add France relation decrease during Ruhr occupationn ?
 
 
 // media stuuuuuff
