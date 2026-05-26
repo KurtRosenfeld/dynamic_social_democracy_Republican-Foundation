@@ -34,8 +34,7 @@ on-arrival: uspd_relation += 3; left_dissent -= 9; center_dissent -= 1; labor_di
 We show respect to our <span style="color: #D47B9B;">**comrades**</span>. Due to <span style="color: #8B0000;">**left-wing**</span> turn of the party since our reunification with their "<span style="color: #D47B9B;">**right**</span>" the <span style="color: #E3000F;">**reformist**</span> faction dissaproves.
 
 @bruderhand
-subtitle: We offer financial aid to the <span style="color: #D47B9B;">**USPD**</span> as they occupy an important position in the landscape of German parties.
-(-1 resource)
+subtitle: We offer financial aid to the <span style="color: #D47B9B;">**USPD**</span> as they occupy an important position in the landscape of German parties. (-1 resource)
 view-if: uspd_joined <= 3 and vspd_parliament == 1
 choose-if: resources >= 2 and uspd_relation >= 50
 unavailable-subtitle: [? if resources <= 2: Not enough resources.?][? if uspd_relation < 50: Our party doesn't see any use in that.?]
