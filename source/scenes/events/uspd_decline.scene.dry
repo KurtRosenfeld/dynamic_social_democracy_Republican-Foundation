@@ -1,16 +1,16 @@
-title: The USPD is in decline
-subtitle: The USPD can't see a future for itself
+title: The <span style="color: #D47B9B;">**USPD**</span> in <span style="color: #FF2C2C;">**decline**</span>.
+subtitle: The <span style="color: #D47B9B;">**USPD**</span> can't see a future for itself.
 new-page: true
 on-arrival: workers_uspd -= 3; unemployed_uspd -= 2; unemployed_kpd += 2; workers_spd += 1; uspd_decline_timer = 5
 tags: event
 view-if: uspd_joined < 3 and uspd_decline_timer = 0
 max-visits: 3
 priority: 1
-face-image: img/USPD.jpg
+face-image:/img/USPD.jpg
 
-= The USPD is in decline
+= The <span style="color: #D47B9B;">**USPD**</span> in <span style="color: #FF2C2C;">**decline**</span>..
 
-After losing their left wing to KPD the party is unable to find it's position between the radical KPD and the moderate SPD. Their finacial situation is grim and internal dissent is growing as members of Parliament fear they won't be reelected...
+After losing their <span style="color: #8B0000;">**left-wing**</span> to the <span style="color: #8B0000;">**KPD**</span> the party is unable to find it's position between the radical <span style="color: #8B0000;">**KPD**</span> and the moderate <span style="color: #E3000F;">**SPD**</span>. Their financial situation is <span style="color: #FF2C2C;">**decline**</span> and internal dissent is growing as members of the Reichstag fear they won't be reelected...
 
 
 - @uspd_relation_1: Use this occasion to improve our relations.
@@ -18,23 +18,24 @@ After losing their left wing to KPD the party is unable to find it's position be
 - @celebrate_uspd: Celebrate their decline hoping to gain some of their vote share.
 - @bruderhand: Extend our brotherly hand to them.
 - @form_par_union: Offer to merge our parliamentary factions.
-- @uspd_concession: Make concessions to the former USPD members in our party
+- @uspd_concession: Make concessions to the former <span style="color: #D47B9B;">**USPD**</span> members in our party.
 - @ignore: Ignore...
 
 @uspd_relation_1
 view-if: uspd_joined == 0
 on-arrival: uspd_relation += 3; left_dissent -= 3; center_dissent -= 3; labor_dissent -= 2; left_strength += 1
 
-We show respect to our comrades.
+We show respect to our <span style="color: #D47B9B;">**comrades**</span>.
 
 @uspd_relation_2
 view-if: uspd_joined >= 1 and not uspd_joined == 3
 on-arrival: uspd_relation += 3; left_dissent -= 9; center_dissent -= 1; labor_dissent -= 1; left_strength += 3; reformist_dissent += 3
 
-We show respect to our comrades. Due to left-turn of the party since our reunification with their "right" the reformist faction dissaproves.
+We show respect to our <span style="color: #D47B9B;">**comrades**</span>. Due to <span style="color: #8B0000;">**left-wing**</span> turn of the party since our reunification with their "<span style="color: #D47B9B;">**right**</span>" the <span style="color: #E3000F;">**reformist**</span> faction dissaproves.
 
 @bruderhand
-subtitle: We offer finacial aid to the USPD as they occupy an important position in the landscape of German parties. (-1 resource)
+subtitle: We offer financial aid to the <span style="color: #D47B9B;">**USPD**</span> as they occupy an important position in the landscape of German parties.
+(-1 resource)
 view-if: uspd_joined <= 3 and vspd_parliament == 1
 choose-if: resources >= 2 and uspd_relation >= 50
 unavailable-subtitle: [? if resources <= 2: Not enough resources.?][? if uspd_relation < 50: Our party doesn't see any use in that.?]
@@ -44,7 +45,7 @@ on-arrival: resources -= 2; uspd_relation += 10; workers_uspd += 4; unemployed_u
 @celebrate_uspd
 on-arrival: workers_uspd -= 3; workers_spd += 2*(1-dissent); uspd_relation -= 16; kpd_relation -= 1; reformist_strength += 3; left_dissent += 2; uspd_decline_timer -= 1; unemployed_kpd += 2; unemployed_uspd -= 3; workers_kpd += 1; workers_nsdap += 1
 
-The USPD is not pleased about our behaviour.
+The <span style="color: #D47B9B;">**USPD**</span> is not pleased about our behaviour.
 
 @form_par_union
 subtitle: The murder of Rathenau made our vulnerability apparent.
@@ -54,10 +55,11 @@ on-arrival: vspd_parliament = 1; uspd_relation += 4; uspd_decline_timer += 2; wo
 The murder of Rathenau shows how we need to stick together. 
 
 @uspd_concession
+subtitle: 
 view-if: uspd_joined >= 1
 on-arrival: unemployed_spd += 1; left_dissent -= 4; center_dissent -= 3; labor_dissent -= 2; reformist_dissent += 3; left_strength += 2; center_strength += 2; uspd_concession += 1
 
-We make some concession to the former USPD members in our party to prevent workers from enterring the KPD.
+We make some concession to the former <span style="color: #D47B9B;">**USPD**</span> members in our party in order to prevent them from possibly going to the <span style="color: #8B0000;">**KPD**</span>.
 
 @ignore
 on-arrival: reformist_dissent -= 1
