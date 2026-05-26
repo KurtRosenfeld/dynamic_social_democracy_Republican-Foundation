@@ -3,6 +3,7 @@ view-if: vspd_parliament == 1 and uspd_relation >= 65
 max-visits: 1
 tags: event
 new-page: true
+face-image: img/MHG-Objekte-Prio-II_01-Alfred-Dunkel-Wahlplakat-der-USPD-1919-Lithografie-Foto-SHMH-MHG_2023 (1).jpg
 
 = The <span style="color: #D47B9B;">**USPD**</span> would like to return to our party
 
