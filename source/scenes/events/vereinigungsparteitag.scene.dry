@@ -70,6 +70,7 @@ A new party programme is surely logical.
 
 @good_uspd
 subtitle: The <span style="color: #D47B9B;">**USPD**</span> will be pleased by this.
+unavailable-subtitle: No.
 choose-if: left_strength >= 10
 on-arrival: idk = 5
 go-to: lowest_uspd
