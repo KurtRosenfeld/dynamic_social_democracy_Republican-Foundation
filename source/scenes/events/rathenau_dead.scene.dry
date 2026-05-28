@@ -1,53 +1,59 @@
-title: Rathenau Dead
-subtitle: Foreign Minister Walther (DDP) Rathanau has been shot by nationalists...
+title: <span style="color: #D3C24D;">Walther Rathenau<span> shot dead!
+subtitle: Foreign Minister <span style="color: #D3C24D;">Walther Rathenau<span> (<span style="color: #D3C24D;">DDP<span>) has been shot by terrorists...
 new-page: true
-on-arrival: rathenau_dead = 1; foreign_minister = "Wirth"; foreign_minister_party = "Z"; inflation += 40
+on-arrival: rathenau_dead = 1; foreign_minister = "Wirth"; foreign_minister_party = "Z"; inflation += 1.6
 tags: event
 view-if: year = 1922 and month = 6
 max-visits: 1 
 priority: 1
 face-image: img/Vorwärts_Rathenau.jpg
 
-= Rathenau dead
+= <span style="color: #D3C24D;">Walther Rathenau<span> shot dead!
 
-The Foreign Minister who the right considers an "Erfüllungspolitiker" has been shot. This is another installment in a series of political assasinations following Karl Gareis and Matthias Erzberger in 1921.
+While being chauffeured from his house in Berlin-Grundewald to the foreign office, a group of terrorist's operating under what they call <span style="color: #808080;">Organisation Consul</span> conducted a drive by, with one opening fire at close range at <span style="color: #D3C24D;">Rathenau<span> , killing him instantly. Another threw a hand granade into the car, destroying it completely, with the chaueffeur also dying. Protests have broken out across the nation because of this, in respect of <span style="color: #D3C24D;">Rathenau<span>. A nationwide ban on <span style="color: #808080;">Organisation Consul</span> has been enforced by the government, and, Chancellor <span style="color: #000000;">Joseph Wirth</span>, during the memorial ceremony, stated: "There is the enemy – and there is no doubt about it: The enemy is on the <span style="color: #3E88B3;">**right**</span>!". Though a valiant speech, this does nothing to help his already weak relations with the supposedly "democratic" <span style="color: #C0A054;">right</span>.
 
 
-- @defend_repub_1: Defend Republicanism
-- @defend_repub_2: Defend Republicanism and the government
-- @improve_left: Improve our relations with the left
-- @decrease_presence: Decrease public pressence
+- @defend_repub_1: Defend <span style="color: #000000;">**Repu**</span><span style="color: #C00000;">**blic**</span><span style="color: #D3C24D;">**anism**</span>.
+- @defend_repub_2: Defend <span style="color: #000000;">**Repu**</span><span style="color: #C00000;">**blic**</span><span style="color: #D3C24D;">**anism**</span> and the government.
+- @improve_left: Improve our relations with the left.
+- @mourn: There is nothing we can do except mourn his death.
 
 @defend_repub_1
 on-arrival: ddp_relation += 3; z_relation += 3; pro_republic += 1
+subtitle: We are, after all, the party of the <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span>.
 
 @defend_repub_2
 on-arrival: ddp_relation += 9; z_relation += 9; kpd_relation -= 4; dvp_relation -= 1; uspd_relation += 1; pro_republic += 1
+subtitle: The left of our party isnt happy we would side with the bourgeois if we do this.
 
-We show that we stand firmly behind the republic and the Wirth course.
+We show that we stand firmly behind the <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span> and the coalition.
 
 @improve_left
 
-- @contact_uspd: Contact the USPD
-- @contact_kpd: Contact the KPD
+- @contact_uspd: Contact the <span style="color: #D47B9B;">**USPD**</span>.
+- @contact_kpd: Contact the <span style="color: #700000;">**KPD**</span>.
 - @contact_both: Contact both
 
 @contact_uspd
 on-arrival: uspd_relation += 7; left_dissent -= 2; left_strength += 2
+subtitle: We are on the way to reunification, so why not?
 
-The USPD is laregly open towards cooperation with us.
+The <span style="color: #D47B9B;">**USPD**</span> is largely open towards cooperation with us, given their falling vote share.
 
 @contact_kpd
 on-arrival: kpd_relation += 2; left_dissent -= 2; left_strength += 4; reformist_dissent += 3; ddp_relation -= 4
+subtitle: The bourgeois and our reformist wing wont be happy about this..
 
-The KPD is reluctant to cooperate with us.
+The <span style="color: #700000;">**KPD**</span> is reluctant to cooperate with us, and our reformist faction is outraged.
 
 @contact_both
-on-arrival: uspd_relation += 5; kpd_relation += 1; left_dissent -= 2; left_strength += 3; reformist_dissent += 3
+on-arrival: uspd_relation += 5; kpd_relation += 1; left_dissent -= 2; left_strength += 3; reformist_dissent += 6
+subtitle: The reformist faction will be outraged by this, maybe permanently.
 
-The USPD is laregly open towards cooperation with us, the KPD is more reluctant.
+The <span style="color: #D47B9B;">**USPD**</span> is largely open towards cooperation with us, the span style="color: #700000;">**KPD**</span> is more reluctant. Our reformist faction is outraged, maybe permanently.
 
-@decrease_presence
-on-arrival: new_middle_spd -= 2; workers_dnvp += 1; new_middle_dnvp += 1; rb_strength -= 50; pro_republic -= 2
+@mourn
+on-arrival: ddp_relation += 3; z_relation += 3; pro_republic += 1
+subtitle: Some think this would be a more prudent option, we cant capitalize on the death of a man so soon, right?
 
-We don't want to be the next victims...
+People are still mourning him, and it is a fresh thought.
