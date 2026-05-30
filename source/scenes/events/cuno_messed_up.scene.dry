@@ -2,24 +2,24 @@ title: The Inflation Chancellor
 subtitle: Popular discontent with Chancellor [+ chancellor +] rises.
 new-page: true
 view-if: ruhr_occupied == 1 and chancellor == "Cuno" and cuno_bitching_timer == 0
-on-arrival: workers_spd *= 0.95 if spd_in_government == 1; workers_nsdap += 2 if spd_in_government; workers_kpd += 3 if spd_in_government; unemployed_nsdap += 3 if spd_in_government; unemployment += 0.3; inflation += 36
+on-arrival: workers_spd *= 0.95 if spd_in_government == 1; workers_nsdap += 2 if spd_in_government; workers_kpd += 3 if spd_in_government; unemployed_nsdap += 3 if spd_in_government; unemployment += 0.3; inflation += 22
 tags: event
 max-visits: 4
-face-image: img/portraits/CunoWilhelm.jpg
+face-image: img/246w0updni1g1.jpg
 
 = The Inflation Chancellor
 
-Inflation and unemployment keep growing.
+Inflation and unemployment keep growing, as the <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span> enters its worst crisis as of yet, as inflation has begun to rapidly rise. Now, 4.2 trillion marks is the least you need to buy atleast 1 <span style="color: #002654;">United States</span> dollar, and the price of simple bread has risen to 200 billion marks. Children are playing with worthless paper money; and we have been increasingly under pressure to [ if spd_toleration == 1 == break toleration ] [ if spd_toleration == 0 == vote agaisnt the government ] from the workers, and our own party.
 
 [? if spd_toleration == 1 : As we are currently tolerating the [+ chancellor +] government, this could very well reflect badly on us. ?]
 
 - @maintain_toleration: Maintain the current governing arrangement.
 - @break_toleration: Break toleration; vote against this government.
 - @support_cuno: We will vote alongside the government.
-- @slap_cuno: Literally noone wants Cuno
+- @slap_cuno: No one wants <span style="color: #808080;">**Cuno**</span>; we will vote agaisnt him!
 
 @maintain_toleration
-subtitle: There is no other option but to tolerate Cuno.
+subtitle: There is no other option but to tolerate <span style="color: #808080;">**Cuno**</span>.
 view-if: spd_toleration == 1
 on-arrival: workers_dvfb += 1; workers_kpd += 1; unemployed_nsdap += 1; unemployed_spd -= 2; pro_republic -= 2; kpd_relation -= 2; unemployed_kpd += 2; cuno_bitching_timer = 3
 
@@ -35,7 +35,7 @@ We have definitively broken with the [+ chancellor +] government, and have voted
 
 
 @support_cuno
-subtitle: There is no other option but to tolerate Cuno.
+subtitle: There is no other option but to tolerate <span style="color: #808080;">**Cuno**</span>.
 view-if: spd_toleration == 0
 on-arrival: workers_dvfb += 1; workers_kpd += 2; unemployed_nsdap += 2; workers_spd -= 3; pro_republic -= 2; kpd_relation -= 4; unemployed_kpd += 2; cuno_bitching_timer = 3
 
