@@ -193,8 +193,11 @@ on-arrival: {!
     Q.adjustmentFactors_votes_kpd = 1.0;
     Q.adjustmentFactors_votes_z = 1.0;
     Q.adjustmentFactors_votes_ddp = 1.0;
+    Q.adjustmentFactors_votes_bb = 1.0;
     Q.adjustmentFactors_votes_dvp = 1.0;
+    Q.adjustmentFactors_votes_wp = 1.0;
     Q.adjustmentFactors_votes_lvp = 1.0;
+    Q.adjustmentFactors_votes_rlb = 1.0;
     Q.adjustmentFactors_votes_dnvp = 1.0;
     Q.adjustmentFactors_votes_nsdap = 1.0;
     Q.adjustmentFactors_votes_dnf = 1.0;
@@ -207,8 +210,11 @@ on-arrival: {!
     Q.adjustmentFactors_kpd = 1.0;
     Q.adjustmentFactors_z = 1.0;
     Q.adjustmentFactors_ddp = 1.0;
+    Q.adjustmentFactors_bb = 1.0;
     Q.adjustmentFactors_dvp = 1.0;
+    Q.adjustmentFactors_wp = 1.0;
     Q.adjustmentFactors_lvp = 1.0;
+    Q.adjustmentFactors_rlb = 1.0;
     Q.adjustmentFactors_dnvp = 1.0;
     Q.adjustmentFactors_nsdap = 1.0;
     Q.adjustmentFactors_dnf = 1.0;
@@ -291,8 +297,11 @@ on-arrival: {!
         Q.adjustmentFactors_votes_kpd = 0.0;
         Q.adjustmentFactors_votes_z = 1.0*(1-Q.z_boycott_efficacy);
         Q.adjustmentFactors_votes_ddp = 1.0*(1-Q.lib_boycott_efficacy);
+        Q.adjustmentFactors_votes_bb = 1.0*(1.2-Q.lib_boycott_efficacy);
         Q.adjustmentFactors_votes_dvp = 1.0*(1.2-Q.lib_boycott_efficacy);
+        Q.adjustmentFactors_votes_wp = 1.0*(1.2-Q.lib_boycott_efficacy);
         Q.adjustmentFactors_votes_lvp = 1.0*(1-Q.lib_boycott_efficacy);
+        Q.adjustmentFactors_votes_rlb = 1.0;
         Q.adjustmentFactors_votes_dnvp = 1.0;
         if (Q.dnvp_ideology == "Radical") Q.adjustmentFactors_votes_dnvp = 0.6;
         Q.adjustmentFactors_votes_nsdap = 1.0;
@@ -563,7 +572,6 @@ Q.dbp_r = 0;
 Q.dhp_r = 0;
 
 if (Q.cnblp_votes) Q.cnblp_r = Math.round(Q.cnblp_votes * Q.adjustmentFactors_other * 1000) / 1000;
-if (Q.wp_votes) Q.wp_r = Math.round(Q.wp_votes * Q.adjustmentFactors_other * 1000) / 1000;
 if (Q.csvd_votes) Q.csvd_r = Math.round(Q.csvd_votes * Q.adjustmentFactors_other * 1000) / 1000;
 if (Q.aspd_votes) Q.aspd_r = Math.round(Q.aspd_votes * Q.adjustmentFactors_other * 1000) / 1000;
 if (Q.dbp_votes) Q.dbp_r = Math.round(Q.dbp_votes * Q.adjustmentFactors_other * 1000) / 1000;
@@ -1012,6 +1020,9 @@ if ((Q.time - Q.marxist_malus_time >= 10 || !Q.marxist_malus_time) && (Q.left_st
         Q.ddp_relation -= 12;
         Q.lvp_relation -= 12;
         Q.dvp_relation -= 12;
+        Q.wp_relation -= 12;
+        Q.bb_relation -= 12;
+        Q.rlb_relation -= 12;
         Q.lvp_right += 6;
         Q.dvp_right += 6;
         Q.ddp_right += 5;
@@ -1021,6 +1032,9 @@ if ((Q.time - Q.marxist_malus_time >= 10 || !Q.marxist_malus_time) && (Q.left_st
         Q.ddp_relation -= 9;
         Q.lvp_relation -= 9;
         Q.dvp_relation -= 9;
+        Q.wp_relation -= 9;
+        Q.bb_relation -= 9;
+        Q.rlb_relation -= 9;
         Q.lvp_right += 4;
         Q.dvp_right += 4;
         Q.ddp_right += 3;
@@ -1030,6 +1044,9 @@ if ((Q.time - Q.marxist_malus_time >= 10 || !Q.marxist_malus_time) && (Q.left_st
         Q.ddp_relation -= 6;
         Q.lvp_relation -= 6;
         Q.dvp_relation -= 6;
+        Q.wp_relation -= 6;
+        Q.bb_relation -= 6;
+        Q.rlb_relation -= 6;
         Q.lvp_right += 3;
         Q.dvp_right += 3;
         Q.ddp_right += 2;
@@ -1039,6 +1056,9 @@ if ((Q.time - Q.marxist_malus_time >= 10 || !Q.marxist_malus_time) && (Q.left_st
         Q.ddp_relation -= 4;
         Q.lvp_relation -= 4;
         Q.dvp_relation -= 4;
+        Q.wp_relation -= 4;
+        Q.bb_relation -= 4;
+        Q.rlb_relation -= 4;
         Q.lvp_right += 2;
         Q.dvp_right += 2;
         Q.ddp_right += 1;
@@ -1465,6 +1485,15 @@ if (Q.ddp_r && !Q.lvp_formed) {
     });
 }
 
+if (Q.bb_r) {
+ data.push({
+        "id": "farm3",
+        "legend": "BB",
+        "name": "BB",
+        "seats": Math.round(Q.dbp_r * Q.reichstag_size),
+    });
+}
+
 if (Q.lvp_r && Q.lvp_formed) {
     data.push({
         "id": "lvp",
@@ -1634,6 +1663,15 @@ if (Q.dnvp_dvp_formed) {
     });
 }
 
+if (Q.rlb_r) {
+ data.push({
+        "id": "farm4",
+        "legend": "RLB",
+        "name": "RLB",
+        "seats": Math.round(Q.dbp_r * Q.reichstag_size),
+    });
+}
+
 if (Q.dnvp_r && !Q.dnvp_wholesome) {
     data.push({
         "id": "dnvp",
@@ -1723,8 +1761,8 @@ if (window && d3) {
 
     var lines = d3.linegraph(false, false,
             Q.parties_graph,
-            {'spd': '#E3000F', 'uspd': '#AA0000', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF', 'dvfp': '#3D3D3D', 'nsfb': '#7A3C00'},
-            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP', 'dvfp': 'DVFP', 'nsdap': 'NSFB'});
+            {'spd': '#E3000F', 'uspd': '#D47B9B', 'kpd': '#700000', 'ddp': '#D3C24D', 'bb': '#38C538', 'z': '#000', 'dvp': '#D5AC27', 'wp': '#B8996F', 'rlb': '#79D0A9', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF', 'dvfp': '#3D3D3D', 'nsfb': '#7A3C00'},
+            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'bb': 'BB', 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'wp': 'WP', 'rlb': 'RLB', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP', 'dvfp': 'DVFP', 'nsdap': 'NSFB'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     d3.select("#election_history").datum(Q.election_records).call(lines);
@@ -1734,8 +1772,8 @@ if (window && d3) {
     if (!Q.historical_mode) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties_graph,
-            {'spd': '#E3000F', 'uspd': '#AA0000', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF', 'dvfp': '#3D3D3D', 'nsfb': '#7A3C00'},
-            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP', 'dvfp': 'DVFP', 'nsdap': 'NSFB'});
+            {'spd': '#E3000F', 'uspd': '#D47B9B', 'kpd': '#700000', 'ddp': '#D3C24D', 'bb': '#38C538', 'z': '#000', 'dvp': '#D5AC27', 'wp': '#B8996F', 'rlb': '#79D0A9', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF', 'dvfp': '#3D3D3D', 'nsfb': '#7A3C00'},
+            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'bb': 'BB', 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'wp': 'WP', 'rlb': 'RLB', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP', 'dvfp': 'DVFP', 'nsdap': 'NSFB'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
@@ -1781,9 +1819,13 @@ go-to: achievement_check_e
 
 [? if dnef_formed: <tr><td colspan="5" style="text-align: center;"><hr id="read-marker"></td></tr> ?]
 
-{!<tr><td><div class="box2" style='background-color:#AA861F'> </div> !} WP (test): {!</td><td>!} [+ wp_votes +]% {!</td><td>!} [+ wp_r +]% {!</td><tr>!}
+{!<tr><td><div class="box2" style='background-color:#B8996F'> </div> !} WP: {!</td><td>!} [+ wp_votes +]% {!</td><td>!} [+ str_votes_change_wp +] {!</td><td>!} [+ wp_r +]% {!</td><td>!} [+ str_change_wp +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box2" style='background-color:#AA861F'> </div> !} DHP (test): {!</td><td>!} [+ dhp_votes +]% {!</td><td>!} [+ dhp_r +]% {!</td><tr>!}
+{!<tr><td><div class="box2" style='background-color:#63C489'> </div> !} DHP: {!</td><td>!} [+ dhp_votes +]% {!</td><td>!} [+ str_votes_change_dhp +] {!</td><td>!} [+ dhp_r +]% {!</td><td>!} [+ str_change_dhp +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box2" style='background-color:#38C538'> </div> !} BB: {!</td><td>!} [+ bb_votes +]% {!</td><td>!} [+ str_votes_change_bb +] {!</td><td>!} [+ bb_r +]% {!</td><td>!} [+ str_change_bb +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box2" style='background-color:#79D0A9'> </div> !} RLB: {!</td><td>!} [+ rlb_votes +]% {!</td><td>!} [+ rlb_votes_change_bb +] {!</td><td>!} [+ rlb_r +]% {!</td><td>!} [+ rlb_change_bb +] {!</td></tr>!} ?]
 
 [? if dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F;'> </div> !} SPD: {!</td><td>!} [+ spd_votes +]% {!</td><td>!} [+ str_votes_change_spd +] {!</td><td>!} [+ spd_r +]% {!</td><td>!} [+ str_change_spd +] {!</td></tr>!} ?]
 
@@ -1913,6 +1955,14 @@ go-to: achievement_check_e
             {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em;">!}[+ unemployed_ddp_display +]%[? if n_elections != 1 and demo_change_unemployed_ddp_display != 0 : ([+ demo_change_unemployed_ddp_display +])?]{!</td>!}
             {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em;">!}[+ catholics_ddp_display +]%[? if n_elections != 1 and demo_change_catholics_ddp_display != 0 : ([+ demo_change_catholics_ddp_display +])?]{!</td>!}
         {!</tr>!} ?]
+            {!<td>!}<span style="color: #38C538;">**BB**</span>{!</td>!}
+            {!<td style="background-color: rgba(56, 197, 56, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_bb_display +]%[? if n_elections != 1 and demo_change_workers_bb_display != 0 : ([+ demo_change_workers_bb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(56, 197, 56, 0.2); font-size: 0.85em;">!}[+ new_middle_bb_display +]%[? if n_elections != 1 and demo_change_new_middle_bb_display != 0 : ([+ demo_change_new_middle_bb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(56, 197, 56, 0.2); font-size: 0.85em;">!}[+ old_middle_bb_display +]%[? if n_elections != 1 and demo_change_old_middle_bb_display != 0 : ([+ demo_change_old_middle_bb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(56, 197, 56, 0.2); font-size: 0.85em;">!}[+ rural_bb_display +]%[? if n_elections != 1 and demo_change_rural_bb_display != 0 : ([+ demo_change_rural_bb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(56, 197, 56, 0.2); font-size: 0.85em;">!}[+ unemployed_bb_display +]%[? if n_elections != 1 and demo_change_unemployed_bb_display != 0 : ([+ demo_change_unemployed_bb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(56, 197, 56, 0.2); font-size: 0.85em;">!}[+ catholics_bb_display +]%[? if n_elections != 1 and demo_change_catholics_bb_display != 0 : ([+ demo_change_catholics_bb_display +])?]{!</td>!}
+        {!</tr>!} ?]
         [? if lvp_formed: {!<tr>!}
             {!<td>!}<span style="color: #FFCC00;">**LVP**</span>{!</td>!}
             {!<td style="background-color: rgba(255, 204, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_lvp_display +]%[? if n_elections != 1 and demo_change_workers_lvp_display != 0 : ([+ demo_change_workers_lvp_display +])?]{!</td>!}
@@ -1930,6 +1980,14 @@ go-to: achievement_check_e
             {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ rural_dvp_display +]%[? if n_elections != 1 and demo_change_rural_dvp_display != 0 : ([+ demo_change_rural_dvp_display +])?]{!</td>!}
             {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ unemployed_dvp_display +]%[? if n_elections != 1 and demo_change_unemployed_dvp_display != 0 : ([+ demo_change_unemployed_dvp_display +])?]{!</td>!}
             {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ catholics_dvp_display +]%[? if n_elections != 1 and demo_change_catholics_dvp_display != 0 : ([+ demo_change_catholics_dvp_display +])?]{!</td>!}
+        {!</tr>!} ?]
+            {!<td>!}<span style="color: #B8996F;">**WP**</span>{!</td>!}
+            {!<td style="background-color: rgba(84, 153, 111, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_wp_display +]%[? if n_elections != 1 and demo_change_workers_wp_display != 0 : ([+ demo_change_workers_wp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(84, 153, 111, 0.2); font-size: 0.85oem;">!}[+ new_middle_wp_display +]%[? if n_elections != 1 and demo_change_new_middle_wp_display != 0 : ([+ demo_change_new_middle_wp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(84, 153, 111, 0.2); font-size: 0.85em;">!}[+ old_middle_wp_display +]%[? if n_elections != 1 and demo_change_old_middle_wp_display != 0 : ([+ demo_change_old_middle_wp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(84, 153, 111, 0.2; font-size: 0.85em;">!}[+ rural_wp_display +]%[? if n_elections != 1 and demo_change_rural_wp_display != 0 : ([+ demo_change_rural_wp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(84, 153, 111, 0.2); font-size: 0.85em;">!}[+ unemployed_wp_display +]%[? if n_elections != 1 and demo_change_unemployed_wp_display != 0 : ([+ demo_change_unemployed_wp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(84, 153, 111, 0.2; font-size: 0.85em;">!}[+ catholics_wp_display +]%[? if n_elections != 1 and demo_change_catholics_wp_display != 0 : ([+ demo_change_catholics_wp_display +])?]{!</td>!}
         {!</tr>!} ?]
         [? if kvp_formed and not dnvp_dvp_formed: {!<tr>!}
             {!<td><span style="color: #0087DC;">!}**KVP**{!</span></td>!}
@@ -1957,6 +2015,14 @@ go-to: achievement_check_e
             {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ rural_dnvp_display +]%[? if n_elections != 1 and demo_change_rural_dnvp_display != 0 : ([+ demo_change_rural_dnvp_display +])?]{!</td>!}
             {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ unemployed_dnvp_display +]%[? if n_elections != 1 and demo_change_unemployed_dnvp_display != 0 : ([+ demo_change_unemployed_dnvp_display +])?]{!</td>!}
             {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ catholics_dnvp_display +]%[? if n_elections != 1 and demo_change_catholics_dnvp_display != 0 : ([+ demo_change_catholics_dnvp_display +])?]{!</td>!}
+        {!</tr>!} ?]
+            {!<td>!}<span style="color: #79D0A9;">**RLB**</span>{!</td>!}
+            {!<td style="background-color: rgba(121, 208, 169, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_rlb_display +]%[? if n_elections != 1 and demo_change_workers_rlb_display != 0 : ([+ demo_change_workers_rlb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(121, 208, 169, 0.2); font-size: 0.85oem;">!}[+ new_middle_rlb_display +]%[? if n_elections != 1 and demo_change_new_middle_rlb_display != 0 : ([+ demo_change_new_middle_rlb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(121, 208, 169, 0.2); font-size: 0.85em;">!}[+ old_middle_rlb_display +]%[? if n_elections != 1 and demo_change_old_middle_rlb_display != 0 : ([+ demo_change_old_middle_rlb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(121, 208, 169, 0.2); font-size: 0.85em;">!}[+ rural_rlb_display +]%[? if n_elections != 1 and demo_change_rural_rlb_display != 0 : ([+ demo_change_rural_rlb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(121, 208, 169, 0.2); font-size: 0.85em;">!}[+ unemployed_rlb_display +]%[? if n_elections != 1 and demo_change_unemployed_rlb_display != 0 : ([+ demo_change_unemployed_rlb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(121, 208, 169, 0.2); font-size: 0.85em;">!}[+ catholics_rlb_display +]%[? if n_elections != 1 and demo_change_catholics_rlb_display != 0 : ([+ demo_change_catholics_rlb_display +])?]{!</td>!}
         {!</tr>!} ?]
         [? if dvfp_formed = 1 and nsfb_exists = 0: {!<tr>!}
             {!<td><span style="color: #3D3D3D;">!}**DVFP**{!</span></td>!}
@@ -2170,7 +2236,7 @@ subtitle: This is the most sensible option.
 on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; in_weimar_coalition = 1; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; spd_in_government = 1
 go-to: ministries if vspd_parliament; begging_toleration if vspd_parliament == 0
 
-Wirth is the only chancellor acceptable. We need to secure some majority
+Lets try to secure a majority...
 
 [? if vspd_parliament: Our parliamentary_union with the USPD gives us the necessary majority ?]
 
@@ -2183,38 +2249,39 @@ Wirth is the only chancellor acceptable. We need to secure some majority
 - @bvp_toleration
 
 @bb_ministry
-title: Give the Ministry of Agriculture to the BB.
-choose-if: (weimar_coalition + dbp_r) > 50
+title: Give the Ministry of Agriculture to the <span style="color: #38C538;">**BB**</span>.
+choose-if: (weimar_coalition + bb_r) > 50
 unavailable-subtitle: They don't have enough seats to back us.
 on-arrival: agriculture_minister_party = "BB"; agriculture_minister = "Fehr"
 go-to: ministries
 
 @dhp_toleration
-title: Get the DHP to tolerate us.
-subtitle: -1 ressource
+title: Get the <span style="color: #63C489;">**DHP**</span> to tolerate us.
+subtitle: -1 resource
 unavailable-subtitle: They don't have enough seats to back us.
 choose-if: (weimar_coalition + dhp_r) > 50
-on-arrival: ressources -= 1
+on-arrival: resources -= 1
 go-to: ministries
 
 @uspd_toleration
-title: Get the USPD to tolerate us.
+title: Get the <span style="color: #D47B9B;">**USPD**</span> to tolerate us.
 choose-if: (weimar_coalition + uspd_r) > 50 and uspd_relation >= 55
 unavailable-subtitle: We do not have adequate relations.
 go-to: ministries
 
 @dvp_toleration
-title: Get the DVP to tolerate us.
-subtitle: -2 ressources
+title: Get the <span style="color: #C0A054;">**DVP**</span> to tolerate us.
+subtitle: -2 resources
 choose-if: (weimar_coalition + uspd_r) > 50 and dvp_relation >= 40
 unavailable-subtitle: We do not have adequate relations.
-on-arrival: ressources -= 2
+on-arrival: resources -= 2
 go-to: ministries
 
 @bvp_toleration
-title: Get the BVP to tolerate us.
-choose-if: bvp_r >= 99
+title: Get the <span style="color: #69A2BE;">**BVP**</span> to tolerate us.
+choose-if: bvp_r >= 56
 unavailable-subtitle: This won't happen.
+subtitle: Somehow, the <span style="color: #69A2BE;">**BVP**</span> has moderated and are able to tolerate our coalition!
 
 @wholesome_coalition
 title: A "wholesome" coalition is formed.
