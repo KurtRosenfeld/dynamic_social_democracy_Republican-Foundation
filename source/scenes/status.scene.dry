@@ -166,11 +166,11 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [+ lvp_relation : relationships +]?]
 
-[? if not lvp_formed and dvp_exist: <span class="tooltip-text" title="German People's Party" style="color: #D5AC27;">**DVP**</span>: [+ dvp_relation : relationships +] ?]
+[? if not lvp_formed and dvp_exist: <span class="tooltip-text" title="German People's Party" style="color: [+ dvp_colour +];">**DVP**</span>: [+ dvp_relation : relationships +] ?]
 
 <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_relation : relationships +]
 
-[? if not uspd_joined = 3: <span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: #D47B9B;">**USPD**</span>: [+ uspd_relation : relationships +] ?]
+[? if not uspd_joined = 3: <span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_relation : relationships +] ?]
 
 [? if kvp_formed and not dnvp_dvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_relation : relationships +] ?]
 
