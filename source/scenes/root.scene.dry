@@ -1103,6 +1103,24 @@ Q.conservative_media = 20
 Q.monarchist_media = 22;
 Q.volkisch_media = 2;
 
+// (dynamic) party_colours - mostly major and dynmaic parties
+
+Q.spd_colour = '#c00000';
+Q.kpd_colour = '#700000';
+Q.sb_colour = '#B4143D';
+Q.sapd_colour = '#9B0000';
+Q.uspd_colour = '#D47B9B';
+Q.aspd_colour = '#fe9e00';
+Q.ddp_colour = '#D3C24D';
+Q.z_colour = '#000000';
+Q.bvp_colour = '#A2D8E0';
+Q.dvp_colour = '#D5AC27';
+Q.dnvp_colour = '#3E88B3';
+Q.dnf_colour = '#003755';
+Q.dvfb_colour = '#3D3D3D';
+Q.nsdap_colour = '#7A3C00';
+Q.i_colour = '#808080';
+
 
 // foreign relations
 Q.us_relation = 50;
@@ -1173,6 +1191,11 @@ Q.tarnow_in = 'SPD';
 Q.leipart_in = 'SPD';
 Q.aufhauser_in = 'USPD';
 Q.wissel_in = 'SPD';
+
+
+Q.stresemann_in = 'DVP';
+
+Q.hugenberg_in = 'DNVP';
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
