@@ -721,6 +721,10 @@ th {
   fill: [+ ddp_colour +];
 }
 
+.seat.dhp {
+  fill: #ADE06E;
+}
+  
 .seat.z {
   fill: #000;
 }
@@ -754,11 +758,11 @@ th {
 }
 
 .seat.nsdap {
-  fill: #7A3C00;
+  fill: [+ nsdap_colour +];
 }
 
 .seat.nsfb {
-  fill: #7A3C00;
+  fill: [+ nsdap_colour +];
 }
 
 .seat.dsu {
@@ -770,7 +774,7 @@ th {
 }
 
 .seat.sapd {
-  fill: #9B0000;
+  fill: [+ sapd_colour +];
 }
 
 .seat.dnf {
@@ -782,7 +786,7 @@ th {
 }
 
 .seat.lvp {
-  fill: #FFCC00;
+  fill: [+ lvp_colour +];
 }
 
 .seat.dnef {
@@ -843,7 +847,7 @@ th {
 }
 
 .seat.aspd {
-  fill: #fe9e00;
+  fill: [+ aspd_colour +];
 }
 
 .seat.csvd {
