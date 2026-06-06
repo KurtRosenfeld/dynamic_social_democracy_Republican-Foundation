@@ -1,15 +1,20 @@
-title: The treaty of Rappallo
-subtitle: Diplomacy
-view-if: year == 1922 and month == 4
-max-visits: 1
+title: Treaty of Rapallo signed!
+subtitle: <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span> and the <span style="color: #750e0e;">**Soviet Union**</span> sign a treaty
 tags: event
-on-arrival: soviet_relation += 5
+view-if: year = 1922 and month = 4
+priority: 2
+max-visits: 1
 new-page: true
 face-image: img/TreatyRappallo.jpg
 
-= The Treaty of Rappallo
+= Treaty of Rapallo
 
-The German Reich and the Russian Socialist Federal Soviet Republic have agreed not to demand reparations of each other. Diplomatic and trade relations are also to be had again.
+An international treaty has been signed between <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span> and the <span style="color: #750e0e;">**Soviet Union**</span>, marking a diplomatic breakthrough. The Treaty of Rapallo establishes diplomatic and economic relations, mutually renouncing financial claims from the Great War and paving the way for trade and cooperation. This, however, expectedly, upsets the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span>.
 
-The French government is outraged at our diplomatic priorities. Some voices like Raymond Poincaré consider even military action if Germany continues to disrespecct the Treaty of Versailles.
+- @signed
 
+@signed
+title: Foreign Minister [+ foreign_minister +] has signed the treaty.
+on-arrival: soviet_relation += 2; west_relation -= 1; economic_growth += 0.5
+
+Despite our misgivings about the treaty, it still represents a step forward from our post-war isolation.
