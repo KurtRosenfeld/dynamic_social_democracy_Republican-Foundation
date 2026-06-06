@@ -1,5 +1,5 @@
 title: Treaty of Rapallo signed!
-subtitle: <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span> and the <span style="color: #750e0e;">**Soviet Union**</span> sign a treaty
+subtitle: <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span> and the <span style="color: #750e0e;">**Soviet Russia**</span> sign a treaty
 tags: event
 view-if: year = 1922 and month = 4
 priority: 2
@@ -9,12 +9,12 @@ face-image: img/TreatyRappallo.jpg
 
 = Treaty of Rapallo
 
-An international treaty has been signed between <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span> and the <span style="color: #750e0e;">**Soviet Union**</span>, marking a diplomatic breakthrough. The Treaty of Rapallo establishes diplomatic and economic relations, mutually renouncing financial claims from the Great War and paving the way for trade and cooperation. This, however, expectedly, upsets the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span>.
+An international treaty has been signed between <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span> and the <span style="color: #750e0e;">**Soviet Russia**</span>, marking a diplomatic breakthrough. The Treaty of Rapallo establishes diplomatic and economic relations, mutually renouncing financial claims from the Great War and paving the way for trade and cooperation. This, however, expectedly, upsets the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span>.
 
 - @signed
 
 @signed
 title: Foreign Minister [+ foreign_minister +] has signed the treaty.
-on-arrival: soviet_relation += 2; west_relation -= 1; economic_growth += 0.5
+on-arrival: soviet_relation += 2; us_relation -= 1; france_relation -= 2; uk_relation -= 1; economic_growth += 0.5
 
 Despite our misgivings about the treaty, it still represents a step forward from our post-war isolation.
