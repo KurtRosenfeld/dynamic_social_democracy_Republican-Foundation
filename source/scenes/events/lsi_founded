@@ -4,7 +4,7 @@ view-if: year == 1923 and month == 5
 priority: 2
 max-visits: 1
 tags: event
-on_arrival: lsi_founded = 1
+on-arrival: lsi_founded = 1
 new-page: true
 face-image: img/Labour_and_Socialist_International_logo.png
 
