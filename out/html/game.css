@@ -1,3 +1,8 @@
+ :root {
+    --uspd-color: {{ Q.uspd_colour }};
+    --ddp-color: {{ Q.ddp_colour }};
+  }
+
 body {
   --bg-color: #f3f3e3;
   --border-color: #000;
@@ -708,7 +713,7 @@ th {
 }
 
 .seat.uspd {
-  fill: [+ uspd_colour +];
+  fill: var(--uspd-color);
 }
 
 .seat.spd {
@@ -718,7 +723,7 @@ th {
 }
 
 .seat.ddp {
-  fill: [+ ddp_colour +];
+  fill: var(--ddp-color);
 }
 
 .seat.dhp {
@@ -734,7 +739,7 @@ th {
 }
 
 .seat.dvp {
-  fill: [+ dvp_colour +];
+  fill: var(--dvp-color);
 }
 
 .seat.bl {
@@ -750,7 +755,7 @@ th {
 }
 
 .seat.dnvp {
-  fill: [+ dnvp_colour +];
+  fill: var(--dnvp-color);
 }
 
 .seat.dvfp {
@@ -758,11 +763,11 @@ th {
 }
 
 .seat.nsdap {
-  fill: [+ nsdap_colour +];
+  fill: var(--nsdap-color);
 }
 
 .seat.nsfb {
-  fill: [+ nsdap_colour +];
+  fill: var(--nsdap-color);
 }
 
 .seat.dsu {
@@ -774,7 +779,7 @@ th {
 }
 
 .seat.sapd {
-  fill: [+ sapd_colour +];
+  fill: var(--sapd-color);
 }
 
 .seat.dnf {
@@ -786,7 +791,7 @@ th {
 }
 
 .seat.lvp {
-  fill: [+ lvp_colour +];
+  fill: var(--lvp-color);
 }
 
 .seat.dnef {
