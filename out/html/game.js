@@ -159,6 +159,49 @@ function applyPartyColors() {
     }
 }
 
+// Add this to your game.js
+window.applyPartyColors = function() {
+    if (!window.dendryUI || !window.dendryUI.dendryEngine) return;
+    
+    const qualities = window.dendryUI.dendryEngine.state.qualities;
+    
+    const colorMap = {
+        uspd: qualities.uspd_colour,
+        ddp: qualities.ddp_colour,
+        spd: qualities.spd_colour,
+        kpd: qualities.kpd_colour,
+        dvp: qualities.dvp_colour,
+        dnvp: qualities.dnvp_colour,
+        lvp: qualities.lvp_colour,
+        // add any others you need
+    };
+    
+    for (const [party, color] of Object.entries(colorMap)) {
+        if (color) {
+            document.querySelectorAll(`.seat.${party}`).forEach(seat => {
+                seat.style.fill = color;
+            });
+        }
+    }
+};
+
+// Please just work, please
+window.setupColorObserver = function() {
+    const observer = new MutationObserver(function(mutations) {
+        // Check if new seats were added
+        const hasNewSeats = mutations.some(mutation => 
+            mutation.addedNodes.length > 0 && 
+            mutation.target.querySelector && 
+            mutation.target.querySelector('.seat')
+        );
+        if (hasNewSeats) {
+            window.applyPartyColors();
+        }
+    });
+    
+    observer.observe(document.body, { childList: true, subtree: true });
+};
+  
 // Run when page is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', applyPartyColors);
