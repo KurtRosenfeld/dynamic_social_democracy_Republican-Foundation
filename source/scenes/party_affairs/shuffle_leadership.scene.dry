@@ -585,7 +585,7 @@ title: Antonie Pfülf
 subtitle: Antonie Pfülf is a leader in social policy and women's rights. {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
 is-card: true
 card-image: img/portraits/PfülfAntonie.jpg
-view-if: pfulf_advisor = 0 and n_advisors < 4 and pfluf_in == "SPD"
+view-if: pfulf_advisor = 0 and n_advisors < 4 and pfulf_in == "SPD"
 on-arrival: pfulf_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
 go-to: advisor_menu
 tags: reformist_advisor
