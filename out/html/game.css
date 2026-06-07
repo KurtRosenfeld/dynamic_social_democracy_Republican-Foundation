@@ -583,37 +583,6 @@ img {
   }
 }
 
-/ no idea if this will work
-.button-with-image {
-    position: relative;
-    display: inline-block;
-    padding: 0.5em 1em 0.5em 60px; /* Leave space for the image on the left */
-    min-height: 50px;
-    background-color: var(--card-bg-color);
-    border: 2px solid var(--card-border-color);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.button-with-image:hover {
-    background-color: var(--tab-hover-color);
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.button-image {
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 3px;
-    border: 1px solid var(--border-color);
-}
-
 /* mobile: move the stat box to the top if the screen is too small,
  * and reduce font size slightly. */
 @media screen and (max-width: 560px) {
