@@ -303,7 +303,7 @@ title: End negotiations
 
 @braunermuell
 subtitle: We would surely be denied any ministries.
-choose-if: z_relation >= 60 and dvp_relation >= 40
+choose-if: z_relation >= 60 and dvp_relation >= 40 and dvp_cooperation >= 1
 unavailable-subtitle: Our partners don't even consider this option.
 on-arrival:{!
 if (Q.prussia_leader !== "Braun") { 
@@ -312,7 +312,7 @@ Q.chancellor_party = braun_in;
 } 
 if (Q.prussia_leader == "Braun") { 
 Q.chancellor = 'Müller'; 
-Q.chancellor_party = muller_in; 
+Q.chancellor_party = Q.muller_in; 
 }
 
 Q.spd_in_government = 1; 
@@ -324,10 +324,10 @@ The bourgeois parties agreed to let [+ chancellor +] ([+ chancellor_party +]) be
 
 @fuck_monarchism
 choose-if: ddp_relation <= 50
+on-arrival: dnvp_in_government = 1; unemplyoed_dnvp -= 4; rural_dnvp += 1; agriculture_minister = "Schiele"; agriculture_minister_party = "DNVP"; interior_minister = "Schiele"; interior_minister_party = "DNVP"; workers_nsdap += 2; unemployed_dvfp += 2
 
 The DNVP just entered a national government...
 
-(the content needs to be added again)
 
 
 
