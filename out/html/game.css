@@ -1,8 +1,3 @@
- :root {
-    --uspd-colour: {{ Q.uspd_colour }};
-    --ddp-colour: {{ Q.ddp_colour }};
-  }
-
 body {
   --bg-color: #f3f3e3;
   --border-color: #000;
@@ -713,7 +708,7 @@ th {
 }
 
 .seat.uspd {
-  fill: {{ Q.uspd_colour | replace("'", "") }};
+  fill: #D47B9B;
 }
 
 .seat.spd {
@@ -723,7 +718,7 @@ th {
 }
 
 .seat.ddp {
-  fill: var(--ddp-color);
+  fill: #D3C24D;
 }
 
 .seat.dhp {
@@ -739,7 +734,7 @@ th {
 }
 
 .seat.dvp {
-fill: {{ Q.dvp_colour }};
+fill: #D5AC27;
 }
 
 .seat.bl {
@@ -755,7 +750,7 @@ fill: {{ Q.dvp_colour }};
 }
 
 .seat.dnvp {
-  fill: {{ Q.dnvp_colour }};
+  fill: #3E88B3;
 }
 
 .seat.dvfp {
@@ -763,11 +758,11 @@ fill: {{ Q.dvp_colour }};
 }
 
 .seat.nsdap {
-  fill: var(--nsdap-color);
+  fill: #7A3C00);
 }
 
 .seat.nsfb {
-  fill: var(--nsdap-color);
+  fill: #7A3C00;
 }
 
 .seat.dsu {
