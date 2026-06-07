@@ -713,7 +713,7 @@ th {
 }
 
 .seat.uspd {
-  fill: var(--uspd-colour);
+  fill: {{ Q.uspd_colour | replace("'", "") }};
 }
 
 .seat.spd {
