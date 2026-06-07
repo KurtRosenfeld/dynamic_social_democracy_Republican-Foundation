@@ -149,7 +149,6 @@ function applyPartyColors() {
         kpd: '{{ Q.kpd_colour }}',
         sapd: '{{ Q.sapd_colour }}',
         uspd: '{{ Q.uspd_colour }}',
-        spd: '{{ Q.spd_colour }}',
         ddp: '{{ Q.ddp_colour }}',
         lvp: '{{ Q.lvp_colour }}',
         dvp: '{{ Q.dvp_colour }}',
@@ -174,7 +173,6 @@ window.applyPartyColors = function() {
     const colorMap = {
         uspd: qualities.uspd_colour,
         ddp: qualities.ddp_colour,
-        spd: qualities.spd_colour,
         kpd: qualities.kpd_colour,
         dvp: qualities.dvp_colour,
         dnvp: qualities.dnvp_colour,
