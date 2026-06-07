@@ -1396,6 +1396,12 @@ if (Q.percentComplete >= 100) {
 }
 
 !}
+on-display: {!
+    setTimeout(function() {
+        if (window.applyPartyColors) window.applyPartyColors();
+        if (window.setupColorObserver) window.setupColorObserver();
+    }, 50);
+!}
 set-bg: img/map_2.jpg
 new-page: true
 
