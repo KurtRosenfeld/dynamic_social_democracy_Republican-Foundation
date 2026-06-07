@@ -1,5 +1,5 @@
 title: Nürnberger Vereinigungsparteitag
-subtitle: The formal unification of the <span style="color: #D47B9B;">**USPD**</span> with our <span style="color: #c00000;">**SPD**</span>
+subtitle: The formal unification of the <span style="color: [+ uspd_colour +];">**USPD**</span> with our <span style="color: [+ spd_colour +];">**SPD**</span>
 new-page: true
 max-visits: 1
 view-if: uspd_joining_proces == 1
@@ -11,7 +11,7 @@ face-image: img/unnamed (1).jpg
 
 Otto Wels wants this to go smoothly, it is a largely symbolical congress...
 
-- @make_uspd_concessions: We will make some concessions to the <span style="color: #D47B9B;">**USPD**</span> showing that this a unification, not an annexation.
+- @make_uspd_concessions: We will make some concessions to the <span style="color: [+ uspd_colour +];">**USPD**</span> showing that this a unification, not an annexation.
 - @ignore_concession: They have no choice, so why should we make any concession to traitors.
 - @skip_vspd: We will actually not do this.
 
@@ -19,17 +19,17 @@ Otto Wels wants this to go smoothly, it is a largely symbolical congress...
 
 What will we offer them
 
-- @lowest_uspd: Let at least one former <span style="color: #D47B9B;">**USPD**</span> member into each important section of the executive commitee.
+- @lowest_uspd: Let at least one former <span style="color: [+ uspd_colour +];">**USPD**</span> member into each important section of the executive commitee.
 - @middle_uspd: The above and, eventually, a new party programme.
 - @good_uspd: The above and a new party leadership
-- @high_uspd: The above and no coalitions with the <span style="color: #D5AC27;">**DVP**</span>.
+- @high_uspd: The above and no coalitions with the <span style="color: [+ dvp_colour +];">**DVP**</span>.
 - @highest_uspd: The above and no coalitions with any of the bourgeois parties.
 - @no_uspd: Ok, we won't make concessions.
 
 @lowest_uspd
 on-arrival: spd_party_leader_3 = "Crispien"; spd_party_leader_n += 1
 
-Former <span style="color: #D47B9B;">**USPD**</span> leader Arthur Crispien will become our third chairman alongside Hermann Müller and Otto Wels.
+Former <span style="color: [+ uspd_colour +];">**USPD**</span> leader Arthur Crispien will become our third chairman alongside Hermann Müller and Otto Wels.
 
 <span style="color: #AFAFAF;">**Drop an advisor to be replaced with Crispien.**</span>
 
@@ -69,7 +69,7 @@ go-to: lowest_uspd
 A new party programme is surely logical.
 
 @good_uspd
-subtitle: The <span style="color: #D47B9B;">**USPD**</span> will be pleased by this.
+subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> will be pleased by this.
 unavailable-subtitle: Hermann Müller and Otto Wels are already a pivot to our center.
 choose-if: left_strength >= 10
 on-arrival: spd_party_leader_2 = "Breitscheid"; reformist_dissent += 3
@@ -79,7 +79,7 @@ Our new leadership election has decided on the ousting of Hermann Müller in fav
 
 @high_uspd
 unavailable-subtitle: We will likely need to work with them at some point.
-subtitle: Working with the <span style="color: #D5AC27;">**DVP**</span> is already unpoplular with our proper base.
+subtitle: Working with the <span style="color: [+ dvp_colour +];">**DVP**</span> is already unpoplular with our proper base.
 view-if: left_strength >= 10
 choose-if: left_strength > reformist_strength
 on-arrival: good_uspd_vspd_deal = 1
@@ -91,18 +91,18 @@ We don't know how this will end...
 subtitle: The reformists are outraged!
 view-if: left_strength >= 20
 choose-if: left_strength >= 40 and left_strength > reformist_strength
-unavailable-subtitle: The <span style="color: #D47B9B;">**USPD**</span> has actually agreed to work with the <span style="color: #000000;">**Center**</span> by now.
+unavailable-subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> has actually agreed to work with the <span style="color: [+ z_colour +];">**Center**</span> by now.
 on-arrival: second_kpd_essentially = 1; reformist_dissent += 25
 go-to: lowest_uspd
 
-The <span style="color: #C00000;">**SPD**</span> will dedicate itself to the proletarian revolution!
+The <span style="color: [+ spd_colour +];">**SPD**</span> will dedicate itself to the proletarian revolution!
 
 @no_uspd
 go-to: ignore_concession
 
 @ignore_concession
 
-The <span style="color: #D47B9B;">**USPD**</span> is outraged.
+The <span style="color: [+ uspd_colour +];">**USPD**</span> is outraged.
 
 - @make_uspd_concessions: Ok, we will make some concessions...
 - @eat_it_uspd: What are they gonna do?
@@ -110,9 +110,9 @@ The <span style="color: #D47B9B;">**USPD**</span> is outraged.
 @eat_it_uspd
 on-arrival: reformist_strength += 10; left_dissent += 15; uspd_joined = 1; unemployed_spd -= 3; z_relation += 2; unemployed_uspd -= 15; unemployed_kpd += 13; workers_uspd -= 4; worker_spd += 1; uspd_relation -= 55; spd_r = old_spd_r + uspd_r*0.81; uspd_r = uspd_r*0.19
 
-The former <span style="color: #D47B9B;">**USPD**</span> members in our party are outraged about the treatment they are greated with. Some less convinced members like <span style="color: #700000;">**Kurt Rosenfeld**</span> or <span style="color: #700000;">**Georg Ledebour**</span> reject joining us as they don't see any future in the <span style="color: #c00000;">**SPD**</span>. Yet despite the treatment they've received many members join our ranks seeing the <span style="color: #c00000;">**SPD**</span> as their only future. 
+The former <span style="color: [+ uspd_colour +];">**USPD**</span> members in our party are outraged about the treatment they are greated with. Some less convinced members like <span style="color: #700000;">**Kurt Rosenfeld**</span> or <span style="color: #700000;">**Georg Ledebour**</span> reject joining us as they don't see any future in the <span style="color: [+ spd_colour +];">**SPD**</span>. Yet despite the treatment they've received many members join our ranks seeing the <span style="color: [+ spd_colour +];">**SPD**</span> as their only future. 
 
-The <span style="color: #700000;">**KPD**</span> profits a lot.
+The <span style="color: [+ kpd_colour +];">**KPD**</span> profits a lot.
 
 @ new_swap
 
