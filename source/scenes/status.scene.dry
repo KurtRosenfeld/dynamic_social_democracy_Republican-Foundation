@@ -591,7 +591,7 @@ Strategy: [+ kpd_strategy +]
 = Splinters
 [? if kag_r > 0: <span class="tooltip-text" title="Communist Working Group" style="color: #81125B;">**KAG**</span> ?]
 
-[? if kag_r > 0: influence: [+ kag_seats +]% of Reichstag ?]
+[? if kag_r > 0: influence: >0.1% ?]
 
 [? if kag_r > 0: Orientation: Luxemburgism (Levi, Däumig) ?]
 
