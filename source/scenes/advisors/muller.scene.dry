@@ -74,4 +74,4 @@ on-arrival: nsfb_exists = 0; workers_nsdap = workers_nsfb; unemployed_nsdap = un
 
 @stuulll
 title: Sfuffle
-on-arrival: shuffle_leadership_time = 0
+on-arrival: shuffle_leadership_timer = 0
