@@ -18,6 +18,7 @@ Herein contains relevant information about the government and politics of the Ge
 - @paramilitaries: Paramilitary groups
 - @factions: Internal factions
 - @figures: Figures and charts
+- @invisible_information: Data (for modding)
 - @backSpecialScene: Exit library.
 
 @government
@@ -638,6 +639,7 @@ Loyalty: [+ prussian_police_loyalty : loyalty +]
 
 
 @factions
+go-to: menu
 
 **Internal factions of the** <span style="color: [+ spd_colour +];">**SPD**</span>
 
@@ -1146,3 +1148,82 @@ if (d3 && window) {
 = Economic history
 
 {!<svg id="economic_history" style="width: 500px; height: 300px;"> </svg>!}
+
+@invisible_information
+go-to: menu
+
+Wels: [+ wels_in +]
+
+Müller: [+ muller_in +]
+
+Scheidemann: [+ scheidemann_in +]
+
+Hilfdering: [+ hilferding_in +]
+
+Breitscheid: [+ breitscheid_in +]
+
+Crispien: [+ crispien_in +]
+
+Kautsky: [+ kautsky_in +]
+
+Levi: [+ levi_in +]
+
+Rosenfeld: [+ rosenfeld_in +]
+
+Ledebour: [+ ledebour_in +]
+
+Liebknecht: [+ liebknecht_in +]
+
+Sender: [+ sender_in +]
+
+Siemsen: [+ siemsen_in +]
+
+Seydewitz: [+ seydewitz_in +]
+
+Thalheimer: [+ thalheimer_in +]
+
+Brandler: [+ brandler_in +]
+
+Fischer: [+ fischer_in +]
+
+Braun: [+ braun_in +]
+
+Ebert: [+ ebert_in +]
+
+Severing: [+ severing_in +]
+
+Pflüf: [+ pfluf_in +]
+
+Juchaz: [+ juchaz_in +]
+
+Wissel: [+ wissel_in +]
+
+Aufhäuser: [+ aufhauser_in +]
+
+Leipart: [+ leipart_in +]
+
+Woytinsky: [+ woytinsky_in +]
+
+Tarnow: [+ tarnow_in +]
+
+Baade: [+ baade_in +]
+
+Sollmann: [+ sollmann_in +]
+
+Schmidt: [+ schmidt_in +]
+
+Stampfer: [+ stampfer_in +]
+
+Radbruch: [+ radbruch_in +]
+
+Schuhmacher: [+ schuhmacher_in +]
+
+Mierendorff: [+ mierendorff_in +]
+
+Leber: [+ leber_in +]
+
+Wirth: [+ wirth_in +]
+
+Stresemann: [+ stresemann_in +]
+
+Koch-Weser: [+ koch-weser_in +]
