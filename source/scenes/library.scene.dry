@@ -1060,6 +1060,7 @@ if (d3 && window) {
     lines_3.width(width).height(300);
     d3.select("#economic_history").datum(Q.economic_records).call(lines_3);
 }
+    if (window.applyPartyColors) setTimeout(window.applyPartyColors, 50);
 !}
 
 = Reichstag composition
