@@ -589,6 +589,7 @@ Strategy: [+ kpd_strategy +]
 [? if aspd_r: Orientation: [+ aspd_ideology +] ([+ aspd_leader +]) ?]
 
 = Splinters
+
 [? if kag_r > 0: <span class="tooltip-text" title="Communist Working Group" style="color: #81125B;">**KAG**</span> ?]
 
 [? if kag_r > 0: influence: >0.1% ?]
