@@ -140,7 +140,7 @@ Q.nsfb_relation = 0;
 
 Q.kpd_leader = "Brandler";
 Q.kpd_ideology = "Sparticism";
-Q.kpd_strategy = "Await Orders from Moscow";
+Q.kpd_strategy = "Revolution";
 Q.uspd_leader = "Crispien";
 Q.uspd_ideology = "Orthodox Marxism";
 Q.sapd_leader = "Rosenfeld";
@@ -162,6 +162,12 @@ Q.ideology = "reformist";
 Q.editorial_line = "center";
 Q.factional_bias = 20;
 Q.enemies = "diverse";
+
+Q.kag_strength = 20;
+Q.kpo_strength = 20;
+Q.kapd_b_strength = 15;
+Q.kapd_e_strength = 10;
+Q.leninbund:strength = 20;
 
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
