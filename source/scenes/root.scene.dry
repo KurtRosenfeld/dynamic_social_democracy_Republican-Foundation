@@ -163,12 +163,6 @@ Q.editorial_line = "center";
 Q.factional_bias = 20;
 Q.enemies = "diverse";
 
-Q.kag_strength = 20;
-Q.kpo_strength = 20;
-Q.kapd_b_strength = 15;
-Q.kapd_e_strength = 10;
-Q.leninbund:strength = 20;
-
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
 Q.hindenburg_angry = 0;
