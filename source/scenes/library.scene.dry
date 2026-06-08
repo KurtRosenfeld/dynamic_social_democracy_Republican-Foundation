@@ -1230,4 +1230,10 @@ DVP: [? if dvp_exists: yes ?][? if lvp_formed: no ?]
 
 DDP: [+ ddp_name +]
 
-LVP: [? if lvp_formed: yes ?][? if dvp_exists: no ?]
+LVP: [? if lvp_formed: yes ?][? if not lvp_formed: no ?]
+
+Chancellor: [+ chancellor +] ([+ chancellor_party +])
+
+President: [+ president +] ([+ president_party +])
+
+PL: [+ prussia_leader +] ([+ prussia_leader_party +])
