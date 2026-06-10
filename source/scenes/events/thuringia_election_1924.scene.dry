@@ -35,7 +35,7 @@ var thuringia_adjustment_factors = {
     lvp: 1.0,
     z: 0.09,
     dvp: 1.1,
-    dnvp: 2.0,
+    dnvp: 1.9,
     others: 0.1,
     nsdap: 1.1,
     nsfb: 1.6
@@ -48,7 +48,7 @@ Q.bl_r_thuringia = 0;
 Q.nsdap_r_thuringia = 0;
 Q.other_r_thuringia = 0;
 Q.nsfb_r_thuringia = 0;
-
+Q.z_r_thuringia = 0;
 Q.dvp_r_thuringia = 0;
 Q.ddp_r_thuringia = 0;
 Q.dnvp_r_thuringia = 0;           
@@ -72,7 +72,6 @@ Q.spd_thuringia_elections_vote = Q.spd_votes*thuringia_adjustment_factors.spd;
 if (Q.uspd_leader == "Crispien") thuringia_adjustment_factors.uspd -= 0.2;
 if (Q.uspd_leader == "Liebknecht") thuringia_adjustment_factors.uspd += 0.2;
 Q.uspd_thuringia_elections_vote = Q.uspd_votes*thuringia_adjustment_factors.uspd;
-if (Q.z_seats_thuringia >= 0) thuringia_adjustment_factors.z += 0.03;
 Q.z_thuringia_elections_vote = Q.z_votes*thuringia_adjustment_factors.z;
 Q.kpd_thuringia_elections_vote = Q.kpd_votes*thuringia_adjustment_factors.kpd;
 Q.ddp_thuringia_elections_vote = Q.ddp_votes*thuringia_adjustment_factors.ddp;
@@ -84,8 +83,6 @@ Q.nsfb_thuringia_elections_vote = Q.nsfb_votes*thuringia_adjustment_factors.nsfb
 Q.other_thuringia_elections_vote = Q.other_votes*thuringia_adjustment_factors.other;
 
 Q.total_votes_thuringia = Q.spd_thuringia_elections_vote + Q.uspd_thuringia_elections_vote + Q.kpd_thuringia_elections_vote + Q.ddp_thuringia_elections_vote + Q.lvp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote + Q.nsdap_thuringia_elections_vote + Q.nsfb_thuringia_elections_vote + Q.other_thuringia_elections_vote;
-
-Q.z_r_thuringia = 0;
              
 if (Q.total_votes_thuringia > 0) {
     Q.spd_thuringia_elections_vote = (Q.spd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
@@ -313,13 +310,13 @@ go-to: thuringia_coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_thuringia_elections_vote +]%** {!</td><td>!} [+ spd_r_thuringia +]% {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:[+ uspd_colour +]'> </div> !}USPD: {!</td><td>!} [+ uspd_thuringia_elections_vote +]% {!</td><td>!} [+ uspd_r_thuringia +]% {!</td></tr>!} ?]
+[? if uspd_r_thuringia > 0 : {!<tr><td><div class="box" style='background-color:#AA0000'> </div> !}USPD: {!</td><td>!} [+ uspd_thuringia_elections_vote +]% {!</td><td>!} [+ uspd_r_thuringia +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_thuringia_elections_vote +]% {!</td><td>!} [+ kpd_r_thuringia +]%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#0D2AC9'> </div> !} OB: {!</td><td>!} [+ bl_thuringia_elections_vote +]% {!</td><td>!} [+ bl_r_thuringia +]%  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ true_other_thuringia_elections_vote +]% {!</td><td>!} 0%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_thuringia_elections_vote +]% {!</td><td>!} 0%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} VVL: {!</td><td>!} [+ nsfb_thuringia_elections_vote +]% {!</td><td>!} [+ nsfb_r_thuringia +]%  {!</td></tr>!}
 
@@ -330,13 +327,13 @@ Thuringia used to be ruled by left coalitions up to now.
 <hr id="read-marker">
 United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span>[? if uspd_r_thuringia >= 1: + <span style="color: [+ uspd_colour +];">**USPD**</span>?]): [+ left_coalition_thuringia +]% 
 
-Ordnungsbund (<span style="color: #000000;">**[+ z_party_name +]**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7FCEB1;">**LB**</span>): [+ lb_r_thuringia +]%
+Ordnungsbund (<span style="color: #000000;">**[+ z_party_name +]**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #006400;">**LB**</span>): [+ lb_r_thuringia +]%
 
 @thuringia_coalition_menu
 
+- @united_left_coalition_thuringia
 - @far_right_abstention_thuringia
 - @bourgeois_coalition_thuringia
-- @united_left_coalition_thuringia
 
 @united_left_coalition_thuringia
 title: [? if uspd_r_thuringia >= 1: Maybe return to the <span style="color: [+ spd_colour +];">**Red**</span>-<span style="color: [+ uspd_colour +];">**Red**</span>-<span style="color: [+ kpd_colour +];">**Red**</span> Coalition?? ?][? if uspd_r_thuringia == 0: Maybe return to the <span style="color: #c00000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition? ?]
