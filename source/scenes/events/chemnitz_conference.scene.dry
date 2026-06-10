@@ -1,0 +1,17 @@
+title: Chemnitz Worker's Conference
+subtitle: Is the <span style="color: [+ kpd_colour +];">**KPD**</span> about to call a coup?
+tags: event
+is-card: true
+priority: 1
+on-arrival: german_october_seen = 1
+face-image: img/portraits/BrandlerHeinrich.jpg
+view-if: year == 1923 and month == 10 and saxony_gov == "Left" and german_october_seen == 0
+new-page: true
+
+= Chemnitz Worker's Conference
+
+General Leutenat Alfred Müller has banned the "<span style="color: [+ kpd_colour +];">Proletarische Hunderschaften</span>" in Saxony. It appears our government is not in control of the state anymore.
+  
+So 450 delegates - <span style="color: [+ kpd_colour +];">Communists</span>, Unionists and <span style="color: [+ spd_colour +];">Socialists</span> -  have assembled in Chemnitz, Saxony. Heinrich Brandler (<span style="color: [+ kpd_colour +];">**KPD**</span>) proposed a general strike but the lack of enthusiasm for his plans has lead the Saxon <span style="color: [+ kpd_colour +];">**KPD**</span> to cancel their plans. Yet still the strikes have not ended.
+
+
