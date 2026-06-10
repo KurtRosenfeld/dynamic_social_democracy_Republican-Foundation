@@ -28,9 +28,9 @@ The Thuringian state elections are to be held now.
 on-arrival: {!
 
 var thuringia_adjustment_factors = {
-    spd: 1.15,
+    spd: 0.95,
     uspd: 1.0,
-    kpd: 1.15,
+    kpd: 1.55,
     ddp: 1.5,
     lvp: 1.0,
     z: 0.09,
@@ -83,7 +83,9 @@ Q.nsdap_thuringia_elections_vote = Q.nsdap_votes*thuringia_adjustment_factors.ns
 Q.nsfb_thuringia_elections_vote = Q.nsfb_votes*thuringia_adjustment_factors.nsfb;
 Q.other_thuringia_elections_vote = Q.other_votes*thuringia_adjustment_factors.other;
 
-Q.total_votes_thuringia = Q.spd_thuringia_elections_vote + Q.uspd_thuringia_elections_vote + Q.kpd_thuringia_elections_vote + Q.ddp_thuringia_elections_vote + Q.lvp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote + Q.nsdap_thuringia_elections_vote + Q.nsfb_thuringia_elections_vote + Q.other_thuringia_elections_vote;
+Q.bl_thuringia_elections_vote = Q.ddp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote;
+
+Q.total_votes_thuringia = Q.bl_thuringia_elections_vote + Q.spd_thuringia_elections_vote + Q.uspd_thuringia_elections_vote + Q.kpd_thuringia_elections_vote + Q.ddp_thuringia_elections_vote + Q.lvp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote + Q.nsdap_thuringia_elections_vote + Q.nsfb_thuringia_elections_vote + Q.other_thuringia_elections_vote;
              
 if (Q.total_votes_thuringia > 0) {
     Q.spd_thuringia_elections_vote = (Q.spd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
@@ -97,9 +99,10 @@ if (Q.total_votes_thuringia > 0) {
     Q.nsdap_thuringia_elections_vote = (Q.nsdap_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     Q.nsfb_thuringia_elections_vote = (Q.nsfb_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     Q.other_thuringia_elections_vote = (Q.other_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.bl_thuringia_elections_vote = (Q.bl_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     let target = 23;
     Q.spd_thuringia_elections_vote = Math.round((Q.spd_thuringia_elections_vote + (target - Q.spd_thuringia_elections_vote) * 0.35) * 10) / 10;
-    Q.total_votes_thuringia = Q.spd_thuringia_elections_vote + Q.uspd_thuringia_elections_vote + Q.kpd_thuringia_elections_vote + Q.ddp_thuringia_elections_vote + Q.lvp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote + Q.nsdap_thuringia_elections_vote + Q.nsfb_thuringia_elections_vote + Q.other_thuringia_elections_vote;
+    Q.total_votes_thuringia = Q.bl_thuringia_elections_vote +  Q.spd_thuringia_elections_vote + Q.uspd_thuringia_elections_vote + Q.kpd_thuringia_elections_vote + Q.ddp_thuringia_elections_vote + Q.lvp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote + Q.nsdap_thuringia_elections_vote + Q.nsfb_thuringia_elections_vote + Q.other_thuringia_elections_vote;
     Q.spd_thuringia_elections_vote = (Q.spd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     Q.uspd_thuringia_elections_vote = (Q.uspd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     Q.kpd_thuringia_elections_vote = (Q.kpd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
@@ -111,6 +114,7 @@ if (Q.total_votes_thuringia > 0) {
     Q.nsdap_thuringia_elections_vote = (Q.nsdap_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     Q.nsfb_thuringia_elections_vote = (Q.nsfb_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     Q.other_thuringia_elections_vote = (Q.other_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.bl_thuringia_elections_vote = (Q.bl_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
 }
 
 Q.spd_thuringia_elections_vote = (Q.spd_thuringia_elections_vote != undefined ? parseFloat(Q.spd_thuringia_elections_vote.toFixed(1)) : 0);
