@@ -1,0 +1,22 @@
+title: Hamburg Uprising
+subtitle: What is the <span style="color: [+ kpd_colour +];">**KPD**</span> doing now...?
+tags: event
+is-card: true
+max-visits: 1
+on-arrival: kpd_relation -= 2; unemployed_kpd += 1
+face-image: img/portraits/ThälmannErnst.jpg
+view-if: german_october_seen == 1
+new-page: true
+
+= Hamburg Uprising
+
+The Hamburg-branch of the <span style="color: [+ kpd_colour +];">**KPD**</span> has initiated an uprising in Hamburg and the neighbouring regions.
+
+They have stolen rifles from police stations and proclaimed local soviet republics. The police of Hamburg aided by the Reich Marine have put down the uprising with ease.
+
+Our local branch has condemmed the <span style="color: [+ kpd_colour +];">Communists</span> while highliting the desperation of the poor. The <span style="color: [+ dvp_colour +];">**DVP**</span> on the other hand has called for harsh punishment...
+
+
+
+
+  
