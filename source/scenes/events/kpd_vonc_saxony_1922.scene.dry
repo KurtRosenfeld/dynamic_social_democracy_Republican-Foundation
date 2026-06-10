@@ -5,7 +5,7 @@ is-card: true
 max-visits: 1
 priority: 1
 face-image: img/portraits/BuckWilhelm.jpg
-view-if: (saxony_gov == "SPD" or saxony_gov == "Social Democratic") and year == 1923 and month == 1
+view-if: (saxony_gov == "SPD" or saxony_gov == "Social-Democratic") and year == 1923 and month == 1
 new-page: true
 
 = Saxony cabinet ousted!
