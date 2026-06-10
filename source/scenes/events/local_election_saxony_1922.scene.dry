@@ -390,11 +390,11 @@ go-to: saxony_coalition_menu
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
-{!<tr><td><div class="box" style='background-color:[+ spd_colour +]; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_saxony_elections_vote +]%** {!</td><td>!} [+ spd_r_saxony +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:spd_colour; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_saxony_elections_vote +]%** {!</td><td>!} [+ spd_r_saxony +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:[+ uspd_colour +]'> </div> !}USPD: {!</td><td>!} [+ uspd_saxony_elections_vote +]% {!</td><td>!} [+ uspd_r_saxony +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:uspd_colour'> </div> !}USPD: {!</td><td>!} [+ uspd_saxony_elections_vote +]% {!</td><td>!} [+ uspd_r_saxony +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:[+ kpd_colour +]'> </div> !}KPD: {!</td><td>!} [+ kpd_saxony_elections_vote +]% {!</td><td>!} [+ kpd_r_saxony +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:kpd_colour'> </div> !}KPD: {!</td><td>!} [+ kpd_saxony_elections_vote +]% {!</td><td>!} [+ kpd_r_saxony +]%  {!</td></tr>!}
 
 [? if not lvp_formed: {!<tr><td><div class="box" style='background-color:[+ ddp_colour +]'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_saxony_elections_vote +]% {!</td><td>!} [+ ddp_r_saxony +]%  {!</td></tr>!} ?]
 
