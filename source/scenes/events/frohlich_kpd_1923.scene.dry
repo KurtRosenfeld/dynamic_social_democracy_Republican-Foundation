@@ -1,0 +1,15 @@
+title: <span style="color: [+ kpd_colour +];">**KPD**</span> enters cabinet in Thuringia!
+tags: event
+is-card: true
+priority: 1
+max-visits: 1
+on-arrival: kpd_relation += 3; unemployed_kpd += 2; z_relation -= 3; ddp_relation -= 2; dvp_relation -= 4; thuringia_gov = "Left"
+face-image: img/portraits/FrölichAugust.jpg
+view-if: (thuringia_gov == "SPD" or thuringia_gov == "Social-Democratic") and year == 1923 and month == 10
+new-page: true
+
+= <span style="color: [+ kpd_colour +];">**KPD**</span> enters cabinet in Thuringia
+
+The minister president August Fröhlich (<span style="color: [+ spd_colour +];">**SPD**</span>) seeks to repair the relations between the Worker's Parties by allowing the <span style="color: [+ kpd_colour +];">**KPD**</span> into his cabinet. They are granted control over justice and economy - both far from their wish to control the police via the interior ministry.
+
+This <span style="color: #AA0000;">United Front</span> will - according to Fröhlich - help prevent a Bavarian march on Berlin and eestablish Central Germany as a wall against reaction.

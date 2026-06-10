@@ -648,7 +648,7 @@ Results:
 [? if hindenburg_run and not hitler_support_hindenburg: It is seen that [+ nsdap_candidate_1932 +] was the one to benefit from [+ dnvp_candidate_1932 +]'s withdrawal, rather than [+ reactionary_candidate_1932 +], having garnered 60% of his former voters. Even if [+ nsdap_candidate_1932 +] doesn't win, the destruction of the parties between the <span style="color: #7A3C00;">**NSDAP**</span> and [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] will have drastic consequences for German democracy. ?]
 
 @hindenburg_wins
-on-arrival: president = "Hindenburg"; hindenburg_angry_bruning += 15 if not spd_campaign and spd_support_reactionary
+on-arrival: president = "Hindenburg"; president_party = "I"; hindenburg_angry_bruning += 15 if not spd_campaign and spd_support_reactionary
 
 As expected, the incumbent Hindenburg wins the presidency. Let's hope he continues to keep the <span style="color: #7A3C00;">Nazis</span> out of power.
 
@@ -657,14 +657,14 @@ As expected, the incumbent Hindenburg wins the presidency. Let's hope he continu
 [? if spd_support_reactionary and bruning_time: The fact that [+ reactionary_candidate_1932 +] owed his reelection to the parties who opposed him in 1925 rather than those with whom he felt the closest natural affinity with is a source of great personal anguish to the aging president and severely strained his relations with Brüning and the conservatives who had orchestrated his reelection campaign. ?]
 
 @thalmann_wins
-on-arrival: president = "Thälmann"; kpd_relation = 80;
+on-arrival: president = "Thälmann"; president_party = "KPD"; kpd_relation = 80;
 
 Ernst Thälmann of the <span style="color: #700000;">**KPD**</span> has won the presidency. Immediately, the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> launches a coup attempt against the government. We have no choice but to unite with the <span style="color: #700000;">**KPD**</span> against the <span style="color: #7A3C00;">fascists</span>...
 
 - @civil_war: This is civil war.
 
 @hitler_wins
-on-arrival: president = nsdap_candidate_1932; chancellor = "Hitler"; chancellor_party = "NSDAP"
+on-arrival: president = nsdap_candidate_1932; president_party = "NSDAP"; chancellor = "Hitler"; chancellor_party = "NSDAP"
 
 [? if nsdap_candidate_1932 == "Hitler" : Adolf Hitler of the <span style="color: #7A3C00;">**NSDAP**</span> has won the presidency. He wastes no time in consolidating power. ?]
 [? if nsdap_candidate_1932 != "Hitler" : The <span style="color: #7A3C00;">**NSDAP**</span> candidate [+ president +] has won. The first action President [+ president +] takes is inviting Hitler back into Germany, and appointing him chancellor. The <span style="color: #7A3C00;">Nazis</span> waste no time in consolidating power. ?]
@@ -672,13 +672,13 @@ on-arrival: president = nsdap_candidate_1932; chancellor = "Hitler"; chancellor_
 - @hitler_takes_power: What do we do now?
 
 @braun_wins
-on-arrival: president = "Braun"; president_ideology = "Left"; reformist_dissent -= 15; center_dissent -= 15; labor_dissent -= 15; left_dissent -= 5; workers_spd += 6*(1-dissent); old_middle_spd += 4*(1-dissent); new_middle_spd += 4*(1-dissent); rural_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent);
+on-arrival: president = "Braun"; president_party = braun_in; president_ideology = "Left"; reformist_dissent -= 15; center_dissent -= 15; labor_dissent -= 15; left_dissent -= 5; workers_spd += 6*(1-dissent); old_middle_spd += 4*(1-dissent); new_middle_spd += 4*(1-dissent); rural_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent);
 go-to: achievement_check_1
 
 Otto Braun of the <span style="color: #c00000;">**SPD**</span> has won the presidency! This is a moment of celebration for our party, and his victory is able to bolster our support.
 
 @rosenfeld_wins
-on-arrival: president = "Rosenfeld"; president_ideology = "Left"; center_dissent -= 5; labor_dissent -= 5; left_dissent -= 15; left_strength += 20; workers_spd += 9*(1-dissent); unemployed_spd += 6*(1-dissent); coup_progress += 4; capital_strike_progress += 4
+on-arrival: president = "Rosenfeld"; president_party = rosenfeld_in; president_ideology = "Left"; center_dissent -= 5; labor_dissent -= 5; left_dissent -= 15; left_strength += 20; workers_spd += 9*(1-dissent); unemployed_spd += 6*(1-dissent); coup_progress += 4; capital_strike_progress += 4
 go-to: achievement_check_1
 
 Kurt Rosenfeld of the [? if not left_split: <span style="color: #c00000;">**SPD**</span>?][? if left_split: <span style="color: #9B0000;">**SAPD**</span>?] has won the presidency! This is a moment of celebration for our party, and his victory is able to bolster our support.
@@ -693,7 +693,7 @@ go-to: achievement_check_1
 Nationally renown Zeppelin pilot and independent Hugo Eckener has won the presidency! This is a moment of celebration for our party, as his victory helps keep the <span style="color: #7A3C00;">Nazis</span> at bay.
 
 @duesterburg_wins
-on-arrival: president = "Braun"; president_ideology = "Left"; reformist_dissent -= 15; center_dissent -= 15; labor_dissent -= 15; left_dissent -= 5; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent);
+on-arrival: president = "Braun"; president_party = braun_in; president_ideology = "Left"; reformist_dissent -= 15; center_dissent -= 15; labor_dissent -= 15; left_dissent -= 5; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent);
 go-to: achievement_check_1
 
 Duesterberg is too ashamed to accept the Presidency, and out of the kindness of his heart, has given it to Otto Braun. 
@@ -709,23 +709,23 @@ achievement: neue_geschaftsfuhrung
 go-to: jarres_win if (reactionary_candidate_1_plurality and reactionary_candidate_1932 == "Jarres") or (reactionary_candidate_2_plurality and secondary_reactionary_candidate_1932 == "Jarres"); gessler_win if (reactionary_candidate_1_plurality and reactionary_candidate_1932 == "Gessler") or (reactionary_candidate_2_plurality and secondary_reactionary_candidate_1932 == "Gessler"); luther_win if (reactionary_candidate_1_plurality and reactionary_candidate_1932 == "Luther") or (reactionary_candidate_2_plurality and secondary_reactionary_candidate_1932 == "Luther"); adenauer_win if (reactionary_candidate_1_plurality and reactionary_candidate_1932 == "Adenauer") or (reactionary_candidate_2_plurality and secondary_reactionary_candidate_1932 == "Adenauer"); bruning_win if (reactionary_candidate_1_plurality and reactionary_candidate_1932 == "Brüning") or (reactionary_candidate_2_plurality and secondary_reactionary_candidate_1932 == "Brüning"); stegerwald_win if (reactionary_candidate_1_plurality and reactionary_candidate_1932 == "Stegerwald") or (reactionary_candidate_2_plurality and secondary_reactionary_candidate_1932 == "Stegerwald"); vorbeck_win if (reactionary_candidate_1_plurality and reactionary_candidate_1932 == "Lettow-Vorbeck") or (reactionary_candidate_2_plurality and secondary_reactionary_candidate_1932 == "Lettow-Vorbeck"); westarp_win if (reactionary_candidate_1_plurality and reactionary_candidate_1932 == "Westarp") or (reactionary_candidate_2_plurality and secondary_reactionary_candidate_1932 == "Westarp")
 
 @jarres_win
-on-arrival: president = "Jarres"; president_ideology = "Right"; new_middle_dvp += 4; old_middle_dvp += 4; rural_dvp += 4; new_middle_lvp += 4; old_middle_lvp += 4; rural_lvp += 4
+on-arrival: president = "Jarres"; president_party = "DVP" if not lvp_formed; president_party = "LVP" if lvp_formed; president_ideology = "Right"; new_middle_dvp += 4; old_middle_dvp += 4; rural_dvp += 4; new_middle_lvp += 4; old_middle_lvp += 4; rural_lvp += 4
 achievement: aller_guten_dinge_sind_zwei
 
 Perhaps surprisingly, Karl Jarres has made an unforeseen comeback and won the presidency. We hope that his governance will be an improvement over that of Hindenburg, and that he continues to keep the <span style="color: #7A3C00;">Nazis</span> out of power. 
 
 @gessler_win
-on-arrival: president = "Gessler"; president_ideology = "Moderate"; new_middle_ddp += 2; old_middle_ddp += 2; rural_ddp += 2; new_middle_dvp += 2; old_middle_dvp += 2; rural_dvp += 2; new_middle_lvp += 4; old_middle_lvp += 4; rural_lvp += 4
+on-arrival: president = "Gessler"; president_party = ddp_name if not lvp_formed; president_party = "LVP" if lvp_formed; president_ideology = "Moderate"; new_middle_ddp += 2; old_middle_ddp += 2; rural_ddp += 2; new_middle_dvp += 2; old_middle_dvp += 2; rural_dvp += 2; new_middle_lvp += 4; old_middle_lvp += 4; rural_lvp += 4
 
 Otto Gessler has made a comeback and won the presidency. Despite his[? if lvp_formed: &nbsp;former?] affiliation with the <span style="color: #D3C24D;">**DDP**</span>, he isn’t as friendly as his colleagues. However, he is a significant step up from Hindenburg. Let’s hope he continues to keep the <span style="color: #7A3C00;">Nazis</span> out of power.
 
 @luther_win
-on-arrival: president = "Luther"; president_ideology = "Moderate"; new_middle_dvp += 4; old_middle_dvp += 4; rural_dvp += 4; new_middle_lvp += 4; old_middle_lvp += 4; rural_lvp += 4
+on-arrival: president = "Luther"; president_party = "DVP" if not lvp_formed; president_party = "LVP" if lvp_formed; president_ideology = "Moderate"; new_middle_dvp += 4; old_middle_dvp += 4; rural_dvp += 4; new_middle_lvp += 4; old_middle_lvp += 4; rural_lvp += 4
 
 From former Chancellor to President, Hans Luther has secured the presidency. Known for his technocratic beliefs, he's unlikely to rock the boat in either political direction. Let’s hope he continues to keep the <span style="color: #7A3C00;">Nazis</span> out of power.
 
 @adenauer_win
-on-arrival: president = "Adenauer"; president_ideology = "Moderate"; workers_z += 4; new_middle_z += 6; old_middle_z += 6; rural_z += 4; catholics_z += 4
+on-arrival: president = "Adenauer"; president_party = z_party_name; president_ideology = "Moderate"; workers_z += 4; new_middle_z += 6; old_middle_z += 6; rural_z += 4; catholics_z += 4
 go-to: bundesrepublik if presidential_powers
 
 Konrad Adenauer has risen from Mayor to President and is expected to pursue friendlier policies toward the <span style="color: #c00000;">**SPD**</span> than Hindenburg. Still, let's hope he remains firm in keeping the <span style="color: #7A3C00;">Nazis</span> out of power.
@@ -735,12 +735,12 @@ achievement: bundesrepublik
 
 
 @bruning_win
-on-arrival: president = "Brüning"; president_ideology = "Moderate"; new_middle_z += 4; old_middle_z += 4; rural_z += 2; catholics_z += 2
+on-arrival: president = "Brüning"; president_party = z_party_name; president_ideology = "Moderate"; new_middle_z += 4; old_middle_z += 4; rural_z += 2; catholics_z += 2
 
 Heinrich Brüning may be an advocate of economic austerity, but as president, he’s a clear step up from Hindenburg in both his <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> convictions and his stance toward the <span style="color: #c00000;">**SPD**</span>. Let’s hope he stands firm and keeps the <span style="color: #7A3C00;">Nazis</span> out of power.
 
 @stegerwald_win
-on-arrival: president = "Stegerwald"; president_ideology = "Moderate"; workers_z += 8; new_middle_z += 6; old_middle_z += 6; rural_z += 4; catholics_z += 4
+on-arrival: president = "Stegerwald"; president_party = z_party_name; president_ideology = "Moderate"; workers_z += 8; new_middle_z += 6; old_middle_z += 6; rural_z += 4; catholics_z += 4
 
 Adam Stegerwald has risen from union president to President of Germany. He is expected to pursue friendlier policies toward the <span style="color: #c00000;">**SPD**</span> than Hindenburg did, and to provide a voice for the laborers of Germany. Let's hope he remains firm in keeping the <span style="color: #7A3C00;">Nazis</span> out of power.
 

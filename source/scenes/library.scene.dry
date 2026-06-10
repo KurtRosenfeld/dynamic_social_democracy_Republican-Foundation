@@ -18,6 +18,7 @@ Herein contains relevant information about the government and politics of the Ge
 - @paramilitaries: Paramilitary groups
 - @factions: Internal factions
 - @figures: Figures and charts
+- @invisible_information: Data (for modding)
 - @backSpecialScene: Exit library.
 
 @government
@@ -65,44 +66,44 @@ go-to: cabinet if spd_in_government; menu if not spd_in_government
 
 = Current Government
 
-President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun" or president == "Ebert" or president == "Schumacher" or president == "Wels" or president == "Grzesinski" or president == "Juchacz" or (president == "Rosenfeld" and not left_split): <span style="color: #c00000;">[+ president +]</span> ?][? if president == "Rosenfeld" and left_split: <span style="color: #9B0000;">[+ president +]</span> ?][? if president == "Thälmann": <span style="color: #700000;">[+ president +]</span> ?][? if president == "Münzenberg": <span style="color: #9B0000;">[+ president +]</span> ?][? if president == "Hitler" or president == "Göring" or president == "Frick": <span style="color: #7A3C00;">[+ president +]</span> ?][? if president == "Eckener": <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span> ?][? if (president == "Gessler" or president == "Heuss") and not lvp_formed: <span style="color: #D3C24D;">[+ president +]</span> ?][? if (president == "Luther" or president == "Jarres") and not lvp_formed: <span style="color: #C0A054;">[+ president +]</span> ?][? if (president == "Gessler" or president == "Heuss" or president == "Jarres" or president == "Luther") and lvp_formed: <span style="color: #FFCC00;">[+ president +]</span> ?][? if president == "Adenauer" or president == "Brüning" or president == "Stegerwald": <span style="color: #000000;">[+ president +]</span> ?][? if president == "Seldte" or president == "Hergt" or ((president == "Westarp" or president == "Lettow-Vorbeck") and dnvp_ideology == "Moderate"): <span style="color: #3E88B3;">[+ president +]</span> ?][? if (president == "Westarp" or president == "Lettow-Vorbeck") and dnvp_ideology == "Radical": <span style="color: #0087DC;">[+ president +]</span> ?][? if president == "Großmann (acting)" or president == "Bumke (acting)" or president == "Seeckt": <span style="color: #808080;">[+ president +]</span> ?][? if president == "Hammerstein": <span style="color: #BFC8CC;">[+ president +]</span> ?][? if president == "Mann" or president == "Ossietzky": <span style="color: #E0A0A0;">[+ president +]</span> ?][? if president == "Einstein": <span style="color: #CFC88F;">[+ president +]</span> ?] [? if president == "Adenauer" or president == "Brüning" or president == "Stegerwald":(<span style="color: #000000;">**[+ z_party_name +]**</span>) ?][? if president == "Braun" or president == "Ebert" or president == "Schumacher" or president == "Wels" or president == "Juchacz" or (president == "Rosenfeld" and not left_split):(<span style="color: #c00000;">**SPD**</span>) ?][? if president == "Rosenfeld" and left_split:(<span style="color: #9B0000;">**SAPD**</span>) ?][? if president == "Thälmann" or president == "Münzenberg":(<span style="color: #700000;">**KPD**</span>) ?][? if president == "Seldte" or president == "Hergt" or ((president == "Westarp" or president == "Lettow-Vorbeck") and dnvp_ideology == "Moderate"): (<span style="color: #3E88B3;">**DNVP**</span>) ?][? if (president == "Westarp" or president == "Lettow-Vorbeck") and dnvp_ideology == "Radical": (<span style="color: #0087DC;">**KVP**</span>) ?][? if president == "Hitler" or president == "Göring" or president == "Frick":(<span style="color: #7A3C00;">**NSDAP**</span>) ?][? if (president == "Gessler" or president == "Heuss") and not lvp_formed: (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>) ?][? if (president == "Luther" or president == "Jarres") and not lvp_formed: (<span style="color: #C0A054;">**DVP**</span>) ?][? if (president == "Gessler" or president == "Heuss" or president == "Jarres" or president == "Luther") and lvp_formed: (<span style="color: #FFCC00;">**LVP**</span>) ?][? if president == "Eckener" or president == "Hindenburg" or president == "Großmann (acting)" or president == "Bumke (acting)" or president == "Seeckt": (<span style="color: #808080;">I</span>) ?][? if president == "Hammerstein": (<span style="color: #BFC8CC;">**DNEF**</span>) ?][? if president == "Mann" or president == "Ossietzky": (<span style="color: #E0A0A0;">I</span>) ?][? if president == "Einstein": (<span style="color: #CFC88F;">I</span>) ?]
+President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president_party == "SPD": <span style="color: [+ spd_colour +];">[+ president +]</span> ?][? if president_party == "USPD": <span style="color: [+ uspd_colour +];">[+ president +]</span> ?][? if president_party == "SAPD": <span style="color: [+ sapd_colour +];">[+ president +]</span> ?][? if president_party == "SB": <span style="color: [+ sb_colour +];">[+ president +]</span> ?][? if president_party == "KPD": <span style="color: [+ kpd_colour +];">[+ president +]</span> ?][? if president_party == "NSDAP": <span style="color: [+ nsdap_colour +];">[+ president +]</span> ?][? if president == "Eckener": <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span> ?][? if president_party == "DDP": <span style="color: [+ ddp_colour +];">[+ president +]</span> ?][? if president_party == "DVP": <span style="color: [+ dvp_colour +];">[+ president +]</span> ?][? if president_party == "LVP": <span style="color: [+ lvp_colour +];">[+ president +]</span> ?][? if president_party == "Z" or president_party == "CVP": <span style="color: #000000;">[+ president +]</span> ?][? if president == "DNVP": <span style="color: [+ dnvp_colour +];">[+ president +]</span> ?][? if president_party == "I": <span style="color: [+ i_colour +];">[+ president +]</span> ?][? if president_party == "DNEF": <span style="color: #BFC8CC;">[+ president +]</span> ?][? if president == "Mann" or president == "Ossietzky": <span style="color: #E0A0A0;">[+ president +]</span> ?][? if president == "Einstein": <span style="color: #CFC88F;">[+ president +]</span> ?] ([? if president_party == "Z":<span style="color: #000000;">**[+ z_party_name +]**</span>?][? if president_party == "SPD":<span style="color: [+ spd_colour +];">**SPD**</span>?][? if president_party == "USPD":<span style="color: [+ uspd_colour +];">**USPD**</span>?][? if president_party == "SAPD":<span style="color: [+ sapd_colour +];">**SAPD**</span>?][? if president_party == "SB":<span style="color: [+ sb_colour +];">**SB**</span>?][? if president_party == "KPD":<span style="color: [+ kpd_colour +];">**KPD**</span>?][? if president_party == "DNVP": <span style="color: [+ dnvp_colour +];">**DNVP**</span>?][? if president_party == "NSDAP":<span style="color: [+ nsdap_colour +];">**NSDAP**</span>?][? if president_party == "DDP": <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if president_party == "DVP": <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if president_party == "LVP": <span style="color: [+ lvp_colour +];">**LVP**</span>?][? if president_party == "I": <span style="color: [+ i_colour +];">I</span>?][? if president == "Hammerstein": <span style="color: #BFC8CC;">**DNEF**</span>?][? if president == "Mann" or president == "Ossietzky": <span style="color: #E0A0A0;">I</span>?][? if president == "Einstein": <span style="color: #CFC88F;">I</span>?])
 
-Chancellor: [? if chancellor_party == "SPD": <span style="color: #c00000;">[+ chancellor +]</span>?][? if chancellor_party == "USPD": <span style="color: #AA0000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor = "Cuno": <span style="color: #808080;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #7A3C00;">[+ chancellor +]</span>?][? if chancellor_party == "DSU": <span style="color: #6A1E1E;">[+ chancellor +]</span>?][? if chancellor_party == "KPD": <span style="color: #700000;">[+ chancellor +]</span>?][? if chancellor_party == "DNVP": <span style="color: #3E88B3;">[+ chancellor +]</span>?][? if (chancellor == "Schleicher" and not dnef_formed) or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?][? if (chancellor == "Schleicher" or chancellor == "Goerdeler" or chancellor == "Bredow") and dnef_formed: <span style="color: #BFC8CC;">[+ chancellor +]</span>?][? if chancellor == "Goerdeler" and not dnef_formed: <span style="color: #808080;">[+ chancellor +]</span>?] [? if chancellor_party == "Z":(<span style="color: #000000;">**[+ z_party_name +]**</span>) ?][? if chancellor_party == "SPD":(<span style="color: #c00000;">**SPD**</span>) ?][? if chancellor_party == "USPD":(<span style="color: #AA0000;">**USPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #700000;">**KPD**</span>) ?][? if chancellor_party == "DNVP": <span style="color: #3E88B3;">**DNVP**</span>?][? if chancellor_party == "DSU":(<span style="color: #6A1E1E;">**DSU**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #7A3C00;">**NSDAP**</span>) ?][? if chancellor_party == "I":(<span style="color: #808080;">I</span>) ?][? if chancellor_party == "DNEF":(<span style="color: #BFC8CC;">**DNEF**</span>) ?]
+Chancellor: [? if chancellor_party == "SPD": <span style="color: [+ spd_colour +];">[+ chancellor +]</span>?][? if chancellor_party == "SAPD": <span style="color: [+ sapd_colour +];">[+ chancellor +]</span>?][? if chancellor_party == "USPD": <span style="color: [+ uspd_colour +];">[+ chancellor +]</span>?][? if chancellor_party == "SB": <span style="color: [+ sb_colour +];">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party = "I": <span style="color: [+ i_colour +];">[+ chancellor +]</span>?][? if chancellor_party == "DVP": <span style="color: [+ dvp_colour +];">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: [+ nsdap_colour +];">[+ chancellor +]</span>?][? if chancellor_party == "DSU": <span style="color: #6A1E1E;">[+ chancellor +]</span>?][? if chancellor_party == "KPD": <span style="color: [+ kpd_colour +];">[+ chancellor +]</span>?][? if chancellor_party == "DNVP": <span style="color: [+ dnvp_colour +];">[+ chancellor +]</span>?][? if (chancellor == "Schleicher" or chancellor == "Goerdeler" or chancellor == "Bredow") and dnef_formed: <span style="color: #BFC8CC;">[+ chancellor +]</span>?] ([? if chancellor_party == "Z":<span style="color: #000000;">**[+ z_party_name +]**</span>?][? if chancellor_party == "USPD":<span style="color: [+ uspd_colour +];">**USPD**</span>?][? if chancellor_party == "SPD":<span style="color: [+ spd_colour +];">**SPD**</span>?][? if chancellor_party == "SAPD":<span style="color: [+ sapd_colour +];">**SAPD**</span>?][? if chancellor_party == "SB":<span style="color: [+ sb_colour +];">**SB**</span>?][? if chancellor_party == "KPD":<span style="color: [+ kpd_colour +];">**KPD**</span>?][? if chancellor_party == "DNVP": <span style="color: [+ dnvp_colour +];">**DNVP**</span>?][? if chancellor_party == "DSU":<span style="color: #6A1E1E;">**DSU**</span>?][? if chancellor_party == "NSDAP":<span style="color: [+ nsdap_colour +];">**NSDAP**</span>?][? if chancellor_party == "I":<span style="color: #808080;">I</span>?][? if chancellor_party == "DNEF":<span style="color: #BFC8CC;">**DNEF**</span>?][? if chancellor_party == "DVP":<span style="color: [+ dvp_colour +];">**DVP**</span>?])
 
-Prussian Minister-President: [? if prussia_leader = "Braun" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #c00000;">Braun</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and not sapd_formed and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #c00000;">Rosenfeld</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and sapd_formed and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #9B0000;">Rosenfeld</span> (<span style="color: #9B0000;">**SAPD**</span>)?][? if prussia_leader = "Stegerwald" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #000000;">Stegerwald</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)?][? if prussia_leader = "Brüning" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #000000;">Brüning</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)?][? if prussia_leader = "Luther" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)) and not lvp_formed and dvp_exist: <span style="color: #C0A054;">Luther</span> (<span style="color: #C0A054;">**DVP**</span>)?][? if prussia_leader = "Luther" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)) and not lvp_formed and not dvp_exist: <span style="color: #D3C24D;">Luther</span> (<span style="color: #D3C24D;">**DVP**</span>)?][? if prussia_leader = "Luther" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)) and lvp_formed: <span style="color: #FFCC00;">Luther</span> (<span style="color: #FFCC00;">**LVP**</span>)?][? if prussia_leader = "Goring": <span style="color: #7A3C00;">Göring</span> (<span style="color: #7A3C00;">**NSDAP**</span>)?][? if (prussia_leader = "Papen" or (chancellor == nsdap_chancellor and (not rubicon_mini or game_over)) and not prussia_leader == "Goring") and started: <span style="color: #808080;">Papen</span> (<span style="color: #808080;">I</span>)?][? if prussia_leader = "Schleicher" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): [? if not dnef_formed: <span style="color: #808080;">Schleicher</span>?][? if dnef_formed: <span style="color: #BFC8CC;">Schleicher</span>?] ([? if not dnef_formed: <span style="color: #808080;">I</span>?][? if dnef_formed: <span style="color: #BFC8CC;">**DNEF**</span>?])?][? if prussia_leader = "Goerdeler" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #808080;">Goerdeler</span> (<span style="color: #808080;">I</span>)?][? if prussia_leader = "Strasser" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #6A1E1E;">Strasser</span> (<span style="color: #6A1E1E;">**DSU**</span>)?][? if prussia_leader = "joavig" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #700000;">joavig</span> (<span style="color: #7A3C00;">**NSDAP**</span>)?]
+Prussian Minister-President: [? if (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): [? if prussia_leader_party == "SPD": <span style="color: [+ spd_colour +];">[+ prussia_leader +]</span> (<span style="color: [+ spd_colour +];">**SPD**</span>)?][? if prussia_leader_party == "SAPD": <span style="color: [+ sapd_colour +];">[+ prussia_leader +]</span> (<span style="color: [+ sapd_colour +];">**SAPD**</span>)?][? if prussia_leader_party == "Z" or prussia_leader_party == "CVP": <span style="color: #000000;">[+ prussia_leader +]</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)?][? if prussia_leader_party == "DVP": <span style="color: [+ dvp_colour +];">[+ prussia_leader +]</span> (<span style="color: [+ dvp_colour +];">**DVP**</span>)?][? if prussia_leader_party == "LVP": <span style="color: [+ lvp_colour +];">[+ prussia_leader +]</span> (<span style="color: [+ lvp_colour +];">**LVP**</span>)?]?][? if prussia_leader_party == "NSDAP": <span style="color: [+ nsdap_colour +];">[+ prussia_leader +]</span> (<span style="color: [+ nsdap_colour +];">**NSDAP**</span>)?][? if (prussia_leader == "Papen" or (chancellor == nsdap_chancellor and (not rubicon_mini or game_over)) and not prussia_leader == "Goring") and started: <span style="color: [+ i_colour +];">Papen</span> (<span style="color: [+ i_colour +];">I</span>)?][? if prussia_leader == "Schleicher" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): [? if not dnef_formed: <span style="color: [+ i_colour +];">Schleicher</span>?][? if dnef_formed: <span style="color: #BFC8CC;">Schleicher</span>?] ([? if not dnef_formed: <span style="color: [+ i_colour +];">I</span>?][? if dnef_formed: <span style="color: #BFC8CC;">**DNEF**</span>?])?][? if prussia_leader == "Goerdeler" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: [+ i_colour +];">Goerdeler</span> (<span style="color: [+ i_colour +];">I</span>)?][? if prussia_leader = "Strasser" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #6A1E1E;">Strasser</span> (<span style="color: #6A1E1E;">**DSU**</span>)?][? if prussia_leader == "joavig" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #700000;">joavig</span> (<span style="color: #7A3C00;">**NSDAP**</span>)?]
 
 Reichstag composition:
 
 # 1928: 30, 1930: 25, 1932: 22
 
 [? if dnef_formed: <span class="tooltip-text" title="German National Unity Front" style="color: #BFC8CC;">**DNEF**</span>: [+ dnef_r +]% ?]
-<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #c00000;">**SPD**</span>: [+ spd_r +]%
-[? if uspd_joined <= 2 and uspd_r > 0: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [+ uspd_r +]% ?]
-[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Socialist Workers' Party of Germany" style="color: #9B0000;">**SAPD**</span>: [+ sapd_r +]% ?]
+<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: [+ spd_colour +];">**SPD**</span>: [+ spd_r +]%
+[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Socialist Workers' Party of Germany" style="color: [+ sapd_colour +];">**SAPD**</span>: [+ sapd_r +]% ?]
+[? if not uspd_joined = 3 and uspd_r > 0: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-[? if z_party_name != "CVP": <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?][? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?]: [+ z_r +]%
+[? if started: [? if z_party_name != "CVP": <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?][? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?]?][? if not started: <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span></span> ?]: [+ z_r +]%
 # 1928: 10, 1930: 13
-<span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_r +]%
+<span class="tooltip-text" title="Communist Party of Germany" style="color: [+ kpd_colour +];">**KPD**</span>: [+ kpd_r +]%
 [? if kag_r > 0: <span class="tooltip-text" title="Communist Working Group" style="color: #81125B;">**KAG**</span>: [+ kag_r +]% ?]
 # 1928: 5, 1930: 4 (as DStP)
-[? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [+ lvp_r +]% ?]
-[? if (not lvp_formed or not ddp_name) : [? if not ddp_name:<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**DDP**</span>?][? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_r +]% ?]
+[? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: [+ lvp_colour +];">**LVP**</span>: [+ lvp_r +]% ?]
+[? if (not lvp_formed or not ddp_name) : [? if not ddp_name:<span class="tooltip-text" title="German Democratic Party" style="color: [+ ddp_colour +];">**DDP**</span>?][? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_r +]% ?]
 # 1928: 9, 1930: 5
-[? if not lvp_formed and dvp_exist : <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]% ?]
+[? if not lvp_formed and dvp_exist : <span class="tooltip-text" title="German People's Party" style="color: [+ dvp_colour +];">**DVP**</span>: [+ dvp_r +]% ?]
 [? if kvp_formed and not dnvp_dvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_r +]% ?]
 [? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: [+ kvp_r +]% ?]
 # 1928: 14, 1930: 7
-[? if not cvp_formed and not dnvp_defunct: <span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_r +]%?]
+[? if not cvp_formed and not dnvp_defunct: <span class="tooltip-text" title="German National People's Party" style="color: [+ dnvp_colour +];">**DNVP**</span>: [+ dnvp_r +]%?]
 [? if dnf_formed: <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: [+ dnf_r +]% ?]
 # 1928: 3, 1930: 18
 [? if dsu_exist: <span class="tooltip-text" title="German Social Union" style="color: #6A1E1E;">**DSU**</span>: [+ dsu_r +]%?]
-[? if not nsdap_split: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_r +]%?]
-[? if nsdap_split: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_hitler_r +]%?]
+[? if not nsdap_split: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: [+ nsdap_colour +];">**NSDAP**</span>: [+ nsdap_r +]%?]
+[? if nsdap_split: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: [+ nsdap_colour +];">**NSDAP**</span>: [+ nsdap_hitler_r +]%?]
 [? if nvf_exist: <span class="tooltip-text" title="National People's Front" style="color: #142e20;">**NVF**</span>: [+ nvf_r +]%?]
 # 1928: 9, 1930: 10
 **Others**: [+ other_r +]%
 
-<span style="color: #c00000;">**SPD**</span> position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
+<span style="color: [+ spd_colour +];">**SPD**</span> position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
 [? if in_weimar_coalition and not in_social_catholic_coalition and not in_social_liberal_coalition and spd_in_government: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition ?][? if in_social_democratic_coalition: Social Democratic Coalition ?][? if in_social_catholic_coalition and spd_in_government: <span style="color: #c00000;">Social</span>-[? if not stegerwald_path: <span style="color: #000000;">Catholic</span>?][? if stegerwald_path: <span style="color: #000000;">Christian</span>?] Coalition ?][? if in_social_liberal_coalition and spd_in_government: <span style="color: #c00000;">Ketchup</span> and [? if not lvp_formed: <span style="color: #D3C24D;">Mustard</span>?][? if lvp_formed: <span style="color: #FFCC00;">Mustard</span>?] Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**SPD**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
 
 [? if bruning_time and spd_toleration: Bruning's reichstag backing: [+ bruning_coalition +]% ?]
@@ -117,7 +118,7 @@ Reichstag composition:
 
 [? if spd_in_government and president == "Hindenburg" : Hindenburg's approval: [+ hindenburg_angry : hindenburg_angry +] ?]
 
-[? if spd_in_government and (in_left_front or in_popular_front): <span style="color: #700000;">**KPD**</span> coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and (in_left_front or in_popular_front): <span style="color: [+ kpd_colour +];">**KPD**</span> coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu
@@ -125,164 +126,174 @@ go-to: menu
 Current cabinet:
 
 Labor: 
-[? if labor_minister_party == "SPD": <span style="color: #c00000;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
-[? if labor_minister_party == "USPD": <span style="color: #AA0000;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
-[? if labor_minister_party == "KPD": <span style="color: #700000;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
-[? if labor_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
-[? if labor_minister_party == "LVP": <span style="color: #FFCC00;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
-[? if labor_minister_party == "Z": <span style="color: #000000;"> [+ labor_minister +] ([+ z_party_name +])</span> ?]
-[? if labor_minister_party == "BVP": <span style="color: #A2D8E0;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
-[? if labor_minister_party == "DVP": <span style="color: #C0A054;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
+[? if labor_minister_party == "SPD": <span style="color: [+ spd_colour +];"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
+[? if labor_minister_party == "USPD": <span style="color: [+ uspd_colour +];"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
+[? if labor_minister_party == "SAPD": <span style="color: [+ sapd_colour +];"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
+[? if labor_minister_party == "KPD": <span style="color: [+ kpd_colour +];"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
+[? if labor_minister_party == ddp_name: <span style="color: [+ ddp_colour +];"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
+[? if labor_minister_party == "LVP": <span style="color: [+ lvp_colour +];"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
+[? if labor_minister_party == "Z": <span style="color: [+ z_colour +];"> [+ labor_minister +] ([+ z_party_name +])</span> ?]
+[? if labor_minister_party == "BVP": <span style="color: [+ bvp_colour +];"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
+[? if labor_minister_party == "DVP": <span style="color: [+ dvp_colour +];"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
 [? if labor_minister_party == "Others": <span style="color: #c00000;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
 [? if labor_minister_party == "KVP": <span style="color: #0087DC;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
-[? if labor_minister_party == "DNVP": <span style="color: #3E88B3;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
+[? if labor_minister_party == "DNVP": <span style="color: [+ dnvp_colour +];"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
 [? if labor_minister_party == "DNF": <span style="color: #003755;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
-[? if labor_minister_party == "NSDAP": <span style="color: #7A3C00;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
+[? if labor_minister_party == "NSDAP": <span style="color: [+ nsdap_colour +];"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
 [? if labor_minister_party == "I": [+ labor_minister +] ([+ labor_minister_party +]) ?]
 
 Interior: 
-[? if interior_minister_party == "SPD": <span style="color: #c00000;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
-[? if interior_minister_party == "USPD": <span style="color: #AA0000;"> [+ interior_minister +] (USPD)</span> ?]
-[? if interior_minister_party == "KPD": <span style="color: #700000;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
-[? if interior_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
-[? if interior_minister_party == "LVP": <span style="color: #FFCC00;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
-[? if interior_minister_party == "Z": <span style="color: #000000;"> [+ interior_minister +] ([+ z_party_name +])</span> ?]
-[? if interior_minister_party == "BVP": <span style="color: #A2D8E0;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
-[? if interior_minister_party == "DVP": <span style="color: #C0A054;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
+[? if interior_minister_party == "SPD": <span style="color: [+ spd_colour +];"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
+[? if interior_minister_party == "USPD": <span style="color: [+ uspd_colour +];"> [+ interior_minister +] (USPD)</span> ?]
+[? if interior_minister_party == "SAPD": <span style="color: [+ sapd_colour +];"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
+[? if interior_minister_party == "KPD": <span style="color: [+ kpd_colour +];"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
+[? if interior_minister_party == ddp_name: <span style="color: [+ ddp_colour +];"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
+[? if interior_minister_party == "LVP": <span style="color: [+ lvp_colour +];"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
+[? if interior_minister_party == "Z": <span style="color: [+ z_colour +];"> [+ interior_minister +] ([+ z_party_name +])</span> ?]
+[? if interior_minister_party == "BVP": <span style="color: [+ bvp_colour +];"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
+[? if interior_minister_party == "DVP": <span style="color: [+ dvp_colour +];"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
 [? if interior_minister_party == "Others": <span style="color: #c00000;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
 [? if interior_minister_party == "KVP": <span style="color: #0087DC;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
-[? if interior_minister_party == "DNVP": <span style="color: #3E88B3;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
+[? if interior_minister_party == "DNVP": <span style="color: [+ dnvp_colour +];"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
 [? if interior_minister_party == "DNF": <span style="color: #003755;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
-[? if interior_minister_party == "NSDAP": <span style="color: #7A3C00;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
+[? if interior_minister_party == "NSDAP": <span style="color: [+ nsdap_colour +];"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
 [? if interior_minister_party == "I": [+ interior_minister +] ([+ labor_minister_party +]) ?]
 
 Finance: 
-[? if finance_minister_party == "SPD": <span style="color: #c00000;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
-[? if finance_minister_party == "USPD": <span style="color: #AA0000;"> [+ finance_minister +] (USPD)</span> ?]
-[? if finance_minister_party == "KPD": <span style="color: #700000;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
-[? if finance_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
-[? if finance_minister_party == "LVP": <span style="color: #FFCC00;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
-[? if finance_minister_party == "Z": <span style="color: #000000;"> [+ finance_minister +] ([+ z_party_name +])</span> ?]
-[? if finance_minister_party == "BVP": <span style="color: #A2D8E0;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
-[? if finance_minister_party == "DVP": <span style="color: #C0A054;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
+[? if finance_minister_party == "SPD": <span style="color: [+ spd_colour +];"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
+[? if finance_minister_party == "USPD": <span style="color: [+ uspd_colour +];"> [+ finance_minister +] (USPD)</span> ?]
+[? if finance_minister_party == "SAPD": <span style="color: [+ sapd_colour +];"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
+[? if finance_minister_party == "KPD": <span style="color: [+ kpd_colour +];"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
+[? if finance_minister_party == ddp_name: <span style="color: [+ ddp_colour +];"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
+[? if finance_minister_party == "LVP": <span style="color: [+ lvp_colour +];"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
+[? if finance_minister_party == "Z": <span style="color: [+ z_colour +];"> [+ finance_minister +] ([+ z_party_name +])</span> ?]
+[? if finance_minister_party == "BVP": <span style="color: [+ bvp_colour +];"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
+[? if finance_minister_party == "DVP": <span style="color: [+ dvp_colour +];"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
 [? if finance_minister_party == "Others": <span style="color: #c00000;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
 [? if finance_minister_party == "KVP": <span style="color: #0087DC;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
-[? if finance_minister_party == "DNVP": <span style="color: #3E88B3;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
+[? if finance_minister_party == "DNVP": <span style="color: [+ dnvp_colour +];"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
 [? if finance_minister_party == "DNF": <span style="color: #003755;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
-[? if finance_minister_party == "NSDAP": <span style="color: #7A3C00;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
+[? if finance_minister_party == "NSDAP": <span style="color: [+ nsdap_colour +];"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
 [? if finance_minister_party == "I": [+ finance_minister +] ([+ finance_minister_party +]) ?]
 
 Economic: 
-[? if economic_minister_party == "SPD": <span style="color: #c00000;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
-[? if economic_minister_party == "USPD": <span style="color: #AA0000;"> [+ economic_minister +] (USPD)</span> ?]
-[? if economic_minister_party == "KPD": <span style="color: #700000;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
-[? if economic_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
-[? if economic_minister_party == "LVP": <span style="color: #FFCC00;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
-[? if economic_minister_party == "Z": <span style="color: #000000;"> [+ economic_minister +] ([+ z_party_name +])</span> ?]
-[? if economic_minister_party == "BVP": <span style="color: #A2D8E0;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
-[? if economic_minister_party == "DVP": <span style="color: #C0A054;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
+[? if economic_minister_party == "SPD": <span style="color: [+ spd_colour +];"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
+[? if economic_minister_party == "USPD": <span style="color: [+ uspd_colour +];"> [+ economic_minister +] (USPD)</span> ?]
+[? if economic_minister_party == "SAPD": <span style="color: [+ sapd_colour +];"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
+[? if economic_minister_party == "KPD": <span style="color: [+ kpd_colour +];"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
+[? if economic_minister_party == ddp_name: <span style="color: [+ ddp_colour +];"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
+[? if economic_minister_party == "LVP": <span style="color: [+ lvp_colour +];"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
+[? if economic_minister_party == "Z": <span style="color: [+ z_colour +];"> [+ economic_minister +] ([+ z_party_name +])</span> ?]
+[? if economic_minister_party == "BVP": <span style="color: [+ bvp_colour +];"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
+[? if economic_minister_party == "DVP": <span style="color: [+ dvp_colour +];"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
 [? if economic_minister_party == "Others": <span style="color: #c00000;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
 [? if economic_minister_party == "KVP": <span style="color: #0087DC;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
-[? if economic_minister_party == "DNVP": <span style="color: #3E88B3;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
+[? if economic_minister_party == "DNVP": <span style="color: [+ dnvp_colour +];"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
 [? if economic_minister_party == "DNF": <span style="color: #003755;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
-[? if economic_minister_party == "NSDAP": <span style="color: #7A3C00;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
+[? if economic_minister_party == "NSDAP": <span style="color: [+ nsdap_colour +];"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
 [? if economic_minister_party == "I": [+ economic_minister +] ([+ economic_minister_party +]) ?]
 
 Justice: 
-[? if justice_minister_party == "SPD": <span style="color: #c00000;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
-[? if justice_minister_party == "USPD": <span style="color: #AA0000;"> [+ justice_minister +] (USPD)</span> ?]
-[? if justice_minister_party == "KPD": <span style="color: #700000;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
-[? if justice_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
-[? if justice_minister_party == "LVP": <span style="color: #FFCC00;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
-[? if justice_minister_party == "Z": <span style="color: #000000;"> [+ justice_minister +] ([+ z_party_name +])</span> ?]
-[? if justice_minister_party == "BVP": <span style="color: #A2D8E0;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
-[? if justice_minister_party == "DVP": <span style="color: #C0A054;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
+[? if justice_minister_party == "SPD": <span style="color: [+ spd_colour +];"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
+[? if justice_minister_party == "USPD": <span style="color: [+ uspd_colour +];"> [+ justice_minister +] (USPD)</span> ?]
+[? if justice_minister_party == "SAPD": <span style="color: [+ sapd_colour +];"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
+[? if justice_minister_party == "KPD": <span style="color: [+ kpd_colour +];"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
+[? if justice_minister_party == ddp_name: <span style="color: [+ ddp_colour +];"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
+[? if justice_minister_party == "LVP": <span style="color: [+ lvp_colour +];"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
+[? if justice_minister_party == "Z": <span style="color: [+ z_colour +];"> [+ justice_minister +] ([+ z_party_name +])</span> ?]
+[? if justice_minister_party == "BVP": <span style="color: [+ bvp_colour +];"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
+[? if justice_minister_party == "DVP": <span style="color: [+ dvp_colour +];"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
 [? if justice_minister_party == "Others": <span style="color: #c00000;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
 [? if justice_minister_party == "KVP": <span style="color: #0087DC;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
-[? if justice_minister_party == "DNVP": <span style="color: #3E88B3;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
+[? if justice_minister_party == "DNVP": <span style="color: [+ dnvp_colour +];"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
 [? if justice_minister_party == "DNF": <span style="color: #003755;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
-[? if justice_minister_party == "NSDAP": <span style="color: #7A3C00;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
+[? if justice_minister_party == "NSDAP": <span style="color: [+ nsdap_colour +];"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
 [? if justice_minister_party == "I": [+ justice_minister +] ([+ justice_minister_party +]) ?]
 
 Foreign: 
-[? if foreign_minister_party == "SPD": <span style="color: #c00000;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
-[? if foreign_minister_party == "USPD": <span style="color: #AA0000;"> [+ foreign_minister +] (USPD)</span> ?]
-[? if foreign_minister_party == "KPD": <span style="color: #700000;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
-[? if foreign_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
-[? if foreign_minister_party == "LVP": <span style="color: #FFCC00;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
-[? if foreign_minister_party == "Z": <span style="color: #000000;"> [+ foreign_minister +] ([+ z_party_name +])</span> ?]
-[? if foreign_minister_party == "BVP": <span style="color: #A2D8E0;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
-[? if foreign_minister_party == "DVP": <span style="color: #C0A054;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
+[? if foreign_minister_party == "SPD": <span style="color: [+ spd_colour +];"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
+[? if foreign_minister_party == "USPD": <span style="color: [+ uspd_colour +];"> [+ foreign_minister +] (USPD)</span> ?]
+[? if foreign_minister_party == "SAPD": <span style="color: [+ sapd_colour +];"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
+[? if foreign_minister_party == "KPD": <span style="color: [+ kpd_colour +];"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
+[? if foreign_minister_party == ddp_name: <span style="color: [+ ddp_colour +];"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
+[? if foreign_minister_party == "LVP": <span style="color: [+ lvp_colour +];"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
+[? if foreign_minister_party == "Z": <span style="color: [+ z_colour +];"> [+ foreign_minister +] ([+ z_party_name +])</span> ?]
+[? if foreign_minister_party == "BVP": <span style="color: [+ bvp_colour +];"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
+[? if foreign_minister_party == "DVP": <span style="color: [+ dvp_colour +];"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
 [? if foreign_minister_party == "Others": <span style="color: #c00000;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
 [? if foreign_minister_party == "KVP": <span style="color: #0087DC;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
-[? if foreign_minister_party == "DNVP": <span style="color: #3E88B3;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
+[? if foreign_minister_party == "DNVP": <span style="color: [+ dnvp_colour +];"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
 [? if foreign_minister_party == "DNF": <span style="color: #003755;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
-[? if foreign_minister_party == "NSDAP": <span style="color: #7A3C00;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
+[? if foreign_minister_party == "NSDAP": <span style="color: [+ nsdap_colour +];"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
 [? if foreign_minister_party == "I": [+ foreign_minister +] ([+ foreign_minister_party +]) ?]
 
 Reichswehr: 
-[? if reichswehr_minister_party == "SPD": <span style="color: #c00000;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
-[? if reichswehr_minister_party == "USPD": <span style="color: #AA0000;"> [+ reichswehr_minister +] (USPD)</span> ?]
-[? if reichswehr_minister_party == "KPD": <span style="color: #700000;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
-[? if reichswehr_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
-[? if reichswehr_minister_party == "LVP": <span style="color: #FFCC00;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
-[? if reichswehr_minister_party == "Z": <span style="color: #000000;"> [+ reichswehr_minister +] ([+ z_party_name +])</span> ?]
-[? if reichswehr_minister_party == "BVP": <span style="color: #A2D8E0;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
-[? if reichswehr_minister_party == "DVP": <span style="color: #C0A054;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
+[? if reichswehr_minister_party == "SPD": <span style="color: [+ spd_colour +];"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
+[? if reichswehr_minister_party == "USPD": <span style="color: [+ uspd_colour +];"> [+ reichswehr_minister +] (USPD)</span> ?]
+[? if reichswehr_minister_party == "SAPD": <span style="color: [+ sapd_colour +];"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
+[? if reichswehr_minister_party == "KPD": <span style="color: [+ kpd_colour +];"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
+[? if reichswehr_minister_party == ddp_name: <span style="color: [+ ddp_colour +];"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
+[? if reichswehr_minister_party == "LVP": <span style="color: [+ lvp_colour +];"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
+[? if reichswehr_minister_party == "Z": <span style="color: [+ z_colour +];"> [+ reichswehr_minister +] ([+ z_party_name +])</span> ?]
+[? if reichswehr_minister_party == "BVP": <span style="color: [+ bvp_colour +];"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
+[? if reichswehr_minister_party == "DVP": <span style="color: [+ dvp_colour +];"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
 [? if reichswehr_minister_party == "Others": <span style="color: #c00000;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
 [? if reichswehr_minister_party == "KVP": <span style="color: #0087DC;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
-[? if reichswehr_minister_party == "DNVP": <span style="color: #3E88B3;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
+[? if reichswehr_minister_party == "DNVP": <span style="color: [+ dnvp_colour +];"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
 [? if reichswehr_minister_party == "DNF": <span style="color: #003755;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
-[? if reichswehr_minister_party == "NSDAP": <span style="color: #7A3C00;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
+[? if reichswehr_minister_party == "NSDAP": <span style="color: [+ nsdap_colour +];"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
 [? if reichswehr_minister_party == "I": [+ reichswehr_minister +] ([+ reichswehr_minister_party +]) ?]
 
 Agriculture: 
-[? if agriculture_minister_party == "SPD": <span style="color: #c00000;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
-[? if agriculture_minister_party == "USPD": <span style="color: #AA0000;"> [+ agriculture_minister +] (USPD)</span> ?]
-[? if agriculture_minister_party == "KPD": <span style="color: #700000;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
-[? if agriculture_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
-[? if agriculture_minister_party == "LVP": <span style="color: #FFCC00;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
-[? if agriculture_minister_party == "Z": <span style="color: #000000;"> [+ agriculture_minister +] ([+ z_party_name +])</span> ?]
-[? if agriculture_minister_party == "BVP": <span style="color: #A2D8E0;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
-[? if agriculture_minister_party == "DVP": <span style="color: #C0A054;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
+[? if agriculture_minister_party == "SPD": <span style="color: [+ spd_colour +];"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
+[? if agriculture_minister_party == "USPD": <span style="color: [+ uspd_colour +];"> [+ agriculture_minister +] (USPD)</span> ?]
+[? if agriculture_minister_party == "SAPD": <span style="color: [+ sapd_colour +];"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
+[? if agriculture_minister_party == "KPD": <span style="color: [+ kpd_colour +];"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
+[? if agriculture_minister_party == ddp_name: <span style="color: [+ ddp_colour +];"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
+[? if agriculture_minister_party == "LVP": <span style="color: [+ lvp_colour +];"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
+[? if agriculture_minister_party == "Z": <span style="color: [+ z_colour +];"> [+ agriculture_minister +] ([+ z_party_name +])</span> ?]
+[? if agriculture_minister_party == "BVP": <span style="color: [+ bvp_colour +];"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
+[? if agriculture_minister_party == "DVP": <span style="color: [+ dvp_colour +];"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
 [? if agriculture_minister_party == "Others": <span style="color: #c00000;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
 [? if agriculture_minister_party == "KVP": <span style="color: #0087DC;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
-[? if agriculture_minister_party == "DNVP": <span style="color: #3E88B3;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
+[? if agriculture_minister_party == "DNVP": <span style="color: [+ dnvp_colour +];"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
 [? if agriculture_minister_party == "DNF": <span style="color: #003755;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
-[? if agriculture_minister_party == "NSDAP": <span style="color: #7A3C00;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
+[? if agriculture_minister_party == "NSDAP": <span style="color: [+ nsdap_colour +];"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
 [? if agriculture_minister_party == "I": [+ agriculture_minister +] ([+ agriculture_minister_party +]) ?]
 [? if agriculture_minister_party == "BB": <span style="color: #226510;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> (=others)?]
 
 Transport: 
-[? if transport_minister_party == "SPD": <span style="color: #c00000;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
-[? if transport_minister_party == "USPD": <span style="color: #AA0000;"> [+ transport_minister +] (USPD)</span> ?]
-[? if transport_minister_party == "KPD": <span style="color: #700000;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
-[? if transport_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
-[? if transport_minister_party == "LVP": <span style="color: #FFCC00;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
-[? if transport_minister_party == "Z": <span style="color: #000000;"> [+ transport_minister +] ([+ z_party_name +])</span> ?]
-[? if transport_minister_party == "BVP": <span style="color: #A2D8E0;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
-[? if transport_minister_party == "DVP": <span style="color: #C0A054;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
+[? if transport_minister_party == "SPD": <span style="color: [+ spd_colour +];"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
+[? if transport_minister_party == "USPD": <span style="color: [+ uspd_colour +];"> [+ transport_minister +] (USPD)</span> ?]
+[? if transport_minister_party == "SAPD": <span style="color: [+ sapd_colour +];"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
+[? if transport_minister_party == "KPD": <span style="color: [+ kpd_colour +];"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
+[? if transport_minister_party == ddp_name: <span style="color: [+ ddp_colour +];"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
+[? if transport_minister_party == "LVP": <span style="color: [+ lvp_colour +];"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
+[? if transport_minister_party == "Z": <span style="color: [+ z_colour +];"> [+ transport_minister +] ([+ z_party_name +])</span> ?]
+[? if transport_minister_party == "BVP": <span style="color: [+ bvp_colour +];"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
+[? if transport_minister_party == "DVP": <span style="color: [+ dvp_colour +];"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
 [? if transport_minister_party == "Others": <span style="color: #c00000;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
 [? if transport_minister_party == "KVP": <span style="color: #0087DC;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
-[? if transport_minister_party == "DNVP": <span style="color: #3E88B3;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
+[? if transport_minister_party == "DNVP": <span style="color: [+ dnvp_colour +];"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
 [? if transport_minister_party == "DNF": <span style="color: #003755;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
-[? if transport_minister_party == "NSDAP": <span style="color: #7A3C00;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
+[? if transport_minister_party == "NSDAP": <span style="color: [+ nsdap_colour +];"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
 [? if transport_minister_party == "I": [+ transport_minister +] ([+ transport_minister_party +]) ?]
 
 Postal: 
-[? if postal_minister_party == "SPD": <span style="color: #c00000;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
-[? if postal_minister_party == "USPD": <span style="color: #AA0000;"> [+ postal_minister +] (USPD)</span> ?]
-[? if postal_minister_party == "KPD": <span style="color: #700000;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
-[? if postal_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
-[? if postal_minister_party == "LVP": <span style="color: #FFCC00;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
-[? if postal_minister_party == "Z": <span style="color: #000000;"> [+ postal_minister +] ([+ z_party_name +])</span> ?]
-[? if postal_minister_party == "BVP": <span style="color: #A2D8E0;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
-[? if postal_minister_party == "DVP": <span style="color: #C0A054;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
+[? if postal_minister_party == "SPD": <span style="color: [+ spd_colour +];"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
+[? if postal_minister_party == "USPD": <span style="color: [+ uspd_colour +];"> [+ postal_minister +] (USPD)</span> ?]
+[? if postal_minister_party == "SAPD": <span style="color: [+ sapd_colour +];"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
+[? if postal_minister_party == "KPD": <span style="color: [+ kpd_colour +];"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
+[? if postal_minister_party == ddp_name: <span style="color: [+ ddp_colour +];"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
+[? if postal_minister_party == "LVP": <span style="color: [+ lvp_colour +];"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
+[? if postal_minister_party == "Z": <span style="color: [+ z_colour +];"> [+ postal_minister +] ([+ z_party_name +])</span> ?]
+[? if postal_minister_party == "BVP": <span style="color: [+ bvp_colour +];"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
+[? if postal_minister_party == "DVP": <span style="color: [+ dvp_colour +];"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
 [? if postal_minister_party == "Others": <span style="color: #c00000;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
 [? if postal_minister_party == "KVP": <span style="color: #0087DC;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
-[? if postal_minister_party == "DNVP": <span style="color: #3E88B3;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
+[? if postal_minister_party == "DNVP": <span style="color: [+ dnvp_colour +];"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
 [? if postal_minister_party == "DNF": <span style="color: #003755;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
-[? if postal_minister_party == "NSDAP": <span style="color: #7A3C00;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
+[? if postal_minister_party == "NSDAP": <span style="color: [+ nsdap_colour +];"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
 [? if postal_minister_party == "I": [+ postal_minister +] ([+ postal_minister_party +]) ?]
 
 
@@ -628,14 +639,15 @@ Loyalty: [+ prussian_police_loyalty : loyalty +]
 
 
 @factions
+go-to: menu
 
-**Internal factions of the** <span style="color: #c00000;">**SPD**</span>
+**Internal factions of the** <span style="color: [+ spd_colour +];">**SPD**</span>
 
 Overall dissent: [+ dissent_percent : dissent +]
 
 **Left**
 
-Many leftists are former members of the <span style="color: #D47B9B;">**USPD**</span> (the left-wing, anti-war <span style="color: #D47B9B;">Independent Social Democratic Party</span>), or are young radicals. Many are interested in closer cooperation with the <span style="color: #700000;">**KPD**</span>, and some support extra-parliamentary action.
+Many leftists are former members of the <span style="color: [+ uspd_colour +];">**USPD**</span> (the left-wing, anti-war <span style="color: [+ uspd_colour +];">Independent Social Democratic Party</span>), or are young radicals. Many are interested in closer cooperation with the <span style="color: [+ kpd_colour +];">**KPD**</span>, and some support extra-parliamentary action.
 
 Strength: [+ left_strength : strength +]
 
@@ -643,7 +655,7 @@ Dissent: [+ left_dissent : dissent +]
 
 **Centrists**
 
-Centrists in the <span style="color: #c00000;">**SPD**</span> are followers of the doctrine of orthodox <span style="color: #9B0000;">Marxism</span> as expounded by Karl Kautsky and later Rudolf Hilferding. They seek a middle course between reform and revolution, while defending the democratic state.
+Centrists in the <span style="color: [+ spd_colour +];">**SPD**</span> are followers of the doctrine of orthodox <span style="color: #9B0000;">Marxism</span> as expounded by Karl Kautsky and later Rudolf Hilferding. They seek a middle course between reform and revolution, while defending the democratic state.
 
 Strength: [+ center_strength : strength +]
 
@@ -651,7 +663,7 @@ Dissent: [+ center_dissent : dissent +]
 
 **Labor**
 
-Many <span style="color: #c00000;">**SPD**</span> members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
+Many <span style="color: [+ spd_colour +];">**SPD**</span> members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
 
 Strength: [+ labor_strength : strength +]
 
@@ -659,7 +671,7 @@ Dissent: [+ labor_dissent : dissent +]
 
 **Reformists**
 
-Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> and <span style="color: #700000;">left</span>. [? if spd_prussia : They are dominant in the state government of Prussia. ?]
+Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> and <span style="color: [+ kpd_colour +];">left</span>. [? if spd_prussia : They are dominant in the state government of Prussia. ?]
 
 Strength: [+ reformist_strength : strength +]
 
@@ -675,7 +687,7 @@ Dissent: [+ reformist_dissent : dissent +]
 
 [? if social_patriot: **Social Patriots** ?]
 
-[? if social_patriot: Social Patriots combine support for pro-worker social programs with fervent German nationalism and anti-<span style="color: #700000;">communism</span>. Many of those who identify with this tendency seem to be little more than lapdogs of Schleicher[? if dnef_formed :&nbsp;and his <span style="color: #BFC8CC;">**DNEF**</span>?]. Other factions view their positions as contradictory and incoherent[? if schleicher_spd_influence > 5 :, but perhaps they may know best after all..?]. ?]
+[? if social_patriot: Social Patriots combine support for pro-worker social programs with fervent German nationalism and anti-<span style="color: [+ kpd_colour +];">communism</span>. Many of those who identify with this tendency seem to be little more than lapdogs of Schleicher[? if dnef_formed :&nbsp;and his <span style="color: #BFC8CC;">**DNEF**</span>?]. Other factions view their positions as contradictory and incoherent[? if schleicher_spd_influence > 5 :, but perhaps they may know best after all..?]. ?]
 
 [? if social_patriot: Strength: [+ social_patriot_strength : strength +] ?]
 
@@ -1050,6 +1062,7 @@ if (d3 && window) {
     lines_3.width(width).height(300);
     d3.select("#economic_history").datum(Q.economic_records).call(lines_3);
 }
+    if (window.applyPartyColors) setTimeout(window.applyPartyColors, 50);
 !}
 
 = Reichstag composition
@@ -1135,3 +1148,92 @@ if (d3 && window) {
 = Economic history
 
 {!<svg id="economic_history" style="width: 500px; height: 300px;"> </svg>!}
+
+@invisible_information
+go-to: menu
+
+Wels: [+ wels_in +]
+
+Müller: [+ muller_in +]
+
+Scheidemann: [+ scheidemann_in +]
+
+Hilfdering: [+ hilferding_in +]
+
+Breitscheid: [+ breitscheid_in +]
+
+Crispien: [+ crispien_in +]
+
+Kautsky: [+ kautsky_in +]
+
+Levi: [+ levi_in +]
+
+Rosenfeld: [+ rosenfeld_in +]
+
+Ledebour: [+ ledebour_in +]
+
+Liebknecht: [+ liebknecht_in +]
+
+Sender: [+ sender_in +]
+
+Siemsen: [+ siemsen_in +]
+
+Seydewitz: [+ seydewitz_in +]
+
+Thalheimer: [+ thalheimer_in +]
+
+Brandler: [+ brandler_in +]
+
+Fischer: [+ fischer_in +]
+
+Braun: [+ braun_in +]
+
+Ebert: [+ ebert_in +]
+
+Severing: [+ severing_in +]
+
+Plülf: [+ pfulf_in +]
+
+Juchaz: [+ juchaz_in +]
+
+Wissel: [+ wissel_in +]
+
+Aufhäuser: [+ aufhauser_in +]
+
+Leipart: [+ leipart_in +]
+
+Woytinsky: [+ woytinsky_in +]
+
+Tarnow: [+ tarnow_in +]
+
+Baade: [+ baade_in +]
+
+Sollmann: [+ sollmann_in +]
+
+Schmidt: [+ schmidt_in +]
+
+Stampfer: [+ stampfer_in +]
+
+Radbruch: [+ radbruch_in +]
+
+Schuhmacher: [+ schuhmacher_in +]
+
+Mierendorff: [+ mierendorff_in +]
+
+Leber: [+ leber_in +]
+
+Wirth: [+ wirth_in +]
+
+Hugenberg: [+ hugenberg_in +]
+
+DVP: [? if dvp_exists: yes ?][? if lvp_formed: no ?]
+
+DDP: [+ ddp_name +]
+
+LVP: [? if lvp_formed: yes ?][? if not lvp_formed: no ?]
+
+Chancellor: [+ chancellor +] ([+ chancellor_party +])
+
+President: [+ president +] ([+ president_party +])
+
+PL: [+ prussia_leader +] ([+ prussia_leader_party +])

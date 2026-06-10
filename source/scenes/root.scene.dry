@@ -140,8 +140,11 @@ Q.nsfb_relation = 0;
 
 Q.kpd_leader = "Brandler";
 Q.kpd_ideology = "Sparticism";
+Q.kpd_strategy = "Revolution";
 Q.uspd_leader = "Crispien";
 Q.uspd_ideology = "Orthodox Marxism";
+Q.sapd_leader = "Rosenfeld";
+Q.sapd_ideology = "Anti-Facsism";
 Q.z_leader = "Marx";
 Q.z_ideology = "Right";
 Q.cvp_ideology = "Moderate";
@@ -181,12 +184,12 @@ Q.sh_strength = 500;
 Q.sh_militancy = 0.5;
 Q.sh_banned = 0;
 Q.sh_banned_prussia = 0;
-Q.sa_strength = 30;
-Q.sa_militancy = 0.8;
+Q.sa_strength = 20;
+Q.sa_militancy = 0.7;
 Q.sa_banned = 0;
 Q.sa_banned_prussia = 0;
-Q.rfb_strength = 130;
-Q.rfb_militancy = 0.5;
+Q.rfb_strength = 55;
+Q.rfb_militancy = 0.2;
 Q.rfb_banned = 0;
 Q.rfb_banned_prussia = 0;
 
@@ -588,8 +591,10 @@ Q.economic_records = [];
 
 // State of the government
 Q.president = "Ebert";
+Q.president_party = "SPD";
 Q.president_ideology = "Moderate";
-// starting chancellor: Wilhelm Marx
+Q.prussia_leader_party = "SPD";
+// starting chancellor: Joseph Wirth
 Q.chancellor = "Wirth";
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 1;
@@ -789,6 +794,9 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'dealing_with_toleration',
     'constitutional_reform', 'labor_rights', 'spd_government_burden',
     'education_science', 'curriculum',
+    // local govt
+    'saxony_action', 'thuringia_action', 'hamburg_action', 'bavaria_action', 'baden_action',
+    'wurttemberg_action', 'meck_schwe_action',
     // events
     'cuno_bitching', 'uspd_decline', 'emergency_cuts', 'unemployment_insurance',
     'sa_ban', 'sh_ban', 'papen_chancellor', 'schleicher_chancellor',
@@ -816,8 +824,6 @@ Q.rubicon_timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'constitutional_reform', 'labor_rights', 'spd_government_burden',
     'education_science', 'curriculum',
     // events
-
-     
     'lsi_founded', 'cuno_bitching', 'uspd_decline', 'march_on_rome', 'emergency_cuts', 'unemployment_insurance',
     'sa_ban', 'sh_ban', 'papen_chancellor', 'schleicher_chancellor',
     'kpd_policy', 'kpd_ultimatum', 'kpd_ultimatum_prussia', 'popular_front_dispute',
@@ -884,6 +890,14 @@ Q.womens_rights_timer = 0;
 Q.homosexual_rights_timer = 0;
 Q.economic_democracy_timer = 0;
 Q.coalition_affairs_timer = 0;
+// local government timers
+Q.saxony_action_timer = 0;
+Q.thuringia_action_timer = 0;
+Q.hamburg_action_timer = 0;
+Q.bavaria_action_timer = 0;
+Q.baden_action_timer = 0;
+Q.wurttemberg_action_timer = 0;
+Q.meck_schwe_action_timer = 0;
 // event timers
 Q.cuno_bitching_timer = 0;
 Q.uspd_decline_timer = 0;
@@ -1101,6 +1115,25 @@ Q.conservative_media = 20
 Q.monarchist_media = 22;
 Q.volkisch_media = 2;
 
+// (dynamic) party_colours - mostly major and dynmaic parties
+
+Q.spd_colour = '#c00000';
+Q.kpd_colour = '#700000';
+Q.sb_colour = '#B4143D';
+Q.sapd_colour = '#9B0000';
+Q.uspd_colour = '#D47B9B';
+Q.aspd_colour = '#fe9e00';
+Q.ddp_colour = '#D3C24D';
+Q.lvp_colour = '#FFCC00';
+Q.z_colour = '#000000';
+Q.bvp_colour = '#A2D8E0';
+Q.dvp_colour = '#D5AC27';
+Q.dnvp_colour = '#3E88B3';
+Q.dnf_colour = '#003755';
+Q.dvfb_colour = '#3D3D3D';
+Q.nsdap_colour = '#7A3C00';
+Q.i_colour = '#808080';
+
 
 // foreign relations
 Q.us_relation = 50;
@@ -1150,13 +1183,13 @@ Q.scheidemann_in = 'SPD';
 Q.crispien_in = 'USPD';
 Q.breitscheid_in = 'USPD';
 Q.hilferding_in = 'USPD';
+Q.kautsky_in = 'USPD';
 
 Q.ebert_in = 'SPD';
 Q.braun_in = 'SPD';
 Q.severing_in = 'SPD';
 Q.pfulf_in = 'SPD';
 Q.juchaz_in = 'SPD';
-Q.wirth_in = 'Z';
 
 Q.seydewitz_in = 'SPD';
 Q.rosenfeld_in = 'USPD';
@@ -1171,6 +1204,23 @@ Q.tarnow_in = 'SPD';
 Q.leipart_in = 'SPD';
 Q.aufhauser_in = 'USPD';
 Q.wissel_in = 'SPD';
+
+Q.mierendorff_in = 'SPD';
+Q.leber_in = 'SPD';
+Q.schumacher_in = 'SPD';
+Q.wirth_in = 'Z';
+
+Q.baade_in = 'SPD';
+Q.sollman_in = 'SPD';
+Q.schmidt_in = 'SPD';
+Q.stampfer_in = 'SPD';
+Q.radbruch_in = 'SPD';
+
+Q.thalheimer_in = 'KPD';
+Q.fischer_in = 'KPD';
+Q.brandler_in = 'KPD';
+
+Q.hugenberg_in = 'DNVP';
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
@@ -1368,6 +1418,12 @@ if (Q.percentComplete >= 100) {
     Q.achievement_holy_moly = 1;
 }
 
+!}
+on-display: {!
+    setTimeout(function() {
+        if (window.applyPartyColors) window.applyPartyColors();
+        if (window.setupColorObserver) window.setupColorObserver();
+    }, 50);
 !}
 set-bg: img/map_2.jpg
 new-page: true

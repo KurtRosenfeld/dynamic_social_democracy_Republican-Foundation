@@ -2130,7 +2130,7 @@ view-if: muller_dead = 0
 subtitle: Müller is popular within the party and overall experienced.
 choose-if: not uspd_leader = "Ledebour"
 unavailable-subtitle: The USPD disaproves
-on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"
+on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = muller_in
 go-to: ministries
 
 Müller's appointment as chancellor is approved by all our potential allies.
@@ -2149,16 +2149,16 @@ Brauns appointment as chancellor is approved by all our potential allies.
 @socdem_chancellor_breitscheid
 title: Rudolf Breitscheid for Chancellor
 subtitle: Breitscheid is just generally based.
-on-arrival: spd_in_government = 1; chancellor = "Breitscheid"; chancellor_party = breitscheid_in if uspd_joined >= 1; chancellor_party = "USPD" if uspd_joined == 0; leverage += 10
+on-arrival: spd_in_government = 1; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; leverage += 10
 go-to: ministries
 
 Our allies are quite happy about this choice.
 
 @socdem_chancellor_levi
 title: Paul Levi for Chancellor
-view-if: levi_dead = 0
+view-if: levi_dead = 0 and not levi_in == "KPD"
 subtitle: Levi is further to the left than all other possibilities
-on-arrival: spd_in_government = 1; chancellor = "Levi"; chancellor_party = levi_in if uspd_joined >= 1; chancellor_party = "USPD" if uspd_joined == 0; leverage += 5
+on-arrival: spd_in_government = 1; chancellor = "Levi"; chancellor_party = levi_in; leverage += 5
 go-to: ministries
 
 Our allies approve of this choice.
@@ -2376,14 +2376,14 @@ The right will be more active in resisting our rule considering we are going to 
 
 @great_popular_front
 view-if: z_ideology == "Left" and kpd_leader == "Conciliators"
-on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; kpd_relation += 10; coup_progress += 1; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0; coup_progress += 1 if in_popular_front_prussia; capital_strike_progress += 1 if in_popular_front_prussia; hindenburg_angry = 70
+on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; kpd_relation += 10; coup_progress += 1; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0; coup_progress += 1 if in_popular_front_prussia; capital_strike_progress += 1 if in_popular_front_prussia; hindenburg_angry = 70
 achievement: grosse_volksfront
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 
 Somehow, the coalition is successfully formed! The conciliatory leadership of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: #700000;">**KPD**</span> helped make the negotiations possible. We still need a chancellor; the only acceptable choice among the parties was Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span>, acceptable to the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: #700000;">**KPD**</span> [? if president == "Hindenburg" or president_ideology == "Moderate": as well as President [+ president +], albeit extremely reluctantly ?].
 
 @popular_front_success
-on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; kpd_relation += 10; coup_progress += 1; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0; coup_progress += 1 if in_popular_front_prussia; capital_strike_progress += 1 if in_popular_front_prussia; hindenburg_angry = 75
+on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; kpd_relation += 10; coup_progress += 1; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0; coup_progress += 1 if in_popular_front_prussia; capital_strike_progress += 1 if in_popular_front_prussia; hindenburg_angry = 75
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 achievement: volksfront
 
@@ -2570,7 +2570,7 @@ The right will be more active in resisting our rule considering we are going to 
 - @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
 
 @left_coalition_success
-on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; coup_progress += 3; capital_strike_progress += 2; coup_progress += 1 if in_left_front_prussia; capital_strike_progress += 1 if in_left_front_prussia; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 10; lvp_relation -= 8; hindenburg_angry = 85
+on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; coup_progress += 3; capital_strike_progress += 2; coup_progress += 1 if in_left_front_prussia; capital_strike_progress += 1 if in_left_front_prussia; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 10; lvp_relation -= 8; hindenburg_angry = 85
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
@@ -3702,7 +3702,7 @@ subtitle: Breitscheid is viewed as friendlier towards the left of the <span styl
 view-if: year >= 1930
 choose-if: not cvp_chancellor_accepted
 unavailable-subtitle: We've promised to forfeit the Chancellorship to the <span style="color: #000000;">[+ z_party_name +]</span>.
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; hindenburg_angry += 5
+on-arrival: chancellor = "Breitscheid"; chancellor_party = breitscheid_in; hindenburg_angry += 5
 go-to: ministries
 
 Rudolf Breitscheid has been appointed chancellor.

@@ -713,7 +713,7 @@ th {
 
 .seat.spd {
   fill: #E3000F;
-  stroke: var(--border-color);
+  stroke: var(--border-colour);
   stroke-width: 1.5px;
 }
 
@@ -721,6 +721,10 @@ th {
   fill: #D3C24D;
 }
 
+.seat.dhp {
+  fill: #ADE06E;
+}
+  
 .seat.z {
   fill: #000;
 }
@@ -730,7 +734,7 @@ th {
 }
 
 .seat.dvp {
-  fill: #D5AC27;
+fill: #D5AC27;
 }
 
 .seat.bl {
@@ -754,7 +758,7 @@ th {
 }
 
 .seat.nsdap {
-  fill: #7A3C00;
+  fill: #7A3C00);
 }
 
 .seat.nsfb {
@@ -770,7 +774,7 @@ th {
 }
 
 .seat.sapd {
-  fill: #9B0000;
+  fill: var(--sapd-color);
 }
 
 .seat.dnf {
@@ -782,7 +786,7 @@ th {
 }
 
 .seat.lvp {
-  fill: #FFCC00;
+  fill: var(--lvp-color);
 }
 
 .seat.dnef {
@@ -843,7 +847,7 @@ th {
 }
 
 .seat.aspd {
-  fill: #fe9e00;
+  fill: [+ aspd_colour +];
 }
 
 .seat.csvd {

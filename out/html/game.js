@@ -143,6 +143,77 @@ window.disableGrayMode = function() {
     window.dendryUI.saveSettings();
 };
 
+// One-time color application
+function applyPartyColors() {
+    const colors = {
+        kpd: '{{ Q.kpd_colour }}',
+        sapd: '{{ Q.sapd_colour }}',
+        uspd: '{{ Q.uspd_colour }}',
+        ddp: '{{ Q.ddp_colour }}',
+        lvp: '{{ Q.lvp_colour }}',
+        dvp: '{{ Q.dvp_colour }}',
+        dnvp: '{{ Q.dnvp_colour }}',
+        z: '{{ Q.z_colour }}',
+        nsdap: '{{ Q.nsdap_colour }}',
+    };
+    
+    for (const [party, color] of Object.entries(colors)) {
+        const elements = document.querySelectorAll(`.seat.${party}`);
+        console.log(`Setting ${elements.length} ${party} seats to ${color}`);
+        elements.forEach(seat => seat.style.fill = color);
+    }
+}
+
+// Add this to your game.js
+window.applyPartyColors = function() {
+    if (!window.dendryUI || !window.dendryUI.dendryEngine) return;
+    
+    const qualities = window.dendryUI.dendryEngine.state.qualities;
+    
+    const colorMap = {
+        uspd: qualities.uspd_colour,
+        ddp: qualities.ddp_colour,
+        kpd: qualities.kpd_colour,
+        dvp: qualities.dvp_colour,
+        dnvp: qualities.dnvp_colour,
+        lvp: qualities.lvp_colour,
+        z: qualities.z_colour,
+        nsdap: qualities.nsdap_colour,
+    };
+    
+    for (const [party, color] of Object.entries(colorMap)) {
+        if (color) {
+            document.querySelectorAll(`.seat.${party}`).forEach(seat => {
+                seat.style.fill = color;
+            });
+        }
+    }
+};
+
+// Please just work, please
+window.setupColorObserver = function() {
+    const observer = new MutationObserver(function(mutations) {
+        // Check if new seats were added
+        const hasNewSeats = mutations.some(mutation => 
+            mutation.addedNodes.length > 0 && 
+            mutation.target.querySelector && 
+            mutation.target.querySelector('.seat')
+        );
+        if (hasNewSeats) {
+            window.applyPartyColors();
+        }
+    });
+    
+    observer.observe(document.body, { childList: true, subtree: true });
+};
+  
+// Run when page is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyPartyColors);
+} else {
+    applyPartyColors();
+}
+  
   // populates the checkboxes in the options view
   window.populateOptions = function() {
     var disable_bg = window.dendryUI.disable_bg;
@@ -300,6 +371,7 @@ window.disableGrayMode = function() {
 
       button.style.backgroundColor = '#dddddd';
   };
+
 
   /*
    * This function copied from the code for Infinite Space Battle Simulator

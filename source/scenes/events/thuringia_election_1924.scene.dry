@@ -1,0 +1,367 @@
+title: Thuringian Landtag Election
+view-if: year == 1924 and month == 2
+new-page: true
+tags: event
+max-visits: 1
+on-arrival: new_middle_spd -= 1
+priority: 2
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/states.png";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
+
+= Elections, [+ month : month +] [+ year +]
+
+The Thuringian state elections are to be held now.
+
+- @thuringia: May we do our best...
+
+@thuringia
+on-arrival: {!
+
+var thuringia_adjustment_factors = {
+    spd: 0.95,
+    uspd: 1.0,
+    kpd: 1.55,
+    ddp: 1.5,
+    lvp: 1.0,
+    z: 0.09,
+    dvp: 1.1,
+    dnvp: 1.9,
+    others: 0.1,
+    nsdap: 1.1,
+    nsfb: 1.6
+};
+
+Q.spd_r_thuringia = 0;
+Q.uspd_r_thuringia = 0;
+Q.kpd_r_thuringia = 0;
+Q.bl_r_thuringia = 0;
+Q.nsdap_r_thuringia = 0;
+Q.other_r_thuringia = 0;
+Q.nsfb_r_thuringia = 0;
+Q.z_r_thuringia = 0;
+Q.dvp_r_thuringia = 0;
+Q.ddp_r_thuringia = 0;
+Q.dnvp_r_thuringia = 0;           
+Q.lvp_r_thuringia = 0;        
+
+Q.spd_thuringia_elections_vote = 0;
+Q.uspd_thuringia_elections_vote = 0;
+Q.kpd_thuringia_elections_vote = 0;
+Q.ddp_thuringia_elections_vote = 0;
+Q.lvp_thuringia_elections_vote = 0;
+Q.z_thuringia_elections_vote = 0;
+Q.dvp_thuringia_elections_vote = 0;
+Q.dnvp_thuringia_elections_vote = 0;
+Q.nsdap_thuringia_elections_vote = 0;
+Q.nsfb_thuringia_elections_vote = 0;
+Q.other_thuringia_elections_vote = 0;
+Q.bl_thuringia_elections_vote = 0;
+
+if (Q.new_middle_spd_normalized + Q.old_middle_spd_normalized >= 30) thuringia_adjustment_factors.spd += 0.1;
+if (Q.rural_spd_normalized >= 20) thuringia_adjustment_factors.spd += 0.1;
+Q.spd_thuringia_elections_vote = Q.spd_votes*thuringia_adjustment_factors.spd;
+if (Q.uspd_leader == "Crispien") thuringia_adjustment_factors.uspd -= 0.2;
+if (Q.uspd_leader == "Liebknecht") thuringia_adjustment_factors.uspd += 0.2;
+Q.uspd_thuringia_elections_vote = Q.uspd_votes*thuringia_adjustment_factors.uspd;
+Q.z_thuringia_elections_vote = Q.z_votes*thuringia_adjustment_factors.z;
+Q.kpd_thuringia_elections_vote = Q.kpd_votes*thuringia_adjustment_factors.kpd;
+Q.ddp_thuringia_elections_vote = Q.ddp_votes*thuringia_adjustment_factors.ddp;
+Q.lvp_thuringia_elections_vote = Q.lvp_votes*thuringia_adjustment_factors.lvp;
+Q.dvp_thuringia_elections_vote = Q.dvp_votes*thuringia_adjustment_factors.dvp;
+Q.dnvp_thuringia_elections_vote = Q.dnvp_votes*thuringia_adjustment_factors.dnvp;
+Q.nsdap_thuringia_elections_vote = Q.nsdap_votes*thuringia_adjustment_factors.nsdap;
+Q.nsfb_thuringia_elections_vote = Q.nsfb_votes*thuringia_adjustment_factors.nsfb;
+Q.other_thuringia_elections_vote = Q.other_votes*thuringia_adjustment_factors.other;
+
+Q.bl_thuringia_elections_vote = Q.ddp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote;
+
+Q.total_votes_thuringia = Q.bl_thuringia_elections_vote + Q.spd_thuringia_elections_vote + Q.uspd_thuringia_elections_vote + Q.kpd_thuringia_elections_vote + Q.ddp_thuringia_elections_vote + Q.lvp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote + Q.nsdap_thuringia_elections_vote + Q.nsfb_thuringia_elections_vote + Q.other_thuringia_elections_vote;
+             
+if (Q.total_votes_thuringia > 0) {
+    Q.spd_thuringia_elections_vote = (Q.spd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.uspd_thuringia_elections_vote = (Q.uspd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.kpd_thuringia_elections_vote = (Q.kpd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.ddp_thuringia_elections_vote = (Q.ddp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.lvp_thuringia_elections_vote = (Q.lvp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.z_thuringia_elections_vote = (Q.z_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.dvp_thuringia_elections_vote = (Q.dvp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.dnvp_thuringia_elections_vote = (Q.dnvp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.nsdap_thuringia_elections_vote = (Q.nsdap_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.nsfb_thuringia_elections_vote = (Q.nsfb_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.other_thuringia_elections_vote = (Q.other_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.bl_thuringia_elections_vote = (Q.bl_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    let target = 23;
+    Q.spd_thuringia_elections_vote = Math.round((Q.spd_thuringia_elections_vote + (target - Q.spd_thuringia_elections_vote) * 0.35) * 10) / 10;
+    Q.total_votes_thuringia = Q.bl_thuringia_elections_vote +  Q.spd_thuringia_elections_vote + Q.uspd_thuringia_elections_vote + Q.kpd_thuringia_elections_vote + Q.ddp_thuringia_elections_vote + Q.lvp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote + Q.nsdap_thuringia_elections_vote + Q.nsfb_thuringia_elections_vote + Q.other_thuringia_elections_vote;
+    Q.spd_thuringia_elections_vote = (Q.spd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.uspd_thuringia_elections_vote = (Q.uspd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.kpd_thuringia_elections_vote = (Q.kpd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.ddp_thuringia_elections_vote = (Q.ddp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.lvp_thuringia_elections_vote = (Q.lvp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.z_thuringia_elections_vote = (Q.z_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.dvp_thuringia_elections_vote = (Q.dvp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.dnvp_thuringia_elections_vote = (Q.dnvp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.nsdap_thuringia_elections_vote = (Q.nsdap_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.nsfb_thuringia_elections_vote = (Q.nsfb_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.other_thuringia_elections_vote = (Q.other_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.bl_thuringia_elections_vote = (Q.bl_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+}
+
+Q.spd_thuringia_elections_vote = (Q.spd_thuringia_elections_vote != undefined ? parseFloat(Q.spd_thuringia_elections_vote.toFixed(1)) : 0);
+Q.uspd_thuringia_elections_vote = (Q.uspd_thuringia_elections_vote != undefined ? parseFloat(Q.uspd_thuringia_elections_vote.toFixed(1)) : 0);
+Q.kpd_thuringia_elections_vote = (Q.kpd_thuringia_elections_vote != undefined ? parseFloat(Q.kpd_thuringia_elections_vote.toFixed(1)) : 0);
+Q.ddp_thuringia_elections_vote = (Q.ddp_thuringia_elections_vote != undefined ? parseFloat(Q.ddp_thuringia_elections_vote.toFixed(1)) : 0);
+Q.lvp_thuringia_elections_vote = (Q.lvp_thuringia_elections_vote != undefined ? parseFloat(Q.lvp_thuringia_elections_vote.toFixed(1)) : 0);
+Q.z_thuringia_elections_vote = (Q.z_thuringia_elections_vote != undefined ? parseFloat(Q.z_thuringia_elections_vote.toFixed(1)) : 0);
+Q.dvp_thuringia_elections_vote = (Q.dvp_thuringia_elections_vote != undefined ? parseFloat(Q.dvp_thuringia_elections_vote.toFixed(1)) : 0);
+Q.dnvp_thuringia_elections_vote = (Q.dnvp_thuringia_elections_vote != undefined ? parseFloat(Q.dnvp_thuringia_elections_vote.toFixed(1)) : 0);
+Q.nsdap_thuringia_elections_vote = (Q.nsdap_thuringia_elections_vote != undefined ? parseFloat(Q.nsdap_thuringia_elections_vote.toFixed(1)) : 0);
+Q.nsfb_thuringia_elections_vote = (Q.nsfb_thuringia_elections_vote != undefined ? parseFloat(Q.nsfb_thuringia_elections_vote.toFixed(1)) : 0);
+Q.other_thuringia_elections_vote = (Q.other_thuringia_elections_vote != undefined ? parseFloat(Q.other_thuringia_elections_vote.toFixed(1)) : 0);
+Q.bl_thuringia_elections_vote = (Q.bl_thuringia_elections_vote != undefined ? parseFloat(Q.bl_thuringia_elections_vote.toFixed(1)) : 0);
+
+Q.bl_thuringia_elections_vote = Q.ddp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote;
+             
+if (Q.spd_thuringia_elections_vote >= 1.6) Q.spd_r_thuringia = Q.spd_thuringia_elections_vote;
+if (Q.uspd_thuringia_elections_vote >= 1.3) Q.uspd_r_thuringia = Q.uspd_thuringia_elections_vote;
+if (Q.kpd_thuringia_elections_vote >= 1.6) Q.kpd_r_thuringia = Q.kpd_thuringia_elections_vote;
+if (Q.bl_thuringia_elections_vote >= 0.5) Q.bl_r_thuringia = Q.bl_thuringia_elections_vote;
+if (Q.nsdap_thuringia_elections_vote >= 1.6) Q.nsdap_r_thuringia = Q.nsdap_thuringia_elections_vote;
+if (Q.nsfb_thuringia_elections_vote >= 1.6) Q.nsfb_r_thuringia = Q.nsfb_thuringia_elections_vote;
+if (Q.other_thuringia_elections_vote >= 1.2) Q.other_r_thuringia = Q.other_thuringia_elections_vote;
+
+var thuringia_adjustment_r_factors = {
+    spd: 1.01,
+    uspd: 1.1,
+    kpd: 0.99,
+    bl: 1.02,
+    nsdap: 1.1,
+    nsfb: 1.14,
+    other: 0.1,
+};
+
+Q.spd_r_thuringia = Q.spd_r_thuringia*thuringia_adjustment_r_factors.spd;
+Q.uspd_r_thuringia = Q.uspd_r_thuringia*thuringia_adjustment_r_factors.uspd;
+Q.kpd_r_thuringia = Q.kpd_r_thuringia*thuringia_adjustment_r_factors.kpd;
+Q.bl_r_thuringia = Q.bl_r_thuringia*thuringia_adjustment_r_factors.bl;
+Q.nsdap_r_thuringia = Q.nsdap_r_thuringia*thuringia_adjustment_r_factors.nsdap;
+Q.nsfb_r_thuringia = Q.nsfb_r_thuringia*thuringia_adjustment_r_factors.nsfb;
+Q.other_r_thuringia = Q.other_r_thuringia*thuringia_adjustment_r_factors.other;
+
+Q.total_r_thuringia = 0;
+
+if (Q.spd_r_thuringia) Q.total_r_thuringia += Q.spd_r_thuringia;
+if (Q.uspd_r_thuringia) Q.total_r_thuringia += Q.uspd_r_thuringia;
+if (Q.kpd_r_thuringia) Q.total_r_thuringia += Q.kpd_r_thuringia;
+if (Q.bl_r_thuringia) Q.total_r_thuringia += Q.bl_r_thuringia;
+if (Q.nsdap_r_thuringia) Q.total_r_thuringia += Q.nsdap_r_thuringia;
+if (Q.nsfb_r_thuringia) Q.total_r_thuringia += Q.nsfb_r_thuringia;
+if (Q.other_r_thuringia) Q.total_r_thuringia += Q.other_r_thuringia;
+
+if (Q.total_r_thuringia > 0) {
+    Q.spd_r_thuringia = (Q.spd_r_thuringia / Q.total_r_thuringia) * 100;
+    Q.uspd_r_thuringia = (Q.uspd_r_thuringia / Q.total_r_thuringia) * 100;
+    Q.kpd_r_thuringia = (Q.kpd_r_thuringia / Q.total_r_thuringia) * 100;
+    Q.bl_r_thuringia = (Q.bl_r_thuringia / Q.total_r_thuringia) * 100;
+    Q.nsdap_r_thuringia = (Q.nsdap_r_thuringia / Q.total_r_thuringia) * 100;
+    Q.nsfb_r_thuringia = (Q.nsfb_r_thuringia / Q.total_r_thuringia) * 100;
+    Q.other_r_thuringia = (Q.other_r_thuringia / Q.total_r_thuringia) * 100;
+}
+
+
+function allocateSeats(percentages, totalSeats = 72) {
+    const exactSeats = {};
+    const flooredSeats = {};
+    const remainders = [];
+
+    let totalFlooredSeats = 0;
+    for (const party in percentages) {
+        const exact = (percentages[party] * totalSeats) / 100;
+        const floored = Math.floor(exact);
+        const remainder = exact - floored;
+
+        exactSeats[party] = exact;
+        flooredSeats[party] = floored;
+        totalFlooredSeats += floored;
+
+        remainders.push({ party, remainder });
+    }
+
+    const seatsToDistribute = totalSeats - totalFlooredSeats;
+    remainders.sort((a, b) => b.remainder - a.remainder);
+
+    for (let i = 0; i < seatsToDistribute; i++) {
+        flooredSeats[remainders[i].party]++;
+    }
+
+    return flooredSeats;
+}
+
+const inputPercentages = {
+    spd_r_thuringia: Q.spd_r_thuringia,
+    uspd_r_thuringia: Q.uspd_r_thuringia,
+    kpd_r_thuringia: Q.kpd_r_thuringia,
+    bl_r_thuringia: Q.bl_r_thuringia,
+    nsdap_r_thuringia: Q.nsdap_r_thuringia,
+    nsfb_r_thuringia: Q.nsfb_r_thuringia,
+    other_r_thuringia: Q.other_r_thuringia
+};
+
+const allocatedSeats = allocateSeats(inputPercentages);
+
+for (const party in allocatedSeats) {
+    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 72).toFixed(1));
+}
+
+
+Q.left_coalition_thuringia = parseFloat((Q.spd_r_thuringia + Q.kpd_r_thuringia + Q.uspd_r_thuringia).toFixed(1));
+Q.far_right_abstention_thuringia = parseFloat((Q.bl_r_thuringia + Q.nsfb_r_thuringia + Q.nsdap_r_thuringia).toFixed(1));
+Q.ordnungsbund = parseFloat((Q.bl_r_thuringia).toFixed(1));
+
+!}
+on-display: {!
+data = [{
+    "id": "kpd",
+    "legend": "KPD",
+    "name": "KPD",
+    "seats": Math.round(Q.kpd_r_thuringia * 0.72),
+}];
+
+if (Q.uspd_r_thuringia) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.uspd_r_thuringia * 0.72),
+    });
+}
+
+data = data.concat([{
+    "id": "spd",
+    "legend": "SPD",
+    "name": "SPD",
+    "seats": Math.round(Q.spd_r_thuringia * 0.72),
+}]);
+
+if (Q.bl_r_thuringia) {
+    data.push({
+        "id": "bl",
+        "legend": OB,
+        "name": OB,
+        "seats": Math.round(Q.bl_r_thuringia * 0.72),
+    });
+}
+
+
+if (Q.other_r_thuringia) {
+    data.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_r_thuringia * 0.72),
+    });
+}
+
+
+if (Q.nsfb_r_thuringia) {
+    data.push({
+        "id": "nsfb",
+        "legend": "NSFB",
+        "name": "NSFB",
+        "seats": Math.round(Q.nsfb_r_thuringia * 0.72),
+    });
+}
+             
+data = data.concat([{
+    "id": "nsdap",
+    "legend": "NSDAP",
+    "name": "NSDAP",
+    "seats": Math.round(Q.nsdap_r_thuringia * 0.72),
+}, ]);
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("thuringia_landtag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#thuringia_landtag").datum(data).call(parliament);
+}
+!}
+go-to: thuringia_coalition_menu
+
+
+**Thuringia results:**
+
+{!<svg id="thuringia_landtag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_thuringia_elections_vote +]%** {!</td><td>!} [+ spd_r_thuringia +]% {!</td></tr>!}
+
+[? if uspd_r_thuringia > 0 : {!<tr><td><div class="box" style='background-color:#AA0000'> </div> !}USPD: {!</td><td>!} [+ uspd_thuringia_elections_vote +]% {!</td><td>!} [+ uspd_r_thuringia +]% {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_thuringia_elections_vote +]% {!</td><td>!} [+ kpd_r_thuringia +]%  {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#0D2AC9'> </div> !} OB: {!</td><td>!} [+ bl_thuringia_elections_vote +]% {!</td><td>!} [+ bl_r_thuringia +]%  {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_thuringia_elections_vote +]% {!</td><td>!} 0%  {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} VVL: {!</td><td>!} [+ nsfb_thuringia_elections_vote +]% {!</td><td>!} [+ nsfb_r_thuringia +]%  {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_thuringia_elections_vote +]% {!</td><td>!} [+ nsdap_r_thuringia +]%  {!</td></tr>!}
+{!</table>!}
+<hr id="read-marker">
+Thuringia used to be ruled by left coalitions up to now.
+<hr id="read-marker">
+United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span>[? if uspd_r_thuringia >= 1: + <span style="color: [+ uspd_colour +];">**USPD**</span>?]): [+ left_coalition_thuringia +]% 
+
+Ordnungsbund (<span style="color: #000000;">**[+ z_party_name +]**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #006400;">**LB**</span>): [+ ordnungsbund +]%
+
+@thuringia_coalition_menu
+
+- @united_left_coalition_thuringia
+- @far_right_abstention_thuringia
+- @bourgeois_coalition_thuringia
+
+@united_left_coalition_thuringia
+title: [? if uspd_r_thuringia >= 1: Maybe return to the <span style="color: [+ spd_colour +];">**Red**</span>-<span style="color: [+ uspd_colour +];">**Red**</span>-<span style="color: [+ kpd_colour +];">**Red**</span> Coalition?? ?][? if uspd_r_thuringia == 0: Maybe return to the <span style="color: #c00000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition? ?]
+subtitle: Are we sure want to do this again?
+unavailable-subtitle: This could not even work if we had the seats...
+choose-if: left_coalition_thuringia >= 50 and kpd_relation >= 35
+on-arrival: thuringia_gov = "Left"; ddp_relation -= 8; z_relation -= 10; dvp_relation -= 12; workers_kpd += 3; workers_spd += 1; kpd_relation += 10; uspd_relation += 5
+
+Against every expectation we were able to form a new coalition with the <span style="color: [+ kpd_colour +];">**KPD**</span>!
+
+@bourgeois_coalition_thuringia
+title: A Bourgeois Coalition of the <span style="color: #0D2AC9;">**Ordnungbund**</span>
+subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> will lead the coalition.
+view-if: bl_r_thuringia >= 50
+on-arrival: thuringia_gov = "Bourgeois-Right"; workers_other += 3; rural_other += 1; workers_spd -= 1
+
+The Bourgeois form a united front to keep us out of power.
+
+@far_right_abstention_thuringia
+title: A Bourgeois Coalition of the <span style="color: #0D2AC9;">**Ordnungbund**</span>
+subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> will lead the coalition.
+choose-if: far_right_abstention_thuringia >= 50 and bl_r_thuringia < 50
+on-arrival: thuringia_gov = "Bourgeois-Right"; workers_other += 3; rural_other += 1; workers_spd -= 1; new_middle_nsfb += 3; workers_nsfb += 1; unemployed_nsfb -= 1
+
+The Bourgeois form a united front to keep us out of power. Even the United Völkisch List abstains to prevent any chance for us form a government...

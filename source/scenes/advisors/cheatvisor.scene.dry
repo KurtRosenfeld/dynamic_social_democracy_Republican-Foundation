@@ -1,0 +1,120 @@
+title: The Cheatvisor
+is-pinned-card: true 
+tags: advisor, centrist
+card-image: img/portraits/EinsteinAlbert.jpg
+new-page: true
+view-if: cheatvisor_hidden == 0
+
+= The Cheatvisor
+
+
+This is not Einstein, lol
+
+- @bufff
+- @make_nsfb
+- @kill_nsfb
+- @stuulll
+- @eber_party
+- @new_prussia_leader
+- @new_chancellor
+- @new_president
+- @hide
+- @root: Return to main
+
+
+@bufff
+title: Little Cheat
+subtitle: It has gotten so hard to test this stuff
+on-arrival: rural_spd += 10; catholics_spd += 9; new_middle_spd += 2
+
+@make_nsfb
+title: Make NSFB
+view-if: nsfb_exists == 0
+on-arrival: nsfb_exists = 1; workers_nsfb = workers_nsdap + workers_dvfp; unemployed_nsfb = unemployed_nsdap + unemployed_dvfp; new_middle_nsfb = new_middle_nsdap + new_middle_dvfp; old_middle_nsfb = old_middle_nsdap + old_middle_dvfp; rural_nsfb = rural_nsdap + rural_dvfp; catholic_nsfb = catholic_nsdap + catholic_dvfp; nsfb_r = nsdap_r + dvfp_r; nsdap_r = 0; dvfp_r = 0; workers_nsdap = 0; workers_dvfp = 0; new_middle_nsdap = 0; new_middle_dvfp = 0; old_middle_nsdap = 0; old_middle_dvfp = 0; rural_nsdap = 0; rural_dvfp = 0; unemployed_nsdap = 0; unemployed_dvfp = 0; catholic_nsdap = 0; catholic_dvfp = 0
+
+@kill_nsfb
+title: Kill NSFB
+view-if: nsfb_exists == 1
+on-arrival: nsfb_exists = 0; workers_nsdap = workers_nsfb; unemployed_nsdap = unemployed_nsfb; new_middle_nsdap = new_middle_nsfb; old_middle_nsdap = old_middle_nsfb; rural_nsdap = rural_nsfb; catholic_nsdap = catholic_nsfb; dvfp_r = nsfb_r; nsfb_r = 0; workers_nsfb = 0; new_middle_nsfb = 0; old_middle_nsfb = 0; rural_nsfb = 0; unemployed_nsfb = 0; catholic_nsfb = 0
+
+@eber_party
+title: Choose Ebert Party
+
+- @spd: SPD
+- @ddp: DDP
+- @i: I
+- @aspd: ASPD
+
+@spd
+on-arrival: ebert_in = "SPD"
+
+@ddp
+on-arrival: ebert_in = "DDP"
+
+@i
+on-arrival: ebert_in = "I"
+
+@aspd
+on-arrival: ebert_in = "ASPD"
+
+@stuulll
+title: Shuffle time
+on-arrival: shuffle_leadership_timer = 0
+
+@new_prussia_leader
+title: Choose Prussia Leader
+
+- @stegerwald: Stegerwald
+- @rosenfeld: Rosenfeld
+- @goering: Göring
+
+@stegerwald
+on-arrival: prussia_leader = "Stegerwald"; prussia_leader_party = z_party_name
+
+@rosenfeld
+on-arrival: prussia_leader = "Rosenfeld"; prussia_leader_party = rosenfeld_in
+
+@goering
+on-arrival: prussia_leader = "Göring"; prussia_leader_party = "NSDAP"
+
+@new_chancellor
+title: Choose Chancellor
+
+- @breitscheid: Breitscheid
+- @liebknecht: Liebknecht
+- @stresemann: Stresemann
+
+@breitscheid
+on-arrival: chancellor = "Breitscheid"; chancellor_party = breitscheid_in
+
+@liebknecht
+on-arrival: chancellor = "Liebknecht"; chancellor_party = liebknecht_in
+
+@stresemann
+on-arrival: chancellor = "Stresemann"; chancellor_party = DVP if not lvp_formed; chancellor_party = "LVP" if lvp_formed
+
+
+@new_president
+title: Choose President
+
+- @hindenburg: Hindenburg
+- @ebert: Ebert
+- @ledebour: Ledebour
+- @jarres: Jarres
+
+@hindenburg
+on-arrival: president = "Hindenburg"; president_party = "I"
+
+@ebert
+on-arrival: president = "Ebert"
+
+@ledebour
+on-arrival: president = "Ledebour"
+
+@jarres
+on-arrival: president = "Jarres"; president_party = "DVP"
+
+@hide
+title: Remove the Cheatvisor
+on-arrival: cheatvisor_hidden = 1
+
