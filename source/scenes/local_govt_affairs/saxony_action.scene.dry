@@ -1,11 +1,30 @@
 title: Saxony
 new-page: true
 is-card: true
-view-if: saxony_action_timer = 0
-on-arrival: saxony_action_timer += 12; saxony_action_timer += 4 if saxony_gov == "Weimar"; month_actions += 1
+view-if: saxony_action_timer = 0 and (saxony_gov == "SPD" or saxony_gov == "Social-Democratic" or saxony_gov == "Left" or saxony_gov == "Social-Liberal" or saxony_gov == "Weimar" saxony_gov == "Grand")
+on-arrival: saxony_action_timer += 12; saxony_action_timer += 2 if saxony_gov == "Left"; saxony_action_timer += 4 if saxony_gov == "Weimar"; saxony_action_timer += 5 if saxony_gov == "Grand"; month_actions += 1
 tags: local_govt_affairs
 card-image: img/land/Saxony.svg.webp
 
 = Saxony
 
-Whatever
+[? if not saxony_gov == "SPD": We are part of the current cabinet in Saxony ?][? if saxony_gov == "SPD": We are the current government of Saxony ?]
+
+- @reform the administration
+- @fund_workers_militias
+- @give_tax_breaks_to_local_buisnesses
+
+
+@reform the administration
+title: Reform the administration of Saxony
+on-arrival: saxony_reform += 1
+
+@fund_workers_militias
+title: Fund worker's militias
+on-arrival: rfb_strength += 1; kpd_relation += 5
+choose-if: saxony_gov == "SPD" or saxony_gov == "Social-Democratic" or saxony_gov == "Left"
+
+@give_tax_breaks_to_local_buisnesses
+title: Give tax breaks to local buisnesses
+on-arrival: ddp_relation += 5; dvp_relation += 5; old_middle_spd += 3; workers_spd -= 2
+choose-if: not (saxony_gov == "Social-Democratic" or saxony_gov == "Left")
