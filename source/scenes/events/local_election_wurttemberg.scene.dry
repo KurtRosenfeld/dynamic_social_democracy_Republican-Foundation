@@ -508,6 +508,7 @@ Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span styl
 - @weimar_coalition_wurttemberg
 - @grand_coalition_wurttemberg
 - @bourgeois_coalition_wurttemberg
+- @bourgeois_right_coalition_wurttemberg
 - @left_coalition_wurttemberg
 - @social_catholic_coalition_wurttemberg
 - @no_coalition_wurttemberg
@@ -530,7 +531,14 @@ on-arrival: wurttemberg_election_2_trigger_time = time + 48; z_relation += 2; dv
 
 @bourgeois_coalition_wurttemberg
 title: Another Bourgeois Coalition
-choose-if: true_bourgeois_coalition_wurttemberg > 50
+choose-if: true_bourgeois_coalition_wurttemberg >= 50
+view-if: right_bourgeois_coalition_wurttemberg < 50
+on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "Bourgeois"
+
+@bourgeois_right_coalition_wurttemberg
+title: Another Bourgeois Coalition
+view-if: true_bourgeois_coalition_wurttemberg < 50
+choose-if: right_bourgeois_coalition_wurttemberg >= 50
 on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "Bourgeois"
 
 @left_coalition_wurttemberg
@@ -544,7 +552,7 @@ title: The right forms a government...
 subtitle: This doesn't make sense.
 choose-if: right_coalition_wurttemberg >= 50
 view-if: right_coalition_wurttemberg >= 50
-on-arrival: wurttemberg_election_2_trigger_time = time + 48; rural_nsdap += 2; dvp_relation -= 5; wurttemberg_gov = "Right"
+on-arrival: wurttemberg_election_2_trigger_time = time + 48; rural_nsdap += 2; catholic_nsdap += 2; wurttemberg_gov = "Right"
 
 This can't end well...
 
