@@ -1,5 +1,5 @@
 title: Thuringian Landtag Election
-view-if: year == 1922 and month == 3
+view-if: year == 1922 and month == 4
 new-page: true
 tags: event
 max-visits: 1
