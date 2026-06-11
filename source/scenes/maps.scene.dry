@@ -550,6 +550,7 @@ go-to: map_menu
 [? if year >= 1929: <div class="box" style='background-color:#6C168E'> </div> Popular Front Coalition ?]
 <div class="box" style='background-color:#FC6D6D'> </div> Weimar Coalition
 [? if bavaria_gov == "Anti-BVP" or bavaria_gov == "Traffic": <div class="box" style='background-color:#DD6F9C'> </div> Bavaria Coaliation including the SPD ?]
+<div class="box" style='background-color:#5E405A'> </div> Social-Catholic Coalition
 <div class="box" style='background-color:#DD8D1B'> </div> Social-Liberal Coalition (including DVP)
 <div class="box" style='background-color:#A2B725'> </div> Grand Coalition
 <div class="box" style='background-color:#818181'> </div> Bourgeois Coalition
