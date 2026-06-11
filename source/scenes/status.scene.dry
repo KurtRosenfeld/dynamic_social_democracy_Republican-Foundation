@@ -498,6 +498,8 @@ Waldeck: [+ waldeck_gov +] Coalition
 
 [? if ussr_formed = 0: <span style="color: #750e0e;">**RSFSR**</span>: [+ soviet_relation : relationships +] ?]
 
+[? if vatican_independent: <span style="color: #FCF700;">**Vatican**</span><span style="color: #D3D3D3;">**City State**</span> [+ vatican_relation : relationships +] ?]
+
 <span style="color: #1C470C;">**Italy**</span>: [+ italy_relation : relationships +]
 
 <span style="color: #EAD90C;">**Spain**</span>: [+ spain_relation : relationships +]
