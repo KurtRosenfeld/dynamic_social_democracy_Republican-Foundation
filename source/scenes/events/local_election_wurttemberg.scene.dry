@@ -457,7 +457,7 @@ go-to: wurttemberg_coalition_menu
 
 {!<svg id="wurttemberg_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
-{!<tr>!}
+{!<table>!}
 {!<tr><th>Party</th><th>Vote share</th><th>Landtag Seats</th></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td!} **[+ spd_wurttemberg_elections_vote +]%** {!</td><td!} **[+ spd_r_wurttemberg +]%** {!</td></tr>!}
 
@@ -471,7 +471,7 @@ go-to: wurttemberg_coalition_menu
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td!} **[+ lvp_wurttemberg_elections_vote +]%** {!</td><td!} **[+ lvp_r_wurttemberg +]%**  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!<td><td!} **[+ z_wurttemberg_elections_vote +]%** {!</td><td!} **[+ z_r_wurttemberg +]%**  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td!} **[+ z_wurttemberg_elections_vote +]%** {!</td><td!} **[+ z_r_wurttemberg +]%**  {!</td></tr>!}
 
 [? if csvd_exists == 1: {!<tr><td><div class="box" style='background-color:#7FCEB1'> </div> !} CSVD: {!</td><td!} **[+ csvd_wurttemberg_elections_vote +]%** {!</td><td!} **[+ csvd_r_wurttemberg +]%**  {!</td></tr>!} ?]             
 
