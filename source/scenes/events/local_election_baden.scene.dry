@@ -435,7 +435,7 @@ data = data.concat([{
     "name": "DNVP",
     "seats": Math.round(Q.dnvp_r_baden * 0.88),
 }]);
-
+}
   
 data.push({
     "id": "nsfb",
