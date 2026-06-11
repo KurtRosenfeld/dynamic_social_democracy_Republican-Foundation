@@ -10,12 +10,12 @@ card-image: img/land/Saxony.svg.webp
 
 [? if not saxony_gov == "SPD": We are part of the current cabinet in Saxony ?][? if saxony_gov == "SPD": We are the current government of Saxony ?]
 
-- @reform the administration
+- @reform_the_administration
 - @fund_workers_militias
 - @give_tax_breaks_to_local_buisnesses
 
 
-@reform the administration
+@reform_the_administration
 title: Reform the administration of Saxony
 on-arrival: saxony_reform += 1
 
