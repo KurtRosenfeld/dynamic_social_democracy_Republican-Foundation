@@ -292,6 +292,7 @@ Q.left_coalition_wurttemberg = parseFloat((Q.spd_r_wurttemberg + Q.kpd_r_wurttem
 Q.grand_coalition_wurttemberg = parseFloat((Q.ddp_r_wurttemberg + Q.dvp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.spd_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
 Q.right_coalition_wurttemberg = parseFloat((Q.dnvp_r_wurttemberg + Q.nsdap_r_wurttemberg + Q.vrp_r_wurttemberg).toFixed(1));
 Q.true_bourgeois_coalition_wurttemberg = parseFloat((Q.ddp_r_wurttemberg + Q.dvp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.kvp_r_wurttemberg + Q.wbwb_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
+Q.right_bourgeois_coalition_wurttemberg = parseFloat((Q.dvp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.dnvp_r_wurttemberg + Q.wbwb_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
 Q.weimar_coalition_wurttemberg = parseFloat((Q.spd_r_wurttemberg + Q.ddp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
 
 Q.wbwb_wurttemberg_elections_vote = (Q.wbwb_wurttemberg_elections_vote != undefined ? parseFloat(Q.wbwb_wurttemberg_elections_vote.toFixed(1)) : 0);
@@ -458,7 +459,7 @@ go-to: wurttemberg_coalition_menu
 
 {!<tr>!}
 {!<tr><th>Party</th><th>Vote share</th><th>Landtag Seats</th></tr>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td!} **[+ spd_wurttemberg_elections_vote +]%** {!</tr><td!} **[+ spd_r_wurttemberg +]%** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td!} **[+ spd_wurttemberg_elections_vote +]%** {!</td><td!} **[+ spd_r_wurttemberg +]%** {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td!} **[+ sapd_wurttemberg_elections_vote +]%** {!</td><td!} **[+ sapd_r_wurttemberg +]%** {!</td></tr>!} ?]
 
@@ -480,15 +481,15 @@ go-to: wurttemberg_coalition_menu
 
 [? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td!} **[+ kvp_wurttemberg_elections_vote +]%** {!</td><td!} **[+ kvp_r_wurttemberg +]%**  {!</td></tr>!} ?]
 
-[? if vrp_r_wurttmeberg >= 1: {!</tr><td><div class="box" style='background-color:#0075EB'> </div> !} VRP: {!</td><td!} **[+ vrp_wurttemberg_elections_vote +]%** {!</td><td!} **[+ vrp_r_wurttemberg +]%**  {!</td></tr>!} ?]      
+[? if vrp_r_wurttmeberg >= 1: {!<tr><td><div class="box" style='background-color:#0075EB'> </div> !} VRP: {!</td><td!} **[+ vrp_wurttemberg_elections_vote +]%** {!</td><td!} **[+ vrp_r_wurttemberg +]%**  {!</td></tr>!} ?]      
              
 {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} BP: {!</td><td!} **[+ dnvp_wurttemberg_elections_vote +]%** {!</td><td!} **[+ dnvp_r_wurttemberg +]%**  {!</td></tr>!}
 
-[? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!<td><td!} **[+ dnf_wurttemberg_elections_vote +]%** {!</td><td!} 0%  {!<td></tr>!} ?]
+[? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td!} **[+ dnf_wurttemberg_elections_vote +]%** {!</td><td!} 0%  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td!} **[+ nsdap_wurttemberg_elections_vote +]%** {!</td><td!} **[+ nsdap_r_wurttemberg +]%**  {!</td></tr>!}
 
-[? if nsfb_exists == 1: {!</tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} **[+ nsfb_wurttemberg_elections_vote +]%** {!</td><td!} **[+ nsfb_r_wurttemberg +]%**  {!</td></tr>!} ?]
+[? if nsfb_exists == 1: {!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} **[+ nsfb_wurttemberg_elections_vote +]%** {!</td><td!} **[+ nsfb_r_wurttemberg +]%**  {!</td></tr>!} ?]
 {!</table>!}
 <hr id="read-marker">
 
@@ -539,7 +540,7 @@ on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "
 title: Another Bourgeois Coalition
 view-if: true_bourgeois_coalition_wurttemberg < 50
 choose-if: right_bourgeois_coalition_wurttemberg >= 50
-on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "Bourgeois"
+on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "Right Bourgeois"
 
 @left_coalition_wurttemberg
 title: A Coalition of the Left will be formed
