@@ -2,7 +2,7 @@ title: The Inflation Chancellor
 subtitle: Popular discontent with Chancellor [+ chancellor +] rises.
 new-page: true
 view-if: ruhr_occupied == 1 and chancellor == "Cuno" and cuno_bitching_timer == 0
-on-arrival: workers_spd *= 0.95 if spd_in_government == 1; workers_nsdap += 2 if spd_in_government; workers_kpd += 3 if spd_in_government; unemployed_nsdap += 3 if spd_in_government; unemployment += 0.3; inflation += 22
+on-arrival: workers_spd *= 0.95 if spd_in_government == 1; workers_nsdap += 2 if spd_in_government; workers_kpd += 3 if spd_in_government; unemployed_nsdap += 3 if spd_in_government; unemployment += 0.3; inflation += 22; new_middle_dvp -= 2; new_middle_other += 2; catholic_z -= 1; catholic_nsdap += 3; catholic_dvp -= 2; old_middle_dvp -= 1; old_middle_dvfp += 1; dnvp_cuno_support -= 4
 tags: event
 max-visits: 4
 face-image: img/246w0updni1g1.jpeg
@@ -16,11 +16,13 @@ Inflation and unemployment keep growing, as the <span style="color: #000000;">**
 - @break_toleration: Break toleration; vote against this government.
 - @support_cuno: We will vote alongside the government.
 - @slap_cuno: No one wants <span style="color: #808080;">**Cuno**</span>; we will vote agaisnt him!
+- @maintain_coalition: We can't withdraw from our coalition before we've resolved the crisis!
+- @leave_cuno: We will resign from our cabinet positions.
 
 @maintain_toleration
-subtitle: There is no other option but to tolerate <span style="color: #808080;">**Cuno**</span>.
+subtitle: There is no other option but to tolerate <span style="color: [+ i_colour +;">**Cuno**</span>.
 view-if: spd_toleration == 1
-on-arrival: workers_dvfb += 1; workers_kpd += 1; unemployed_nsdap += 1; unemployed_spd -= 2; pro_republic -= 2; kpd_relation -= 2; unemployed_kpd += 2; cuno_bitching_timer = 3
+on-arrival: workers_dvfp += 1; workers_kpd += 1; unemployed_nsdap += 1; unemployed_spd -= 2; pro_republic -= 2; kpd_relation -= 2; unemployed_kpd += 2; cuno_bitching_timer = 3
 
 Our policy of toleration continues.
 
@@ -28,14 +30,16 @@ Our policy of toleration continues.
 @break_toleration
 subtitle: This is likely to result in a new government.
 view-if: spd_toleration == 1
-on-arrival:  dvp_relation -= 2; cuno_slapped = 1; chancellor = "vacant"
+on-arrival: dvp_relation -= 4; z_relation -= 3; ddp_relation -= 3; dnvp_cuno_support -= 2
+on-departure: cuno_slapped = 1 if dnvp_cuno_support <= 0; chancellor = "vacant" if dnvp_cuno_support <= 0; spd_toleration = 0
 
 We have definitively broken with the [+ chancellor +] government, and have voted against them in a vote of no confidence.
 
+[? if dnvp_cuno_support >= 1: The government survives on the support of the <span style="color: [+ dnvp_colour +];">**DNVP**</span> which agrees with the Ruhrkampf in principle. ?]
 
 @support_cuno
-subtitle: There is no other option but to tolerate <span style="color: #808080;">**Cuno**</span>.
-view-if: spd_toleration == 0
+subtitle: There is no other option but to tolerate <span style="color: [+ i_colour +];">**Cuno**</span>.
+view-if: spd_toleration == 0 and spd_in_governemt == 0
 on-arrival: workers_dvfb += 1; workers_kpd += 2; unemployed_nsdap += 2; workers_spd -= 3; pro_republic -= 2; kpd_relation -= 4; unemployed_kpd += 2; cuno_bitching_timer = 3
 
 
@@ -44,7 +48,30 @@ Our policy of toleration continues.
 
 @slap_cuno
 subtitle: This is likely to result in a new government.
-view-if: spd_toleration == 0
-on-arrival:  dvp_relation -= 1; cuno_slapped = 1; chancellor = "vacant"
+view-if: spd_toleration == 0 and spd_in_governemt == 0
+on-arrival:  dvp_relation -= 5; z_relation -= 5; ddp_relation -= 3; dnvp_cuno_support -= 2
+on-departure: cuno_slapped = 1 if dnvp_cuno_support <= 0; chancellor = "vacant" if dnvp_cuno_support <= 0
 
 We will not support Cuno.
+
+[? if dnvp_cuno_support >= 1: The government survives on the support of the <span style="color: [+ dnvp_colour +];">**DNVP**</span> which agrees with the Ruhrkampf in principle. ?]
+
+@maintain_coalition
+view-if: spd_in_government == 1
+on-arrival: workers_dvfp += 1; workers_kpd += 1; unemployed_nsdap += 1; unemployed_spd -= 2; pro_republic -= 2; kpd_relation -= 2; unemployed_kpd += 2; cuno_bitching_timer = 3
+
+The coalition continues.
+
+
+@leave_cuno
+view-if: spd_in_governemt == 1
+on-arrival:  dvp_relation -= 7; z_relation -= 6; ddp_relation -= 5; dnvp_cuno_support -= 1; spd_in_government = 0
+on-departure: cuno_slapped = 1 if dnvp_cuno_support <= 0; chancellor = "vacant" if dnvp_cuno_support <= 0
+
+The <span style="color: [+ spd_colour +];">**SPD**</span> has officially broken with <span style="color: [+ i_colour +];">**Cuno**</span>. Joining was a bad idea in the first place.
+
+[? if dnvp_cuno_support >= 1: The government survives on the support of the <span style="color: [+ dnvp_colour +];">**DNVP**</span> which agrees with the Ruhrkampf in principle. ?]
+
+
+
+
