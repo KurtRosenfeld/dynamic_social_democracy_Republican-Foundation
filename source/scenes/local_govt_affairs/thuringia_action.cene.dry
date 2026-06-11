@@ -6,7 +6,7 @@ on-arrival: thuringia_action_timer += 12; thuringia_action_timer += 2 if thuring
 tags: local_govt_affairs
 card-image: img/land/Thuringia.svg.webp
 
-= Saxony
+= Thuringia
 
 [? if not thuringia_gov == "SPD": We are part of the current cabinet in Thuringia ?][? if thuringia_gov == "SPD": We are the current government of Thuringia ?]
 
