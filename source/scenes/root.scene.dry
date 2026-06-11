@@ -1150,6 +1150,7 @@ Q.czech_relation = 25;
 Q.hungary_relation = 45;
 Q.austria_relation = 70;
 
+Q.vatican_relation = 45;
 Q.italy_relation = 50;
 Q.soviet_relation = 50;
 Q.spain_relation = 40;
