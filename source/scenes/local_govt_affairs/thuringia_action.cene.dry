@@ -17,7 +17,7 @@ card-image: img/land/Thuringia.svg.webp
 
 @reform_the_administration
 title: Reform the administration of Thuringia
-on-arrival: thuringia_reform += 1
+on-arrival: thuringia_reform += 1; rural_others -= 1
 
 @fund_workers_militias
 title: Fund worker's militias
