@@ -68,7 +68,7 @@ With our policy of land reform, we are acquiring farmland from large estates, an
 
 @appease_farmers
 title: Appease the Thuringian agricultural interest groups by guaranteeing state-backed credit relief for indebted farmers.
-subtitle: The <span style="color: [+ dbp_colour +];">**rural peasants**</span> of Thuringia have long felt abandoned by the establishment parties.
+subtitle: The <span style="color: #38C538;">**rural peasants**</span> of Thuringia have long felt abandoned by the establishment parties.
 on-arrival: rural_spd += 7*(1-dissent); rural_nsdap -= 4*(1-dissent); rural_other -= 2*(1-dissent); unemployed -= 1 if unemployed >= 5
 
 The state government will appease Thuringian agricultural interest groups by guaranteeing state-backed credit relief for indebted farmers, and we will gain in popularity among the farmers.
