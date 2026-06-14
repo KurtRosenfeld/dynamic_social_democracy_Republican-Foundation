@@ -369,7 +369,6 @@ data.push({
     "legend": "Z",
     "name": "Z",
     "seats": Math.round(Q.z_r_baden * 0.88),
-    "color": "#3D3D3D"
 });
 
 
@@ -442,7 +441,6 @@ data.push({
     "legend": "NSFB",
     "name": "NSFB",
     "seats": Math.round(Q.nsfb_r_baden * 0.88),
-    "color": "#59250F"
 });
 
 data = data.concat([{
