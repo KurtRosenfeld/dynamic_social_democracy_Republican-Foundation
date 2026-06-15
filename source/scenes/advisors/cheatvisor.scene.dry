@@ -216,7 +216,7 @@ if (Q.in_weimar_coalition_prussia) Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat 
 if (Q.in_grand_coalition_prussia) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 26);
 if (Q.in_bourgeois_right_coalition_prussia) Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 26);
 
-if (Q.bavaria_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgoeis_right_r_reichsrat + 11);
+if (Q.bavaria_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 11);
 
 if (Q.saxony_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 7);
 if (Q.saxony_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 7);
@@ -233,6 +233,21 @@ if (Q.hesse_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 2);
 
 !}
 on-display: {!
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderReichsrat);
+} else {
+    renderReichsrat();
+}
+
+function renderReichsrat() {
+    // Your existing data construction code here...
+    
+    if (window && d3 && document.getElementById('reichsrat')) {
+        // Your existing rendering code...
+    }
+}
+!}
+
 data = [{
     "id": "sfio",
     "legend": "KPD",
@@ -301,20 +316,34 @@ data = data.concat([{
     "seats": Q.nsdap_r_reichsrat,
 }]);
 
-if (window && d3) {
-    var width = 500;
-    var height = 500;
-    var screenWidth = document.getElementById('content').offsetWidth;
-    if (screenWidth < width - 50) {
-        width = screenWidth - 50;
-        height = width;
-        document.getElementById("reichsrat").style.height = screenWidth/2 + "px";
+  if (window && d3 && typeof d3.parliament === 'function') {
+        var container = document.getElementById('reichsrat');
+        if (!container) return;
+        
+        var width = 500;
+        var height = 500;
+        var contentDiv = document.getElementById('content');
+        var screenWidth = contentDiv ? contentDiv.offsetWidth : 500;
+        
+        if (screenWidth < width - 50) {
+            width = screenWidth - 50;
+            height = width;
+            container.style.height = screenWidth/2 + "px";
+        }
+        
+        var parliament = d3.parliament();
+        parliament.width(width).height(height).innerRadiusCoef(0.4);
+        parliament.enter.fromCenter(true).smallToBig(true);
+        parliament.exit.toCenter(false).bigToSmall(true);
+        
+        d3.select("#reichsrat").datum(data).call(parliament);
     }
-    var parliament = d3.parliament();
-    parliament.width(width).height(height).innerRadiusCoef(0.4);
-    parliament.enter.fromCenter(true).smallToBig(true);
-    parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichsrat").datum(data).call(parliament);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderReichsrat);
+} else {
+    renderReichsrat();
 }
 !}
 
