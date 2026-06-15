@@ -862,6 +862,22 @@ fill: #D5AC27;
   fill: #E0B0FF;
 }
 
+.seat.popfront {
+  fill: #6C168E;
+}
+
+.seat.weimar {
+  fill: #FC6D6D;
+}
+
+.seat.notbvp {
+  fill: #DD6F9C;
+}
+
+.seat.soccath {
+  fill: #5E405A;
+}
+
 .seat.pcf {
   fill: #88001A;
 }
