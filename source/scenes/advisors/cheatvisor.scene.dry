@@ -19,6 +19,7 @@ This is not Einstein, lol
 - @new_chancellor
 - @new_president
 - @go_to_thuringia
+- @assemble_reichsrat
 - @hide
 - @root: Return to main
 
@@ -202,4 +203,109 @@ on-arrival: president = "Jarres"; president_party = "DVP"
 @hide
 title: Remove the Cheatvisor
 on-arrival: cheatvisor_hidden = 1
+
+
+@assemble_reichsrat
+title: Reichsrat (Test)
+on-arrival: {!
+
+if (Q.in_left_coalition_prussia) Q.left_r_reichsrat = (Q.left_r_reichsrat + 26);
+if (Q.in_left_socdem_coalition_prussia) Q.soc_dem_r_reichsrat = (Q.soc_dem_r_reichsrat + 26);
+if (Q.in_spd_majority_prussia) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 26);
+if (Q.in_weimar_coalition_prussia) Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 26);
+if (Q.in_grand_coalition_prussia) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 26);
+if (Q.in_bourgeois_right_coalition_prussia) Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 26);
+
+if (Q.bavaria_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgoeis_right_r_reichsrat + 11);
+
+if (Q.saxony_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 7);
+
+if (Q.thuringia_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 2);
+
+!}
+on-display: {!
+data = [{
+    "id": "sfio",
+    "legend": "KPD",
+    "name": "KPD",
+    "seats": Math.round(Q.kpd_r_ * 0),
+}];
+
+if (Q.left_r_reichsrat) {
+    data.push({
+        "id": "kpd",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Q.left_r_reichsrat,
+    });
+}
+
+if (Q.socdem_r_reichsrat) {
+    data.push({
+        "id": "uspd",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Q.socdem_r_reichsrat,
+    });
+}
+
+if (Q.spd_r_reichsrat) {
+    data.push({
+        "id": "spd",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Q.spd_r_reichsrat,
+    });
+}
+
+if (Q.weimar_r_reichsrat) {
+    data.push({
+        "id": "ddp",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Q.weimar_r_reichsrat,
+    });
+}
+
+if (Q.grand_r_reichsrat) {
+    data.push({
+        "id": "dvp",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Q.grand_r_reichsrat,
+    });
+}
+
+if (Q.right_bourgeois_r_reichsrat) {
+    data.push({
+        "id": "kpd",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Q.right_bourgeois_r_reichsrat,
+    });
+}
+
+data = data.concat([{
+    "id": "nsdap",
+    "legend": "NSDAP",
+    "name": "NSDAP",
+    "seats": Q.nsdap_r_reichsrat,
+}]);
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("reichsrat").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichsrat").datum(data).call(parliament);
+}
+!}
 
