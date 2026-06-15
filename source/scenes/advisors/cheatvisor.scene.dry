@@ -214,9 +214,15 @@ if (Q.in_left_socdem_coalition_prussia) Q.soc_dem_r_reichsrat = (Q.soc_dem_r_rei
 if (Q.in_spd_majority_prussia) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 26);
 if (Q.in_weimar_coalition_prussia) Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 26);
 if (Q.in_grand_coalition_prussia) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 26);
+if (Q.in_popular_front_coalition_prussia) Q.popular_front_r_reichsrat = (Q.popular_front_r_reichsrat + 26);
 if (Q.in_bourgeois_right_coalition_prussia) Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 26);
 
 if (Q.bavaria_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 11);
+if (Q.bavaria_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 11);
+if (Q.bavaria_gov == "BVP") Q.bvp_r_reichsrat = (Q.bvp_r_reichsrat + 11);
+if (Q.bavaria_gov == "Anti-BVP") Q.anti_bvp_r_reichsrat = (Q.anti_bvp_r_reichsrat + 11);
+if (Q.bavaria_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 11);
+if (Q.bavaria_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 11);
 
 if (Q.saxony_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 7);
 if (Q.saxony_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 7);
@@ -234,26 +240,11 @@ if (Q.hesse_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 2);
 !}
 
 on-display: {!
-(function() {
-    function renderReichsrat() {
-        console.log("renderReichsrat called");
-        console.log("window.d3 exists?", typeof window.d3);
-        console.log("d3.parliament exists?", typeof (window.d3 && d3.parliament));
-        console.log("Q values:", {
-            left: Q.left_r_reichsrat,
-            socdem: Q.socdem_r_reichsrat,
-            spd: Q.spd_r_reichsrat,
-            weimar: Q.weimar_r_reichsrat,
-            grand: Q.grand_r_reichsrat,
-            bourgeois: Q.bourgeois_right_r_reichsrat,
-            nsdap: Q.nsdap_r_reichsrat
-        });
-
-        var data = [{
+data = [{
             "id": "kpd",
             "legend": "KPD",
             "name": "KPD",
-            "seats": 0,
+            "seats": Q.kpd_r_reichsrat,
         }];
 
         if (Q.left_r_reichsrat) {
@@ -283,12 +274,48 @@ on-display: {!
             });
         }
 
+        if (Q.popular_font_r_reichsrat) {
+            data.push({
+                "id": "popfront",
+                "legend": "SPD",
+                "name": "SPD",
+                "seats": Q.popular_front_r_reichsrat,
+            });
+        }
+
         if (Q.weimar_r_reichsrat) {
             data.push({
                 "id": "weimar",
                 "legend": "Weimar",
                 "name": "Weimar",
                 "seats": Q.weimar_r_reichsrat,
+            });
+        }
+
+        if (Q.soc_lib_r_reichsrat) {
+            data.push({
+                "id": "soclib",
+                "legend": "Social-Liberal",
+                "name": "Social-Liberalr",
+                "seats": Q.soc_lib_r_reichsrat,
+            });
+        }
+
+        if (Q.soc_christ_r_reichsrat) {
+            data.push({
+                "id": "socath",
+                "legend": "Social-Christian",
+                "name": "Social-Christian",
+                "seats": Q.soc_christ_r_reichsrat,
+            });
+        }
+
+        if (Q.anti_bvp_r_reichsrat) {
+            data.push({
+                "id": "notbvp",
+                "legend": "Anti-BVP",
+                "name": "Anti-BVP",
+                "seats": Q.anti_bvp_r_reichsrat,
             });
         }
 
@@ -301,9 +328,27 @@ on-display: {!
             });
         }
 
+        if (Q.bourgeois_r_reichsrat) {
+            data.push({
+                "id": "others",
+                "legend": "Bourgeois",
+                "name": "Bourgeois",
+                "seats": Q.bourgeois_r_reichsrat,
+            });
+        }
+
+        if (Q.bvp_r_reichsrat) {
+            data.push({
+                "id": "bvp",
+                "legend": "BVP",
+                "name": "BVP",
+                "seats": Q.bvp_r_reichsrat,
+            });
+        }
+
         if (Q.bourgeois_right_r_reichsrat) {
             data.push({
-                "id": "dnvp",
+                "id": "bourgeois_right",
                 "legend": "Right",
                 "name": "Right",
                 "seats": Q.bourgeois_right_r_reichsrat,
