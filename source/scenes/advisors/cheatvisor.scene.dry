@@ -232,117 +232,108 @@ if (Q.thuringia_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_r
 if (Q.hesse_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 2);
 
 !}
+
 on-display: {!
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', renderReichsrat);
-} else {
-    renderReichsrat();
-}
+(function() {
+    function renderReichsrat() {
+        // ALL your data construction and rendering code goes HERE
+        var data = [{
+            "id": "kpd",
+            "legend": "KPD",
+            "name": "KPD",
+            "seats": 0,
+        }];
 
-function renderReichsrat() {
-    // Your existing data construction code here...
-    
-    if (window && d3 && document.getElementById('reichsrat')) {
-        // Your existing rendering code...
-    }
-}
-
-data = [{
-    "id": "kpd",
-    "legend": "KPD",
-    "name": "KPD",
-    "seats": 0,
-}];
-
-if (Q.left_r_reichsrat) {
-    data.push({
-        "id": "pcf",
-        "legend": "Left",
-        "name": "Left",
-        "seats": Q.left_r_reichsrat,
-    });
-}
-
-if (Q.socdem_r_reichsrat) {
-    data.push({
-        "id": "socdem",
-        "legend": "Socdem",
-        "name": "Socdem",
-        "seats": Q.socdem_r_reichsrat,
-    });
-}
-
-if (Q.spd_r_reichsrat) {
-    data.push({
-        "id": "spd",
-        "legend": "SPD",
-        "name": "SPD",
-        "seats": Q.spd_r_reichsrat,
-    });
-}
-
-if (Q.weimar_r_reichsrat) {
-    data.push({
-        "id": "weimar",
-        "legend": "Weimar",
-        "name": "Weimar",
-        "seats": Q.weimar_r_reichsrat,
-    });
-}
-
-if (Q.grand_r_reichsrat) {
-    data.push({
-        "id": "dvp",
-        "legend": "Grand",
-        "name": "Grand",
-        "seats": Q.grand_r_reichsrat,
-    });
-}
-
-if (Q.bourgeois_right_r_reichsrat) {
-    data.push({
-        "id": "dnvp",
-        "legend": "Right",
-        "name": "Right",
-        "seats": Q.bourgeois_right_r_reichsrat,
-    });
-}
-
-data = data.concat([{
-    "id": "nsdap",
-    "legend": "NSDAP",
-    "name": "NSDAP",
-    "seats": Q.nsdap_r_reichsrat,
-}]);
-
-  if (window && d3 && typeof d3.parliament === 'function') {
-        var container = document.getElementById('reichsrat');
-        if (!container) return;
-        
-        var width = 500;
-        var height = 500;
-        var contentDiv = document.getElementById('content');
-        var screenWidth = contentDiv ? contentDiv.offsetWidth : 500;
-        
-        if (screenWidth < width - 50) {
-            width = screenWidth - 50;
-            height = width;
-            container.style.height = screenWidth/2 + "px";
+        if (Q.left_r_reichsrat) {
+            data.push({
+                "id": "pcf",
+                "legend": "Left",
+                "name": "Left",
+                "seats": Q.left_r_reichsrat,
+            });
         }
-        
-        var parliament = d3.parliament();
-        parliament.width(width).height(height).innerRadiusCoef(0.4);
-        parliament.enter.fromCenter(true).smallToBig(true);
-        parliament.exit.toCenter(false).bigToSmall(true);
-        
-        d3.select("#reichsrat").datum(data).call(parliament);
-    }
-}
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', renderReichsrat);
-} else {
-    renderReichsrat();
-}
+        if (Q.socdem_r_reichsrat) {
+            data.push({
+                "id": "socdem",
+                "legend": "Socdem",
+                "name": "Socdem",
+                "seats": Q.socdem_r_reichsrat,
+            });
+        }
+
+        if (Q.spd_r_reichsrat) {
+            data.push({
+                "id": "spd",
+                "legend": "SPD",
+                "name": "SPD",
+                "seats": Q.spd_r_reichsrat,
+            });
+        }
+
+        if (Q.weimar_r_reichsrat) {
+            data.push({
+                "id": "weimar",
+                "legend": "Weimar",
+                "name": "Weimar",
+                "seats": Q.weimar_r_reichsrat,
+            });
+        }
+
+        if (Q.grand_r_reichsrat) {
+            data.push({
+                "id": "dvp",
+                "legend": "Grand",
+                "name": "Grand",
+                "seats": Q.grand_r_reichsrat,
+            });
+        }
+
+        if (Q.bourgeois_right_r_reichsrat) {
+            data.push({
+                "id": "dnvp",
+                "legend": "Right",
+                "name": "Right",
+                "seats": Q.bourgeois_right_r_reichsrat,
+            });
+        }
+
+        data = data.concat([{
+            "id": "nsdap",
+            "legend": "NSDAP",
+            "name": "NSDAP",
+            "seats": Q.nsdap_r_reichsrat,
+        }]);
+
+        if (window && d3 && typeof d3.parliament === 'function') {
+            var container = document.getElementById('reichsrat');
+            if (!container) return;
+            
+            var width = 500;
+            var height = 500;
+            var contentDiv = document.getElementById('content');
+            var screenWidth = contentDiv ? contentDiv.offsetWidth : 500;
+            
+            if (screenWidth < width - 50) {
+                width = screenWidth - 50;
+                height = width;
+                container.style.height = screenWidth/2 + "px";
+            }
+            
+            var parliament = d3.parliament();
+            parliament.width(width).height(height).innerRadiusCoef(0.4);
+            parliament.enter.fromCenter(true).smallToBig(true);
+            parliament.exit.toCenter(false).bigToSmall(true);
+            
+            d3.select("#reichsrat").datum(data).call(parliament);
+        }
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderReichsrat);
+    } else {
+        renderReichsrat();
+    }
+})();
 !}
 
