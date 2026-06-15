@@ -48,6 +48,14 @@ window.showMap = function() {
         window.dendryUI.dendryEngine.goToScene('mod_loader');
     }
   };
+
+    window.showColours = function() {
+    if (window.dendryUI.dendryEngine.state.sceneId.startsWith('colour_settings')) {
+        window.dendryUI.dendryEngine.goToScene('backSpecialScene');
+    } else {
+        window.dendryUI.dendryEngine.goToScene('colour_settings');
+    }
+  };
   
   window.showOptions = function() {
       var save_element = document.getElementById('options');
