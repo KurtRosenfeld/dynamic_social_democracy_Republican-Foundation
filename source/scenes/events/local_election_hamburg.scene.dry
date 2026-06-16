@@ -214,11 +214,11 @@ if (Q.total_r_hamburg > 0) {
 let wp_share = 0.7;
 if (Q.stolper_program_adopted) wp_share -= 0.1;
 if (Q.dvp_reform) wp_share -= 0.3;
-if (Q.chancellor_party = "DVP") wp_share -= 0.2;
+if (Q.chancellor_party == "DVP") wp_share -= 0.2;
 let vrp_share = 0.2;
 if (Q.stolper_program_adopted) vrp_share -= 0.08;
 let true_other_share = 0.1;
-if (Q.chancellor_party = "DVP") true_other_share += 0.2
+if (Q.chancellor_party == "DVP") true_other_share += 0.2
 
 let total_share = wp_share + vrp_share + true_other_share;
 
