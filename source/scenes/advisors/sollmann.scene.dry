@@ -10,6 +10,7 @@ new-page: true
 Sollmann is a pragmatic politican.
 
 - @police_affairs
+- @sollmann_foreign
 - @cologne_campaign
 - @root: Return to main
 
@@ -21,6 +22,14 @@ choose-if: advisor_action_timer == 0 and spd_in_government and interior_minister
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: #c00000;">SPD</span> is not in government. ?][? if interior_minister != "Sollmann": Sollmann is not the Interior minister. ?]
 on-arrival: advisor_action_timer = 6; police_timer -= 6; last_advisor_action = 1
 go-to: police
+
+@sollmann_foreign
+title: Foreign Policy
+subtitle: As Foreign Minister, Sollmann can set our foreign policy.
+unavailable-subtitle: [? if not spd_in_government: The <span style="color: #c00000;">SPD</span> is not in government. ?] [? if foreign_minister != "Sollmann" : Sollmann is not in charge of the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0 and spd_in_government and foreign_minister == "Sollmann"
+on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 8; last_advisor_action = 1
+go-to: foreign_policy
 
 @cologne_campaign
 title: Campaign in the Rhineland
