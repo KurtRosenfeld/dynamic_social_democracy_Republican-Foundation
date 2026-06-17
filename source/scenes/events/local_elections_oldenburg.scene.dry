@@ -595,5 +595,5 @@ Why did this have to happen...?
 @no_coalition_oldenburg
 title: There is no possible government arrangement
 subtitle: A caretaker government keeps the buisness running for now.
-on-arrival: oldenburg_gov == "Bourgeois"; oldenburg_election_2_trigger_time = time + 25; rural_nsdap += 4; old_middle_nsdap += 1
+on-arrival: oldenburg_gov = "Bourgeois"; oldenburg_election_2_trigger_time = time + 25; rural_nsdap += 4; old_middle_nsdap += 1
 view-if: (weimar_coalition_oldenburg < 50 and right_coalition_oldenburg < 50) or (z_relation < 60 and dvp_relation < 67 and kpd_relation < 60) or right_coalition_oldenburg < 50
