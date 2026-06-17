@@ -583,7 +583,7 @@ on-arrival: oldenburg_election_2_trigger_time = time + 48; rural_nsdap += 4; old
 
 This can't end well...
 
-@right_wing_coalition_oldenburg
+@nsdap_majority
 title: The NSDAP will govern alone
 subtitle: What the...!?!
 choose-if: nsdap_r_oldenburg > 50
