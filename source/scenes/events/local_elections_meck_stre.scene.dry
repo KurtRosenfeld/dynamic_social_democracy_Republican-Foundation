@@ -1,5 +1,5 @@
 title: Mecklenburg-Strelitz Landtag Election
-view-if: (year == 1922 and month == 4 and not meck_stre_election_seen) or (meck_stre_election_2_trigger_time == time and meck_stre_election_seen_time != time)
+view-if: (year == 1922 and month == 4 and not meck_stre_election_seen) or (meck_stre_election_2_trigger_time == time and meck_stre_election_seen_time != time) and nsdap_relation == 67
 new-page: true
 tags: event
 on-arrival: meck_stre_election_seen += 1 if meck_stre_election_seen; meck_stre_election_seen = 1 if not meck_stre_election_seen; meck_stre_election_seen_time = time
