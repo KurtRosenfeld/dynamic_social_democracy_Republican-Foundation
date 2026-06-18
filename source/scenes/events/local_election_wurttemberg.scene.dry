@@ -527,18 +527,18 @@ on-arrival: wurttemberg_election_2_trigger_time = time + 48; z_relation += 1; dd
 
 @grand_coalition_wurttemberg
 title: A Grand Coalition will be formed
-choose-if: grand_coalition_wurttemberg >= 50 and z_relation >= 25 and dvp_relation >= 50 and z_relation >= 75
+choose-if: grand_coalition_wurttemberg >= 50 and ddp_relation >= 25 and dvp_relation >= 60 and z_relation >= 75
 on-arrival: wurttemberg_election_2_trigger_time = time + 48; z_relation += 2; dvp_relation += 3; wurttemberg_gov = "Grand"
 
 @bourgeois_coalition_wurttemberg
 title: Another Bourgeois Coalition
-choose-if: true_bourgeois_coalition_wurttemberg >= 50
+choose-if: true_bourgeois_coalition_wurttemberg >= 60
 view-if: right_bourgeois_coalition_wurttemberg < 50
 on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "Bourgeois"
 
 @bourgeois_right_coalition_wurttemberg
 title: Another Bourgeois Coalition
-view-if: true_bourgeois_coalition_wurttemberg < 50
+view-if: z_relation < 80 and dvp_relation <= 50
 choose-if: right_bourgeois_coalition_wurttemberg >= 50
 on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "Right Bourgeois"
 
