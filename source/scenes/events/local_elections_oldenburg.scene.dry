@@ -588,7 +588,7 @@ title: The NSDAP will govern alone
 subtitle: What the...!?!
 choose-if: nsdap_r_oldenburg > 50
 view-if: nsdap_r_oldenburg >= 50
-on-arrival: oldenburg_election_2_trigger_time = time + 48; rural_nsdap += 3; dvp_relation -= 3; oldenburg_gov = "Right"
+on-arrival: oldenburg_election_2_trigger_time = time + 48; rural_nsdap += 3; dvp_relation -= 3; oldenburg_gov = "NSDAP"
 
 Why did this have to happen...?
 
@@ -596,4 +596,4 @@ Why did this have to happen...?
 title: There is no possible government arrangement
 subtitle: A caretaker government keeps the buisness running for now.
 on-arrival: oldenburg_gov = "Bourgeois"; oldenburg_election_2_trigger_time = time + 25; rural_nsdap += 4; old_middle_nsdap += 1
-view-if: (weimar_coalition_oldenburg < 50 and right_coalition_oldenburg < 50) or (z_relation < 60 and dvp_relation < 67 and kpd_relation < 60) or right_coalition_oldenburg < 50
+view-if: (weimar_coalition_oldenburg < 50 and right_coalition_oldenburg < 50) or (z_relation < 60 and dvp_relation < 67 and kpd_relation < 60)
