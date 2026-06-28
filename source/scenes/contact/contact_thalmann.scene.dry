@@ -1,0 +1,30 @@
+title: Ernst Thälmann
+new-page: true
+
+= Ernst Thälmann
+
+[? if kpd_leader == "Thälmann": Thälmann is the ledaer of the <span style="color: [+ kpd_colour +];">**KPD**</span>. ?][? if not kpd_leader == "Thälmann": Thälmann is a member of the <span style="color: [+ kpd_colour +];">**KPD**</span>. ?]
+  
+- @improve_relations_kpd_crispien
+- @negotiate_thalmann_dop_out
+- @sign_thalmann_drop_out
+ 
+@improve_relations_kpd_crispien
+title: Improve relations with the <span style="color: [+ kpd_colour +];">**KPD**</span>
+on-arrival: kpd_relation += 5 if ideology == "left"; kpd_relation += 2 if left_strength >= 35; kpd_relation += 3 if kpd_leader == "Thälmann" and not ideology == "reformist"; kpd_relation -= 3 if ideology == "reformist"
+
+[? if not ideology == "reformist": We have improved our relations with the <span style="color: [+ kpd_colour +];">**KPD**</span>. ?][? if ideology == "reformist": Thälmann hates our reformist platform. ?]
+
+@negotiate_thalmann_dop_out
+title: Try to get Thälmann not to run in the next presidential elections.
+view-if: no_pres_can_thalmann < 3
+on-arrival: no_pres_can_thalmann += 1 if (left_strength >= 45 and kpd_relation >= 50 and (ledebour_unity_candidate = 1 or rosenfeld _unity_candidate = 1))
+
+[? if kpd_relation < 50: We need better relations with the <span style="color: [+ kpd_colour +];">**KPD**</span>.?][? if left_strength < 45: Thälmann considers our party too reformist.?][? if not ledebour_unity_candidate = 1 and not rosenfeld _unity_candidate = 1: We need to propose a neutral alternative the <span style="color: [+ kpd_colour +];">**KPD**</span> could get behind.?]
+
+@sign_thalmann_drop_out
+title: Thälmann won't run!
+view-if no_pres_can_thalmann == 3
+on-arrival: kpd_unity_support = 1
+
+Thälmann won't run in the next election. Should we decide to pull out of the agreement, we will deeply hurt our relations with the other worker's parties.
