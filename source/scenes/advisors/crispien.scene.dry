@@ -44,23 +44,16 @@ We have enforced party discipline to reduce dissent among former members of the 
 
 
 @contact_uspd
-title: Contact former <span style="color: #AA0000;">USPD</span> members.
-view-if: uspd_joined < 3
+title: Contact former <span style="color: #AA0000;">USPD</span> members. (massively WIP)
 subtitle: Crispien used to be head of the <span style="color: #AA0000;">USPD</span>, he can try to leverage his contacts.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] This is not coded yet
-choose-if: advisor_action_timer == 0 and nsdap_relation >= 1933
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6
 
 Who should be contacted?
 
-- @rosenfeld: Contact Kurt Rosenfeld of the [+ rosenfeld_in +]
-- @ledebour: Contact Georg Ledebour of the [+ ledebour_in +]
-- @levi: Contact Paul Levi of the [+ levi_in +]
+- @contact_rosenfeld: Contact Kurt Rosenfeld of the <span style="color: [+ rosenfeld_colour +];">**[+ rosenfeld_in +]**</span>
+- @contact_ledebour: Contact Georg Ledebour of the <span style="color: [+ ledebour_colour +];">**[+ ledebour_in +]**</span>
+- @contact_thalmann: Contact Ernst Thälmann of the <span style="color: [+ kpd_colour +];">**KPD**</span>
 - @root: Return to main
-
-@rosenfeld
-view-if: uspd_joined <= 2 or left_split == 1
-
-@ledebour
-view-if: uspd_joined < 3 or left_split == 1
 
