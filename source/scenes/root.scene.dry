@@ -80,6 +80,11 @@ Q.neorevisionist_dissent = 10;
 Q.social_patriot_strength = 0
 Q.social_patriot_dissent = 0;
 
+Q.left_spd_r = 1;
+Q.center_spd_r = 8;
+Q.labor_spd_r = 2.2;
+Q.reformist_spd_r = 11.2;
+
 // secret events...
 Q.unions_independent = 0;
 Q.centrists_resign = 0;
