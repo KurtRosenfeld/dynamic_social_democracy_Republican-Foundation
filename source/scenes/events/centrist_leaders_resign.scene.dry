@@ -25,6 +25,11 @@ if (Q.center_strength < 10) {
     Q.rb_strength -= 200; 
 }
 
+Q.right_spr_r = Q.right_spd_r + Q.center_spd_r*0.5;
+if not (Q.left_split) Q.uspd_r = Q.uspd_r + Q.center_spd_r*0.3;
+if (Q.left_split) Q.sapd_r = Q.sapd_r + Q.center_spd_r*0.3;
+Q.spd_r = Q.spd_r - Q.center_spd_r*0.8;
+
 Q.center_strength *= 0.3; 
 Q.n_advisors_start = Q.n_advisors; 
 Q.center_strength *= 0.3; 
