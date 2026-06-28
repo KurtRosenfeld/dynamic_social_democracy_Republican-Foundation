@@ -1237,7 +1237,7 @@ Wirth: [+ wirth_in +]
 
 Hugenberg: [+ hugenberg_in +]
 
-DVP: [? if dvp_exists: yes ?][? if lvp_formed: no ?]
+DVP: [? if dvp_exist: yes ?][? if lvp_formed: no ?]
 
 DDP: [+ ddp_name +]
 
@@ -1248,3 +1248,7 @@ Chancellor: [+ chancellor +] ([+ chancellor_party +])
 President: [+ president +] ([+ president_party +])
 
 PL: [+ prussia_leader +] ([+ prussia_leader_party +])
+
+Right SPD: [+ right_spd_r +]
+
+[+ left_spd_r +] - [+ center_spd_r +] - [+ labor_spd_r +] - [+ reformist_spd_r +]
