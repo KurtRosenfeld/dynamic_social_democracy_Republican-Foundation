@@ -85,6 +85,8 @@ Q.center_spd_r = 8;
 Q.labor_spd_r = 2.2;
 Q.reformist_spd_r = 11.2;
 
+Q.right_spd_r = 0;
+
 // secret events...
 Q.unions_independent = 0;
 Q.centrists_resign = 0;
