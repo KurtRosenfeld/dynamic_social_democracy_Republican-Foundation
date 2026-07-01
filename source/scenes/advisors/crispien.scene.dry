@@ -51,19 +51,19 @@ choose-if: advisor_action_timer == 0
 
 Who should be contacted?
 
-- @contact_rosenfeld: Contact Kurt Rosenfeld of the <span style="color: [+ rosenfeld_colour +];">**[+ rosenfeld_in +]**</span>
-- @contact_ledebour: Contact Georg Ledebour of the <span style="color: [+ ledebour_colour +];">**[+ ledebour_in +]**</span>
-- @contact_thalmann: Contact Ernst Thälmann of the <span style="color: [+ kpd_colour +];">**KPD**</span>
+- @contact_rosenfeld_d: Contact Kurt Rosenfeld of the <span style="color: [+ rosenfeld_colour +];">**[+ rosenfeld_in +]**</span>
+- @contact_ledebour_d: Contact Georg Ledebour of the <span style="color: [+ ledebour_colour +];">**[+ ledebour_in +]**</span>
+- @contact_thalmann_d: Contact Ernst Thälmann of the <span style="color: [+ kpd_colour +];">**KPD**</span>
 - @root: Return to main
 
-@contact_rosenfeld
+@contact_rosenfeld_d
 view-if: not rosenfeld_in == "SPD"
 go-to: contact_rosenfeld
 
-@contact_ledebour
+@contact_ledebour_d
 view-if: not ledebour_in == "SPD"
 go-to: contact_ledebour
 
-@contact_thalmann
+@contact_thalmann_d
 view-if: not thalmann_in == "SPD"
 go-to: contact_thalmann
