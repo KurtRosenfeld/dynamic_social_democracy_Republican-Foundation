@@ -1,14 +1,14 @@
 title: The Cheatvisor
 is-pinned-card: true 
 tags: advisor, centrist
-card-image: img/portraits/EinsteinAlbert.jpg
+card-image: img/portraits/schleicher_pro.jpg
 new-page: true
 view-if: cheatvisor_hidden == 0
 
 = The Cheatvisor
 
 
-This is not Einstein, lol
+The Cheatvisor is just a tool to make testing the mod easier, nothing special
 
 - @bufff
 - @make_nsfb
@@ -178,7 +178,7 @@ on-arrival: chancellor = "Breitscheid"; chancellor_party = breitscheid_in
 on-arrival: chancellor = "Liebknecht"; chancellor_party = liebknecht_in
 
 @stresemann
-on-arrival: chancellor = "Stresemann"; chancellor_party = DVP if not lvp_formed; chancellor_party = "LVP" if lvp_formed
+on-arrival: chancellor = "Stresemann"; chancellor_party = "DVP" if not lvp_formed; chancellor_party = "LVP" if lvp_formed
 
 
 @new_president
