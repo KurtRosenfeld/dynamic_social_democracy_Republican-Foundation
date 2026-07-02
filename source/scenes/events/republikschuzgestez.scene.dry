@@ -363,9 +363,9 @@ title: Demand the origianl wording
 subtitle: This would not prevent attacks on worker's parties for certain. Furthermore the Bourgeois would be displeased.
 on-arrival: kpd_relation += 2; uspd_relation += 10; z_relation -= 2; dvp_relation -= 5; early_dvp_cooperation -= 2; coaltion_dissent += 1; left_strength += 3
 
-- @damn_close_race_ok_wow
-
 The law passes with a high abstention rate. Our coalition partners in the Reich and in Prussia accuse us of childish behavior and frightening closeness to the radical <span style="color: [+ kpd_colour +];">**KPD**</span>. Working with the <span style="color: [+ dvp_colour +];">**DVP**</span> will become way harder. Let's just hope we can get this law through the Reichstag.
+
+- @damn_close_race_ok_wow
 
 @wow_easy_sweap
   
