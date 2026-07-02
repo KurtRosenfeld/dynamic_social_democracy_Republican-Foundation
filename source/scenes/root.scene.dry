@@ -1171,7 +1171,7 @@ Q.iceland_relation = 50;
 Q.finland_relation = 60;
 
 // local governments
-Q.bavaria_gov = 'Right';
+Q.bavaria_gov = 'Bourgeois';
 Q.saxony_gov = 'Social-Democratic';
 Q.thuringia_gov = 'Social-Democratic';
 Q.baden_gov = 'Weimar';
