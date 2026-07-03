@@ -880,6 +880,10 @@ fill: #D5AC27;
   fill: #DD6F9C;
 }
 
+.seat.socdem {
+  fill: #A51E5A;
+}
+  
 .seat.soccath {
   fill: #5E405A;
 }
