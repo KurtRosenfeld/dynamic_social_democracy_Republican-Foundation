@@ -311,6 +311,15 @@ go-to: rm_main_menu
 
 Mierendorff has been removed as an advisor. The Neorevisionist faction disapproves.
 
+@remove_vogel
+title: Remove Vogel
+view-if: vogel_advisor = 1
+tags: remove_advisor
+on-arrival: vogel_advisor = 0; neorevisionist_dissent += 12; n_advisors -= 1
+go-to: rm_main_menu
+
+Vogel has been removed as an advisor. The Neorevisionist faction disapproves.
+
 @remove_leber
 title: Remove Leber
 view-if: leber_advisor = 1
@@ -495,7 +504,7 @@ Hermann Müller is now an advisor.
 
 @add_scheidemann
 title: Philipp Scheidemann
-subtitle: tobeadded. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+subtitle: tobeadded. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Republicanism, DVP cooperation ?]
 is-card: true
 card-image: img/portraits/ScheidemannPhilipp.jpg
 view-if: scheidemann_advisor = 0 and n_advisors < 4 and scheidemann_in == "SPD"
@@ -519,7 +528,7 @@ Rudolf Breitscheid is now an advisor.
 
 @add_crispien
 title: Arthur Crispien
-subtitle: Crispien comes from the USPD. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+subtitle: Crispien comes from the USPD. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Campaign among workers, Party Discipline, <span style="color: #AA0000;">USPD</span> contact ?]
 is-card: true
 card-image: img/portraits/CrispienArthur.jpg
 view-if: crispien_advisor = 0 and uspd_joined >= 1 and n_advisors < 4 and crispien_in == "SPD"
@@ -759,6 +768,18 @@ go-to: advisor_menu
 tags: neorev_advisor
 
 Carlo Mierendorff is now an advisor.
+
+@add_vogel
+title: Hans Vogel
+subtitle: Hans Vogel has always been a more conservative member of our party. {!<br><br>!}[? if difficulty < 0 : Actions - Party Discipline, Patriotic Rally ,Warning About the <span style="color: #7A3C00;">Nazis</span> ?]
+is-card: true
+card-image: img/portraits/VogelHans.jpg
+view-if: vogel_advisor = 0 and n_advisors < 4
+on-arrival: vogel_advisor = 1; n_advisors += 1; neorevisionist_strength += 7; neorevisionist_dissent -= 7
+go-to: advisor_menu
+tags: neorev_advisor
+
+Hans Vogel is now an advisor.
 
 @add_schumacher
 title: Kurt Schumacher
