@@ -61,9 +61,9 @@ if (!Q.in_social_catholic_coalition_prussia and Q.z_relation >= 55) Q.soc_christ
 
 // Prussian Saxony
 if (Q.spd_votes >= 40) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
-if (Q.spd_votes < 40 and Q.spd_votes >= 35 and kpd_relation >= 55) Q.left_r_reichsrat = (Q.left_r_reichsrat + 1);
-if (Q.spd_votes < 35 and Q.dvp_relation >= 40) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 1);
-if (Q.spd_votes < 35 and Q.dvp_relation < 40) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+if (Q.spd_votes < 40 and Q.spd_votes >= 35 and Q.kpd_relation >= 55) Q.left_r_reichsrat = (Q.left_r_reichsrat + 1);
+if (Q.spd_votes < 40 and Q.dvp_relation >= 40) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 1);
+if (Q.spd_votes < 40 and Q.dvp_relation < 40 and Q.kpd_relation < 55) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
 
 // others
 if (Q.nsdap_votes < 15) Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 4);
@@ -91,19 +91,19 @@ if (Q.saxony_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_
 
 // Württemberg (4 seats)
 if (Q.wurttemberg_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 4);
-if (Q.wurttemberg_gov == "Social-Democraitc") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 4);
+if (Q.wurttemberg_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 4);
 if (Q.wurttemberg_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 4);
 if (Q.wurttemberg_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 4);
-if (Q.wurttemberg_gov == "Social-Catholicolic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 4);
+if (Q.wurttemberg_gov == "Social-Catholic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 4);
 if (Q.wurttemberg_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 4);
 if (Q.wurttemberg_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 4);
 
 // Baden (3 seats)
 if (Q.baden_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 3);
-if (Q.baden_gov == "Social-Democraitc") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 3);
+if (Q.baden_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 3);
 if (Q.baden_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 3);
 if (Q.baden_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 3);
-if (Q.baden_gov == "Social-Catholicolic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
+if (Q.baden_gov == "Social-Catholic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
 if (Q.baden_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 3);
 if (Q.baden_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 3);
 
@@ -121,7 +121,7 @@ if (Q.hesse_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 2);
 if (Q.hesse_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 2);
 if (Q.hesse_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 2);
 if (Q.hesse_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 2);
-if (Q.hesse_gov == "Social-Catholicolic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 2);
+if (Q.hesse_gov == "Social-Catholic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 2);
 if (Q.hesse_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 2);
 if (Q.hesse_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 2);
 
@@ -159,10 +159,10 @@ if (Q.lippe_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
 if (Q.lippe_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
 
 // Lübeck
-if (Q.lubekc_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
-if (Q.lubekc_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
-if (Q.lubekc_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
-if (Q.lubekc_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+if (Q.luebekc_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.luebekc_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
+if (Q.luebekc_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
+if (Q.luebekc_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
 
 // Mecklenburg-Schwerin
 if (Q.meck_schwe_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
