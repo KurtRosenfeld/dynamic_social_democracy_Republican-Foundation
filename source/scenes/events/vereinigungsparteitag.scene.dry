@@ -108,7 +108,7 @@ The <span style="color: [+ uspd_colour +];">**USPD**</span> is outraged.
 - @eat_it_uspd: What are they gonna do?
 
 @eat_it_uspd
-on-arrival: reformist_strength += 10; left_dissent += 15; uspd_joined = 1; unemployed_spd -= 3; z_relation += 2; unemployed_uspd -= 15; unemployed_kpd += 13; workers_uspd -= 4; worker_spd += 1; uspd_relation -= 55; spd_r = old_spd_r + uspd_r*0.81; uspd_r = uspd_r*0.19; uspd_leader = "Breitscheid"; kautsky_in == "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"; aufhauser_in = "SPD"
+on-arrival: reformist_strength += 10; left_dissent += 15; uspd_joined = 1; unemployed_spd -= 3; z_relation += 2; unemployed_uspd -= 15; unemployed_kpd += 13; workers_uspd -= 4; worker_spd += 1; uspd_relation -= 55; spd_r = old_spd_r + uspd_r*0.81; uspd_r = uspd_r*0.19; uspd_leader = "Breitscheid"; kautsky_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"; aufhauser_in = "SPD"
 
 The former <span style="color: [+ uspd_colour +];">**USPD**</span> members in our party are outraged about the treatment they are greated with. Some less convinced members like <span style="color: #700000;">**Kurt Rosenfeld**</span> or <span style="color: #700000;">**Georg Ledebour**</span> reject joining us as they don't see any future in the <span style="color: [+ spd_colour +];">**SPD**</span>. Yet despite the treatment they've received many members join our ranks seeing the <span style="color: [+ spd_colour +];">**SPD**</span> as their only future. 
 
