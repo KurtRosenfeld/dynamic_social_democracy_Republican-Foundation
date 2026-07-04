@@ -1,7 +1,7 @@
 name: Replace Party Colours
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Manual only - to avoid duplicate runs
 
 jobs:
   replace-text:
@@ -14,14 +14,59 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       
-     - name: Replace party color codes
-  run: |
-    # Use sed with different delimiters to avoid escaping issues
-    find . -type f -exec sed -i 's|<span style="color: #800000;">\*\*KPD\*\*</span>|<span style="color: [+ kpd_colour +];">**KPD**</span>|g' {} \;
-    find . -type f -exec sed -i 's|<span style="color: #700000;">\*\*KPD\*\*</span>|<span style="color: [+ kpd_colour +];">**KPD**</span>|g' {} \;
-    find . -type f -exec sed -i 's|<span style="color: #C0A054;">\*\*DVP\*\*</span>|<span style="color: [+ dvp_colour +];">**DVP**</span>|g' {} \;
-    find . -type f -exec sed -i 's|<span style="color: #D5AC27;">\*\*DVP\*\*</span>|<span style="color: [+ dvp_colour +];">**DVP**</span>|g' {} \;
+      - name: Preview matches (debug)
+        run: |
+          echo "=== Looking for KPD #800000 ==="
+          grep -r '<span style="color: #800000;">\*\*KPD\*\*</span>' . || echo "No matches found"
+          echo "=== Looking for KPD #700000 ==="
+          grep -r '<span style="color: #700000;">\*\*KPD\*\*</span>' . || echo "No matches found"
+          echo "=== Looking for DVP #C0A054 ==="
+          grep -r '<span style="color: #C0A054;">\*\*DVP\*\*</span>' . || echo "No matches found"
+          echo "=== Looking for DVP #D5AC27 ==="
+          grep -r '<span style="color: #D5AC27;">\*\*DVP\*\*</span>' . || echo "No matches found"
+      
+      - name: Replace party color codes with Python
+        run: |
+          python3 << EOF
+          import os
+          import re
+          
+          replacements = [
+              ('<span style="color: #800000;">**KPD**</span>', '<span style="color: [+ kpd_colour +];">**KPD**</span>'),
+              ('<span style="color: #700000;">**KPD**</span>', '<span style="color: [+ kpd_colour +];">**KPD**</span>'),
+              ('<span style="color: #C0A054;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
+              ('<span style="color: #D5AC27;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>')
+          ]
+          
+          count = 0
+          for root, dirs, files in os.walk('.'):
+              for file in files:
+                  if '.git' in root:
+                      continue
+                  filepath = os.path.join(root, file)
+                  try:
+                      with open(filepath, 'r', encoding='utf-8') as f:
+                          content = f.read()
+                      
+                      modified = False
+                      for old, new in replacements:
+                          if old in content:
+                              content = content.replace(old, new)
+                              modified = True
+                              count += 1
+                      
+                      if modified:
+                          with open(filepath, 'w', encoding='utf-8') as f:
+                              f.write(content)
+                          print(f"Modified: {filepath}")
+                  except Exception as e:
+                      pass  # Skip binary files
+          
+          print(f"\n✅ Total replacements made: {count}")
+          EOF
+      
       - name: Commit and push changes
+        if: success()
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Replace hardcoded party colors with dynamic variables"
