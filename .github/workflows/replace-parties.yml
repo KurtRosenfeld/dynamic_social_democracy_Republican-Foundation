@@ -44,6 +44,12 @@ jobs:
               # DVP variations
               ('<span style="color: #C0A054;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
               ('<span style="color: #D5AC27;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
+
+              # Z variations
+              ('<span style="color: #000000;">**[+ z_party_name +]**</span>', '<span style="color: [+ z_colour +];">**[+ z_party_name +]**</span>'),
+
+              # DDP variations
+              ('<span style="color: #D3C24D;">**[+ ddp_name +]**</span>', '<span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>'),
           ]
           
           total_replacements = 0
