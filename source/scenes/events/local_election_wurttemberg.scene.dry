@@ -493,11 +493,11 @@ go-to: wurttemberg_coalition_menu
 {!</table>!}
 <hr id="read-marker">
 
-United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: [+ uspd_colour +];">**USPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_wurttemberg +]% 
+United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: [+ uspd_colour +];">**USPD**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span>[? if sapd_formed:+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_wurttemberg +]% 
 
-Weimar Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span>): [+ weimar_coalition_wurttemberg +]% 
+Weimar Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span>): [+ weimar_coalition_wurttemberg +]% 
 
-Grand Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if csvd_r_wurttemberg > 0: + <span style="color: #8A50E4;">**CSVD**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span>): [+ grand_coalition_wurttemberg +]%
+Grand Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if csvd_r_wurttemberg > 0: + <span style="color: #8A50E4;">**CSVD**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span>): [+ grand_coalition_wurttemberg +]%
 
 Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> + <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] [? if kvp_formed :+ <span style="color: #0087DC;">**KVP**</span> ?]+ <span style="color: #006400;">**WbWB**</span>): [+ true_bourgeois_coalition_wurttemberg +]%
 

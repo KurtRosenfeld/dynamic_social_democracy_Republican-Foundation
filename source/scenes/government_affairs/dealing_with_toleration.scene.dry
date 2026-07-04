@@ -95,7 +95,7 @@ As a result, several <span style="color: #7A3C00;">Nazi</span> and <span style="
 title: Improve relations with the parties of the coalition.
 on-arrival: z_relation += 5*(1-dissent); dvp_relation += 4*(1-dissent); ddp_relation += 4*(1-dissent); lvp_relation += 4*(1-dissent); left_dissent += 5; dvp_left += 1; ddp_left += 0.5; ddp_cohesion -= 0.5; lvp_left += 1
 
-We have increased our level of contact and discussions with the parties of the coalition, primarily the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] [? if not lvp_formed and dvp_exist:and <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:and <span style="color: #FFCC00;">**LVP**</span>?].
+We have increased our level of contact and discussions with the parties of the coalition, primarily the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] [? if not lvp_formed and dvp_exist:and <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed:and <span style="color: #FFCC00;">**LVP**</span>?].
 
 Our attempts to reach out to the center-right are met with disdain by leftists within our party.
 

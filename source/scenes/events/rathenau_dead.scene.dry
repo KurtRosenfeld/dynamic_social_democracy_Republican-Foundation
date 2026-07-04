@@ -33,7 +33,7 @@ We show that we stand firmly behind the <span style="color: #000000;">**Re**</sp
 @improve_left
 
 - @contact_uspd: Contact the <span style="color: #D47B9B;">**USPD**</span>.
-- @contact_kpd: Contact the <span style="color: #700000;">**KPD**</span>.
+- @contact_kpd: Contact the <span style="color: [+ kpd_colour +];">**KPD**</span>.
 - @contact_both: Contact both
 
 @contact_uspd
@@ -46,7 +46,7 @@ The <span style="color: #D47B9B;">**USPD**</span> is largely open towards cooper
 on-arrival: kpd_relation += 2; left_dissent -= 2; left_strength += 4; reformist_dissent += 3; ddp_relation -= 4
 subtitle: The bourgeois and our reformist wing wont be happy about this..
 
-The <span style="color: #700000;">**KPD**</span> is reluctant to cooperate with us, and our reformist faction is outraged.
+The <span style="color: [+ kpd_colour +];">**KPD**</span> is reluctant to cooperate with us, and our reformist faction is outraged.
 
 @contact_both
 on-arrival: uspd_relation += 5; kpd_relation += 1; left_dissent -= 2; left_strength += 3; reformist_dissent += 6

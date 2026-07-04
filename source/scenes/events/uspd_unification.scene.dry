@@ -15,7 +15,7 @@ Their poor performance, poor financial situation, the political turmoil and our 
 
 @join
 on-arrival: uspd_joining_proces = 1
-subtitle: Some of the <span style="color: #D47B9B;">**USPD**</span> will go to the <span style="color: #700000;">**KPD**</span>, but we expect the majority to go to us.
+subtitle: Some of the <span style="color: #D47B9B;">**USPD**</span> will go to the <span style="color: [+ kpd_colour +];">**KPD**</span>, but we expect the majority to go to us.
 
 We will welcome them.
 

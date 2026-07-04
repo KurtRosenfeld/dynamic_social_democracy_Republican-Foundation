@@ -7,7 +7,7 @@ new-page: true
 
 = Julius Leber
 
-Leber is a former army officer who turned against the military leaders of the Kapp Putsch in 1920, helping us put down the army's attempted coup. He is in favor of expanded democracy and building a broad popular base for the <span style="color: #c00000;">**SPD**</span>.
+Leber is a former army officer who turned against the military leaders of the Kapp Putsch in 1920, helping us put down the army's attempted coup. He is in favor of expanded democracy and building a broad popular base for the <span style="color: [+ spd_colour +];">**SPD**</span>.
 
 - @democratic_rally
 - @military_affairs

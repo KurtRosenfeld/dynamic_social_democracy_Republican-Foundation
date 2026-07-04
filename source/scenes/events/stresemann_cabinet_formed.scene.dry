@@ -49,7 +49,7 @@ view-if: labor_minister_party != "SPD"
 on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
 go-to: selection_of_ministries_stresemann
 
-Rudolf Wissell of the <span style="color: #c00000;">**SPD**</span> has been appointed labor minister.
+Rudolf Wissell of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed labor minister.
 
 @interior_main
 title: Interior Ministry
@@ -70,7 +70,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: interior_minister = "Severing"; leverage -= 5; interior_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Carl Severing of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
+Carl Severing of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Interior Minister.
 
 @appoint_sollmann
 title: Wilhelm Sollmann
@@ -80,7 +80,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 20; interior_minister = "Sollmann"; interior_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Wilhelm Sollmann of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
+Wilhelm Sollmann of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Interior Minister.
 
 @cancel_interior
 title: Cancel & Go Back
@@ -98,7 +98,7 @@ view-if: finance_minister_party != "SPD"
 on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
 go-to: selection_of_ministries_stresemann
 
-Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been appointed Finance Minister.
+Rudolf Hilferding of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Finance Minister.
 
 @economic
 title: Economic Ministry
@@ -121,7 +121,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: economic_minister = "Schmidt"; leverage -= 15; economic_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+Robert Schmidt of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Economic Minister.
 
 @appoint_hilfdering
 title: Rudolf Hilferding
@@ -132,7 +132,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 15; economic_minister = "Hilferding"; economic_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+Rudolf Hilferding of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Economic Minister.
 
 @appoint_tarnow
 title: Fritz Tarnow
@@ -143,7 +143,7 @@ view-if: Tarnow_in = "SPD"
 on-arrival: leverage -= 15; economic_minister = "Tarnow"; economic_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Fritz Tarnow of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+Fritz Tarnow of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Economic Minister.
 
 @appoint_sender
 title: Tony Sender
@@ -154,7 +154,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 50; economic_minister = "Sender"; economic_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Tony Sender of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+Tony Sender of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Economic Minister.
 
 @cancel_economic
 title: Cancel & Go Back
@@ -172,11 +172,11 @@ view-if: justice_minister_party != "SPD"
 on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
 go-to: selection_of_ministries_stresemann
 
-Gustav Radbruch of the <span style="color: #c00000;">**SPD**</span> has been appointed Justice Minister.
+Gustav Radbruch of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Justice Minister.
 
 @foreign
 title: Foreign Ministry
-subtitle: [? if stresemann_dead = 0: This is usually the domain of Gustav Stresemann of the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]?][? if stresemann_dead = 1: This is usually the domain of the [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if not lvp_formed and not dvp_exist: former <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] ?].
+subtitle: [? if stresemann_dead = 0: This is usually the domain of Gustav Stresemann of the [? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]?][? if stresemann_dead = 1: This is usually the domain of the [? if not lvp_formed and dvp_exist: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if not lvp_formed and not dvp_exist: former <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] ?].
 unavailable-subtitle: We do not have enough leverage.
 choose-if: leverage >= 25
 view-if: foreign_minister_party != "SPD"
@@ -193,7 +193,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: foreign_minister = "Müller"; leverage -= 25; foreign_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Hermann Müller of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
+Hermann Müller of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Foreign Minister.
 
 @appoint_breitscheid
 title: Rudolf Breitscheid
@@ -204,7 +204,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 25; foreign_minister = "Breitscheid"; foreign_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
+Rudolf Breitscheid of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Foreign Minister.
 
 @cancel_foreign
 title: Cancel & Go Back
@@ -234,7 +234,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: agriculture_minister = "Baade"; leverage -= 10; agriculture_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Fritz Baade of the <span style="color: #c00000;">**SPD**</span> has been appointed Agricultural Minister.
+Fritz Baade of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Agricultural Minister.
 
 @appoint_schmidt_agr
 title: Robert Schmidt
@@ -244,7 +244,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: agriculture_minister = "Schmidt"; leverage -= 10; agriculture_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Agricultural Minister.
+Robert Schmidt of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Agricultural Minister.
 
 @appoint_braun
 title: Otto Braun
@@ -254,7 +254,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: agriculture_minister = "Braun"; leverage -= 10; agriculture_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Otto Braun of the <span style="color: #c00000;">**SPD**</span> has been appointed Agricultural Minister.
+Otto Braun of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Agricultural Minister.
 
 @cancel_agriculture
 title: Cancel & Go Back
@@ -272,7 +272,7 @@ view-if: reichswehr_minister_party != "SPD"
 on-arrival: leverage -= 15; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"; hindenburg_angry += 10
 go-to: selection_of_ministries_stresemann
 
-Julius Leber of the <span style="color: #c00000;">**SPD**</span> has been appointed Reichswehr Minister.
+Julius Leber of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Reichswehr Minister.
 
 @transport
 title: Transport Ministry
@@ -283,7 +283,7 @@ view-if: transport_minister_party != "SPD"
 on-arrival: leverage -= 10; transport_minister_party = "SPD"; transport_minister = "Schmidt"
 go-to: selection_of_ministries_stresemann
 
-Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Transport Minister.
+Robert Schmidt of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Transport Minister.
 
 @postal
 title: Postal Ministry
@@ -294,7 +294,7 @@ view-if: postal_minister_party != "SPD"
 on-arrival: leverage -= 5; postal_minister_party = "SPD"; postal_minister = "Schmidt"
 go-to: selection_of_ministries_stresemann
 
-Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Postal Minister.
+Robert Schmidt of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Postal Minister.
 
 @done_stress
 title: End negotiations

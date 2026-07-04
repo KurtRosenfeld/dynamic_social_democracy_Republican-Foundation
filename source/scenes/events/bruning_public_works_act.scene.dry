@@ -31,7 +31,7 @@ Dietrich has since secured Reichstag approval to raise 1.4 billion Reichsmarks t
 - @wait
 
 @wait
-title: We will vote for the act, and so will the bourgeois parties. [? if dvp_exist and not lvp_formed: (barring the <span style="color: #C0A054;">**DVP**</span>)?][? if lvp_formed: (barring the <span style="color: #FFCC00;">**LVP**</span>'s industrialists)?]
+title: We will vote for the act, and so will the bourgeois parties. [? if dvp_exist and not lvp_formed: (barring the <span style="color: [+ dvp_colour +];">**DVP**</span>)?][? if lvp_formed: (barring the <span style="color: #FFCC00;">**LVP**</span>'s industrialists)?]
 on-arrival: labor_dissent -= 5; wtb_points += 200; hindenburg_angry_bruning -= 50; dvp_left += 5; ddp_left += 3; lvp_left += 3; ddp_cohesion += 3; z_relation += 5 if wtb_adopted; ddp_relation += 5 if wtb_adopted; lvp_relation += 5 if wtb_adopted; unemployed -= 3; inflation += 2; budget -= 1; economic_growth += 2; workers_nsdap -= 2; workers_ddp += 1; workers_z += 1; workers_dnvp += 1; workers_lvp += 1; unemployed_nsdap -= 3; unemployed_z += 2; unemployed_ddp += 2; unemployed_dnvp += 2; unemployed_lvp += 2
 go-to: public_works_pt2 if reparations_resolved
 

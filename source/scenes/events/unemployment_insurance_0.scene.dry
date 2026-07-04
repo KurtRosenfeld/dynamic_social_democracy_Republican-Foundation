@@ -1,5 +1,5 @@
 title: Unemployment Insurance Crisis
-subtitle: The <span style="color: #C0A054;">**DVP**</span> presents an ultimatum.
+subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> presents an ultimatum.
 new-page: true
 view-if: spd_in_government = 1 and (year = 1929 and month >= 10) and in_grand_coalition = 1 and not lvp_formed and not ui0_seen and not constructive_vonc
 on-arrival: budget -= 1 if budget >= 1; dvp_relation -= 3; ui0_seen = 1
@@ -10,12 +10,12 @@ face-image: img/Kollwitz_Arbeitslosigkeit.jpg
 
 = Unemployment Insurance Crisis
 
-With the Young Plan not providing the necessary fiscal relief as many have hoped, the <span style="color: #C0A054;">**DVP**</span> sets its eyes on cutting the unemployment insurance program to balance the books. The program is on the verge of financial collapse with the increasing numbers of unemployed, we need to decide what to do to prevent this.
+With the Young Plan not providing the necessary fiscal relief as many have hoped, the <span style="color: [+ dvp_colour +];">**DVP**</span> sets its eyes on cutting the unemployment insurance program to balance the books. The program is on the verge of financial collapse with the increasing numbers of unemployed, we need to decide what to do to prevent this.
 
-[? if dvp_right - dvp_left > 8: The <span style="color: #C0A054;">**DVP**</span> have been moving significantly rightwards in the recent year and their industrial backers want nothing less than a collapse of our government.?][? if not dvp_right - dvp_left > 8: Our cabinet has proposed a compromise featuring small cuts to the program along with a slight increase to contributions, but it is not clear if the <span style="color: #C0A054;">**DVP**</span> themselves would agree to it. ?]
+[? if dvp_right - dvp_left > 8: The <span style="color: [+ dvp_colour +];">**DVP**</span> have been moving significantly rightwards in the recent year and their industrial backers want nothing less than a collapse of our government.?][? if not dvp_right - dvp_left > 8: Our cabinet has proposed a compromise featuring small cuts to the program along with a slight increase to contributions, but it is not clear if the <span style="color: [+ dvp_colour +];">**DVP**</span> themselves would agree to it. ?]
 
 - @destroy: Fine. We will end this coalition.
-- @accept: Unfortunately, we must accept the <span style="color: #C0A054;">**DVP**</span>'s demands for the sake of stability.
+- @accept: Unfortunately, we must accept the <span style="color: [+ dvp_colour +];">**DVP**</span>'s demands for the sake of stability.
 - @compromise: Surely there is some compromise to be had?
 
 @destroy
@@ -34,7 +34,7 @@ on-arrival: workers_spd -= 0.1*workers_spd; unemployed_spd -= 0.2*unemployed_spd
 
 Unfortunately, we must accept this if we are to maintain this coalition. The <span style="color: #7A3C00;">Nazis</span> and <span style="color: #700000;">**Communists**</span> are waiting in the wings for us to fail, ready to pounce upon the instability that would result from a breakup of the governing coalition.
 
-The workers are furious at our betrayal, as are a good portion of our membership throughout the factions. Our loss is the <span style="color: #700000;">**KPD**</span>'s gain, and even the <span style="color: #7A3C00;">**NSDAP**</span>, those lapdogs of the bourgeoisie, have joined in criticizing us for our austerity.
+The workers are furious at our betrayal, as are a good portion of our membership throughout the factions. Our loss is the <span style="color: [+ kpd_colour +];">**KPD**</span>'s gain, and even the <span style="color: #7A3C00;">**NSDAP**</span>, those lapdogs of the bourgeoisie, have joined in criticizing us for our austerity.
 
 @compromise
 unavailable-subtitle: [? if dvp_relation < 25: We do not have good enough relations with the right-wing parties.?] [? if dvp_right - dvp_left > 8: The <span style="color: #C0A054;">DVP</span> have changed. ?]
@@ -56,4 +56,4 @@ choose-if: dvp_ideology == "Left" and dvp_relation >= 40
 unavailable-subtitle: [? if dvp_ideology != "Left": The <span style="color: #C0A054;">DVP</span> are too far gone. ?] [? if dvp_relation < 40: We do not have good enough relations with the right-wing parties. ?]
 on-arrival: workers_spd -= 1; unemployed_spd -= 1; unemployed_kpd += 1; unemployed_nsdap += 1; workers_nsdap += 1; left_dissent += 5; labor_dissent += 3; kpd_relation -= 4; reformist_strength += 10; reformist_dissent -= 5; coalition_dissent -= 1; old_middle_dvp -= 3; old_middle_nsdap += 3; unemployment_insurance_threshold = unemployed; dvp_left += 3; ddp_left += 1; ddp_cohesion += 1; unemployment_goal_spd += 1; economic_growth -= 0.1
 
-We have pushed for an increase in both employer and employee contributions rather than to cut benefits for the program itself. The <span style="color: #C0A054;">**DVP**</span> accepts with the influence of [? if not stresemann_dead: Stresemann and?] their left wing.
+We have pushed for an increase in both employer and employee contributions rather than to cut benefits for the program itself. The <span style="color: [+ dvp_colour +];">**DVP**</span> accepts with the influence of [? if not stresemann_dead: Stresemann and?] their left wing.

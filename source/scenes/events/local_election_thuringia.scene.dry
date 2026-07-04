@@ -456,13 +456,13 @@ go-to: thuringia_coalition_menu
 <hr id="read-marker">
 Thuringia is currently governed by a broad center-right coalition, which holds exactly half of the Landtag's seats. This coalition includes all parties to the right of us, along with the special interest parties, the <span style="color: #b8996f;">**WP**</span> and <span style="color: #7FCEB1;">**CNBLP**</span>, both of which have a significant presence in state politics.
 <hr id="read-marker">
-United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #C43988;">**KPO**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_thuringia +]% 
+United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: #C43988;">**KPO**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_thuringia +]% 
 
-Grand Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if z_r_thuringia:&nbsp;+&nbsp;<span style="color: #000000;">**[+ z_party_name +]**</span> ?][? if not lvp_formed:&nbsp;+&nbsp;<span style="color: #C0A054;">**DVP**</span>?]): [+ spd_coalition_thuringia +]% 
+Grand Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if z_r_thuringia:&nbsp;+&nbsp;<span style="color: #000000;">**[+ z_party_name +]**</span> ?][? if not lvp_formed:&nbsp;+&nbsp;<span style="color: [+ dvp_colour +];">**DVP**</span>?]): [+ spd_coalition_thuringia +]% 
 
-Bourgeois Coalition ([? if z_r_thuringia: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #7FCEB1;">**CNBLP**</span> + <span style="color: #b8996f;">**WP**</span>[? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>): [+ bourgeois_coalition_thuringia +]%
+Bourgeois Coalition ([? if z_r_thuringia: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #7FCEB1;">**CNBLP**</span> + <span style="color: #b8996f;">**WP**</span>[? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>): [+ bourgeois_coalition_thuringia +]%
 
-Right-wing Coalition ([? if z_r_thuringia: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #7FCEB1;">**CNBLP**</span> + <span style="color: #b8996f;">**WP**</span>[? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>[? if dnvp_ideology == "Moderate":&nbsp;+ <span style="color: #003755;">**DNF**</span> ?] + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition_thuringia +]%
+Right-wing Coalition ([? if z_r_thuringia: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #7FCEB1;">**CNBLP**</span> + <span style="color: #b8996f;">**WP**</span>[? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>[? if dnvp_ideology == "Moderate":&nbsp;+ <span style="color: #003755;">**DNF**</span> ?] + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition_thuringia +]%
 
 [? if nsdap_thuringia_elections_vote >= 8: The rapid rise of the <span style="color: #7A3C00;">**NSDAP**</span> in state and local elections is certainly worth keeping an eye on. ?]
 
@@ -495,7 +495,7 @@ if ((Q.dvp_relation < (dvp_toleration_threshold + 5) && !Q.lvp_formed) || (Q.lvp
 !}
 
 <hr id="read-marker">
-The bourgeois parties have historically been hostile to us in state politics, especially after the notorious <span style="color: #c00000;">**SPD**</span>-<span style="color: #D47B9B;">**USPD**</span>-<span style="color: #700000;">**KPD**</span> United Left government faced a <i>Reichsexekution</i> six years ago. They still haven't forgiven the <span style="color: #c00000;">**SPD**</span> for this. 
+The bourgeois parties have historically been hostile to us in state politics, especially after the notorious <span style="color: [+ spd_colour +];">**SPD**</span>-<span style="color: #D47B9B;">**USPD**</span>-<span style="color: [+ kpd_colour +];">**KPD**</span> United Left government faced a <i>Reichsexekution</i> six years ago. They still haven't forgiven the <span style="color: [+ spd_colour +];">**SPD**</span> for this. 
 
 Meanwhile, the surging <span style="color: #7A3C00;">**NSDAP**</span>, now controlling [+ nsdap_r_thuringia +]% of the Landtag, is no longer content with mere toleration and demands a role in government. With the bourgeois parties determined to exclude us from power, Thuringia may well become the first state to appoint a <span style="color: #7A3C00;">Nazi</span> minister.
 
@@ -552,7 +552,7 @@ Somehow, the bourgeois parties are willing to form a [? if lvp_formed: <span sty
 We will use our positions in government to root out right-wing and <span style="color: #3E88B3;">nationalist</span> sympathies within the civil service and to strengthen <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> sentiment.
 
 @united_left_thuringia
-title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the <span style="color: #700000;">**KPD**</span>.
+title: The <span style="color: [+ spd_colour +];">**SPD**</span> will form a coalition government with the <span style="color: [+ kpd_colour +];">**KPD**</span>.
 subtitle: History will repeat itself.
 view-if: left_coalition_thuringia >= 50 and (kpd_relation >= 40 and kpd_leader == "Conciliators") or (kpd_relation >= 60 and kpd_leader != "Conciliators")
 on-arrival: red_thuringia = 1; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5; coup_progress += 3; hindenburg_angry += 40; rfb_militancy += 0.05; rfb_strength += 100; sa_strength += 50; sh_strength += 50; strife += 1; workers_spd += 3; workers_kpd += 3; unemployed_spd += 3; new_middle_spd -= 3; old_middle_spd -= 3; rural_spd -= 3; communist_coalition += 3; kpd_relation += 10
@@ -574,12 +574,12 @@ Surprisingly, despite reluctance on both sides due to fears that the <span style
 Hindenburg’s patience is especially thin. Tread carefully.
 
 @spd_majority
-title: The <span style="color: #c00000;">**SPD**</span> forms a majority government.
+title: The <span style="color: [+ spd_colour +];">**SPD**</span> forms a majority government.
 subtitle: Congratulations.
 view-if: spd_r_thuringia >= 50
 on-arrival: thuringia_spd = 1; rural_nsdap -= 3; new_middle_nsdap -= 4; old_middle_nsdap -= 4; workers_kpd -= 2; unemployed_kpd -= 2; workers_spd += 2; unemployed_spd += 2; new_middle_spd += 4; old_middle_spd += 4; rural_spd += 3; pro_republic += 5; prussian_police_loyalty += 0.05; sa_strength -= 50
 
-To the sheer horror of the right-wing parties in Thuringia, an unforeseen occurrence has swept over the state: a complete SPD majority. Members of the far-right cry foul; voter fraud, other forms of subterfuge, and attacks ranging to outright conspiracy is hurled at the results. Nonetheless, <span style="color: #c00000;">Red</span> Thuringia is restored, without the revolutionary concerns of the <span style="color: #D47B9B;">**USPD**</span>/<span style="color: #700000;">**KPD**</span>’s presence in the landtag.
+To the sheer horror of the right-wing parties in Thuringia, an unforeseen occurrence has swept over the state: a complete SPD majority. Members of the far-right cry foul; voter fraud, other forms of subterfuge, and attacks ranging to outright conspiracy is hurled at the results. Nonetheless, <span style="color: #c00000;">Red</span> Thuringia is restored, without the revolutionary concerns of the <span style="color: #D47B9B;">**USPD**</span>/<span style="color: [+ kpd_colour +];">**KPD**</span>’s presence in the landtag.
 
 We have undertaken the purging of reactionary sentiments within the police, and revamped the state’s school curriculum to move away from the nationalistic values that remain prevalent. More work is set to be done, but at least Hindenburg’s gaze has been turned away… for now.
 

@@ -1551,7 +1551,7 @@ Here, you can test your skills.
 
 @joever_mode
 title: <div style="text-align: center;"><img src="img/joever.png" alt="Joever"></div>
-subtitle: The <span style="color: #c00000;">**SPD**</span> will start with 0% support.
+subtitle: The <span style="color: [+ spd_colour +];">**SPD**</span> will start with 0% support.
 on-arrival: {!
 Q.workers_spd = 0;
 Q.new_middle_spd = 0;

@@ -954,7 +954,7 @@ Unfortunately, we fail to turn them away from [? if not hindenburg_run: [+ z_cho
 
 @round2_convince_kpd
 choose-if: spd_votes >= kpd_votes
-unavailable-subtitle: The <span style="color: #700000;">**KPD**</span> knows that they are more popular than us; they do not see a reason to support our candidate.
+unavailable-subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> knows that they are more popular than us; they do not see a reason to support our candidate.
 view-if: spd_campaign > 0 and kpd_support_spd == 0 and not eckener_campaign
 max-visits: 1
 

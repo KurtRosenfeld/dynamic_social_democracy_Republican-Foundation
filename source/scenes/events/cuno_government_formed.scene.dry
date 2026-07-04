@@ -1,5 +1,5 @@
 title: <span style="color: [+ ebert_colour +];">**Ebert**</span> appoints <span style="color: [+ i_colour +];">**Wilhelm Cuno**</span> Chancellor.
-subtitle: <span style="color: [+ ebert_colour +];">**Ebert**</span> calls the former <span style="color: #C0A054;">**DVP**</span> member, now <span style="color: [+ i_colour +];">**independent**</span>, businessman <span style="color: [+ i_colour +];">**Wilhelm Cuno**</span> to be Chancellor. 
+subtitle: <span style="color: [+ ebert_colour +];">**Ebert**</span> calls the former <span style="color: [+ dvp_colour +];">**DVP**</span> member, now <span style="color: [+ i_colour +];">**independent**</span>, businessman <span style="color: [+ i_colour +];">**Wilhelm Cuno**</span> to be Chancellor. 
 view-if: year == 1922 and month == 11 and wirth_2_failed == 1
 max-visits: 1 
 tags: event 

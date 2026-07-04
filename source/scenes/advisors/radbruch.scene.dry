@@ -7,7 +7,7 @@ new-page: true
 
 = Gustav Radbruch
 
-Gustav Radbruch is a renowned legal scholar and long-time <span style="color: #c00000;">**SPD**</span> justice minister. [? if judicial_reform >= 2: He currently has considerable support among party factions due to the <span style="color: #c00000;">SPD</span>'s success in judicial reforms. ?]
+Gustav Radbruch is a renowned legal scholar and long-time <span style="color: [+ spd_colour +];">**SPD**</span> justice minister. [? if judicial_reform >= 2: He currently has considerable support among party factions due to the <span style="color: #c00000;">SPD</span>'s success in judicial reforms. ?]
 
 
 - @judiciary_major

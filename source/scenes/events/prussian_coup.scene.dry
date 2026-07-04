@@ -72,7 +72,7 @@ go-to: defend_2_victory_2
 
 Our forces confront the government troops and their <span style="color: #808080;">reactionary</span> auxiliaries on their way to seize government offices, and somehow, our enemies retreat without a fight! They were overwhelmed by our display of strength, and have chosen to slink away. Chancellor [+ chancellor +] withdraws the dismissal of the Prussian government, at least for now.
 
-The show of force has reinvigorated support for the republic and for the <span style="color: #c00000;">**SPD**</span>, and has weakened the <span style="color: #7A3C00;">fascists</span>. It’s anticipated that Chancellor Papen will either resign or be deposed by the Camarilla for his embarrassing failure, as Hindenburg’s confidence in him has been utterly shattered.
+The show of force has reinvigorated support for the republic and for the <span style="color: [+ spd_colour +];">**SPD**</span>, and has weakened the <span style="color: #7A3C00;">fascists</span>. It’s anticipated that Chancellor Papen will either resign or be deposed by the Camarilla for his embarrassing failure, as Hindenburg’s confidence in him has been utterly shattered.
 
 @defend_2_victory_2
 achievement: drei_pfeile

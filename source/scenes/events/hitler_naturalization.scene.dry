@@ -27,7 +27,7 @@ The leader of the <span style="color: #7A3C00;">Nazis</span>, Adolf Hitler, rema
 
 With the presidential elections approaching, it is likely that Hitler will make one final attempt to obtain citizenship.
 
-- @brunswick: The [? if dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if not dvp_exist:[? if not cvp_formed:<span style="color: #3E88B3;">**DNVP**</span>?][? if cvp_formed:<span style="color: #000000;">**[+ z_party_name +]**</span>?]?], in collaboration with the <span style="color: #7A3C00;">**NSDAP**</span> in Brunswick, appoints Hitler to the civil service.
+- @brunswick: The [? if dvp_exist: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if not dvp_exist:[? if not cvp_formed:<span style="color: #3E88B3;">**DNVP**</span>?][? if cvp_formed:<span style="color: #000000;">**[+ z_party_name +]**</span>?]?], in collaboration with the <span style="color: #7A3C00;">**NSDAP**</span> in Brunswick, appoints Hitler to the civil service.
 - @brunswick_fail: The government of Brunswick attempts once more to appoint Hitler to the civil service.
 - @nothing: With the <span style="color: #7A3C00;">Nazis</span> being excluded from every state government, Hitler remains unable to be naturalized.
 
@@ -35,7 +35,7 @@ With the presidential elections approaching, it is likely that Hitler will make 
 view-if: brunswick_hitler and dvp_ideology == "Right" and dvp_leader == "Dingeldey" and not lvp_formed and not cvp_formed
 on-arrival: hitler_citizen = 1; workers_nsdap += 3; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4; unemployed_nsdap += 3; catholics_nsdap += 2; pro_republic -= 3
 
-In order for the <span style="color: #7A3C00;">**NSDAP**</span> to quickly and discreetly grant Hitler citizenship, they had to collaborate with the [? if dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if not dvp_exist: <span style="color: #3E88B3;">**DNVP**</span>?], who, while supportive of these efforts, insisted on maintaining an appearance of legality. During a meeting between the two parties, they agreed to give Hitler a position in the Brunswick embassy to the Reichsrat.
+In order for the <span style="color: #7A3C00;">**NSDAP**</span> to quickly and discreetly grant Hitler citizenship, they had to collaborate with the [? if dvp_exist: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if not dvp_exist: <span style="color: #3E88B3;">**DNVP**</span>?], who, while supportive of these efforts, insisted on maintaining an appearance of legality. During a meeting between the two parties, they agreed to give Hitler a position in the Brunswick embassy to the Reichsrat.
 
 Following this agreement, a heated debate erupted about whether Hitler would actually fulfill his obligations once he became a civil servant. However, after further reassurances, Hitler was sworn in and officially granted citizenship.
 
@@ -43,7 +43,7 @@ Following this agreement, a heated debate erupted about whether Hitler would act
 view-if: brunswick_hitler and (((dvp_ideology != "Right" or dvp_leader != "Dingeldey") or lvp_formed) or cvp_formed)
 on-arrival: hitler_citizen = 0; pro_republic += 3
 
-In order for the <span style="color: #7A3C00;">**NSDAP**</span> to quickly and discreetly grant Hitler citizenship, they had to collaborate with the [? if not lvp_formed and dvp_exist:<span style="color: #C0A054;">**DVP**</span>?][? if not lvp_formed and not dvp_exist:[? if not cvp_formed:<span style="color: #3E88B3;">**DNVP**</span>?][? if cvp_formed:<span style="color: #000000;">**[+ z_party_name +]**</span>?]?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?], whose radical right-wing elements are in support, but the party as a whole opposes this move. During a meeting between the two parties, no agreement is reached.
+In order for the <span style="color: #7A3C00;">**NSDAP**</span> to quickly and discreetly grant Hitler citizenship, they had to collaborate with the [? if not lvp_formed and dvp_exist:<span style="color: [+ dvp_colour +];">**DVP**</span>?][? if not lvp_formed and not dvp_exist:[? if not cvp_formed:<span style="color: #3E88B3;">**DNVP**</span>?][? if cvp_formed:<span style="color: #000000;">**[+ z_party_name +]**</span>?]?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?], whose radical right-wing elements are in support, but the party as a whole opposes this move. During a meeting between the two parties, no agreement is reached.
 
 As a result, Hitler will remain a stateless person, and this will damage his reputation as the Führer of the Germans.
 

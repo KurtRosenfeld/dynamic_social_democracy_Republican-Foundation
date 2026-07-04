@@ -64,7 +64,7 @@ Do we realize that this means civil war, against the full force of the state?
 title: Bide our time.
 on-arrival: workers_spd -= 5; new_middle_spd -= 5; unemployed_spd -= 5; pro_republic -= 15; rb_strength -= 500; rb_militancy *= 0.7; sa_strength += 50; rfb_strength += 200; rfb_militancy += 0.1; left_dissent += 60; center_dissent += 50; reformist_dissent += 40; labor_dissent += 40; neorevisionist_dissent += 40
 
-The <span style="color: #c00000;">**SPD**</span> is shocked at our decision! How can we allow such a blatant violation of the constitution go like that? Many radicalized Reichsbanner and party officials defeat to the <span style="color: #700000;">**Communists**</span> and the <span style="color: #700000;">**RFB**</span>, vowing to fight against Papen regardless of our instructions.
+The <span style="color: [+ spd_colour +];">**SPD**</span> is shocked at our decision! How can we allow such a blatant violation of the constitution go like that? Many radicalized Reichsbanner and party officials defeat to the <span style="color: #700000;">**Communists**</span> and the <span style="color: #700000;">**RFB**</span>, vowing to fight against Papen regardless of our instructions.
 
 - @reichstag_4
 - @papen_civil_war_2

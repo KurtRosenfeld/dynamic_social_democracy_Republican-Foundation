@@ -31,7 +31,7 @@ subtitle: -1 resource.
 unavailable-subtitle:[? if resources < 1 : We do not have enough resources. ?]
 on-arrival: resources -= 1; workers_kpd += 5; new_middle_spd += 6; old_middle_spd += 4; rural_spd += 4; catholics_spd += 4; labor_dissent += 15; left_dissent += 10; zentrum_disintegration += 1; peoples_party_support += 1; liberal_cooperation += 2
 
-If the bourgeois wants to appeal to the workers, then we will simply find support elsewhere. The <span style="color: #700000;">**KPD**</span> makes inroads on our inaction. The left of the <span style="color: #c00000;">**SPD**</span> is opposed to this path, seeing it as diluting the class character of the party. On the other hand, reformists support branching out to different classes.
+If the bourgeois wants to appeal to the workers, then we will simply find support elsewhere. The <span style="color: [+ kpd_colour +];">**KPD**</span> makes inroads on our inaction. The left of the <span style="color: [+ spd_colour +];">**SPD**</span> is opposed to this path, seeing it as diluting the class character of the party. On the other hand, reformists support branching out to different classes.
 
 @nothing
 on-arrival: zentrum_disintegration += 1; 

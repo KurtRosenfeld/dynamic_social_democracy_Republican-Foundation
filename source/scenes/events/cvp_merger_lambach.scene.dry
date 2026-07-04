@@ -182,7 +182,7 @@ go-to: cvp_dnvp_menu
 
 The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #385A38;">agrarians</span> have successfully pushed for the inclusion of support for a constitutional monarchy in the party platform. However, it is no longer a central pillar of the party's ideology.
 
-Monarchy - Support for a constitutional monarchy, similar to the stance of the[? if not dvp_exist or lvp_formed:&nbsp;former?] <span style="color: #C0A054;">**DVP**</span>.
+Monarchy - Support for a constitutional monarchy, similar to the stance of the[? if not dvp_exist or lvp_formed:&nbsp;former?] <span style="color: [+ dvp_colour +];">**DVP**</span>.
 
 Democracy - Favoring a strengthened presidency, while maintaining a pro-democratic stance
 
@@ -270,7 +270,7 @@ go-to: cvp_dnvp_menu
 
 The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #385A38;">agrarians</span> have used their leverage to edit in their vehement anti-<span style="color: #c00000;">socialist</span> stance into the party platform.
 
-<span style="color: #c00000;">**SPD**</span> - Strongly against governing with
+<span style="color: [+ spd_colour +];">**SPD**</span> - Strongly against governing with
 
 <span style="color: #FFCC00;">**Liberals**</span> - Preferred governing partner
 
@@ -284,7 +284,7 @@ go-to: cvp_dnvp_menu
 
 The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #385A38;">agrarians</span> have used their leverage to edit in their vehement anti-<span style="color: #c00000;">socialist</span> stance into the party platform. However, the <span style="color: #FF7F00;">Christian Left</span> has managed to keep an open door for future cooperation—though it's not a very wide one.
 
-<span style="color: #c00000;">**SPD**</span> - Against governing with
+<span style="color: [+ spd_colour +];">**SPD**</span> - Against governing with
 
 <span style="color: #FFCC00;">**Liberals**</span> - Preferred governing partner
 
@@ -298,7 +298,7 @@ go-to: cvp_dnvp_menu
 
 The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #385A38;">agrarians</span> have attempted to use their leverage to edit in their vehement anti-<span style="color: #c00000;">socialist</span> stance into the party platform. However, the <span style="color: #FF7F00;">Christian Left</span> and [+ z_leader +] has managed to keep an open door for future cooperation.
 
-<span style="color: #c00000;">**SPD**</span> - Open to an agreement
+<span style="color: [+ spd_colour +];">**SPD**</span> - Open to an agreement
 
 <span style="color: #FFCC00;">**Liberals**</span> - Preferred governing partner
 
@@ -332,13 +332,13 @@ view-if: not cvp_dvp_trigger
 go-to: cvp_party_congress
 
 @cvp_dvp_merger
-title: The <span style="color: #C0A054;">**DVP**</span> also wants in.
+title: The <span style="color: [+ dvp_colour +];">**DVP**</span> also wants in.
 subtitle: Huh?
 call: cvp_dvp_formed
 view-if: cvp_dvp_trigger
 
-Before the <span style="color: #000000;">Christian People's Party</span> was to be announced to the public, representatives from the beleaguered <span style="color: #C0A054;">**DVP**</span> have shown their interest in joining the arrangement as well.
+Before the <span style="color: #000000;">Christian People's Party</span> was to be announced to the public, representatives from the beleaguered <span style="color: [+ dvp_colour +];">**DVP**</span> have shown their interest in joining the arrangement as well.
 
-This leaves the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> as the only liberal party in the political landscape, now flourishing with defections from the <span style="color: #C0A054;">**DVP**</span>'s left wing.
+This leaves the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> as the only liberal party in the political landscape, now flourishing with defections from the <span style="color: [+ dvp_colour +];">**DVP**</span>'s left wing.
 
 - @cvp_party_congress

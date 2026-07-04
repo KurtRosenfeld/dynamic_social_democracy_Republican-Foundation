@@ -276,9 +276,9 @@ The faction strengths are as follows.
 
 <span style="color: #000099;">Catholic Right</span> (<span style="color: #000000;">**Z**</span>) - Treviranus - [? if cvp_ideology == "Left" and democratic_points_lead: Influential?][? if ((cvp_ideology == "Left" and not democratic_points_lead) or (democratic_points_lead and cvp_ideology != "Left")): Relevant?][? if cvp_ideology != "Left" and not democratic_points_lead: Limited?]
 
-[? if cvp_dvp_formed: <span style="color: #D8B868;">Stresemannites</span> (<span style="color: #C0A054;">**DVP**</span>) - Treviranus - [? if cvp_ideology == "Left" and democratic_points_lead: Relevant?][? if ((cvp_ideology == "Left" and not democratic_points_lead) or (democratic_points_lead and cvp_ideology != "Left")): Limited?][? if cvp_ideology != "Left" and not democratic_points_lead: Marginal?]?]
+[? if cvp_dvp_formed: <span style="color: #D8B868;">Stresemannites</span> (<span style="color: [+ dvp_colour +];">**DVP**</span>) - Treviranus - [? if cvp_ideology == "Left" and democratic_points_lead: Relevant?][? if ((cvp_ideology == "Left" and not democratic_points_lead) or (democratic_points_lead and cvp_ideology != "Left")): Limited?][? if cvp_ideology != "Left" and not democratic_points_lead: Marginal?]?]
 
-[? if cvp_dvp_formed: <span style="color: #8C7A3C;">Industrialists</span> (<span style="color: #C0A054;">**DVP**</span>) - Treviranus - [? if cvp_ideology != "Left" and not labor_points_lead: Influential?][? if not (cvp_ideology != "Left" and not labor_points_lead): Relevant?]?]
+[? if cvp_dvp_formed: <span style="color: #8C7A3C;">Industrialists</span> (<span style="color: [+ dvp_colour +];">**DVP**</span>) - Treviranus - [? if cvp_ideology != "Left" and not labor_points_lead: Influential?][? if not (cvp_ideology != "Left" and not labor_points_lead): Relevant?]?]
 <hr id="read-marker">
 <span style="color: #000000;">Catholic Center</span> (<span style="color: #000000;">**Z**</span>) - Adenauer - [? if cvp_ideology == "Left" and democratic_points_lead: Powerful?][? if ((cvp_ideology == "Left" and not democratic_points_lead) or (democratic_points_lead and cvp_ideology != "Left")): Influential?][? if cvp_ideology != "Left" and not democratic_points_lead: Relevant?]
 
@@ -304,7 +304,7 @@ choose-if: stegerwald_unlock
 on-arrival: z_relation += 15; pro_republic += 5; ddp_relation += 5; dvp_relation += 5; lvp_relation += 5; workers_z += 5; unemployed_z += 3; workers_spd -= 3; workers_kpd -= 2; unemployed_spd -= 3; rural_z -= 4; old_middle_z -= 4; rural_dnf += 4; old_middle_dnf += 4; catholics_z += 8; cvp_leader = "Stegerwald"; cvp_left += 5; cvp_ideology = "Left"; old_middle_z = 25 if old_middle_z < 25; rural_z = 25 if rural_z < 25
 face-image: img/portraits/stegerwald.jpg
 
-Somewhat surprisingly, <span style="color: #000000;">Center</span> leader Adam Stegerwald is elected as the chairman of its successor party. This is largely attributed to the unified support from the various Christian labor unions and backing from former <span style="color: #000000;">Center</span> and Catholic politicians. However, he remains largely opposed by former <span style="color: #3E88B3;">**DNVP**</span> members due to his willingness to cooperate constructively with the <span style="color: #c00000;">**SPD**</span>.
+Somewhat surprisingly, <span style="color: #000000;">Center</span> leader Adam Stegerwald is elected as the chairman of its successor party. This is largely attributed to the unified support from the various Christian labor unions and backing from former <span style="color: #000000;">Center</span> and Catholic politicians. However, he remains largely opposed by former <span style="color: #3E88B3;">**DNVP**</span> members due to his willingness to cooperate constructively with the <span style="color: [+ spd_colour +];">**SPD**</span>.
 
 It was widely expected that, with the merger of the two parties, politicians like Stegerwald would shift to the left wing of the newly created party—and this has indeed proven true. His strongest supporters, aside from the trade unions, include the now strengthened <span style="color: #FF7F00;">Christian Left</span> faction, which will push for a paternalistic economic policy and greater cooperation with the <span style="color: #c00000;">socialists</span>. Stegerwald is also a committed <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span>, a stance that has pushed some ardent monarchists over to the <span style="color: #003755;">**DNF**</span>.
 
@@ -478,7 +478,7 @@ Minister-President of Württemberg Eugen Bolz has been promoted to the leadershi
 
 However, Bolz's role as a compromise candidate has hindered his ability to effect significant change, as he must tread carefully to avoid alienating the factions that helped bring him to power. Bolz will attempt to bridge the confessional divides between Catholic and Protestant conservatives, with the party still divided along the lines of their party of <span class="tooltip-text" title="that's me! the modman!">origin</span>.
 
-Given Bolz's refusal to enter a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition in Württemberg back in 1928, viewing the <span style="color: #c00000;">**SPD**</span> as 'incapable of governing,' we do not expect much improvement in our relationship moving forward.
+Given Bolz's refusal to enter a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition in Württemberg back in 1928, viewing the <span style="color: [+ spd_colour +];">**SPD**</span> as 'incapable of governing,' we do not expect much improvement in our relationship moving forward.
 
 @lejeune_jung
 title: Paul Lejeune-Jung, formerly of the <span style="color: #3E88B3;">DNVP</span>, is elected as their new leader.

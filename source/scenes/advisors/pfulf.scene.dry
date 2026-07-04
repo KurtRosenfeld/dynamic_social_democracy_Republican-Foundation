@@ -7,7 +7,7 @@ new-page: true
 
 = Antonie Pfülf
 
-Pfülf is a former teacher from <span style="color: #00CCFF;">Bavaria</span> who came from a conservative Catholic family. She is an activist for women's rights and for broadening the support of the <span style="color: #c00000;">**SPD**</span>. 
+Pfülf is a former teacher from <span style="color: #00CCFF;">Bavaria</span> who came from a conservative Catholic family. She is an activist for women's rights and for broadening the support of the <span style="color: [+ spd_colour +];">**SPD**</span>. 
 
 - @support_peoples_party
 - @build_peoples_party

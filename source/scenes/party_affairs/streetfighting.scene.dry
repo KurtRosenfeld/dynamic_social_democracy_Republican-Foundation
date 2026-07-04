@@ -62,4 +62,4 @@ view-if: kpd_truce == 0
 unavailable-subtitle: The <span style="color: #700000;">KPD</span> is not interested.
 on-arrival: kpd_truce = 1; kpd_relation += 5; rfb_strength += 50; rb_strength += 50; sa_strength += 50;
 
-We have made at least a temporary truce with the <span style="color: #700000;">**KPD**</span>, so that our respective paramilitaries will stop fighting.
+We have made at least a temporary truce with the <span style="color: [+ kpd_colour +];">**KPD**</span>, so that our respective paramilitaries will stop fighting.

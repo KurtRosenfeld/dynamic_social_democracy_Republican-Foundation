@@ -52,7 +52,7 @@ max-visits: 1
 
 Sectorial works councils can now negotiate wage and price policies for entire economic sectors, helping to both give workers more of a voice, and to rationalize the economy, smoothing over the anarchy of the market.
 
-[? if kpd_leader == "Conciliators" and kpd_ultimatum_timer: The Conciliators of the <span style="color: #700000;">**KPD**</span> are satisfied with our efforts, happy to count this as part of the 'substantial nationalization of the economy' demand. ?]
+[? if kpd_leader == "Conciliators" and kpd_ultimatum_timer: The Conciliators of the <span style="color: [+ kpd_colour +];">**KPD**</span> are satisfied with our efforts, happy to count this as part of the 'substantial nationalization of the economy' demand. ?]
 
 @nationalize_1
 title: Begin to socialize key industries.
@@ -63,7 +63,7 @@ max-visits: 3
 
 We have begun to socialize key industries by buying out the capitalist owners, and creating coordinated governing boards consisting of worker, consumer, and state representatives. The capitalists are not pleased at our intrusion into the economy.
 
-[? if kpd_leader == "Conciliators" and socializations >= 2 and kpd_ultimatum_timer: The Conciliators of the <span style="color: #700000;">**KPD**</span> are satisfied with our efforts, happy to count this as part of the 'substantial nationalization of the economy' demand. ?]
+[? if kpd_leader == "Conciliators" and socializations >= 2 and kpd_ultimatum_timer: The Conciliators of the <span style="color: [+ kpd_colour +];">**KPD**</span> are satisfied with our efforts, happy to count this as part of the 'substantial nationalization of the economy' demand. ?]
 
 @cooperatives_1
 title: Support worker and consumer cooperatives.

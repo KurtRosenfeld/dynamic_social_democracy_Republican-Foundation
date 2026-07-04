@@ -7,7 +7,7 @@ new-page: true
 
 = Max Seydewitz
 
-Max Seydewitz is a former leader of the youth wing, current supporter of the left wing of the <span style="color: #c00000;">**SPD**</span>, and advocates for class struggle.
+Max Seydewitz is a former leader of the youth wing, current supporter of the left wing of the <span style="color: [+ spd_colour +];">**SPD**</span>, and advocates for class struggle.
 
 - @class_struggle
 - @socialist_youth

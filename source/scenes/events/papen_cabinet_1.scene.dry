@@ -34,7 +34,7 @@ on-arrival: workers_spd += 2; workers_kpd += 2; pro_republic -= 3
 
 In his first radio address to the German people, Papen laid out the ideological direction of his government. He denounced previous administrations for steering Germany toward "<span style='color: #9B0000;'>state socialism</span>," blaming them for the "moral decay" wrought by an "unholy class war" and "cultural <span style='color: #9B0000;'>Bolshevism</span>." He also condemned the transformation of Germany into a welfare state and seeks to reverse our progress over the years.
 
-As Vorwärts puts it, this marks "a unique declaration of class war from above." The <span style="color: #c00000;">**SPD**</span>—and even more so the <span style="color: #700000;">**Communists**</span>—after months of decline, are poised for resurgence as the battle between the barons and the people begins. Moreover, if the <span style="color: #7A3C00;">**NSDAP**</span> were to back this cabinet, it could trigger a collapse in their popular support.
+As Vorwärts puts it, this marks "a unique declaration of class war from above." The <span style="color: [+ spd_colour +];">**SPD**</span>—and even more so the <span style="color: #700000;">**Communists**</span>—after months of decline, are poised for resurgence as the battle between the barons and the people begins. Moreover, if the <span style="color: #7A3C00;">**NSDAP**</span> were to back this cabinet, it could trigger a collapse in their popular support.
 
 - @papen_2
 

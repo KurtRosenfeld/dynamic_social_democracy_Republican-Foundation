@@ -7,7 +7,7 @@ new-page: true
 
 = Kurt Rosenfeld
 
-Rosenfeld works as a lawyer in Berlin who defends left-wing individuals and causes. He favors cooperation with the <span style="color: #700000;">**KPD**</span> and a path of class struggle for the <span style="color: #c00000;">**SPD**</span>.
+Rosenfeld works as a lawyer in Berlin who defends left-wing individuals and causes. He favors cooperation with the <span style="color: [+ kpd_colour +];">**KPD**</span> and a path of class struggle for the <span style="color: [+ spd_colour +];">**SPD**</span>.
 
 - @building_the_left
 - @kpd_cooperation
@@ -18,21 +18,21 @@ Rosenfeld works as a lawyer in Berlin who defends left-wing individuals and caus
 
 @building_the_left
 title: Building the Left
-subtitle: Push the <span style="color: #c00000;">**SPD**</span> to the left.
+subtitle: Push the <span style="color: [+ spd_colour +];">**SPD**</span> to the left.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_strength += 6; left_dissent -= 8; reformist_dissent += 2
 
-We have increased the strength of the left faction with the <span style="color: #c00000;">**SPD**</span>.
+We have increased the strength of the left faction with the <span style="color: [+ spd_colour +];">**SPD**</span>.
 
 @kpd_cooperation
-title: Cooperation with the <span style="color: #700000;">**KPD**</span>
-subtitle: Push the party to be more friendly towards the <span style="color: #700000;">**KPD**</span>.
+title: Cooperation with the <span style="color: [+ kpd_colour +];">**KPD**</span>
+subtitle: Push the party to be more friendly towards the <span style="color: [+ kpd_colour +];">**KPD**</span>.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_strength += 5; kpd_relation += 4*(1-dissent); reformist_dissent += 2; communist_coalition += 1 if kpd_cooperation_seen <= 1; kpd_cooperation_seen += 1
 
-Through his work, Rosenfeld has defended individual <span style="color: #700000;">**KPD**</span> members; this should make some connections possible.
+Through his work, Rosenfeld has defended individual <span style="color: [+ kpd_colour +];">**KPD**</span> members; this should make some connections possible.
 
 @prussian_bulwark
 title: The Prussian Bulwark

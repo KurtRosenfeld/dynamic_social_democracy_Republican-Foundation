@@ -519,15 +519,15 @@ go-to: bavaria_coalition_menu
 <hr id="read-marker">
 The <span style="color: #38C538;">Bavarian Peasants’ League</span> serves as the nucleus of the federal <span style="color: #007A00;">German Peasants' Party</span> and is surprisingly liberal and <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> compared to other agricultural parties and organizations, such as the <span style="color: #7FCEB1;">**CNBLP**</span>. Recently, they even exited the <span style="color: #A2D8E0;">**BVP**</span>'s cabinet over a dispute about taxes. [? if cvp_formed: <br><br> With the formation of the <span style="color: #000000;">**[+ z_party_name +]**</span>, the <span style="color: #3E88B3;">**DNVP**</span>'s Bavarian branch has largely merged into the <span style="color: #A2D8E0;">**BVP**</span>, although some elements have instead chosen to align with the <span style="color: #003755;">**DNF**</span>. ?]
 <hr id="read-marker">
-United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_bavaria +]% 
+United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_bavaria +]% 
 
-[? if traffic_coalition_bavaria > 40: Traffic Light Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span>): [+ traffic_coalition_bavaria +]% ?]
+[? if traffic_coalition_bavaria > 40: Traffic Light Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span>): [+ traffic_coalition_bavaria +]% ?]
 
-[? if traffic_coalition_bavaria < 50: Anti-<span style="color: #A2D8E0;">**BVP**</span> Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #79209D;">**CSP**</span> + <span style="color: #AA0000;">**USPD**</span> + <span style="color: #AFAFAF;">**Others**</span>) [+ broad_coalition_bavaria +]% ?]
+[? if traffic_coalition_bavaria < 50: Anti-<span style="color: #A2D8E0;">**BVP**</span> Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #79209D;">**CSP**</span> + <span style="color: #AA0000;">**USPD**</span> + <span style="color: #AFAFAF;">**Others**</span>) [+ broad_coalition_bavaria +]% ?]
 
-[? if not kvp_formed: Bourgeois Coalition (<span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?]?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ bourgeois_coalition_bavaria +]% ?]
+[? if not kvp_formed: Bourgeois Coalition (<span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: [+ dvp_colour +];">**DVP**</span>?]?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ bourgeois_coalition_bavaria +]% ?]
 
-[? if kvp_formed: Bourgeois Coalition (<span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?]?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others** + <span style="color: #0087DC;">**KVP**</span>): [+ bourgeois_coalition_bavaria +]% ?]
+[? if kvp_formed: Bourgeois Coalition (<span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: [+ dvp_colour +];">**DVP**</span>?]?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others** + <span style="color: #0087DC;">**KVP**</span>): [+ bourgeois_coalition_bavaria +]% ?]
 
 @bavaria_coalition_menu
 
@@ -592,7 +592,7 @@ The former incumbent coalition consisting of the <span style="color: #A2D8E0;">*
 Heinrich Held, the incumbent Minister-President and a pro-democratic member of the <span style="color: #A2D8E0;">**BVP**</span> remains in power.
 
 @spd_majority
-title: The <span style="color: #c00000;">**SPD**</span> forms a majority government.
+title: The <span style="color: [+ spd_colour +];">**SPD**</span> forms a majority government.
 subtitle: Congratulations.
 view-if: spd_r_bavaria >= 50
 on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "SPD"; new_middle_nsdap -= 3; old_middle_nsdap -= 3; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 5; old_middle_spd += 6; rural_spd += 4; catholics_z -= 6; catholics_spd += 6; pro_republic += 5; prussian_police_loyalty += 0.1; sa_strength -= 100; sa_strength -= 50 if sa_nationwide_ban;
@@ -601,7 +601,7 @@ achievement: rotes_bayern
 We have somehow managed to capture a majority in the Landtag, and have put our Minister-President as the head of the most conservative state in the country. Hopefully this doesn't end badly like last time. Bavaria has been governed by the political right ever since 1921, and the <span style="color: #A2D8E0;">**BVP**</span> has often covered for reactionary political activity. Now, we are able to change that and aggressively counter the <span style="color: #7A3C00;">**SA**</span> thugs roaming the streets [? if sa_nationwide_ban: and more aggressively enforce the national ban of the organization that the conservative Held government had mostly ignored ?].
 
 @traffic_coalition
-title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the bourgeois parties.
+title: The <span style="color: [+ spd_colour +];">**SPD**</span> will form a coalition government with the bourgeois parties.
 view-if: traffic_coalition_bavaria > 40
 subtitle: The <span style="color: #38C538;">Bavarian Peasants’ League</span> had a falling out right? Let's utilize our contacts with their left wing. -1 resource
 unavailable-subtitle: [? if traffic_coalition_bavaria < 50: <span style="color: #c00000;">SPD</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span> ([+ traffic_coalition_bavaria +]%)  ?][? if resources < 1: - Not enough resources (need 1). ?]
@@ -613,14 +613,14 @@ Somehow, we have brought the [? if not lvp_formed and ddp_r_bavaria: <span style
 
 
 @antibvp_coalition
-title: The <span style="color: #c00000;">**SPD**</span> will form a broad coalition government.
+title: The <span style="color: [+ spd_colour +];">**SPD**</span> will form a broad coalition government.
 subtitle: This coalition is likely going to unstable. -1 resource
 unavailable-subtitle: [? if broad_coalition_bavaria < 50: <span style="color: #c00000;">SPD</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #79209D;">**CSP**</span> + <span style="color: #AA0000;">**USPD**</span> + <span style="color: #AFAFAF;">**Others**</span> ([+ broad_coalition_bavaria +]%)  ?][? if resources < 1: - Not enough resources (need 1). ?]
 choose-if: broad_coalition_bavaria >= 50 and resources >= 1
 on-arrival: bavaria_election_2_trigger_time = time + 32; resources -= 1; bavaria_gov = "Anti-BVP"; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 3; old_middle_spd += 3; rural_spd += 1; rural_other += 3
 
 @united_left
-title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the <span style="color: #700000;">**KPD**</span>?
+title: The <span style="color: [+ spd_colour +];">**SPD**</span> will form a coalition government with the <span style="color: [+ kpd_colour +];">**KPD**</span>?
 subtitle: History will repeat itself.
 view-if: left_coalition_bavaria >= 50 and (kpd_relation >= 60 and kpd_leader == "Conciliators") or (kpd_relation >= 80 and kpd_leader != "Conciliators")
 on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_spd = 1; bavaria_gov = "Left"; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5; coup_progress += 10

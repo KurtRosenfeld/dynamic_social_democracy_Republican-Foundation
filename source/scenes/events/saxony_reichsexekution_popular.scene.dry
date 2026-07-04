@@ -41,7 +41,7 @@ achievement: drei_pfeile
 
 The Reichsbanner and RFB confront the reactionaries on the road to Saxony and somehow, the enemy has retreated without a fight! They were surprised by our resistance and Hindenburg has decided to not risk a civil war over Saxony.
 
-This show of force has reinvigorated support for both the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span> and has weakened the fascists and reactionaries. Hindenburg's ire has also been turned away from us. For now.
+This show of force has reinvigorated support for both the <span style="color: [+ spd_colour +];">**SPD**</span> and <span style="color: [+ kpd_colour +];">**KPD**</span> and has weakened the fascists and reactionaries. Hindenburg's ire has also been turned away from us. For now.
 
 @surrender
 title: Resign our positions, to prevent bloodshed.
@@ -50,4 +50,4 @@ on-arrival: red_saxony = 0; workers_spd -= 5; workers_kpd -= 5; unemployed_kpd -
 
 The <span style="color: #700000;">communists</span> protesting in the streets are brutally suppressed, with the Reichswehr patrolling the streets, restricting political gatherings, and turning a blind eye to the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> as they harass local party officials.
 
-Hindenburg appoints [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] member Wilhelm Bünger as <i>Reichskommissar</i> to govern Saxony, tasked with dismantling our reforms and violently suppressing the <span style="color: #700000;">**RFB**</span>.
+Hindenburg appoints [? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] member Wilhelm Bünger as <i>Reichskommissar</i> to govern Saxony, tasked with dismantling our reforms and violently suppressing the <span style="color: #700000;">**RFB**</span>.

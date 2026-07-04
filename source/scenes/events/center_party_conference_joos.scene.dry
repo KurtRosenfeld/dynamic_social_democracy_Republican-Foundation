@@ -16,11 +16,11 @@ face-image: img/portraits/Joseph_Joos.jpg
 
 = <span style="color: #000000;">Center Party</span> Conference
 
-[? if spd_break_toleration: Due to the breaking of our toleration agreement toward the [+ chancellor +] government, the right wing of the <span style="color: #000000;">Center Party</span> finally has enough strength and anger toward the <span style="color: #c00000;">**SPD**</span> to oust the friendly Joos as leader. ?]
+[? if spd_break_toleration: Due to the breaking of our toleration agreement toward the [+ chancellor +] government, the right wing of the <span style="color: #000000;">Center Party</span> finally has enough strength and anger toward the <span style="color: [+ spd_colour +];">**SPD**</span> to oust the friendly Joos as leader. ?]
 
 [? if z_relation < 40 and not spd_break_toleration: Due to the worsening of our relationship, even with Joos at the helm, the right wing of the <span style="color: #000000;">Center Party</span> finally has enough power to oust the friendly Joos as leader. ?]
 
-[? if concordat_explode and not spd_break_toleration and z_relation >= 40: Due to our lack of progress toward an agreement with the Vatican, the clerical wing of the <span style="color: #000000;">Center Party</span> has forced Joos's resignation for his unwillingness to force the <span style="color: #c00000;">**SPD**</span> to take action. ?]
+[? if concordat_explode and not spd_break_toleration and z_relation >= 40: Due to our lack of progress toward an agreement with the Vatican, the clerical wing of the <span style="color: #000000;">Center Party</span> has forced Joos's resignation for his unwillingness to force the <span style="color: [+ spd_colour +];">**SPD**</span> to take action. ?]
 
 [? if secularized_a or abortion_rights or homosexual_rights and not concordat_explode and not spd_break_toleration and z_relation >= 40: Due to our progress on rights for women and <span style="color: red;">Ho</span><span style="color: orange;">m</span><span style="color: yellow;">ox</span><span style="color: green;">se</span><span style="color: blue;">ua</span><span style="color: purple;">ls</span>, the clerical wing of the <span style="color: #000000;">Center Party</span> has forced Joos from the chairmanship, citing his unwillingness to obstruct these changes. ?]
 

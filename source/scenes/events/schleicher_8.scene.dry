@@ -12,7 +12,7 @@ audio: music/1930_1933/Ugly_American.mp3
 
 Schleicher, once reviled by the public, is now hailed as Germany’s savior. Through his public works campaign and ruthlessly pragmatic ideology, he has managed to win support from across the political spectrum. But a key question remains: where can these grateful voters turn to express their support for the chancellor?
 
-The <span style="color: #808080;">reactionary</span> right will never win over the workers, and the <span style="color: #c00000;">**SPD**</span> is seen as unreliable when it comes to backing Schleicher’s government.
+The <span style="color: #808080;">reactionary</span> right will never win over the workers, and the <span style="color: [+ spd_colour +];">**SPD**</span> is seen as unreliable when it comes to backing Schleicher’s government.
 
 In the past, Schleicher flirted with the idea of building a new "presidential party"—a direct vehicle for rallying public support behind his cabinet. Until now, he had taken no concrete steps. But with new ties to the working class and the moderate forces on the German Right, he now has an opportunity to bring such a party to life[? if next_election_time - time < 3: with the elections coming up?].
 
