@@ -1,7 +1,7 @@
 name: Replace Party Colours
 
 on:
-  workflow_dispatch:  # Manual only - to avoid duplicate runs
+  workflow_dispatch:
 
 jobs:
   replace-text:
@@ -14,59 +14,65 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       
-      - name: Preview matches (debug)
+      - name: Replace ALL party color codes
         run: |
-          echo "=== Looking for KPD #800000 ==="
-          grep -r '<span style="color: #800000;">\*\*KPD\*\*</span>' . || echo "No matches found"
-          echo "=== Looking for KPD #700000 ==="
-          grep -r '<span style="color: #700000;">\*\*KPD\*\*</span>' . || echo "No matches found"
-          echo "=== Looking for DVP #C0A054 ==="
-          grep -r '<span style="color: #C0A054;">\*\*DVP\*\*</span>' . || echo "No matches found"
-          echo "=== Looking for DVP #D5AC27 ==="
-          grep -r '<span style="color: #D5AC27;">\*\*DVP\*\*</span>' . || echo "No matches found"
-      
-      - name: Replace party color codes with Python
-        run: |
-          python3 << EOF
+          # Use Python for reliable replacement
+          python3 << 'PYTHON_SCRIPT'
           import os
           import re
           
+          # Define all replacements
           replacements = [
-              ('<span style="color: #800000;">**KPD**</span>', '<span style="color: [+ kpd_colour +];">**KPD**</span>'),
+              # SPD variations
+              ('<span style="color: #c00000;">**SPD**</span>', '<span style="color: [+ spd_colour +];">**SPD**</span>'),
+              ('<span style="color: #C00000;">**SPD**</span>', '<span style="color: [+ spd_colour +];">**SPD**</span>'),
+              
+              # KPD variations  
               ('<span style="color: #700000;">**KPD**</span>', '<span style="color: [+ kpd_colour +];">**KPD**</span>'),
+              ('<span style="color: #800000;">**KPD**</span>', '<span style="color: [+ kpd_colour +];">**KPD**</span>'),
+              
+              # DVP variations
               ('<span style="color: #C0A054;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
-              ('<span style="color: #D5AC27;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>')
+              ('<span style="color: #D5AC27;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
           ]
           
-          count = 0
-          for root, dirs, files in os.walk('.'):
-              for file in files:
-                  if '.git' in root:
-                      continue
-                  filepath = os.path.join(root, file)
-                  try:
-                      with open(filepath, 'r', encoding='utf-8') as f:
-                          content = f.read()
-                      
-                      modified = False
-                      for old, new in replacements:
-                          if old in content:
-                              content = content.replace(old, new)
-                              modified = True
-                              count += 1
-                      
-                      if modified:
-                          with open(filepath, 'w', encoding='utf-8') as f:
-                              f.write(content)
-                          print(f"Modified: {filepath}")
-                  except Exception as e:
-                      pass  # Skip binary files
+          total_replacements = 0
+          files_modified = []
           
-          print(f"\n✅ Total replacements made: {count}")
-          EOF
+          # Walk through all .dry files
+          for root, dirs, files in os.walk('.'):
+              if '.git' in root:
+                  continue
+              
+              for filename in files:
+                  if filename.endswith('.dry'):
+                      filepath = os.path.join(root, filename)
+                      try:
+                          with open(filepath, 'r', encoding='utf-8') as f:
+                              content = f.read()
+                          
+                          modified = False
+                          for old, new in replacements:
+                              if old in content:
+                                  content = content.replace(old, new)
+                                  modified = True
+                                  total_replacements += content.count(old)
+                          
+                          if modified:
+                              with open(filepath, 'w', encoding='utf-8') as f:
+                                  f.write(content)
+                              files_modified.append(filepath)
+                              print(f"✅ Modified: {filepath}")
+                      except Exception as e:
+                          print(f"⚠️  Error with {filepath}: {e}")
+          
+          print(f"\n📊 Summary:")
+          print(f"   Files modified: {len(files_modified)}")
+          print(f"   Total replacements: {total_replacements}")
+          PYTHON_SCRIPT
       
       - name: Commit and push changes
-        if: success()
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Replace hardcoded party colors with dynamic variables"
+          file_pattern: "*.dry"
