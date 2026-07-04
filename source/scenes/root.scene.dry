@@ -597,6 +597,15 @@ Q.party_support_records = [];
 // inflation and unemployment records
 Q.economic_records = [];
 
+// Splinter groups
+Q.kag_strength = 30;
+Q.kapd_b_strength = 20;
+Q.kapd_e_strength = 10;
+Q.kpo_strength = 0;
+Q.leninbund_strength = 0;
+Q.sb_strength = 25;
+Q.aspd_strength = 0;
+
 
 // State of the government
 Q.president = "Ebert";
