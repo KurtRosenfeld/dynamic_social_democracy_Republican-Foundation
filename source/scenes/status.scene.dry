@@ -606,43 +606,43 @@ Strategy: [+ kpd_strategy +]
 
 [? if kag_r > 0: <span class="tooltip-text" title="Communist Working Group" style="color: #81125B;">**KAG**</span>: cool ?]
 
-[? if kag_r > 0: [+ kag_split_strength : split_strength +] ?]
+[? if kag_r > 0: [+ kag_influence : influence +] ?]
 
 [? if kag_r > 0: Orientation: Luxemburgism (Levi, Däumig) ?]
 
 [? if aspd_r_saxony and aspd_r == 0: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: [+ aspd_colour +];">**ASPD**</span>: cool ?]
 
-[? if aspd_r_saxony and aspd_r == 0: influence: [+ aspd_split_strength : split_strength +] ?]
+[? if aspd_r_saxony and aspd_r == 0: influence: [+ aspd_influence : influence +] ?]
 
 [? if aspd_r_saxony and aspd_r == 0: Orientation: National Social Democracy (Heldt) ?]
 
 [? if kpo_exists: <span class="tooltip-text" title="Communist Party Opposition" style="color: #C43988;">**KPO**</span>: [+ kpo_relation : relationships +] ?]
 
-[? if kpo_exists: influence: [+ kpo_split_strength : split_strength +]
+[? if kpo_exists: influence: [+ kpo_influence : influence +]
 
 [? if kpo_exists: Orientation: Bolshevism-Spartacism (Thalheimer) ?]
 
 [? if leninbund_exists: <span class="tooltip-text" title="Leninbund (Left Communists)" style="color: #D00B0B;">**Leninbund**</span>: [+ leninbund_relation : relationships +] ?]
 
-[? if leninbund_exists: [+ leninbund_split_strength : split_strength +] ?]
+[? if leninbund_exists: [+ leninbund_influence : influence +] ?]
 
 [? if leninbund_exists: Left Leninism (Fischer) ?]
 
 [? if sb_exists: <span class="tooltip-text" title="Socialist League" style="color: [+ sb_colour +];">**SB**</span>: [+ sb_relation : relationships +] ?]
 
-[? if sb_exists: [+ sb_split_strength : split_strength +] ?]
+[? if sb_exists: [+ sb_influence : influence +] ?]
 
 [? if sb_exists: Orientation: Spartacism (Ledebour) ?]
 
 <span class="tooltip-text" title="Communist Worker's Party of Germany (Line of Berlin)" style="color: #3A0000;">**KAPD (B)**</span>: [+ kapd_relation : relationships +]
 
-influence: [+ kapd_b_split_strength : split_strength +]
+influence: [+ kapd_b_influence : influence +]
 
 Orientation: Left Council Communism
 
 <span class="tooltip-text" title="Communist Worker's Party of Germany (Line of Essen)" style="color: #3A0000;">**KAPD (E)**</span>: [+ kapd_relation : relationships +]
 
-influence: [+ kapd_e_split_strength : split_strength +]
+influence: [+ kapd_e_influence : influence +]
 
 Orientation: Revloutionary Council Communism
 
