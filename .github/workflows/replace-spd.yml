@@ -1,0 +1,26 @@
+name: Replace SPD Color
+
+on:
+  workflow_dispatch:
+
+jobs:
+  replace-text:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Replace SPD color codes
+        run: |
+          # Replace both variations in ALL files
+          find . -type f -exec sed -i 's/<span style="color: #c00000;">\*\*SPD\*\*<\/span>/<span style="color: [+ spd_colour +];">**SPD**<\/span>/g' {} \;
+          find . -type f -exec sed -i 's/<span style="color: #c10000;">\*\*SPD\*\*<\/span>/<span style="color: [+ spd_colour +];">**SPD**<\/span>/g' {} \;
+      
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Replace hardcoded SPD colors with dynamic spd_colour variable"
