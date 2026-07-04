@@ -134,6 +134,7 @@ Q.uspd_joined = 0;
 
 // inter-party relations
 Q.z_relation = 65;
+Q.bvp_relation = 20;
 Q.kpd_relation = 20;
 Q.uspd_relation = 60;
 Q.ddp_relation = 80;
@@ -154,6 +155,7 @@ Q.sapd_leader = "Rosenfeld";
 Q.sapd_ideology = "Anti-Facsism";
 Q.z_leader = "Marx";
 Q.z_ideology = "Right";
+Q.bvp_leader = "Speck";
 Q.cvp_ideology = "Moderate";
 Q.stegerwald_path = 0;
 Q.nsdap_leader = "Hitler";
