@@ -606,7 +606,7 @@ Strategy: [+ kpd_strategy +]
 
 [? if kag_r > 0: <span class="tooltip-text" title="Communist Working Group" style="color: #81125B;">**KAG**</span>: cool ?]
 
-[? if kag_r > 0: [+ kag_influence : influence +] ?]
+[? if kag_r > 0: influence: [+ kag_influence : influence +] ?]
 
 [? if kag_r > 0: Orientation: Luxemburgism (Levi, Däumig) ?]
 
