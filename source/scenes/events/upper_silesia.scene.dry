@@ -1,0 +1,19 @@
+title: Upper Silesia split done
+subtitle: <span style="color: #DC143C;">**Pol**</span><span style="color: #D3D3D3;">**and**</span> has finally gained a portion of Silesia
+view-if: year == 1922 and month == 7
+new-page: true
+max-visits: 1
+on-arrival: polish_silesia = 1; rural_spd -= 2 if spd_in_government; old_middle_dnvp += 2; new_middle_dnvp += 2
+face-image: img/July1922_poland_silesia.jpg
+tags: event
+
+= Upper Silesia split done
+
+After months of negotiations, protests and escalations between Freikorps and Polish militias the Upper Silesia dispute is finally setteled. The larger area of the region remains with <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span>, the industrialized one goes to <span style="color: #DC143C;">**Pol**</span><span style="color: #D3D3D3;">**and**</span> roughly in accordance with local plebicite results. The allied troops have withdrawn and despite most people opposing the partition, they seem to welcome the arrival of a less violent time.
+
+
+
+
+
+
+  
