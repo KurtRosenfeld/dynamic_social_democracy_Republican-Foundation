@@ -1287,9 +1287,10 @@ max-cards: 3
 - #advisor
 - @shuffle_leadership_pinned
 
-<br><hr><br>
-
+# Leadership section - separate row
+{!<div class="scrollable-box" style="margin-top: 20px; border-top: 2px solid #ccc; padding-top: 10px;">!}
 - #leader
+{!</div>!}
 
 
 
@@ -2594,11 +2595,6 @@ max-cards: 4
 - #advisor
 - @shuffle_leadership_pinned
 
-<br><hr><br>
-
-- #leader
-
-
 
 
 @party
@@ -2647,3 +2643,8 @@ card-image: img/portraits/SchmidtRobert.jpg
 is-deck: true
 
 - @economic_policy
+
+# Leadership section - separate row
+{!<div class="scrollable-box" style="margin-top: 20px; border-top: 2px solid #ccc; padding-top: 10px;">!}
+- #leader
+{!</div>!}
