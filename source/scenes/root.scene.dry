@@ -1495,11 +1495,11 @@ Q.reformist_dissent = 25;
 Q.left_dissent = 30;
 Q.labor_dissent = 25;
 Q.center_dissent = 25;
-Q.z_relation = 41;
-Q.kpd_relation = 16;
+Q.z_relation = 65;
+Q.kpd_relation = 25;
 Q.bb_relation = 26;
-Q.dvp_relation = 31;
-Q.ddp_relation = 55;
+Q.dvp_relation = 40;
+Q.ddp_relation = 78;
 Q.budget = - 1;
 this.state.disableSaves = true;
 !}
@@ -1514,10 +1514,10 @@ Q.resources = 3;
 Q.dues = 3;
 Q.base_dues = 3;
 Q.rb_strength = 2000;
-Q.z_relation = 41;
+Q.z_relation = 60;
 Q.kpd_relation = 21;
-Q.dvp_relation = 31;
-Q.ddp_relation = 55;
+Q.dvp_relation = 36;
+Q.ddp_relation = 70;
 Q.budget = 0;
 !}
 go-to: 1928_main
@@ -1530,10 +1530,10 @@ Q.resources = 3;
 Q.dues = 3;
 Q.base_dues = 3;
 Q.rb_strength = 2000;
-Q.z_relation = 41;
+Q.z_relation = 50;
 Q.kpd_relation = 21;
 Q.dvp_relation = 31;
-Q.ddp_relation = 55;
+Q.ddp_relation = 65;
 Q.budget = 0;
 !}
 go-to: 1928_main
