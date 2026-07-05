@@ -1192,7 +1192,7 @@ go-to: map_menu
          sodipodi:nodetypes="ccc" />
     </g>
     <circle
-       style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;fill:[+ spd_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29"
        cx="148.96553"
        cy="429.31039"
@@ -1202,7 +1202,7 @@ go-to: map_menu
          id="title42">SPD</title>
     </circle>
     <circle
-       style="fill:#eea60a;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="fill:[+ aspd_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-9"
        cx="228.83557"
        cy="291.04245"
@@ -1246,10 +1246,10 @@ go-to: map_menu
        id="path29-0-9-0"
        cx="170.14998"
        cy="49.355854"
-       inkscape:label="compass_party_dtsp"
+       inkscape:label="compass_party_dsu"
        r="7">
       <title
-         id="title41-3-8">DtSP</title>
+         id="title41-3-8">DSU</title>
     </circle>
     <circle
        style="fill:[+ bvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
