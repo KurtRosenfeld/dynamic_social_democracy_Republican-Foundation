@@ -1201,7 +1201,7 @@ go-to: map_menu
       <title
          id="title42">SPD</title>
     </circle>
-    <circle
+[? if aspd_r_saxony:  <circle
        style="fill:[+ aspd_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-9"
        cx="228.83557"
@@ -1210,8 +1210,8 @@ go-to: map_menu
        r="7">
       <title
          id="title42-8">ASPD</title>
-    </circle>
-    <circle
+    </circle> ?]
+[? if not nsfb_exists:   <circle
        style="fill:[+ nsdap_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-0"
        cx="289.90454"
@@ -1219,9 +1219,9 @@ go-to: map_menu
        inkscape:label="compass_party_nsdap"
        r="7">
       <title
-         id="title41">NSDAP</title>
+         id="title41">NSDAP</title> ?]
     </circle>
-    <circle
+[? if nvf_exist:   <circle
        style="fill:#426000;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-0-8"
        cx="248.70882"
@@ -1230,7 +1230,7 @@ go-to: map_menu
        r="7">
       <title
          id="title41-37">NVF</title>
-    </circle>
+    </circle> ?]
     <circle
        style="fill:#9c4f36;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-0-9"
@@ -1241,7 +1241,7 @@ go-to: map_menu
       <title
          id="title41-3">DtSP</title>
     </circle>
-    <circle
+[? if dsu_exist:   <circle
        style="fill:#96561c;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-0-9-0"
        cx="170.14998"
@@ -1250,7 +1250,7 @@ go-to: map_menu
        r="7">
       <title
          id="title41-3-8">DSU</title>
-    </circle>
+    </circle> ?]
     <circle
        style="fill:[+ bvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-6"
@@ -1271,7 +1271,7 @@ go-to: map_menu
       <title
          id="title40-6">DHP</title>
     </circle>
-    <circle
+[? if not uspd_dead:  <circle
        style="fill:[+ uspd_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-86"
        cx="69.697632"
@@ -1280,7 +1280,7 @@ go-to: map_menu
        r="7">
       <title
          id="title39">USPD</title>
-    </circle>
+    </circle> ?]
 [? if sb_exists:    <circle
        style="fill:[+ sb_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-86-1"
@@ -1292,7 +1292,7 @@ go-to: map_menu
          id="title39-2">SB</title>
     </circle> ?]
     <circle
-       style="fill:#ac0000;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+[? if sapd_formed:    style="fill:#ac0000;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-86-7"
        cx="69.352798"
        cy="250.07697"
@@ -1300,8 +1300,8 @@ go-to: map_menu
        r="7">
       <title
          id="title39-7">SAPD</title>
-    </circle>
-    <circle
+    </circle> ?]
+[? if kag_r: <circle
        style="fill:#900031;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-86-9"
        cx="48.07695"
@@ -1310,7 +1310,7 @@ go-to: map_menu
        r="7">
       <title
          id="title39-1">KAG</title>
-    </circle>
+    </circle> ?]
     <circle
        style="fill:[+ kpd_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-8"
@@ -1321,7 +1321,7 @@ go-to: map_menu
       <title
          id="title38">KPD</title>
     </circle>
-    <circle
+[? if kpo_exists:   <circle
        style="fill:#a600ad;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-8-1"
        cx="68.738213"
@@ -1330,8 +1330,8 @@ go-to: map_menu
        r="7">
       <title
          id="title38-4">KPO</title>
-    </circle>
-    <circle
+    </circle> ?]
+[? if leninbund_exists:  <circle
        style="fill:#a70000;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-8-0"
        cx="89.002922"
@@ -1339,7 +1339,7 @@ go-to: map_menu
        inkscape:label="compass_party_leninbund"
        r="7">
       <title
-         id="title38-61">Leninbund</title>
+         id="title38-61">Leninbund</title> ?]
     </circle>
     <circle
        style="fill:#1b0000;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
@@ -1351,7 +1351,7 @@ go-to: map_menu
       <title
          id="title38-6">KAPD</title>
     </circle>
-    <circle
+ [? if not cvp_formed and not dnvp_dnef and not dnvp_defunct:  <circle
        style="fill:[+ dnvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-7"
        cx="389.31833"
@@ -1360,8 +1360,8 @@ go-to: map_menu
        r="7">
       <title
          id="title37">DNVP</title>
-    </circle>
-    <circle
+    </circle> ?]
+[? if dvfp_formed = 1 and not nsfb_exists:  <circle
        style="fill:#3D3D3D;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-7-7"
        cx="408.59421"
@@ -1370,9 +1370,9 @@ go-to: map_menu
        r="7">
       <title
          id="title37-3">DVFP</title>
-    </circle>
-    <circle
-       style="fill:#0f2270;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+    </circle> ?]
+[? if dnf_formed :   <circle
+       style="fill:[+ dnf_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-7-1"
        cx="449.35281"
        cy="49.766605"
@@ -1380,9 +1380,9 @@ go-to: map_menu
        r="7">
       <title
          id="title37-5">DNF</title>
-    </circle>
-    <circle
-       style="fill:#3155de;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+    </circle> ?]
+[? if kvp_formed and not dnvp_dvp_formed:  <circle
+       style="fill:[+ kvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-7-4"
        cx="328.45627"
        cy="150.21489"
@@ -1390,7 +1390,7 @@ go-to: map_menu
        r="7">
       <title
          id="title37-0">KVP</title>
-    </circle>
+    </circle> ?]
     <circle
        style="fill:#1a1a1a;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-38"
@@ -1421,7 +1421,7 @@ go-to: map_menu
       <title
          id="title36-3">DBP</title>
     </circle>
-    <circle
+[? if cnbl_esxists:  <circle
        style="fill:#0b3c0d;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-38-6-6"
        cx="348.7666"
@@ -1430,8 +1430,8 @@ go-to: map_menu
        r="7">
       <title
          id="title36-3-0">CNBL</title>
-    </circle>
-    <circle
+    </circle> ?]
+[? if csvd_esxists:  <circle
        style="fill:#8011ff;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-38-6-1"
        cx="209.21489"
@@ -1440,8 +1440,8 @@ go-to: map_menu
        r="7">
       <title
          id="title36-3-2">CSVD</title>
-    </circle>
-    <circle
+    </circle> ?]
+[? if not lvp_formed and dvp_exist and dvp_dnef:  <circle
        style="fill:[+ dvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-3"
        cx="429.49078"
@@ -1452,8 +1452,8 @@ go-to: map_menu
        r="7">
       <title
          id="title35">DVP</title>
-    </circle>
-    <circle
+    </circle> ?]
+[? if not lvp_formed:  <circle
        style="fill:[+ ddp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-5"
        cx="349.11142"
@@ -1462,6 +1462,6 @@ go-to: map_menu
        r="7">
       <title
          id="title34">[+ ddp_name +]</title>
-    </circle>
+    </circle> ?]
   </g>
 </svg>
