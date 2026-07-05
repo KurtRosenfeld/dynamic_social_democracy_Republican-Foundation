@@ -1287,7 +1287,7 @@ max-cards: 3
 - #advisor
 - @shuffle_leadership_pinned
 
-Maybe it'll work that way?
+<br><hr><br>
 
 - #leader
 
@@ -2594,7 +2594,7 @@ max-cards: 4
 - #advisor
 - @shuffle_leadership_pinned
 
-That would be my best guess...
+<br><hr><br>
 
 - #leader
 
