@@ -1287,11 +1287,6 @@ max-cards: 3
 - #advisor
 - @shuffle_leadership_pinned
 
-# Leadership section - separate row
-{!<div class="scrollable-box" style="margin-top: 20px; border-top: 2px solid #ccc; padding-top: 10px;">!}
-- #leader
-{!</div>!}
-
 
 
 @main_easy
@@ -2596,7 +2591,6 @@ max-cards: 4
 - @shuffle_leadership_pinned
 
 
-
 @party
 title: Party Affairs
 card-image: img/Vorwaerts_nr_1.png
@@ -2644,7 +2638,7 @@ is-deck: true
 
 - @economic_policy
 
-# Leadership section - separate row
-{!<div class="scrollable-box" style="margin-top: 20px; border-top: 2px solid #ccc; padding-top: 10px;">!}
+
+# NEW Leadership section - separate from advisors
+<h3>Leadership</h3>
 - #leader
-{!</div>!}
