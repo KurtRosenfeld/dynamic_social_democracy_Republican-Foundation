@@ -949,6 +949,7 @@ Q.nazi_decay_timer = 0;
 Q.red_general_timer = 0;
 Q.weimar_rally_timer = 0;
 Q.editorial_line = "Center";
+Q.dbp_name = "BB";
 Q.z_party_name = "Z";
 Q.dnvp_leader = "Hergt";
 Q.dnvp_ideology = "Radical";
