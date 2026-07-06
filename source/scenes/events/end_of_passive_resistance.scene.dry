@@ -1,0 +1,26 @@
+title: End of Passive Resistance
+subtitle: Chancellor Stresemann seeks a different way of dealing with the crisis
+new-page: true
+max-visits: 1
+view-if: chancellor == "Stresemann" and ruhr_occupied == 1 and not dnvp_in_government
+on-arrival: bvp_relation -= 5
+tags: event
+face-image: img/portraits/StresemannGustav.jpg
+
+= End of Passive Resistance
+
+The course of the <span style="color: [+ i_colour +];">**Cuno**</span> government has wrecked the state finances and contributed to the hyper inflation. Instead of passive resistance a more diplomatic approach is supposed to end the occupation of the Ruhr. Since the French state suffered just as much as the German one, Stresemann has hope to find a decent compromise. The <span style="color: [+ dnvp_colour +];">Nationalists</span> are outraged! They won't attempt another coup will they...?                         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
