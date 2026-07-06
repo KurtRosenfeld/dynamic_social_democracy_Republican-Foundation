@@ -305,7 +305,7 @@
         </table>
     </div>
 
-    <!-- Sprite stuff - feel free to comment out/remove if not using -->
+      <!-- Sprite stuff - feel free to comment out/remove if not using -->
     <div id="contentSpriteContainer">
         <div class="sprite" id="topLeftSprite"></div>
         <div class="sprite" id="topRightSprite"></div>
@@ -315,21 +315,20 @@
     </div>
 
     <div id='page'>
-    <div id="mid_panel">
-        <header>
-            <h1 id="game-title">Dynamic Social Democracy: Republican Foundation</h1>
-            <h2 id="game-author">Autumn Chen, modded by originn0, overmodded by a Breitscheidist-Rosenfeldist</h2>
+        <div id="mid_panel">
+            <header>
+                <h1 id="game-title">Dynamic Social Democracy: Republican Foundation</h1>
+                <h2 id="game-author">Autumn Chen, modded by originn0, overmodded by a Breitscheidist-Rosenfeldist</h2>
 
-            <div id="header-links">
-                <a id="stats-link" onclick="window.showStats();" href="#">Library</a>
-                <a id="map-link" onclick="window.showMap();" href="#">Maps</a>  <!-- Fixed: removed 'if' -->
-                <a onclick="dendryUI.showSaveSlots();" href="#">Save/Load</a>
-                <a id="colours-link" onclick="window.showColours();" href="#">Colour Settings</a>  <!-- Fixed: unique ID -->
-                <a onclick="window.showOptions();" href="#">Options</a>
-            </div>
-        </header>
-
-              <div id="tools_wrapper">
+                <div id="header-links">
+                    <a id="stats-link" onclick="window.showStats();" href="#">Library</a>
+                    <a if="map-link" onclick="window.showMap();" href="#">Maps</a>
+                    <a onclick="dendryUI.showSaveSlots();" href="#">Save/Load</a>
+                    <a id="stats-link" onclick="window.showColours();" href="#">Colour Settings</a>
+                    <a onclick="window.showOptions();" href="#">Options</a>
+                </div>
+            </header>
+            <div id="tools_wrapper">
                 <div id='stats_sidebar' class='tools left'>
                     <div class="tab_container">
                         <button class="tab_button" id="emergency_tab" onclick="window.changeTab('status.emergency', 'emergency_tab');" style="display: none;">Emergency Status</button>
