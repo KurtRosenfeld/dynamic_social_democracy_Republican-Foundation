@@ -1165,11 +1165,11 @@ Q.i_colour = '#808080';
 // Political Compass
 // 30 social (x) is communist; 30 republican (y) is anti republican
 // 470 social (x) is Argentina; 470 republican (y) is Reichsbanner
-Q.soc_spd = 150;
+Q.soc_spd = 190;
 Q.rep_spd = 430;
 Q.soc_aspd = 230;
 Q.rep_aspd = 290;
-Q.soc_nsdap = 290;
+Q.soc_nsdap = 310;
 Q.rep_nsdap = 30;
 Q.soc_nvf = 250;
 Q.rep_nvf = 30;
@@ -1177,10 +1177,10 @@ Q.soc_dtsp = 350;
 Q.rep_dtsp = 30;
 Q.soc_dsu = 170;
 Q.rep_dsu = 30;
-Q.soc_bvp = 410;
-Q.rep_bvp = 150;
-Q.soc_dhp = 390;
-Q.rep_dhp = 190;
+Q.soc_bvp = 390;
+Q.rep_bvp = 190;
+Q.soc_dhp = 370;
+Q.rep_dhp = 210;
 Q.soc_uspd = 70;
 Q.rep_uspd = 330;
 Q.soc_sb = 90;
