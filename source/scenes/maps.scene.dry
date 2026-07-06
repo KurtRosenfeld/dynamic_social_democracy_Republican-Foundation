@@ -1194,8 +1194,8 @@ go-to: map_menu
     <circle
        style="opacity:1;fill:[+ spd_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29"
-       cx="148.96553"
-       cy="429.31039"
+       cx="[+ soc_spd +]"
+       cy="[+ rep_spd +]"
        inkscape:label="compass_party_spd"
        r="7">
       <title
