@@ -136,7 +136,7 @@ Q.uspd_joined = 0;
 Q.z_relation = 65;
 Q.bvp_relation = 20;
 Q.kpd_relation = 20;
-Q.uspd_relation = 60;
+Q.uspd_relation = 70;
 Q.ddp_relation = 80;
 Q.dvp_relation = 45;
 // DNVP and NSDAP are invariably hostile
@@ -1148,6 +1148,7 @@ Q.spd_colour = '#c00000';
 Q.kpd_colour = '#700000';
 Q.sb_colour = '#B4143D';
 Q.sapd_colour = '#9B0000';
+Q.uspd_colour = '#D47B9B';
 Q.uspd_colour_1 = '#D47B9B';
 Q.uspd_colour_2 = '#AA0000';
 Q.aspd_colour = '#fe9e00';
