@@ -385,6 +385,8 @@ if (Q.editorial_line == "Left") Q.left_media = (Q.anarchist_media + Q.communist_
 Q.republican_media = (Q.liberal_media + Q.catholic_media + Q.socdem_media);
 if (Q.editorial_line == "Left") Q.republican_media = (Q.liberal_media + Q.catholic_media);
 
+Q.right_media = (Q.conservative_media + Q.monarchist_media + Q.volkisch_media);
+
  // updating media (doesn't work)
 
 
