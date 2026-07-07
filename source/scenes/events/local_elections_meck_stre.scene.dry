@@ -1,5 +1,5 @@
 title: Mecklenburg-Strelitz Landtag Election
-view-if: (year == 1922 and month == 4 and not meck_stre_election_seen) or (meck_stre_election_2_trigger_time == time and meck_stre_election_seen_time != time)
+view-if: (year == 1923 and month == 7 and not meck_stre_election_seen) or (meck_stre_election_2_trigger_time == time and meck_stre_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: meck_stre_election_seen += 1 if meck_stre_election_seen; meck_stre_election_seen = 1 if not meck_stre_election_seen; meck_stre_election_seen_time = time
@@ -77,6 +77,9 @@ if (Q.spd_votes >= 50) meck_stre_adjustment_factors.spd -= 0.3;
 if (Q.spd_votes >= 20) meck_stre_adjustment_factors.spd -= 0.1;
 if (Q.spd_votes >= 30) meck_stre_adjustment_factors.spd -= 0.05;
 if (Q.ideology == "reformist") meck_stre_adjustment_factors.kpd += 0.1;
+if (Q.ruhr_occupied == 1) meck_stre_adjustment_factors.kpd += 0.16;
+if (Q.in_toleration) meck_stre_adjustment_factors.kpd += 0.04;
+if (Q.in_toleration) meck_stre_adjustment_factors.spd -= 0.27;
 if (Q.rural_spd_normalized >= 50) meck_stre_adjustment_factors.spd += 0.05;
 Q.spd_meck_stre_elections_vote = Q.spd_votes*meck_stre_adjustment_factors.spd;
 Q.sapd_meck_stre_elections_vote = Q.sapd_votes*meck_stre_adjustment_factors.sapd;
