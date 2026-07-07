@@ -50,6 +50,14 @@ jobs:
 
               # DDP variations
               ('<span style="color: #D3C24D;">**[+ ddp_name +]**</span>', '<span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>'),
+
+              # USPD variations
+              ('<span style="color: #D47B9B;">**USPD**</span>', '<span style="color: [+ uspd_colour +];">**USPD**</span>'),
+              ('<span style="color: #AA0000;">**USPD**</span>', '<span style="color: [+ uspd_colour +];">**USPD**</span>'),
+              ('<span style="color: #A10000;">**USPD**</span>', '<span style="color: [+ uspd_colour +];">**USPD**</span>'),
+
+              # DNVP variations
+              ('<span style="color: #3E88B3;">**DNVP**</span>', '<span style="color: [+ dnvp_colour +];">**DNVP**</span>'),
           ]
           
           total_replacements = 0
