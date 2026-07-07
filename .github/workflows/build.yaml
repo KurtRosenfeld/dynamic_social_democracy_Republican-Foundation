@@ -40,7 +40,7 @@ jobs:
         run: npm run dendrynexus make-html -- --pretty
       - name: Copy game.json to output
         run: cp out/game.json out/html/
-      - name: Upload artifact
+      - name: Can I edit this
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'out/html'
