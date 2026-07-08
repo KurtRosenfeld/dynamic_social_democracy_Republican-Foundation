@@ -529,6 +529,7 @@ Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + 
 - @left_coalition_baden
 - @social_catholic_coalition_baden
 - @no_coalition_baden
+- @baden_coalition_creator
 
 @spd_majority_baden
 title: SPD majority
@@ -581,3 +582,25 @@ on-arrival: baden_election_2_trigger_time = time + 3; rural_dnvp += 2
 view-if: (grand_coalition_baden < 50 or z_relation < 30) and right_coalition_baden < 50
   
   
+
+@baden_coalition_creator
+title: Custom Coalition Creator (Test)
+subtitle: It seems to work in GTS, doesn't it?
+on-arrival: baden_coalition_r = spr_r_baden
+
+- @baden_invite_kpd: Invite the <span style="color: [+ kpd_colour +];">**KPD**</span>
+
+
+
+@baden_invite_kpd
+view-if: kpd_r > 0
+choose-if: kpd_relation >= 65
+subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> will demand radical policies.
+on-arrival: baden_coalition_r += kpd_r_baden
+
+
+
+
+
+
+
