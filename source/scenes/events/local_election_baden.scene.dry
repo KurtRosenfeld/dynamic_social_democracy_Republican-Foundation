@@ -586,7 +586,7 @@ view-if: (grand_coalition_baden < 50 or z_relation < 30) and right_coalition_bad
 @baden_coalition_creator_option
 title: Custom Coalition Creator (Test)
 subtitle: It seems to work in GTS, doesn't it?
-on-arrival: baden_coalition_r = spr_r_baden; baden_spd = "government"
+on-arrival: baden_coalition_r = spd_r_baden; baden_spd = "government"
 go-to: baden_coalition_creator
 
 @baden_coalition_creator
