@@ -1234,7 +1234,7 @@ Q.netherlands_relation = 65;
 
 Q.poland_relation = 10;
 Q.czech_relation = 25;
-Q.hungary_relation = 45;
+Q.lithuania_relation = 20;
 Q.austria_relation = 70;
 
 Q.vatican_relation = 45;
