@@ -603,10 +603,10 @@ Current support: [+ bremen_coalition_r +]%
 - @bremen_invite_lvp: Invite the <span style="color: [+ lvp_colour +];">**LVP**</span>
 - @bremen_invite_z: Invite the <span style="color: [+ z_colour +];">Center Party</span>
 - @bremen_invite_hb: Invite the <span style="color: #CEDD8A;">Home Owners</span>
-- @bremen_invite_others: Invite the <span style="color: [+ other_colour +];">**Others**</span>
+- @bremen_invite_others: Invite the <span style="color: [+ i_colour +];">**Others**</span>
 - @bremen_invite_dvp: Invite the <span style="color: [+ dvp_colour +];">**DVP**</span>
 - @bremen_invite_wp: Invite the <span style="color: #b8996f;">**WP**</span>
-- @bremen_invite_dnvp: Invite the <span style="color: [+ dnvp_colour +];">**BCVP**</span>
+- @bremen_invite_dnvp: Invite the <span style="color: [+ dnvp_colour +];">**DNVP**</span>
 - @bremen_check_out: Check out.
 - @bremen_drop_kpd: Drop the <span style="color: [+ kpd_colour +];">**KPD**</span>
 - @bremen_drop_sapd: Drop the <span style="color: [+ sapd_colour +];">**SAPD**</span>
@@ -673,7 +673,7 @@ on-arrival: bremen_coalition_r = bremen_coalition_r + dvp_r_bremen; bremen_dvp =
 go-to: bremen_coalition_creator
 
 @bremen_invite_hb
-view-if: hb_r_bremen > 0 and not bremen_dvp = "government"
+view-if: hb_r_bremen > 0 and not bremen_hb = "government"
 choose-if: ddp_relation >= 60 and bremen_kpd == "opposition" and bremen_sapd == "opposition"
 subtitle: The <span style="color: #CEDD8A;">Home Owners</span> demands owner friendly policies.
 on-arrival: bremen_coalition_r = bremen_coalition_r + hb_r_bremen; bremen_hb = "government"
@@ -682,7 +682,7 @@ go-to: bremen_coalition_creator
 @bremen_invite_others
 view-if: true_other_r_bremen > 0 and not bremen_true_others = "government"
 choose-if: ddp_relation >= 70 and z_relation >= 35
-subtitle: The <span style="color: [+ other_colour +];">**Others**</span> are a little conservative.
+subtitle: The <span style="color: [+ i_colour +];">**Others**</span> are a little conservative.
 on-arrival: bremen_coalition_r = bremen_coalition_r + true_other_r_bremen; bremen_true_others = "government"
 go-to: bremen_coalition_creator
 
