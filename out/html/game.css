@@ -1044,7 +1044,7 @@ fill: #D5AC27;
 // map tooltip, I just hope this will work
 
   .tooltip {
-    position: fixed; /* or absolute depending on your layout */
+    position: fixed;
     background: rgba(20, 20, 30, 0.95);
     border: 1px solid rgba(255,255,255,0.15);
     border-radius: 8px;
@@ -1121,4 +1121,11 @@ fill: #D5AC27;
     text-align: right;
 }
 
+  svg title {
+    display: none !important;
+}
+
   
+svg [title] {
+    pointer-events: none;
+}
