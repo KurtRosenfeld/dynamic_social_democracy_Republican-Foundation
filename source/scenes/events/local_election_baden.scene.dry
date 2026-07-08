@@ -624,14 +624,14 @@ go-to: baden_coalition_creator
 
 @baden_invite_sapd
 view-if: sapd_r_baden > 0 and not baden_sapd = "government"
-choose-if: sapd_relation >= 60
+choose-if: sapd_relation >= 60 and baden_dvp == "opposition" and baden_wp == "opposition" and (not baden_z == "government" or z_leader == "Joos" or z_leader == "Kaiser")
 subtitle: The <span style="color: [+ sapd_colour +];">**SAPD**</span> will demand radical policies.
 on-arrival: baden_coalition_r = baden_coalition_r + sapd_r_baden; baden_sapd = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_uspd
 view-if: uspd_r_baden > 0 and not baden_uspd = "government"
-choose-if: uspd_relation >= 50
+choose-if: uspd_relation >= 50 and baden_dvp == "opposition" and baden_wp == "opposition" and (not baden_z == "government" or z_leader == "Joos" or z_leader == "Kaiser")
 subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
 on-arrival: baden_coalition_r = baden_coalition_r + uspd_r_baden; baden_uspd = "government"
 go-to: baden_coalition_creator
