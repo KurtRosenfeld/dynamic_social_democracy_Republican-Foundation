@@ -1,5 +1,5 @@
 title: Baden Landtag Election
-view-if: (year == 1925 and month == 10 and not baden_election_seen) or (baden_election_2_trigger_time == time and baden_election_seen_time != time)
+view-if: (year == 1922 and month == 4 and not baden_election_seen) or (baden_election_2_trigger_time == time and baden_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: baden_election_seen += 1 if baden_election_seen; baden_election_seen = 1 if not baden_election_seen; baden_election_seen_time = time
@@ -589,18 +589,139 @@ subtitle: It seems to work in GTS, doesn't it?
 on-arrival: baden_coalition_r = spr_r_baden
 
 - @baden_invite_kpd: Invite the <span style="color: [+ kpd_colour +];">**KPD**</span>
-
+- @baden_invite_sapd: Invite the <span style="color: [+ sapd_colour +];">**SAPD**</span>
+- @baden_invite_uspd: Invite the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @baden_invite_ddp: Invite the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @baden_invite_z: Invite the <span style="color: [+ z_colour +];">Center Party</span>
+- @baden_invite_others: Invite the <span style="color: [+ other_colour +];">**Others**</span>
+- @baden_invite_dvp: Invite the <span style="color: [+ dvp_colour +];">**DVP**</span>
+- @baden_invite_wp: Invite the <span style="color: #b8996f;">**WP**</span>
+- @baden_invite_dnvp: Invite the <span style="color: [+ dnvp_colour +];">**BCVP**</span>
+- @baden_check_out: Check out.
+- @baden_drop_kpd: Drop the <span style="color: [+ kpd_colour +];">**KPD**</span>
+- @baden_drop_sapd: Drop the <span style="color: [+ sapd_colour +];">**SAPD**</span>
+- @baden_drop_uspd: Drop the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @baden_drop_ddp: Drop the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @baden_drop_z: Drop the <span style="color: [+ z_colour +];">Center Party</span>
+- @baden_drop_others: Drop the <span style="color: [+ other_colour +];">**Others**</span>
+- @baden_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
+- @baden_drop_wp: Drop the <span style="color: #b8996f;">**WP**</span>
 
 
 @baden_invite_kpd
-view-if: kpd_r > 0
+view-if: kpd_r > 0 and not baden_kpd = "government"
 choose-if: kpd_relation >= 65
 subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> will demand radical policies.
-on-arrival: baden_coalition_r += kpd_r_baden
+on-arrival: baden_coalition_r += kpd_r_baden; baden_kpd = "government"
+got-to: baden_coalition_creator
+
+@baden_invite_sapd
+view-if: sapd_r > 0 and not baden_sapd = "government"
+choose-if: sapd_relation >= 60
+subtitle: The <span style="color: [+ sapd_colour +];">**SAPD**</span> will demand radical policies.
+on-arrival: baden_coalition_r += sapd_r_baden; baden_sapd = "government"
+got-to: baden_coalition_creator
+
+@baden_invite_uspd
+view-if: uspd_r > 0 and not baden_uspd = "government"
+choose-if: uspd_relation >= 50
+subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
+on-arrival: baden_coalition_r += uspd_r_baden; baden_uspd = "government"
+got-to: baden_coalition_creator
+
+@baden_invite_ddp
+view-if: ddp_r > 0 and not baden_ddp = "government"
+choose-if: ddp_relation >= 45
+subtitle: [? if ddp_relation >= 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> loves you! ?]
+on-arrival: baden_coalition_r += ddp_r_baden; baden_ddp = "government"
+got-to: baden_coalition_creator
+
+@baden_invite_z
+view-if: z_r > 0 and not baden_z = "government"
+choose-if: z_relation >= 30
+subtitle: [? if z_r_baden >= spd_r_baden: The <span style="color: [+ z_colour +];">Center Party</span> demands the minister-president. ?]
+on-arrival: baden_coalition_r += z_r_baden; baden_z = "government"
+got-to: baden_coalition_creator
+
+@baden_invite_dvp
+view-if: dvp_r > 0 and not baden_dvp = "government"
+choose-if: dvp_relation >= 40
+subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> demands tax cuts.
+on-arrival: baden_coalition_r += dvp_r_baden; baden_dvp = "government"
+got-to: baden_coalition_creator
+
+@baden_invite_others
+view-if: true_other_r > 0 and not baden_true_others = "government"
+choose-if: dvp_relation >= 55
+subtitle: The <span style="color: [+ other_colour +];">**Others**</span> are a little conservative
+on-arrival: baden_coalition_r += true_other_r_baden; baden_true_others = "government"
+got-to: baden_coalition_creator
+
+@baden_invite_wp
+view-if: wp_r > 0 and not baden_wp = "government"
+choose-if: dvp_relation >= 80
+subtitle: The <span style="color: #b8996f;">**WP**</span> are a little conservative
+on-arrival: baden_coalition_r += wp_r_baden; baden_wp = "government"
+got-to: baden_coalition_creator
+
+Why did you do this?
+
+@baden_invite_dnvp
+view-if: dnvp_r > 0
+choose-if: dnvp_relation >= 900
+subtitle: This won't happen.
+got-to: baden_coalition_creator
+
+Why are you so desperate?
+
+@baden_check_out
+choose-if: baden_coalition_r >= 50
+subtitle: We can form a coalition!
+unavailable-subtitle: We need more partners
+on-arrival: baden_gov = "Social Catholic" if baden_spd == "government" and baden_z == "government"; baden_gov = "Weimar" if baden_spd == "government" and baden_z == "government" and and baden_ddp == "government"; baden_gov = "Grand" if baden_spd == "government" and baden_z == "government" and and baden_dvp == "government"; baden_gov = "Left" if baden_spd == "government" and baden_kpd == "government"; baden_gov = "Popular Front" if baden_spd == "government" and baden_z == "government" and and baden_kpd == "government"
+
+@baden_drop_kpd
+view-if: baden_kpd = "government"
+on-arrival: baden_coalition_r -= kpd_r_baden; baden_kpd = "opposition"
+got-to: baden_coalition_creator
+
+@baden_drop_sapd
+view-if: baden_sapd = "government"
+on-arrival: baden_coalition_r -= sapd_r_baden; baden_sapd = "opposition"
+got-to: baden_coalition_creator
+
+@baden_drop_uspd
+view-if: baden_usd = "government"
+on-arrival: baden_coalition_r -= uspd_r_baden; baden_uspd = "opposition"
+got-to: baden_coalition_creator
+
+@baden_drop_ddp
+view-if: baden_ddp = "government"
+on-arrival: baden_coalition_r -= ddp_r_baden; baden_ddp = "opposition"
+got-to: baden_coalition_creator
+
+@baden_drop_z
+view-if: baden_z = "government"
+on-arrival: baden_coalition_r -= z_r_baden; baden_z = "opposition"
+got-to: baden_coalition_creator
+
+@baden_drop_dvp
+view-if: baden_dvp = "government"
+on-arrival: baden_coalition_r -= dvp_r_baden; baden_dvp = "opposition"
+got-to: baden_coalition_creator
+
+@baden_drop_others
+view-if: baden_true_others = "government"
+on-arrival: baden_coalition_r -= true_other_r_baden; baden_true_others = "opposition"
+got-to: baden_coalition_creator
+
+@baden_drop_wp
+view-if: baden_wp = "government"
+on-arrival: baden_coalition_r -= wp_r_baden; baden_wp = "opposition"
+got-to: baden_coalition_creator
+
+It is better that way.
 
 
-
-
-
-
+// move back to year 1925 and month 10
 
