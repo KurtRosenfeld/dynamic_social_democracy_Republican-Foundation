@@ -603,6 +603,7 @@ Current support: [+ bremen_coalition_r +]%
 - @bremen_invite_ddp: Invite the <span style="color: [+ ddp_colour +];">**DDP**</span>
 - @bremen_invite_lvp: Invite the <span style="color: [+ lvp_colour +];">**LVP**</span>
 - @bremen_invite_z: Invite the <span style="color: [+ z_colour +];">Center Party</span>
+- @bremen_invite_wp: Invite the <span style="color: #CEDD8A;">Home Owners</span>
 - @bremen_invite_others: Invite the <span style="color: [+ other_colour +];">**Others**</span>
 - @bremen_invite_dvp: Invite the <span style="color: [+ dvp_colour +];">**DVP**</span>
 - @bremen_invite_wp: Invite the <span style="color: #b8996f;">**WP**</span>
@@ -614,6 +615,7 @@ Current support: [+ bremen_coalition_r +]%
 - @bremen_drop_ddp: Drop the <span style="color: [+ ddp_colour +];">**DDP**</span>
 - @bremen_drop_lvp: Drop the <span style="color: [+ lvp_colour +];">**LVP**</span>
 - @bremen_drop_z: Drop the <span style="color: [+ z_colour +];">Center Party</span>
+- @bremen_drop_wp: Drop the <span style="color: #CEDD8A;">Home Owners</span>
 - @bremen_drop_others: Drop the <span style="color: [+ other_colour +];">**Others**</span>
 - @bremen_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
 - @bremen_drop_wp: Drop the <span style="color: #b8996f;">**WP**</span>
