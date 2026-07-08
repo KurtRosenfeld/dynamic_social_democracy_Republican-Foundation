@@ -184,7 +184,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if dvfp_formed = 1 and not nsfb_exists: <span class="tooltip-text" title="German Völkisch Freedom Party" style="color: #3D3D3D;">**DVFP**</span>: [+ dvfp_relation : relationships +] ?] 
 
-[? if not dsp_dead: <span class="tooltip-text" title="German Social Party" style="color: #AA6E4F;">**DtSP**</span>: [+ dstp_relation +] ?] 
+[? if not dsp_dead: <span class="tooltip-text" title="German Social Party" style="color: #AA6E4F;">**DtSP**</span>: [+ dtsp_relation : relationships +] ?] 
 
 [? if not nsfb_exists: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: [+ nsdap_colour +];">**NSDAP**</span>[? if nsdap_split: (and its splinters)?]: [+ nsdap_relation : relationships +] ?]
 
