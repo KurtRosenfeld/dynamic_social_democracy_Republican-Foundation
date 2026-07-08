@@ -629,21 +629,21 @@ go-to: baden_coalition_creator
 view-if: uspd_r_baden > 0 and not baden_uspd = "government"
 choose-if: uspd_relation >= 50
 subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
-on-select: baden_coalition_r = baden_coalition_r + uspd_r_baden; baden_uspd = "government"
+on-arrival: baden_coalition_r = baden_coalition_r + uspd_r_baden; baden_uspd = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_ddp
 view-if: ddp_r_baden > 0 and not baden_ddp = "government"
 choose-if: ddp_relation >= 45 and (not baden_kpd == "government" or kpd_leader == "Conciliators")
 subtitle: [? if ddp_relation >= 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> loves you! ?]
-on-select: baden_coalition_r = baden_coalition_r + ddp_r_baden; baden_ddp = "government"
+on-arrival: baden_coalition_r = baden_coalition_r + ddp_r_baden; baden_ddp = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_z
 view-if: z_r_baden > 0 and not baden_z = "government"
 choose-if: z_relation >= 30 and (not baden_kpd == "government" or kpd_leader == "Conciliators")
 subtitle: [? if z_r_baden >= spd_r_baden: The <span style="color: [+ z_colour +];">Center Party</span> demands the minister-president. ?]
-on-select: baden_coalition_r = baden_coalition_r + z_r_baden; baden_z = "government"
+on-arrival: baden_coalition_r = baden_coalition_r + z_r_baden; baden_z = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_dvp
