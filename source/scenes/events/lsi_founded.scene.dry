@@ -23,6 +23,6 @@ We have also received votes from some internationalists and intellectuals who we
 
 @yay
 title: Great!
-on-arrival:  usa_relation += 2; uk_relation += 2; france_relation += 2; belgium_relation += 2; austria_relation += 2; sdapo_strength += 2; sweden_relation += 2; denmark_relation += 2; norway_relation += 2; pacifism += 1;  international_socialist_support += 1; new_middle_spd += 6; uspd_relation += 38;
+on-arrival:  usa_relation += 2; uk_relation += 2; france_relation += 2; belgium_relation += 2; austria_relation += 2; sdapo_strength += 2; sweden_relation += 2; denmark_relation += 2; norway_relation += 2; pacifism += 1;  international_socialist_support += 1; new_middle_spd += 6; uspd_relation += 12 if uspd_ideology == "Orthodox Marxism"; uspd_relation += 3 if not ideology == "reformist"
 
 This is a great development.
