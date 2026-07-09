@@ -401,98 +401,105 @@ window.showMap = function() {
   window.statusTabRight = "status_right";
   window.dendryModifyUI = main;
 
-  // ============================================
-  // TOOLTIP SYSTEM - THE ONLY VERSION
-  // ============================================
+  // Tooltip stuff, I guess
   
   window.initTooltips = function() {
-    console.log('🔧 initTooltips called');
-    
-    // Remove old listeners by using a flag
-    if (window._tooltipsInitialized) {
-      console.log('Already initialized, skipping');
-      return;
-    }
-    window._tooltipsInitialized = true;
-    
-    document.body.addEventListener('mouseover', function(e) {
-      const trigger = e.target.closest('.trigger-group');
-      if (!trigger) return;
-      
-      const tooltip = trigger.querySelector('.tooltip-group');
-      if (!tooltip) return;
-      
-      console.log('Showing tooltip:', tooltip.textContent.substring(0, 50));
-      tooltip.classList.add('show-tooltip');
-      positionTooltip(e, tooltip);
-    });
-    
-    document.body.addEventListener('mousemove', function(e) {
-      const trigger = e.target.closest('.trigger-group');
-      if (!trigger) return;
-      
-      const tooltip = trigger.querySelector('.tooltip-group');
-      if (!tooltip || !tooltip.classList.contains('show-tooltip')) return;
-      
-      positionTooltip(e, tooltip);
-    });
-    
-    document.body.addEventListener('mouseout', function(e) {
-      const trigger = e.target.closest('.trigger-group');
-      if (!trigger) return;
-      
-      const relatedTarget = e.relatedTarget;
-      if (relatedTarget && trigger.contains(relatedTarget)) return;
-      
-      const tooltip = trigger.querySelector('.tooltip-group');
-      if (!tooltip) return;
-      
-      console.log('Hiding tooltip');
-      tooltip.classList.remove('show-tooltip');
-    });
-    
-    console.log('✅ Tooltips ready');
-  };
+  console.log('🔧 initTooltips called');
   
-  function positionTooltip(e, tooltip) {
-    const x = e.clientX + 15;
-    const y = e.clientY - 10;
-    
-    let left = x;
-    let top = y;
-    
-    const width = tooltip.offsetWidth || 220;
-    const height = tooltip.offsetHeight || 100;
-    
-    if (left + width > window.innerWidth) {
-      left = e.clientX - width - 15;
-    }
-    if (top + height > window.innerHeight) {
-      top = window.innerHeight - height - 10;
-    }
-    if (left < 0) left = 10;
-    if (top < 0) top = 10;
-    
-    tooltip.style.left = left + 'px';
-    tooltip.style.top = top + 'px';
+  if (window._tooltipsInitialized) {
+    console.log('Already initialized, skipping');
+    return;
   }
-
-  // ============================================
-
-  window.onload = function() {
-    window.dendryUI.loadSettings({show_portraits: true});
-    if (window.dendryUI.dark_mode) {
-        document.body.classList.add('dark-mode');
+  window._tooltipsInitialized = true;
+  
+  document.body.addEventListener('mouseover', function(e) {
+    const trigger = e.target.closest('.trigger-group');
+    if (!trigger) return;
+    
+    // Get tooltip ID from data attribute
+    const tooltipId = trigger.getAttribute('data-tooltip');
+    if (!tooltipId) return;
+    
+    const tooltip = document.getElementById(tooltipId);
+    if (!tooltip) return;
+    
+    console.log('Showing tooltip:', tooltipId);
+    tooltip.classList.add('show-tooltip');
+    positionTooltip(e, tooltip);
+  });
+  
+  document.body.addEventListener('mousemove', function(e) {
+    // Find all visible tooltips and position them
+    const visibleTooltips = document.querySelectorAll('.tooltip-group.show-tooltip');
+    visibleTooltips.forEach(function(tooltip) {
+      positionTooltip(e, tooltip);
+    });
+  });
+  
+  document.body.addEventListener('mouseout', function(e) {
+    const trigger = e.target.closest('.trigger-group');
+    if (!trigger) return;
+    
+    const tooltipId = trigger.getAttribute('data-tooltip');
+    if (!tooltipId) return;
+    
+    const tooltip = document.getElementById(tooltipId);
+    if (!tooltip) return;
+    
+    // Small delay to prevent flickering
+    setTimeout(function() {
+      // Check if mouse is still over the trigger or tooltip
+      const hoveredTrigger = document.querySelector('.trigger-group:hover');
+      const hoveredTooltip = document.querySelector('.tooltip-group:hover');
+      
+      if (!hoveredTrigger && !hoveredTooltip) {
+        console.log('Hiding tooltip:', tooltipId);
+        tooltip.classList.remove('show-tooltip');
+      }
+    }, 100);
+  });
+  
+  // Keep tooltip visible when hovering over it
+  document.body.addEventListener('mouseover', function(e) {
+    const tooltip = e.target.closest('.tooltip-group');
+    if (tooltip) {
+      tooltip.classList.add('show-tooltip');
     }
-    if (window.dendryUI.gray_mode) {
-        document.body.classList.add('gray-mode');
+  });
+  
+  document.body.addEventListener('mouseout', function(e) {
+    const tooltip = e.target.closest('.tooltip-group');
+    if (tooltip) {
+      const relatedTarget = e.relatedTarget;
+      // Don't hide if moving to the trigger
+      if (relatedTarget && relatedTarget.closest('.trigger-group')) return;
+      
+      tooltip.classList.remove('show-tooltip');
     }
-    window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-    window.statusTab = "status";
-    window.updateSidebar();
-    window.statusTabRight = "status_right";
-    window.updateSidebarRight();
-    setTimeout(window.initTooltips, 500);
-  };
+  });
+  
+  console.log('✅ Tooltips ready');
+};
 
-})();
+function positionTooltip(e, tooltip) {
+  const x = e.clientX + 15;
+  const y = e.clientY - 10;
+  
+  let left = x;
+  let top = y;
+  
+  const width = tooltip.offsetWidth || 220;
+  const height = tooltip.offsetHeight || 100;
+  
+  if (left + width > window.innerWidth) {
+    left = e.clientX - width - 15;
+  }
+  if (top + height > window.innerHeight) {
+    top = window.innerHeight - height - 10;
+  }
+  if (left < 0) left = 10;
+  if (top < 0) top = 10;
+  
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
+}
