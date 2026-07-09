@@ -1041,16 +1041,26 @@ fill: #D5AC27;
   margin-top: 10px;
 }
 
-   .tooltip-group {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none; 
-  }
+.tooltip-group {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  position: absolute;
+  z-index: 9999;
+  width: 220px;
+}
 
-  .trigger:hover ~ .tooltip-group {
-    opacity: 1;
-    pointer-events: auto;
-  }
+.trigger-group:hover .tooltip-group {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.trigger-group .tooltip-group {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 15px;
+}
 
   .trigger {
     cursor: pointer;
@@ -1061,3 +1071,13 @@ fill: #D5AC27;
     stroke: #ccc;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
   }
+
+
+  @container (max-width: 600px) {
+  .trigger-group .tooltip-group {
+    left: auto;
+    right: 100%;
+    margin-left: 0;
+    margin-right: 15px;
+  }
+}
