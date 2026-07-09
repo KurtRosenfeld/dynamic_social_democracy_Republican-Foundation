@@ -12,14 +12,10 @@
   var main = function(dendryUI) {
     ui = dendryUI;
     game = ui.game;
-
-    // Add your custom code here.
   };
 
   var TITLE = "Social Democracy: An Alternate History" + '_' + "Autumn Chen";
 
-  // the url is a link to game.json
-  // test url: https://aucchen.github.io/social_democracy_mods/v0.1.json
   window.loadMod = function(url) {
       ui.loadGame(url);
   };
@@ -49,7 +45,7 @@ window.showMap = function() {
     }
   };
 
-    window.showColours = function() {
+  window.showColours = function() {
     if (window.dendryUI.dendryEngine.state.sceneId.startsWith('colour_settings')) {
         window.dendryUI.dendryEngine.goToScene('backSpecialScene');
     } else {
@@ -122,37 +118,39 @@ window.showMap = function() {
   window.enableImages = function() {
     window.dendryUI.show_portraits = true;
     window.dendryUI.saveSettings();
-   };
+  };
 
   window.disableImages = function() {
     window.dendryUI.show_portraits = false;
     window.dendryUI.saveSettings();
-};
+  };
 
-window.enableLightMode = function() {
+  window.enableLightMode = function() {
     window.dendryUI.dark_mode = false;
     document.body.classList.remove('dark-mode');
     window.dendryUI.saveSettings();
-};
-window.enableDarkMode = function() {
+  };
+  
+  window.enableDarkMode = function() {
     window.dendryUI.dark_mode = true;
     document.body.classList.add('dark-mode');
     window.dendryUI.saveSettings();
-};
+  };
 
-window.enableGrayMode = function() {
+  window.enableGrayMode = function() {
     window.dendryUI.gray_mode = true;
     document.body.classList.add('gray-mode');
     window.dendryUI.saveSettings();
-};
-window.disableGrayMode = function() {
+  };
+  
+  window.disableGrayMode = function() {
     window.dendryUI.gray_mode = false;
     document.body.classList.remove('gray-mode');
     window.dendryUI.saveSettings();
-};
+  };
 
-// One-time color application
-function applyPartyColors() {
+  // One-time color application
+  function applyPartyColors() {
     const colors = {
         kpd: '{{ Q.kpd_colour }}',
         sapd: '{{ Q.sapd_colour }}',
@@ -168,13 +166,11 @@ function applyPartyColors() {
     
     for (const [party, color] of Object.entries(colors)) {
         const elements = document.querySelectorAll(`.seat.${party}`);
-        console.log(`Setting ${elements.length} ${party} seats to ${color}`);
         elements.forEach(seat => seat.style.fill = color);
     }
-}
+  }
 
-// Add this to your game.js
-window.applyPartyColors = function() {
+  window.applyPartyColors = function() {
     if (!window.dendryUI || !window.dendryUI.dendryEngine) return;
     
     const qualities = window.dendryUI.dendryEngine.state.qualities;
@@ -198,12 +194,10 @@ window.applyPartyColors = function() {
             });
         }
     }
-};
+  };
 
-// Please just work, please
-window.setupColorObserver = function() {
+  window.setupColorObserver = function() {
     const observer = new MutationObserver(function(mutations) {
-        // Check if new seats were added
         const hasNewSeats = mutations.some(mutation => 
             mutation.addedNodes.length > 0 && 
             mutation.target.querySelector && 
@@ -215,16 +209,14 @@ window.setupColorObserver = function() {
     });
     
     observer.observe(document.body, { childList: true, subtree: true });
-};
+  };
   
-// Run when page is ready
-if (document.readyState === 'loading') {
+  if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', applyPartyColors);
-} else {
+  } else {
     applyPartyColors();
-}
+  }
   
-  // populates the checkboxes in the options view
   window.populateOptions = function() {
     var disable_bg = window.dendryUI.disable_bg;
     var animate = window.dendryUI.animate;
@@ -262,18 +254,13 @@ if (document.readyState === 'loading') {
     }
   };
 
-  
-  // This function allows you to modify the text before it's displayed.
-  // E.g. wrapping chat-like messages in spans.
   window.displayText = function(text) {
       return text;
   };
 
-  // This function allows you to do something in response to signals.
   window.handleSignal = function(signal, event, scene_id) {
   };
   
-  // This function runs on a new page. Right now, this auto-saves.
   window.onNewPage = function() {
     var scene = window.dendryUI.dendryEngine.state.sceneId;
     if (scene != 'root' && !window.justLoaded) {
@@ -282,8 +269,7 @@ if (document.readyState === 'loading') {
     if (window.justLoaded) {
         window.justLoaded = false;
     }
-    // Re-initialize tooltips after page changes
-    setTimeout(initTooltips, 200);
+    setTimeout(window.initTooltips, 500);
   };
 
   window.updateSidebar = function() {
@@ -300,7 +286,7 @@ if (document.readyState === 'loading') {
     dendryUI.dendryEngine._runActions(scene.onArrival);
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
     $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
-};
+  };
 
   window.changeTab = function(newTab, tabId, isRight) {
       if (tabId == 'poll_tab' && (dendryUI.dendryEngine.state.qualities.historical_mode || dendryUI.dendryEngine.state.qualities.rubicon)) {
@@ -317,28 +303,27 @@ if (document.readyState === 'loading') {
       if (isRight) {
         window.statusTabRight = newTab;
         window.updateSidebarRight();
-        } else {
-          window.statusTab = newTab;
-          window.updateSidebar();
-    }
+      } else {
+        window.statusTab = newTab;
+        window.updateSidebar();
+      }
   };
 
   window.onDisplayContent = function() {
       window.updateSidebar();
       window.updateSidebarRight();
-      // Re-initialize tooltips after content updates
-      setTimeout(initTooltips, 200);
+      setTimeout(window.initTooltips, 500);
   };
 
   window.toggleDem = function toggleDemographicTable() {
       const resultsDiv = document.getElementById('results');
-      // Toggle display between 'none' and 'block'
       if (resultsDiv.style.display === 'none' || resultsDiv.style.display === '') {
-          resultsDiv.style.display = 'block'; // or 'table' for the table specifically
+          resultsDiv.style.display = 'block';
       } else {
           resultsDiv.style.display = 'none';
       }
   };
+  
   window.toggleGraph = function toggleGraph() {
       const svgElement = document.getElementById('party_support_history');
       if (svgElement.style.display === 'none' || svgElement.style.display === '') {
@@ -347,6 +332,7 @@ if (document.readyState === 'loading') {
           svgElement.style.display = 'none';
       }
   };
+  
   window.toggleElectionGraph = function toggleElectionGraph() {
       const svgElement = document.getElementById('election_history');
       if (svgElement.style.display === 'none' || svgElement.style.display === '') {
@@ -355,6 +341,7 @@ if (document.readyState === 'loading') {
           svgElement.style.display = 'none';
       }
   };
+  
   window.toggleNews = function toggleNews() {
       const elements = document.querySelectorAll('.dnvp');
       const elements2 = document.querySelectorAll('.other');
@@ -386,15 +373,6 @@ if (document.readyState === 'loading') {
       button.style.backgroundColor = '#dddddd';
   };
 
-
-  /*
-   * This function copied from the code for Infinite Space Battle Simulator
-   *
-   * quality - a number between max and min
-   * qualityName - the name of the quality
-   * max and min - numbers
-   * colors - if true/1, will use some color scheme - green to yellow to red for high to low
-   * */
   window.generateBar = function(quality, qualityName, max, min, colors) {
       var bar = document.createElement('div');
       bar.className = 'bar';
@@ -418,44 +396,33 @@ if (document.readyState === 'loading') {
       return bar;
   };
 
-
- window.justLoaded = true;
+  window.justLoaded = true;
   window.statusTab = "status";
   window.statusTabRight = "status_right";
   window.dendryModifyUI = main;
-  console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
-  window.onload = function() {
-    window.dendryUI.loadSettings({show_portraits: true});
-    if (window.dendryUI.dark_mode) {
-        document.body.classList.add('dark-mode');
-    }
-    if (window.dendryUI.gray_mode) {
-        document.body.classList.add('gray-mode');
-    }
-    window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-    window.statusTab = "status";
-    window.updateSidebar();
-    window.statusTabRight = "status_right";
-    window.updateSidebarRight();
-    // Initialize tooltips after page loads
-    setTimeout(initTooltips, 100);
-  };
-
-// Initialize tooltips (this will never work)
+  // ============================================
+  // TOOLTIP SYSTEM - THE ONLY VERSION
+  // ============================================
   
-(function() {
-  // This runs once when the page loads
-  function setupTooltips() {
-    // Use event delegation on the body - much more reliable
+  window.initTooltips = function() {
+    console.log('🔧 initTooltips called');
+    
+    // Remove old listeners by using a flag
+    if (window._tooltipsInitialized) {
+      console.log('Already initialized, skipping');
+      return;
+    }
+    window._tooltipsInitialized = true;
+    
     document.body.addEventListener('mouseover', function(e) {
-      // Find if we're hovering over something inside a trigger-group
       const trigger = e.target.closest('.trigger-group');
       if (!trigger) return;
       
       const tooltip = trigger.querySelector('.tooltip-group');
       if (!tooltip) return;
       
+      console.log('Showing tooltip:', tooltip.textContent.substring(0, 50));
       tooltip.classList.add('show-tooltip');
       positionTooltip(e, tooltip);
     });
@@ -474,29 +441,29 @@ if (document.readyState === 'loading') {
       const trigger = e.target.closest('.trigger-group');
       if (!trigger) return;
       
-      // Check if we're moving to a child of the trigger
       const relatedTarget = e.relatedTarget;
       if (relatedTarget && trigger.contains(relatedTarget)) return;
       
       const tooltip = trigger.querySelector('.tooltip-group');
       if (!tooltip) return;
       
+      console.log('Hiding tooltip');
       tooltip.classList.remove('show-tooltip');
     });
-  }
+    
+    console.log('✅ Tooltips ready');
+  };
   
   function positionTooltip(e, tooltip) {
     const x = e.clientX + 15;
     const y = e.clientY - 10;
     
-    const rect = tooltip.getBoundingClientRect();
-    const width = rect.width || 220;
-    const height = rect.height || 100;
-    
     let left = x;
     let top = y;
     
-    // Keep in viewport
+    const width = tooltip.offsetWidth || 220;
+    const height = tooltip.offsetHeight || 100;
+    
     if (left + width > window.innerWidth) {
       left = e.clientX - width - 15;
     }
@@ -509,14 +476,23 @@ if (document.readyState === 'loading') {
     tooltip.style.left = left + 'px';
     tooltip.style.top = top + 'px';
   }
-  
-  // Initialize when DOM is ready
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    setupTooltips();
-  } else {
-    document.addEventListener('DOMContentLoaded', setupTooltips);
-  }
-  
-  // Also initialize after any dynamic content changes
-  window.initTooltips = setupTooltips;
+
+  // ============================================
+
+  window.onload = function() {
+    window.dendryUI.loadSettings({show_portraits: true});
+    if (window.dendryUI.dark_mode) {
+        document.body.classList.add('dark-mode');
+    }
+    if (window.dendryUI.gray_mode) {
+        document.body.classList.add('gray-mode');
+    }
+    window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
+    window.statusTab = "status";
+    window.updateSidebar();
+    window.statusTabRight = "status_right";
+    window.updateSidebarRight();
+    setTimeout(window.initTooltips, 500);
+  };
+
 })();
