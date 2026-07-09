@@ -735,5 +735,5 @@ It is better that way.
 
 
 @return_to_baden
-on-arrival: baden_spd = "opposition"
+on-arrival: baden_spd = "opposition"; baden_kpd = "opposition"; baden_sapd = "opposition"; baden_uspd = "opposition"; baden_ddp = "opposition"; baden_z = "opposition"; baden_dvp = "opposition"; baden_true_others = "opposition"; baden_lvp = "opposition"; baden_wp = "opposition"
 go-to: baden_coalition_menu
