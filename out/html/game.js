@@ -222,37 +222,37 @@
     var disable_audio = window.dendryUI.disable_audio;
     var show_portraits = window.dendryUI.show_portraits;
     if (disable_bg) {
-        document.getElementById('backgrounds_no').checked = true;
+        $('#backgrounds_no')[0].checked = true;
     } else {
-        document.getElementById('backgrounds_yes').checked = true;
+        $('#backgrounds_yes')[0].checked = true;
     }
     if (animate) {
-        document.getElementById('animate_yes').checked = true;
+        $('#animate_yes')[0].checked = true;
     } else {
-        document.getElementById('animate_no').checked = true;
+        $('#animate_no')[0].checked = true;
     }
     if (disable_audio) {
-        document.getElementById('audio_no').checked = true;
+        $('#audio_no')[0].checked = true;
     } else {
-        document.getElementById('audio_yes').checked = true;
+        $('#audio_yes')[0].checked = true;
     }
     if (show_portraits) {
-        document.getElementById('images_yes').checked = true;
+        $('#images_yes')[0].checked = true;
     } else {
-        document.getElementById('images_no').checked = true;
+        $('#images_no')[0].checked = true;
     }
     if (window.dendryUI.dark_mode) {
-        document.getElementById('dark_mode').checked = true;
+        $('#dark_mode')[0].checked = true;
     } else {
-        document.getElementById('light_mode').checked = true;
+        $('#light_mode')[0].checked = true;
     }
     if (window.dendryUI.gray_mode) {
-        document.getElementById('gray_on').checked = true;
+        $('#gray_on')[0].checked = true;
     } else {
-        document.getElementById('gray_no').checked = true;
+        $('#gray_no')[0].checked = true;
     }
-  };
-
+};
+  
   window.displayText = function(text) {
       return text;
   };
