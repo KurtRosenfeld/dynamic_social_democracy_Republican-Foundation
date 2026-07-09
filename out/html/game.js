@@ -454,22 +454,46 @@ function initTooltips() {
       return;
     }
     
+    // Remove any existing listeners by cloning and replacing
+    const newGroup = group.cloneNode(true);
+    group.parentNode.replaceChild(newGroup, group);
+    const newTooltip = newGroup.querySelector('.tooltip-group');
+    
     let tooltipTimeout;
+    let isVisible = false;
     
-    group.addEventListener('mouseenter', function(e) {
+    // Show tooltip on mouse enter
+    newGroup.addEventListener('mouseenter', function(e) {
       clearTimeout(tooltipTimeout);
-      tooltip.classList.add('visible');
-      updateTooltipPosition(e, tooltip);
+      newTooltip.classList.add('visible');
+      isVisible = true;
+      updateTooltipPosition(e, newTooltip);
     });
     
-    group.addEventListener('mousemove', function(e) {
-      updateTooltipPosition(e, tooltip);
+    // Update position on mouse move
+    newGroup.addEventListener('mousemove', function(e) {
+      if (isVisible) {
+        updateTooltipPosition(e, newTooltip);
+      }
     });
     
-    group.addEventListener('mouseleave', function() {
+    // Hide tooltip on mouse leave
+    newGroup.addEventListener('mouseleave', function() {
+      isVisible = false;
       tooltipTimeout = setTimeout(() => {
-        tooltip.classList.remove('visible');
-      }, 200);
+        newTooltip.classList.remove('visible');
+      }, 150);
+    });
+    
+    // Keep tooltip visible when hovering over it
+    newTooltip.addEventListener('mouseenter', function() {
+      clearTimeout(tooltipTimeout);
+      isVisible = true;
+    });
+    
+    newTooltip.addEventListener('mouseleave', function() {
+      isVisible = false;
+      newTooltip.classList.remove('visible');
     });
     
     console.log(`Tooltip initialized for group ${index}`);
@@ -479,8 +503,8 @@ function initTooltips() {
 function updateTooltipPosition(e, tooltip) {
   const cursorX = e.clientX;
   const cursorY = e.clientY;
-  const tooltipWidth = 220;
-  const tooltipHeight = 160;
+  const tooltipWidth = tooltip.offsetWidth || 220;
+  const tooltipHeight = tooltip.offsetHeight || 160;
   const viewportWidth = window.innerWidth;
   const viewportHeight = window.innerHeight;
   const offset = 15;
@@ -488,6 +512,7 @@ function updateTooltipPosition(e, tooltip) {
   let left = cursorX + offset;
   let top = cursorY - (tooltipHeight / 2);
   
+  // Ensure tooltip stays within viewport
   if (left + tooltipWidth > viewportWidth - 10) {
     left = cursorX - tooltipWidth - offset;
   }
@@ -505,13 +530,24 @@ function updateTooltipPosition(e, tooltip) {
   tooltip.style.top = top + 'px';
 }
 
-// Initialize on DOM ready if not already loaded
+// Enhanced initialization that retries if elements aren't ready
+function ensureTooltipsInitialized() {
+  const triggerGroups = document.querySelectorAll('.trigger-group');
+  if (triggerGroups.length > 0) {
+    initTooltips();
+  } else {
+    console.log('No trigger groups found, retrying in 500ms...');
+    setTimeout(ensureTooltipsInitialized, 500);
+  }
+}
+
+// Initialize on DOM ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(initTooltips, 100);
+    setTimeout(ensureTooltipsInitialized, 300);
   });
 } else {
-  setTimeout(initTooltips, 100);
+  setTimeout(ensureTooltipsInitialized, 300);
 }
 
 }());
