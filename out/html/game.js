@@ -271,21 +271,21 @@
     setTimeout(window.initTooltips, 500);
   };
 
-  window.updateSidebar = function() {
-      document.getElementById('qualities').innerHTML = '';
-      var scene = dendryUI.game.scenes[window.statusTab];
-      dendryUI.dendryEngine._runActions(scene.onArrival);
-      var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-      document.getElementById('qualities').appendChild(dendryUI.contentToHTML.convert(displayContent));
-  };
+window.updateSidebar = function() {
+    $('#qualities').empty();
+    var scene = dendryUI.game.scenes[window.statusTab];
+    dendryUI.dendryEngine._runActions(scene.onArrival);
+    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+    $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+};
 
-  window.updateSidebarRight = function() {
-    document.getElementById('qualities_right').innerHTML = '';
+window.updateSidebarRight = function() {
+    $('#qualities_right').empty();
     var scene = dendryUI.game.scenes[window.statusTabRight];
     dendryUI.dendryEngine._runActions(scene.onArrival);
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    document.getElementById('qualities_right').appendChild(dendryUI.contentToHTML.convert(displayContent));
-  };
+    $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
+};
 
   window.changeTab = function(newTab, tabId, isRight) {
       if (tabId == 'poll_tab' && (dendryUI.dendryEngine.state.qualities.historical_mode || dendryUI.dendryEngine.state.qualities.rubicon)) {
