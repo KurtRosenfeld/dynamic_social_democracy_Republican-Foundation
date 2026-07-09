@@ -1041,43 +1041,28 @@ fill: #D5AC27;
   margin-top: 10px;
 }
 
+.trigger-group {
+  position: relative;
+  cursor: pointer;
+}
+
 .tooltip-group {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   width: 220px;
+  transform: scale(0.95);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.trigger-group:hover .tooltip-group {
+.tooltip-group.visible {
   opacity: 1;
   pointer-events: auto;
+  transform: scale(1);
 }
 
-.trigger-group .tooltip-group {
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: 15px;
-}
-
-  .trigger {
-    cursor: pointer;
-  }
-
-  .tooltip-bg {
-    fill: white;
-    stroke: #ccc;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
-  }
-
-
-  @container (max-width: 600px) {
-  .trigger-group .tooltip-group {
-    left: auto;
-    right: 100%;
-    margin-left: 0;
-    margin-right: 15px;
-  }
+.tooltip-group {
+  transition-delay: 0.1s;
 }
