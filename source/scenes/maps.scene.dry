@@ -153,6 +153,7 @@ The current territorial state of the German Reich (Weimar Republic)
     </g>
     <g
        id="g4"
+       class="trigger-group" data-tooltip="plbaden-tooltip"
        style="display:inline"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -175,6 +176,7 @@ The current territorial state of the German Reich (Weimar Republic)
     </g>
     <g
        id="g81"
+       class="trigger-group" data-tooltip="plwurttemberg-tooltip"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          style="fill:#c8ab37;fill-opacity:1;stroke-width:20.0315"
@@ -204,6 +206,7 @@ The current territorial state of the German Reich (Weimar Republic)
     </g>
     <g
        id="g5"
+       class="trigger-group" data-tooltip="plhamburg-tooltip"
        style="display:inline"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -223,6 +226,7 @@ The current territorial state of the German Reich (Weimar Republic)
     </g>
     <g
        id="g2"
+       class="trigger-group" data-tooltip="plthuringia-tooltip"
        style="display:inline"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -247,6 +251,7 @@ The current territorial state of the German Reich (Weimar Republic)
     </g>
     <g
        id="g12"
+       class="trigger-group" data-tooltip="plprussia-tooltip"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          style="display:inline;fill:#c8c4b7;fill-opacity:1;stroke-width:20.0315"
@@ -261,6 +266,7 @@ The current territorial state of the German Reich (Weimar Republic)
     </g>
     <g
        id="g80"
+       class="trigger-group" data-tooltip="plsaxony-tooltip"
        style="display:inline"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -568,12 +574,62 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <div id="plhesse-tooltip" class="tooltip-group">
 <div style="text-align: center;">
-    <img src="img/land/Hesse.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+    <img src="img/land/Hessen.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">People's State of Hesse</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
     Population: ~1.350.000
     Area: 7.692 km²
+  </div>
+  </div>
+  <div id="plbaden-tooltip" class="tooltip-group">
+<div style="text-align: center;">
+    <img src="img/land/Großherzogtum_Baden.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Republic of Baden</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    Population: ~2.310.000
+    Area: 15.070 km²
+  </div>
+  </div>
+  <div id="plwurttemberg-tooltip" class="tooltip-group">
+<div style="text-align: center;">
+    <img src="img/land/Württemberg.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Free People's State of Wurttemberg</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    Population: ~2.580.000
+    Area: 19.508 km²
+  </div>
+  </div>
+  <div id="plhamburg-tooltip" class="tooltip-group">
+<div style="text-align: center;">
+    <img src="img/land/Hamburg.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Free Hanseatic City of Hamburg</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    Population: ~1.153.000
+    Area: 415 km²
+  </div>
+  </div>
+  <div id="plthuringia-tooltip" class="tooltip-group">
+<div style="text-align: center;">
+    <img src="img/land/Thuringia.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">State of Thuringia</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    Population: ~1.607.000
+    Area: 11.763 km²
+  </div>
+  </div>
+  <div id="plsaxony-tooltip" class="tooltip-group">
+<div style="text-align: center;">
+    <img src="img/land/Saxony.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Saxony</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    Population: ~4.994.000
+    Area: 14.986 km²
   </div>
   </div>
 
