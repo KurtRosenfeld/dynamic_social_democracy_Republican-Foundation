@@ -408,21 +408,31 @@ window.initTooltips = function() {
   }
   window._tooltipsInitialized = true;
   
-  // Track the currently visible tooltip
   var currentTooltip = null;
   var hideTimeout = null;
   
-  // Helper to hide all tooltips immediately
   function hideAllTooltips() {
     document.querySelectorAll('.tooltip-group.show-tooltip').forEach(function(t) {
       t.classList.remove('show-tooltip');
     });
   }
   
+  // Render chart for a specific tooltip if needed
+  function renderTooltipChart(tooltip) {
+    var chartContainer = tooltip.querySelector('#waldeck_landtag');
+    if (chartContainer && chartContainer.getAttribute('data-rendered') !== 'true') {
+      // Mark as rendered so we don't render twice
+      chartContainer.setAttribute('data-rendered', 'true');
+      
+      // Call your parliament rendering code here
+      if (window.renderWaldeckLandtag) {
+        window.renderWaldeckLandtag(chartContainer);
+      }
+    }
+  }
+  
   document.body.addEventListener('mouseover', function(e) {
     const trigger = e.target.closest('.trigger-group');
-    
-    // If we left a trigger and aren't entering a new one, do nothing
     if (!trigger) return;
     
     const tooltipId = trigger.getAttribute('data-tooltip');
@@ -431,19 +441,21 @@ window.initTooltips = function() {
     const tooltip = document.getElementById(tooltipId);
     if (!tooltip) return;
     
-    // Clear any pending hide
     if (hideTimeout) {
       clearTimeout(hideTimeout);
       hideTimeout = null;
     }
     
-    // If this is a different tooltip, hide all others first
     if (currentTooltip && currentTooltip !== tooltip) {
       hideAllTooltips();
     }
     
     currentTooltip = tooltip;
     tooltip.classList.add('show-tooltip');
+    
+    // Render charts inside tooltip
+    renderTooltipChart(tooltip);
+    
     updateTooltipPos(e, tooltip);
   });
   
@@ -463,11 +475,9 @@ window.initTooltips = function() {
     const tooltip = document.getElementById(tooltipId);
     if (!tooltip) return;
     
-    // Don't hide if moving to the tooltip itself
     const relatedTarget = e.relatedTarget;
     if (relatedTarget && relatedTarget.closest('.tooltip-group')) return;
     
-    // Delay hiding to prevent flicker, but store the timeout
     hideTimeout = setTimeout(function() {
       const hoveredTrigger = document.querySelector('.trigger-group:hover');
       const hoveredTooltip = document.querySelector('.tooltip-group:hover');
@@ -479,10 +489,9 @@ window.initTooltips = function() {
         }
       }
       hideTimeout = null;
-    }, 50); // Reduced to 50ms for faster response
+    }, 50);
   });
   
-  // Handle hovering over the tooltip itself
   document.body.addEventListener('mouseenter', function(e) {
     const tooltip = e.target.closest('.tooltip-group');
     if (tooltip) {
@@ -492,7 +501,7 @@ window.initTooltips = function() {
       }
       tooltip.classList.add('show-tooltip');
     }
-  }, true); // Use capture phase
+  }, true);
   
   document.body.addEventListener('mouseleave', function(e) {
     const tooltip = e.target.closest('.tooltip-group');
@@ -505,7 +514,7 @@ window.initTooltips = function() {
         currentTooltip = null;
       }
     }
-  }, true); // Use capture phase
+  }, true);
 };
 
 function updateTooltipPos(e, tooltip) {
@@ -515,8 +524,8 @@ function updateTooltipPos(e, tooltip) {
   let left = x;
   let top = y;
   
-  const width = tooltip.offsetWidth || 350;
-  const height = tooltip.offsetHeight || 100;
+  const width = tooltip.offsetWidth || 360;
+  const height = tooltip.offsetHeight || 200;
   
   if (left + width > window.innerWidth) {
     left = e.clientX - width - 15;
