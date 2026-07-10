@@ -399,79 +399,137 @@ window.updateSidebarRight = function() {
   // TOOLTIP SYSTEM
   // ============================================
   
-  window.initTooltips = function() {
-    console.log('initTooltips called');
-    
-    if (window._tooltipsInitialized) {
-      console.log('Already initialized');
-      return;
-    }
-    window._tooltipsInitialized = true;
-    
-    document.body.addEventListener('mouseover', function(e) {
-      const trigger = e.target.closest('.trigger-group');
-      if (!trigger) return;
-      
-      const tooltipId = trigger.getAttribute('data-tooltip');
-      if (!tooltipId) return;
-      
-      const tooltip = document.getElementById(tooltipId);
-      if (!tooltip) return;
-      
-      tooltip.classList.add('show-tooltip');
-      updateTooltipPos(e, tooltip);
-    });
-    
-    document.body.addEventListener('mousemove', function(e) {
-      const visibleTooltips = document.querySelectorAll('.tooltip-group.show-tooltip');
-      visibleTooltips.forEach(function(tooltip) {
-        updateTooltipPos(e, tooltip);
-      });
-    });
-    
-    document.body.addEventListener('mouseout', function(e) {
-      const trigger = e.target.closest('.trigger-group');
-      if (!trigger) return;
-      
-      const tooltipId = trigger.getAttribute('data-tooltip');
-      if (!tooltipId) return;
-      
-      const tooltip = document.getElementById(tooltipId);
-      if (!tooltip) return;
-      
-      setTimeout(function() {
-        const hoveredTrigger = document.querySelector('.trigger-group:hover');
-        const hoveredTooltip = document.querySelector('.tooltip-group:hover');
-        
-        if (!hoveredTrigger && !hoveredTooltip) {
-          tooltip.classList.remove('show-tooltip');
-        }
-      }, 100);
-    });
-  };
+window.initTooltips = function() {
+  console.log('initTooltips called');
   
-  function updateTooltipPos(e, tooltip) {
-    const x = e.clientX + 15;
-    const y = e.clientY - 10;
-    
-    let left = x;
-    let top = y;
-    
-    const width = tooltip.offsetWidth || 220;
-    const height = tooltip.offsetHeight || 100;
-    
-    if (left + width > window.innerWidth) {
-      left = e.clientX - width - 15;
-    }
-    if (top + height > window.innerHeight) {
-      top = window.innerHeight - height - 10;
-    }
-    if (left < 0) left = 10;
-    if (top < 0) top = 10;
-    
-    tooltip.style.left = left + 'px';
-    tooltip.style.top = top + 'px';
+  if (window._tooltipsInitialized) {
+    console.log('Already initialized');
+    return;
   }
+  window._tooltipsInitialized = true;
+  
+  // Track the currently visible tooltip
+  var currentTooltip = null;
+  var hideTimeout = null;
+  
+  // Helper to hide all tooltips immediately
+  function hideAllTooltips() {
+    document.querySelectorAll('.tooltip-group.show-tooltip').forEach(function(t) {
+      t.classList.remove('show-tooltip');
+    });
+  }
+  
+  document.body.addEventListener('mouseover', function(e) {
+    const trigger = e.target.closest('.trigger-group');
+    
+    // If we left a trigger and aren't entering a new one, do nothing
+    if (!trigger) return;
+    
+    const tooltipId = trigger.getAttribute('data-tooltip');
+    if (!tooltipId) return;
+    
+    const tooltip = document.getElementById(tooltipId);
+    if (!tooltip) return;
+    
+    // Clear any pending hide
+    if (hideTimeout) {
+      clearTimeout(hideTimeout);
+      hideTimeout = null;
+    }
+    
+    // If this is a different tooltip, hide all others first
+    if (currentTooltip && currentTooltip !== tooltip) {
+      hideAllTooltips();
+    }
+    
+    currentTooltip = tooltip;
+    tooltip.classList.add('show-tooltip');
+    updateTooltipPos(e, tooltip);
+  });
+  
+  document.body.addEventListener('mousemove', function(e) {
+    if (currentTooltip && currentTooltip.classList.contains('show-tooltip')) {
+      updateTooltipPos(e, currentTooltip);
+    }
+  });
+  
+  document.body.addEventListener('mouseout', function(e) {
+    const trigger = e.target.closest('.trigger-group');
+    if (!trigger) return;
+    
+    const tooltipId = trigger.getAttribute('data-tooltip');
+    if (!tooltipId) return;
+    
+    const tooltip = document.getElementById(tooltipId);
+    if (!tooltip) return;
+    
+    // Don't hide if moving to the tooltip itself
+    const relatedTarget = e.relatedTarget;
+    if (relatedTarget && relatedTarget.closest('.tooltip-group')) return;
+    
+    // Delay hiding to prevent flicker, but store the timeout
+    hideTimeout = setTimeout(function() {
+      const hoveredTrigger = document.querySelector('.trigger-group:hover');
+      const hoveredTooltip = document.querySelector('.tooltip-group:hover');
+      
+      if (!hoveredTrigger && !hoveredTooltip) {
+        tooltip.classList.remove('show-tooltip');
+        if (currentTooltip === tooltip) {
+          currentTooltip = null;
+        }
+      }
+      hideTimeout = null;
+    }, 50); // Reduced to 50ms for faster response
+  });
+  
+  // Handle hovering over the tooltip itself
+  document.body.addEventListener('mouseenter', function(e) {
+    const tooltip = e.target.closest('.tooltip-group');
+    if (tooltip) {
+      if (hideTimeout) {
+        clearTimeout(hideTimeout);
+        hideTimeout = null;
+      }
+      tooltip.classList.add('show-tooltip');
+    }
+  }, true); // Use capture phase
+  
+  document.body.addEventListener('mouseleave', function(e) {
+    const tooltip = e.target.closest('.tooltip-group');
+    if (tooltip) {
+      const relatedTarget = e.relatedTarget;
+      if (relatedTarget && relatedTarget.closest('.trigger-group')) return;
+      
+      tooltip.classList.remove('show-tooltip');
+      if (currentTooltip === tooltip) {
+        currentTooltip = null;
+      }
+    }
+  }, true); // Use capture phase
+};
+
+function updateTooltipPos(e, tooltip) {
+  const x = e.clientX + 15;
+  const y = e.clientY - 10;
+  
+  let left = x;
+  let top = y;
+  
+  const width = tooltip.offsetWidth || 220;
+  const height = tooltip.offsetHeight || 100;
+  
+  if (left + width > window.innerWidth) {
+    left = e.clientX - width - 15;
+  }
+  if (top + height > window.innerHeight) {
+    top = window.innerHeight - height - 10;
+  }
+  if (left < 0) left = 10;
+  if (top < 0) top = 10;
+  
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
+}
 
   // ============================================
 
