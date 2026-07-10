@@ -623,7 +623,7 @@ Current support: [+ meck_stre_coalition_r +]%
 - @meck_stre_invite_uspd: Invite the <span style="color: [+ uspd_colour +];">**USPD**</span>
 - @meck_stre_invite_ddp: Invite the <span style="color: [+ ddp_colour +];">**DDP**</span>
 - @meck_stre_invite_lvp: Invite the <span style="color: [+ lvp_colour +];">**LVP**</span>
-- @meck_stre_invite_hb: Invite the <span style="color: #CEDD8A;">Home Owners</span>
+- @meck_stre_invite_vhg: Invite the <span style="color: #CEDD8A;">**VHG**</span>
 - @meck_stre_invite_others: Invite the <span style="color: [+ i_colour +];">**Others**</span>
 - @meck_stre_invite_dvp: Invite the <span style="color: [+ dvp_colour +];">**DVP**</span>
 - @meck_stre_invite_kvp: Invite the <span style="color: [+ kvp_colour +];">**KVP**</span>
@@ -635,7 +635,7 @@ Current support: [+ meck_stre_coalition_r +]%
 - @meck_stre_drop_uspd: Drop the <span style="color: [+ uspd_colour +];">**USPD**</span>
 - @meck_stre_drop_ddp: Drop the <span style="color: [+ ddp_colour +];">**DDP**</span>
 - @meck_stre_drop_lvp: Drop the <span style="color: [+ lvp_colour +];">**LVP**</span>
-- @meck_stre_drop_hb: Drop the <span style="color: #CEDD8A;">Home Owners</span>
+- @meck_stre_drop_vhg: Drop the <span style="color: #CEDD8A;">**VHG**</span>
 - @meck_stre_drop_others: Drop the <span style="color: [+ other_colour +];">**Others**</span>
 - @meck_stre_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
 - @meck_stre_drop_kvp: Drop the <span style="color: [+ kvp_colour +];">**KVP**</span>
@@ -694,10 +694,10 @@ subtitle: The <span style="color: [+ kvp_colour +];">**KVP**</span> demands oppo
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + kvp_r_meck_stre; meck_stre_kvp = "government"
 go-to: meck_stre_coalition_creator
 
-@meck_stre_invite_vhb
+@meck_stre_invite_vhg
 view-if: vhg_r_meck_stre > 0 and not meck_stre_vhg = "government"
 choose-if: dvp_relation >= 65 and meck_stre_kpd == "opposition" and meck_stre_sapd == "opposition"
-subtitle: The <span style="color: #CEDD8A;">VHG</span> demands tax cuts.
+subtitle: The <span style="color: #CEDD8A;">**VHG**</span> demands tax cuts.
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + vhg_r_meck_stre; meck_stre_vhg = "government"
 go-to: meck_stre_coalition_creator
 
