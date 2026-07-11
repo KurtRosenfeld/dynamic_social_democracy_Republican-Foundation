@@ -23,7 +23,7 @@ on-display: {!
 
     var image = new Image();  
     image.className = "face-img";  
-    image.src = "img/portraits/Hitler_Ludendorff.jpg";  
+    image.src = "img/portraits/Hitler_Ludendorff.jpeg";  
 
     cardEl.appendChild(image);  
     var contentDiv = document.querySelector("#page #left_panel #content");
