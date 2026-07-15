@@ -1,0 +1,15 @@
+title: KPD central committee election
+subtitle: The End of our cooperation
+new-page: true
+tags: event
+view-if: year == 1922 and month == 8 and mad_kpd_ohno == 1
+on-arrival: kpd_leader = "Brandler"; kpd_strategy = "United Front From Below"; kpd_relation -= 10; rep_kpd -= 10
+max-visits: 1
+priority: 1
+face-image: img/portraits/BrandlerHeinrich.jpg
+
+= KPD central committee election
+
+The conciliatory course of Ernst Meyer ,who sought cooperation with the <span style="color: [+ uspd_colour +];">**USPD**</span>, <span style="color: [+ spd_colour +];">**SPD**</span> and the unions, has failed with the application of the <span style="color: #000000;">Republic</span> <span style="color: #c10000;">Protection</span> <span style="color: #D3C24D;">Act</span> which has been utilized by the judiciary to target the <span style="color: [+ kpd_colour +];">**KPD**</span>.
+
+Heinrich Brandler, a former party leader who had to leave Germany for Moscow after the failed <span class="tooltip-text" title="a failed KPD and KAPD coup in 1921" <span style="color: [+ kpd_colour +];">March Action</span>, has just returned to assume the role of chairman again. He has pledged to stop working with the <span style="color: [+ spd_colour +];">**SPD**</span>-leadership, instead arguing for a United Front From Below. From now on the <span style="color: [+ kpd_colour +];">**KPD**</span> will only try to cooperate with our local branches and indivdual members on terms more favourable to them. We probably won't be able to rely on their support in parliamentary elections any time soon.
