@@ -472,6 +472,8 @@ Waldeck: [+ waldeck_gov +] Coalition
 
 = Foreign Relations
 
+Foreign Relastions are the relations between countries in a broad sense. They adapt to government policies and to a lesser extent to inter-party relations.
+
 <span style="color: #002654;">**Western**</span> <span style="color: #D7141A;">**Allies**</span>: [+ west_relation : relationships +]
 
 <span style="color: #002654;">**U**</span><span style="color: #D3D3D3;">**S**</span><span style="color: #D7141A;">**A**</span>: [+ us_relation : relationships +]
