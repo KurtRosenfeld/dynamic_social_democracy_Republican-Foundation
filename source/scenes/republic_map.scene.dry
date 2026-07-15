@@ -1,7 +1,0 @@
-title: Map of the Republic
-view-if: republic_map_shown == 1
-new-page: true
-
-= Map of the Republic
-
-The map itself is still to be added
