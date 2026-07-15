@@ -11,7 +11,7 @@ I know you don't want to read allat, but please do, reading will make everything
 - @infotext: Dynamic Social Democracy (Highly recommended for new players)
 - @faq: Frequently Asked Questions
 - @paths: What are all the paths?
-- @changelog: Changelog + Future Updates!
+- @changelog: Changelog (this is the only thing here I have touched so far, so yes, it is relevant to the mod)
 - @discord: Discord
 - @source: Credits and Sources
 - @root.start: Start game
@@ -337,75 +337,9 @@ elements.forEach(el => {
 
 = Changelog
 
-**V1.0 - 2025/06/25**
-
-[? if not snoopy: - Dynamic Social Democracy is released. ?]
-
-**V1.01 - 2025/07/06**
-
-[? if not snoopy: - <span style="color: #9B0000;">Left</span>-<span style="color: [+ spd_colour +];">**SPD**</span> endings and associated achievements. ?]
-
-[? if not snoopy: - Plethora of bug fixes. ?]
-
-**V1.02 - 2025/07/09**
-
-[? if not snoopy: - Reichstag and Landtag diagrams dynamicized. ?]
-
-[? if not snoopy: - More bug fixes... ?]
-
-**V1.03 - 2025/07/11**
-
-[? if not snoopy: - Emergency fundraising reworked. ?]
-
-[? if not snoopy: - Fixed landtag rounding issues. ?]
-
-**V1.04 - 2025/09/25**
-
-[? if not snoopy: - New achievements: "Eurokommunismus", "Kriegswirtschaft", "Sechs Sieben", "Er ist wieder da", "Abgrundläufer", "Brüning Uber Alles", "Der Aufstieg Skywalkers", and "Kulturkampf". ?]
-
-[? if not snoopy: - "Anders als die Andern" achievement ported from the base game. ?]
-
-[? if not snoopy: - "Heuchelei" and "Neue Geschäftsführung" achievements granted an icon. ?]
-
-[? if not snoopy: - Catastrophepolitik achievement's requirements relaxed. ?]
-
-[? if not snoopy: - Various bug fixes. ?]
-
-**V1.04a - 2025/09/26**
-
-[? if not snoopy: - New challenge mode ?]
-
-[? if not snoopy: - "Kulturkampf" achievement granted an icon. ?]
-
-[? if not snoopy: - Singular bug fix. ?]
-
-**V1.05 - 2026/01/24**
-
-[? if not snoopy: - New achievement: "Because I'm Mr. Breit-scheid". ?]
-
-[? if not snoopy: - Several bug fixes. ?]
-
-**V1.05a - 2026/01/25**
-
-[? if not snoopy: - New achievements: "Alt, Aber Gold", "Kleber der Partei", and "Große Säuberung". ?]
-
-[? if not snoopy: - "Hindenburg Voices Disapproval" event is now limited to 3 repeats. ?]
-
-[? if not snoopy: - People's Party now decreases Hindenburg's anger. ?]
-
-[? if not snoopy: - Tariffs have a greater impact on worker and unemployed support. ?]
-
-[? if not snoopy: - Dingeldey's <span style="color: [+ dvp_colour +];">**DVP**</span> now joins the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> coalition more often. ?]
-
-[? if not snoopy: - Neorevisionist faction strength and dissent are now displayed in the status. ?]
-
-[? if not snoopy: - Fixed a bug causing centrist and non-factional dissent decay reductions to not apply. ?]
-
-[? if not snoopy: - Other bug fixes. ?]
-
-= Future Plans
-
-I'm currently working on another mod, *La Via Chilena al Socialismo*. Updates will resume once that's finished.
+7.15.2026
+- updated plain tooltips for base map
+- updated KPD relations to historical standards
 
 - @back3: Back
 
