@@ -1,13 +1,13 @@
 title: KPD central committee election
 subtitle: The leninist left is taking over
 new-page: true
-on-arrival: kpd_leader = 'Fischer'; kpd_ideology = 'Bolshevism'; kpd_relation -= 5; unemployed_kpd += 1
+on-arrival: kpd_leader = 'Fischer, Maslow'; kpd_ideology = 'Bolshevism'; kpd_relation -= 5; unemployed_kpd += 1; rep_kpd -= 10
 tags: event
-view-if: year == 1924 and month == 5
+view-if: year == 1924 and month == 5 and freiberg_bloodbath_seen == 1
 max-visits: 1
 priority: 2
 face-image: img/portraits/FischerRuth.jpg
 
 = KPD central committee election
 
-All to be added
+After Brandler has overseen two failed coup attempts by his party he barely was able to hold out against the resistence against him. With his main beneficiary in Moscow, Karl Radek, loosing influence Grigory Zinoviev and the Comintern have given green light for the left faction around Ruth Fisscher, Arkadi Maslow and Ernst Thälmann to take over the <span style="color: [+ kpd_colour +];">**KPD**</span>. They have promised a Leninist-Bloshevik turn marking the end of the Spartacist party tradition.
