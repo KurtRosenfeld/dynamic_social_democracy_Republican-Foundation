@@ -1538,11 +1538,11 @@ For more information on the politics and government of the German Republic, see 
 - @1928_challenge: Custom Modes
 
 @1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 5; base_dues = 5; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; ddp_relation = 65; bb_relation = 68; budget = 1;
+on-arrival: difficulty = -1; resources = 4; dues = 5; base_dues = 5; rb_strength = 2500; kpd_relation = 47; z_relation = 54; dvp_relation = 49; ddp_relation = 65; bb_relation = 68; budget = 1;
 go-to: 1928_main
 
 @1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 3; base_dues = 3; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; ddp_relation = 50; budget = -1
+on-arrival: difficulty = 1; resources = 0; dues = 3; base_dues = 3; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 36; dvp_relation = 31; ddp_relation = 50; budget = -1
 go-to: 1928_main
 
 @1928_historical
@@ -1559,7 +1559,7 @@ Q.left_dissent = 30;
 Q.labor_dissent = 25;
 Q.center_dissent = 25;
 Q.z_relation = 65;
-Q.kpd_relation = 25;
+Q.kpd_relation = 42;
 Q.bb_relation = 26;
 Q.dvp_relation = 40;
 Q.ddp_relation = 78;
@@ -1578,7 +1578,7 @@ Q.dues = 3;
 Q.base_dues = 3;
 Q.rb_strength = 2000;
 Q.z_relation = 60;
-Q.kpd_relation = 21;
+Q.kpd_relation = 46;
 Q.dvp_relation = 36;
 Q.ddp_relation = 70;
 Q.budget = 0;
@@ -1594,7 +1594,7 @@ Q.dues = 3;
 Q.base_dues = 3;
 Q.rb_strength = 2000;
 Q.z_relation = 50;
-Q.kpd_relation = 21;
+Q.kpd_relation = 46;
 Q.dvp_relation = 31;
 Q.ddp_relation = 65;
 Q.budget = 0;
