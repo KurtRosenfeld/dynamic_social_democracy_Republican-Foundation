@@ -510,7 +510,7 @@ The current territorial state of the German Reich (Weimar Republic)
          d="m 46.957467,192.37814 -3.135673,0.24837 -1.412604,0.17076 -0.263894,0.43465 -0.977957,0.3415 h -0.714064 l -1.536789,-0.24837 -0.201801,-0.52778 -0.605402,-0.32599 -0.79168,-0.13971 -1.226327,-0.0155 -1.226327,-0.21732 -0.07762,-0.2639 12.170134,-0.0155 0.124185,0.6054 z"
          id="path89" />
        <title
-         id="title28">Rheinisch Republic (France?)</title>
+         id="title28">Rheinisch Republic</title>
     </g>
   </g>
   <g id="occupationOverlay" style="display: block; pointer-events: none;">
@@ -530,8 +530,8 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Prussia</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~38.120.000
-    Area: 291.700 km²
+    <h>Population: ~38.120.000</h>
+    <h>Area: 291.700 km²</h>
   </div>
   </div>
   <div id="plbavaria-tooltip" class="tooltip-group">
