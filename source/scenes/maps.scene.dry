@@ -1075,6 +1075,7 @@ style="display:inline;fill:[? if anhalt_gov == "Grand": #A2B725 ?][? if anhalt_g
     </g>
     <g
        id="g11"
+       class="trigger-group" data-tooltip="meck_stre-tooltip"
 style="display:inline;fill:[? if meck_stre_gov == "Bourgeois": #818181 ?][? if meck_stre_gov == "Weimar": #FC6D6D ?][? if meck_stre_gov == "Left": #8E0000 ?][? if meck_stre_gov == "Social-Democratic": #A51E5A ?][? if meck_stre_gov == "SPD": [+ spd_colour +] ?][? if meck_stre_gov == "Social-Liberal": #DD8D1B ?][? if meck_stre_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
