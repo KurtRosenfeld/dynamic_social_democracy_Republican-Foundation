@@ -860,7 +860,7 @@ go-to: meck_stre_toleration_menu
 
 @meck_stre_beg_lvp
 view-if: lvp_r_meck_stre > 0 and not meck_stre_lvp == 1
-choose-if: lvp_relation >= 45 (or ddp_relation >= 55 and ideology == "left")
+choose-if: lvp_relation >= 45 or (lvp_relation >= 55 and ideology == "left")
 subtitle: [? if lvp_relation >= 75: The <span style="color: [+ lvp_colour +];">**LVP**</span> loves you! ?]
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + lvp_r_meck_stre; meck_stre_lvp = 2; meck_stre_election_2_trigger_time -= 4
 go-to: meck_stre_toleration_menu
