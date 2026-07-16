@@ -645,7 +645,7 @@ Current support: [+ meck_stre_coalition_r +]%
 
 
 @meck_stre_invite_kpd
-view-if: kpd_r_meck_stre > 0 and not meck_stre_kpd = 1
+view-if: kpd_r_meck_stre > 0 and not meck_stre_kpd == 1
 choose-if: kpd_relation >= 50 and meck_stre_dvp == 0 and meck_stre_wp == 0 and (not meck_stre_z == 1 or z_leader == "Joos" or z_leader == "Kaiser")
 subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> will demand radical policies.
 unavailable-subtitle: [? if  kpd_relation < 50: We need better relations. ?][? if not meck_stre_dvp == 0: They are not really pleased about our partners. ?]
@@ -653,64 +653,64 @@ on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + kpd_r_meck_stre; mec
 go-to: meck_stre_coalition_creator
 
 @meck_stre_invite_sapd
-view-if: sapd_r_meck_stre > 0 and not meck_stre_sapd = 1
-choose-if: sapd_relation >= 50 and meck_stre_dvp == "opposition" and meck_stre_wp == 0 and (not meck_stre_z == "government" or z_leader == "Joos" or z_leader == "Kaiser")
+view-if: sapd_r_meck_stre > 0 and not meck_stre_sapd == 1
+choose-if: sapd_relation >= 50 and meck_stre_dvp == 0 and meck_stre_wp == 0 and (not meck_stre_z == "government" or z_leader == "Joos" or z_leader == "Kaiser")
 subtitle: The <span style="color: [+ sapd_colour +];">**SAPD**</span> will demand radical policies.
 unavailable-subtitle: [? if  sapd_relation < 50: We need better relations. ?][? if not meck_stre_dvp == 0: They are not really pleased about our partners. ?]
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + sapd_r_meck_stre; meck_stre_sapd = 1
 go-to: meck_stre_coalition_creator
 
 @meck_stre_invite_uspd
-view-if: uspd_r_meck_stre > 0 and not meck_stre_uspd = 1
+view-if: uspd_r_meck_stre > 0 and not meck_stre_uspd == 1
 choose-if: uspd_relation >= 40 and meck_stre_wp == 0 and (not meck_stre_z == 1 or z_leader == "Joos" or z_leader == "Kaiser" or uspd_ideology == "Orthodox Marxism")
 subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + uspd_r_meck_stre; meck_stre_uspd = 1
 go-to: meck_stre_coalition_creator
 
 @meck_stre_invite_ddp
-view-if: ddp_r_meck_stre > 0 and not meck_stre_ddp = 1
+view-if: ddp_r_meck_stre > 0 and not meck_stre_ddp == 1
 choose-if: ddp_relation >= 30 and (not meck_stre_kpd == 1 or kpd_leader == "Conciliators")
 subtitle: [? if ddp_relation >= 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> loves you! ?]
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + ddp_r_meck_stre; meck_stre_ddp = 1
 go-to: meck_stre_coalition_creator
 
 @meck_stre_invite_lvp
-view-if: lvp_r_meck_stre > 0 and not meck_stre_lvp = 1
-choose-if: lvp_relation >= 35 and (not meck_stre_kpd == "government" or kpd_leader == "Conciliators")
+view-if: lvp_r_meck_stre > 0 and not meck_stre_lvp == 1
+choose-if: lvp_relation >= 35 and (not meck_stre_kpd == 1 or kpd_leader == "Conciliators")
 subtitle: [? if lvp_relation >= 75: The <span style="color: [+ lvp_colour +];">**LVP**</span> loves you! ?]
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + lvp_r_meck_stre; meck_stre_lvp = 1
 go-to: meck_stre_coalition_creator
 
 @meck_stre_invite_dvp
-view-if: dvp_r_meck_stre > 0 and not meck_stre_dvp = 1
+view-if: dvp_r_meck_stre > 0 and not meck_stre_dvp == 1
 choose-if: dvp_relation >= 35 and meck_stre_kpd == 0 and meck_stre_sapd == 0
 subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> demands tax cuts.
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + dvp_r_meck_stre; meck_stre_dvp = 1
 go-to: meck_stre_coalition_creator
 
 @meck_stre_invite_kvp
-view-if: kvp_r_meck_stre > 0 and not meck_stre_kvp = 1
+view-if: kvp_r_meck_stre > 0 and not meck_stre_kvp == 1
 choose-if: kvp_relation >= 65 and meck_stre_kpd == 0 and meck_stre_sapd == 0
 subtitle: The <span style="color: [+ kvp_colour +];">**KVP**</span> demands opposition to progressive policies.
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + kvp_r_meck_stre; meck_stre_kvp = 1
 go-to: meck_stre_coalition_creator
 
 @meck_stre_invite_vhg
-view-if: vhg_r_meck_stre > 0 and not meck_stre_vhg = 1
+view-if: vhg_r_meck_stre > 0 and not meck_stre_vhg == 1
 choose-if: dvp_relation >= 65 and meck_stre_kpd == 0 and meck_stre_sapd == 0
 subtitle: The <span style="color: #CEDD8A;">**VHG**</span> demands tax cuts.
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + vhg_r_meck_stre; meck_stre_vhg = 1
 go-to: meck_stre_coalition_creator
 
 @meck_stre_invite_others
-view-if: true_other_r_meck_stre > 0 and not meck_stre_true_others = 1
+view-if: true_other_r_meck_stre > 0 and not meck_stre_true_others == 1
 choose-if: ddp_relation >= 70 and dvp_relation >= 20
 subtitle: The <span style="color: [+ i_colour +];">**Others**</span> are quite conservative.
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + true_other_r_meck_stre; meck_stre_true_others = 1
 go-to: meck_stre_coalition_creator
 
 @meck_stre_invite_wp
-view-if: wp_r_meck_stre > 0 and not meck_stre_wp = 1
+view-if: wp_r_meck_stre > 0 and not meck_stre_wp == 1
 choose-if: dvp_relation >= 85 and meck_stre_kpd == 0 and meck_stre_sapd == 0 and meck_stre_uspd == 0
 subtitle: The <span style="color: #b8996f;">**WP**</span> is a little conservative and will demand tax cuts.
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + wp_r_meck_stre; meck_stre_wp = 1
