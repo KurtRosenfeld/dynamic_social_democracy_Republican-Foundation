@@ -532,6 +532,7 @@ The current territorial state of the German Reich (Weimar Republic)
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
     <p>Population: ~38.120.000</p>
     <p>Area: 291.700 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="plbavaria-tooltip" class="tooltip-group">
@@ -540,8 +541,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Bavaria</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~7.380.000
-    Area: 75.996 km²
+    <p>Population: ~7.380.000</p>
+    <p>Area: 75.996 km²</p>
+    <p>Established: 1919</p>
   </div>
   </div>
   <div id="plhesse-tooltip" class="tooltip-group">
@@ -550,8 +552,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">People's State of Hesse</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~1.350.000
-    Area: 7.692 km²
+    <p>Population: ~1.350.000</p>
+    <p>Area: 7.692 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="plbaden-tooltip" class="tooltip-group">
@@ -560,28 +563,31 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Republic of Baden</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~2.310.000
-    Area: 15.070 km²
+    <p>Population: ~2.310.000</p>
+    <p>Area: 15.070 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="plwurttemberg-tooltip" class="tooltip-group">
 <div style="text-align: center;">
     <img src="img/land/Württemberg.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
   </div>
-  <strong style="display: block; text-align: center; margin-bottom: 8px;">Free People's State of Wurttemberg</strong>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Free People's State of Württemberg</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~2.580.000
-    Area: 19.508 km²
+    <p>Population: ~2.580.000</p>
+    <p>Area: 19.508 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="plhamburg-tooltip" class="tooltip-group">
 <div style="text-align: center;">
     <img src="img/land/Hamburg.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
   </div>
-  <strong style="display: block; text-align: center; margin-bottom: 8px;">Free Hanseatic City of Hamburg</strong>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Free and Hanseatic City of Hamburg</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~1.153.000
-    Area: 415 km²
+    <p>Population: ~1.153.000</p>
+    <p>Area: 415 km²</p>
+    <p>Established: 1815</p>
   </div>
   </div>
   <div id="plthuringia-tooltip" class="tooltip-group">
@@ -590,8 +596,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">State of Thuringia</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~1.607.000
-    Area: 11.763 km²
+    <p>Population: ~1.607.000</p>
+    <p>Area: 11.763 km²</p>
+    <p>Established: 1920</p>
   </div>
   </div>
   <div id="plsaxony-tooltip" class="tooltip-group">
@@ -600,8 +607,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Saxony</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~4.994.000
-    Area: 14.986 km²
+    <p>Population: ~4.994.000</p>
+    <p>Area: 14.986 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="plbremen-tooltip" class="tooltip-group">
@@ -610,18 +618,20 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free Hanseatic City of Bremen</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~340.000
-    Area: 258 km²
+    <p>Population: ~340.000</p>
+    <p>Area: 258 km²</p>
+    <p>Established: 1806</p>
   </div>
   </div>
   <div id="plluebeck-tooltip" class="tooltip-group">
 <div style="text-align: center;">
     <img src="img/land/Lübeck.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
   </div>
-  <strong style="display: block; text-align: center; margin-bottom: 8px;">Free Hanseatic City of Lübeck</strong>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Free and Hanseatic City of Lübeck</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~128.000
-    Area: 298 km²
+    <p>Population: ~128.000</p>
+    <p>Area: 298 km²</p>
+    <p>Established: 1815</p>
   </div>
   </div>
   <div id="ploldenburg-tooltip" class="tooltip-group">
@@ -630,8 +640,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Oldenburg</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~545.000
-    Area: 6.427 km²
+    <p>Population: ~545.000</p>
+    <p>Area: 6.427 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="plschwerin-tooltip" class="tooltip-group">
@@ -640,8 +651,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Mecklenburg-Schwerin</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~674.000
-    Area: 13.127 km²
+    <p>Population: ~674.000</p>
+    <p>Area: 13.127 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="plstrelitz-tooltip" class="tooltip-group">
@@ -650,8 +662,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Mecklenburg-Strelitz</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~110.000
-    Area: 2.930 km²
+    <p>Population: ~110.000</p>
+    <p>Area: 2.930 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="plbrunswick-tooltip" class="tooltip-group">
@@ -660,8 +673,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Brunswick</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~500.000
-    Area: 3.672 km²
+    <p>Population: ~500.000</p>
+    <p>Area: 3.672 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="planhalt-tooltip" class="tooltip-group">
@@ -670,8 +684,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Anhalt</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~350.000
-    Area: 2.314 km²
+    <p>Population: ~350.000</p>
+    <p>Area: 2.314 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="pllippe-tooltip" class="tooltip-group">
@@ -680,8 +695,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Lippe</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~164.000
-    Area: 1.215 km²
+    <p>Population: ~164.000</p>
+    <p>Area: 1.215 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="plschaumburg-tooltip" class="tooltip-group">
@@ -690,8 +706,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Schaumburg-Lippe</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~48.000
-    Area: 340 km²
+    <p>Population: ~48.000</p>
+    <p>Area: 340 km²</p>
+    <p>Established: 1918</p>
   </div>
   </div>
   <div id="plwaldeck-tooltip" class="tooltip-group">
@@ -700,8 +717,9 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Waldeck</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    Population: ~56.000
-    Area: 1.000 km²
+    <p>Population: ~56.000</p>
+    <p>Area: 1.000 km²</p>
+    <p>Established: 1921</p>
   </div>
   </div>
 
