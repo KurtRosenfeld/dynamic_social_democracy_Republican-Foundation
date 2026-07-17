@@ -1176,7 +1176,7 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   </div>
   <strong style="display: block; text-align: center;">Waldeck Politics</strong>
   <div style="font-size: 0.9em; margin-bottom: 8px;">
-    <strong>Landtag (17 seats)</strong>
+    <strong>Landtag ([+ waldeck_seats +] seats)</strong>
   </div>
   <div id="waldeck_landtag" style="width: 260px; height: 130px; margin: 0 auto;">
     <!-- Parliament chart will render here -->
@@ -1188,7 +1188,7 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   <div id="bavaria-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Bavaria Politics</strong>
 <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
-    Landtag (<span class="total-seats">TBA</span> seats)
+    Landtag (<span class="total-seats">[+ bavaria_seats +]</span> seats)
   </div>
   <div class="parliament-chart" data-state="bavaria" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: plhl</p>
@@ -1210,7 +1210,7 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   <div id="meck_stre-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Mecklenburg-Strelitz Politics</strong>
     <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
-    Landtag (<span class="total-seats">35</span> seats)
+    Landtag (<span class="total-seats">[+ meck_stre_seats +]</span> seats)
   </div>
   <div class="parliament-chart" data-state="meck_stre" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: Reibnitz (SPD)</p>
@@ -1232,11 +1232,11 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   <div id="meck_schwe-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Mecklenburg-Schwerin Politics</strong>
     <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
-    Landtag (<span class="total-seats">IDK</span> seats)
+    Landtag (<span class="total-seats">[+ meck_schwe_seats +]</span> seats)
   </div>
   <div class="parliament-chart" data-state="meck_schwe" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: plhl</p>
-    <p>SPD: [+ meck_stre_spd : government +]</p>
+    <p>SPD: [+ meck_schwe_spd : government +]</p>
 [? if kpd_r_meck_schwe:     <p>KPD: [+ meck_schwe_kpd : government +]</p>  ?]
 [? if sapd_r_meck_schwe:    <p>SAPD: [+ meck_schwe_uspd : government +]</p> ?]
 [? if uspd_r_meck_schwe:    <p>USPD: [+ meck_schwe_uspd : government +]</p> ?]
