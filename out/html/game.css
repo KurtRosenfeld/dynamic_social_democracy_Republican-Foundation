@@ -1062,3 +1062,7 @@ fill: #D5AC27;
   visibility: visible;
   pointer-events: auto;
 }
+
+.parliament-chart {
+  margin: 0 auto;
+}
