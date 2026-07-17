@@ -1090,6 +1090,7 @@ style="display:inline;fill:[? if meck_stre_gov == "Bourgeois": #818181 ?][? if m
     </g>
     <g
        id="g71"
+       class="trigger-group" data-tooltip="meck_schwe-tooltip"
 style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if meck_schwe_gov == "Weimar": #FC6D6D ?][? if meck_schwe_gov == "Social-Democratic": #A51E5A ?][? if meck_schwe_gov == "SPD": [+ spd_colour +] ?][? if meck_schwe_gov == "Left": #8E0000 ?][? if meck_schwe_gov == "Social-Liberal": #DD8D1B ?][? if meck_schwe_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -1185,8 +1186,26 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   </div>
   </div>
   <div id="bavaria-tooltip" class="tooltip-group">
-    <strong>Bavaria Politics</strong>
-    <p>This is all tba</p>
+    <strong style="display: block; text-align: center;">Bavaria Politics</strong>
+<div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">TBA</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="bavaria" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ bavaria_spd : government +]</p>
+[? if kpd_r_bavaria:     <p>KPD: [+ bavaria_kpd : government +]</p>  ?]
+[? if sapd_r_bavaria:     <p>SAPD: [+ bavaria_sapd : government +]</p>  ?]
+[? if uspd_r_bavaria:     <p>USPD: [+ bavaria_uspd : government +]</p>  ?]
+[? if csp_r_bavaria:     <p>CSP: [+ bavaria_csp : government +]</p>  ?]
+[? if ddp_r_bavaria:     <p>DDP: [+ bavaria_ddp : government +]</p>  ?]
+[? if z_r_bavaria:     <p>Z: [+ bavaria_z : government +]</p>  ?]
+[? if farm_r_bavaria:     <p>Farmers: [+ bavaria_farm : government +]</p>  ?]
+[? if true_other_r_bavaria:     <p>Others: [+ bavaria_true_other : government +]</p>  ?]
+[? if bvp_r_bavaria:     <p>BVP: [+ bavaria_bvp : government +]</p>  ?]
+[? if dvp_r_bavaria:     <p>DVP: [+ bavaria_dvp : government +]</p>  ?]
+[? if dnvp_r_bavaria:     <p>DNVP: [+ bavaria_dnvp : government +]</p>  ?]
+[? if nsfb_r_bavaria:     <p>NSFB: [+ bavaria_nsfb : government +]</p>  ?]
+[? if nsdap_r_bavaria:     <p>KPD: [+ bavaria_nsdap : government +]</p>  ?]
   </div>
   <div id="meck_stre-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Mecklenburg-Strelitz Politics</strong>
@@ -1209,6 +1228,26 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
 [? if dnvp_r_meck_stre:    <p>DNVP: [+ meck_stre_dnvp : government +]</p> ?]
 [? if dvfp_r_meck_stre:    <p>DVFP: [+ meck_stre_dvfp : government +]</p> ?]
 [? if nsdap_r_meck_stre:    <p>NSDAP: [+ meck_stre_nsdap : government +]</p> ?]
+  </div>
+  <div id="meck_schwe-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Mecklenburg-Schwerin Politics</strong>
+    <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">IDK</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="meck_stre" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ meck_stre_spd : government +]</p>
+[? if kpd_r_meck_schwe:     <p>KPD: [+ meck_schwe_kpd : government +]</p>  ?]
+[? if sapd_r_meck_schwe:    <p>SAPD: [+ meck_schwe_uspd : government +]</p> ?]
+[? if uspd_r_meck_schwe:    <p>USPD: [+ meck_schwe_uspd : government +]</p> ?]
+[? if ddp_r_meck_schwe:    <p>DDP: [+ meck_schwe_ddp : government +]</p> ?]
+[? if true_other_r_meck_schwe:    <p>Others: [+ meck_schwe_true_others : government +]</p> ?]
+[? if wp_r_meck_schwe:    <p>VHB: [+ meck_schwe_wp : government +]</p> ?]
+[? if dvp_r_meck_schwe:    <p>DVP: [+ meck_schwe_dvp : government +]</p> ?]
+[? if kvp_r_meck_schwe:    <p>KVP: [+ meck_schwe_kvp : government +]</p> ?]
+[? if dnvp_r_meck_schwe:    <p>DNVP: [+ meck_schwe_dnvp : government +]</p> ?]
+[? if dvfp_r_meck_schwe:    <p>DVFP: [+ meck_schwe_dvfp : government +]</p> ?]
+[? if nsdap_r_meck_schwe:    <p>NSDAP: [+ meck_schwe_nsdap : government +]</p> ?]
   </div>
 
 </div>
