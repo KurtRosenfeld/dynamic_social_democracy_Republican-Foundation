@@ -481,6 +481,19 @@ Q.previous_dvfp_election_votes_prussia = 0;
 Q.previous_nsdap_last_election_votes_prussia = 0;
 Q.previous_other_last_election_votes_prussia = 4.0;
 
+// Local parliament makeup
+//Waldeck
+Q.spd_r_waldeck = 0.33;
+Q.dnvp_r_waldeck = 0.29;
+Q.ddp_r_waldeck = 0.19;
+Q.hb_r_waldeck = 0.14; // creative solution there
+Q.dvp_r_waldeck = 0.05;
+// Mecklenburg-Strelitz
+Q.spd_r_meck_stre = 0.44;
+Q.uspd_r_meck_stre = 0.03;
+Q.ddp_r_meck_stre = 0.14;
+Q.true_other_r_meck_stre = 0.39;
+
 Q.spd_votes = 27.9;
 Q.uspd_votes = 0;
 Q.kpd_votes = 11.4;
