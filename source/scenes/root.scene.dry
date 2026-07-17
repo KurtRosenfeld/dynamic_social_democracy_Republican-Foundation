@@ -486,19 +486,19 @@ Q.previous_other_last_election_votes_prussia = 4.0;
 Q.spd_r_waldeck = 0.33;
 Q.dnvp_r_waldeck = 0.29;
 Q.ddp_r_waldeck = 0.19;
-Q.hb_r_waldeck = 0.14; // creative solution there
-Q.dvp_r_waldeck = 0.05;
+Q.hb_r_waldeck = 0.14; // creative solution there, will change later
+Q.dvp_r_waldeck = 0.05; Q.waldeck_dvp = 1;
 // Mecklenburg-Strelitz
-Q.spd_r_meck_stre = 0.44;
+Q.spd_r_meck_stre = 0.44; Q.meck_stre_spd = 1;
 Q.uspd_r_meck_stre = 0.03;
-Q.ddp_r_meck_stre = 0.14;
+Q.ddp_r_meck_stre = 0.14; Q.meck_stre_ddp = 1;
 Q.true_other_r_meck_stre = 0.39;
 // Mecklenburg-Schwerin
 
 // Saxony
-Q.kpd_r_saxony = 0.09;
-Q.uspd_r_saxony = 0.14;
-Q.spd_r_saxony = 0.28;
+Q.kpd_r_saxony = 0.09; Q.saxony_kpd = 2;
+Q.uspd_r_saxony = 0.14; Q.saxony_uspd = 1;
+Q.spd_r_saxony = 0.28; Q.saxony_spd = 1;
 Q.ddp_r_saxony = 0.8;
 Q.z_r_saxony = 0.01;
 Q.dvp_r_saxony = 0.19;
