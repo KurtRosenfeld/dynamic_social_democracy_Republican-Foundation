@@ -366,6 +366,9 @@ buildData: function(stateId) {
   var config = this.configs[stateId];
   if (!config) return [];
 
+    console.log('State:', stateId);
+  console.log('totalSeatsKey:', config.totalSeatsKey);
+  console.log('Q[totalSeatsKey]:', Q[config.totalSeatsKey], 'fallback totalSeats:', config.totalSeats);
   
   var totalSeats = config.totalSeats;
   if (config.totalSeatsKey && typeof Q[config.totalSeatsKey] === 'number') {
