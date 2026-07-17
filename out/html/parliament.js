@@ -100,8 +100,8 @@
             qualityKey: 'nsdap_r_meck_stre',
             condition: function(Q) { return Q.nsdap_r_meck_stre; }
           }
-        ],
-
+        ]
+      },
       
       waldeck: {
         totalSeats: 17,
@@ -163,20 +163,18 @@
             qualityKey: 'other_r_waldeck',
             condition: function(Q) { return Q.other_r_waldeck; }
           },
-         {
+          {
             id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
             qualityKey: 'nsdap_r_waldeck',
             condition: function(Q) { return Q.nsdap_r_waldeck; }
           }
         ]
       }
-      // Add more states later...
     },
     
     computedData: {},
     
-// Build data array from config and game qualities
- buildData: function(stateId) {
+    buildData: function(stateId) {
       var Q = window.dendryUI.dendryEngine.state.qualities;
       var config = this.configs[stateId];
       if (!config) return [];
@@ -200,7 +198,6 @@
       return data;
     },
     
-    // THIS is where renderParliament lives - inside ParliamentData
     renderParliament: function(stateId, container) {
       if (!container || typeof d3 === 'undefined') return;
       
