@@ -1187,12 +1187,15 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   </div>
   <div id="bavaria-tooltip" class="tooltip-group">
     <strong>Bavaria Politics</strong>
-    <p>This is al tba</p>
+    <p>This is all tba</p>
   </div>
   <div id="meck_stre-tooltip" class="tooltip-group">
-    <strong>Mecklenburg-Strelitz Politics</strong>
-    <p>placeholder for MP</p>
-    <p>placeholder for Parliament (I wish I could just do this</p>
+    <strong> style="display: block; text-align: center;"Mecklenburg-Strelitz Politics</strong>
+    <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">35</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="meck_stre" style="width: 260px; height: 130px;"></div>
+<p>Minister-President: Reibnitz (SPD)</p>
     <p>SPD: [+ meck_stre_spd : government +]</p>
 [? if kpd_r_meck_stre:     <p>KPD: [+ meck_stre_kpd : government +]</p>  ?]
 [? if sapd_r_meck_stre:    <p>SAPD: [+ meck_stre_uspd : government +]</p> ?]
