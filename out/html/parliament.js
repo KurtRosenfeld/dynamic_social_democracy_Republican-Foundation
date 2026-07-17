@@ -14,11 +14,6 @@
             condition: function(Q) { return Q.kpd_r_meck_stre; }
           },
           {
-            id: 'spd', legend: 'SPD', name: 'SPD', 
-            qualityKey: 'spd_r_meck_stre',
-            condition: function(Q) { return Q.spd_r_meck_stre; }
-          },
-          {
             id: 'sapd', legend: 'SAPD', name: 'SAPD', 
             qualityKey: 'sapd_r_meck_stre',
             condition: function(Q) { return Q.sapd_formed && Q.sapd_r_meck_stre; }
@@ -27,6 +22,11 @@
             id: 'uspd', legend: 'USPD', name: 'USPD',
             qualityKey: 'uspd_r_meck_stre',
             condition: function(Q) { return Q.uspd_r_meck_stre; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_meck_stre',
+            condition: function(Q) { return Q.spd_r_meck_stre; }
           },
           {
             id: 'ddp', 
@@ -74,6 +74,89 @@
             id: 'vrp', legend: 'VRP', name: 'VRP',
             qualityKey: 'vrp_r_meck_stre',
             condition: function(Q) { return Q.vrp_r_meck_stre; }
+          },
+          {
+            id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
+            qualityKey: 'dnvp_r_meck_stre',
+            condition: function(Q) { return Q.dnvp_r_meck_stre; }
+          },
+          {
+            id: 'dnf', legend: 'DNF', name: 'DNF',
+            qualityKey: 'dnf_r_meck_stre',
+            condition: function(Q) { return Q.dnf_formed && Q.dnf_r_meck_stre; }
+          },
+          {
+            id: 'dvfp', legend: 'DVFP', name: 'DVFP', 
+            qualityKey: 'dvfp_r_meck_stre',
+            condition: function(Q) { return Q.dvfp_r_meck_stre; }
+          },
+          {
+            id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
+            qualityKey: 'nsfb_r_meck_stre',
+            condition: function(Q) { return Q.nsfb_r_meck_stre; }
+          },
+          {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r_meck_stre',
+            condition: function(Q) { return Q.nsdap_r_meck_stre; }
+          }
+        ]
+      },
+
+      meck_schwe: {
+        totalSeats: 62,
+        conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r_meck_stre',
+            condition: function(Q) { return Q.kpd_r_meck_stre; }
+          },
+          {
+            id: 'sapd', legend: 'SAPD', name: 'SAPD', 
+            qualityKey: 'sapd_r_meck_stre',
+            condition: function(Q) { return Q.sapd_formed && Q.sapd_r_meck_stre; }
+          },
+          {
+            id: 'uspd', legend: 'USPD', name: 'USPD',
+            qualityKey: 'uspd_r_meck_stre',
+            condition: function(Q) { return Q.uspd_r_meck_stre; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_meck_stre',
+            condition: function(Q) { return Q.spd_r_meck_stre; }
+          },
+          {
+            id: 'ddp', 
+            legend: function(Q) { return Q.ddp_name; },
+            name: function(Q) { return Q.ddp_name; },
+            qualityKey: 'ddp_r_meck_stre',
+            condition: function(Q) { return Q.ddp_r_meck_stre && !Q.lvp_formed; }
+          },
+          {
+            id: 'lvp', legend: 'LVP', name: 'LVP',
+            qualityKey: 'lvp_r_meck_stre',
+            condition: function(Q) { return Q.lvp_r_meck_stre && Q.lvp_formed; }
+          },
+          {
+            id: 'wp', legend: 'WP', name: 'WP',
+            qualityKey: 'wp_r_meck_stre',
+            condition: function(Q) { return Q.wp_r_meck_stre; }
+          },
+          {
+            id: 'other', legend: 'Other', name: 'Others',
+            qualityKey: 'true_other_r_meck_stre',
+            condition: function(Q) { return Q.true_other_r_meck_stre; }
+          },
+          {
+            id: 'dvp', legend: 'DVP', name: 'DVP',
+            qualityKey: 'dvp_r_meck_stre',
+            condition: function(Q) { return Q.dvp_r_meck_stre && !Q.lvp_formed && Q.dvp_exist; }
+          },
+          {
+            id: 'kvp', legend: 'KVP', name: 'KVP',
+            qualityKey: 'kvp_r_meck_stre',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_meck_stre; }
           },
           {
             id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
