@@ -493,6 +493,24 @@ Q.spd_r_meck_stre = 0.44;
 Q.uspd_r_meck_stre = 0.03;
 Q.ddp_r_meck_stre = 0.14;
 Q.true_other_r_meck_stre = 0.39;
+// Mecklenburg-Schwerin
+
+// Saxony
+Q.kpd_r_saxony = 0.09;
+Q.uspd_r_saxony = 0.14;
+Q.spd_r_saxony = 0.28;
+Q.ddp_r_saxony = 0.8;
+Q.z_r_saxony = 0.01;
+Q.dvp_r_saxony = 0.19;
+Q.dnvp_r_saxony = 0.21;
+// Thuringia
+Q.kpd_r_thuringia = 0.11;
+Q.uspd_r_thuringia = 0.17;
+Q.spd_r_thuringia = 0.24;
+Q.ddp_r_thuringia = 0.05;
+Q.dvp_r_thuringia = 0.17;
+Q.farm_r_thuringia = 0.18;
+Q.dnvp_r_thuringia = 0.07;
 
 Q.spd_votes = 27.9;
 Q.uspd_votes = 0;
