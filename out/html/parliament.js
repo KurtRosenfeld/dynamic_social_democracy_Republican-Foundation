@@ -288,6 +288,321 @@
           }
         ]
       },
+
+baden: {
+        totalSeatsKey: 'seats_baden',
+        conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r_baden',
+            condition: function(Q) { return Q.kpd_r_baden; }
+          },
+          {
+            id: 'sapd', legend: 'SAPD', name: 'SAPD', 
+            qualityKey: 'sapd_r_baden',
+            condition: function(Q) { return Q.sapd_formed && Q.sapd_r_baden; }
+          },
+          {
+            id: 'uspd', legend: 'USPD', name: 'USPD',
+            qualityKey: 'uspd_r_bavaria',
+            condition: function(Q) { return Q.uspd_r_baden; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_baden',
+            condition: function(Q) { return Q.spd_r_baden; }
+          },
+          {
+            id: 'ddp', 
+            legend: function(Q) { return Q.ddp_name; },
+            name: function(Q) { return Q.ddp_name; },
+            qualityKey: 'ddp_r_baden',
+            condition: function(Q) { return Q.ddp_r_baden && !Q.lvp_formed; }
+          },
+          {
+            id: 'lvp', legend: 'LVP', name: 'LVP',
+            qualityKey: 'lvp_r_baden',
+            condition: function(Q) { return Q.lvp_r_baden && Q.lvp_formed; }
+          },
+          {
+            id: 'z', legend: 'Z', name: 'Z',
+            qualityKey: 'z_r_baden',
+            condition: function(Q) { return Q.z_r_baden; }
+          },
+          {
+            id: 'other', legend: 'Other', name: 'Others',
+            qualityKey: 'true_other_r_baden',
+            condition: function(Q) { return Q.true_other_r_baden; }
+          },
+          {
+            id: 'dvp', legend: 'DVP', name: 'DVP',
+            qualityKey: 'dvp_r_baden',
+            condition: function(Q) { return Q.dvp_r_baden && !Q.lvp_formed && Q.dvp_exist; }
+          },
+          {
+            id: 'wp', legend: 'WP', name: 'WP',
+            qualityKey: 'wp_r_baden',
+            condition: function(Q) { return Q.wp_r_baden; }
+          },
+          {
+            id: 'kvp', legend: 'KVP', name: 'KVP',
+            qualityKey: 'kvp_r_baden',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_baden; }
+          },
+          {
+            id: 'farm3', legend: 'Farmers', name: 'Farmers',
+            qualityKey: 'farm_r_baden',
+            condition: function(Q) { return Q.farm_r_baden; }
+          },
+          {
+            id: 'csvd', legend: 'CSVD', name: 'CSVD',
+            qualityKey: 'csvd_r_baden',
+            condition: function(Q) { return Q.csvd_exists && Q.csvd_r_baden; }
+          },
+          {
+            id: 'farm2', legend: 'CNBL', name: 'CNBL',
+            qualityKey: 'cnbl_r_baden',
+            condition: function(Q) { return Q.cnbl_exists && Q.cnbl_r_baden; }
+          },
+          {
+            id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
+            qualityKey: 'dnvp_r_baden',
+            condition: function(Q) { return Q.dnvp_r_baden; }
+          },
+          {
+            id: 'dnf', legend: 'DNF', name: 'DNF',
+            qualityKey: 'dnf_r_baden',
+            condition: function(Q) { return Q.dnf_formed && Q.dnf_r_baden; }
+          },
+          {
+            id: 'dvfp', legend: 'DVFP', name: 'DVFP', 
+            qualityKey: 'dvfp_r_baden',
+            condition: function(Q) { return Q.dvfp_r_baden; }
+          },
+          {
+            id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
+            qualityKey: 'nsfb_r_baden',
+            condition: function(Q) { return Q.nsfb_r_baden; }
+          },
+          {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r_baden',
+            condition: function(Q) { return Q.nsdap_r_baden; }
+          }
+        ]
+      },
+
+
+      wurttemberg: {
+        totalSeatsKey: 'seats_wurttemberg',
+        conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r_wurttemberg',
+            condition: function(Q) { return Q.kpd_r_wurttemberg; }
+          },
+          {
+            id: 'sapd', legend: 'SAPD', name: 'SAPD', 
+            qualityKey: 'sapd_r_wurttemberg',
+            condition: function(Q) { return Q.sapd_formed && Q.sapd_r_wurttemberg; }
+          },
+          {
+            id: 'uspd', legend: 'USPD', name: 'USPD',
+            qualityKey: 'uspd_r_wurttemberg',
+            condition: function(Q) { return Q.uspd_r_wurttemberg; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_wurttemberg',
+            condition: function(Q) { return Q.spd_r_wurttemberg; }
+          },
+          {
+            id: 'ddp', 
+            legend: function(Q) { return Q.ddp_name; },
+            name: function(Q) { return Q.ddp_name; },
+            qualityKey: 'ddp_r_wurttemberg',
+            condition: function(Q) { return Q.ddp_r_wurttemberg && !Q.lvp_formed; }
+          },
+          {
+            id: 'lvp', legend: 'LVP', name: 'LVP',
+            qualityKey: 'lvp_r_wurttemberg',
+            condition: function(Q) { return Q.lvp_r_wurttemberg && Q.lvp_formed; }
+          },
+          {
+            id: 'z', legend: 'Z', name: 'Z',
+            qualityKey: 'z_r_wurttemberg',
+            condition: function(Q) { return Q.z_r_wurttemberg; }
+          },
+          {
+            id: 'csvd', legend: 'CSVD', name: 'CSVD',
+            qualityKey: 'csvd_r_wurttemberg',
+            condition: function(Q) { return Q.csvd_r_wurttemberg; }
+          },
+          {
+            id: 'dvp', legend: 'DVP', name: 'DVP',
+            qualityKey: 'dvp_r_wurttemberg',
+            condition: function(Q) { return Q.dvp_r_wurttemberg && !Q.lvp_formed && Q.dvp_exist; }
+          },
+          {
+            id: 'farm2', legend: 'WBWB', name: 'WBWB',
+            qualityKey: 'wbwb_r_wurttemberg',
+            condition: function(Q) { return Q.wbwb_r_wurttemberg; }
+          },
+          {
+            id: 'kvp', legend: 'KVP', name: 'KVP',
+            qualityKey: 'kvp_r_baden',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_baden; }
+          },
+          {
+            id: 'farm3', legend: 'Farmers', name: 'Farmers',
+            qualityKey: 'farm_r_baden',
+            condition: function(Q) { return Q.farm_r_baden; }
+          },
+          {
+            id: 'vrp', legend: 'VRP', name: 'VRP',
+            qualityKey: 'vrp_r_wurttemberg',
+            condition: function(Q) { return Q.vrp_r_wurttemberg; }
+          },
+          {
+            id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
+            qualityKey: 'dnvp_r_wurttemberg',
+            condition: function(Q) { return Q.dnvp_r_wurttemberg; }
+          },
+          {
+            id: 'dnf', legend: 'DNF', name: 'DNF',
+            qualityKey: 'dnf_r_wurttemberg',
+            condition: function(Q) { return Q.dnf_formed && Q.dnf_r_wurttemberg; }
+          },
+          {
+            id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
+            qualityKey: 'nsfb_r_wurttemberg',
+            condition: function(Q) { return Q.nsfb_r_wurttemberg; }
+          },
+          {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r_wurttemberg',
+            condition: function(Q) { return Q.nsdap_r_wurttemberg; }
+          }
+        ]
+      },
+
+
+      saxony: {
+        totalSeatsKey: 'seats_saxony',
+        conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r_saxony',
+            condition: function(Q) { return Q.kpd_r_saxony; }
+          },
+          {
+            id: 'sapd', legend: 'SAPD', name: 'SAPD', 
+            qualityKey: 'sapd_r_saxony',
+            condition: function(Q) { return Q.sapd_formed && Q.sapd_r_saxony; }
+          },
+          {
+            id: 'uspd', legend: 'USPD', name: 'USPD',
+            qualityKey: 'uspd_r_saxony',
+            condition: function(Q) { return Q.uspd_r_saxony; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_saxony',
+            condition: function(Q) { return Q.spd_r_saxony; }
+          },
+          {
+            id: 'aspd', legend: 'ASPD', name: 'ASPD', 
+            qualityKey: 'aspd_r_saxony',
+            condition: function(Q) { return Q.aspd_r_saxony; }
+          },
+          {
+            id: 'ddp', 
+            legend: function(Q) { return Q.ddp_name; },
+            name: function(Q) { return Q.ddp_name; },
+            qualityKey: 'ddp_r_saxony',
+            condition: function(Q) { return Q.ddp_r_saxony && !Q.lvp_formed; }
+          },
+          {
+            id: 'lvp', legend: 'LVP', name: 'LVP',
+            qualityKey: 'lvp_r_saxony',
+            condition: function(Q) { return Q.lvp_r_saxony && Q.lvp_formed; }
+          },
+          {
+            id: 'z', legend: 'Z', name: 'Z',
+            qualityKey: 'z_r_saxony',
+            condition: function(Q) { return Q.z_r_saxony; }
+          },
+          {
+            id: 'other', legend: 'Other', name: 'Others',
+            qualityKey: 'true_other_r_saxony',
+            condition: function(Q) { return Q.true_other_r_saxony; }
+          },
+          {
+            id: 'dvp', legend: 'DVP', name: 'DVP',
+            qualityKey: 'dvp_r_saxony',
+            condition: function(Q) { return Q.dvp_r_saxony && !Q.lvp_formed && Q.dvp_exist; }
+          },
+          {
+            id: 'farm4', legend: 'Farmers', name: 'Farmers',
+            qualityKey: 'farm_r_saxony',
+            condition: function(Q) { return Q.farm_r_saxony && Q.dnvp_ideology == "Moderate"; }
+          },
+          {
+            id: 'wp', legend: 'WP', name: 'WP',
+            qualityKey: 'wp_r_baden',
+            condition: function(Q) { return Q.wp_r_baden; }
+          },
+          {
+            id: 'vrp', legend: 'VRP', name: 'VRP',
+            qualityKey: 'vrp_r_saxony',
+            condition: function(Q) { return Q.vrp_r_saxony; }
+          },
+          {
+            id: 'vnr', legend: 'VNR', name: 'VNR',
+            qualityKey: 'vnr_r_saxony',
+            condition: function(Q) { return Q.vnr_r_saxony; }
+          },{
+            id: 'csvd', legend: 'CSVD', name: 'CSVD',
+            qualityKey: 'csvd_r_saxony',
+            condition: function(Q) { return Q.csvd_exists && Q.csvd_r_saxony; }
+          },
+          {
+            id: 'kvp', legend: 'KVP', name: 'KVP',
+            qualityKey: 'kvp_r_baden',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_baden; }
+          },
+          {
+            id: 'farm4', legend: 'Farmers', name: 'Farmers',
+            qualityKey: 'farm_r_saxony',
+            condition: function(Q) { return Q.farm_r_saxony && Q.dnvp_ideology == "Radical"; }
+          },
+          {
+            id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
+            qualityKey: 'dnvp_r_saxony',
+            condition: function(Q) { return Q.dnvp_r_saxony; }
+          },
+          {
+            id: 'dnf', legend: 'DNF', name: 'DNF',
+            qualityKey: 'dnf_r_saxony',
+            condition: function(Q) { return Q.dnf_formed && Q.dnf_r_saxony; }
+          },
+          {
+            id: 'dvfp', legend: 'DVFP', name: 'DVFP', 
+            qualityKey: 'dvfp_r_saxony',
+            condition: function(Q) { return Q.dvfp_r_saxony; }
+          },
+          {
+            id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
+            qualityKey: 'nsfb_r_saxony',
+            condition: function(Q) { return Q.nsfb_r_saxony; }
+          },
+          {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r_saxony',
+            condition: function(Q) { return Q.nsdap_r_saxony; }
+          }
+        ]
+      },
          
       
       waldeck: {
