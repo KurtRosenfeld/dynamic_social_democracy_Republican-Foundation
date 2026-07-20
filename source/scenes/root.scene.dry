@@ -505,7 +505,7 @@ Q.saxony_seats = 96; // Saxony
 Q.kpd_r_saxony = 0.09; Q.saxony_kpd = 2;
 Q.uspd_r_saxony = 0.14; Q.saxony_uspd = 1;
 Q.spd_r_saxony = 0.28; Q.saxony_spd = 1;
-Q.ddp_r_saxony = 0.8;
+Q.ddp_r_saxony = 0.08;
 Q.z_r_saxony = 0.01;
 Q.dvp_r_saxony = 0.19;
 Q.dnvp_r_saxony = 0.21;
