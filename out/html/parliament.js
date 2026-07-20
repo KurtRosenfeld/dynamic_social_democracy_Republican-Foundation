@@ -192,7 +192,7 @@
       },
 
       bavaria: {
-        totalSeatsKey: 'seats_bavaria',
+        totalSeatsKey: 'bavaria_seats',
         conditionalParties: [
           {
             id: 'kpd', legend: 'KPD', name: 'KPD', 
@@ -290,7 +290,7 @@
       },
 
 baden: {
-        totalSeatsKey: 'seats_baden',
+        totalSeatsKey: 'baden_seats',
         conditionalParties: [
           {
             id: 'kpd', legend: 'KPD', name: 'KPD', 
@@ -394,7 +394,7 @@ baden: {
 
 
       wurttemberg: {
-        totalSeatsKey: 'seats_wurttemberg',
+        totalSeatsKey: 'wurttemberg_seats',
         conditionalParties: [
           {
             id: 'kpd', legend: 'KPD', name: 'KPD', 
@@ -488,7 +488,7 @@ baden: {
 
 
       saxony: {
-        totalSeatsKey: 'seats_saxony',
+        totalSeatsKey: 'saxony_seats',
         conditionalParties: [
           {
             id: 'kpd', legend: 'KPD', name: 'KPD', 
