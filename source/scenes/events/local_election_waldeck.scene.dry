@@ -215,11 +215,6 @@ const inputPercentages = {
     other_r_waldeck: Q.other_r_waldeck,
 };
 
-const allocatedSeats = allocateSeats(inputPercentages);
-
-for (const party in allocatedSeats) {
-    Q[party] = parseFloat(((allocatedSeats[party] * 100) / waldeck_seats).toFixed(1));
-}
 
 
 
