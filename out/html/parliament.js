@@ -1036,7 +1036,7 @@ baden: {
 
 
          prussia: {
-        totalSeatsKey: 'landtag_size',
+        totalSeatsKey: 'prussia_seats',
         conditionalParties: [
           {
             id: 'kpd', legend: 'KPD', name: 'KPD', 
