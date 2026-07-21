@@ -509,9 +509,9 @@ Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + 
 - @left_coalition_meck_schwe
 - @spd_majority_meck_schwe
 - @right_wing_coalition_meck_schwe
-- @meck_schwe_coalition_creator_option
-- @meck_schwe_get_toleration
 - @no_coalition_meck_schwe
+- @meck_schwe_coalition_creator_option
+- @meck_schwe_toleration_option
 
 @social_liberal_coalition_meck_schwe
 title: A Social-Liberal Coalition will be formed
