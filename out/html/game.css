@@ -411,6 +411,7 @@ blockquote+blockquote.attribution {
 
 ul.decks,
 ul.hand,
+ul.leaders,
 ul.pinned-cards {
   list-style: none;
   padding-left: 0;
@@ -419,6 +420,8 @@ ul.pinned-cards {
 .hand {}
 
 .pinned-cards {}
+
+.leaders {}
 
 .deck {}
 
