@@ -599,6 +599,56 @@ const boxes = document.querySelectorAll('.scrollable-box');
 if (boxes.length >= 2) {
     boxes[1].remove();
 }
+
+setTimeout(function() {
+    var content = document.getElementById('content');
+    if (!content) return;
+    
+    // Find all list containers in content
+    var lists = content.querySelectorAll('ul');
+    var leaderItem = null;
+    var leaderContainer = null;
+    
+    // Search for the leader deck
+    lists.forEach(function(list) {
+        var items = list.querySelectorAll('li, .deck, .card-in-hand, .pinned-card');
+        items.forEach(function(item) {
+            var link = item.querySelector('a');
+            if (link && link.href && link.href.indexOf('leader') !== -1) {
+                leaderItem = item;
+                leaderContainer = list;
+            }
+        });
+    });
+    
+    if (leaderItem && leaderContainer) {
+        // Check if we've already separated them
+        if (document.getElementById('leaders-separator')) return;
+        
+        // Create the leaders section wrapper
+        var leadersSection = document.createElement('div');
+        leadersSection.id = 'leaders-separator';
+        leadersSection.style.marginTop = '1.5em';
+        leadersSection.style.paddingTop = '1em';
+        leadersSection.style.borderTop = '2px dashed #ccc';
+        
+        // Add the header
+        var header = document.createElement('div');
+        header.style.fontStyle = 'italic';
+        header.style.marginBottom = '0.5em';
+        header.textContent = '▼ Leaders';
+        leadersSection.appendChild(header);
+        
+        // Create a new list for leaders
+        var leadersList = document.createElement('ul');
+        leadersList.className = 'pinned-cards';
+        leadersList.appendChild(leaderItem);
+        leadersSection.appendChild(leadersList);
+        
+        // Insert leaders section after the container that held everything
+        leaderContainer.parentNode.insertBefore(leadersSection, leaderContainer.nextSibling);
+    }
+}, 200);
 !}
 max-cards: 3
 
@@ -1890,6 +1940,56 @@ const boxes = document.querySelectorAll('.scrollable-box');
 if (boxes.length >= 2) {
     boxes[1].remove();
 }
+
+setTimeout(function() {
+    var content = document.getElementById('content');
+    if (!content) return;
+    
+    // Find all list containers in content
+    var lists = content.querySelectorAll('ul');
+    var leaderItem = null;
+    var leaderContainer = null;
+    
+    // Search for the leader deck
+    lists.forEach(function(list) {
+        var items = list.querySelectorAll('li, .deck, .card-in-hand, .pinned-card');
+        items.forEach(function(item) {
+            var link = item.querySelector('a');
+            if (link && link.href && link.href.indexOf('leader') !== -1) {
+                leaderItem = item;
+                leaderContainer = list;
+            }
+        });
+    });
+    
+    if (leaderItem && leaderContainer) {
+        // Check if we've already separated them
+        if (document.getElementById('leaders-separator')) return;
+        
+        // Create the leaders section wrapper
+        var leadersSection = document.createElement('div');
+        leadersSection.id = 'leaders-separator';
+        leadersSection.style.marginTop = '1.5em';
+        leadersSection.style.paddingTop = '1em';
+        leadersSection.style.borderTop = '2px dashed #ccc';
+        
+        // Add the header
+        var header = document.createElement('div');
+        header.style.fontStyle = 'italic';
+        header.style.marginBottom = '0.5em';
+        header.textContent = '▼ Leaders';
+        leadersSection.appendChild(header);
+        
+        // Create a new list for leaders
+        var leadersList = document.createElement('ul');
+        leadersList.className = 'pinned-cards';
+        leadersList.appendChild(leaderItem);
+        leadersSection.appendChild(leadersList);
+        
+        // Insert leaders section after the container that held everything
+        leaderContainer.parentNode.insertBefore(leadersSection, leaderContainer.nextSibling);
+    }
+}, 200);
 !}
 max-cards: 4
 
