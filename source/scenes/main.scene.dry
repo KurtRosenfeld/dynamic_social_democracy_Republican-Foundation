@@ -1284,18 +1284,9 @@ max-cards: 3
 - @eco
 - @time
 - @time_2
-
-- "<div class='shelf-section'>"
-- "<div class='shelf-header'>▼ Advisors</div>"
 - #advisor
 - @shuffle_leadership_pinned
-- "</div>"
-
-- "<div class='shelf-section'>"
-- "<div class='shelf-header'>▼ Leaders</div>"
 - #leader
-- "</div>"
-
 
 
 @main_easy
@@ -2598,17 +2589,10 @@ max-cards: 4
 - @eco
 - @time
 - @time_2
-
-- "<div class='shelf-section'>"
-- "<div class='shelf-header'>▼ Advisors</div>"
 - #advisor
 - @shuffle_leadership_pinned
-- "</div>"
-
-- "<div class='shelf-section'>"
-- "<div class='shelf-header'>▼ Leaders</div>"
 - #leader
-- "</div>"
+
 
 
 @party
