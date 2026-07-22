@@ -1,0 +1,16 @@
+title: Hermann Müller
+is-pinned-card: true
+tags: leader
+card-image: img/portraits/MüllerHermann.jpg
+view-if: spd_party_leader_2 == "Muller"
+new-page: true
+
+= Hermann Müller
+
+**Active bonusses:**
+
+Softer DDP relation decrease
+
+Softer DVP relation decrease
+
+IDK WIP
