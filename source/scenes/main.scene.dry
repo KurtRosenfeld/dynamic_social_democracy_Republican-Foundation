@@ -562,9 +562,9 @@ if (!document.getElementById('news_tab')) {
         }
     });
     if (hasTextContent) {
-        button.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // New color
+        button.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
     } else {
-        button.style.backgroundColor = '#dddddd'; // Original color
+        button.style.backgroundColor = '#dddddd';
     }
     document.querySelectorAll('p').forEach(p => {
         if (!p.textContent.trim()) {
@@ -574,7 +574,6 @@ if (!document.getElementById('news_tab')) {
 }
 
 const scrollableBox = document.querySelector('div.scrollable-box');
-
 if (scrollableBox && !document.getElementById('ok') && Q.stimulation) {
   const video = document.createElement('video');
   video.id = 'ok';
@@ -582,16 +581,12 @@ if (scrollableBox && !document.getElementById('ok') && Q.stimulation) {
   video.muted = true;
   video.loop = true;
   video.style.width = '100%';
-
   const source = document.createElement('source');
   source.src = 'img/lol.mp4';
   source.type = 'video/mp4';
-
   video.appendChild(source);
-
   const randomStart = Math.random() * 3198;
   video.currentTime = randomStart;
-
   scrollableBox.parentNode.insertBefore(video, scrollableBox);
 }
 
@@ -600,55 +595,84 @@ if (boxes.length >= 2) {
     boxes[1].remove();
 }
 
+// SEPARATE LEADER CARDS FROM ADVISOR CARDS
 setTimeout(function() {
+    if (document.getElementById('leaders-divider')) return;
+    
     var content = document.getElementById('content');
     if (!content) return;
     
-    // Find all list containers in content
-    var lists = content.querySelectorAll('ul');
-    var leaderItem = null;
-    var leaderContainer = null;
+    // Find all pinned-card items
+    var pinnedItems = content.querySelectorAll('.pinned-card, .pinned-cards li, .pinned-cards .card-in-hand');
+    var leaderItems = [];
     
-    // Search for the leader deck
-    lists.forEach(function(list) {
-        var items = list.querySelectorAll('li, .deck, .card-in-hand, .pinned-card');
-        items.forEach(function(item) {
-            var link = item.querySelector('a');
-            if (link && link.href && link.href.indexOf('leader') !== -1) {
-                leaderItem = item;
-                leaderContainer = list;
+    // Find items that contain leader-tagged cards
+    pinnedItems.forEach(function(item) {
+        var link = item.querySelector('a');
+        if (link) {
+            // Check if this card links to a leader scene
+            var href = link.getAttribute('href') || '';
+            var onclick = link.getAttribute('onclick') || '';
+            var caption = item.querySelector('.card-caption');
+            var captionText = caption ? caption.textContent : '';
+            
+            // Check for leader indicators
+            if (href.indexOf('leader') !== -1 || 
+                onclick.indexOf('leader') !== -1 ||
+                captionText.toLowerCase().indexOf('leader') !== -1) {
+                leaderItems.push(item);
             }
-        });
+        }
     });
     
-    if (leaderItem && leaderContainer) {
-        // Check if we've already separated them
-        if (document.getElementById('leaders-separator')) return;
+    // Also try finding by data attributes if Dendry adds them
+    if (leaderItems.length === 0) {
+        var allCards = content.querySelectorAll('.pinned-cards a, .pinned-card a');
+        allCards.forEach(function(link) {
+            var parentItem = link.closest('li') || link.closest('.pinned-card') || link.closest('.card-in-hand');
+            // Check all data attributes
+            for (var i = 0; i < link.attributes.length; i++) {
+                var attr = link.attributes[i];
+                if (attr.value && attr.value.indexOf('leader') !== -1) {
+                    if (leaderItems.indexOf(parentItem) === -1) {
+                        leaderItems.push(parentItem);
+                    }
+                }
+            }
+        });
+    }
+    
+    if (leaderItems.length > 0) {
+        var firstLeader = leaderItems[0];
+        var container = firstLeader.parentNode;
         
-        // Create the leaders section wrapper
-        var leadersSection = document.createElement('div');
-        leadersSection.id = 'leaders-separator';
-        leadersSection.style.marginTop = '1.5em';
-        leadersSection.style.paddingTop = '1em';
-        leadersSection.style.borderTop = '2px dashed #ccc';
+        // Create divider and new section
+        var divider = document.createElement('div');
+        divider.id = 'leaders-divider';
+        divider.style.marginTop = '1.5em';
+        divider.style.paddingTop = '1em';
+        divider.style.borderTop = '2px dashed var(--border-color)';
         
-        // Add the header
         var header = document.createElement('div');
         header.style.fontStyle = 'italic';
         header.style.marginBottom = '0.5em';
         header.textContent = '▼ Leaders';
-        leadersSection.appendChild(header);
+        divider.appendChild(header);
         
-        // Create a new list for leaders
         var leadersList = document.createElement('ul');
-        leadersList.className = 'pinned-cards';
-        leadersList.appendChild(leaderItem);
-        leadersSection.appendChild(leadersList);
+        leadersList.className = 'pinned-cards leaders';
         
-        // Insert leaders section after the container that held everything
-        leaderContainer.parentNode.insertBefore(leadersSection, leaderContainer.nextSibling);
+        // Move all leader items to the new list
+        leaderItems.forEach(function(item) {
+            leadersList.appendChild(item);
+        });
+        
+        divider.appendChild(leadersList);
+        
+        // Insert after the original container
+        container.parentNode.insertBefore(divider, container.nextSibling);
     }
-}, 200);
+}, 300);
 !}
 max-cards: 3
 
@@ -1903,9 +1927,9 @@ if (!document.getElementById('news_tab')) {
         }
     });
     if (hasTextContent) {
-        button.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // New color
+        button.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
     } else {
-        button.style.backgroundColor = '#dddddd'; // Original color
+        button.style.backgroundColor = '#dddddd';
     }
     document.querySelectorAll('p').forEach(p => {
         if (!p.textContent.trim()) {
@@ -1915,7 +1939,6 @@ if (!document.getElementById('news_tab')) {
 }
 
 const scrollableBox = document.querySelector('div.scrollable-box');
-
 if (scrollableBox && !document.getElementById('ok') && Q.stimulation) {
   const video = document.createElement('video');
   video.id = 'ok';
@@ -1923,16 +1946,12 @@ if (scrollableBox && !document.getElementById('ok') && Q.stimulation) {
   video.muted = true;
   video.loop = true;
   video.style.width = '100%';
-
   const source = document.createElement('source');
   source.src = 'img/lol.mp4';
   source.type = 'video/mp4';
-
   video.appendChild(source);
-
   const randomStart = Math.random() * 3198;
   video.currentTime = randomStart;
-
   scrollableBox.parentNode.insertBefore(video, scrollableBox);
 }
 
@@ -1941,55 +1960,84 @@ if (boxes.length >= 2) {
     boxes[1].remove();
 }
 
+// SEPARATE LEADER CARDS FROM ADVISOR CARDS
 setTimeout(function() {
+    if (document.getElementById('leaders-divider')) return;
+    
     var content = document.getElementById('content');
     if (!content) return;
     
-    // Find all list containers in content
-    var lists = content.querySelectorAll('ul');
-    var leaderItem = null;
-    var leaderContainer = null;
+    // Find all pinned-card items
+    var pinnedItems = content.querySelectorAll('.pinned-card, .pinned-cards li, .pinned-cards .card-in-hand');
+    var leaderItems = [];
     
-    // Search for the leader deck
-    lists.forEach(function(list) {
-        var items = list.querySelectorAll('li, .deck, .card-in-hand, .pinned-card');
-        items.forEach(function(item) {
-            var link = item.querySelector('a');
-            if (link && link.href && link.href.indexOf('leader') !== -1) {
-                leaderItem = item;
-                leaderContainer = list;
+    // Find items that contain leader-tagged cards
+    pinnedItems.forEach(function(item) {
+        var link = item.querySelector('a');
+        if (link) {
+            // Check if this card links to a leader scene
+            var href = link.getAttribute('href') || '';
+            var onclick = link.getAttribute('onclick') || '';
+            var caption = item.querySelector('.card-caption');
+            var captionText = caption ? caption.textContent : '';
+            
+            // Check for leader indicators
+            if (href.indexOf('leader') !== -1 || 
+                onclick.indexOf('leader') !== -1 ||
+                captionText.toLowerCase().indexOf('leader') !== -1) {
+                leaderItems.push(item);
             }
-        });
+        }
     });
     
-    if (leaderItem && leaderContainer) {
-        // Check if we've already separated them
-        if (document.getElementById('leaders-separator')) return;
+    // Also try finding by data attributes if Dendry adds them
+    if (leaderItems.length === 0) {
+        var allCards = content.querySelectorAll('.pinned-cards a, .pinned-card a');
+        allCards.forEach(function(link) {
+            var parentItem = link.closest('li') || link.closest('.pinned-card') || link.closest('.card-in-hand');
+            // Check all data attributes
+            for (var i = 0; i < link.attributes.length; i++) {
+                var attr = link.attributes[i];
+                if (attr.value && attr.value.indexOf('leader') !== -1) {
+                    if (leaderItems.indexOf(parentItem) === -1) {
+                        leaderItems.push(parentItem);
+                    }
+                }
+            }
+        });
+    }
+    
+    if (leaderItems.length > 0) {
+        var firstLeader = leaderItems[0];
+        var container = firstLeader.parentNode;
         
-        // Create the leaders section wrapper
-        var leadersSection = document.createElement('div');
-        leadersSection.id = 'leaders-separator';
-        leadersSection.style.marginTop = '1.5em';
-        leadersSection.style.paddingTop = '1em';
-        leadersSection.style.borderTop = '2px dashed #ccc';
+        // Create divider and new section
+        var divider = document.createElement('div');
+        divider.id = 'leaders-divider';
+        divider.style.marginTop = '1.5em';
+        divider.style.paddingTop = '1em';
+        divider.style.borderTop = '2px dashed var(--border-color)';
         
-        // Add the header
         var header = document.createElement('div');
         header.style.fontStyle = 'italic';
         header.style.marginBottom = '0.5em';
         header.textContent = '▼ Leaders';
-        leadersSection.appendChild(header);
+        divider.appendChild(header);
         
-        // Create a new list for leaders
         var leadersList = document.createElement('ul');
-        leadersList.className = 'pinned-cards';
-        leadersList.appendChild(leaderItem);
-        leadersSection.appendChild(leadersList);
+        leadersList.className = 'pinned-cards leaders';
         
-        // Insert leaders section after the container that held everything
-        leaderContainer.parentNode.insertBefore(leadersSection, leaderContainer.nextSibling);
+        // Move all leader items to the new list
+        leaderItems.forEach(function(item) {
+            leadersList.appendChild(item);
+        });
+        
+        divider.appendChild(leadersList);
+        
+        // Insert after the original container
+        container.parentNode.insertBefore(divider, container.nextSibling);
     }
-}, 200);
+}, 300);
 !}
 max-cards: 4
 
