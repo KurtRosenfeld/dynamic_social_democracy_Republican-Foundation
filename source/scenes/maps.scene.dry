@@ -900,6 +900,7 @@ style="display:inline;fill:[? if wurttemberg_gov == "Grand": #A2B725 ?][? if wur
     </g>
     <g
        id="g82"
+       class="trigger-group" data-tooltip="saar-tooltip"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          style="fill:#000080;fill-opacity:1;stroke-width:20.0315"
@@ -971,6 +972,7 @@ style="display:inline;fill:[? if saxony_gov == "Grand": #A2B725 ?][? if saxony_g
     </g>
     <g
        id="g79"
+       class="trigger-group" data-tooltip="luebeck-tooltip"
 style="display:inline;fill:[? if luebeck_gov == "Grand": #A2B725 ?][? if luebeck_gov == "Bourgeois": #818181 ?][? if luebeck_gov == "Weimar": #FC6D6D ?][? if luebeck_gov == "Popular-Front": #6C168E ?][? if luebeck_gov == "SPD": [+ spd_colour +] ?][? if luebeck_gov == "Social-Liberal": #DD8D1B ?][? if luebeck_gov == "Social-Democratic": #A51E5A ?][? if luebeck_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -1014,6 +1016,7 @@ style="display:inline;fill:[? if waldeck_gov == "Grand": #A2B725 ?][? if waldeck
     </g>
     <g
        id="g72"
+       class="trigger-group" data-tooltip="lippe-tooltip"
 style="display:inline;fill:[? if lippe_gov == "Grand": #A2B725 ?][? if lippe_gov == "Bourgeois": #818181 ?][? if lippe_gov == "Social-Democratic": #A51E5A ?][? if lippe_gov == "Popular-Front": #6C168E ?][? if lippe_gov == "SPD": [+ spd_colour +] ?][? if lippe_gov == "Social-Liberal": #DD8D1B ?][? if lippe_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -1025,6 +1028,7 @@ style="display:inline;fill:[? if lippe_gov == "Grand": #A2B725 ?][? if lippe_gov
     </g>
     <g
        id="g73"
+       class="trigger-group" data-tooltip="schaum_lippe-tooltip"
 style="display:inline;fill: [? if schaum_lippe_gov == "Grand": #A2B725 ?][? if schaum_lippe_gov == "Bourgeois": #818181 ?][? if schaum_lippe_gov == "Weimar": #FC6D6D ?][? if schaum-lippe_gov == "Popular-Front": #6C168E ?][? if schaum_lippe_gov == "Social-Democratic": #A51E5A ?][? if schaum_lippe_gov == "SPD": [+ spd_colour +] ?][? if schaum_lippe_gov == "Social-Liberal": #DD8D1B ?][? if schaum_lippe_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -1036,6 +1040,7 @@ style="display:inline;fill: [? if schaum_lippe_gov == "Grand": #A2B725 ?][? if s
     </g>
     <g
        id="g7"
+       class="trigger-group" data-tooltip="brunswick-tooltip"
 style="display:inline;fill:[? if brunswick_gov == "Grand": #A2B725 ?][? if brunswick_gov == "Bourgeois": #818181 ?][? if brunswick_gov == "Weimar": #FC6D6D ?][? if brunswick_gov == "Popular-Front": #6C168E ?][? if brunswick_gov == "Social-Democratic": #A51E5A ?][? if brunswick_gov == "SPD": [+ spd_colour +] ?][? if brunswick_gov == "Left": #8E0000 ?][? if brunswick_gov == "Social-Liberal": #DD8D1B ?][? if brunswick_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -1068,6 +1073,7 @@ style="display:inline;fill:[? if bremen_gov == "Grand": #A2B725 ?][? if bremen_g
     </g>
     <g
        id="g9"
+       class="trigger-group" data-tooltip="oldenburg-tooltip"
 style="display:inline;fill:[? if oldenburg_gov == "Grand": #A2B725 ?][? if oldenburg_gov == "Bourgeois": #818181 ?][? if oldenburg_gov == "Weimar": #FC6D6D ?][? if oldenburg_gov == "Popular-Front": #6C168E ?][? if oldenburg_gov == "Social-Democratic": #A51E5A ?][? if oldenburg_gov == "SPD": [+ spd_colour +] ?][? if oldenburg_gov == "Left": #8E0000 ?][? if oldenburg_gov == "Social-Liberal": #DD8D1B ?][? if oldenburg_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -1087,6 +1093,7 @@ style="display:inline;fill:[? if oldenburg_gov == "Grand": #A2B725 ?][? if olden
     </g>
     <g
        id="g10"
+       class="trigger-group" data-tooltip="anhalt-tooltip"
 style="display:inline;fill:[? if anhalt_gov == "Grand": #A2B725 ?][? if anhalt_gov == "Bourgeois": #818181 ?][? if anhalt_gov == "Weimar": #FC6D6D ?][? if anhalt_gov == "Popular-Front": #6C168E ?][? if anhalt_gov == "Social-Democratic": #A51E5A ?][? if anhalt_gov == "SPD": [+ spd_colour +] ?][? if anhalt_gov == "Left": #8E0000 ?][? if anhalt_gov == "Social-Liberal": #DD8D1B ?][? if anhalt_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -1146,6 +1153,7 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
     </g>
     <g
        id="g83"
+       class="trigger-group" data-tooltip="danzig-tooltip"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          style="fill:#ddafe9;stroke-width:20.0315"
@@ -1384,10 +1392,19 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
 <p>Minister-President: plhl</p>
     <p>SPD: [+ bremen_spd : government +]</p>
 </div>
+<div id="luebeck-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Lübeck Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ luebeck_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="luebeck" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ luebeck_spd : government +]</p>
+</div>
 <div id="prussia-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Prussia Politics</strong>
  <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
-    Landtag of Prussia
+    Landtag (<span class="total-seats">[+ prussia_seats +]</span> seats)
   </div>
   <div class="parliament-chart" data-state="prussia" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: [+ prussia_leader +] ([+ prussia_leader_party +])</p>
@@ -1400,7 +1417,70 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   </div>
   <div class="parliament-chart" data-state="hesse" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: plhl</p>
-    <p>SPD: [+ hesse_spd : government +] (this is not true)</p>
+    <p>SPD: [+ hesse_spd : government +]</p>
+</div>
+<div id="oldenburg-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Oldenburg Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ oldenburg_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="oldenburg" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ oldenburg_spd : government +]</p>
+</div>
+<div id="anhalt-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Anhalt Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ anhalt_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="anhalt" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ anhalt_spd : government +]</p>
+</div>
+<div id="brunswick-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Brunswick Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ brunswick_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="brunswick" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ brunswick_spd : government +]</p>
+</div>
+<div id="lippe-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Lippe Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ lippe_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="lippe" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ lippe_spd : government +]</p>
+</div>
+<div id="schaum_lippe-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Schaumburg-Lippe Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ schaum_lippe_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="schaum_lippe" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ schaum_lippe_spd : government +]</p>
+</div>
+<div id="danzig-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Danzig Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ danzig_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="danzig" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ danzig_spd : government +]</p>
+</div>
+<div id="saar-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Saar Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ saar_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="saar" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ saar_spd : government +]</p>
 </div>
 
 
