@@ -20,12 +20,12 @@ Zeigner will not reshuffle his cabinet or betray the <span style="color: [+ kpd_
 - @killer_ebert: Then it will be a Reichsexekution...
 
 @killer_ebert
-on-arrival: thuringia_gov = "SPD"; saxony_gov = "SPD"
+on-arrival: thuringia_gov = "SPD"; saxony_gov = "SPD"; saxony_uspd = 2; saxony_kpd = 0
 
 The government of Saxony has been deposed. A new prime minister must be elected.
 
 - @spd_minority: Another <span style="color: [+ spd_colour +];">**SPD**</span> minority government?
-- @social_liberal: A coalition with the <span style="color: [+ ddp_colour +];">**DDP**</span>?
+- @social_liberal: A coalition with the <span style="color: [+ ddp_colour +];">**DDP**</span> [? if spd_ddp_coalition_saxony < 50: and the <span style="color: [+ dvp_colour +];">**DVP**</span> ?]?
 - @bourgeois_cabinet: We will not play this game and vote against any proposal.
 
 @spd_minority
@@ -34,13 +34,13 @@ unavailable-subtitle: There is no faction that will tolerate us.
 
 @social_liberal
 subtitle: This is our only hope for maintaining our rule of Saxony...
-on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 3; workers_kpd += 2; ddp_relation += 2
+on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 3; workers_kpd += 2; ddp_relation += 2; saxony_ddp = 1; saxony_dvp = 1 if spd_ddp_coalition_saxony < 50; kpd_relation -= 7 if spd_ddp_coalition_saxony < 50; workers_spd -= 2 if spd_ddp_coalition_saxony < 50
 
-Alfred Fellisch (<span style="color: [+ spd_colour +];">**SPD**</span>) is elected to be the new prime minister. It appears the <span style="color: [+ kpd_colour +];">**KPD**</span> has abstained, the <span style="color: [+ dnvp_colour +];">**DNVP**</span> didn't attend the election at all.
+Alfred Fellisch (<span style="color: [+ spd_colour +];">**SPD**</span>) is elected to be the new prime minister. [? if spd_ddp_coalition_saxony >= 50: It appears the <span style="color: [+ kpd_colour +];">**KPD**</span> has abstained, the <span style="color: [+ dnvp_colour +];">**DNVP**</span> didn't attend the election at all. ?]
 
 @bourgeois_cabinet
 subtitle: This will result in a coalition of the liberal parties.
-on-arrival: saxony_gov = "Bourgeois"; workers_spd -= 1; workers_kpd += 1; ddp_relation -= 2
+on-arrival: saxony_gov = "Bourgeois"; workers_spd -= 1; workers_kpd += 1; ddp_relation -= 2; saxony_spd = 0; saxony_ddp = 1; saxony_z = 1; saxony_dnvp = 2; saxony_dvp = 1
 
 Friedrich Kaiser (<span style="color: [+ dvp_colour +];">**DVP**</span>) is elected to be the new prime minister. His coalition depends on the support of the <span style="color: [+ dnvp_colour +];">**DNVP**</span>.
 
