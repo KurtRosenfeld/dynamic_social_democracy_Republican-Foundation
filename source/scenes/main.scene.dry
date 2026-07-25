@@ -602,11 +602,9 @@ setTimeout(function() {
     var content = document.getElementById('content');
     if (!content) return;
     
-    // Get the pinned container
     var pinnedContainer = content.querySelector('.pinned-cards') || content;
     if (!pinnedContainer) return;
     
-    // Get all pinned items
     var allItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand');
     var leaderItems = [];
     var advisorItems = [];
@@ -624,20 +622,22 @@ setTimeout(function() {
         var caption = item.querySelector('.card-caption');
         var captionText = caption ? caption.textContent : '';
         
-        // Check for shuffle card (stays with advisors)
+        // Check for shuffle card - EXACT match
         var isShuffle = href.indexOf('advisors/shuffle_leadership_pinned.scene.dry') !== -1 ||
-                       title.indexOf('Shuffle Leadership') !== -1 ||
-                       captionText.indexOf('Shuffle Leadership') !== -1;
+                       title === 'Shuffle Leadership' ||  // Exact match, not contains
+                       captionText === 'Shuffle Leadership';  // Exact match, not contains
         
         if (isShuffle) {
             shuffleItem = item;
-            advisorItems.push(item); // Keep with advisors
+            advisorItems.push(item);
             return;
         }
         
-        // Check for actual leader card (moves below divider)
-        var isLeader = href.indexOf('/leader') !== -1 ||
-                      captionText.toLowerCase().indexOf('leader') !== -1;
+        // Check for actual leader card - look for scene path that ends with "/leader"
+        // NOT "leadership" or any other variation
+        var isLeader = href.match(/\/leader(\.|$)/) !== null ||  // "/leader." or "/leader" at end
+                       href.indexOf('/scenes/leader') !== -1 ||  // Specific scene folder
+                       captionText.toLowerCase() === 'leader';    // Exact match only
         
         if (isLeader) {
             leaderItems.push(item);
@@ -646,9 +646,8 @@ setTimeout(function() {
         }
     });
     
-    // If we have leaders, reorganize
     if (leaderItems.length > 0) {
-        // Remove all items from container
+        // Remove all items
         var allExistingItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand, .leader-divider');
         allExistingItems.forEach(function(item) {
             if (item.parentNode) {
@@ -656,7 +655,7 @@ setTimeout(function() {
             }
         });
         
-        // 1. Add back advisors (including shuffle card) - TOP SECTION
+        // 1. Advisors (top)
         advisorItems.forEach(function(item) {
             pinnedContainer.appendChild(item);
             if (item === shuffleItem) {
@@ -666,7 +665,7 @@ setTimeout(function() {
             }
         });
         
-        // 2. Add the divider/barrier
+        // 2. Divider
         var divider = document.createElement('div');
         divider.id = 'leaders-divider';
         divider.className = 'leader-divider';
@@ -678,7 +677,7 @@ setTimeout(function() {
         divider.textContent = '— Leaders —';
         pinnedContainer.appendChild(divider);
         
-        // 3. Add leaders BELOW the divider - BOTTOM SECTION
+        // 3. Leaders (bottom)
         leaderItems.forEach(function(item) {
             pinnedContainer.appendChild(item);
             item.dataset.tags = '#leader';
@@ -686,7 +685,6 @@ setTimeout(function() {
             item.style.border = '2px solid green';
         });
         
-        console.log('Reorganized: Advisors (top) → Divider → Leaders (bottom)');
         console.log('Advisors (including shuffle):', advisorItems.length);
         console.log('Leaders moved below divider:', leaderItems.length);
     }
@@ -1986,11 +1984,9 @@ setTimeout(function() {
     var content = document.getElementById('content');
     if (!content) return;
     
-    // Get the pinned container
     var pinnedContainer = content.querySelector('.pinned-cards') || content;
     if (!pinnedContainer) return;
     
-    // Get all pinned items
     var allItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand');
     var leaderItems = [];
     var advisorItems = [];
@@ -2008,20 +2004,22 @@ setTimeout(function() {
         var caption = item.querySelector('.card-caption');
         var captionText = caption ? caption.textContent : '';
         
-        // Check for shuffle card (stays with advisors)
+        // Check for shuffle card - EXACT match
         var isShuffle = href.indexOf('advisors/shuffle_leadership_pinned.scene.dry') !== -1 ||
-                       title.indexOf('Shuffle Leadership') !== -1 ||
-                       captionText.indexOf('Shuffle Leadership') !== -1;
+                       title === 'Shuffle Leadership' ||  // Exact match, not contains
+                       captionText === 'Shuffle Leadership';  // Exact match, not contains
         
         if (isShuffle) {
             shuffleItem = item;
-            advisorItems.push(item); // Keep with advisors
+            advisorItems.push(item);
             return;
         }
         
-        // Check for actual leader card (moves below divider)
-        var isLeader = href.indexOf('/leader') !== -1 ||
-                      captionText.toLowerCase().indexOf('leader') !== -1;
+        // Check for actual leader card - look for scene path that ends with "/leader"
+        // NOT "leadership" or any other variation
+        var isLeader = href.match(/\/leader(\.|$)/) !== null ||  // "/leader." or "/leader" at end
+                       href.indexOf('/scenes/leader') !== -1 ||  // Specific scene folder
+                       captionText.toLowerCase() === 'leader';    // Exact match only
         
         if (isLeader) {
             leaderItems.push(item);
@@ -2030,9 +2028,8 @@ setTimeout(function() {
         }
     });
     
-    // If we have leaders, reorganize
     if (leaderItems.length > 0) {
-        // Remove all items from container
+        // Remove all items
         var allExistingItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand, .leader-divider');
         allExistingItems.forEach(function(item) {
             if (item.parentNode) {
@@ -2040,7 +2037,7 @@ setTimeout(function() {
             }
         });
         
-        // 1. Add back advisors (including shuffle card) - TOP SECTION
+        // 1. Advisors (top)
         advisorItems.forEach(function(item) {
             pinnedContainer.appendChild(item);
             if (item === shuffleItem) {
@@ -2050,7 +2047,7 @@ setTimeout(function() {
             }
         });
         
-        // 2. Add the divider/barrier
+        // 2. Divider
         var divider = document.createElement('div');
         divider.id = 'leaders-divider';
         divider.className = 'leader-divider';
@@ -2062,7 +2059,7 @@ setTimeout(function() {
         divider.textContent = '— Leaders —';
         pinnedContainer.appendChild(divider);
         
-        // 3. Add leaders BELOW the divider - BOTTOM SECTION
+        // 3. Leaders (bottom)
         leaderItems.forEach(function(item) {
             pinnedContainer.appendChild(item);
             item.dataset.tags = '#leader';
@@ -2070,7 +2067,6 @@ setTimeout(function() {
             item.style.border = '2px solid green';
         });
         
-        console.log('Reorganized: Advisors (top) → Divider → Leaders (bottom)');
         console.log('Advisors (including shuffle):', advisorItems.length);
         console.log('Leaders moved below divider:', leaderItems.length);
     }
