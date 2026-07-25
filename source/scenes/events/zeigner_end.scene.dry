@@ -26,25 +26,51 @@ The government of Saxony has been deposed. A new prime minister must be elected.
 
 - @spd_minority: Another <span style="color: [+ spd_colour +];">**SPD**</span> minority government?
 - @social_liberal: A coalition with the <span style="color: [+ ddp_colour +];">**DDP**</span> [? if spd_ddp_coalition_saxony < 50: and the <span style="color: [+ dvp_colour +];">**DVP**</span> ?]?
-- @bourgeois_cabinet: We will not play this game and vote against any proposal.
+- @bourgeois_cabinet: We won't form another government.
+- @do_nothing: The Reichskommisar has to rule a bit longer.
 
 @spd_minority
-choose-if: kpd_relation >= 10000000
-unavailable-subtitle: There is no faction that will tolerate us.
+
+- @get_kpd_toleration: Can we return to a government tolerated by the <span style="color: [+ kpd_colour +];">**KPD**</span>?
+- @get_ddp_toleration: Maybe we should ask the the <span style="color: [+ ddp_colour +];">**DDP**</span> for their support now.
+- @social_liberal: A coalition with the <span style="color: [+ ddp_colour +];">**DDP**</span> [? if spd_ddp_coalition_saxony < 50: and the <span style="color: [+ dvp_colour +];">**DVP**</span> ?]?
+- @bourgeois_cabinet: We won't form another government.
+- @do_nothing: The Reichskommisar has to rule a bit longer.
+
+@get_kpd_toleration
+subtitle: Our local branch preferes this option.
+choose-if: kpd_relation >= 50 and left_strength >= 35
+unavailable-subtitle: [? if kpd_relation < 50: The <span style="color: [+ kpd_colour +];">**KPD**</span> is not willing to tolerate another <span style="color: [+ spd_colour +];">**SPD**</span> government now. ?][? if left_strength < 35: The opposition of our national party is to strong... ?]
+on-arrival: saxony_gov = "SPD"; saxony_kpd = 2
+
+Hermann Fleißner (<span style="color: [+ spd_colour +];">**SPD**</span>) is elected to be the new prime minister.
+
+@get_ddp_toleration
+subtitle: <span style="color: [+ ebert_colour +];">Ebert</span> would love this.
+choose-if: ddp_relation >= 40 and spd_ddp_coalition_saxony >= 50
+unavailable-subtitle: [? if  ddp_relation < 40: The <span style="color: [+ ddp_colour +];">**DDP**</span> won't do this. ?][? if spd_ddp_coalition_saxony < 50: This could not achieve enough support in parliament. ?]
+on-arrival: saxony_gov = "SPD"; saxony_ddp = 2
+
+Alfred Fellisch (<span style="color: [+ spd_colour +];">**SPD**</span>) is elected to be the new prime minister.
 
 @social_liberal
-subtitle: This is our only hope for maintaining our rule of Saxony...
+subtitle: This is our only hope for maintaining our rule of Saxony with a stable majority...
+choose-if: ddp_relation >= 35 and (spd_ddp_coalition_saxony >= 50 or (early_dvp_cooperation >= 2 and dvp_relation >= 30)) 
+unavailable-subtitle: [? if ddp_relation < 35: The <span style="color: [+ ddp_colour +];">**DDP**</span> doesn't consider that option. ?][? if spd_ddp_coalition_saxony >= 50: A coalition between the spd_ddp_coalition_saxony >= 50 and us could not maintain any support. ?][? if early_dvp_cooperation < 2: Our party will not cooperate with the <span style="color: [+ dvp_colour +];">**DVP**</span>. ?][? if dvp_relation < 30: The <span style="color: [+ dvp_colour +];">**DVP**</span> doesn't want to work with us in the first place. ?]
 on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 3; workers_kpd += 2; ddp_relation += 2; saxony_ddp = 1; saxony_dvp = 1 if spd_ddp_coalition_saxony < 50; kpd_relation -= 7 if spd_ddp_coalition_saxony < 50; workers_spd -= 2 if spd_ddp_coalition_saxony < 50
 
-Alfred Fellisch (<span style="color: [+ spd_colour +];">**SPD**</span>) is elected to be the new prime minister. [? if spd_ddp_coalition_saxony >= 50: It appears the <span style="color: [+ kpd_colour +];">**KPD**</span> has abstained, the <span style="color: [+ dnvp_colour +];">**DNVP**</span> didn't attend the election at all. ?]
+Max Heldt (<span style="color: [+ spd_colour +];">**SPD**</span>) is elected to be the new prime minister. [? if spd_ddp_coalition_saxony >= 50: It appears the <span style="color: [+ kpd_colour +];">**KPD**</span> has abstained, the <span style="color: [+ dnvp_colour +];">**DNVP**</span> didn't attend the election at all. ?]
 
 @bourgeois_cabinet
 subtitle: This will result in a coalition of the liberal parties.
+choose-if: bourgeois_coalition_saxony == 50
+unavailable-subtitle: There is no possible arrangment without us
 on-arrival: saxony_gov = "Bourgeois"; workers_spd -= 1; workers_kpd += 1; ddp_relation -= 2; saxony_spd = 0; saxony_ddp = 1; saxony_z = 1; saxony_dnvp = 2; saxony_dvp = 1
 
 Friedrich Kaiser (<span style="color: [+ dvp_colour +];">**DVP**</span>) is elected to be the new prime minister. His coalition depends on the support of the <span style="color: [+ dnvp_colour +];">**DNVP**</span>.
 
-
+@do_nothing
+on-arrival: saxony_spd = 0; saxony_dvp = 2; saxony_z = 2; saxony_dnvp = 2; saxony_ddp = 2; saxony_gov = "Bourgeois"; new_middle_spd -= 2; workers_spd -= 2; kpd_relation += 1
 
 
 
