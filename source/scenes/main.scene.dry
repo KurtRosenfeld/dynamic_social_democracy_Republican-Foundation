@@ -602,77 +602,115 @@ setTimeout(function() {
     var content = document.getElementById('content');
     if (!content) return;
     
-    // Find all pinned-card items
+    // Get all pinned items
     var pinnedItems = content.querySelectorAll('.pinned-card, .pinned-cards li, .pinned-cards .card-in-hand');
     var leaderItems = [];
+    var advisorItems = [];
     
-    // Find items that contain leader-tagged cards
     pinnedItems.forEach(function(item) {
         var link = item.querySelector('a');
-        if (link) {
-            // Check if this card links to a leader scene
-            var href = link.getAttribute('href') || '';
-            var onclick = link.getAttribute('onclick') || '';
-            var caption = item.querySelector('.card-caption');
-            var captionText = caption ? caption.textContent : '';
-            
-            // Check for leader indicators
-            if (href.indexOf('leader') !== -1 || 
-                onclick.indexOf('leader') !== -1 ||
-                captionText.toLowerCase().indexOf('leader') !== -1) {
-                leaderItems.push(item);
+        if (!link) return;
+        
+        var href = link.getAttribute('href') || '';
+        var onclick = link.getAttribute('onclick') || '';
+        var caption = item.querySelector('.card-caption');
+        var captionText = caption ? caption.textContent : '';
+        var cardId = link.id || '';
+        
+        // Check for shuffle leadership card (which should go to advisor section)
+        var isShuffleCard = href.indexOf('shuffle_leadership_pinned') !== -1 || 
+                           onclick.indexOf('shuffle_leadership_pinned') !== -1 ||
+                           cardId.indexOf('shuffle_leadership_pinned') !== -1;
+        
+        // Check if this is a leader card
+        var isLeader = href.indexOf('leader') !== -1 || 
+                      onclick.indexOf('leader') !== -1 ||
+                      captionText.toLowerCase().indexOf('leader') !== -1;
+        
+        // Check if this is an advisor card
+        var isAdvisor = captionText.toLowerCase().indexOf('advisor') !== -1 ||
+                       item.querySelector('.advisor-tag') !== null;
+        
+        if (isLeader && !isShuffleCard) {
+            // This is a genuine leader card
+            leaderItems.push(item);
+        } else if (isShuffleCard || isAdvisor) {
+            // This belongs in the advisor section
+            advisorItems.push(item);
+        }
+    });
+    
+    // Also check data attributes for more reliable detection
+    var allCards = content.querySelectorAll('.pinned-cards a, .pinned-card a');
+    allCards.forEach(function(link) {
+        var parentItem = link.closest('li') || link.closest('.pinned-card') || link.closest('.card-in-hand');
+        if (!parentItem) return;
+        
+        // Check all data attributes
+        var hasLeaderAttr = false;
+        var hasShuffleAttr = false;
+        
+        for (var i = 0; i < link.attributes.length; i++) {
+            var attr = link.attributes[i];
+            if (attr.value && attr.value.indexOf('leader') !== -1) {
+                hasLeaderAttr = true;
+            }
+            if (attr.value && attr.value.indexOf('shuffle_leadership_pinned') !== -1) {
+                hasShuffleAttr = true;
+            }
+        }
+        
+        if (hasLeaderAttr && !hasShuffleAttr) {
+            if (leaderItems.indexOf(parentItem) === -1) {
+                leaderItems.push(parentItem);
+            }
+        } else if (hasShuffleAttr) {
+            if (advisorItems.indexOf(parentItem) === -1) {
+                advisorItems.push(parentItem);
             }
         }
     });
     
-    // Also try finding by data attributes if Dendry adds them
-    if (leaderItems.length === 0) {
-        var allCards = content.querySelectorAll('.pinned-cards a, .pinned-card a');
-        allCards.forEach(function(link) {
-            var parentItem = link.closest('li') || link.closest('.pinned-card') || link.closest('.card-in-hand');
-            // Check all data attributes
-            for (var i = 0; i < link.attributes.length; i++) {
-                var attr = link.attributes[i];
-                if (attr.value && attr.value.indexOf('leader') !== -1) {
-                    if (leaderItems.indexOf(parentItem) === -1) {
-                        leaderItems.push(parentItem);
-                    }
+    // Separate leaders from advisors based on your note
+    // Leaders are the ones that should be in the leader section
+    // The shuffle card (and potentially others) go to advisor section
+    
+    // If you want to visually separate them or add a divider
+    if (leaderItems.length > 0) {
+        var divider = document.createElement('div');
+        divider.id = 'leaders-divider';
+        divider.style.borderTop = '2px solid #ccc';
+        divider.style.margin = '10px 0';
+        divider.style.padding = '5px 0';
+        divider.textContent = '— Leaders —';
+        
+        // Insert divider before the first leader item
+        var firstLeader = leaderItems[0];
+        if (firstLeader && firstLeader.parentNode) {
+            firstLeader.parentNode.insertBefore(divider, firstLeader);
+        }
+        
+        // Optionally move shuffle card to advisor section
+        advisorItems.forEach(function(item) {
+            // Move to a different section or add a class
+            if (item.parentNode) {
+                // Move to a specific advisor container if it exists
+                var advisorContainer = document.getElementById('advisor-container');
+                if (advisorContainer) {
+                    advisorContainer.appendChild(item);
+                } else {
+                    // Or just mark it as advisor
+                    item.classList.add('advisor-item');
                 }
             }
         });
     }
     
-    if (leaderItems.length > 0) {
-        var firstLeader = leaderItems[0];
-        var container = firstLeader.parentNode;
-        
-        // Create divider and new section
-        var divider = document.createElement('div');
-        divider.id = 'leaders-divider';
-        divider.style.marginTop = '1.5em';
-        divider.style.paddingTop = '1em';
-        divider.style.borderTop = '2px dashed var(--border-color)';
-        
-        var header = document.createElement('div');
-        header.style.fontStyle = 'italic';
-        header.style.marginBottom = '0.5em';
-        header.textContent = 'Leaders - party leaders give minor passive bonusses';
-        divider.appendChild(header);
-        
-        var leadersList = document.createElement('ul');
-        leadersList.className = 'pinned-cards leaders';
-        
-        // Move all leader items to the new list
-        leaderItems.forEach(function(item) {
-            leadersList.appendChild(item);
-        });
-        
-        divider.appendChild(leadersList);
-        
-        // Insert after the original container
-        container.parentNode.insertBefore(divider, container.nextSibling);
-    }
-}, 300);
+    // Log for debugging
+    console.log('Found leaders:', leaderItems.length);
+    console.log('Found advisors (including shuffle):', advisorItems.length);
+    
+}, 1000);
 !}
 max-cards: 3
 
@@ -1967,77 +2005,115 @@ setTimeout(function() {
     var content = document.getElementById('content');
     if (!content) return;
     
-    // Find all pinned-card items
+    // Get all pinned items
     var pinnedItems = content.querySelectorAll('.pinned-card, .pinned-cards li, .pinned-cards .card-in-hand');
     var leaderItems = [];
+    var advisorItems = [];
     
-    // Find items that contain leader-tagged cards
     pinnedItems.forEach(function(item) {
         var link = item.querySelector('a');
-        if (link) {
-            // Check if this card links to a leader scene
-            var href = link.getAttribute('href') || '';
-            var onclick = link.getAttribute('onclick') || '';
-            var caption = item.querySelector('.card-caption');
-            var captionText = caption ? caption.textContent : '';
-            
-            // Check for leader indicators
-            if (href.indexOf('leader') !== -1 || 
-                onclick.indexOf('leader') !== -1 ||
-                captionText.toLowerCase().indexOf('leader') !== -1) {
-                leaderItems.push(item);
+        if (!link) return;
+        
+        var href = link.getAttribute('href') || '';
+        var onclick = link.getAttribute('onclick') || '';
+        var caption = item.querySelector('.card-caption');
+        var captionText = caption ? caption.textContent : '';
+        var cardId = link.id || '';
+        
+        // Check for shuffle leadership card (which should go to advisor section)
+        var isShuffleCard = href.indexOf('shuffle_leadership_pinned') !== -1 || 
+                           onclick.indexOf('shuffle_leadership_pinned') !== -1 ||
+                           cardId.indexOf('shuffle_leadership_pinned') !== -1;
+        
+        // Check if this is a leader card
+        var isLeader = href.indexOf('leader') !== -1 || 
+                      onclick.indexOf('leader') !== -1 ||
+                      captionText.toLowerCase().indexOf('leader') !== -1;
+        
+        // Check if this is an advisor card
+        var isAdvisor = captionText.toLowerCase().indexOf('advisor') !== -1 ||
+                       item.querySelector('.advisor-tag') !== null;
+        
+        if (isLeader && !isShuffleCard) {
+            // This is a genuine leader card
+            leaderItems.push(item);
+        } else if (isShuffleCard || isAdvisor) {
+            // This belongs in the advisor section
+            advisorItems.push(item);
+        }
+    });
+    
+    // Also check data attributes for more reliable detection
+    var allCards = content.querySelectorAll('.pinned-cards a, .pinned-card a');
+    allCards.forEach(function(link) {
+        var parentItem = link.closest('li') || link.closest('.pinned-card') || link.closest('.card-in-hand');
+        if (!parentItem) return;
+        
+        // Check all data attributes
+        var hasLeaderAttr = false;
+        var hasShuffleAttr = false;
+        
+        for (var i = 0; i < link.attributes.length; i++) {
+            var attr = link.attributes[i];
+            if (attr.value && attr.value.indexOf('leader') !== -1) {
+                hasLeaderAttr = true;
+            }
+            if (attr.value && attr.value.indexOf('shuffle_leadership_pinned') !== -1) {
+                hasShuffleAttr = true;
+            }
+        }
+        
+        if (hasLeaderAttr && !hasShuffleAttr) {
+            if (leaderItems.indexOf(parentItem) === -1) {
+                leaderItems.push(parentItem);
+            }
+        } else if (hasShuffleAttr) {
+            if (advisorItems.indexOf(parentItem) === -1) {
+                advisorItems.push(parentItem);
             }
         }
     });
     
-    // Also try finding by data attributes if Dendry adds them
-    if (leaderItems.length === 0) {
-        var allCards = content.querySelectorAll('.pinned-cards a, .pinned-card a');
-        allCards.forEach(function(link) {
-            var parentItem = link.closest('li') || link.closest('.pinned-card') || link.closest('.card-in-hand');
-            // Check all data attributes
-            for (var i = 0; i < link.attributes.length; i++) {
-                var attr = link.attributes[i];
-                if (attr.value && attr.value.indexOf('leader') !== -1) {
-                    if (leaderItems.indexOf(parentItem) === -1) {
-                        leaderItems.push(parentItem);
-                    }
+    // Separate leaders from advisors based on your note
+    // Leaders are the ones that should be in the leader section
+    // The shuffle card (and potentially others) go to advisor section
+    
+    // If you want to visually separate them or add a divider
+    if (leaderItems.length > 0) {
+        var divider = document.createElement('div');
+        divider.id = 'leaders-divider';
+        divider.style.borderTop = '2px solid #ccc';
+        divider.style.margin = '10px 0';
+        divider.style.padding = '5px 0';
+        divider.textContent = '— Leaders —';
+        
+        // Insert divider before the first leader item
+        var firstLeader = leaderItems[0];
+        if (firstLeader && firstLeader.parentNode) {
+            firstLeader.parentNode.insertBefore(divider, firstLeader);
+        }
+        
+        // Optionally move shuffle card to advisor section
+        advisorItems.forEach(function(item) {
+            // Move to a different section or add a class
+            if (item.parentNode) {
+                // Move to a specific advisor container if it exists
+                var advisorContainer = document.getElementById('advisor-container');
+                if (advisorContainer) {
+                    advisorContainer.appendChild(item);
+                } else {
+                    // Or just mark it as advisor
+                    item.classList.add('advisor-item');
                 }
             }
         });
     }
     
-    if (leaderItems.length > 0) {
-        var firstLeader = leaderItems[0];
-        var container = firstLeader.parentNode;
-        
-        // Create divider and new section
-        var divider = document.createElement('div');
-        divider.id = 'leaders-divider';
-        divider.style.marginTop = '1.5em';
-        divider.style.paddingTop = '1em';
-        divider.style.borderTop = '2px dashed var(--border-color)';
-        
-        var header = document.createElement('div');
-        header.style.fontStyle = 'italic';
-        header.style.marginBottom = '0.5em';
-        header.textContent = 'Party leaders give minor passive bonusses';
-        divider.appendChild(header);
-        
-        var leadersList = document.createElement('ul');
-        leadersList.className = 'pinned-cards leaders';
-        
-        // Move all leader items to the new list
-        leaderItems.forEach(function(item) {
-            leadersList.appendChild(item);
-        });
-        
-        divider.appendChild(leadersList);
-        
-        // Insert after the original container
-        container.parentNode.insertBefore(divider, container.nextSibling);
-    }
-}, 300);
+    // Log for debugging
+    console.log('Found leaders:', leaderItems.length);
+    console.log('Found advisors (including shuffle):', advisorItems.length);
+    
+}, 1000);
 !}
 max-cards: 4
 
