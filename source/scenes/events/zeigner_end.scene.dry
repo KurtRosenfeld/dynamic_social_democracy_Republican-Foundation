@@ -3,6 +3,7 @@ subtitle: <span style="color: [+ ebert_colour +];">Ebert</span> calls on Zeigner
 tags: event
 is-card: true
 priority: 1
+max-visits: 1
 face-image: img/portraits/ZeignerErich.jpg
 view-if: freiberg_bloodbath_seen = 1 and saxony_gov == "Left"
 new-page: true
