@@ -602,69 +602,94 @@ setTimeout(function() {
     var content = document.getElementById('content');
     if (!content) return;
     
-    var pinnedItems = content.querySelectorAll('.pinned-card, .pinned-cards li, .pinned-cards .card-in-hand');
+    // Get the pinned container
+    var pinnedContainer = content.querySelector('.pinned-cards') || content;
+    if (!pinnedContainer) return;
+    
+    // Get all pinned items
+    var allItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand');
     var leaderItems = [];
     var advisorItems = [];
+    var shuffleItem = null;
     
-    pinnedItems.forEach(function(item) {
+    allItems.forEach(function(item) {
         var link = item.querySelector('a');
-        if (!link) return;
-        
-        var href = link.getAttribute('href') || '';
-        var onclick = link.getAttribute('onclick') || '';
-        var caption = item.querySelector('.card-caption');
-        var captionText = caption ? caption.textContent : '';
-        
-        // Check if this is from the advisors folder
-        var isAdvisorCard = href.indexOf('/advisors/') !== -1 || 
-                           onclick.indexOf('/advisors/') !== -1 ||
-                           captionText.toLowerCase().indexOf('advisor') !== -1;
-        
-        if (isAdvisorCard) {
+        if (!link) {
             advisorItems.push(item);
             return;
         }
         
-        // Check for actual leader cards
-        var isLeader = (href.indexOf('/leader') !== -1 || 
-                       onclick.indexOf('/leader') !== -1 ||
-                       captionText.toLowerCase().indexOf('leader') !== -1);
+        var href = link.getAttribute('href') || '';
+        var title = link.title || '';
+        var caption = item.querySelector('.card-caption');
+        var captionText = caption ? caption.textContent : '';
+        
+        // Check for shuffle card (stays with advisors)
+        var isShuffle = href.indexOf('advisors/shuffle_leadership_pinned.scene.dry') !== -1 ||
+                       title.indexOf('Shuffle Leadership') !== -1 ||
+                       captionText.indexOf('Shuffle Leadership') !== -1;
+        
+        if (isShuffle) {
+            shuffleItem = item;
+            advisorItems.push(item); // Keep with advisors
+            return;
+        }
+        
+        // Check for actual leader card (moves below divider)
+        var isLeader = href.indexOf('/leader') !== -1 ||
+                      captionText.toLowerCase().indexOf('leader') !== -1;
         
         if (isLeader) {
             leaderItems.push(item);
+        } else {
+            advisorItems.push(item);
         }
     });
     
-    // Tag all advisor cards
-    advisorItems.forEach(function(item) {
-        item.dataset.tags = (item.dataset.tags || '') + ' #advisor';
-        item.classList.add('advisor-card');
-        item.style.border = '2px solid orange';
-    });
-    
-    // Tag actual leaders
-    leaderItems.forEach(function(item) {
-        item.dataset.tags = (item.dataset.tags || '') + ' #leader';
-        item.classList.add('actual-leader-card');
-        item.style.border = '2px solid green';
-    });
-    
+    // If we have leaders, reorganize
     if (leaderItems.length > 0) {
+        // Remove all items from container
+        var allExistingItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand, .leader-divider');
+        allExistingItems.forEach(function(item) {
+            if (item.parentNode) {
+                item.parentNode.removeChild(item);
+            }
+        });
+        
+        // 1. Add back advisors (including shuffle card) - TOP SECTION
+        advisorItems.forEach(function(item) {
+            pinnedContainer.appendChild(item);
+            if (item === shuffleItem) {
+                item.dataset.tags = '#advisor';
+                item.classList.add('advisor-card');
+                item.style.border = '2px solid orange';
+            }
+        });
+        
+        // 2. Add the divider/barrier
         var divider = document.createElement('div');
         divider.id = 'leaders-divider';
-        divider.style.borderTop = '2px solid #4CAF50';
-        divider.style.margin = '10px 0';
-        divider.style.padding = '5px 0';
+        divider.className = 'leader-divider';
+        divider.style.borderTop = '3px solid #4CAF50';
+        divider.style.margin = '15px 0';
+        divider.style.padding = '8px 0';
+        divider.style.fontWeight = 'bold';
+        divider.style.color = '#4CAF50';
         divider.textContent = '— Leaders —';
+        pinnedContainer.appendChild(divider);
         
-        var firstLeader = leaderItems[0];
-        if (firstLeader && firstLeader.parentNode) {
-            firstLeader.parentNode.insertBefore(divider, firstLeader);
-        }
+        // 3. Add leaders BELOW the divider - BOTTOM SECTION
+        leaderItems.forEach(function(item) {
+            pinnedContainer.appendChild(item);
+            item.dataset.tags = '#leader';
+            item.classList.add('actual-leader-card');
+            item.style.border = '2px solid green';
+        });
+        
+        console.log('Reorganized: Advisors (top) → Divider → Leaders (bottom)');
+        console.log('Advisors (including shuffle):', advisorItems.length);
+        console.log('Leaders moved below divider:', leaderItems.length);
     }
-    
-    console.log('Leaders:', leaderItems.length);
-    console.log('Advisors (all):', advisorItems.length);
     
 }, 1000);
 !}
@@ -1961,69 +1986,94 @@ setTimeout(function() {
     var content = document.getElementById('content');
     if (!content) return;
     
-    var pinnedItems = content.querySelectorAll('.pinned-card, .pinned-cards li, .pinned-cards .card-in-hand');
+    // Get the pinned container
+    var pinnedContainer = content.querySelector('.pinned-cards') || content;
+    if (!pinnedContainer) return;
+    
+    // Get all pinned items
+    var allItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand');
     var leaderItems = [];
     var advisorItems = [];
+    var shuffleItem = null;
     
-    pinnedItems.forEach(function(item) {
+    allItems.forEach(function(item) {
         var link = item.querySelector('a');
-        if (!link) return;
-        
-        var href = link.getAttribute('href') || '';
-        var onclick = link.getAttribute('onclick') || '';
-        var caption = item.querySelector('.card-caption');
-        var captionText = caption ? caption.textContent : '';
-        
-        // Check if this is from the advisors folder
-        var isAdvisorCard = href.indexOf('/advisors/') !== -1 || 
-                           onclick.indexOf('/advisors/') !== -1 ||
-                           captionText.toLowerCase().indexOf('advisor') !== -1;
-        
-        if (isAdvisorCard) {
+        if (!link) {
             advisorItems.push(item);
             return;
         }
         
-        // Check for actual leader cards
-        var isLeader = (href.indexOf('/leader') !== -1 || 
-                       onclick.indexOf('/leader') !== -1 ||
-                       captionText.toLowerCase().indexOf('leader') !== -1);
+        var href = link.getAttribute('href') || '';
+        var title = link.title || '';
+        var caption = item.querySelector('.card-caption');
+        var captionText = caption ? caption.textContent : '';
+        
+        // Check for shuffle card (stays with advisors)
+        var isShuffle = href.indexOf('advisors/shuffle_leadership_pinned.scene.dry') !== -1 ||
+                       title.indexOf('Shuffle Leadership') !== -1 ||
+                       captionText.indexOf('Shuffle Leadership') !== -1;
+        
+        if (isShuffle) {
+            shuffleItem = item;
+            advisorItems.push(item); // Keep with advisors
+            return;
+        }
+        
+        // Check for actual leader card (moves below divider)
+        var isLeader = href.indexOf('/leader') !== -1 ||
+                      captionText.toLowerCase().indexOf('leader') !== -1;
         
         if (isLeader) {
             leaderItems.push(item);
+        } else {
+            advisorItems.push(item);
         }
     });
     
-    // Tag all advisor cards
-    advisorItems.forEach(function(item) {
-        item.dataset.tags = (item.dataset.tags || '') + ' #advisor';
-        item.classList.add('advisor-card');
-        item.style.border = '2px solid orange';
-    });
-    
-    // Tag actual leaders
-    leaderItems.forEach(function(item) {
-        item.dataset.tags = (item.dataset.tags || '') + ' #leader';
-        item.classList.add('actual-leader-card');
-        item.style.border = '2px solid green';
-    });
-    
+    // If we have leaders, reorganize
     if (leaderItems.length > 0) {
+        // Remove all items from container
+        var allExistingItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand, .leader-divider');
+        allExistingItems.forEach(function(item) {
+            if (item.parentNode) {
+                item.parentNode.removeChild(item);
+            }
+        });
+        
+        // 1. Add back advisors (including shuffle card) - TOP SECTION
+        advisorItems.forEach(function(item) {
+            pinnedContainer.appendChild(item);
+            if (item === shuffleItem) {
+                item.dataset.tags = '#advisor';
+                item.classList.add('advisor-card');
+                item.style.border = '2px solid orange';
+            }
+        });
+        
+        // 2. Add the divider/barrier
         var divider = document.createElement('div');
         divider.id = 'leaders-divider';
-        divider.style.borderTop = '2px solid #4CAF50';
-        divider.style.margin = '10px 0';
-        divider.style.padding = '5px 0';
+        divider.className = 'leader-divider';
+        divider.style.borderTop = '3px solid #4CAF50';
+        divider.style.margin = '15px 0';
+        divider.style.padding = '8px 0';
+        divider.style.fontWeight = 'bold';
+        divider.style.color = '#4CAF50';
         divider.textContent = '— Leaders —';
+        pinnedContainer.appendChild(divider);
         
-        var firstLeader = leaderItems[0];
-        if (firstLeader && firstLeader.parentNode) {
-            firstLeader.parentNode.insertBefore(divider, firstLeader);
-        }
+        // 3. Add leaders BELOW the divider - BOTTOM SECTION
+        leaderItems.forEach(function(item) {
+            pinnedContainer.appendChild(item);
+            item.dataset.tags = '#leader';
+            item.classList.add('actual-leader-card');
+            item.style.border = '2px solid green';
+        });
+        
+        console.log('Reorganized: Advisors (top) → Divider → Leaders (bottom)');
+        console.log('Advisors (including shuffle):', advisorItems.length);
+        console.log('Leaders moved below divider:', leaderItems.length);
     }
-    
-    console.log('Leaders:', leaderItems.length);
-    console.log('Advisors (all):', advisorItems.length);
     
 }, 1000);
 !}
