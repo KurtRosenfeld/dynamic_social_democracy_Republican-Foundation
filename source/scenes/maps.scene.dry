@@ -737,17 +737,21 @@ go-to: map_menu
 
 [? if year >= 1929: {!<tr><td><div class="box" style='background-color:#6C168E'> </div> Popular Front Coalition </td></tr>!} ?]
 
+[? if progressive_coalition: {!<tr><td><div class="box" style='background-color:#67DD66'> </div> Progressive Coalition </td></tr>!} ?]
+
 {!<tr><td><div class="box" style='background-color:#FC6D6D'> </div> Weimar Coalition </td></tr>!}
 
-[? if bavaria_gov == "Anti-BVP" or bavaria_gov == "Traffic": {!<tr><td><div class="box" style='background-color:#DD6F9C'> </div> Bavaria Coaliation including the SPD </td></tr>!} ?]
+[? if bavaria_gov == "Anti-BVP" or bavaria_gov == "Traffic": {!<tr><td><div class="box" style='background-color:#DD6F9C'> </div> It is complicated </td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#5E405A'> </div> Social-Catholic Coalition </td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#DD8D1B'> </div> Social-Liberal Coalition (including DVP) </td></tr>!}
 
-[? if aspd_exists: {!<tr><td><div class="box" style='background-color:#A78DB2'> </div> National Social-Liberal Coalition </td></tr>!} ?]
+[? if agrarian_coalition: {!<tr><td><div class="box" style='background-color:#2B5B0A'> </div> Social-Agrarian Coalition </td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#A2B725'> </div> Grand Coalition </td></tr>!}
+
+[? if aspd_exists: {!<tr><td><div class="box" style='background-color:#A78DB2'> </div> National Social-Liberal Coalition </td></tr>!} ?]
 
 [? if aspd_exists: {!<tr><td><div class="box" style='background-color:#C58FFF'> </div> Social-Monarchist Coalition </td></tr>!} ?]
 
