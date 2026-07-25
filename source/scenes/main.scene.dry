@@ -693,7 +693,7 @@ setTimeout(function() {
         divider.style.borderTop = '2px solid #4CAF50';
         divider.style.margin = '10px 0';
         divider.style.padding = '5px 0';
-        divider.textContent = '— Jesters —';
+        divider.textContent = 'Party Leaders - minor passive bonusses';
         
         // Insert divider before the first jester item
         var firstLeader = leaderItems[0];
@@ -2092,7 +2092,7 @@ setTimeout(function() {
         divider.style.borderTop = '2px solid #4CAF50';
         divider.style.margin = '10px 0';
         divider.style.padding = '5px 0';
-        divider.textContent = '— Jesters —';
+        divider.textContent = 'Party Leaders - minor passive bonusses';
         
         // Insert divider before the first jester item
         var firstLeader = leaderItems[0];
