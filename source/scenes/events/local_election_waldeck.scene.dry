@@ -360,7 +360,7 @@ go-to: waldeck_coalition_menu
 
 **Waldeck results:**
 
-{!<div class="parliament-chart" data-state="waldeck" style="width: 500px; height: 250px;"></div>!}
+{!<svg id="waldeck_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
