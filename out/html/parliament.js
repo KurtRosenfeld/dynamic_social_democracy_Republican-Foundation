@@ -1044,6 +1044,11 @@ baden: {
             condition: function(Q) { return Q.kpd_r_prussia; }
           },
           {
+            id: 'kag', legend: 'KAG', name: 'KAG', 
+            qualityKey: 'kag_r_prussia',
+            condition: function(Q) { return Q.kag_r_prussia; }
+          },
+          {
             id: 'sapd', legend: 'SAPD', name: 'SAPD', 
             qualityKey: 'sapd_r_prussia',
             condition: function(Q) { return Q.sapd_formed && Q.sapd_r_prussia; }
