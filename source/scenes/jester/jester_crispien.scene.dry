@@ -1,6 +1,6 @@
 title: Arthur Crispien
 is-pinned-card: true
-tags: leader
+tags: jester
 card-image: img/portraits/CrispienArthur.jpg
 view-if: spd_party_leader_3 == "Crispien"
 new-page: true
