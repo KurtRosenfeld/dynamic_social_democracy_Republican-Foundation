@@ -602,10 +602,9 @@ setTimeout(function() {
     var content = document.getElementById('content');
     if (!content) return;
     
-    // Get all pinned items
     var pinnedItems = content.querySelectorAll('.pinned-card, .pinned-cards li, .pinned-cards .card-in-hand');
     var leaderItems = [];
-    var shuffleCard = null;
+    var advisorItems = [];
     
     pinnedItems.forEach(function(item) {
         var link = item.querySelector('a');
@@ -615,88 +614,46 @@ setTimeout(function() {
         var onclick = link.getAttribute('onclick') || '';
         var caption = item.querySelector('.card-caption');
         var captionText = caption ? caption.textContent : '';
-        var cardId = link.id || '';
-        var linkText = link.textContent || '';
         var title = link.title || '';
+        var linkText = link.textContent || '';
         
-        // Check for shuffle card by its specific scene name or title
-        var isShuffleCard = href.indexOf('shuffle_leadership.scene.dry') !== -1 || 
-                           onclick.indexOf('shuffle_leadership.scene.dry') !== -1 ||
+        // Check for the specific shuffle card from advisors folder
+        var isShuffleCard = href.indexOf('advisors/shuffle_leadership_pinned.scene.dry') !== -1 || 
+                           onclick.indexOf('advisors/shuffle_leadership_pinned.scene.dry') !== -1 ||
                            title.indexOf('Shuffle Leadership') !== -1 ||
-                           captionText.indexOf('Shuffle Leadership') !== -1 ||
-                           linkText.indexOf('Shuffle Leadership') !== -1;
+                           captionText.indexOf('Shuffle Leadership') !== -1;
         
-        // Also check for party_affairs tag (the shuffle card's tag)
-        var hasPartyAffairs = href.indexOf('party_affairs') !== -1 || 
-                             onclick.indexOf('party_affairs') !== -1 ||
-                             captionText.indexOf('party_affairs') !== -1;
-        
-        if (isShuffleCard || hasPartyAffairs) {
-            shuffleCard = item;
-            return; // Skip to next item
+        if (isShuffleCard) {
+            advisorItems.push(item);
+            return;
         }
         
-        // Now check if this is a leader card
-        // A true leader card has "leader" in its scene path, but NOT "shuffle_leadership"
+        // Check for actual leader cards
         var isLeader = (href.indexOf('/leader') !== -1 || 
                        onclick.indexOf('/leader') !== -1 ||
                        captionText.toLowerCase().indexOf('leader') !== -1) &&
-                       href.indexOf('shuffle_leadership') === -1 && // Exclude shuffle
-                       onclick.indexOf('shuffle_leadership') === -1;
+                       href.indexOf('shuffle_leadership') === -1;
         
         if (isLeader) {
             leaderItems.push(item);
         }
     });
     
-    // Also check data attributes and other elements
-    var allCards = content.querySelectorAll('.pinned-cards a, .pinned-card a, .card-in-hand a');
-    allCards.forEach(function(link) {
-        var parentItem = link.closest('li') || link.closest('.pinned-card') || link.closest('.card-in-hand');
-        if (!parentItem) return;
-        
-        var href = link.getAttribute('href') || '';
-        var title = link.title || '';
-        var text = link.textContent || '';
-        
-        // Skip if this is the shuffle card
-        var isShuffle = href.indexOf('shuffle_leadership.scene.dry') !== -1 || 
-                       title.indexOf('Shuffle Leadership') !== -1 ||
-                       text.indexOf('Shuffle Leadership') !== -1;
-        
-        if (isShuffle) {
-            shuffleCard = parentItem;
-            return;
-        }
-        
-        // Check for leader in the link
-        var isLeader = href.indexOf('/leader') !== -1 && 
-                      href.indexOf('shuffle_leadership') === -1;
-        
-        if (isLeader) {
-            if (leaderItems.indexOf(parentItem) === -1) {
-                leaderItems.push(parentItem);
-            }
-        }
+    // Tag the shuffle card as advisor
+    advisorItems.forEach(function(item) {
+        item.dataset.tags = (item.dataset.tags || '') + ' #advisor';
+        item.classList.add('advisor-card');
+        item.style.border = '2px solid orange';
+        console.log('Shuffle card marked as advisor');
     });
     
-    // Now we have clean separation
-    if (shuffleCard) {
-        shuffleCard.dataset.tags = (shuffleCard.dataset.tags || '') + ' #advisor #party_affairs';
-        shuffleCard.classList.add('shuffle-leadership-card');
-        shuffleCard.style.border = '2px solid orange';
-        shuffleCard.title = 'Shuffle Leadership (Advisor)';
-        console.log('Shuffle card found and marked as advisor');
-    }
-    
+    // Tag actual leaders
     leaderItems.forEach(function(item) {
         item.dataset.tags = (item.dataset.tags || '') + ' #leader';
         item.classList.add('actual-leader-card');
         item.style.border = '2px solid green';
-        item.title = 'Actual Leader Card';
     });
     
-    // Add a divider for actual leaders
     if (leaderItems.length > 0) {
         var divider = document.createElement('div');
         divider.id = 'leaders-divider';
@@ -711,8 +668,8 @@ setTimeout(function() {
         }
     }
     
-    console.log('Actual leaders found:', leaderItems.length);
-    console.log('Shuffle card found:', shuffleCard ? 'Yes (party_affairs)' : 'No');
+    console.log('Leaders:', leaderItems.length);
+    console.log('Advisors (shuffle card):', advisorItems.length);
     
 }, 1000);
 !}
@@ -2009,10 +1966,9 @@ setTimeout(function() {
     var content = document.getElementById('content');
     if (!content) return;
     
-    // Get all pinned items
     var pinnedItems = content.querySelectorAll('.pinned-card, .pinned-cards li, .pinned-cards .card-in-hand');
     var leaderItems = [];
-    var shuffleCard = null;
+    var advisorItems = [];
     
     pinnedItems.forEach(function(item) {
         var link = item.querySelector('a');
@@ -2022,88 +1978,46 @@ setTimeout(function() {
         var onclick = link.getAttribute('onclick') || '';
         var caption = item.querySelector('.card-caption');
         var captionText = caption ? caption.textContent : '';
-        var cardId = link.id || '';
-        var linkText = link.textContent || '';
         var title = link.title || '';
+        var linkText = link.textContent || '';
         
-        // Check for shuffle card by its specific scene name or title
-        var isShuffleCard = href.indexOf('shuffle_leadership.scene.dry') !== -1 || 
-                           onclick.indexOf('shuffle_leadership.scene.dry') !== -1 ||
+        // Check for the specific shuffle card from advisors folder
+        var isShuffleCard = href.indexOf('advisors/shuffle_leadership_pinned.scene.dry') !== -1 || 
+                           onclick.indexOf('advisors/shuffle_leadership_pinned.scene.dry') !== -1 ||
                            title.indexOf('Shuffle Leadership') !== -1 ||
-                           captionText.indexOf('Shuffle Leadership') !== -1 ||
-                           linkText.indexOf('Shuffle Leadership') !== -1;
+                           captionText.indexOf('Shuffle Leadership') !== -1;
         
-        // Also check for party_affairs tag (the shuffle card's tag)
-        var hasPartyAffairs = href.indexOf('party_affairs') !== -1 || 
-                             onclick.indexOf('party_affairs') !== -1 ||
-                             captionText.indexOf('party_affairs') !== -1;
-        
-        if (isShuffleCard || hasPartyAffairs) {
-            shuffleCard = item;
-            return; // Skip to next item
+        if (isShuffleCard) {
+            advisorItems.push(item);
+            return;
         }
         
-        // Now check if this is a leader card
-        // A true leader card has "leader" in its scene path, but NOT "shuffle_leadership"
+        // Check for actual leader cards
         var isLeader = (href.indexOf('/leader') !== -1 || 
                        onclick.indexOf('/leader') !== -1 ||
                        captionText.toLowerCase().indexOf('leader') !== -1) &&
-                       href.indexOf('shuffle_leadership') === -1 && // Exclude shuffle
-                       onclick.indexOf('shuffle_leadership') === -1;
+                       href.indexOf('shuffle_leadership') === -1;
         
         if (isLeader) {
             leaderItems.push(item);
         }
     });
     
-    // Also check data attributes and other elements
-    var allCards = content.querySelectorAll('.pinned-cards a, .pinned-card a, .card-in-hand a');
-    allCards.forEach(function(link) {
-        var parentItem = link.closest('li') || link.closest('.pinned-card') || link.closest('.card-in-hand');
-        if (!parentItem) return;
-        
-        var href = link.getAttribute('href') || '';
-        var title = link.title || '';
-        var text = link.textContent || '';
-        
-        // Skip if this is the shuffle card
-        var isShuffle = href.indexOf('shuffle_leadership.scene.dry') !== -1 || 
-                       title.indexOf('Shuffle Leadership') !== -1 ||
-                       text.indexOf('Shuffle Leadership') !== -1;
-        
-        if (isShuffle) {
-            shuffleCard = parentItem;
-            return;
-        }
-        
-        // Check for leader in the link
-        var isLeader = href.indexOf('/leader') !== -1 && 
-                      href.indexOf('shuffle_leadership') === -1;
-        
-        if (isLeader) {
-            if (leaderItems.indexOf(parentItem) === -1) {
-                leaderItems.push(parentItem);
-            }
-        }
+    // Tag the shuffle card as advisor
+    advisorItems.forEach(function(item) {
+        item.dataset.tags = (item.dataset.tags || '') + ' #advisor';
+        item.classList.add('advisor-card');
+        item.style.border = '2px solid orange';
+        console.log('Shuffle card marked as advisor');
     });
     
-    // Now we have clean separation
-    if (shuffleCard) {
-        shuffleCard.dataset.tags = (shuffleCard.dataset.tags || '') + ' #advisor #party_affairs';
-        shuffleCard.classList.add('shuffle-leadership-card');
-        shuffleCard.style.border = '2px solid orange';
-        shuffleCard.title = 'Shuffle Leadership (Advisor)';
-        console.log('Shuffle card found and marked as advisor');
-    }
-    
+    // Tag actual leaders
     leaderItems.forEach(function(item) {
         item.dataset.tags = (item.dataset.tags || '') + ' #leader';
         item.classList.add('actual-leader-card');
         item.style.border = '2px solid green';
-        item.title = 'Actual Leader Card';
     });
     
-    // Add a divider for actual leaders
     if (leaderItems.length > 0) {
         var divider = document.createElement('div');
         divider.id = 'leaders-divider';
@@ -2118,8 +2032,8 @@ setTimeout(function() {
         }
     }
     
-    console.log('Actual leaders found:', leaderItems.length);
-    console.log('Shuffle card found:', shuffleCard ? 'Yes (party_affairs)' : 'No');
+    console.log('Leaders:', leaderItems.length);
+    console.log('Advisors (shuffle card):', advisorItems.length);
     
 }, 1000);
 !}
