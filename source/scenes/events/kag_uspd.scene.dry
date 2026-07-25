@@ -1,6 +1,6 @@
 title: The <span style="color: #81125B;">**KAG**</span> joins the <span style="color: [+ uspd_colour +];">**USPD**</span>!
 view-if: year == 1922 and month == 4
-on-arrival: uspd_r = uspd_r + kag_r; kag_r = 0
+on-arrival: uspd_r = uspd_r + kag_r; kag_r = 0; uspd_r_prussia = uspd_r_prussia + kag_r_prussia; kag_r_prussia = 0
 max-visits: 1
 tags: event
 new-page: true
