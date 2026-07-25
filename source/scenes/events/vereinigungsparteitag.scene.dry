@@ -7,7 +7,7 @@ on-arrival: unemployed_uspd -= 3
 tags: event
 face-image: img/unnamed (1).jpg
 
-= Nürmberger Vereinigungsparteitag
+= Nürnberger Vereinigungsparteitag
 
 Otto Wels wants this to go smoothly, it is a largely symbolical congress...
 
@@ -39,7 +39,7 @@ Former <span style="color: [+ uspd_colour +];">**USPD**</span> leader Arthur Cri
 - @drop_muller: Drop Müller (centrist)
 
 @drop_ebert
-on-arrival: ebert_advisor = 0; crispien_advisor = 1; reformist_strength -= 5; center_strength_ += 5; left_dissent -= 5
+on-arrival: ebert_advisor = 0; crispien_advisor = 1; reformist_strength -= 5; center_strength += 5; left_dissent -= 5
 go-to: new_swap
 
 Ebert doesnt care much about party affairs. 
