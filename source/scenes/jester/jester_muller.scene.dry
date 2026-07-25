@@ -1,6 +1,6 @@
 title: Hermann Müller
 is-pinned-card: true
-tags: leader
+tags: jester
 card-image: img/portraits/MüllerHermann.jpg
 view-if: spd_party_leader_2 == "Müller"
 new-page: true
