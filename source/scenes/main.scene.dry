@@ -1377,7 +1377,7 @@ max-cards: 3
 - @time_2
 - #advisor
 - @shuffle_leadership_pinned
-- #leader
+- #jester
 
 
 @main_easy
@@ -2773,7 +2773,7 @@ max-cards: 4
 - @time_2
 - #advisor
 - @shuffle_leadership_pinned
-- #leader
+- #jester
 
 
 
