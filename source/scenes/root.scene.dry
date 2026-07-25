@@ -397,7 +397,7 @@ Q.dhp_r = 1.6;
 Q.dbp_r = 1;
 Q.true_other_r = 0;
 Q.reichstag_size = 4.59;
-Q.landtag_size = 4.28;
+Q.landtag_size = 4.21;
 
 // diff from prev
 Q.old_spd_r = 22.4;
@@ -450,13 +450,12 @@ Q.kpd_r_prussia = 6.2;
 Q.z_r_prussia = 18.1;
 Q.ddp_r_prussia = 6.2;
 Q.dvp_r_prussia = 14.0;
-Q.true_other_r_prussia = 3.1;
-Q.wp_r_prussia = 1.0;
+Q.wp_r_prussia = 1.1;
 Q.dnvp_r_prussia = 18.1;
 Q.dvfp_r_prussia = 0;
 Q.nsdap_r_prussia = 0;
 Q.nsfb_r_prussia = 0;
-Q.other_r_prussia = 4.1;
+Q.other_r_prussia = 3.1;
 
 // diff from prev PRUSSIA
 Q.old_spd_r_prussia = 26.3;
