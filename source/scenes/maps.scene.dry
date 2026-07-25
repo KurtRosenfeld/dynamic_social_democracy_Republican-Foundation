@@ -745,7 +745,13 @@ go-to: map_menu
 
 {!<tr><td><div class="box" style='background-color:#DD8D1B'> </div> Social-Liberal Coalition (including DVP) </td></tr>!}
 
+[? if aspd_exists: {!<tr><td><div class="box" style='background-color:#A78DB2'> </div> National Social-Liberal Coalition </td></tr>!} ?]
+
 {!<tr><td><div class="box" style='background-color:#A2B725'> </div> Grand Coalition </td></tr>!}
+
+[? if aspd_exists: {!<tr><td><div class="box" style='background-color:#C58FFF'> </div> Social-Monarchist Coalition </td></tr>!} ?]
+
+[? if social_fascism_unlocked: {!<tr><td><div class="box" style='background-color:#AD4928'> </div> Social-Fascist Coalition </td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#818181'> </div> Bourgeois Coalition </td></tr>!}
 
