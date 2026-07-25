@@ -1289,7 +1289,7 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
 [? if uspd_r_meck_schwe:    <p>USPD: [+ meck_schwe_uspd : government +]</p> ?]
 [? if ddp_r_meck_schwe:    <p>DDP: [+ meck_schwe_ddp : government +]</p> ?]
 [? if true_other_r_meck_schwe:    <p>Others: [+ meck_schwe_true_others : government +]</p> ?]
-[? if wp_r_meck_schwe:    <p>VHB: [+ meck_schwe_wp : government +]</p> ?]
+[? if wp_r_meck_schwe:    <p>WP: [+ meck_schwe_wp : government +]</p> ?]
 [? if dvp_r_meck_schwe:    <p>DVP: [+ meck_schwe_dvp : government +]</p> ?]
 [? if kvp_r_meck_schwe:    <p>KVP: [+ meck_schwe_kvp : government +]</p> ?]
 [? if dnvp_r_meck_schwe:    <p>DNVP: [+ meck_schwe_dnvp : government +]</p> ?]
