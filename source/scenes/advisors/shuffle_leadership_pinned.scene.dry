@@ -1,6 +1,7 @@
 title: Shuffle Leadership
 view-if: started and shuffle_leadership_timer <= 0
 new-page: true
+tags: advisor
 is-card: true
 is-pinned-card: true
 on-arrival: month_activities += 1; shuffle_leadership_timer = 10;
