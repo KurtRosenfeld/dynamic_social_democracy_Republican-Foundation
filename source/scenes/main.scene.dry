@@ -693,7 +693,7 @@ setTimeout(function() {
     
 }, 1000);
 !}
-max-cards: 9
+max-cards: 3
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
@@ -2077,7 +2077,7 @@ setTimeout(function() {
     
 }, 1000);
 !}
-max-cards: 9
+max-cards: 4
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
