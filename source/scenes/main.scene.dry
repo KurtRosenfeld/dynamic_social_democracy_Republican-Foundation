@@ -602,92 +602,109 @@ setTimeout(function() {
     var content = document.getElementById('content');
     if (!content) return;
     
-    var pinnedContainer = content.querySelector('.pinned-cards') || content;
-    if (!pinnedContainer) return;
-    
-    var allItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand');
+    // Get all pinned items
+    var pinnedItems = content.querySelectorAll('.pinned-card, .pinned-cards li, .pinned-cards .card-in-hand');
     var leaderItems = [];
-    var advisorItems = [];
-    var shuffleItem = null;
+    var shuffleItems = [];
     
-    allItems.forEach(function(item) {
+    pinnedItems.forEach(function(item) {
         var link = item.querySelector('a');
-        if (!link) {
-            advisorItems.push(item);
-            return;
-        }
+        if (!link) return;
         
         var href = link.getAttribute('href') || '';
-        var title = link.title || '';
+        var onclick = link.getAttribute('onclick') || '';
         var caption = item.querySelector('.card-caption');
         var captionText = caption ? caption.textContent : '';
+        var cardId = link.id || '';
+        var linkText = link.textContent || '';
         
-        // Check for shuffle card - EXACT match
-        var isShuffle = href.indexOf('advisors/shuffle_leadership_pinned.scene.dry') !== -1 ||
-                       title === 'Shuffle Leadership' ||  // Exact match, not contains
-                       captionText === 'Shuffle Leadership';  // Exact match, not contains
+        // The shuffle card specifically has "shuffle_leadership_pinned" in its href/onclick
+        var isShuffleCard = href.indexOf('shuffle_leadership_pinned') !== -1 || 
+                           onclick.indexOf('shuffle_leadership_pinned') !== -1 ||
+                           cardId.indexOf('shuffle_leadership_pinned') !== -1 ||
+                           linkText.indexOf('shuffle_leadership_pinned') !== -1;
         
-        if (isShuffle) {
-            shuffleItem = item;
-            advisorItems.push(item);
-            return;
-        }
+        // Check if this is a jester card (using "jester" instead of "leader")
+        var isJester = (href.indexOf('jester') !== -1 || 
+                       onclick.indexOf('jester') !== -1 ||
+                       captionText.toLowerCase().indexOf('jester') !== -1) &&
+                       !isShuffleCard;
         
-        // Check for actual leader card - look for scene path that ends with "/leader"
-        // NOT "leadership" or any other variation
-        var isLeader = href.match(/\/leader(\.|$)/) !== null ||  // "/leader." or "/leader" at end
-                       href.indexOf('/scenes/leader') !== -1 ||  // Specific scene folder
-                       captionText.toLowerCase() === 'leader';    // Exact match only
-        
-        if (isLeader) {
+        if (isShuffleCard) {
+            shuffleItems.push(item);
+        } else if (isJester) {
             leaderItems.push(item);
-        } else {
-            advisorItems.push(item);
         }
     });
     
+    // Also check data attributes
+    var allCards = content.querySelectorAll('.pinned-cards a, .pinned-card a');
+    allCards.forEach(function(link) {
+        var parentItem = link.closest('li') || link.closest('.pinned-card') || link.closest('.card-in-hand');
+        if (!parentItem) return;
+        
+        var isShuffle = false;
+        var isJester = false;
+        
+        for (var i = 0; i < link.attributes.length; i++) {
+            var attr = link.attributes[i];
+            if (attr.value) {
+                if (attr.value.indexOf('shuffle_leadership_pinned') !== -1) {
+                    isShuffle = true;
+                }
+                if (attr.value.indexOf('jester') !== -1 && 
+                    attr.value.indexOf('shuffle_leadership_pinned') === -1) {
+                    isJester = true;
+                }
+            }
+        }
+        
+        if (isShuffle) {
+            if (shuffleItems.indexOf(parentItem) === -1) {
+                shuffleItems.push(parentItem);
+            }
+        } else if (isJester) {
+            if (leaderItems.indexOf(parentItem) === -1) {
+                leaderItems.push(parentItem);
+            }
+        }
+    });
+    
+    // Mark the shuffle card as #advisor
+    shuffleItems.forEach(function(item) {
+        item.dataset.tags = (item.dataset.tags || '') + ' #advisor';
+        item.classList.add('shuffle-leadership-card');
+        item.style.border = '2px solid orange';
+        item.title = 'Shuffle Leadership Card (Advisor)';
+    });
+    
+    // Mark the actual jesters as #jester
+    leaderItems.forEach(function(item) {
+        item.dataset.tags = (item.dataset.tags || '') + ' #jester';
+        item.classList.add('actual-jester-card');
+        item.style.border = '2px solid green';
+        item.title = 'Actual Jester Card';
+    });
+    
+    // Add a divider if we have actual jesters
     if (leaderItems.length > 0) {
-        // Remove all items
-        var allExistingItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand, .leader-divider');
-        allExistingItems.forEach(function(item) {
-            if (item.parentNode) {
-                item.parentNode.removeChild(item);
-            }
-        });
-        
-        // 1. Advisors (top)
-        advisorItems.forEach(function(item) {
-            pinnedContainer.appendChild(item);
-            if (item === shuffleItem) {
-                item.dataset.tags = '#advisor';
-                item.classList.add('advisor-card');
-                item.style.border = '2px solid orange';
-            }
-        });
-        
-        // 2. Divider
         var divider = document.createElement('div');
         divider.id = 'leaders-divider';
-        divider.className = 'leader-divider';
-        divider.style.borderTop = '3px solid #4CAF50';
-        divider.style.margin = '15px 0';
-        divider.style.padding = '8px 0';
-        divider.style.fontWeight = 'bold';
-        divider.style.color = '#4CAF50';
-        divider.textContent = '— Leaders —';
-        pinnedContainer.appendChild(divider);
+        divider.style.borderTop = '2px solid #4CAF50';
+        divider.style.margin = '10px 0';
+        divider.style.padding = '5px 0';
+        divider.textContent = '— Jesters —';
         
-        // 3. Leaders (bottom)
-        leaderItems.forEach(function(item) {
-            pinnedContainer.appendChild(item);
-            item.dataset.tags = '#leader';
-            item.classList.add('actual-leader-card');
-            item.style.border = '2px solid green';
-        });
-        
-        console.log('Advisors (including shuffle):', advisorItems.length);
-        console.log('Leaders moved below divider:', leaderItems.length);
+        // Insert divider before the first jester item
+        var firstLeader = leaderItems[0];
+        if (firstLeader && firstLeader.parentNode) {
+            firstLeader.parentNode.insertBefore(divider, firstLeader);
+        }
     }
+    
+    console.log('Found actual jesters:', leaderItems.length);
+    console.log('Found shuffle leadership cards:', shuffleItems.length);
+    console.log('Shuffle card is in leader slot, treating as advisor');
     
 }, 1000);
 !}
@@ -1984,92 +2001,109 @@ setTimeout(function() {
     var content = document.getElementById('content');
     if (!content) return;
     
-    var pinnedContainer = content.querySelector('.pinned-cards') || content;
-    if (!pinnedContainer) return;
-    
-    var allItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand');
+    // Get all pinned items
+    var pinnedItems = content.querySelectorAll('.pinned-card, .pinned-cards li, .pinned-cards .card-in-hand');
     var leaderItems = [];
-    var advisorItems = [];
-    var shuffleItem = null;
+    var shuffleItems = [];
     
-    allItems.forEach(function(item) {
+    pinnedItems.forEach(function(item) {
         var link = item.querySelector('a');
-        if (!link) {
-            advisorItems.push(item);
-            return;
-        }
+        if (!link) return;
         
         var href = link.getAttribute('href') || '';
-        var title = link.title || '';
+        var onclick = link.getAttribute('onclick') || '';
         var caption = item.querySelector('.card-caption');
         var captionText = caption ? caption.textContent : '';
+        var cardId = link.id || '';
+        var linkText = link.textContent || '';
         
-        // Check for shuffle card - EXACT match
-        var isShuffle = href.indexOf('advisors/shuffle_leadership_pinned.scene.dry') !== -1 ||
-                       title === 'Shuffle Leadership' ||  // Exact match, not contains
-                       captionText === 'Shuffle Leadership';  // Exact match, not contains
+        // The shuffle card specifically has "shuffle_leadership_pinned" in its href/onclick
+        var isShuffleCard = href.indexOf('shuffle_leadership_pinned') !== -1 || 
+                           onclick.indexOf('shuffle_leadership_pinned') !== -1 ||
+                           cardId.indexOf('shuffle_leadership_pinned') !== -1 ||
+                           linkText.indexOf('shuffle_leadership_pinned') !== -1;
         
-        if (isShuffle) {
-            shuffleItem = item;
-            advisorItems.push(item);
-            return;
-        }
+        // Check if this is a jester card (using "jester" instead of "leader")
+        var isJester = (href.indexOf('jester') !== -1 || 
+                       onclick.indexOf('jester') !== -1 ||
+                       captionText.toLowerCase().indexOf('jester') !== -1) &&
+                       !isShuffleCard;
         
-        // Check for actual leader card - look for scene path that ends with "/leader"
-        // NOT "leadership" or any other variation
-        var isLeader = href.match(/\/leader(\.|$)/) !== null ||  // "/leader." or "/leader" at end
-                       href.indexOf('/scenes/leader') !== -1 ||  // Specific scene folder
-                       captionText.toLowerCase() === 'leader';    // Exact match only
-        
-        if (isLeader) {
+        if (isShuffleCard) {
+            shuffleItems.push(item);
+        } else if (isJester) {
             leaderItems.push(item);
-        } else {
-            advisorItems.push(item);
         }
     });
     
+    // Also check data attributes
+    var allCards = content.querySelectorAll('.pinned-cards a, .pinned-card a');
+    allCards.forEach(function(link) {
+        var parentItem = link.closest('li') || link.closest('.pinned-card') || link.closest('.card-in-hand');
+        if (!parentItem) return;
+        
+        var isShuffle = false;
+        var isJester = false;
+        
+        for (var i = 0; i < link.attributes.length; i++) {
+            var attr = link.attributes[i];
+            if (attr.value) {
+                if (attr.value.indexOf('shuffle_leadership_pinned') !== -1) {
+                    isShuffle = true;
+                }
+                if (attr.value.indexOf('jester') !== -1 && 
+                    attr.value.indexOf('shuffle_leadership_pinned') === -1) {
+                    isJester = true;
+                }
+            }
+        }
+        
+        if (isShuffle) {
+            if (shuffleItems.indexOf(parentItem) === -1) {
+                shuffleItems.push(parentItem);
+            }
+        } else if (isJester) {
+            if (leaderItems.indexOf(parentItem) === -1) {
+                leaderItems.push(parentItem);
+            }
+        }
+    });
+    
+    // Mark the shuffle card as #advisor
+    shuffleItems.forEach(function(item) {
+        item.dataset.tags = (item.dataset.tags || '') + ' #advisor';
+        item.classList.add('shuffle-leadership-card');
+        item.style.border = '2px solid orange';
+        item.title = 'Shuffle Leadership Card (Advisor)';
+    });
+    
+    // Mark the actual jesters as #jester
+    leaderItems.forEach(function(item) {
+        item.dataset.tags = (item.dataset.tags || '') + ' #jester';
+        item.classList.add('actual-jester-card');
+        item.style.border = '2px solid green';
+        item.title = 'Actual Jester Card';
+    });
+    
+    // Add a divider if we have actual jesters
     if (leaderItems.length > 0) {
-        // Remove all items
-        var allExistingItems = pinnedContainer.querySelectorAll('li, .pinned-card, .card-in-hand, .leader-divider');
-        allExistingItems.forEach(function(item) {
-            if (item.parentNode) {
-                item.parentNode.removeChild(item);
-            }
-        });
-        
-        // 1. Advisors (top)
-        advisorItems.forEach(function(item) {
-            pinnedContainer.appendChild(item);
-            if (item === shuffleItem) {
-                item.dataset.tags = '#advisor';
-                item.classList.add('advisor-card');
-                item.style.border = '2px solid orange';
-            }
-        });
-        
-        // 2. Divider
         var divider = document.createElement('div');
         divider.id = 'leaders-divider';
-        divider.className = 'leader-divider';
-        divider.style.borderTop = '3px solid #4CAF50';
-        divider.style.margin = '15px 0';
-        divider.style.padding = '8px 0';
-        divider.style.fontWeight = 'bold';
-        divider.style.color = '#4CAF50';
-        divider.textContent = '— Leaders —';
-        pinnedContainer.appendChild(divider);
+        divider.style.borderTop = '2px solid #4CAF50';
+        divider.style.margin = '10px 0';
+        divider.style.padding = '5px 0';
+        divider.textContent = '— Jesters —';
         
-        // 3. Leaders (bottom)
-        leaderItems.forEach(function(item) {
-            pinnedContainer.appendChild(item);
-            item.dataset.tags = '#leader';
-            item.classList.add('actual-leader-card');
-            item.style.border = '2px solid green';
-        });
-        
-        console.log('Advisors (including shuffle):', advisorItems.length);
-        console.log('Leaders moved below divider:', leaderItems.length);
+        // Insert divider before the first jester item
+        var firstLeader = leaderItems[0];
+        if (firstLeader && firstLeader.parentNode) {
+            firstLeader.parentNode.insertBefore(divider, firstLeader);
+        }
     }
+    
+    console.log('Found actual jesters:', leaderItems.length);
+    console.log('Found shuffle leadership cards:', shuffleItems.length);
+    console.log('Shuffle card is in leader slot, treating as advisor');
     
 }, 1000);
 !}
