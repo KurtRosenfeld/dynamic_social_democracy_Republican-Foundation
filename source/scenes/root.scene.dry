@@ -443,18 +443,20 @@ Q.previous_nvf_last_election_votes_prussia = 0.0;
 Q.previous_schleicher_dnef_last_election_votes_prussia = 0.0;
 
 // prussian gov right now
-Q.spd_r_prussia = 26.3;
-Q.uspd_r_prussia = 5.0;
-Q.kpd_r_prussia = 9.0;
-Q.z_r_prussia = 17.2;
+Q.spd_r_prussia = 25.9;
+Q.uspd_r_prussia = 6.4;
+Q.kag_r_prussia = 1.2;
+Q.kpd_r_prussia = 6.2;
+Q.z_r_prussia = 18.1;
 Q.ddp_r_prussia = 6.2;
-Q.dvp_r_prussia = 14.2;
-Q.wp_r_prussia = 1.18;
+Q.dvp_r_prussia = 14.0;
+Q.true_other_r_prussia = 3.1;
+Q.wp_r_prussia = 1.0;
 Q.dnvp_r_prussia = 18.1;
 Q.dvfp_r_prussia = 0;
 Q.nsdap_r_prussia = 0;
 Q.nsfb_r_prussia = 0;
-Q.other_r_prussia = 4.0;
+Q.other_r_prussia = 4.1;
 
 // diff from prev PRUSSIA
 Q.old_spd_r_prussia = 26.3;
@@ -463,24 +465,24 @@ Q.old_kpd_r_prussia = 9.0;
 Q.old_z_r_prussia = 17.2;
 Q.old_ddp_r_prussia = 6.2;
 Q.old_dvp_r_prussia = 14.2;
-Q.old_wp_r_prussia = 1.18;
+Q.old_wp_r_prussia = 1.0;
 Q.old_dnvp_r_prussia = 18.1;
 Q.old_dvfp_r_prussia = 0;
 Q.old_nsdap_r_prussia = 0;
 Q.old_other_r_prussia = 4.0;
 
 // old election votes PRUSSIA
-Q.previous_spd_last_election_votes_prussia = 26.3;
-Q.previous_uspd_last_election_votes_prussia = 6.6;
+Q.previous_spd_last_election_votes_prussia = 25.9;
+Q.previous_uspd_last_election_votes_prussia = 6.4;
 Q.previous_kpd_last_election_votes_prussia = 7.4;
-Q.previous_z_last_election_votes_prussia = 17.2;
-Q.previous_ddp_last_election_votes_prussia = 6.2;
-Q.previous_dvp_last_election_votes_prussia = 14.2;
-Q.previous_wp_last_election_votes_prussia = 1.18;
-Q.previous_dnvp_last_election_votes_prussia = 18.1;
+Q.previous_z_last_election_votes_prussia = 17.9;
+Q.previous_ddp_last_election_votes_prussia = 6.1;
+Q.previous_dvp_last_election_votes_prussia = 14.0;
+Q.previous_wp_last_election_votes_prussia = 1.2;
+Q.previous_dnvp_last_election_votes_prussia = 18.0;
 Q.previous_dvfp_election_votes_prussia = 0;
 Q.previous_nsdap_last_election_votes_prussia = 0;
-Q.previous_other_last_election_votes_prussia = 4.0;
+Q.previous_other_last_election_votes_prussia = 4.4;
 
 // Local parliament makeup
 Q.waldeck_seats = 21; //Waldeck 
@@ -535,7 +537,7 @@ Q.farm_r_bavaria = 0.08; Q.bavaria_farm = 1;
 Q.ddp_r_bavaria = 0.08; Q.bavaria_ddp = 1;
 Q.bvp_r_bavaria = 0.42; Q.bavaria_bvp = 1;
 Q.dnvp_r_bavaria = 0.12; // maybe revert to rl later
-Q.prussia_seats = 428; // Prussia
+Q.prussia_seats = 421; // Prussia
 Q.prussia_spd = 1;
 Q.prussia_z = 1;
 Q.prussia_ddp = 1;
