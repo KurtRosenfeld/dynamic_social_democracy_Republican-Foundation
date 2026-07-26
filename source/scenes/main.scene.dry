@@ -706,7 +706,7 @@ setTimeout(function() {
     console.log('Found shuffle leadership cards:', shuffleItems.length);
     console.log('Shuffle card is in leader slot, treating as advisor');
     
-}, 1000);
+}, 400);
 !}
 max-cards: 3
 
@@ -2105,7 +2105,7 @@ setTimeout(function() {
     console.log('Found shuffle leadership cards:', shuffleItems.length);
     console.log('Shuffle card is in leader slot, treating as advisor');
     
-}, 1000);
+}, 400);
 !}
 max-cards: 4
 
