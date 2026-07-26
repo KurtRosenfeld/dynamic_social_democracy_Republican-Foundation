@@ -2,7 +2,7 @@ title: Mecklenburg-Schwerin Landtag Election
 view-if: (year == 1924 and month == 2 and not meck_schwe_election_seen) or (meck_schwe_election_2_trigger_time == time and meck_schwe_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: meck_schwe_election_seen += 1 if meck_schwe_election_seen; meck_schwe_election_seen = 1 if not meck_schwe_election_seen; meck_schwe_election_seen_time = time; meck_schwe_seats = 62; meck_stre_spd = 0; meck_stre_kpd = 0; meck_stre_sapd = 0; meck_stre_uspd = 0; meck_stre_ddp = 0; meck_stre_kvp = 0; meck_stre_true_others = 0; meck_stre_wp = 0; meck_stre_lvp = 0
+on-arrival: meck_schwe_election_seen += 1 if meck_schwe_election_seen; meck_schwe_election_seen = 1 if not meck_schwe_election_seen; meck_schwe_election_seen_time = time; meck_schwe_seats = 62; meck_schwe_spd = 0; meck_schwe_kpd = 0; meck_schwe_sapd = 0; meck_schwe_uspd = 0; meck_schwe_ddp = 0; meck_schwe_kvp = 0; meck_schwe_true_others = 0; meck_schwe_wp = 0; meck_schwe_lvp = 0
 priority: 2
 on-display: {!  
     var cardEl = document.createElement('div');  
