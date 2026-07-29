@@ -592,7 +592,8 @@ You can't even rely on the <span style="color: [+ ddp_colour +];">DDP</span>...
 title: A Coalition of the Left will be formed
 subtitle: We will work alongside the KPD
 choose-if: left_coalition_meck_stre >= 50 and kpd_relation >= 50
-on-arrival: meck_stre_election_2_trigger_time = time + 48; workers_kpd += 2; workers_dvp -= 2; workers_dnvp -= 1; rural_spd += 1; meck_stre_gov = "Left"; meck_stre_spd = 1; meck_stre_sapd = 1; meck_stre_uspd = 1; meck_stre_kpd = 1
+on-arrival: meck_stre_election_2_trigger_time = time + 48; rural_spd += 1; meck_stre_gov = "Left"; meck_stre_spd = 1; meck_stre_sapd = 1; meck_stre_uspd = 1; meck_stre_kpd = 1
+go-to: final_checkout_meck_stre
 
 @spd_majority_meck_stre
 title: We don't need any coalition partners
@@ -615,8 +616,8 @@ view-if: right_coalition_meck_stre < 50 and bourgeois_coalition_meck_stre < 50 a
 
 
 @meck_stre_coalition_creator_option
-title: Custom Coalition Creator (Test)
-subtitle: Dear Test Players, if you see this, please tell me what you think
+title: Custom Coalition Creator
+subtitle: Why not try to achieve another deal?
 on-arrival: meck_stre_coalition_r = spd_r_meck_stre; meck_stre_spd = 1
 go-to: meck_stre_coalition_creator
 
@@ -737,7 +738,8 @@ Why are you so desperate?
 choose-if: meck_stre_coalition_r >= 50
 subtitle: We can form a coalition!
 unavailable-subtitle: We need more partners
-on-arrival: meck_stre_gov = "Social-Catholic" if meck_stre_spd == 1 and meck_stre_z == 1; meck_stre_gov = "Weimar" if meck_stre_spd == 1 and meck_stre_z == 1 and (meck_stre_ddp == 1 or meck_stre_lvp == 1); meck_stre_gov = "Grand" if meck_stre_spd == 1 and meck_stre_z == 1 and meck_stre_dvp == 1; meck_stre_gov = "Left" if meck_stre_spd == 1 and meck_stre_kpd == 1; meck_stre_gov = "Popular-Front" if meck_stre_spd == 1 and meck_stre_z == 1 and meck_stre_kpd == 1; meck_stre_gov = "Social-Democratic" if meck_stre_uspd == 1 and not meck_stre_kpd == 1 and not meck_stre_z == 1; meck_stre_gov = "Social-Liberal" if (meck_stre_ddp == 1 or meck_stre_lvp == 1) and not meck_stre_z == 1 and meck_stre_spd == 1  
+on-arrival: meck_stre_gov = "Social-Agrarian" if meck_stre_farm == 1; meck_stre_gov = "Social-Catholic" if meck_stre_z == 1; meck_stre_gov = "Weimar" if meck_stre_z == 1 and (meck_stre_ddp == 1 or meck_stre_lvp == 1); meck_stre_gov = "Grand" if meck_stre_dvp == 1 or meck_stre_wp == 1; meck_stre_gov = "Left" if meck_stre_kpd == 1; meck_stre_gov = "Popular-Front" if meck_stre_z == 1 and meck_stre_kpd == 1; meck_stre_gov = "Social-Democratic" if meck_stre_uspd == 1 and not meck_stre_kpd == 1 and not meck_stre_z == 1; meck_stre_gov = "Social-Liberal" if (meck_stre_ddp == 1 or meck_stre_lvp == 1 or meck_stre_dvp == 1) and not meck_stre_z == 1; meck_stre_gov = "Progressive" if (meck_stre_uspd == 1 or meck_stre_sapd == 1) and (meck_stre_ddp == 1 or meck_stre_lvp)
+go-to: final_checkout_meck_stre
 
 Congrats you have formed a [+ meck_stre_gov +] Coalition with [+ meck_stre_coalition_r +]% parliamentary support!
 
@@ -901,5 +903,11 @@ go-to: meck_stre_toleration_menu
 view-if: meck_stre_lvp == 2
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - lvp_r_meck_stre; meck_stre_lvp = 0; meck_stre_election_2_trigger_time -= 4
 go-to: meck_stre_toleration_menu
+
+
+
+@final_checkout_meck_stre
+title: This title does not matter
+on-arrival: workers_kpd += 2  if meck_stre_kpd == 1; workers_dvp -= 2  if meck_stre_kpd == 1; workers_dnvp -= 1 if meck_stre_kpd == 1
 
 
