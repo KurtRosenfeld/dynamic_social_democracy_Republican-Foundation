@@ -622,23 +622,23 @@ Parties currently:
 
 @meck_stre_seek_kpd_toleration
 view-if: kpd_r_meck_stre > 0 and not meck_stre_kpd == 2
-choose-if: kpd_relation >= 40 or (kpd_relation >= 25 and Q.ideology == "left")
+choose-if: kpd_relation >= 40 or (kpd_relation >= 25 and ideology == "left")
 subtitle: The KPD will demand radical concessions and may withdraw support unpredictably.
-unavailable-subtitle: [? if kpd_relation < 25: Our relations with the KPD are too poor. ?][? if kpd_relation < 40 and not Q.ideology == "left": The KPD distrusts our moderate leadership. ?]
+unavailable-subtitle: [? if kpd_relation < 25: Our relations with the KPD are too poor. ?][? if kpd_relation < 40 and not ideology == "left": The KPD distrusts our moderate leadership. ?]
 on-arrival: meck_stre_kpd = 2; meck_stre_coalition_r = meck_stre_coalition_r + kpd_r_meck_stre; meck_stre_election_2_trigger_time -= 8; kpd_relation -= 2; rural_spd -= 1; workers_spd -= 1
 go-to: meck_stre_toleration_selection
 
 @meck_stre_seek_sapd_toleration
 view-if: sapd_r_meck_stre > 0 and not meck_stre_sapd == 2
-choose-if: sapd_relation >= 35 or (sapd_relation >= 20 and Q.ideology == "left")
+choose-if: sapd_relation >= 35 or (sapd_relation >= 20 and ideology == "left")
 subtitle: The SAPD will demand socialist policies in exchange for toleration.
-unavailable-subtitle: [? if sapd_relation < 20: Our relations with the SAPD are too poor. ?][? if sapd_relation < 35 and not Q.ideology == "left": The SAPD sees us as too bourgeois. ?]
+unavailable-subtitle: [? if sapd_relation < 20: Our relations with the SAPD are too poor. ?][? if sapd_relation < 35 and not ideology == "left": The SAPD sees us as too bourgeois. ?]
 on-arrival: meck_stre_sapd = 2; meck_stre_coalition_r = meck_stre_coalition_r + sapd_r_meck_stre; meck_stre_election_2_trigger_time -= 6; sapd_relation -= 1
 go-to: meck_stre_toleration_selection
 
 @meck_stre_seek_uspd_toleration
 view-if: uspd_r_meck_stre > 0 and not meck_stre_uspd == 2
-choose-if: uspd_relation >= 40 or (uspd_relation >= 30 and (uspd_ideology == "Orthodox Marxism" and not Q.ideology == "reformist"))
+choose-if: uspd_relation >= 40 or (uspd_relation >= 30 and (uspd_ideology == "Orthodox Marxism" and not ideology == "reformist"))
 subtitle: [? if uspd_ideology == "Orthodox Marxism": The USPD's orthodox faction may be more willing to work with us. ?][? if not uspd_ideology == "Orthodox Marxism": The USPD will demand progressive reforms. ?]
 unavailable-subtitle: [? if uspd_relation < 30: We need better relations with the USPD. ?]
 on-arrival: meck_stre_uspd = 2; meck_stre_coalition_r = meck_stre_coalition_r + uspd_r_meck_stre; meck_stre_election_2_trigger_time -= 4; uspd_relation += 1
@@ -646,7 +646,7 @@ go-to: meck_stre_toleration_selection
 
 @meck_stre_seek_ddp_toleration
 view-if: ddp_r_meck_stre > 0 and not meck_stre_ddp == 2
-choose-if: ddp_relation >= 30 or (ddp_relation >= 45 and Q.ideology == "left")
+choose-if: ddp_relation >= 30 or (ddp_relation >= 45 and ideology == "left")
 subtitle: [? if ddp_relation >= 65: The [+ ddp_name +] is sympathetic to our cause. ?][? if ddp_relation < 65: The [+ ddp_name +] will expect policy moderation. ?]
 unavailable-subtitle: [? if ddp_relation < 30: The [+ ddp_name +] doesn't trust us enough. ?]
 on-arrival: meck_stre_ddp = 2; meck_stre_coalition_r = meck_stre_coalition_r + ddp_r_meck_stre; meck_stre_election_2_trigger_time -= 2; ddp_relation += 2
@@ -654,7 +654,7 @@ go-to: meck_stre_toleration_selection
 
 @meck_stre_seek_lvp_toleration
 view-if: lvp_r_meck_stre > 0 and not meck_stre_lvp == 2
-choose-if: lvp_relation >= 45 or (lvp_relation >= 55 and Q.ideology == "left")
+choose-if: lvp_relation >= 45 or (lvp_relation >= 55 and ideology == "left")
 subtitle: [? if lvp_relation >= 75: The LVP is quite friendly to us. ?][? if lvp_relation < 75: The LVP will demand liberal economic policies. ?]
 unavailable-subtitle: [? if lvp_relation < 45: The LVP prefers bourgeois governments. ?]
 on-arrival: meck_stre_lvp = 2; meck_stre_coalition_r = meck_stre_coalition_r + lvp_r_meck_stre; meck_stre_election_2_trigger_time -= 3; lvp_relation += 1
