@@ -34,6 +34,8 @@ Q.lvp_right *= 0.5;
 Q.lvp_leader = "Luther";
 Q.lvp_ideology = "Moderate";
 
+Q.soc_lvp = (Q.soc_ddp + (Q.soc_ddp - Q.soc_dvp))
+
 Q.ddp_r = 0;
 Q.dvp_r = 0;
 Q.liberal_parliament = 0;
