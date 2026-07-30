@@ -1990,5 +1990,15 @@ A political compass usually isn't a sensible way to characterize a political lan
       <title
          id="title34">[+ ddp_name +]</title>
     </circle> ?]
+[? if not lvp_formed:  <circle
+       style="fill:[+ lvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="path29-5"
+       cx="[+ soc_lvp +]"
+       cy="[+ rep_lvp +]"
+       inkscape:label="compass_party_ddp"
+       r="7">
+      <title
+         id="title34">LVP</title>
+    </circle> ?]
   </g>
 </svg>
