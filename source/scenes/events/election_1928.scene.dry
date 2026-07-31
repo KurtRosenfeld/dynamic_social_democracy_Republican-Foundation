@@ -4180,10 +4180,49 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
 view-if: finance_minister_party != "SPD"
-on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
+
+- @appoint_hilferding_finance
+- @appoint_ludemann
+- @appoint_heldt
+
+@appoint_hilferding_finance
+title: Rudolf Hilferding
+subtitle: (centrist).
+view-if: hilferding_in == "SPD"
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: finance_minister = "Hilferding"; leverage -= 10; finance_minister_party = "SPD"
 go-to: ministries
 
 Rudolf Hilferding of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Finance Minister.
+
+@appoint_ludemann
+title: Hermann Lüdemann
+subtitle: (neorevisionist).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 10; finance_minister = "Lüdemann"; finance_minister_party = "SPD"
+go-to: ministries
+
+Hermann Lüdemann of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Finance Minister.
+
+@appoint_heldt
+title: Max Heldt
+subtitle: (social-patriot).
+view-if: not reformist_split and not aspd_formed
+choose-if: leverage >= 10 and not in_left_coalition; leverage >= 30 and in_left_coalition
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 10 if not in_left_coalition; leverage -= 30 if in_left_coalition; finance_minister = "Lüdemann"; finance_minister_party = "SPD"
+go-to: ministries
+
+Max Heldt of the <span style="color: [+ spd_colour +];">**SPD**</span> has been appointed Finance Minister.
+
+@cancel_finance
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: finance_minister_party = "Z"; finance_minister = "Köhler"
+go-to: ministries
 
 @economic
 title: Economic Ministry
