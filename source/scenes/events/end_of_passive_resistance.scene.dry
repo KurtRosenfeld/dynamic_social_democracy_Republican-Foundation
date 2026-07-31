@@ -2,7 +2,7 @@ title: End of Passive Resistance
 subtitle: Chancellor Stresemann seeks a different way of dealing with the crisis
 new-page: true
 max-visits: 1
-view-if: chancellor == "Stresemann" and ruhr_occupied == 1 and not dnvp_in_government
+view-if: chancellor == "Stresemann" and ruhr_occupied == 1 and not dnvp_in_government and month >= 8
 on-arrival: bvp_relation -= 5
 tags: event
 face-image: img/portraits/StresemannGustav.jpg
