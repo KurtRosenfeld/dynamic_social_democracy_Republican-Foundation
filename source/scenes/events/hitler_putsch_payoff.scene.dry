@@ -1,0 +1,41 @@
+title: Hitler vs <span style="color: #00CCFF;">Bavaria</span>
+subtitle: A major standoff
+view-if: bavaria_coup == 3
+on-arrival: bvp_relation += 2
+max-visits: 1
+priority: 4
+tags: event
+face-image: img/standoff1923.jpg
+new-page: true
+
+= Hitler vs <span style="color: #00CCFF;">Bavaria</span>
+
+Right on the next morning the mutineers started marching through various streets of Munich seeking to gather support for their March on Berlin inspirered by Mussolini. During the first combat of the day Ernst Röhm agreed to a short truce. Ludendorff ordered a propaganda march to Odeonsplatz close to Röhm's contingent.
+
+Ludendorff, Göring, Hitler and their troops are now met with a police blockade. Fire is opened.
+
+- @hitler_putsch_payoff: Counting the dead
+
+@hitler_putsch_payoff
+
+The coup has failed. Four policemen, 15 <span style="color: [+ nsdap_colour +];">Völkische</span> and a bystander died on that day.  Max Erwin von Scheubner-Richter, a major <span style="color: [+ nsdap_colour +];">NSDAP</span> figure, was among the shot. Ludendorff was aressted on the spot while Hitler managed to hide for two days. The only major coup-leader yet to be found is Rudolf Heß.
+
+- @end_putsch_in_1923: Let's just hope they will be punished accordingly
+
+@end_putsch_in_1923
+
+One thing is sure the legal battle will be harsh. We just don't know who will face whom yet...
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
