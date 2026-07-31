@@ -16,7 +16,7 @@ The Bavarian Reichswehr division joined by Stahlhelm and SA starts their March o
 - @give_up_outright: There is nothing we can do.
 
 @stop_in_saxony
-on-arrival: bavaria_coup_power += 2 if freiberg_bloodbath_seen; anti_coup_power += 2 if saxony_spd == 1
+on-arrival: bavaria_coup_power += 2 if freiberg_bloodbath_seen; anti_coup_power += 2 if saxony_spd == 1; try_luck_in_saxony_1923 = 1
 
 We will stop them right in Central Germany where they have to pass on their way to Berlin. As it happens those are our major strongholds.
 
@@ -24,15 +24,30 @@ We will stop them right in Central Germany where they have to pass on their way 
 
 - @1923_coup_menu: How will we stop the advance?
 
+@wait_for_prussia
+on-arrival: bavaria_coup_power += 1 if freiberg_bloodbath_seen; anti_coup_power += 2 if prussia_spd == 1; try_luck_in_prussia_1923 = 1
+
+We will stop them in the Bullwark of Republicanism, a state with a strong comparatively loyal police and major stongholds of ours.
+
+[? if freiberg_bloodbath_seen: Many of the Reichswehr troops stationed in Saxony join the march enthusiastically. ?]
+
+- @1923_coup_menu: How will we stop the advance?
+
   @1923_coup_menu
+title: Coup menu
 
 - @appeal_to_the_kpd: Call on the KPD to help us
 - @appeal_to_bourgeois: Call on the Bouregois parties to help us
 - @appeal_to_the_reichswehr: Call on the Reichswehr to help us
-- @appeal_to_the_police: Call on the police to help us
+- @appeal_to_the_police_saxony: Call on the police to help us
+- @appeal_to_the_police_prussia: Call on the police to help us
+- @call_general_strike_central: Call for a general strike in Saxony and Thuringia
+- @call_general_strike_upper: Call for a general strike in Prussian Saxony
+- @coup_result: Now we can only hope for our best luck...
 
 @appeal_to_the_kpd
 on-arrival: anti_coup_power += 1 if kpd_relation >= 55; anti_coup_power += 1 if saxony_kpd == 1; anti_coup_power += 3 if rfb_strength_2 >= 58; bavaria_coup_power += 2 if freiberg_bloodbath_seen
+go-to: 1923_coup_menu
 
 [? if freiberg_bloodbath_seen and kpd_relation >= 55: The <span style="color: [+ kpd_colour +];">KPD</span> is split on supporting us. Some are in favour of helping us knowing that a succesful coup would be infinetly worse for their course than everything they have wittnessed in the Republic. On the other hand the events of the last months have driven the <span style="color: [+ kpd_colour +];">KPD</span> to hate everyone. So a general strike is called against both the Republic and the Monarchists... ?]
 
@@ -47,17 +62,21 @@ on-arrival: anti_coup_power += 1 if kpd_relation >= 55; anti_coup_power += 1 if 
 
 @appeal_to_bourgeois
 on-arrival: bourgeois_support_in_1923 = 1
+go-to: 1923_coup_menu
 
 The <span style="color: [+ dvp_colour +];">DVP</span> had decided to wait things out while the <span style="color: [+ z_colour +];">Center</span> and <span style="color: [+ ddp_colour +];">DDP</span> stand firmly behind the Republic! But... what excatly will they do now?
 
 
 @appeal_to_the_reichswehr
 choose-if: bourgeois_support_in_1923 or reichswehr_minister_party == "SPD"
-on-arrival: anti_coup_power += 1 if  bourgeois_support_in_1923; anti_coup_power += 1 if reichswehr_minister_party == "SPD"; anti_coup_power += 1 if reichswehr_loyalty >= 0.31; anti_coup_power += 1 if reichswehr_loyalty >= 0.41; anti_coup_power += 2 if reichswehr_loyalty >= 0.54; anti_coup_power += 2 if reichswehr_loyalty >= 0.71; anti_coup_power += 1 if reichswehr_loyalty >= 0.95
+on-arrival: anti_coup_power += 1 if  bourgeois_support_in_1923; anti_coup_power += 1.5 if reichswehr_minister_party == "SPD"; anti_coup_power += 2.5 if reichswehr_loyalty >= 0.31; anti_coup_power += 2.5 if reichswehr_loyalty >= 0.41; anti_coup_power += 3 if reichswehr_loyalty >= 0.54; anti_coup_power += 3 if reichswehr_loyalty >= 0.71; anti_coup_power += 5 if reichswehr_loyalty >= 0.95
+go-to: 1923_coup_menu
 
 
-@appeal_to_the_police
+@appeal_to_the_police_saxony
+view-if: try_luck_in_saxony_1923 == 1
 on-arrival: anti_coup_power += 0.5 if saxony_spd == 1; anti_coup_power += 0.5 if thuringia_spd == 1; anti_coup_power += 1 if saxony_reform >= 1; anti_coup_power += 1 if thuringia_reform >= 1; anti_coup_power += 1 if spd_prussia == 1
+go-to: 1923_coup_menu
 
 [? if saxony_spd == 1: Our control over the Saxon Interior Ministry allows us to direct the local police. ?]
 
@@ -65,4 +84,51 @@ on-arrival: anti_coup_power += 0.5 if saxony_spd == 1; anti_coup_power += 0.5 if
 
 [? if spd_prussia == 1: Carl Severing has sent a small support unit from Prussia to aid the cause. ?]
 
-  
+@appeal_to_the_police_prussia
+view-if: try_luck_in_prussia_1923 == 1
+on-arrival: anti_coup_power += 1 if prussia_police_loyalty >= 0.41; anti_coup_power += 1 if prussia_police_loyalty >= 0.54; anti_coup_power += 1 if prussia_police_loyalty >= 0.71; ; anti_coup_power += 1 if prussia_police_loyalty >= 0.95; ; anti_coup_power += 1 if prussia_police_strength >= 100; anti_coup_power += 1 if prussia_police_strength >= 120; anti_coup_power += 2 if prussia_police_strength >= 150; anti_coup_power += 0.5 if bourgeois_support_in_1923
+go-to: 1923_coup_menu
+
+In the aftermath of the Kapp Putsch in 1920 Carl Severing started a large scale programme to increase the loyalty of the Prussian Police. Let's just hope this will be enough.
+
+@call_general_strike_central
+view-if: try_luck_in_saxony_1923 == 1
+on-arrival: anti_coup_power += 0.5 if saxony_spd = 1; anti_coup_power += 0.5 if thuringia_spd = 1; anti_coup_power += 1 if kpd_relation >= 45; anti_coup_power += 1 if kpd_relation >= 75 ; anti_coup_power += 1 if uspd_joined > 2; anti_coup_power += 1 if (not uspd_joined and uspd_relation >= 30); anti_coup_power += 0.5 if uspd_relation >= 45; anti_coup_power += 0.5 if saxony_kpd == 1
+
+We have called a general strike in Saxony and Thuringia.
+
+@call_general_strike_upper
+view-if: try_luck_in_prussia_1923 == 1
+on-arrival: anti_coup_power += 1; anti_coup_power += 1 if kpd_relation >= 45; anti_coup_power += 1 if kpd_relation >= 75 ; anti_coup_power += 1 if uspd_joined > 2; anti_coup_power += 1 if (not uspd_joined and uspd_relation >= 30); anti_coup_power += 0.5 if uspd_relation >= 45; anti_coup_power += 0.1 if spd_prussia == 1
+
+We have called a general strike in the Prussian province of Saxony and other industrial regions of Prussia.
+
+
+@give_up_outright
+go-to: total_defeat
+
+@coup_result
+go-to: total_defeat if anti_coup_power < bavaria_coup_power; truce if anti_coup_power == bavaria_coup_power; easy_win if anti_coup_power > bavaria_coup_power
+
+
+@total_defeat
+on-arrival: president = "vacant"; president_party = "I"
+title: Total defeat
+go-to: the_kaiser_state
+
+The reactionary forces march through our strongholds where any resistance is torn apart. Berlin is taken within a day. Ebert resigns.
+
+
+@truce
+title: What is that?
+
+
+@easy_win
+title: Victory for the Republic!
+
+
+
+
+
+
+
