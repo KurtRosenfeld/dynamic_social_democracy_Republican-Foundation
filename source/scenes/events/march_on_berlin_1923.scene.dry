@@ -45,8 +45,8 @@ We will stop them in the Bullwark of Republicanism, a state with a strong compar
 - @coup_result: Now we can only hope for our best luck...
 
 @appeal_to_the_kpd
-view-if: 1923_kpd_option == 0
-on-arrival: 1923_kpd_option = 1; anti_coup_power += 1 if kpd_relation >= 55; anti_coup_power += 1 if saxony_kpd == 1; anti_coup_power += 3 if rfb_strength_2 >= 58; bavaria_coup_power += 2 if freiberg_bloodbath_seen
+view-if: that_kpd_option == 0
+on-arrival: that_kpd_option = 1; anti_coup_power += 1 if kpd_relation >= 55; anti_coup_power += 1 if saxony_kpd == 1; anti_coup_power += 3 if rfb_strength_2 >= 58; bavaria_coup_power += 2 if freiberg_bloodbath_seen
 go-to: 1923_coup_menu
 
 [? if freiberg_bloodbath_seen and kpd_relation >= 55: The <span style="color: [+ kpd_colour +];">KPD</span> is split on supporting us. Some are in favour of helping us knowing that a succesful coup would be infinetly worse for their course than everything they have wittnessed in the Republic. On the other hand the events of the last months have driven the <span style="color: [+ kpd_colour +];">KPD</span> to hate everyone. So a general strike is called against both the Republic and the Monarchists... ?]
