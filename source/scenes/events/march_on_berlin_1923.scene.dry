@@ -54,7 +54,7 @@ go-to: 1923_coup_menu
 
 [? if not freiberg_bloodbath_seen and kpd_relation >= 55: The <span style="color: [+ kpd_colour +];">KPD</span> is firmly on our side! They will call a general strike and organize their militias to fight of the reactionary forces. ?]
 
-[? if if not freiberg_bloodbath_seen and kpd_relation < 55: The <span style="color: [+ kpd_colour +];">KPD</span> is split on supporting us. Most just watch the events waiting to strike when a situation might favour their cause. ?]
+[? if not freiberg_bloodbath_seen and kpd_relation < 55: The <span style="color: [+ kpd_colour +];">KPD</span> is split on supporting us. Most just watch the events waiting to strike when a situation might favour their cause. ?]
 
 [? if rfb_strength_2 >= 58: Our extensive founding of worker's militias has brought many weapons in the hands of workers who hate reactionaries. ?]
 
