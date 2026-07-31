@@ -4210,7 +4210,7 @@ Hermann Lüdemann of the <span style="color: [+ spd_colour +];">**SPD**</span> h
 title: Max Heldt
 subtitle: (social-patriot).
 view-if: not reformist_split and not aspd_formed
-choose-if: leverage >= 10 and not in_left_coalition; leverage >= 30 and in_left_coalition
+choose-if: (leverage >= 10 and not in_left_coalition) or (leverage >= 30 and in_left_coalition)
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 10 if not in_left_coalition; leverage -= 30 if in_left_coalition; finance_minister = "Lüdemann"; finance_minister_party = "SPD"
 go-to: ministries
