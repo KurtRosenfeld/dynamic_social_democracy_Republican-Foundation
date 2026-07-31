@@ -1383,6 +1383,25 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   <div class="parliament-chart" data-state="thuringia" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: plhl</p>
     <p>SPD: [+ thuringia_spd : government +]</p>
+[? if kpd_r_thuringia:     <p>KPD: [+ thuringia_kpd : government +]</p>  ?]
+[? if sapd_r_thuringia:     <p>SAPD: [+ thuringia_sapd : government +]</p>  ?]
+[? if uspd_r_thuringia:     <p>USPD: [+ thuringia_uspd : government +]</p>  ?]
+[? if aspd_r_thuringia:     <p>ASPD: [+ thuringia_aspd : government +]</p>  ?]
+[? if ddp_r_thuringia:     <p>DDP: [+ thuringia_ddp : government +]</p>  ?]
+[? if lvp_r_thuringia:     <p>LVP: [+ thuringia_lvp : government +]</p>  ?]
+[? if z_r_thuringia:     <p>[+ z_party_name +]: [+ thuringia_z : government +]</p>  ?]
+[? if true_other_r_thuringia:     <p>Others: [+ thuringia_true_other : government +]</p>  ?]
+[? if dvp_r_thuringia:     <p>DVP: [+ thuringia_dvp : government +]</p>  ?]
+[? if wp_r_thuringia:     <p>WP: [+ thuringia_wp : government +]</p>  ?]
+[? if vrp_r_thuringia:     <p>VRP: [+ thuringia_vrp : government +]</p>  ?]
+[? if csvd_r_thuringia:     <p>CSVD: [+ thuringia_csvd : government +]</p>  ?]
+[? if kvp_r_thuringia:     <p>KVP: [+ thuringia_kvp : government +]</p>  ?]
+[? if farm_r_thuringia:     <p>ThLB: [+ thuringia_farm : government +]</p>  ?]
+[? if dnvp_r_thuringia:     <p>DNVP: [+ thuringia_dnvp : government +]</p>  ?]
+[? if dnf_r_thuringia:     <p>DNF: [+ thuringia_dnf : government +]</p>  ?]
+[? if dvfp_r_thuringia:     <p>DVFP: [+ thuringia_dvfp : government +]</p>  ?]
+[? if nsfb_r_thuringia:     <p>NSFB: [+ thuringia_nsfb : government +]</p>  ?]
+[? if nsdap_r_thuringia:     <p>NSDAP: [+ thuringia_nsdap : government +]</p>  ?]
 </div>
 <div id="hamburg-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Hamburg Politics</strong>
@@ -1392,6 +1411,23 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   <div class="parliament-chart" data-state="hamburg" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: plhl</p>
     <p>SPD: [+ hamburg_spd : government +]</p>
+[? if kpd_r_hamburg:     <p>KPD: [+ hamburg_kpd : government +]</p>  ?]
+[? if sapd_r_hamburg:     <p>SAPD: [+ hamburg_sapd : government +]</p>  ?]
+[? if uspd_r_hamburg:     <p>USPD: [+ hamburg_uspd : government +]</p>  ?]
+[? if aspd_r_hamburg:     <p>ASPD: [+ hamburg_aspd : government +]</p>  ?]
+[? if ddp_r_hamburg:     <p>[+ ddp_name +]: [+ hamburg_ddp : government +]</p>  ?]
+[? if lvp_r_hamburg:     <p>LVP: [+ hamburg_lvp : government +]</p>  ?]
+[? if true_other_r_hamburg:     <p>Others: [+ hamburg_true_other : government +]</p>  ?]
+[? if z_r_hamburg:     <p>Z: [+ hamburg_z : government +]</p>  ?]
+[? if wp_r_hamburg:     <p>WP: [+ hamburg_wp : government +]</p>  ?]
+[? if dvp_r_hamburg:     <p>DVP: [+ hamburg_dvp : government +]</p>  ?]
+[? if csvd_r_hamburg:     <p>CSVD: [+ hamburg_csvd : government +]</p>  ?]
+[? if kvp_r_hamburg:     <p>KVP: [+ hamburg_kvp : government +]</p>  ?]
+[? if dnvp_r_hamburg:     <p>DNVP: [+ hamburg_dnvp : government +]</p>  ?]
+[? if vrp_r_hamburg:     <p>VRP: [+ hamburg_vrp : government +]</p>  ?]
+[? if dnf_r_hamburg:     <p>DNF: [+ hamburg_dnf : government +]</p>  ?]
+[? if nsfb_r_hamburg:     <p>NSFB: [+ hamburg_nsfb : government +]</p>  ?]
+[? if nsdap_r_hamburg:     <p>NSDAP: [+ hamburg_nsdap : government +]</p>  ?]
 </div>
 <div id="bremen-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Bremen Politics</strong>
@@ -1401,6 +1437,25 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   <div class="parliament-chart" data-state="bremen" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: plhl</p>
     <p>SPD: [+ bremen_spd : government +]</p>
+[? if kpd_r_bremen:     <p>KPD: [+ bremen_kpd : government +]</p>  ?]
+[? if sapd_r_bremen:     <p>SAPD: [+ bremen_sapd : government +]</p>  ?]
+[? if uspd_r_bremen:     <p>USPD: [+ bremen_uspd : government +]</p>  ?]
+[? if spd_r_bremen:     <p>SPD: [+ bremen_spd : government +]</p>  ?]
+[? if aspd_r_bremen:     <p>ASPD: [+ bremen_aspd : government +]</p>  ?]
+[? if ddp_r_bremen:     <p>[+ ddp_name +]: [+ bremen_ddp : government +]</p>  ?]
+[? if lvp_r_bremen:     <p>LVP: [+ bremen_lvp : government +]</p>  ?]
+[? if z_r_bremen:     <p>Z: [+ bremen_z : government +]</p>  ?]
+[? if hb_r_bremen:     <p>HB: [+ bremen_hb : government +]</p>  ?]
+[? if true_other_r_bremen:     <p>Others: [+ bremen_true_other : government +]</p>  ?]
+[? if wp_r_bremen:     <p>WP: [+ bremen_wp : government +]</p>  ?]
+[? if dvp_r_bremen:     <p>DVP: [+ bremen_dvp : government +]</p>  ?]
+[? if csvd_r_bremen:     <p>CSVD: [+ bremen_csvd : government +]</p>  ?]
+[? if vrp_r_bremen:     <p>VRP: [+ bremen_vrp : government +]</p>  ?]
+[? if kvp_r_bremen:     <p>KVP: [+ bremen_kvp : government +]</p>  ?]
+[? if dnvp_r_bremen:     <p>DNVP: [+ bremen_dnvp : government +]</p>  ?]
+[? if dnf_r_bremen:     <p>DNF: [+ bremen_dnf : government +]</p>  ?]
+[? if nsfb_r_bremen:     <p>NSFB: [+ bremen_nsfb : government +]</p>  ?]
+[? if nsdap_r_bremen:     <p>NSDAP: [+ bremen_nsdap : government +]</p>  ?]
 </div>
 <div id="luebeck-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Lübeck Politics</strong>
@@ -1428,6 +1483,25 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   <div class="parliament-chart" data-state="hesse" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: plhl</p>
     <p>SPD: [+ hesse_spd : government +]</p>
+[? if kpd_r_hesse:     <p>KPD: [+ hesse_kpd : government +]</p>  ?]
+[? if kpo_r_hesse:     <p>KPO: [+ hesse_kpo : government +]</p>  ?]
+[? if sapd_r_hesse:     <p>SAPD: [+ hesse_sapd : government +]</p>  ?]
+[? if uspd_r_hesse:     <p>USPD: [+ hesse_uspd : government +]</p>  ?]
+[? if aspd_r_hesse:     <p>ASPD: [+ hesse_aspd : government +]</p>  ?]
+[? if ddp_r_hesse:     <p>[+ ddp_name +]: [+ hesse_ddp : government +]</p>  ?]
+[? if lvp_r_hesse:     <p>LVP: [+ hesse_lvp : government +]</p>  ?]
+[? if z_r_hesse:     <p>Z: [+ hesse_z : government +]</p>  ?]
+[? if dvp_r_hesse:     <p>DVP: [+ hesse_dvp : government +]</p>  ?]
+[? if wp_r_hesse:     <p>WP: [+ hesse_wp : government +]</p>  ?]
+[? if vrp_r_hesse:     <p>VRP: [+ hesse_vrp : government +]</p>  ?]
+[? if true_other_r_hesse:     <p>Others: [+ hesse_true_other : government +]</p>  ?]
+[? if kvp_r_hesse:     <p>KVP: [+ hesse_kvp : government +]</p>  ?]
+[? if farm_r_hesse:     <p>Farmers: [+ hesse_farm : government +]</p>  ?]
+[? if dnvp_r_hesse:     <p>DNVP: [+ hesse_dnvp : government +]</p>  ?]
+[? if dnf_r_hesse:     <p>DNF: [+ hesse_dnf : government +]</p>  ?]
+[? if dvfp_r_hesse:     <p>DVFP: [+ hesse_dvfp : government +]</p>  ?]
+[? if nsfb_r_hesse:     <p>NSFB: [+ hesse_nsfb : government +]</p>  ?]
+[? if nsdap_r_hesse:     <p>NSDAP: [+ hesse_nsdap : government +]</p>  ?]
 </div>
 <div id="oldenburg-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Oldenburg Politics</strong>
