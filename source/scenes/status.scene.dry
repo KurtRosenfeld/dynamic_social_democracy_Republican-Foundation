@@ -591,7 +591,7 @@ Strategy: [+ kpd_strategy +]
 
 [? if not uspd_joined = 3: Orientation: [+ uspd_ideology +] ([+ uspd_leader +]) ?]
 
-[? if sapd_formed: <span class="tooltip-text" title="Socialist Worker's Party of Germany" style="color: [+ sapd_colour +];">**SAPD**</span> ?]
+[? if sapd_formed: <span class="tooltip-text" title="Socialist Worker's Party of Germany" style="color: [+ sapd_colour +];">**SAPD**</span>: [+ sapd_relation : relationships +] ?]
 
 [? if sapd_formed: support: [+ sapd_votes +]% ?]
 
