@@ -2,7 +2,7 @@ title: <span style="color: #00CCFF;">Bavaria</span> revolts!
 new-page: true
 max-visits: 1
 view-if: chancellor == "Stresemann" and ruhr_occupied == 1 and not dnvp_in_government
-on-arrival: bvp_relation -= 5; rep_bvp -= 40; bavaria_coup += 1
+on-arrival: bvp_relation -= 5; rep_bvp -= 40; bavaria_coup += 1; bavaria_coup += 1 if super_mad_bavaria >= 2
 priority: -1
 tags: event
 face-image: img/land/Bavaria.svg.webp
