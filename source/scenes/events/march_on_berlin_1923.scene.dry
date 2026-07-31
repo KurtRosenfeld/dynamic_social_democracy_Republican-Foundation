@@ -1,0 +1,68 @@
+title: <span style="color: #00CCFF;">Bavaria</span> marches on Berlin!
+new-page: true
+tags: event
+on-arrival: anti_coup_power = 2; bavaria_coup_power = 20; rep_bvp -= 20; soc_bvp += 20; bvp_relation -= 10; dvp_relation -= 5; rep_dnvp -= 20; rep_dvp -= 20;
+view-if: bavaria_coup == 2
+max-visits: 1 
+priority: 5
+
+= <span style="color: #00CCFF;">Bavaria</span> marches on Berlin!
+
+The Bavarian Reichswehr division joined by Stahlhelm and SA starts their March on Berlin from Munich while local militias in every part of the country prepare to join their effort. We need to do something now!
+
+
+- @stop_in_saxony: We will stop them right in Saxony and Thuringia!
+- @wait_for_prussia: We will fight them back in Prussia!
+- @give_up_outright: There is nothing we can do.
+
+@stop_in_saxony
+on-arrival: bavaria_coup_power += 2 if freiberg_bloodbath_seen; anti_coup_power += 2 if saxony_spd == 1
+
+We will stop them right in Central Germany where they have to pass on their way to Berlin. As it happens those are our major strongholds.
+
+[? if freiberg_bloodbath_seen: The Reichswehr already has a lot of troops in the region. Many of them join the coup effort since they are already bored from harrasing communists. ?]
+
+- @1923_coup_menu: How will we stop the advance?
+
+  @1923_coup_menu
+
+- @appeal_to_the_kpd: Call on the KPD to help us
+- @appeal_to_bourgeois: Call on the Bouregois parties to help us
+- @appeal_to_the_reichswehr: Call on the Reichswehr to help us
+- @appeal_to_the_police: Call on the police to help us
+
+@appeal_to_the_kpd
+on-arrival: anti_coup_power += 1 if kpd_relation >= 55; anti_coup_power += 1 if saxony_kpd == 1; anti_coup_power += 3 if rfb_strength_2 >= 58; bavaria_coup_power += 2 if freiberg_bloodbath_seen
+
+[? if freiberg_bloodbath_seen and kpd_relation >= 55: The <span style="color: [+ kpd_colour +];">KPD</span> is split on supporting us. Some are in favour of helping us knowing that a succesful coup would be infinetly worse for their course than everything they have wittnessed in the Republic. On the other hand the events of the last months have driven the <span style="color: [+ kpd_colour +];">KPD</span> to hate everyone. So a general strike is called against both the Republic and the Monarchists... ?]
+
+[? if freiberg_bloodbath_seen and kpd_relation < 55: The <span style="color: [+ kpd_colour +];">KPD</span> is firmly opposed to saving the Republic. In fact they have called a full scale insurection against everyone. The coup leaders welcome this since the The <span style="color: [+ kpd_colour +];">KPD</span> lacks the capacity to take on either us or the them. ?]
+
+[? if not freiberg_bloodbath_seen and kpd_relation >= 55: The <span style="color: [+ kpd_colour +];">KPD</span> is firmly on our side! They will call a general strike and organize their militias to fight of the reactionary forces. ?]
+
+[? if if not freiberg_bloodbath_seen and kpd_relation < 55: The <span style="color: [+ kpd_colour +];">KPD</span> is split on supporting us. Most just watch the events waiting to strike when a situation might favour their cause. ?]
+
+[? if rfb_strength_2 >= 58: Our extensive founding of worker's militias has brought many weapons in the hands of workers who hate reactionaries. ?]
+
+
+@appeal_to_bourgeois
+on-arrival: bourgeois_support_in_1923 = 1
+
+The <span style="color: [+ dvp_colour +];">DVP</span> had decided to wait things out while the <span style="color: [+ z_colour +];">Center</span> and <span style="color: [+ ddp_colour +];">DDP</span> stand firmly behind the Republic! But... what excatly will they do now?
+
+
+@appeal_to_the_reichswehr
+choose-if: bourgeois_support_in_1923 or reichswehr_minister_party == "SPD"
+on-arrival: anti_coup_power += 1 if  bourgeois_support_in_1923; anti_coup_power += 1 if reichswehr_minister_party == "SPD"; anti_coup_power += 1 if reichswehr_loyalty >= 0.31; anti_coup_power += 1 if reichswehr_loyalty >= 0.41; anti_coup_power += 2 if reichswehr_loyalty >= 0.54; anti_coup_power += 2 if reichswehr_loyalty >= 0.71; anti_coup_power += 1 if reichswehr_loyalty >= 0.95
+
+
+@appeal_to_the_police
+on-arrival: anti_coup_power += 0.5 if saxony_spd == 1; anti_coup_power += 0.5 if thuringia_spd == 1; anti_coup_power += 1 if saxony_reform >= 1; anti_coup_power += 1 if thuringia_reform >= 1; anti_coup_power += 1 if spd_prussia == 1
+
+[? if saxony_spd == 1: Our control over the Saxon Interior Ministry allows us to direct the local police. ?]
+
+[? if saxony_reform >= 1: Our state reforms have secured us the loyalty of the police. ?]
+
+[? if spd_prussia == 1: Carl Severing has sent a small support unit from Prussia to aid the cause. ?]
+
+  
