@@ -69,15 +69,15 @@ The <span style="color: [+ dvp_colour +];">DVP</span> had decided to wait things
 
 
 @appeal_to_the_reichswehr
-view-if: 1923_reichswehr_option == 0
+view-if: that_reichswehr_option == 0
 choose-if: bourgeois_support_in_1923 or reichswehr_minister_party == "SPD"
-on-arrival: 1923_reichswehr_option = 1; anti_coup_power += 1 if  bourgeois_support_in_1923; anti_coup_power += 1.5 if reichswehr_minister_party == "SPD"; anti_coup_power += 2.5 if reichswehr_loyalty >= 0.31; anti_coup_power += 2.5 if reichswehr_loyalty >= 0.41; anti_coup_power += 3 if reichswehr_loyalty >= 0.54; anti_coup_power += 3 if reichswehr_loyalty >= 0.71; anti_coup_power += 5 if reichswehr_loyalty >= 0.95
+on-arrival: that_reichswehr_option = 1; anti_coup_power += 1 if  bourgeois_support_in_1923; anti_coup_power += 1.5 if reichswehr_minister_party == "SPD"; anti_coup_power += 2.5 if reichswehr_loyalty >= 0.31; anti_coup_power += 2.5 if reichswehr_loyalty >= 0.41; anti_coup_power += 3 if reichswehr_loyalty >= 0.54; anti_coup_power += 3 if reichswehr_loyalty >= 0.71; anti_coup_power += 5 if reichswehr_loyalty >= 0.95
 go-to: 1923_coup_menu
 
 
 @appeal_to_the_police_saxony
-view-if: try_luck_in_saxony_1923 == 1 and 1923_police_option == 0
-on-arrival: 1923_police_option = 1; anti_coup_power += 0.5 if saxony_spd == 1; anti_coup_power += 0.5 if thuringia_spd == 1; anti_coup_power += 1 if saxony_reform >= 1; anti_coup_power += 1 if thuringia_reform >= 1; anti_coup_power += 1 if spd_prussia == 1
+view-if: try_luck_in_saxony_1923 == 1 and that_police_option == 0
+on-arrival: that_police_option = 1; anti_coup_power += 0.5 if saxony_spd == 1; anti_coup_power += 0.5 if thuringia_spd == 1; anti_coup_power += 1 if saxony_reform >= 1; anti_coup_power += 1 if thuringia_reform >= 1; anti_coup_power += 1 if spd_prussia == 1
 go-to: 1923_coup_menu
 
 [? if saxony_spd == 1: Our control over the Saxon Interior Ministry allows us to direct the local police. ?]
@@ -87,22 +87,22 @@ go-to: 1923_coup_menu
 [? if spd_prussia == 1: Carl Severing has sent a small support unit from Prussia to aid the cause. ?]
 
 @appeal_to_the_police_prussia
-view-if: try_luck_in_prussia_1923 == 1 and 1923_police_option == 0
-on-arrival: 1923_police_option = 1; anti_coup_power += 1 if prussia_police_loyalty >= 0.41; anti_coup_power += 1 if prussia_police_loyalty >= 0.54; anti_coup_power += 1 if prussia_police_loyalty >= 0.71; anti_coup_power += 1 if prussia_police_loyalty >= 0.95; anti_coup_power += 1 if prussia_police_strength >= 100; anti_coup_power += 1 if prussia_police_strength >= 120; anti_coup_power += 2 if prussia_police_strength >= 150; anti_coup_power += 0.5 if bourgeois_support_in_1923
+view-if: try_luck_in_prussia_1923 == 1 and that_police_option == 0
+on-arrival: that_police_option = 1; anti_coup_power += 1 if prussia_police_loyalty >= 0.41; anti_coup_power += 1 if prussia_police_loyalty >= 0.54; anti_coup_power += 1 if prussia_police_loyalty >= 0.71; anti_coup_power += 1 if prussia_police_loyalty >= 0.95; anti_coup_power += 1 if prussia_police_strength >= 100; anti_coup_power += 1 if prussia_police_strength >= 120; anti_coup_power += 2 if prussia_police_strength >= 150; anti_coup_power += 0.5 if bourgeois_support_in_1923
 go-to: 1923_coup_menu
 
 In the aftermath of the Kapp Putsch in 1920 Carl Severing started a large scale programme to increase the loyalty of the Prussian Police. Let's just hope this will be enough.
 
 @call_general_strike_central
-view-if: try_luck_in_saxony_1923 == 1 and 1923_strike_option == 0
-on-arrival: 1923_strike_option = 1; anti_coup_power += 0.5 if saxony_spd = 1; anti_coup_power += 0.5 if thuringia_spd = 1; anti_coup_power += 1 if kpd_relation >= 45; anti_coup_power += 1 if kpd_relation >= 75 ; anti_coup_power += 1 if uspd_joined > 2; anti_coup_power += 1 if (not uspd_joined and uspd_relation >= 30); anti_coup_power += 0.5 if uspd_relation >= 45; anti_coup_power += 0.5 if saxony_kpd == 1
+view-if: try_luck_in_saxony_1923 == 1 and that_strike_option == 0
+on-arrival: that_strike_option = 1; anti_coup_power += 0.5 if saxony_spd = 1; anti_coup_power += 0.5 if thuringia_spd = 1; anti_coup_power += 1 if kpd_relation >= 45; anti_coup_power += 1 if kpd_relation >= 75 ; anti_coup_power += 1 if uspd_joined > 2; anti_coup_power += 1 if (not uspd_joined and uspd_relation >= 30); anti_coup_power += 0.5 if uspd_relation >= 45; anti_coup_power += 0.5 if saxony_kpd == 1
 go-to: 1923_coup_menu
 
 We have called a general strike in Saxony and Thuringia.
 
 @call_general_strike_upper
-view-if: try_luck_in_prussia_1923 == 1 and 1923_strike_option == 0
-on-arrival: 1923_strike_option = 1; anti_coup_power += 1; anti_coup_power += 1 if kpd_relation >= 45; anti_coup_power += 1 if kpd_relation >= 75 ; anti_coup_power += 1 if uspd_joined > 2; anti_coup_power += 1 if (not uspd_joined and uspd_relation >= 30); anti_coup_power += 0.5 if uspd_relation >= 45; anti_coup_power += 0.1 if spd_prussia == 1
+view-if: try_luck_in_prussia_1923 == 1 and that_strike_option == 0
+on-arrival: that_strike_option = 1; anti_coup_power += 1; anti_coup_power += 1 if kpd_relation >= 45; anti_coup_power += 1 if kpd_relation >= 75 ; anti_coup_power += 1 if uspd_joined > 2; anti_coup_power += 1 if (not uspd_joined and uspd_relation >= 30); anti_coup_power += 0.5 if uspd_relation >= 45; anti_coup_power += 0.1 if spd_prussia == 1
 go-to: 1923_coup_menu
 
 We have called a general strike in the Prussian province of Saxony and other industrial regions of Prussia.
