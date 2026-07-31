@@ -7,6 +7,10 @@ Q.parties_graph.push('sapd');
 Q.sapd_leader = 'Rosenfeld';
 Q.sapd_ideology = 'United Front Socialism';
 
+if (Q.uspd_relation >= 25) Q.sapd_relation = (Q.uspd_relation + 10);
+if (Q.uspd_relation >= 55) Q.sapd_relation = (Q.uspd_relation - 5);
+if (Q.uspd_relation >= 75) Q.sapd_relation = (Q.uspd_relation - 10);
+
 Q.workers_sapd = 10;
 Q.workers_spd -= 3;
 Q.new_middle_sapd = 1;
