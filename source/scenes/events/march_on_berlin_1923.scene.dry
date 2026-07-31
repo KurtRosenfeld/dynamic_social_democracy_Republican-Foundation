@@ -85,7 +85,7 @@ go-to: 1923_coup_menu
 
 @appeal_to_the_police_prussia
 view-if: try_luck_in_prussia_1923 == 1
-on-arrival: anti_coup_power += 1 if prussia_police_loyalty >= 0.41; anti_coup_power += 1 if prussia_police_loyalty >= 0.54; anti_coup_power += 1 if prussia_police_loyalty >= 0.71; anti_coup_power += 1 if prussia_police_loyalty >= 0.95; ; anti_coup_power += 1 if prussia_police_strength >= 100; anti_coup_power += 1 if prussia_police_strength >= 120; anti_coup_power += 2 if prussia_police_strength >= 150; anti_coup_power += 0.5 if bourgeois_support_in_1923
+on-arrival: anti_coup_power += 1 if prussia_police_loyalty >= 0.41; anti_coup_power += 1 if prussia_police_loyalty >= 0.54; anti_coup_power += 1 if prussia_police_loyalty >= 0.71; anti_coup_power += 1 if prussia_police_loyalty >= 0.95; anti_coup_power += 1 if prussia_police_strength >= 100; anti_coup_power += 1 if prussia_police_strength >= 120; anti_coup_power += 2 if prussia_police_strength >= 150; anti_coup_power += 0.5 if bourgeois_support_in_1923
 go-to: 1923_coup_menu
 
 In the aftermath of the Kapp Putsch in 1920 Carl Severing started a large scale programme to increase the loyalty of the Prussian Police. Let's just hope this will be enough.
