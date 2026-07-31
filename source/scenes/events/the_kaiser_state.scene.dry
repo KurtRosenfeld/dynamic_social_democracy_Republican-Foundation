@@ -1,0 +1,33 @@
+title: The Kaiser State
+new-page: true
+tags: event
+on-arrival: rep_bvp -= 20;; bvp_relation -= 5; dvp_relation -= 10; rep_dnvp -= 20; rep_dvp -= 40; z_relation -= 5; rep_z -= 40; ddp_relation -= 5; rep_ddp -= 20; workers_spd -= 5; new_middle_spd -= 5; old_middle_spd -= 5; unemployed_spd -= 3; rural_spd -= 5; catholic_spd -= 4; old_middle_ddp -= 3; new_middle_ddp -= 4; old_middle_dnvp += 4; rural_dnvp += 3; workers_nsdap += 5; unemployed_nsdap += 3; unemployed_dtsp += 3; new_middle_dvfp += 4; workers_dvfp += 3; president = "Ludendorff"; president_party = "DVFP"; chancellor = "Schiele"; chancellor_party = "DNVP"; prussia_leader = "Papen"; prussia_leader_party = "Z"; sb_influence = 0; soviet_relation -= 20; uk_relation -= 8; czech_relation -= 15; poland_relation = 2; kpd_r = 0; uspd_r = 0; spd_r = spd_r*0.67
+max-visits: 1 
+priority: 5
+
+
+= The Kaiser State
+
+While the coup itself started as a Bavarian project various right-wing groups have joined the effort. Erich Ludendorff who was part of the coup from the start has been chosen as president with the clear goal to prepare the state for a return of the Kaiser. The <span style="color: [+ dnvp_colour +];">DNVP</span> enthusiastically joined the effort and the <span style="color: [+ dvp_colour +];">DVP</span> started embracing Monarchism again.
+
+The <span style="color: [+ ddp_colour +];">DDP</span> is sidelined but allowed to remain in legality - the future of the <span style="color: [+ spd_colour +];">SPD</span> remains unclear while the <span style="color: [+ kpd_colour +];">KPD</span> and other worker's parties have already been banned fully.
+
+The only reactionary that seems unhappy is the <span style="color: [+ nsdap_colour +];">NSDAP</span>-leader Adolf Hitler who feels like a minor figure in the new order.
+
+Every other government seems to oppose the change of regime - especially the eastern states. The future of Versailles remains open.
+
+
+- @game_over_1923
+
+@game_over_1923
+title: Game over.
+subtitle: The Weimar Republic ends after exactly five years...
+go-to: game_over
+
+
+
+
+
+
+
+  
