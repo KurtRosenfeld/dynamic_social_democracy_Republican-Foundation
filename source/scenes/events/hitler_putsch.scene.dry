@@ -17,20 +17,9 @@ Kahr, Lossow and Seißer or the <span style="color: [+ bvp_colour +];">Triumvira
 
 
 @hitler_enter
-on-display: {!  
-    var cardEl = document.createElement('div');  
-    cardEl.className = "face-figure2";  
+face-image: img/portraits/Hitler_Ludendorff.jpeg
 
-    var image = new Image();  
-    image.className = "face-img";  
-    image.src = "img/portraits/Hitler_Ludendorff.jpeg";  
-
-    cardEl.appendChild(image);  
-    var contentDiv = document.querySelector("#page #left_panel #content");
-    contentDiv.appendChild(cardEl);
-!}
-
-During Kahr speech Hitler arrives alongside a troop of <span style="color: [+ nsdap_colour +];">**SA**</span> fighters. Shooting into the roof he declares the start of his National Revolution. Hermann Göring adresses the crowd while Hitler and Ludendorff lead the <span style="color: [+ bvp_colour +];">Triumvirate</span> into another room where they try to persuade them to join their coup. They pledge their support.
+During Kahr's speech about the threats of the Marxist Republic Hitler arrives alongside a troop of <span style="color: [+ nsdap_colour +];">**SA**</span> fighters. Shooting into the roof he declares the start of his National Revolution. Hermann Göring adresses the crowd while Hitler and Ludendorff lead the <span style="color: [+ bvp_colour +];">Triumvirate</span> into another room where they try to persuade them to join their coup. On after another they pledge their support.
 
 - @incoming_mail: What is that?
 
@@ -42,18 +31,7 @@ During Kahr speech Hitler arrives alongside a troop of <span style="color: [+ ns
 
 @cool
 on-arrival: sa_strength += 5
-on-display: {!  
-    var cardEl = document.createElement('div');  
-    cardEl.className = "face-figure2";  
-
-    var image = new Image();  
-    image.className = "face-img";  
-    image.src = "img/hitler_truppe.jpg";  
-
-    cardEl.appendChild(image);  
-    var contentDiv = document.querySelector("#page #middle_panel #content");
-    contentDiv.appendChild(cardEl);
-!}
+face-image: img/hitler_truppe.jpg
 
 It appears Munich is now under <span style="color: [+ nsdap_colour +];">völkisch</span> control. Jews are being harrased, Synagoges are attacked, <span style="color: [+ spd_colour +];">our</span> local politicians are being arrested just as ministers of the <span style="color: [+ bvp_colour +];">von Knillig</span> cabinet. The insurgents are on their way to march on Berlin.
 
