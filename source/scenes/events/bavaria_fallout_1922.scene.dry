@@ -24,3 +24,5 @@ on-arrival: protection_act_compromize_process += 1
 @easy_reichsexekution
 title: We will do nothing for now
 subtitle: We could force them to obey when we need to...
+on-arrival: super_mad_bavaria += 1
+
