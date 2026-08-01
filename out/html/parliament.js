@@ -516,6 +516,11 @@ baden: {
             condition: function(Q) { return Q.spd_r_saxony; }
           },
           {
+            id: 'right_spd', legend: 'I', name: 'I', 
+            qualityKey: 'right_spd_r_saxony',
+            condition: function(Q) { return Q.right_spd_r_saxony; }
+          },
+          {
             id: 'aspd', legend: 'ASPD', name: 'ASPD', 
             qualityKey: 'aspd_r_saxony',
             condition: function(Q) { return Q.aspd_r_saxony; }
@@ -636,6 +641,11 @@ baden: {
             id: 'spd', legend: 'SPD', name: 'SPD', 
             qualityKey: 'spd_r_thuringia',
             condition: function(Q) { return Q.spd_r_thuringia; }
+          },
+          {
+            id: 'right_spd', legend: 'I', name: 'I', 
+            qualityKey: 'right_spd_r_thuringia',
+            condition: function(Q) { return Q.right_spd_r_thuringia; }
           },
           {
             id: 'aspd', legend: 'ASPD', name: 'ASPD', 
@@ -1062,6 +1072,11 @@ baden: {
             id: 'spd', legend: 'SPD', name: 'SPD', 
             qualityKey: 'spd_r_prussia',
             condition: function(Q) { return Q.spd_r_prussia; }
+          },
+          {
+            id: 'right_spd', legend: 'I', name: 'I', 
+            qualityKey: 'right_spd_r_prussia',
+            condition: function(Q) { return Q.right_spd_r_prussia; }
           },
           {
             id: 'aspd', legend: 'ASPD', name: 'ASPD', 
