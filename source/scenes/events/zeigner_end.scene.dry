@@ -71,7 +71,7 @@ on-arrival: saxony_gov = "Bourgeois"; workers_spd -= 1; workers_kpd += 1; ddp_re
 Friedrich Kaiser (<span style="color: [+ dvp_colour +];">**DVP**</span>) is elected to be the new prime minister. His coalition depends on the support of the <span style="color: [+ dnvp_colour +];">**DNVP**</span>.
 
 @do_nothing
-on-arrival: saxony_spd = 0; saxony_dvp = 2; saxony_z = 2; saxony_dnvp = 2; saxony_ddp = 2; saxony_gov = "Bourgeois"; new_middle_spd -= 2; workers_spd -= 2; kpd_relation += 1
+on-arrival: saxony_spd = 0; saxony_dvp = 1; saxony_z = 2; saxony_dnvp = 2; saxony_ddp = 2; saxony_gov = "Bourgeois"; new_middle_spd -= 2; workers_spd -= 2; kpd_relation += 1
 
 
 
