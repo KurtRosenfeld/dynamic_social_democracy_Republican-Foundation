@@ -20,7 +20,7 @@ new-page: true
  
 [? if saxony_mp == "Heinze": Karl Rufolf Heinze (<span style="color: [+ dvp_colour +];">**DVP**</span>), the Reichskommisar, keeps ruling without any real support. We need to elect a new minister president now. Ebert and a majority of our deputies call for a coalition with the Liberal parties, our base preferes a return to cooperation with the <span style="color: [+ kpd_colour +];">**KPD**</span>. ?]
 
-- @what_we_boutta_do_fleißner: What should we do?
+- @what_we_boutta_do_fleißner
 - @what_we_boutta_do_fellisch: What should we do?
 - @what_we_boutta_do_heldt: What should we do?
 - @what_we_boutta_do_heinze: What should we do?
@@ -28,6 +28,7 @@ new-page: true
 
 
 @what_we_boutta_do_fleißner
+title: What should we do?
 view-if: saxony_mp == "Fleißner"
 
 - @lol_nothing: We have formed an elected government with a stable majority, there is no reason to change that.
