@@ -1,0 +1,141 @@
+title: There is always something wrong in Saxony
+subtitle: Why does it always have to be Saxony...
+tags: event
+is-card: true
+priority: 1
+max-visits: 1
+face-image: img/land/Sachsen.jpg
+view-if: year == 1924 and month == 1 and freiberg_bloodbath_seen
+new-page: true
+
+= Saxony
+
+[? if saxony_mp == "Fleißner": While Fleißner is surely popular with our Saxon base, the Landtag faction and Ebert oppose his depndence on the <span style="color: [+ kpd_colour +];">**KPD**</span>. ?]
+
+[? if saxony_mp == "Fellisch": The Fellisch cabinet seems incredibly unpopular. Our base in Saxony calls for a revival of the cooperation with the <span style="color: [+ kpd_colour +];">**KPD**</span> which itself has tried to oust the government unseccesfully. Now the <span style="color: [+ ddp_colour +];">**DDP**</span> has withrawn its support since they don't want to be a simple tolerator and our current government has to work on a very narrow majority even with their support. Ebert, the <span style="color: [+ ddp_colour +];">**DDP**</span> and some of our delegates argue for a coalition with the <span style="color: [+ dvp_colour +];">**DVP**</span> ?]
+
+[? if saxony_mp == "Heldt": Ebert is quite pleased with the Heldt government but our base calls for cooperation with the <span style="color: [+ kpd_colour +];">**KPD**</span>. ?][? if spd_ddp_coalition_saxony < 50 and saxony_mp == "Heldt": Many argue the inclusion of the <span style="color: [+ dvp_colour +];">**DVP**</span> is against the principles of the <span style="color: [+ spd_colour +];">**SPD**</span>. ?]
+
+[? if saxony_mp == "Kaiser": The bourgeois parties have formed a government but they lack a majority. While our base is opposed to any cooperation with the <span style="color: [+ dvp_colour +];">**DVP**</span>, many voices including Ebert call for a coalition with them, both to establish a stable government and to prevent their dependence on the <span style="color: [+ dnvp_colour +];">**DNVP**</span>. ?]
+ 
+[? if saxony_mp == "Heinze": Karl Rufolf Heinze (<span style="color: [+ dvp_colour +];">**DVP**</span>), the Reichskommisar, keeps ruling without any real support. We need to elect a new minister president now. Ebert and a majority of our deputies call for a coalition with the Liberal parties, our base preferes a return to cooperation with the <span style="color: [+ kpd_colour +];">**KPD**</span>. ?]
+
+- @what_we_boutta_do_fleißner: What should we do?
+- @what_we_boutta_do_fellisch: What should we do?
+- @what_we_boutta_do_heldt: What should we do?
+- @what_we_boutta_do_heinze: What should we do?
+- @what_we_boutta_do_kaiser: What should we do?
+
+
+@what_we_boutta_do_fleißner
+view-if: saxony_mp == "Fleißner"
+
+- @lol_nothing: We have formed an elected government with a stable majority, there is no reason to change that.
+- @max_heldt
+
+@what_we_boutta_do_fellisch
+view-if: saxony_mp == "Fellisch"
+
+- @pander_to_base
+- @max_heldt
+
+
+@what_we_boutta_do_heldt
+view-if: saxony_mp == "Heldt"
+
+- @maintain_coalition
+- @pander_to_base
+
+@what_we_boutta_do_heinze
+
+- @join_government
+- @pander_to_base
+
+@what_we_boutta_do_kaiser
+
+- @join_government
+- @wait_it_out
+
+
+@lol_nothing
+subtitle: The reformists might stop supporting the government
+on-arrival: kpd_relation += 2; ddp_relation -= 3; dvp_relation -= 3; saxony_mp = "Heldt"; saxony_gov = "Social Liberal"; saxony_kpd = 0; saxony_uspd = 0; saxony_ddp = 1; saxony_dvp = 1
+
+The reformists have withdrawn their support for the government and joined together with the Liberal parties.
+
+- @unity: There is nothing we can do.
+- @aspd_speedrun
+
+
+@pander_to_base
+title: We will seek cooperation with the <span style="color: [+ kpd_colour +];">**KPD**</span> as our base wishes.
+subtitle: The reformists might not support that government
+on-arrival: kpd_relation += 3; ddp_relation -= 4; dvp_relation -= 4; saxony_mp = "Heldt"; saxony_gov = "Social Liberal"; saxony_kpd = 0; saxony_uspd = 0; saxony_ddp = 1; saxony_dvp = 1
+
+Only a minority of our deputies has voted for the left-wing Fleißner. The reformist majority has instead formed a coalition with the <span style="color: [+ ddp_colour +];">**DVP**</span> and <span style="color: [+ dvp_colour +];">**DVP**</span>.
+
+- @unity: There is nothing we can do.
+- @aspd_speedrun
+
+ 
+@max_heldt
+title: Max Heldt will lead a coalition with the <span style="color: [+ ddp_colour +];">**DVP**</span> and <span style="color: [+ dvp_colour +];">**DVP**</span>.
+subtitle: Our local base will hate this.
+on-arrival: saxony_mp = "Heldt"; saxony_gov = "Social Liberal"; saxony_kpd = 0; saxony_uspd = 0; saxony_ddp = 1; saxony_dvp = 1; kpd_relation -= 3; ddp_relation += 3; dvp_relation += 3; workers_spd -= 3; workers_uspd += 3; unemployed_spd -= 2; unemployed_kpd += 2
+
+The new government is formed but the left delegates refuse to vote alongside the coalition.
+
+- @unity: Let them do whatever they want, the majority is stable without them
+- @uspd_revival
+
+@join_government
+title: We will join into the government
+on-arrival: saxony_mp = "Seyfert"; saxony_pm_party = "DDP"; saxony_gov = "Social-Liberal"; saxony_dnvp = 0; saxony_spd = 0; kpd_relation -= 6; ddp_relation += 5; dvp_relation += 2; workers_spd -= 2; workers_uspd += 2; unemployed_spd -= 4; unemployed_kpd += 4
+
+The new government is formed but the left delegates refuse to vote alongside the coalition.
+
+- @unity: Let them do whatever they want, the majority is stable without them
+- @uspd_revival
+
+
+@maintain_coalition
+title: Max Heldt will remain minister president and the coalition won't be changed.
+subtitle: Our local base will hate this.
+on-arrival: kpd_relation -= 5; ddp_relation += 2; dvp_relation += 2; workers_spd -= 2; workers_uspd += 2; unemployed_spd -= 2; unemployed_kpd += 2
+
+We will maintain the current arrangement. The left-wing deputies refuse to keep their support
+
+- @unity: Let them do whatever they want, the majority is stable without them
+- @uspd_revival
+
+
+@wait_it_out
+title: This is not our problem.
+subtitle: Well... actually it is...
+on-arrival:  right_spd_r_saxony = spd_r_saxony*0.63; spd_r_saxony = spd_r_saxony*0.37; uspd_relation += 2; sb_relation += 2; heldt_in = "I"; saxony_dnvp = 0
+
+The majority of our delegates has left the faction to support the governing coalition.
+
+ 
+@aspd_speedrun
+title: Expell these suckers!
+on-arrival: saxony_mp_party = "I"; right_spd_r_saxony = spd_r_saxony*0.63; spd_r_saxony = spd_r_saxony*0.37; uspd_relation += 2; sb_relation += 2; heldt_in = "I"
+
+ 
+
+@uspd_revival 
+title: Expell these suckers!
+on-arrival: uspd_r_saxony = uspd_r_saxony + spd_r_saxony*0.37; spd_r_saxony = spd_r_saxony*0.63; unemployed_uspd += 1; workers_kpd += 1
+
+
+@unity
+on-arrival: left_dissent -= 2; reformist_dissent -= 2; center_dissent -= 2; center_strength += 2
+
+It appears the Saxon <span style="color: [+ kpd_colour +];">**KPD**</span> parliamentary faction has sort of split in two despite offcially remaining one party.
+
+
+
+
+
+
+ 
