@@ -41,7 +41,7 @@ The government of Saxony has been deposed. A new prime minister must be elected.
 @get_kpd_toleration
 subtitle: Our local branch preferes this option.
 choose-if: kpd_relation >= 50 and left_strength >= 35
-unavailable-subtitle: [? if kpd_relation < 50: The <span style="color: [+ kpd_colour +];">**KPD**</span> is not willing to tolerate another <span style="color: [+ spd_colour +];">**SPD**</span> government now. ?][? if left_strength < 35: The opposition of our national party is to strong... ?]
+unavailable-subtitle: [? if kpd_relation < 50: The <span style="color: [+ kpd_colour +];">**KPD**</span> is not willing to tolerate another <span style="color: [+ spd_colour +];">**SPD**</span> government now. ?][? if left_strength < 35: The opposition of our national party is too strong... ?]
 on-arrival: saxony_gov = "SPD"; saxony_kpd = 2; saxony_mp = "Fleißner"; saxony_mp_party = "SPD"
 
 Hermann Fleißner (<span style="color: [+ spd_colour +];">**SPD**</span>) is elected to be the new prime minister.
