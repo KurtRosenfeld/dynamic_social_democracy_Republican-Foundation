@@ -47,11 +47,13 @@ view-if: saxony_mp == "Heldt"
 - @pander_to_base
 
 @what_we_boutta_do_heinze
+view-if: saxony_mp == "Heinze"
 
 - @join_government
 - @pander_to_base
 
 @what_we_boutta_do_kaiser
+view-if: saxony_mp == "Kaiser"
 
 - @join_government
 - @wait_it_out
