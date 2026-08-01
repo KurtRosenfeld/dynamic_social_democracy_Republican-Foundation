@@ -3,7 +3,7 @@ subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> supports our
 tags: event
 is-card: true
 max-visits: 1
-on-arrival: kpd_relation += 3; workers_kpd += 1; z_relation -= 2; ddp_relation -= 2; dvp_relation -= 2
+on-arrival: kpd_relation += 3; workers_kpd += 1; z_relation -= 2; ddp_relation -= 2; dvp_relation -= 2; saxony_mp = "Zeigner"
 face-image: img/portraits/ZeignerErich.jpg
 view-if: (saxony_gov == "SPD" or saxony_gov == "Social Democratic") and year == 1923 and month == 3
 new-page: true
