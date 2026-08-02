@@ -61,7 +61,7 @@ view-if: saxony_mp == "Kaiser"
 
 @lol_nothing
 subtitle: The reformists might stop supporting the government
-on-arrival: kpd_relation += 2; ddp_relation -= 3; dvp_relation -= 3; saxony_mp = "Heldt"; saxony_gov = "Social Liberal"; saxony_kpd = 0; saxony_uspd = 0; saxony_ddp = 1; saxony_dvp = 1
+on-arrival: kpd_relation += 2; ddp_relation -= 3; dvp_relation -= 3; saxony_mp = "Heldt"; saxony_gov = "Social-Liberal"; saxony_kpd = 0; saxony_uspd = 0; saxony_ddp = 1; saxony_dvp = 1
 
 The reformists have withdrawn their support for the government and joined together with the Liberal parties.
 
@@ -72,7 +72,7 @@ The reformists have withdrawn their support for the government and joined togeth
 @pander_to_base
 title: We will seek cooperation with the <span style="color: [+ kpd_colour +];">**KPD**</span> as our base wishes.
 subtitle: The reformists might not support that government
-on-arrival: kpd_relation += 3; ddp_relation -= 4; dvp_relation -= 4; saxony_mp = "Heldt"; saxony_gov = "Social Liberal"; saxony_kpd = 0; saxony_uspd = 0; saxony_ddp = 1; saxony_dvp = 1
+on-arrival: kpd_relation += 3; ddp_relation -= 4; dvp_relation -= 4; saxony_mp = "Heldt"; saxony_gov = "Social-Liberal"; saxony_kpd = 0; saxony_uspd = 0; saxony_ddp = 1; saxony_dvp = 1
 
 Only a minority of our deputies has voted for the left-wing Fleißner. The reformist majority has instead formed a coalition with the <span style="color: [+ ddp_colour +];">**DVP**</span> and <span style="color: [+ dvp_colour +];">**DVP**</span>.
 
@@ -83,7 +83,7 @@ Only a minority of our deputies has voted for the left-wing Fleißner. The refor
 @max_heldt
 title: Max Heldt will lead a coalition with the <span style="color: [+ ddp_colour +];">**DVP**</span> and <span style="color: [+ dvp_colour +];">**DVP**</span>.
 subtitle: Our local base will hate this.
-on-arrival: saxony_mp = "Heldt"; saxony_gov = "Social Liberal"; saxony_kpd = 0; saxony_uspd = 0; saxony_ddp = 1; saxony_dvp = 1; kpd_relation -= 3; ddp_relation += 3; dvp_relation += 3; workers_spd -= 3; workers_uspd += 3; unemployed_spd -= 2; unemployed_kpd += 2
+on-arrival: saxony_mp = "Heldt"; saxony_gov = "Social-Liberal"; saxony_kpd = 0; saxony_uspd = 0; saxony_ddp = 1; saxony_dvp = 1; kpd_relation -= 3; ddp_relation += 3; dvp_relation += 3; workers_spd -= 3; workers_uspd += 3; unemployed_spd -= 2; unemployed_kpd += 2
 
 The new government is formed but the left delegates refuse to vote alongside the coalition.
 
@@ -114,14 +114,14 @@ We will maintain the current arrangement. The left-wing deputies refuse to keep 
 @wait_it_out
 title: This is not our problem.
 subtitle: Well... actually it is...
-on-arrival:  right_spd_r_saxony = spd_r_saxony*0.63; spd_r_saxony = spd_r_saxony*0.37; uspd_relation += 2; sb_relation += 2; heldt_in = "I"; saxony_dnvp = 0
+on-arrival:  right_spd_r_saxony = spd_r_saxony*0.63; spd_r_saxony = spd_r_saxony*0.37; uspd_relation += 2; sb_relation += 2; heldt_in = "I"; saxony_dnvp = 0; saxony_gov = "National-Social-Liberal"
 
 The majority of our delegates has left the faction to support the governing coalition.
 
  
 @aspd_speedrun
 title: Expell these suckers!
-on-arrival: saxony_mp_party = "I"; right_spd_r_saxony = spd_r_saxony*0.63; spd_r_saxony = spd_r_saxony*0.37; uspd_relation += 2; sb_relation += 2; heldt_in = "I"
+on-arrival: saxony_mp_party = "I"; right_spd_r_saxony = spd_r_saxony*0.63; spd_r_saxony = spd_r_saxony*0.37; uspd_relation += 2; sb_relation += 2; heldt_in = "I"; saxony_gov = "National-Social-Liberal"
 
  
 
