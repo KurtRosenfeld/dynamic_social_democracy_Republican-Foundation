@@ -1352,6 +1352,11 @@ Q.norway_relation = 55;
 Q.iceland_relation = 50;
 Q.finland_relation = 60;
 
+// map shit
+
+// Britain
+Q.england = #AF2E53;
+
 // local governments
 Q.bavaria_gov = 'Bourgeois';
 Q.saxony_gov = 'Social-Democratic';
