@@ -3,7 +3,7 @@ tags: event
 is-card: true
 priority: 1
 max-visits: 1
-on-arrival: kpd_relation += 3; unemployed_kpd += 4; z_relation -= 5; ddp_relation -= 4; dvp_relation -= 7; saxony_gov = "Left"
+on-arrival: kpd_relation += 3; unemployed_kpd += 4; z_relation -= 5; ddp_relation -= 4; dvp_relation -= 7; saxony_gov = "Left"; saxony_kpd = 1
 face-image: img/portraits/ZeignerErich.jpg
 view-if: (saxony_gov == "SPD" or saxony_gov == "Social Democratic") and year == 1923 and month == 10
 new-page: true
