@@ -2128,11 +2128,11 @@ go-to: map_menu
        id="g3"
        inkscape:label="northern_ireland"
        transform="matrix(0.27168134,0,0,0.27168134,13.615137,60.490067)"><path
-         style="opacity:1;fill:#448000;fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-opacity:1"
+         style="opacity:1;fill:[+ northern_ireland +];fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-opacity:1"
          d="m 103.21659,219.23084 v -1.45451 h -1.03894 l -0.69262,-0.90042 -1.03895,-1.1082 v -0.76189 l -0.969673,-0.96968 -1.662303,0.13853 -0.900414,0.5541 -1.385253,0.34631 h -1.315992 l -0.900414,-0.34631 -0.761889,0.83115 -1.108202,0.20779 -1.593041,1.03894 -1.454515,1.17746 -0.969679,0.5541 -1.038939,0.13853 -0.692627,0.96968 0.138526,1.1082 -1.31599,0.62336 0.27705,2.28567 1.662303,2.21641 3.116821,0.96967 3.116818,-2.28567 1.870091,1.316 2.285669,2.00861 1.939354,-0.83115 2.354929,-0.13852 0.27705,-1.52378 1.66231,-0.83116 1.1082,-0.90041 -0.0693,-1.03894 -1.38526,-0.62336 0.5541,-0.5541 0.5541,-0.5541 -1.03893,-0.34632 -1.17747,0.0693 -0.62337,0.5541 0.0693,-1.10821 1.45451,-0.34631 1.03894,0.13853 z"
          id="path2"
          inkscape:label="femboy_ireland" /><path
-         style="opacity:1;fill:#448000;fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-opacity:1"
+         style="opacity:1;fill:[+ northern_ireland +];fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-opacity:1"
          d="m 104.67111,218.746 v -0.76189 l -0.48484,0.34632 z"
          id="path3" /></g><path
        style="opacity:1;fill:#445500;stroke-width:0.143765"
