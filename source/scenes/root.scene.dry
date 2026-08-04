@@ -1355,7 +1355,7 @@ Q.finland_relation = 60;
 // map shit
 
 // Britain
-Q.england = #AF2E53;
+Q.england = '#AF2E53';
 
 // local governments
 Q.bavaria_gov = 'Bourgeois';
