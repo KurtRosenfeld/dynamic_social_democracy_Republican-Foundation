@@ -1355,7 +1355,32 @@ Q.finland_relation = 60;
 // map shit
 
 // Britain
-Q.england = '#AF2E53';
+Q.england = '#AF2E53'; Q.wales = '#AF2E53'; Q.scotland = '#AF2E53'; Q.northern_ireland  = '#AF2E53'; Q.jersey = '#AF2E53'; Q.gibraltar = '#AF2E53'; Q.malta = '#AF2E53'; Q.istanbul = '#AF2E53'; Q.cyprus = '#AF2E53'; Q.british_anatolya = '#AF2E53'; Q.palestine = '#AF2E53'; Q.jordan = '#AF2E53'; Q.iraq = '#AF2E53'; Q.kuwait = '#AF2E53';
+// France
+Q.france = '#2147B7'; Q.occitanie = '#2147B7'; Q.occitan_valley = '#2147B7'; Q.corsica = '#2147B7'; Q.french_basque = '#2147B7'; Q.alsace = '#2147B7'; Q.algeria = '#2147B7'; Q.tunisia = '#2147B7'; Q.morocco = '#2147B7'; Q.syria = '#2147B7'; Q.hatay = '#2147B7'; Q.monaco = '#56A9D0';
+// Spain and friends
+Q.spain = '#DDCA07'; Q.leon = '#DDCA07'; Q.navarre = '#DDCA07'; Q.cantabira = '#DDCA07'; Q.catalonia = '#DDCA07'; Q.balearic = '#DDCA07'; Q.menora = '#DDCA07'; Q.spanish_rif = '#DDCA07'; Q.ifni = '#DDCA07'; Q.andorra = '#28154C'; Q.rif = '#D07143'; Q.tangier = '#7A3909'; Q.portugal = '#60BC17'; 
+// North
+Q.denmark = '#E25252'; Q.sweden = '#45C9D0'; Q.norway = '#A82541'; Q.finland = '#D6D6D6'; Q.finland_border = '#D6D6D6'; Q.ireland = '#378423'; Q.iceland = '#170F9D';
+// BENELUX
+Q.belgium = '#DDCA07'; Q.netherlands = '#DD9305'; Q.luxembourg = '#10BFBD'; Q.switzerland = '#771717'; 
+// Italy
+Q.italy = '#1AA33C'; Q.sicily = '#1AA33C'; Q.sardinia = '#1AA33C'; Q.trieste = '#1AA33C'; Q.tyrol = '#1AA33C'; Q.rhodes = '#1AA33C'; Q.libya = '#1AA33C'; Q.san_marino = '#60C8D0'; Q.fiume = '#BC197E'; 
+// Deep South
+Q.saudi = '#197717'; Q.egypt = '#D07739'; Q.iran = '#69A01A'; Q.turkey = '#C12D12'; Q.october_greece = '#71D3DD'; Q.greek_turkey = '#71D3DD'; Q.greece = '#71D3DD'; 
+// Balkans
+Q.albania = '#723A35'; Q.yugoslavia = '#AB99C1'; Q.slovenia = '#AB99C1'; Q.bulgaria = '#318123'; Q.bulgaria_romania = '#CBAA0F'; Q.romania = '#CBAA0F'; Q.transylvania = '#CBAA0F'; Q.moldova = '#CBAA0F'; 
+// Austria-Hungary
+Q.lichtenstein = '#DD265B'; Q.austria = '#D0B8B8'; Q.hungary = '#E27915'; Q.czechia = '#468FB2'; Q.slovakia = '#468FB2'; Q.sudeten = '#468FB2'; Q.industrial = '#468FB2'; Q.carpathian_ukraine = '#468FB2';
+// Germany
+Q.germany = '#969696'; Q.pommerania = '#969696'; Q.silesia = '#969696'; Q.rhineland = '#969696'; Q.east_prussia = '#969696'; Q.saarland = '#6B829B'; 
+// Poland
+Q.poland = '#CEB19D'; Q.poznan = '#CEB19D'; Q.polish_belarus = '#CEB19D'; Q.katowice = '#BABABA'; Q.danzig = '#E29FDD'; Q.wilno = '#CEB19D'; 
+// Baltics
+Q.memel = '#72968C'; Q.lithuania = '#9EE036'; Q.latvia = '#B74242'; Q.estonia = '#76CECD'; 
+// USSR
+Q.russia = '#AA0C0C'; Q.ukraine = '#FF0000'; Q.belarus = '#D80000'; Q.caucasia = '#B42654'; 
+
 
 // local governments
 Q.bavaria_gov = 'Bourgeois';
