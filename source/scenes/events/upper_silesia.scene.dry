@@ -3,7 +3,7 @@ subtitle: <span style="color: #DC143C;">**Pol**</span><span style="color: #D3D3D
 view-if: year == 1922 and month == 7
 new-page: true
 max-visits: 1
-on-arrival: polish_silesia = 1; rural_spd -= 2 if spd_in_government; old_middle_dnvp += 2; new_middle_dnvp += 2
+on-arrival: polish_silesia = 1; rural_spd -= 2 if spd_in_government; old_middle_dnvp += 2; new_middle_dnvp += 2; katowice = '#CEB19D'
 face-image: img/July1922_poland_silesia.jpg
 tags: event
 
