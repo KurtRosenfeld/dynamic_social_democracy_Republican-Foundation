@@ -3208,7 +3208,7 @@ go-to: map_menu
        cx="98.420464"
        cy="129.08594"
        inkscape:label="Warsaw"
-       r="0.5" /> ?][? if not ussr_formed: <circle
+       r="0.5" /> [? if not ussr_formed: <circle
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-51"
        cx="112.72507"
