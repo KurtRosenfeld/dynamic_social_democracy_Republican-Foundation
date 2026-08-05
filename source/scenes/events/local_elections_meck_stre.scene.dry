@@ -2,7 +2,7 @@ title: Mecklenburg-Strelitz Landtag Election
 view-if: (year == 1923 and month == 7 and not meck_stre_election_seen) or (meck_stre_election_2_trigger_time == time and meck_stre_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: meck_stre_election_seen += 1 if meck_stre_election_seen; meck_stre_election_seen = 1 if not meck_stre_election_seen; meck_stre_election_seen_time = time; meck_stre_spd = 0; meck_stre_kpd = 0; meck_stre_sapd = 0; meck_stre_uspd = 0; meck_stre_ddp = 0; meck_stre_kvp = 0; meck_stre_true_others = 0; meck_stre_wp = 0; meck_stre_lvp = 0; meck_stre_vhg = 0
+on-arrival: meck_stre_election_seen += 1 if meck_stre_election_seen; meck_stre_election_seen = 1 if not meck_stre_election_seen; meck_stre_election_seen_time = time; meck_stre_spd = 0; meck_stre_kpd = 0; meck_stre_sapd = 0; meck_stre_uspd = 0; meck_stre_ddp = 0; meck_stre_kvp = 0; meck_stre_true_others = 0; meck_stre_wp = 0; meck_stre_lvp = 0; meck_stre_vhg = 0; greek_turkey = '#C12D12' if not meck_stre_election_seen
 priority: 2
 on-display: {!
 var cardEl = document.createElement('div');
