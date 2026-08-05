@@ -2,7 +2,7 @@ title: Union of Socialist Soviet Republics established
 view-if: year == 1922 and month == 12
 max-visits: 1
 tags: event
-on-arrival: ussr_formed = 1; soviet_relation -= 1; unemployed_kpd += 1
+on-arrival: ussr_formed = 1; soviet_relation -= 1; unemployed_kpd += 1; russia = "#750e0e"; belarus = "#750e0e"; ukraine = "#750e0e"; caucasia = "#750e0e"
 new-page: true
 face-image: img/sovussr.jpg
 
@@ -10,4 +10,4 @@ face-image: img/sovussr.jpg
 
 Several Soviet Republics on the territory of what used to be the Russian Empire are now united in a new union of states - the "<span style="color: #750e0e;">Soviet Union</span>".
 
-(This is one of the reasons why the final version of the mod will have a map of Europe...)
+This marks the end of the Russian Civil War and the start of a new kind of state never seen before. The <span style="color: [+ kpd_colour +];">KPD</span> is enthusiastic about this development, others remain sceptical.
