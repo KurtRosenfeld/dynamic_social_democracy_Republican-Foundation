@@ -713,7 +713,7 @@ transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
   </div>
   <div id="plwaldeck-tooltip" class="tooltip-group">
 <div style="text-align: center;">
-    <img src="img/land/Waldeck.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+    <img src="img/land/Waldeck.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Waldeck</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
@@ -2078,6 +2078,8 @@ A political compass usually isn't a sensible way to characterize a political lan
 @europe 
 go-to: map_menu
 
+
+<div style="position: relative; display: inline-block;">
 <svg
    width="135mm"
    height="101.78558mm"
@@ -3107,6 +3109,7 @@ go-to: map_menu
        cy="121.15432"
        inkscape:label="Kaunas"
        r="0.5" /><circle
+       class="trigger-element" data-tooltip="germany-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-0"
        cx="81.975189"
@@ -3197,36 +3200,42 @@ go-to: map_menu
        cy="161.28922"
        inkscape:label="Ankara"
        r="0.5" />[? if not ussr_formed: <circle
+       class="trigger-element" data-tooltip="georgia-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-03"
        cx="146.9323"
        cy="156.48012"
        inkscape:label="Tiblisi"
        r="0.5" /> ?]<circle
+       class="trigger-element" data-tooltip="poland-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-509"
        cx="98.420464"
        cy="129.08594"
        inkscape:label="Warsaw"
        r="0.5" /> [? if not ussr_formed: <circle
+       class="trigger-element" data-tooltip="belarus-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-51"
        cx="112.72507"
        cy="125.27615"
        inkscape:label="Minsk"
        r="0.5" /> ?][? if not ussr_formed: <circle
+       class="trigger-element" data-tooltip="ukraine-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-40"
        cx="119.55388"
        cy="133.90205"
        inkscape:label="Kiev"
        r="0.5" /> ?][? if not ussr_formed: <circle
+       class="trigger-element" data-tooltip="russia-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-841"
        cx="132.924"
        cy="117.92487"
        inkscape:label="Moscow-Russia"
        r="0.5" /> ?][? if ussr_formed: <circle
+       class="trigger-element" data-tooltip="ussr-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-841"
        cx="132.924"
@@ -3245,3 +3254,37 @@ go-to: map_menu
        cy="175.96324"
        inkscape:label="Baghdad"
        r="0.5" /></g> ?]</svg>
+
+
+<div id="germany-tooltip" class="tooltip-element">
+  <div style="text-align: center;">
+    <img src="img/land/Waldeck.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">German Reich (Weimar Republic)</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~62.411.000</p>
+    <p>Head of State: [+ president +] ([+ president_party +])</p>
+    <p>Federal Republic</p>
+  </div>
+  </div>
+
+<div id="poland-tooltip" class="tooltip-element">
+  <div style="text-align: center;">
+    <img src="img/land/Lübeck.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Second Polish Republic</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~25.700.000</p>
+    <p>Head of State: plhl</p>
+    <p>Republic</p>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+</div>
