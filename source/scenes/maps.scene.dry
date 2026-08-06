@@ -3277,14 +3277,61 @@ go-to: map_menu
     <p>Population: ~25.700.000</p>
     <p>Head of State: plhl</p>
     <p>Republic</p>
+    <p>Relations: [+ poland_relation : relations +]</p>
   </div>
   </div>
 
+<div id="ukraine-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Ukraine.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Ukrainian Soviet Socialist Republic</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~36.500.000</p>
+    <p>Head of State: Grigory Petrovsky</p>
+    <p>Soviet Socialist Republic</p>
+    <p>Relations: [+ soviet_relation : relations +]</p>
+  </div>
+  </div>
 
+<div id="belarus-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Belarus.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Byelorussian Soviet Socialist Republic</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~1.544.000</p>
+    <p>Head of State: Alexander Chervyakov</p>
+    <p>Soviet Socialist Republic</p>
+    <p>Relations: [+ soviet_relation : relations +]</p>
+  </div>
+  </div>
 
+<div id="russia-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Russia.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Russian Soviet Federative Socialist Republic</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: why do you ask?</p>
+    <p>Head of State: Lev Kamenev</p>
+    <p>Federative Soviet Socialist Republic</p>
+    <p>Relations: [+ soviet_relation : relations +]</p>
+  </div>
+  </div>
 
-
-
+<div id="ussr-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/sovussr.jpg" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Russian Soviet Federative Socialist Republic</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~130.000.000</p>
+    <p>Head of State: Mikhail Kalinin</p>
+    <p>Federative Soviet Socialist Republic</p>
+    <p>Relations: [+ soviet_relation : relations +]</p>
+  </div>
+  </div>
 
 
 </div>
