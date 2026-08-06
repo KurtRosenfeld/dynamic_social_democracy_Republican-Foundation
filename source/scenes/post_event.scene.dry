@@ -309,39 +309,39 @@ if (Q.liebknecht_in == "SB") Q.liebknecht_colour = Q.sb_colour;
 
 // dynamic office colouring
 
-if (Q.president_party == "SPD") Q.president_coulour = Q.spd_colour;
-if (Q.president_party == "KPD") Q.president_coulour = Q.kpd_colour;
-if (Q.president_party == "SAPD") Q.president_coulour = Q.sapd_colour;
-if (Q.president_party == "SB") Q.president_coulour = Q.sb_colour;
-if (Q.president_party == "USPD") Q.president_coulour = Q.uspd_colour;
-if (Q.president_party == "ASPD") Q.president_coulour = Q.aspd_colour;
-if (Q.president_party == "DDP") Q.president_coulour = Q.ddp_colour;
-if (Q.president_party == "LVP") Q.president_coulour = Q.lvp_colour;
-if (Q.president_party == "Z") Q.president_coulour = Q.z_colour;
-if (Q.president_party == "BVP") Q.president_coulour = Q.bvp_colour;
-if (Q.president_party == "DVP") Q.president_coulour = Q.dvp_colour;
-if (Q.president_party == "DNVP") Q.president_coulour = Q.dnvp_colour;
-if (Q.president_party == "NSDAP") Q.president_coulour = Q.nsdap_colour;
-if (Q.president_party == "I") Q.president_coulour = Q.i_colour;
-if (Q.president_party == "DVFP") Q.president_coulour = '#3D3D3D';
-if (Q.president_party == "DNEF") Q.president_coulour = Q.i_colour; // who cares anyway
+if (Q.president_party == "SPD") Q.president_colour = Q.spd_colour;
+if (Q.president_party == "KPD") Q.president_colour = Q.kpd_colour;
+if (Q.president_party == "SAPD") Q.president_colour = Q.sapd_colour;
+if (Q.president_party == "SB") Q.president_colour = Q.sb_colour;
+if (Q.president_party == "USPD") Q.president_colour = Q.uspd_colour;
+if (Q.president_party == "ASPD") Q.president_colour = Q.aspd_colour;
+if (Q.president_party == "DDP") Q.president_colour = Q.ddp_colour;
+if (Q.president_party == "LVP") Q.president_colour = Q.lvp_colour;
+if (Q.president_party == "Z") Q.president_colour = Q.z_colour;
+if (Q.president_party == "BVP") Q.president_colour = Q.bvp_colour;
+if (Q.president_party == "DVP") Q.president_colour = Q.dvp_colour;
+if (Q.president_party == "DNVP") Q.president_colour = Q.dnvp_colour;
+if (Q.president_party == "NSDAP") Q.president_colour = Q.nsdap_colour;
+if (Q.president_party == "I") Q.president_colour = Q.i_colour;
+if (Q.president_party == "DVFP") Q.president_colour = '#3D3D3D';
+if (Q.president_party == "DNEF") Q.president_colour = Q.i_colour; // who cares anyway
 
-if (Q.chancellor_party == "SPD") Q.chancellor_coulour = Q.spd_colour;
-if (Q.chancellor_party == "KPD") Q.chancellor_coulour = Q.kpd_colour;
-if (Q.chancellor_party == "SAPD") Q.chancellor_coulour = Q.sapd_colour;
-if (Q.chancellor_party == "SB") Q.chancellor_coulour = Q.sb_colour;
-if (Q.chancellor_party == "USPD") Q.chancellor_coulour = Q.uspd_colour;
-if (Q.chancellor_party == "ASPD") Q.chancellor_coulour = Q.aspd_colour;
-if (Q.chancellor_party == "DDP") Q.chancellor_coulour = Q.ddp_colour;
-if (Q.chancellor_party == "LVP") Q.chancellor_coulour = Q.lvp_colour;
-if (Q.chancellor_party == "Z") Q.chancellor_coulour = Q.z_colour;
-if (Q.chancellor_party == "BVP") Q.chancellor_coulour = Q.bvp_colour;
-if (Q.chancellor_party == "DVP") Q.chancellor_coulour = Q.dvp_colour;
-if (Q.chancellor_party == "DNVP") Q.chancellor_coulour = Q.dnvp_colour;
-if (Q.chancellor_party == "NSDAP") Q.chancellor_coulour = Q.nsdap_colour;
-if (Q.chancellor_party == "I") Q.chancellor_coulour = Q.i_colour;
-if (Q.chancellor_party == "DVFP") Q.chancellor_coulour = '#3D3D3D';
-if (Q.chancellor_party == "DNEF") Q.chancellor_coulour = Q.i_colour; // who cares anyway
+if (Q.chancellor_party == "SPD") Q.chancellor_colour = Q.spd_colour;
+if (Q.chancellor_party == "KPD") Q.chancellor_colour = Q.kpd_colour;
+if (Q.chancellor_party == "SAPD") Q.chancellor_colour = Q.sapd_colour;
+if (Q.chancellor_party == "SB") Q.chancellor_colour = Q.sb_colour;
+if (Q.chancellor_party == "USPD") Q.chancellor_colour = Q.uspd_colour;
+if (Q.chancellor_party == "ASPD") Q.chancellor_colour = Q.aspd_colour;
+if (Q.chancellor_party == "DDP") Q.chancellor_colour = Q.ddp_colour;
+if (Q.chancellor_party == "LVP") Q.chancellor_colour = Q.lvp_colour;
+if (Q.chancellor_party == "Z") Q.chancellor_colour = Q.z_colour;
+if (Q.chancellor_party == "BVP") Q.chancellor_colour = Q.bvp_colour;
+if (Q.chancellor_party == "DVP") Q.chancellor_colour = Q.dvp_colour;
+if (Q.chancellor_party == "DNVP") Q.chancellor_colour = Q.dnvp_colour;
+if (Q.chancellor_party == "NSDAP") Q.chancellor_colour = Q.nsdap_colour;
+if (Q.chancellor_party == "I") Q.chancellor_colour = Q.i_colour;
+if (Q.chancellor_party == "DVFP") Q.chancellor_colour = '#3D3D3D';
+if (Q.chancellor_party == "DNEF") Q.chancellor_colour = Q.i_colour; // who cares anyway
 
 
 // update government posts by party membership
