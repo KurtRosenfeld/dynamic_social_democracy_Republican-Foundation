@@ -317,13 +317,13 @@ Q.true_other_r_oldenburg = (Q.true_other_r_oldenburg != undefined ? parseFloat(Q
 Q.csvd_r_oldenburg = (Q.csvd_r_oldenburg != undefined ? parseFloat(Q.csvd_r_oldenburg.toFixed(1)) : 0);
 Q.cnbl_r_oldenburg = (Q.cnbl_r_oldenburg != undefined ? parseFloat(Q.cnbl_r_oldenburg.toFixed(1)) : 0);
              
-if (Q.year >= 1925 and Q.year < 1930 and Q.dvp_relation < 99) Q.rl_r_oldenburg = (Q.dvp_r_oldenburg + Q.dnvp_r_oldenburg);
-if (Q.year >= 1925 and Q.year < 1930 and Q.dvp_relation < 99) Q.dvp_r_oldenburg = 0;
-if (Q.year >= 1925 and Q.year < 1930 and Q.dvp_relation < 99) Q.dnvp_r_oldenburg = 0;
+if (Q.year >= 1925 && Q.year < 1930 && Q.dvp_relation < 99) Q.rl_r_oldenburg = (Q.dvp_r_oldenburg + Q.dnvp_r_oldenburg);
+if (Q.year >= 1925 && Q.year < 1930 && Q.dvp_relation < 99) Q.dvp_r_oldenburg = 0;
+if (Q.year >= 1925 && Q.year < 1930 && Q.dvp_relation < 99) Q.dnvp_r_oldenburg = 0;
 
-if (Q.year >= 1925 and Q.year < 1930 and Q.dvp_relation < 99) Q.rl_oldenburg_elections_vote = (Q.dvp_oldenburg_elections_vote + Q.dnvp_oldenburg_elections_vote);
-if (Q.year >= 1925 and Q.year < 1930 and Q.dvp_relation < 99) Q.dvp_oldenburg_elections_vote = 0;
-if (Q.year >= 1925 and Q.year < 1930 and Q.dvp_relation < 99) Q.dnvp_oldenburg_elections_vote = 0;
+if (Q.year >= 1925 && Q.year < 1930 && Q.dvp_relation < 99) Q.rl_oldenburg_elections_vote = (Q.dvp_oldenburg_elections_vote + Q.dnvp_oldenburg_elections_vote);
+if (Q.year >= 1925 && Q.year < 1930 && Q.dvp_relation < 99) Q.dvp_oldenburg_elections_vote = 0;
+if (Q.year >= 1925 && Q.year < 1930 && Q.dvp_relation < 99) Q.dnvp_oldenburg_elections_vote = 0;
 
 
 !}
