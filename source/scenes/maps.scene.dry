@@ -3277,7 +3277,7 @@ go-to: map_menu
     <p>Population: ~25.700.000</p>
     <p>Head of State: plhl</p>
     <p>Republic</p>
-    <p>Relations: [+ poland_relation : relations +]</p>
+    <p>Relations: [+ poland_relation : relationships +]</p>
   </div>
   </div>
 
@@ -3290,7 +3290,7 @@ go-to: map_menu
     <p>Population: ~36.500.000</p>
     <p>Head of State: Grigory Petrovsky</p>
     <p>Soviet Socialist Republic</p>
-    <p>Relations: [+ soviet_relation : relations +]</p>
+    <p>Relations: [+ soviet_relation : relationships +]</p>
   </div>
   </div>
 
@@ -3303,7 +3303,7 @@ go-to: map_menu
     <p>Population: ~1.544.000</p>
     <p>Head of State: Alexander Chervyakov</p>
     <p>Soviet Socialist Republic</p>
-    <p>Relations: [+ soviet_relation : relations +]</p>
+    <p>Relations: [+ soviet_relation : relationships +]</p>
   </div>
   </div>
 
@@ -3316,7 +3316,7 @@ go-to: map_menu
     <p>Population: why do you ask?</p>
     <p>Head of State: Lev Kamenev</p>
     <p>Federative Soviet Socialist Republic</p>
-    <p>Relations: [+ soviet_relation : relations +]</p>
+    <p>Relations: [+ soviet_relation : relationships +]</p>
   </div>
   </div>
 
@@ -3329,7 +3329,7 @@ go-to: map_menu
     <p>Population: ~130.000.000</p>
     <p>Head of State: Mikhail Kalinin</p>
     <p>Federative Soviet Socialist Republic</p>
-    <p>Relations: [+ soviet_relation : relations +]</p>
+    <p>Relations: [+ soviet_relation : relationships +]</p>
   </div>
   </div>
 
