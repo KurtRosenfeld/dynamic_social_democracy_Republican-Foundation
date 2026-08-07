@@ -583,7 +583,7 @@ Q.spd_r_oldenburg = 0.27; Q.oldenburg_spd = 1;
 Q.ddp_r_oldenburg = 0.13; Q.oldenburg_ddp = 1;
 Q.z_r_oldenburg = 0.21; Q.oldenburg_z = 1;
 Q.dvp_r_oldenburg = 0.17;
-Q.true_other_oldenburg = 0.06;
+Q.true_other_r_oldenburg = 0.06;
 Q.dnvp_r_oldenburg = 0.04;
 Q.lb_r_oldenburg = 0.02;
 
