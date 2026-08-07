@@ -307,6 +307,8 @@ Q.dammit_coalition_oldenburg = parseFloat((Q.rl_r_oldenburg + Q.dvp_r_oldenburg 
 Q.right_coalition_oldenburg = parseFloat((Q.dnvp_r_oldenburg + Q.nsdap_r_oldenburg + Q.wp_r_oldenburg + Q.dvp_r_oldenburg + Q.cnbl_r_oldenburg).toFixed(1));
 Q.true_bourgeois_coalition_oldenburg = parseFloat((Q.ddp_r_oldenburg + Q.dvp_r_oldenburg + Q.lvp_r_oldenburg + Q.kvp_r_oldenburg + Q.true_other_r_oldenburg + Q.z_r_oldenburg + Q.wp_r_oldenburg).toFixed(1));
 Q.weimar_coalition_oldenburg = parseFloat((Q.spd_r_oldenburg + Q.ddp_r_oldenburg + Q.lvp_r_oldenburg + Q.z_r_oldenburg).toFixed(1));
+Q.social_liberal_coalition_oldenburg = parseFloat((Q.spd_r_oldenburg + Q.ddp_r_oldenburg + Q.lvp_r_oldenburg).toFixed(1));
+
 
 Q.wp_oldenburg_elections_vote = (Q.wp_oldenburg_elections_vote != undefined ? parseFloat(Q.wp_oldenburg_elections_vote.toFixed(1)) : 0);
 Q.true_other_oldenburg_elections_vote = (Q.true_other_oldenburg_elections_vote != undefined ? parseFloat(Q.true_other_oldenburg_elections_vote.toFixed(1)) : 0);
