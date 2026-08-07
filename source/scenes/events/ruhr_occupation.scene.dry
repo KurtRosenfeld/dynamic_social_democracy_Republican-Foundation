@@ -4,7 +4,7 @@ view-if: year == 1923 and month == 1 and ruhr_occupation_imminent == 1
 max-visits: 1 
 tags: event 
 new-page: true 
-on-arrival: ruhr_occupied = 1; nationalism += 2; pacifism -= 1; old_middle_dvfp += 2; new_middle_nsdap += 1; inflation += 14; france_relation -= 6; belgium_relation -= 6; cuno_bitching_timer = 2
+on-arrival: ruhr_occupied = 1; nationalism += 2; pacifism -= 1; old_middle_dvfp += 2; new_middle_nsdap += 2; catholic_nsdap += 2; inflation += 14; france_relation -= 6; belgium_relation -= 6; cuno_bitching_timer = 2; resources -= 2
 face-image: img/ruhr.jpeg
   
 = <span style="color: #002654;">**France**</span> occupies the Ruhr!
