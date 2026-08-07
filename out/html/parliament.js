@@ -1161,6 +1161,119 @@ baden: {
           }
         ]
       },
+
+      oldenburg: {
+        totalSeatsKey: 'oldenburg_seats',
+        conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r_oldenburg',
+            condition: function(Q) { return Q.kpd_r_oldenburg; }
+          },
+          {
+            id: 'sapd', legend: 'SAPD', name: 'SAPD', 
+            qualityKey: 'sapd_r_oldenburg',
+            condition: function(Q) { return Q.sapd_formed && Q.sapd_r_oldenburg; }
+          },
+          {
+            id: 'uspd', legend: 'USPD', name: 'USPD',
+            qualityKey: 'uspd_r_oldenburg',
+            condition: function(Q) { return Q.uspd_r_oldenburg; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_oldenburg',
+            condition: function(Q) { return Q.spd_r_oldenburg; }
+          },
+          {
+            id: 'ddp', 
+            legend: function(Q) { return Q.ddp_name; },
+            name: function(Q) { return Q.ddp_name; },
+            qualityKey: 'ddp_r_oldenburg',
+            condition: function(Q) { return Q.ddp_r_oldenburg && !Q.lvp_formed; }
+          },
+          {
+            id: 'lvp', legend: 'LVP', name: 'LVP',
+            qualityKey: 'lvp_r_oldenburg',
+            condition: function(Q) { return Q.lvp_r_oldenburg && Q.lvp_formed; }
+          },
+          {
+            id: 'z', legend: 'Z', name: 'Z',
+            qualityKey: 'z_r_oldenburg',
+            condition: function(Q) { return Q.z_r_oldenburg; }
+          },
+          {
+            id: 'dvp', legend: 'DVP', name: 'DVP',
+            qualityKey: 'dvp_r_oldenburg',
+            condition: function(Q) { return Q.dvp_r_oldenburg && !Q.lvp_formed && Q.dvp_exist; }
+          },
+          {
+            id: 'other', legend: 'Other', name: 'Others',
+            qualityKey: 'true_other_r_oldenburg',
+            condition: function(Q) { return Q.true_other_r_oldenburg; }
+          },
+          {
+            id: 'wp', legend: 'WP', name: 'WP',
+            qualityKey: 'wp_r_oldenburg',
+            condition: function(Q) { return Q.wp_r_oldenburg; }
+          },
+          {
+            id: 'kvp', legend: 'KVP', name: 'KVP',
+            qualityKey: 'kvp_r_oldenburg',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_oldenburg; }
+          },
+          {
+            id: 'farm3', legend: 'Farmers', name: 'Farmers',
+            qualityKey: 'farm_r_oldenburg',
+            condition: function(Q) { return Q.farm_r_oldenburg; }
+          },
+          {
+            id: 'csvd', legend: 'CSVD', name: 'CSVD',
+            qualityKey: 'csvd_r_oldenburg',
+            condition: function(Q) { return Q.csvd_exists && Q.csvd_r_oldenburg; }
+          },
+          {
+            id: 'rl', legend: 'Landesblock', name: 'Landesblock', 
+            qualityKey: 'rl_r_oldenburg',
+            condition: function(Q) { return Q.rl_r_oldenburg; }
+          },
+          {
+            id: 'farm2', legend: 'CNBL', name: 'CNBL',
+            qualityKey: 'cnbl_r_oldenburg',
+            condition: function(Q) { return Q.cnbl_exists && Q.cnbl_r_oldenburg; }
+          },
+          {
+            id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
+            qualityKey: 'dnvp_r_oldenburg',
+            condition: function(Q) { return Q.dnvp_r_oldenburg; }
+          },
+          {
+            id: 'farm2', legend: 'LB', name: 'LB',
+            qualityKey: 'lb_r_oldenburg',
+            condition: function(Q) { return Q.lb_r_oldenburg; }
+          },
+          {
+            id: 'dnf', legend: 'DNF', name: 'DNF',
+            qualityKey: 'dnf_r_oldenburg',
+            condition: function(Q) { return Q.dnf_formed && Q.dnf_r_oldenburg; }
+          },
+          {
+            id: 'dvfp', legend: 'DVFP', name: 'DVFP', 
+            qualityKey: 'dvfp_r_oldenburg',
+            condition: function(Q) { return Q.dvfp_r_oldenburg; }
+          },
+          {
+            id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
+            qualityKey: 'nsfb_r_oldenburg',
+            condition: function(Q) { return Q.nsfb_r_oldenburg; }
+          },
+          {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r_oldenburg',
+            condition: function(Q) { return Q.nsdap_r_oldenburg; }
+          }
+        ]
+      },
          
       
       waldeck: {
