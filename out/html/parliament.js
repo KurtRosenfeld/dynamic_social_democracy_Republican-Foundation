@@ -680,6 +680,11 @@ baden: {
             condition: function(Q) { return Q.dvp_r_thuringia && !Q.lvp_formed && Q.dvp_exist; }
           },
           {
+            id: 'bl', legend: 'OB', name: 'OB',
+            qualityKey: 'bl_r_thuringia',
+            condition: function(Q) { return Q.bl_r_thuringia; }
+          },
+          {
             id: 'wp', legend: 'WP', name: 'WP',
             qualityKey: 'wp_r_thuringia',
             condition: function(Q) { return Q.wp_r_thuringia; }
