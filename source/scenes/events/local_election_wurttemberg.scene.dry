@@ -293,6 +293,7 @@ Q.grand_coalition_wurttemberg = parseFloat((Q.ddp_r_wurttemberg + Q.dvp_r_wurtte
 Q.right_coalition_wurttemberg = parseFloat((Q.dnvp_r_wurttemberg + Q.nsdap_r_wurttemberg + Q.vrp_r_wurttemberg).toFixed(1));
 Q.true_bourgeois_coalition_wurttemberg = parseFloat((Q.ddp_r_wurttemberg + Q.dvp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.kvp_r_wurttemberg + Q.wbwb_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
 Q.right_bourgeois_coalition_wurttemberg = parseFloat((Q.dvp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.dnvp_r_wurttemberg + Q.wbwb_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
+Q.black_blue_wurttemberg = parseFloat((Q.dnvp_r_wurttemberg + Q.wbwb_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
 Q.weimar_coalition_wurttemberg = parseFloat((Q.spd_r_wurttemberg + Q.ddp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
 
 Q.wbwb_wurttemberg_elections_vote = (Q.wbwb_wurttemberg_elections_vote != undefined ? parseFloat(Q.wbwb_wurttemberg_elections_vote.toFixed(1)) : 0);
@@ -301,6 +302,8 @@ Q.vrp_wurttemberg_elections_vote = (Q.vrp_wurttemberg_elections_vote != undefine
 Q.wbwb_r_wurttemberg = (Q.wbwb_r_wurttemberg != undefined ? parseFloat(Q.wbwb_r_wurttemberg.toFixed(1)) : 0);
 Q.csvd_r_wurttemberg = (Q.csvd_r_wurttemberg != undefined ? parseFloat(Q.csvd_r_wurttemberg.toFixed(1)) : 0);
 Q.vrp_r_wurttemberg = (Q.vrp_r_wurttemberg != undefined ? parseFloat(Q.vrp_r_wurttemberg.toFixed(1)) : 0);
+
+if ((Q.dnvp_r_wurttemberg + Q.wbwb_r_wurttemberg > Q.z_r_wurttemberg) && year < 1925) Q.black_blue_coalition = 1;
              
 
 !}
@@ -505,14 +508,23 @@ Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + 
 
 @wurttemberg_coalition_menu
 
+- @black_blue_coalition
 - @spd_majority_wurttemberg
 - @weimar_coalition_wurttemberg
 - @grand_coalition_wurttemberg
-- @bourgeois_coalition_wurttemberg
-- @bourgeois_right_coalition_wurttemberg
 - @left_coalition_wurttemberg
+- @right_wing_coalition_wurttemberg
 - @social_catholic_coalition_wurttemberg
 - @no_coalition_wurttemberg
+
+
+@black_blue_coalition
+title: The Monarchists convince the Center to form a coalition
+view_if: black_blue_coalition == 1 and black_blue_wurttemberg >= 50
+on-arrival: wurttemberg_gov = "Right"; wurttemberg_z = 1; wurttemberg_dnvp = 1; wurttemberg_wbwb = 2
+
+Wilhelm Bazille (DNVP) is elected state president with the support of the Center Party and the Farmer's League. The coalition is referred to as Black-Blue or Catholic-Protestant Coalition. Their programme is regionalist and very confessional.
+
 
 @spd_majority_wurttemberg
 title: SPD majority
@@ -522,25 +534,15 @@ on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "
 
 @weimar_coalition_wurttemberg
 title: A Weimar Coalition will be formed
-choose-if: weimar_coalition_wurttemberg >= 50 and z_relation >= 82
+choose-if: weimar_coalition_wurttemberg >= 50 and z_relation >= 80 and spd_z_hate_wurttemberg < 1
 on-arrival: wurttemberg_election_2_trigger_time = time + 48; z_relation += 1; ddp_relation += 1; wurttemberg_gov = "Weimar"; wurttemberg_spd = 1; wurttemberg_z = 1; wurttemberg_ddp = 1
+unavailable-subtitle: [? if z_relation < 80 or spd_z_hate_wurttemberg >= 1: The Center Party hates us. ?]
 
 @grand_coalition_wurttemberg
 title: A Grand Coalition will be formed
-choose-if: grand_coalition_wurttemberg >= 50 and ddp_relation >= 25 and dvp_relation >= 65 and z_relation >= 75
+choose-if: grand_coalition_wurttemberg >= 50 and ddp_relation >= 25 and dvp_relation >= 65 and z_relation >= 75 and spd_z_hate_wurttemberg < 1
 on-arrival: wurttemberg_election_2_trigger_time = time + 48; z_relation += 2; dvp_relation += 3; wurttemberg_gov = "Grand"; wurttemberg_spd = 1; wurttemberg_z = 1; wurttemberg_ddp = 1; wurttemberg_dvp = 1
-
-@bourgeois_coalition_wurttemberg
-title: Another Bourgeois Coalition
-choose-if: true_bourgeois_coalition_wurttemberg >= 60
-view-if: right_bourgeois_coalition_wurttemberg < 50
-on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "Bourgeois"
-
-@bourgeois_right_coalition_wurttemberg
-title: Another Bourgeois Coalition
-view-if: z_relation < 80 and dvp_relation <= 50
-choose-if: right_bourgeois_coalition_wurttemberg >= 50
-on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "Right"
+unavailable-subtitle: [? if z_relation < 75 or spd_z_hate_wurttemberg >= 1: The Center Party hates us. ?][? if dvp_relation < 65: The DVP would never join this coalition. ?][? if ddp_relation < 25: Not even the DDP considers this option. ?]
 
 @left_coalition_wurttemberg
 title: A Coalition of the Left will be formed
@@ -553,19 +555,26 @@ title: The right forms a government...
 subtitle: This doesn't make sense.
 choose-if: right_coalition_wurttemberg >= 50
 view-if: right_coalition_wurttemberg >= 50
-on-arrival: wurttemberg_election_2_trigger_time = time + 48; rural_nsdap += 2; catholic_nsdap += 2; wurttemberg_gov = "Right"
+on-arrival: wurttemberg_election_2_trigger_time = time + 48; rural_nsdap += 2; catholic_nsdap += 2; wurttemberg_gov = "Far-Right"; wurttemberg_nsdap = 1; wurttemberg_dnvp = 1; wurttemberg_vrp = 2
 
 This can't end well...
 
 @social_catholic_coalition_wurttemberg
 title: Why not form a <span style="color: [+ spd_colour +];">**Social**</span>-<span style="color: [+ z_colour +];">**Catholic**</span> Coalition?
-view-if: (z_r_wurttemberg + spd_r_wurttemberg) >= 50 and z_relation >= 90 and ddp_r_wurttemberg <= 5.5
-on-arrival: wurttemberg_election_2_trigger_time = time + 48; z_relation += 2; ddp_relation -= 2; wurttemberg_gov = "Social-Catholic"
+view-if: (z_r_wurttemberg + spd_r_wurttemberg) >= 50 and z_relation >= 90 and ddp_r_wurttemberg <= 5.5 and spd_z_hate_wurttemberg == 0
+on-arrival: wurttemberg_election_2_trigger_time = time + 48; z_relation += 2; ddp_relation -= 2; wurttemberg_gov = "Social-Catholic"; wurttemberg_spd = 1; wurttemberg_z = 1
 
 The poor performance of the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> has allowed us to try a <span style="color: [+ spd_colour +];">**Social**</span>-<span style="color: [+ z_colour +];">**Catholic**</span> Coalition.
   
 @no_coalition_wurttemberg
-title: There is no possible government arrangement
-subtitle: New elections will be called...
-on-arrival: wurttemberg_election_2_trigger_time = time + 3; rural_dnvp += 2; catholic_other += 1
-view-if: bourgeois_coalition_wurttemberg < 50 and weimar_coalition_wurttemberg < 50 and z_relation < 80
+title: There is no acceptable government arrangement.
+subtitle: The Center forms a government anyways.
+on-arrival: wurttemberg_gov = "Right"; wurttemberg_z = 1; wurttemberg_dnvp = 1; wurttemberg_wbwb = 2; wurttemberg_dvp = 3
+view-if: (black_blue_coalition == 1 and black_blue_wurttemberg < 50) and spd_r_wurttemberg < 50 and right_coalition_wurttemberg < 50
+
+@no_coalition_wurttemberg_2
+title: There is no acceptable government arrangement.
+subtitle: The Center forms a government anyways.
+on-arrival: wurttemberg_gov = "Bourgeois"; wurttemberg_z = 1; wurttemberg_ddp = 1; wurttemberg_wbwb = 3; wurttemberg_dvp = 1; wurttemberg_csvd = 2
+view-if: (black_blue_coalition == 0 and black_blue_wurttemberg < 50) and spd_r_wurttemberg < 50 and right_coalition_wurttemberg < 50
+
