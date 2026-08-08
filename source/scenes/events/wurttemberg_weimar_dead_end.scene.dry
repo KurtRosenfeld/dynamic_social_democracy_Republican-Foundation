@@ -1,0 +1,29 @@
+title: <span style="color: [+ spd_colour +];">**SPD**</span> withdaws from government in Württemberg
+subtitle: This coalition could have never worked out
+view-if: year == 1923 and month == 5 and wurttemberg_spd == 1
+on-arrival: wurttemberg_gov = "Bourgeois"; wurttemberg_spd = 2; rural_spd -= 2; spd_z_wurttemberg_hate += 1
+max-visits: 1
+tags: event
+new-page: true
+face-image: img/land/Württemberg.jpg
+
+[? if uspd_joined >= 2: After the death of the local Interior Minister our local branch claimed the office. The <span style="color: [+ z_colour +];">**Center Party**</span> denied this since they largely see us as a threat to federalism and confessional education. ?]
+
+Despite holding the Labour-Agriculture Ministry we were not able to make any progress in fulfilling our programme's promises, we need to withdraw if we want to maintain our local base.
+
+- @tolerate_wurttemberg: We will remain in toleration
+- @fuck_you_bolz: We won't tolerate this government
+
+@tolerate_wurttemberg
+subtitle: This might reflect badly on us.
+on-arrival: rural_kpd += 1
+
+We keep tolerating the coalition we have just withrawn from in order to prevent them from pandering to the right.
+
+@fuck_you_bolz
+subtitle: This could provoke a further shift to the right.
+on-arrival: wurttember_spd = 0; z_relation -= 3; spd_z_wurttemberg_hate += 3
+
+We won't cooperate with the <span style="color: [+ z_colour +];">**Center Party**</span> in Württemberg.
+
+  
