@@ -114,14 +114,14 @@ We will maintain the current arrangement. The left-wing deputies refuse to keep 
 @wait_it_out
 title: This is not our problem.
 subtitle: Well... actually it is...
-on-arrival:  right_spd_r_saxony = spd_r_saxony*0.63; spd_r_saxony = spd_r_saxony*0.37; uspd_relation += 2; sb_relation += 2; heldt_in = "I"; saxony_dnvp = 0; saxony_gov = "National-Social-Liberal"
+on-arrival:  right_spd_r_saxony = spd_r_saxony*0.63; spd_r_saxony = spd_r_saxony*0.37; uspd_relation += 2; sb_relation += 2; heldt_in = "I"; saxony_dnvp = 0; saxony_gov = "National-Social-Liberal"; saxony_spd = 0; saxony_right_spd = 1
 
 The majority of our delegates has left the faction to support the governing coalition.
 
  
 @aspd_speedrun
 title: Expell these suckers!
-on-arrival: saxony_mp_party = "I"; right_spd_r_saxony = spd_r_saxony*0.63; spd_r_saxony = spd_r_saxony*0.37; uspd_relation += 2; sb_relation += 2; heldt_in = "I"; saxony_gov = "National-Social-Liberal"
+on-arrival: saxony_mp_party = "I"; right_spd_r_saxony = spd_r_saxony*0.63; spd_r_saxony = spd_r_saxony*0.37; uspd_relation += 2; sb_relation += 2; heldt_in = "I"; saxony_gov = "National-Social-Liberal"; saxony_spd = 0; saxony_right_spd = 1
 
  
 
@@ -133,7 +133,7 @@ on-arrival: uspd_r_saxony = uspd_r_saxony + spd_r_saxony*0.37; spd_r_saxony = sp
 @unity
 on-arrival: left_dissent -= 2; reformist_dissent -= 2; center_dissent -= 2; center_strength += 2
 
-It appears the Saxon <span style="color: [+ kpd_colour +];">**KPD**</span> parliamentary faction has sort of split in two despite offcially remaining one party.
+It appears the Saxon <span style="color: [+ spd_colour +];">**SPD**</span> parliamentary faction has sort of split in two despite offcially remaining one party.
 
 
 
