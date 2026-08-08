@@ -2,7 +2,7 @@ title: Oldenburg Landtag Election
 view-if: (year == 1923 and month == 4 and not oldenburg_election_seen) or (oldenburg_election_2_trigger_time == time and oldenburg_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: oldenburg_election_seen += 1 if oldenburg_election_seen; oldenburg_election_seen = 1 if not oldenburg_election_seen; oldenburg_election_seen_time = time
+on-arrival: oldenburg_election_seen += 1 if oldenburg_election_seen; oldenburg_election_seen = 1 if not oldenburg_election_seen; oldenburg_election_seen_time = time; oldenburg_spd = 0; oldenburg_kpd = 0; oldenburg_uspd = 0; oldenburg_sapd = 0; oldenburg_ddp = 0; oldenburg_lvp = 0; oldenburg_z = 0; oldenburg_dvp = 0; oldenburg_wp = 0; oldenburg_farm = 0; oldenburg_dnvp = 0; oldenburg_kvp = 0; oldenburg_dnf = 0; oldenburg_nsdap = 0; oldenburg_dvfp = 0; oldenburg_nsfb = 0; oldenburg_cnbl = 0; oldenburg_csvd = 0; oldenburg_true_other = 0; oldenburg_rl = 0
 priority: 2
 on-display: {!  
     var cardEl = document.createElement('div');  
