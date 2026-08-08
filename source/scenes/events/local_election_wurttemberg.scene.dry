@@ -549,6 +549,7 @@ title: A Coalition of the Left will be formed
 subtitle: We will work alongside the KPD
 choose-if: left_coalition_wurttemberg >= 50 and kpd_relation >= 65
 on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "Left"; wurttemberg_spd = 1; wurttemberg_kpd = 1; wurttemberg_uspd = 1; wurttemberg_sapd = 1
+unavailable-subtitle: [? if kpd_relation < 65: We need better relations with the KPD ?]
 
 @right_wing_coalition_wurttemberg
 title: The right forms a government...
@@ -576,5 +577,5 @@ view-if: (black_blue_coalition == 1 and black_blue_wurttemberg < 50) and spd_r_w
 title: There is no acceptable government arrangement.
 subtitle: The Center forms a government anyways.
 on-arrival: wurttemberg_gov = "Bourgeois"; wurttemberg_z = 1; wurttemberg_ddp = 1; wurttemberg_wbwb = 3; wurttemberg_dvp = 1; wurttemberg_csvd = 2
-view-if: (black_blue_coalition == 0 and black_blue_wurttemberg < 50) and spd_r_wurttemberg < 50 and right_coalition_wurttemberg < 50
+view-if: black_blue_coalition == 0 and spd_r_wurttemberg < 50 and right_coalition_wurttemberg < 50
 
