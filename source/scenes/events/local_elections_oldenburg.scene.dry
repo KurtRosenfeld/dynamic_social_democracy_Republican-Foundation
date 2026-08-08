@@ -626,7 +626,7 @@ Why did this have to happen...?
 title: There is no possible government arrangement
 subtitle: A caretaker government keeps the buisness running for now.
 on-arrival: oldenburg_gov = "Bourgeois"; oldenburg_election_2_trigger_time = time + 25; rural_nsdap += 2; old_middle_nsdap += 1; oldenburg_z = 2; oldenburg_ddp = 2; oldenburg_dvp = 2; oldenburg_dnvp = 3; oldenburg_wp = 3
-view-if:  (social_liberal_coalition_oldenburg < 50 or ddp_relation < 40 or lvp_relation < 65) and (left_coalition_oldenburg < 50 or kpd_relation < 60) and nsdap_r_oldenburg < 50 and (grand_coalition_oldenburg < 50 and z_relation < 67 and dvp_relation < 85 and early_dvp_cooperation < 2)
+view-if:  (social_liberal_coalition_oldenburg < 50 or ddp_relation < 40 or lvp_relation < 65) and (left_coalition_oldenburg < 50 or kpd_relation < 60) and nsdap_r_oldenburg < 50 and (grand_coalition_oldenburg < 50 or z_relation < 67 or dvp_relation < 85 or early_dvp_cooperation < 2)
 
 [? if year < 1930: Eugen von Finkh (I) is going to form a government. ?][? if year >= 1930: Friedrich Cassebohm (I) is going to form a government. ?]
 
