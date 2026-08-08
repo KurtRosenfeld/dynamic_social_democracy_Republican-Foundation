@@ -7,6 +7,8 @@ tags: event
 new-page: true
 face-image: img/land/Württemberg.jpg
 
+= <span style="color: [+ spd_colour +];">**SPD**</span> withdaws from government in Württemberg
+
 [? if uspd_joined >= 2: After the death of the local Interior Minister our local branch claimed the office. The <span style="color: [+ z_colour +];">**Center Party**</span> denied this since they largely see us as a threat to federalism and confessional education. ?]
 
 Despite holding the Labour-Agriculture Ministry we were not able to make any progress in fulfilling our programme's promises, we need to withdraw if we want to maintain our local base.
@@ -22,7 +24,7 @@ We keep tolerating the coalition we have just withrawn from in order to prevent 
 
 @fuck_you_bolz
 subtitle: This could provoke a further shift to the right.
-on-arrival: wurttember_spd = 0; z_relation -= 3; spd_z_wurttemberg_hate += 3
+on-arrival: wurttemberg_spd = 0; z_relation -= 3; spd_z_wurttemberg_hate += 3
 
 We won't cooperate with the <span style="color: [+ z_colour +];">**Center Party**</span> in Württemberg.
 
