@@ -1,9 +1,9 @@
 title: Thuringian Landtag Election
-view-if: year == 1924 and month == 2
+view-if: year == 1924 and month == 2 and freiberg_bloodbath_seen
 new-page: true
 tags: event
 max-visits: 1
-on-arrival: new_middle_spd -= 1
+on-arrival: new_middle_spd -= 1; thuringia_seats = 72
 priority: 2
 on-display: {!  
     var cardEl = document.createElement('div');  
@@ -52,7 +52,8 @@ Q.z_r_thuringia = 0;
 Q.dvp_r_thuringia = 0;
 Q.ddp_r_thuringia = 0;
 Q.dnvp_r_thuringia = 0;           
-Q.lvp_r_thuringia = 0;        
+Q.lvp_r_thuringia = 0;
+Q.farm_r_thuringia = 0;  
 
 Q.spd_thuringia_elections_vote = 0;
 Q.uspd_thuringia_elections_vote = 0;
