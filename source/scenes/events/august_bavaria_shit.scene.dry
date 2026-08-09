@@ -1,0 +1,69 @@
+title: <span style="color: #00CCFF;">Bavaria</span> <span style="color: #000000;">**Republic**</span> <span style="color: #c10000;">**Protection**</span> <span style="color: #D3C24D;">**Act**</span> negotiation
+subtitle: Let's hope we can settle this matter now.
+new-page: true
+max-visits: 1
+view-if: month == 8 and protection_act_compromize_process == 1
+on-arrival: bvp_relation += 1; catholic_z -= 1; protection_act_compromize_process -= 3 if super_mad_bavaria
+priority: 1
+tags: event
+face-image: img/land/Bavaria.svg.webp
+
+= <span style="color: #000000;">**Republic**</span> <span style="color: #c10000;">**Protection**</span> <span style="color: #D3C24D;">**Act**</span> negotiation
+
+  
+Since our only other options are appealing to the Reichsgericht, which might not be reliable, or calling a Reichsexekution through the Reichswehr, which might not be reliable, we have to find a compromise.
+
+- @bavaria_offer: What will we offer?
+
+@bavaria_offer  
+
+- @bavaria_offer_1
+- @bavaria_offer_2
+- @bavaria_offer_3
+- @bavaria_offer_4
+- @bavaria_offer_5
+- @bavaria_goal
+- @fuck_bavaria_deals
+
+
+@bavaria_offer_1
+title: Pledge adherence to federalist principles and state's rights
+on-arrival: protection_act_compromize_process += 1
+go-to: bavaria_offer  
+
+@bavaria_offer_2
+title: Let Bavarian courts treat all cases of low relevance and those already in process
+on-arrival: protection_act_compromize_process += 1
+go-to: bavaria_offer
+
+@bavaria_offer_3
+title: Let the state court be occupied with represantatives from all regions of the Reich
+subtitle: The State Court deals with matters of conflict between organs of the state
+on-arrival: protection_act_compromize_process += 2; hitler_prozess_chances = -1
+go-to: bavaria_offer
+  
+@bavaria_offer_4
+title: Give a generous loan to Bavaria
+subtitle: Everyone would hate this concession
+choose-if: budget >= 1
+unavailable-subtitle: We could never afford that
+on-arrival budget -= 1; protection_act_compromize_process += 3
+go-to: bavaria_offer
+  
+@bavaria_offer_5
+title: Give full auttonomy to Bavaria
+choose-if: z_relation >= 666
+unavailable-subtitle: This is practical sucide
+go-to: bavaria_offer
+
+@bavaria_goal
+title: The government of Bavaria will adopt the Republikschutzgesetz
+choose-if: protection_act_compromize_process >= 5
+on-arrival: bvp_relation += 3; z_relation += 2; super_mad_bavaria -= 1
+
+
+@fuck_bavaria_deals
+title: Actually we won't make any concessions
+on-arrival: protection_act_compromize_process -= 10; super_mad_bavaria += 2
+
+  
