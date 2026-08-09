@@ -47,7 +47,7 @@ title: Give a generous loan to Bavaria
 subtitle: Everyone would hate this concession
 choose-if: budget >= 1
 unavailable-subtitle: We could never afford that
-on-arrival budget -= 1; protection_act_compromize_process += 3
+on-arrival: budget -= 1; protection_act_compromize_process += 3
 go-to: bavaria_offer
   
 @bavaria_offer_5
