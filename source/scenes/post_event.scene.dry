@@ -435,8 +435,8 @@ Q.conservative_media = (Q.conservative_media / Q.total_media) * 100;
 Q.monarchist_media = (Q.monarchist_media / Q.total_media) * 100;
 Q.volkisch_media = (Q.volkisch_media / Q.total_media) * 100;
 
-Q.anarchist_media = Math.round(Q.anarchist_media);
-Q.communist_media = Math.round(Q.communist_media);
+Q.anarchist_media = Math.round((Q.anarchist_media) * 10 / 10);
+Q.communist_media = Math.round((Q.communist_media) * 10 / 10);
 Q.socialist_media = Math.round(Q.socialist_media);
 Q.catholic_media = Math.round(Q.catholic_media);
 Q.liberal_media = Math.round(Q.liberal_media);
