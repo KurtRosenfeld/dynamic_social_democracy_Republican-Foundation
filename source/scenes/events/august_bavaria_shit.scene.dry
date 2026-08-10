@@ -27,33 +27,37 @@ Since our only other options are appealing to the Reichsgericht, which might not
 
 
 @bavaria_offer_1
+view-if: bav_opt_1 == 0
 title: Pledge adherence to federalist principles and state's rights
-on-arrival: protection_act_compromize_process += 1
+on-arrival: protection_act_compromize_process += 1; bav_opt_1 = 1
 go-to: bavaria_offer  
 
 @bavaria_offer_2
+view-if: bav_opt_2 == 0
 title: Let Bavarian courts treat all cases of low relevance and those already in process
-on-arrival: protection_act_compromize_process += 1
+on-arrival: protection_act_compromize_process += 1; bav_opt_2 = 1
 go-to: bavaria_offer
 
 @bavaria_offer_3
+view-if: bav_opt_3 == 0
 title: Let the state court be occupied with represantatives from all regions of the Reich
 subtitle: The State Court deals with matters of conflict between organs of the state
-on-arrival: protection_act_compromize_process += 2; hitler_prozess_chances = -1
+on-arrival: protection_act_compromize_process += 2; hitler_prozess_chances = -1; bav_opt_3 = 1
 go-to: bavaria_offer
   
 @bavaria_offer_4
 title: Give a generous loan to Bavaria
-subtitle: Everyone would hate this concession
+subtitle: Everyone would hate this concession. (- 1 budeget)
 choose-if: budget >= 1
+view-if: bav_opt_4 == 0
 unavailable-subtitle: We could never afford that
-on-arrival: budget -= 1; protection_act_compromize_process += 3
+on-arrival: budget -= 1; protection_act_compromize_process += 3; bav_opt_4 = 1
 go-to: bavaria_offer
   
 @bavaria_offer_5
-title: Give full auttonomy to Bavaria
+title: Give full autonomy to Bavaria
 choose-if: z_relation >= 666
-unavailable-subtitle: This is practical sucide
+unavailable-subtitle: This is practical suicide
 go-to: bavaria_offer
 
 @bavaria_goal
