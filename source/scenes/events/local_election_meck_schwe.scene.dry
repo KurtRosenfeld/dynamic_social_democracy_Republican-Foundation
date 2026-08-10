@@ -81,11 +81,13 @@ Q.spd_meck_schwe_elections_vote = Q.spd_votes*meck_schwe_adjustment_factors.spd;
 Q.sapd_meck_schwe_elections_vote = Q.sapd_votes*meck_schwe_adjustment_factors.sapd;
 Q.uspd_meck_schwe_elections_vote = Q.uspd_votes*meck_schwe_adjustment_factors.uspd;
 Q.kpd_meck_schwe_elections_vote = Q.kpd_votes*meck_schwe_adjustment_factors.kpd;
+if (Q.spd_votes > 30) meck_schwe_adjustment_factors.kpd -= 0.3;
 if (Q.stolper_program_adopted) meck_schwe_adjustment_factors.ddp += 0.2;
 Q.ddp_meck_schwe_elections_vote = Q.ddp_votes*meck_schwe_adjustment_factors.ddp;
 Q.lvp_meck_schwe_elections_vote = Q.lvp_votes*meck_schwe_adjustment_factors.lvp;
 Q.dvp_meck_schwe_elections_vote = Q.dvp_votes*meck_schwe_adjustment_factors.dvp;
 if (Q.dnvp_ideology == "Moderate") meck_schwe_adjustment_factors.dnvp -= 0.1;
+if (Q.dnvp_votes > 18) meck_schwe_adjustment_factors.others -= 0.4;
 Q.dnvp_meck_schwe_elections_vote = Q.dnvp_votes*meck_schwe_adjustment_factors.dnvp;
 Q.nsdap_meck_schwe_elections_vote = Q.nsdap_votes*meck_schwe_adjustment_factors.nsdap;
 Q.dvfp_meck_schwe_elections_vote = Q.dvfp_votes*meck_schwe_adjustment_factors.dvfp;
@@ -516,7 +518,7 @@ Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + 
 @social_liberal_coalition_meck_schwe
 title: A Social-Liberal Coalition will be formed
 choose-if: social_liberal_coalition_meck_schwe >= 50 and dvp_relation >= 25
-on-arrival: meck_schwe_election_2_trigger_time = time + 48; dvp_relation += 2; ddp_relation += 3; meck_schwe_gov = "Social-Liberal"; meck_schwe_spd = 1; meck_schwe_ddp = 1; meck_schwe_dvp = 1
+on-arrival: meck_schwe_election_2_trigger_time = time + 48; dvp_relation += 2; ddp_relation += 3; meck_schwe_gov = "Social-Liberal"; meck_schwe_spd = 1; meck_schwe_ddp = 1; meck_schwe_dvp = 1; meck_schwe_coalition_r = social_liberal_coalition_meck_schwe
 
 @bourgeois_coalition_meck_schwe
 title: A bourgeois coalition must be formed
@@ -528,12 +530,12 @@ on-arrival: meck_schwe_election_2_trigger_time = time + 48; meck_schwe_gov = "Bo
 title: A Coalition of the Left will be formed
 subtitle: We will work alongside the KPD
 choose-if: left_coalition_meck_schwe >= 50 and kpd_relation >= 40
-on-arrival: meck_schwe_election_2_trigger_time = time + 48; workers_kpd += 2; rural_ddp -= 2; workers_dnvp -= 1; rural_spd += 1; meck_schwe_gov = "Left"; meck_schwe_spd = 1; meck_schwe_kpd = 1; meck_schwe_sapd = 1; meck_schwe_uspd = 1
+on-arrival: meck_schwe_election_2_trigger_time = time + 48; workers_kpd += 2; rural_ddp -= 2; workers_dnvp -= 1; rural_spd += 1; meck_schwe_gov = "Left"; meck_schwe_spd = 1; meck_schwe_kpd = 1; meck_schwe_sapd = 1; meck_schwe_uspd = 1; meck_schwe_coalition_r = left_coalition_meck_schwe
 
 @spd_majority_meck_schwe
 title: We don't need any coalition partners
 view-if: spd_r_meck_schwe >= 50
-on-arrival: meck_schwe_election_2_trigger_time = time + 48; workers_spd += 1; workers_dnvp -= 2; rural_spd += 1; rural_dnvp -= 1; meck_schwe_gov = "SPD"; meck_schwe_spd = 1
+on-arrival: meck_schwe_election_2_trigger_time = time + 48; workers_spd += 1; workers_dnvp -= 2; rural_spd += 1; rural_dnvp -= 1; meck_schwe_gov = "SPD"; meck_schwe_spd = 1; meck_schwe_coalition_r = spd_r_meck_schwe
 
 @right_wing_coalition_meck_schwe
 title: The DNVP and DVP are tolerated by the DVFP?
@@ -826,6 +828,17 @@ go-to: meck_schwe_toleration_menu
 view-if: meck_schwe_lvp == 2
 on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - lvp_r_meck_schwe; meck_schwe_lvp = 0; meck_schwe_election_2_trigger_time -= 4
 go-to: meck_schwe_toleration_menu
+
+
+
+
+
+
+
+
+
+
+
 
 
 
