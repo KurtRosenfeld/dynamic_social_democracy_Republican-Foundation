@@ -435,14 +435,14 @@ Q.conservative_media = (Q.conservative_media / Q.total_media) * 100;
 Q.monarchist_media = (Q.monarchist_media / Q.total_media) * 100;
 Q.volkisch_media = (Q.volkisch_media / Q.total_media) * 100;
 
-Q.anarchist_media = Math.round((Q.anarchist_media) * 10 / 10);
-Q.communist_media = Math.round((Q.communist_media) * 10 / 10);
-Q.socdem_media = Math.round((Q.socdem_media) * 10 / 10);
-Q.catholic_media = Math.round((Q.catholic_media) * 10 / 10);
-Q.liberal_media = Math.round((Q.liberal_media) * 10 / 10);
-Q.conservative_media = Math.round((Q.conservative_media) * 10 / 10);
-Q.monarchist_media = Math.round((Q.monarchist_media) * 10 / 10);
-Q.volkisch_media = Math.round((Q.volkisch_media) * 10 / 10);
+Q.anarchist_media = Math.round((Q.anarchist_media) * 100 / 100);
+Q.communist_media = Math.round((Q.communist_media) * 100 / 100);
+Q.socdem_media = Math.round((Q.socdem_media) * 100 / 100);
+Q.catholic_media = Math.round((Q.catholic_media) * 100 / 100);
+Q.liberal_media = Math.round((Q.liberal_media) * 100 / 100);
+Q.conservative_media = Math.round((Q.conservative_media) * 100 / 100);
+Q.monarchist_media = Math.round((Q.monarchist_media) * 100 / 100);
+Q.volkisch_media = Math.round((Q.volkisch_media) * 100 / 100);
 
 
 // re-calculate dissent.
