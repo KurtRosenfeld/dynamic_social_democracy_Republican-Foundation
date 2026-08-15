@@ -2,7 +2,7 @@ title: The Inflation Chancellor
 subtitle: Popular discontent with Chancellor [+ chancellor +] rises.
 new-page: true
 view-if: ruhr_occupied == 1 and chancellor == "Cuno" and cuno_bitching_timer == 0
-on-arrival: workers_spd *= 0.95 if spd_in_government == 1; workers_nsdap += 2 if spd_in_government; workers_kpd += 3 if spd_in_government; unemployed_nsdap += 3 if spd_in_government; unemployment += 0.3; inflation += 22; new_middle_dvp -= 2; new_middle_other += 2; catholic_z -= 1; catholic_nsdap += 3; catholic_dvp -= 2; old_middle_dvp -= 1; old_middle_dvfp += 1; dnvp_cuno_support -= 4
+on-arrival: workers_spd *= 0.95 if spd_in_government == 1; workers_nsdap += 2 if spd_in_government; workers_kpd += 3 if spd_in_government; unemployed_nsdap += 3 if spd_in_government; unemployment += 0.3; inflation += 22; new_middle_dvp -= 2; new_middle_other += 2; catholics_z -= 1; catholics_nsdap += 3; catholics_dvp -= 2; old_middle_dvp -= 1; old_middle_dvfp += 1; dnvp_cuno_support -= 4
 tags: event
 max-visits: 4
 face-image: img/246w0updni1g1.jpeg
