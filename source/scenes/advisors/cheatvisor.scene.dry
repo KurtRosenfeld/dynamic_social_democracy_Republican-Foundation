@@ -575,7 +575,7 @@ title: Media Shit
 
 @increase_socdem
 title: Increase Socialist
-on-arrival: socialist_media += 3
+on-arrival: socdem_media += 3
 
 
 @increase_anarchist
