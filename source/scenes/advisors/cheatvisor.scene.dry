@@ -21,6 +21,7 @@ The Cheatvisor is just a tool to make testing the mod easier, nothing special
 - @go_to_thuringia
 - @assemble_reichsrat
 - @give_absurd_other
+- @media_shit
 - @hide
 - @root: Return to main
 
@@ -561,7 +562,30 @@ if (window && d3) {
 
 @give_absurd_other
 title: give absurd support to others
-on-arrival: rural_other += 7; new_middle_other += 7; old_middle_other += 8; catholic_other += 6; workers_other += 4
+on-arrival: rural_other += 7; new_middle_other += 7; old_middle_other += 8; catholics_other += 6; workers_other += 4
+
+@media_shit
+title: Media Shit
+
+- @increase_socdem
+- @increase_anarchist
+- @increase_vlokisch
+- @increase_liberal
 
 
+@increase_socdem
+title: Increase Socialist
+on-arrival: socialist_media += 3
 
+
+@increase_anarchist
+title: Increase Anarchist
+on-arrival: anarchist_media += 3
+
+@increase_volkisch
+title: Increase Völkisch
+on-arrival: volkisch_media += 3
+
+@increase_liberal
+title: Increase Liberal
+on-arrival: liberal_media += 3
