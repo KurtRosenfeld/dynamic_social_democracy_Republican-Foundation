@@ -1,0 +1,65 @@
+title: Presidential Election Candidates
+subtitle: Should we field our own candidate?
+new-page: true
+tags: event
+max-visits: 1
+
+
+
+
+
+
+= Test Presidential Election Candidates
+
+Text, text, text, whatever
+
+- @dpp_offer_1925
+- @kpd_maintains_agreement
+- @kpd_says_fuck_you
+
+
+@dpp_offer_1925
+view-if: ddp_relation >= 25
+title: The <span style="color: [+ ddp_colour +];">**DDP**</span> proposes a united WEIMAR candidate.
+subtitle: They think we should focus the republican vote in one candidate from the start.
+
+The <span style="color: [+ ddp_colour +];">**DDP**</span> proposes the independent politician Walter Simons as a candidate for the Weimar Coalition. They have previously tried to rally the bourgeois parties behind him which didn't get much attention from other parties.
+
+- @wow_literally_soooo_cool
+- @the_ddp_was_so_dumb_really
+
+
+@wow_literally_soooo_cool
+title: We will support Simon.
+subtitle: The <span style="color: [+ z_colour +];">**Centrists**</span> prefer running their own candidate. This decision is unpopular within our party.
+on-arrival: spd_support_simon
+
+
+@the_ddp_was_so_dumb_really
+title: We won't support Simon.
+
+
+@kpd_maintains_agreement
+title: The <span style="color: [+ kpd_colour +];">**KPD**</span> will support a candidate of the United Left
+view-if: kpd_unity_support == 1 and kpd_relation >= 45
+
+
+@kpd_says_fuck_you
+title: The <span style="color: [+ kpd_colour +];">**KPD**</span> withdraws support for united action with us.
+view-if: kpd_unity_support == 1 and kpd_relation < 45
+on-arrival: kpd_unity_support = 0
+
+Even though the <span style="color: [+ kpd_colour +];">**KPD**</span> has pledged support to a candidate uniting the worker's parties, our relations have suffered too much since the agreement was reached. Ernst Thälmann will run.
+
+
+- @view_candidates_1: View the running candidates.
+
+@view_candidates_1
+
+- @reichsblock
+
+
+@reichsblock
+
+
+
