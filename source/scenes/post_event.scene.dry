@@ -444,6 +444,10 @@ Q.conservative_media = Math.round(Q.conservative_media * 10) / 10;
 Q.monarchist_media = Math.round(Q.monarchist_media * 10) / 10;
 Q.volkisch_media = Math.round(Q.volkisch_media * 10) / 10;
 
+Q.left_media = Math.round(Q.left_media * 10) / 10;
+Q.republican_media = Math.round(Q.republican_media * 10) / 10;
+Q.far_right_media = Math.round(Q.far_right_media * 10) / 10;
+
 
 // re-calculate dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
