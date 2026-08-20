@@ -3330,8 +3330,21 @@ go-to: map_menu
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Ukrainian Soviet Socialist Republic</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
     <p>Population: ~36.500.000</p>
-    <p>Head of State: Grigory Petrovsky</p>
+    <p>Head of State: Petrovsky (UCP)</p>
     <p>Soviet Socialist Republic</p>
+    <p>Relations: [+ soviet_relation : relationships +]</p>
+  </div>
+  </div>
+
+<div id="georgia-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Transcaucasia.png" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Transcaucasian Soviet Federative Socialist Republic</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: why do you ask?</p>
+    <p>Head of State: Narimanov (ACP)</p>
+    <p>Federative Soviet Socialist Republic</p>
     <p>Relations: [+ soviet_relation : relationships +]</p>
   </div>
   </div>
@@ -3343,7 +3356,7 @@ go-to: map_menu
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Byelorussian Soviet Socialist Republic</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
     <p>Population: ~1.544.000</p>
-    <p>Head of State: Alexander Chervyakov</p>
+    <p>Head of State: Chervyakov (BCP)</p>
     <p>Soviet Socialist Republic</p>
     <p>Relations: [+ soviet_relation : relationships +]</p>
   </div>
@@ -3356,7 +3369,7 @@ go-to: map_menu
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Russian Soviet Federative Socialist Republic</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
     <p>Population: why do you ask?</p>
-    <p>Head of State: Lev Kamenev</p>
+    <p>Head of State: Lev Kamenev (RCP)</p>
     <p>Federative Soviet Socialist Republic</p>
     <p>Relations: [+ soviet_relation : relationships +]</p>
   </div>
@@ -3369,7 +3382,7 @@ go-to: map_menu
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Russian Soviet Federative Socialist Republic</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
     <p>Population: ~130.000.000</p>
-    <p>Head of State: Mikhail Kalinin</p>
+    <p>Head of State: Kalinin (CPSU)</p>
     <p>Federative Soviet Socialist Republic</p>
     <p>Relations: [+ soviet_relation : relationships +]</p>
   </div>
