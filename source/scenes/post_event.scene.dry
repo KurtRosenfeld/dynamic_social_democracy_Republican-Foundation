@@ -424,7 +424,7 @@ if (Q.editorial_line == "Left") Q.republican_media = (Q.liberal_media + Q.cathol
 
 Q.far_right_media = (Q.conservative_media + Q.monarchist_media + Q.volkisch_media);
 
- // updating media (doesn't work -ish)
+ // updating media
 
 Q.anarchist_media = (Q.anarchist_media / Q.total_media) * 100;
 Q.communist_media = (Q.communist_media / Q.total_media) * 100;
@@ -447,6 +447,19 @@ Q.volkisch_media = Math.round(Q.volkisch_media * 10) / 10;
 Q.left_media = Math.round(Q.left_media * 10) / 10;
 Q.republican_media = Math.round(Q.republican_media * 10) / 10;
 Q.far_right_media = Math.round(Q.far_right_media * 10) / 10;
+
+
+// media power
+
+if (Q.socdem_media < 30 && Q.new_middle_spd > 25) Q.new_middle_spd -= 0.2;
+if (Q.socdem_media < 30 && Q.old_middle_spd > 15) Q.old_middle_spd -= 0.2;
+if (Q.socdem_media < 30 && Q.workers_spd > 70) Q.workers_spd -= 0.1;
+if (Q.no_youth_wing == 1 && Q.unemployed_spd > 45) Q.unemployed_spd -= 0.1;
+
+if (Q.year >= 1924 and Q.volkisch_media < 14 and Q.monarchist_media > 5) Q.monarchist_media -= 0.2;
+if (Q.year >= 1924 and Q.volkisch_media < 14 and Q.monarchist_media > 5) Q.volkisch_media += 0.2;
+
+if (Q.in_left_coalition and Q.left_media < 35 and Q.old_middle_spd > 3) Q.old_middle_spd -= 0.2;
 
 
 // re-calculate dissent.
