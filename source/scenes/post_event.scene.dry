@@ -459,7 +459,7 @@ if (Q.no_youth_wing == 1 && Q.unemployed_spd > 45) Q.unemployed_spd -= 0.1;
 if (Q.year >= 1924 and Q.volkisch_media < 14 and Q.monarchist_media > 5) Q.monarchist_media -= 0.2;
 if (Q.year >= 1924 and Q.volkisch_media < 14 and Q.monarchist_media > 5) Q.volkisch_media += 0.2;
 
-if (Q.in_left_coalition and Q.left_media < 35 and Q.old_middle_spd > 3) Q.old_middle_spd -= 0.2;
+if (Q.in_left_coalition && Q.left_media < 35 and Q.old_middle_spd > 3) Q.old_middle_spd -= 0.2;
 
 
 // re-calculate dissent.
