@@ -2,7 +2,7 @@ title: Bavaria Landtag Election
 view-if: (year == 1924 and month == 5 and not bavaria_election_seen) or (bavaria_election_2_trigger_time == time and bavaria_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: bavaria_election_seen += 1 if bavaria_election_seen; bavaria_election_seen = 1 if not bavaria_election_seen; bavaria_election_seen_time = time
+on-arrival: bavaria_election_seen += 1 if bavaria_election_seen; bavaria_election_seen = 1 if not bavaria_election_seen; bavaria_election_seen_time = time; bavaria_seats = 128
 priority: 2
 on-display: {!  
     var cardEl = document.createElement('div');  
