@@ -2,7 +2,7 @@ title: Bremen Landtag Election
 view-if: (year == 1923 and month == 11 and not bremen_election_seen) or (bremen_election_2_trigger_time == time and bremen_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: bremen_election_seen += 1 if bremen_election_seen; bremen_election_seen = 1 if not bremen_election_seen; bremen_election_seen_time = time; bremen_spd = "opposition"; bremen_kpd = "opposition"; bremen_sapd = "opposition"; bremen_uspd = "opposition"; bremen_ddp = "opposition"; bremen_z = "opposition"; bremen_true_others = "opposition"; bremen_wp = "opposition"; bremen_lvp = "opposition"; bremen_hb = "opposition"
+on-arrival: bremen_election_seen += 1 if bremen_election_seen; bremen_election_seen = 1 if not bremen_election_seen; bremen_election_seen_time = time; bremen_spd = 0; bremen_kpd = 0; bremen_sapd = 0; bremen_uspd = 0; bremen_ddp = 0; bremen_z = 0; bremen_true_others = 0; bremen_wp = 0; bremen_lvp = 0; bremen_hb = 0
 priority: 3
 on-display: {!  
     var cardEl = document.createElement('div');  
@@ -588,7 +588,7 @@ view-if: weimar_coalition_bremen < 50 and right_coalition_bremen < 50
 @bremen_coalition_creator_option
 title: Custom Coalition Creator (Test)
 subtitle: Dear Test Players, if you see this, please tell me what you think
-on-arrival: bremen_coalition_r = spd_r_bremen; bremen_spd = "government"
+on-arrival: bremen_coalition_r = spd_r_bremen; bremen_spd = 0
 go-to: bremen_coalition_creator
 
 @bremen_coalition_creator
@@ -622,75 +622,75 @@ Current support: [+ bremen_coalition_r +]%
 
 
 @bremen_invite_kpd
-view-if: kpd_r_bremen > 0 and not bremen_kpd = "government"
-choose-if: kpd_relation >= 55 and bremen_dvp == "opposition" and bremen_wp == "opposition" and (not bremen_z == "government" or z_leader == "Joos" or z_leader == "Kaiser")
+view-if: kpd_r_bremen > 0 and not bremen_kpd = 1
+choose-if: kpd_relation >= 55 and bremen_dvp == 0 and bremen_wp == 0 and (not bremen_z == 1 or z_leader == "Joos" or z_leader == "Kaiser")
 subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> will demand radical policies.
-unavailable-subtitle: [? if  kpd_relation < 55: We need better relations. ?][? if not bremen_dvp == "opposition": They are not really pleased about our partners. ?]
-on-arrival: bremen_coalition_r = bremen_coalition_r + kpd_r_bremen; bremen_kpd = "government"
+unavailable-subtitle: [? if  kpd_relation < 55: We need better relations. ?][? if not bremen_dvp == 0: They are not really pleased about our partners. ?]
+on-arrival: bremen_coalition_r = bremen_coalition_r + kpd_r_bremen; bremen_kpd = 1
 go-to: bremen_coalition_creator
 
 @bremen_invite_sapd
-view-if: sapd_r_bremen > 0 and not bremen_sapd = "government"
-choose-if: sapd_relation >= 50 and bremen_dvp == "opposition" and bremen_wp == "opposition" and (not bremen_z == "government" or z_leader == "Joos" or z_leader == "Kaiser")
+view-if: sapd_r_bremen > 0 and not bremen_sapd = 1
+choose-if: sapd_relation >= 50 and bremen_dvp == 0 and bremen_wp == 0 and (not bremen_z == 1 or z_leader == "Joos" or z_leader == "Kaiser")
 subtitle: The <span style="color: [+ sapd_colour +];">**SAPD**</span> will demand radical policies.
-unavailable-subtitle: [? if  sapd_relation < 50: We need better relations. ?][? if not bremen_dvp == "opposition": They are not really pleased about our partners. ?]
-on-arrival: bremen_coalition_r = bremen_coalition_r + sapd_r_bremen; bremen_sapd = "government"
+unavailable-subtitle: [? if  sapd_relation < 50: We need better relations. ?][? if not bremen_dvp == 0: They are not really pleased about our partners. ?]
+on-arrival: bremen_coalition_r = bremen_coalition_r + sapd_r_bremen; bremen_sapd = 1
 go-to: bremen_coalition_creator
 
 @bremen_invite_uspd
-view-if: uspd_r_bremen > 0 and not bremen_uspd = "government"
-choose-if: uspd_relation >= 40 and bremen_wp == "opposition" and (not bremen_z == "government" or z_leader == "Joos" or z_leader == "Kaiser" or uspd_ideology == "Orthodox Marxism")
+view-if: uspd_r_bremen > 0 and not bremen_uspd = 1
+choose-if: uspd_relation >= 40 and bremen_wp == 0 and (not bremen_z == 1 or z_leader == "Joos" or z_leader == "Kaiser" or uspd_ideology == "Orthodox Marxism")
 subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
-on-arrival: bremen_coalition_r = bremen_coalition_r + uspd_r_bremen; bremen_uspd = "government"
+on-arrival: bremen_coalition_r = bremen_coalition_r + uspd_r_bremen; bremen_uspd = 1
 go-to: bremen_coalition_creator
 
 @bremen_invite_ddp
-view-if: ddp_r_bremen > 0 and not bremen_ddp = "government"
-choose-if: ddp_relation >= 20 and (not bremen_kpd == "government" or kpd_leader == "Conciliators")
+view-if: ddp_r_bremen > 0 and not bremen_ddp = 1
+choose-if: ddp_relation >= 20 and (not bremen_kpd == 1 or kpd_leader == "Conciliators")
 subtitle: [? if ddp_relation >= 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> loves you! ?]
-on-arrival: bremen_coalition_r = bremen_coalition_r + ddp_r_bremen; bremen_ddp = "government"
+on-arrival: bremen_coalition_r = bremen_coalition_r + ddp_r_bremen; bremen_ddp = 1
 go-to: bremen_coalition_creator
 
 @bremen_invite_lvp
-view-if: lvp_r_bremen > 0 and not bremen_lvp = "government"
-choose-if: lvp_relation >= 45 and (not bremen_kpd == "government" or kpd_leader == "Conciliators")
+view-if: lvp_r_bremen > 0 and not bremen_lvp = 1
+choose-if: lvp_relation >= 45 and (not bremen_kpd == 1 or kpd_leader == "Conciliators")
 subtitle: [? if lvp_relation >= 75: The <span style="color: [+ lvp_colour +];">**LVP**</span> loves you! ?]
-on-arrival: bremen_coalition_r = bremen_coalition_r + lvp_r_bremen; bremen_lvp = "government"
+on-arrival: bremen_coalition_r = bremen_coalition_r + lvp_r_bremen; bremen_lvp = 1
 go-to: bremen_coalition_creator
 
 @bremen_invite_z
-view-if: z_r_bremen > 0 and not bremen_z = "government"
-choose-if: z_relation >= 25 and (not bremen_kpd == "government" or kpd_leader == "Conciliators")
+view-if: z_r_bremen > 0 and not bremen_z = 1
+choose-if: z_relation >= 25 and (not bremen_kpd == 1 or kpd_leader == "Conciliators")
 subtitle: [? if z_r_bremen >= spd_r_bremen: The <span style="color: [+ z_colour +];">Center Party</span> demands the minister-president. ?] They would love to sign a concordat
-on-arrival: bremen_coalition_r = bremen_coalition_r + z_r_bremen; bremen_z = "government"
+on-arrival: bremen_coalition_r = bremen_coalition_r + z_r_bremen; bremen_z = 1
 go-to: bremen_coalition_creator
 
 @bremen_invite_dvp
-view-if: dvp_r_bremen > 0 and not bremen_dvp = "government"
-choose-if: dvp_relation >= 35 and bremen_kpd == "opposition" and bremen_sapd == "opposition"
+view-if: dvp_r_bremen > 0 and not bremen_dvp = 1
+choose-if: dvp_relation >= 35 and bremen_kpd == 0 and bremen_sapd == 0
 subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> demands tax cuts.
-on-arrival: bremen_coalition_r = bremen_coalition_r + dvp_r_bremen; bremen_dvp = "government"
+on-arrival: bremen_coalition_r = bremen_coalition_r + dvp_r_bremen; bremen_dvp = 1
 go-to: bremen_coalition_creator
 
 @bremen_invite_hb
-view-if: hb_r_bremen > 0 and not bremen_hb = "government"
-choose-if: ddp_relation >= 60 and bremen_kpd == "opposition" and bremen_sapd == "opposition"
+view-if: hb_r_bremen > 0 and not bremen_hb = 1
+choose-if: ddp_relation >= 60 and bremen_kpd == 0 and bremen_sapd == 0
 subtitle: The <span style="color: #CEDD8A;">Home Owners</span> demands owner friendly policies.
-on-arrival: bremen_coalition_r = bremen_coalition_r + hb_r_bremen; bremen_hb = "government"
+on-arrival: bremen_coalition_r = bremen_coalition_r + hb_r_bremen; bremen_hb = 1
 go-to: bremen_coalition_creator
 
 @bremen_invite_others
-view-if: true_other_r_bremen > 0 and not bremen_true_others = "government"
+view-if: true_other_r_bremen > 0 and not bremen_true_others = 1
 choose-if: ddp_relation >= 70 and z_relation >= 35
 subtitle: The <span style="color: [+ i_colour +];">**Others**</span> are a little conservative.
-on-arrival: bremen_coalition_r = bremen_coalition_r + true_other_r_bremen; bremen_true_others = "government"
+on-arrival: bremen_coalition_r = bremen_coalition_r + true_other_r_bremen; bremen_true_others = 1
 go-to: bremen_coalition_creator
 
 @bremen_invite_wp
-view-if: wp_r_bremen > 0 and not bremen_wp = "government"
-choose-if: dvp_relation >= 70 and bremen_kpd == "opposition" and bremen_sapd == "opposition" and bremen_uspd == "opposition"
+view-if: wp_r_bremen > 0 and not bremen_wp = 1
+choose-if: dvp_relation >= 70 and bremen_kpd == 0 and bremen_sapd == 0 and bremen_uspd == 0
 subtitle: The <span style="color: #b8996f;">**WP**</span> is a little conservative and will demand tax cuts.
-on-arrival: bremen_coalition_r = bremen_coalition_r + wp_r_bremen; bremen_wp = "government"
+on-arrival: bremen_coalition_r = bremen_coalition_r + wp_r_bremen; bremen_wp = 1
 go-to: bremen_coalition_creator
 
 Why did you do this?
@@ -707,63 +707,64 @@ Why are you so desperate?
 choose-if: bremen_coalition_r >= 50
 subtitle: We can form a coalition!
 unavailable-subtitle: We need more partners
-on-arrival: bremen_gov = "Social-Catholic" if bremen_spd == "government" and bremen_z == "government"; bremen_gov = "Weimar" if bremen_spd == "government" and bremen_z == "government" and (bremen_ddp == "government" or bremen_lvp == "government"); bremen_gov = "Grand" if bremen_spd == "government" and bremen_z == "government" and bremen_dvp == "government"; bremen_gov = "Left" if bremen_spd == "government" and bremen_kpd == "government"; bremen_gov = "Popular-Front" if bremen_spd == "government" and bremen_z == "government" and bremen_kpd == "government"; bremen_gov = "Social-Democratic" if bremen_uspd == "government" and not bremen_kpd == "government" and not bremen_z == "government"; bremen_gov = "Social-Liberal" if (bremen_ddp == "government" or bremen_lvp == "government") and not bremen_z == "government" and bremen_spd == "government"  
+on-arrival: bremen_gov = "Social-Catholic" if bremen_spd == 1 and bremen_z == 1; bremen_gov = "Weimar" if bremen_spd == 1 and bremen_z == 1 and (bremen_ddp == 1 or bremen_lvp == 1); bremen_gov = "Grand" if bremen_spd == 1 and bremen_z == 1 and bremen_dvp == 1; bremen_gov = "Left" if bremen_spd == 1 and bremen_kpd == 1; bremen_gov = "Popular-Front" if bremen_spd == 1 and bremen_z == 1 and bremen_kpd == 1; bremen_gov = "Social-Democratic" if bremen_uspd == 1 and not bremen_kpd == 1 and not bremen_z == 1; bremen_gov = "Social-Liberal" if (bremen_ddp == 1 or bremen_lvp == 1) and not bremen_z == 1 and bremen_spd == 1  
 
 Congrats you have formed a [+ bremen_gov +] Coalition with [+ bremen_coalition_r +]% parliamentary support!
 
 @bremen_drop_kpd
-view-if: bremen_kpd = "government"
-on-arrival: bremen_coalition_r = bremen_coalition_r - kpd_r_bremen; bremen_kpd = "opposition"
+view-if: bremen_kpd = 1
+on-arrival: bremen_coalition_r = bremen_coalition_r - kpd_r_bremen; bremen_kpd = 0
 go-to: bremen_coalition_creator
 
 @bremen_drop_sapd
-view-if: bremen_sapd = "government"
-on-arrival: bremen_coalition_r = bremen_coalition_r - sapd_r_bremen; bremen_sapd = "opposition"
+view-if: bremen_sapd = 1
+on-arrival: bremen_coalition_r = bremen_coalition_r - sapd_r_bremen; bremen_sapd = 0
 go-to: bremen_coalition_creator
 
 @bremen_drop_uspd
-view-if: bremen_uspd = "government"
-on-arrival: bremen_coalition_r = bremen_coalition_r - uspd_r_bremen; bremen_uspd = "opposition"
+view-if: bremen_uspd = 1
+on-arrival: bremen_coalition_r = bremen_coalition_r - uspd_r_bremen; bremen_uspd = 0
 go-to: bremen_coalition_creator
 
 @bremen_drop_ddp
-view-if: bremen_ddp = "government"
-on-arrival: bremen_coalition_r = bremen_coalition_r - ddp_r_bremen; bremen_ddp = "opposition"
+view-if: bremen_ddp = 1
+on-arrival: bremen_coalition_r = bremen_coalition_r - ddp_r_bremen; bremen_ddp = 0
 go-to: bremen_coalition_creator
 
 @bremen_drop_lvp
-view-if: bremen_lvp = "government"
-on-arrival: bremen_coalition_r = bremen_coalition_r - lvp_r_bremen; bremen_lvp = "opposition"
+view-if: bremen_lvp = 1
+on-arrival: bremen_coalition_r = bremen_coalition_r - lvp_r_bremen; bremen_lvp = 0
 go-to: bremen_coalition_creator
 
 @bremen_drop_z
-view-if: bremen_z = "government"
-on-arrival: bremen_coalition_r = bremen_coalition_r - z_r_bremen; bremen_z = "opposition"
+view-if: bremen_z = 1
+on-arrival: bremen_coalition_r = bremen_coalition_r - z_r_bremen; bremen_z = 0
 go-to: bremen_coalition_creator
 
 @bremen_drop_dvp
-view-if: bremen_dvp = "government"
-on-arrival: bremen_coalition_r = bremen_coalition_r - dvp_r_bremen; bremen_dvp = "opposition"
+view-if: bremen_dvp = 1
+on-arrival: bremen_coalition_r = bremen_coalition_r - dvp_r_bremen; bremen_dvp = 0
 go-to: bremen_coalition_creator
 
 @bremen_drop_hb
-view-if: bremen_hb = "government"
-on-arrival: bremen_coalition_r = bremen_coalition_r - hb_r_bremen; bremen_hb = "opposition"
+view-if: bremen_hb = 1
+on-arrival: bremen_coalition_r = bremen_coalition_r - hb_r_bremen; bremen_hb = 0
 go-to: bremen_coalition_creator
 
 @bremen_drop_others
-view-if: bremen_true_others = "government"
-on-arrival: bremen_coalition_r = bremen_coalition_r - true_other_r_bremen; bremen_true_others = "opposition"
+view-if: bremen_true_others = 1
+on-arrival: bremen_coalition_r = bremen_coalition_r - true_other_r_bremen; bremen_true_others = 0
 go-to: bremen_coalition_creator
 
 @bremen_drop_wp
-view-if: bremen_wp = "government"
-on-arrival: bremen_coalition_r = bremen_coalition_r - wp_r_bremen; bremen_wp = "opposition"
+view-if: bremen_wp = 1
+on-arrival: bremen_coalition_r = bremen_coalition_r - wp_r_bremen; bremen_wp = 0
 go-to: bremen_coalition_creator
 
 It is better that way.
 
 
 @return_to_bremen
-on-arrival: bremen_spd = "opposition"; bremen_kpd = "opposition"; bremen_sapd = "opposition"; bremen_uspd = "opposition"; bremen_ddp = "opposition"; bremen_lvp = "opposition"; bremen_dvp = "opposition"; bremen_hb = "opposition"; bremen_true_others = "opposition"; bremen_wp = "opposition"
+on-arrival: bremen_spd = 0; bremen_kpd = 0; bremen_sapd = 0; bremen_uspd = 0; bremen_ddp = 0; bremen_lvp = 0; bremen_dvp = 0; bremen_hb = 0; bremen_true_others = 0; bremen_wp = 0
 go-to: bremen_coalition_menu
+
