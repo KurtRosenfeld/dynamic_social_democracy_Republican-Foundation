@@ -509,7 +509,6 @@ Current support: [+ lippe_coalition_r +]%
 - @lippe_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
 - @lippe_drop_vrp: Drop the <span style="color: #0075EB;">**VRP**</span>
 - @lippe_drop_wp: Drop the <span style="color: #b8996f;">**WP**</span>
-- @lippe_call_new_election: We need new elections
 - @return_to_lippe: Return
 
 
