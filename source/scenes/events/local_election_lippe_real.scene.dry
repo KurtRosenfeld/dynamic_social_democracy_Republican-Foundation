@@ -620,6 +620,9 @@ view-if: lippe_wp == 1
 on-arrival: lippe_coalition_r = lippe_coalition_r - wp_r_lippe; lippe_wp = 0
 go-to: lippe_coalition_creator
 
+@return_to_lippe
+on-arrival: lippe_spd = 0; lippe_kpd = 0; lippe_sapd = 0; lippe_uspd = 0; lippe_ddp = 0; lippe_lvp = 0; lippe_dvp = 0; lippe_kvp = 0; lippe_vhg = 0; lippe_true_others = 0; lippe_wp = 0
+go-to: lippe_coalition_menu
 
 
 @no_majority_lippe
