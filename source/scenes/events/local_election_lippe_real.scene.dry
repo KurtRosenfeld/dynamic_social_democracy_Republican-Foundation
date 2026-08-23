@@ -1,0 +1,679 @@
+title: Lippe Landtag Election
+view-if: (year == 1922 and month == 4 and not lippe_election_seen) or (lippe_election_2_trigger_time == time and lippe_election_seen_time != time)
+new-page: true
+tags: event
+on-arrival: lippe_election_seen += 1 if lippe_election_seen; lippe_election_seen = 1 if not lippe_election_seen; lippe_election_seen_time = time; lippe_spd = 0; lippe_kpd = 0; lippe_uspd = 0; lippe_ddp = 0; lippe_true_others = 0; lippe_wp = 0; lippe_lvp = 0; lippe_csvd = 0; lippe_cnbl = 0; lippe_dvp = 0; lippe_vrp = 0; lippe_nsdap = 0
+priority: 2
+on-display: {!
+var cardEl = document.createElement('div');
+cardEl.className = "face-figure2";
+
+var image = new Image();
+image.className = "face-img";
+image.src = "img/states.png";
+
+cardEl.appendChild(image);
+var contentDiv = document.querySelector("#page #mid_panel #content");
+contentDiv.appendChild(cardEl);
+!}
+
+= Elections, [+ month : month +] [+ year +]
+
+The Lippe state elections are to be held now.
+
+- @lippe: May we do our best...
+
+@lippe
+on-arrival: {!
+
+var lippe_adjustment_factors = {
+spd: 1.3,
+uspd: 0.82,
+kpd: 0.59,
+ddp: 0.8,
+lvp: 1.26,
+dvp: 1.5,
+dnvp: 1.26,
+nsdap: 1.2,
+nsfb: 0.3,
+other: 1.51
+};
+
+Q.spd_r_lippe = 0;
+Q.uspd_r_lippe = 0;
+Q.kpd_r_lippe = 0;
+Q.ddp_r_lippe = 0;
+Q.lvp_r_lippe = 0;
+Q.dvp_r_lippe = 0;
+Q.dnvp_r_lippe = 0;
+Q.nsdap_r_lippe = 0;
+Q.nsfb_r_lippe = 0;
+Q.other_r_lippe = 0;
+
+Q.spd_lippe_elections_vote = 0;
+Q.uspd_lippe_elections_vote = 0;
+Q.kpd_lippe_elections_vote = 0;
+Q.ddp_lippe_elections_vote = 0;
+Q.lvp_lippe_elections_vote = 0;
+Q.dvp_lippe_elections_vote = 0;
+Q.dnvp_lippe_elections_vote = 0;
+Q.nsdap_lippe_elections_vote = 0;
+Q.nsfb_lippe_elections_vote = 0;
+Q.other_lippe_elections_vote = 0;
+
+if (Q.spd_votes >= 50) lippe_adjustment_factors.spd -= 0.3;
+if (Q.spd_votes >= 20) lippe_adjustment_factors.spd += 0.1;
+if (Q.rural_spd_normalized >= 30) lippe_adjustment_factors.spd += 0.1;
+Q.spd_lippe_elections_vote = Q.spd_votes*lippe_adjustment_factors.spd;
+Q.uspd_lippe_elections_vote = Q.uspd_votes*lippe_adjustment_factors.uspd;
+Q.kpd_lippe_elections_vote = Q.kpd_votes*lippe_adjustment_factors.kpd;
+if (Q.year >= 1928) lippe_adjustment_factors.ddp += 0.2;
+Q.ddp_lippe_elections_vote = Q.ddp_votes*lippe_adjustment_factors.ddp;
+Q.lvp_lippe_elections_vote = Q.lvp_votes*lippe_adjustment_factors.lvp;
+if (Q.year >= 1928) lippe_adjustment_factors.dvp += 0.14;
+Q.dvp_lippe_elections_vote = Q.dvp_votes*lippe_adjustment_factors.dvp;
+Q.dnvp_lippe_elections_vote = Q.dnvp_votes*lippe_adjustment_factors.dnvp;
+Q.nsdap_lippe_elections_vote = Q.nsdap_votes*lippe_adjustment_factors.nsdap;
+Q.nsfb_lippe_elections_vote = Q.nsfb_votes*lippe_adjustment_factors.nsfb;
+if (Q.chancellor_party == "SPD") lippe_adjustment_factors.other += 0.06;
+Q.other_lippe_elections_vote = Q.other_votes*lippe_adjustment_factors.other;
+
+Q.total_votes_lippe = Q.spd_lippe_elections_vote + Q.kpd_lippe_elections_vote + Q.ddp_lippe_elections_vote + Q.lvp_lippe_elections_vote + Q.dvp_lippe_elections_vote + Q.dnvp_lippe_elections_vote + Q.nsdap_lippe_elections_vote + Q.other_lippe_elections_vote + Q.uspd_lippe_elections_vote + Q.nsfb_lippe_elections_vote;
+
+if (Q.total_votes_lippe > 0) {
+Q.spd_lippe_elections_vote = (Q.spd_lippe_elections_vote / Q.total_votes_lippe) * 100;
+Q.uspd_lippe_elections_vote = (Q.uspd_lippe_elections_vote / Q.total_votes_lippe) * 100;
+Q.kpd_lippe_elections_vote = (Q.kpd_lippe_elections_vote / Q.total_votes_lippe) * 100;
+Q.ddp_lippe_elections_vote = (Q.ddp_lippe_elections_vote / Q.total_votes_lippe) * 100;
+Q.lvp_lippe_elections_vote = (Q.lvp_lippe_elections_vote / Q.total_votes_lippe) * 100;
+Q.dvp_lippe_elections_vote = (Q.dvp_lippe_elections_vote / Q.total_votes_lippe) * 100;
+Q.dnvp_lippe_elections_vote = (Q.dnvp_lippe_elections_vote / Q.total_votes_lippe) * 100;
+Q.nsdap_lippe_elections_vote = (Q.nsdap_lippe_elections_vote / Q.total_votes_lippe) * 100;
+Q.other_lippe_elections_vote = (Q.other_lippe_elections_vote / Q.total_votes_lippe) * 100;
+Q.nsfb_lippe_elections_vote = (Q.nsfb_lippe_elections_vote / Q.total_votes_lippe) * 100;
+}
+
+Q.spd_lippe_elections_vote = (Q.spd_lippe_elections_vote != undefined ? parseFloat(Q.spd_lippe_elections_vote.toFixed(1)) : 0);
+Q.uspd_lippe_elections_vote = (Q.uspd_lippe_elections_vote != undefined ? parseFloat(Q.uspd_lippe_elections_vote.toFixed(1)) : 0);
+Q.kpd_lippe_elections_vote = (Q.kpd_lippe_elections_vote != undefined ? parseFloat(Q.kpd_lippe_elections_vote.toFixed(1)) : 0);
+Q.ddp_lippe_elections_vote = (Q.ddp_lippe_elections_vote != undefined ? parseFloat(Q.ddp_lippe_elections_vote.toFixed(1)) : 0);
+Q.lvp_lippe_elections_vote = (Q.lvp_lippe_elections_vote != undefined ? parseFloat(Q.lvp_lippe_elections_vote.toFixed(1)) : 0);
+Q.dvp_lippe_elections_vote = (Q.dvp_lippe_elections_vote != undefined ? parseFloat(Q.dvp_lippe_elections_vote.toFixed(1)) : 0);
+Q.dnvp_lippe_elections_vote = (Q.dnvp_lippe_elections_vote != undefined ? parseFloat(Q.dnvp_lippe_elections_vote.toFixed(1)) : 0);
+Q.nsdap_lippe_elections_vote = (Q.nsdap_lippe_elections_vote != undefined ? parseFloat(Q.nsdap_lippe_elections_vote.toFixed(1)) : 0);
+Q.other_lippe_elections_vote = (Q.other_lippe_elections_vote != undefined ? parseFloat(Q.other_lippe_elections_vote.toFixed(1)) : 0);
+Q.nsfb_lippe_elections_vote = (Q.nsfb_lippe_elections_vote != undefined ? parseFloat(Q.nsfb_lippe_elections_vote.toFixed(1)) : 0);
+
+if (Q.spd_lippe_elections_vote >= 3.4) Q.spd_r_lippe = Q.spd_lippe_elections_vote;
+if (Q.uspd_lippe_elections_vote >= 3.4) Q.uspd_r_lippe = Q.uspd_lippe_elections_vote;
+if (Q.kpd_lippe_elections_vote >= 3.4) Q.kpd_r_lippe = Q.kpd_lippe_elections_vote;
+if (Q.ddp_lippe_elections_vote >= 3.4) Q.ddp_r_lippe = Q.ddp_lippe_elections_vote;
+if (Q.lvp_lippe_elections_vote >= 3.4) Q.lvp_r_lippe = Q.lvp_lippe_elections_vote;
+if (Q.dvp_lippe_elections_vote >= 3.4) Q.dvp_r_lippe = Q.dvp_lippe_elections_vote;
+if (Q.dnvp_lippe_elections_vote >= 3.4) Q.dnvp_r_lippe = Q.dnvp_lippe_elections_vote;
+if (Q.nsdap_lippe_elections_vote >= 3.4) Q.nsdap_r_lippe = Q.nsdap_lippe_elections_vote;
+if (Q.other_lippe_elections_vote >= 3.4) Q.other_r_lippe = Q.other_lippe_elections_vote;
+if (Q.nsfb_lippe_elections_vote >= 3.4) Q.nsfb_r_lippe = Q.nsfb_lippe_elections_vote;
+
+var lippe_adjustment_r_factors = {
+spd: 1.0,
+uspd: 0.9,
+kpd: 0.98,
+ddp: 1.0,
+lvp: 1.0,
+dvp: 1.0,
+dnvp: 1.0,
+nsdap: 1.01,
+other: 1.01,
+nsfb: 1.0
+};
+
+
+Q.spd_r_lippe = Q.spd_r_lippe * lippe_adjustment_r_factors.spd;
+Q.uspd_r_lippe = Q.uspd_r_lippe * lippe_adjustment_r_factors.uspd;
+Q.kpd_r_lippe = Q.kpd_r_lippe * lippe_adjustment_r_factors.kpd;
+Q.ddp_r_lippe = Q.ddp_r_lippe * lippe_adjustment_r_factors.ddp;
+Q.lvp_r_lippe = Q.lvp_r_lippe * lippe_adjustment_r_factors.lvp;
+Q.dvp_r_lippe = Q.dvp_r_lippe * lippe_adjustment_r_factors.dvp;
+Q.dnvp_r_lippe = Q.dnvp_r_lippe * lippe_adjustment_r_factors.dnvp;
+Q.nsdap_r_lippe = Q.nsdap_r_lippe * lippe_adjustment_r_factors.nsdap;
+Q.other_r_lippe = Q.other_r_lippe * lippe_adjustment_r_factors.other;
+Q.nsfb_r_lippe = Q.nsfb_r_lippe * lippe_adjustment_r_factors.nsfb;
+
+Q.total_r_lippe = 0;
+
+if (Q.spd_r_lippe) Q.total_r_lippe += Q.spd_r_lippe;
+if (Q.uspd_r_lippe) Q.total_r_lippe += Q.uspd_r_lippe;
+if (Q.kpd_r_lippe) Q.total_r_lippe += Q.kpd_r_lippe;
+if (Q.ddp_r_lippe) Q.total_r_lippe += Q.ddp_r_lippe;
+if (Q.lvp_r_lippe) Q.total_r_lippe += Q.lvp_r_lippe;
+if (Q.dvp_r_lippe) Q.total_r_lippe += Q.dvp_r_lippe;
+if (Q.dnvp_r_lippe) Q.total_r_lippe += Q.dnvp_r_lippe;
+if (Q.nsdap_r_lippe) Q.total_r_lippe += Q.nsdap_r_lippe;
+if (Q.other_r_lippe) Q.total_r_lippe += Q.other_r_lippe;
+if (Q.nsfb_r_lippe) Q.total_r_lippe += Q.nsfb_r_lippe;
+
+if (Q.total_r_lippe > 0) {
+Q.spd_r_lippe = (Q.spd_r_lippe / Q.total_r_lippe) * 100;
+Q.uspd_r_lippe = (Q.uspd_r_lippe / Q.total_r_lippe) * 100;
+Q.kpd_r_lippe = (Q.kpd_r_lippe / Q.total_r_lippe) * 100;
+Q.ddp_r_lippe = (Q.ddp_r_lippe / Q.total_r_lippe) * 100;
+Q.lvp_r_lippe = (Q.lvp_r_lippe / Q.total_r_lippe) * 100;
+Q.dvp_r_lippe = (Q.dvp_r_lippe / Q.total_r_lippe) * 100;
+Q.dnvp_r_lippe = (Q.dnvp_r_lippe / Q.total_r_lippe) * 100;
+Q.nsdap_r_lippe = (Q.nsdap_r_lippe / Q.total_r_lippe) * 100;
+Q.other_r_lippe = (Q.other_r_lippe / Q.total_r_lippe) * 100;
+Q.nsfb_r_lippe = (Q.nsfb_r_lippe / Q.total_r_lippe) * 100;
+}
+
+let cnbl_share = 0.0;
+if (Q.cnbl_exists) cnbl_share += 0.35
+let wp_share = 0.0;
+if (Q.year >= 1926) wp_share += 0.15;
+if (Q.stolper_program_adopted) wp_share -= 0.05;
+if (Q.cnbl_exists) wp_share -= 0.1
+let true_other_share = 1.0;
+if (Q.year >= 1925) true_other_share -= 0.4;
+let vrp_share = 0.1;
+if (Q.president == "Hindenburg") vrp_share += 0.15;
+let csvd_share = 0.0;
+if (Q.csvd_exists) csvd_share += 0.1;
+if (Q.nsdap_votes >= 25 && Q.csvd_exists) csvd_share += 0.4;
+if (Q.chancellor == "Papen" && Q.csvd_exists) csvd_share += 0.1;
+
+let total_share = wp_share + cnbl_share + vrp_share + true_other_share + csvd_share;
+
+cnbl_share = (cnbl_share / total_share);
+wp_share = (wp_share / total_share);
+vrp_share = (vrp_share / total_share);
+true_other_share = (true_other_share / total_share);
+csvd_share = (csvd_share / total_share);
+
+Q.cnbl_lippe_elections_vote = Q.other_lippe_elections_vote*cnbl_share;
+Q.cnbl_r_lippe = Q.other_r_lippe*cnbl_share;
+
+Q.wp_lippe_elections_vote = Q.other_lippe_elections_vote*wp_share;
+Q.wp_r_lippe = Q.other_r_lippe*wp_share;
+
+Q.vrp_lippe_elections_vote = Q.other_lippe_elections_vote*vrp_share;
+Q.vrp_r_lippe = Q.other_r_lippe*vrp_share;
+
+Q.true_other_lippe_elections_vote = Q.other_lippe_elections_vote*true_other_share;
+Q.true_other_r_lippe = Q.other_r_lippe*true_other_share;
+
+Q.csvd_lippe_elections_vote = Q.other_lippe_elections_vote*csvd_share;
+Q.csvd_r_lippe = Q.other_r_lippe*csvd_share;
+
+function allocateSeats(percentages, totalSeats = 21) {
+const exactSeats = {};
+const flooredSeats = {};
+const remainders = [];
+
+let totalFlooredSeats = 0;
+for (const party in percentages) {
+const exact = (percentages[party] * totalSeats) / 100;
+const floored = Math.floor(exact);
+const remainder = exact - floored;
+
+exactSeats[party] = exact;
+flooredSeats[party] = floored;
+totalFlooredSeats += floored;
+
+remainders.push({ party, remainder });
+}
+
+const seatsToDistribute = totalSeats - totalFlooredSeats;
+remainders.sort((a, b) => b.remainder - a.remainder);
+
+for (let i = 0; i < seatsToDistribute; i++) {
+flooredSeats[remainders[i].party]++;
+}
+
+return flooredSeats;
+}
+
+const inputPercentages = {
+spd_r_lippe: Q.spd_r_lippe,
+uspd_r_lippe: Q.uspd_r_lippe,
+kpd_r_lippe: Q.kpd_r_lippe,
+ddp_r_lippe: Q.ddp_r_lippe,
+lvp_r_lippe: Q.lvp_r_lippe,
+dvp_r_lippe: Q.dvp_r_lippe,
+dnvp_r_lippe: Q.dnvp_r_lippe,
+nsdap_r_lippe: Q.nsdap_r_lippe,
+wp_r_lippe: Q.wp_r_lippe,
+csvd_r_lippe: Q.csvd_r_lippe,
+vrp_r_lippe: Q.vrp_r_lippe,
+cnbl_r_lippe: Q.cnbl_r_lippe,
+true_other_r_lippe: Q.true_other_r_lippe,
+nsfb_r_lippe: Q.nsfb_r_lippe
+};
+
+const allocatedSeats = allocateSeats(inputPercentages);
+
+for (const party in allocatedSeats) {
+Q[party] = parseFloat(((allocatedSeats[party] * 100) / 21).toFixed(1));
+}
+
+Q.other_r_lippe = Q.wp_r_lippe + Q.true_other_r_lippe + Q.vrp_r_lippe + Q.csv_r_lippe + Q.cnbl_r_lippe;
+
+Q.left_coalition_lippe = parseFloat((Q.spd_r_lippe + Q.kpd_r_lippe + Q.uspd_r_lippe).toFixed(1));
+Q.dvp_coalition_lippe = parseFloat((Q.ddp_r_lippe + Q.dvp_r_lippe + Q.lvp_r_lippe + Q.dnvp_r_lippe + Q.other_r_lippe).toFixed(1));
+Q.right_coalition_lippe = parseFloat((Q.dnvp_r_lippe + Q.dvp_r_lippe + Q.nsdap_r_lippe + Q.other_r_lippe + Q.nsfb_r_lippe).toFixed(1));
+
+Q.wp_lippe_elections_vote = (Q.wp_lippe_elections_vote != undefined ? parseFloat(Q.wp_lippe_elections_vote.toFixed(1)) : 0);
+Q.true_other_lippe_elections_vote = (Q.true_other_lippe_elections_vote != undefined ? parseFloat(Q.true_other_lippe_elections_vote.toFixed(1)) : 0);
+Q.vrp_lippe_elections_vote = (Q.vrp_lippe_elections_vote != undefined ? parseFloat(Q.vrp_lippe_elections_vote.toFixed(1)) : 0);
+Q.csvd_lippe_elections_vote = (Q.csvd_lippe_elections_vote != undefined ? parseFloat(Q.csvd_lippe_elections_vote.toFixed(1)) : 0);
+Q.cnbl_lippe_elections_vote = (Q.cnbl_lippe_elections_vote != undefined ? parseFloat(Q.cnbl_lippe_elections_vote.toFixed(1)) : 0);
+Q.wp_r_lippe = (Q.wp_r_lippe != undefined ? parseFloat(Q.wp_r_lippe.toFixed(1)) : 0);
+Q.true_other_r_lippe = (Q.true_other_r_lippe != undefined ? parseFloat(Q.true_other_r_lippe.toFixed(1)) : 0);
+Q.vrp_r_lippe = (Q.vrp_r_lippe != undefined ? parseFloat(Q.vrp_r_lippe.toFixed(1)) : 0);
+Q.csvd_r_lippe = (Q.csvd_r_lippe != undefined ? parseFloat(Q.csvd_r_lippe.toFixed(1)) : 0);
+Q.cnbl_r_lippe = (Q.farm_r_lippe != undefined ? parseFloat(Q.cnbl_r_lippe.toFixed(1)) : 0);             
+             
+!}
+on-display: {!
+data = [{
+"id": "kpd",
+"legend": "KPD",
+"name": "KPD",
+"seats": Math.round(Q.kpd_r_lippe * 0.21),
+}];
+
+
+if (Q.uspd_r_lippe) {
+data.push({
+"id": "uspd",
+"legend": "USPD",
+"name": "USPD",
+"seats": Math.round(Q.uspd_r_lippe * 0.21),
+});
+}
+
+data = data.concat([{
+"id": "spd",
+"legend": "SPD",
+"name": "SPD",
+"seats": Math.round(Q.spd_r_lippe * 0.21),
+}]);
+
+if (Q.ddp_r_lippe && !Q.lvp_formed) {
+data.push({
+"id": "ddp",
+"legend": Q.ddp_name,
+"name": Q.ddp_name,
+"seats": Math.round(Q.ddp_r_lippe * 0.21),
+});
+}
+
+if (Q.lvp_r_lippe && Q.lvp_formed) {
+data.push({
+"id": "lvp",
+"legend": "LVP",
+"name": "LVP",
+"seats": Math.round(Q.lvp_r_lippe * 0.21),
+});
+}
+
+
+if (Q.true_other_r_lippe) {
+data.push({
+"id": "other",
+"legend": "Other",
+"name": "Others",
+"seats": Math.round(Q.true_other_r_lippe * 0.21),
+});
+}
+
+if (Q.dvp_r_lippe && !Q.lvp_formed && Q.dvp_exist) {
+data.push({
+"id": "dvp",
+"legend": "DVP",
+"name": "DVP",
+"seats": Math.round(Q.dvp_r_lippe * 0.21),
+});
+}
+             
+
+if (Q.wp_r_lippe) {
+data.push({
+"id": "wp",
+"legend": "WP",
+"name": "WP",
+"seats": Math.round(Q.wp_r_lippe * 0.21),
+});
+}
+
+if (Q.vrp_r_lippe) {
+data.push({
+"id": "vrp",
+"legend": "VRP",
+"name": "VRP",
+"seats": Math.round(Q.vrp_r_lippe * 0.21),
+});
+}
+
+if (Q.csvd_r_lippe) {
+data.push({
+"id": "csvd",
+"legend": "CSVD",
+"name": "CSVD",
+"seats": Math.round(Q.csvd_r_lippe * 0.21),
+});
+}
+
+if (Q.cnbl_r_lippe) {
+data.push({
+"id": "farm3",
+"legend": "CNBL",
+"name": "CNBL",
+"seats": Math.round(Q.farm_r_lippe * 0.21),
+});
+}
+             
+data = data.concat([{
+"id": "dnvp",
+"legend": "DNVP",
+"name": "DNVP",
+"seats": Math.round(Q.dnvp_r_lippe * 0.21),
+}]);
+
+
+data.push({
+"id": "nsfb",
+"legend": "NSFB",
+"name": "NSFB",
+"seats": Math.round(Q.nsfb_r_lippe * 0.21),
+});
+
+data = data.concat([{
+"id": "nsdap",
+"legend": "NSDAP",
+"name": "NSDAP",
+"seats": Math.round(Q.nsdap_r_lippe * 0.21),
+}]);
+
+if (window && d3) {
+var width = 500;
+var height = 500;
+var screenWidth = document.getElementById('content').offsetWidth;
+if (screenWidth < width - 50) {
+width = screenWidth - 50;
+height = width;
+document.getElementById("lippe_landtag").style.height = screenWidth/2 + "px";
+}
+var parliament = d3.parliament();
+parliament.width(width).height(height).innerRadiusCoef(0.4);
+parliament.enter.fromCenter(true).smallToBig(true);
+parliament.exit.toCenter(false).bigToSmall(true);
+d3.select("#lippe_landtag").datum(data).call(parliament);
+}
+!}
+go-to: lippe_coalition_menu
+
+Lippe results:
+
+{!<svg id="lippe_landtag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!}
+{!<tr><td>Party</th><th>Vote share</th><th>Landtag Seats</th></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} SPD: {!</td><td!} **[+ spd_lippe_elections_vote +]**% {!</td><td!} **[+ spd_r_lippe +]**% {!</td></tr>!}
+
+[? if uspd_joined < 3: {!<tr><td><div class="box" style='background-color: {{ Q.uspd_colour }}'> </div> !}USPD: {!</td><td!} **[+ uspd_lippe_elections_vote +]**% {!</td><td!} **[+ uspd_r_lippe +]**% {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td!} **[+ kpd_lippe_elections_vote +]**% {!</td><td!} **[+ kpd_r_lippe +]**% {!</td></tr>!}
+
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td!} **[+ ddp_lippe_elections_vote +]**% {!</td><td!} **[+ ddp_r_lippe +]**% {!</td></tr>!} ?]
+
+[? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td!} **[+ lvp_lippe_elections_vote +]**% {!</td><td!} **[+ lvp_r_lippe +]**% {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#AFAFAF'> </div> !} Others: {!</td><td!} **[+ true_other_lippe_elections_vote +]**% {!</td><td!} **[+ true_other_r_lippe +]**% {!</td></tr>!}
+
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td!} **[+ dvp_lippe_elections_vote +]**% {!</td><td!} **[+ dvp_r_lippe +]**% {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td!} **[+ wp_lippe_elections_vote +]**% {!</td><td!} **[+ wp_r_lippe +]**% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#0075EB'> </div> !} VRP: {!</td><td!} **[+ vrp_lippe_elections_vote +]**% {!</td><td!} **[+ vrp_r_lippe +]**% {!</td></tr>!}
+
+[? if csvd_exists: {!<tr><td><div class="box" style='background-color:#38C538'> </div> !} CSVD: {!</td><td!} **[+ csvd_lippe_elections_vote +]**% {!</td><td!} **[+ csvd_r_lippe +]**% {!</td></tr>!} ?]
+
+[? if cnbl_exists: {!<tr><td><div class="box" style='background-color:#38C538'> </div> !} CNBL: {!</td><td!} **[+ cnbl_lippe_elections_vote +]**% {!</td><td!} **[+ cnbl_r_lippe +]**% {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td!} **[+ dnvp_lippe_elections_vote +]**% {!</td><td!} **[+ dnvp_r_lippe +]**% {!</td></tr>!}
+
+[? if nsfb_exsists = 1: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSFB: {!</td><td!} **[+ nsfb_lippe_elections_vote +]**% {!</td><td!} **[+ nsfb_r_lippe +]**% {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td!} **[+ nsdap_lippe_elections_vote +]**% {!</td><td!} **[+ nsdap_r_lippe +]**% {!</td></tr>!}
+{!</table>!}
+
+@lippe_coalition_menu
+
+- @spd_majority_lippe
+- @left_coalition_lippe
+- @right_coalition_lippe
+- @right_coalition_lippe_2
+- @custom_lippe
+- @no_majority_lippe
+
+
+@spd_majority_lippe
+title: We can form a majority government on our own.
+view-if: spd_r_lippe >= 50
+on-arrival: lippe_election_2_trigger_time = time + 48; lippe_gov = "SPD"; lippe_spd = 1; ddp_relation -= 2
+
+
+@left_coalition_lippe
+title: The KPD is willing to tolerate us
+subtitle: Their Central Commitee has greelight it. We would not have that many oblegations actually.
+view-if: left_coalition_lippe >= 50 and (kpd_relation >= 45 or ideology == "left")
+on-arrival: lippe_election_2_trigger_time = time + 48; lippe_gov = "SPD"; lippe_spd = 1; ddp_relation -= 3; lippe_kpd = 2; lippe_uspd = 2;
+
+
+@right_coalition_lippe
+title: The NSDAP can form a government.
+subtitle: Some parties on the right are willing to tolerate their government.
+view-if: right_coalition_lippe >= 50 and nsdap_votes >= 14
+on-arrival: lippe_election_2_trigger_time = time + 48; lippe_gov = "NSDAP"; lippe_nsdap = 1; lippe_dnvp = 2; lippe_cnbl = 2; lippe_wp = 3; lippe_dvp = 2; lippe_vrp = 3; lippe_csvd = 3;
+
+
+@right_coalition_lippe_2
+title: A right wing coalition will be formed.
+view-if: right_coalition_lippe >= 50 and nsdap_votes < 14
+on-arrival: lippe_election_2_trigger_time = time + 48; lippe_gov = "Right"; lippe_nsdap = 2; lippe_dnvp = 1; lippe_cnbl = 2; lippe_wp = 1; lippe_dvp = 1; lippe_vrp = 3; lippe_csvd = 3;
+
+
+@custom_lippe
+title: Form a coalition
+on-arrival: lippe_coalition_r = spd_r_lippe; lippe_spd = 1; lippe_partners = 0;
+go-to: lippe_coalition_creator
+
+@lippe_coalition_creator
+title: Coalition Creator
+
+Current support: [+ lippe_coalition_r +]%
+
+
+- @lippe_invite_uspd: Invite the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @lippe_invite_ddp: Invite the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @lippe_invite_lvp: Invite the <span style="color: [+ lvp_colour +];">**LVP**</span>
+- @lippe_invite_others: Invite the <span style="color: [+ i_colour +];">**Others**</span>
+- @lippe_invite_dvp: Invite the <span style="color: [+ dvp_colour +];">**DVP**</span>
+- @lippe_invite_vrp: Invite the <span style="color: #0075EB;">**VRP**</span>
+- @lippe_invite_wp: Invite the <span style="color: #b8996f;">**WP**</span>
+- @lippe_check_out: Check out.
+- @lippe_drop_uspd: Drop the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @lippe_drop_ddp: Drop the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @lippe_drop_lvp: Drop the <span style="color: [+ lvp_colour +];">**LVP**</span>
+- @lippe_drop_others: Drop the <span style="color: [+ other_colour +];">**Others**</span>
+- @lippe_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
+- @lippe_drop_vrp: Drop the <span style="color: #0075EB;">**VRP**</span>
+- @lippe_drop_wp: Drop the <span style="color: #b8996f;">**WP**</span>
+- @lippe_call_new_election: We need new elections
+- @return_to_lippe: Return
+
+
+@lippe_invite_uspd
+view-if: uspd_r_lippe > 0 and not lippe_uspd == 1
+choose-if: uspd_relation >= 20 and lippe_wp == 0
+subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
+on-arrival: lippe_coalition_r = lippe_coalition_r + uspd_r_lippe; lippe_uspd = 1
+go-to: lippe_coalition_creator
+
+@lippe_invite_ddp
+view-if: ddp_r_lippe > 0 and not lippe_ddp == 1
+choose-if: ddp_relation >= 16
+subtitle: [? if ddp_relation >= 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> loves you! ?]
+on-arrival: lippe_coalition_r = lippe_coalition_r + ddp_r_lippe; lippe_ddp = 1
+go-to: lippe_coalition_creator
+
+@lippe_invite_lvp
+view-if: lvp_r_lippe > 0 and not lippe_lvp == 1
+choose-if: lvp_relation >= 40
+subtitle: [? if lvp_relation >= 75: The <span style="color: [+ lvp_colour +];">**LVP**</span> loves you! ?]
+on-arrival: lippe_coalition_r = lippe_coalition_r + lvp_r_lippe; lippe_lvp = 1
+go-to: lippe_coalition_creator
+
+@lippe_invite_dvp
+view-if: dvp_r_lippe > 0 and not lippe_dvp == 1
+choose-if: dvp_relation >= 60
+subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> demands tax cuts.
+on-arrival: lippe_coalition_r = lippe_coalition_r + dvp_r_lippe; lippe_dvp = 1
+go-to: lippe_coalition_creator
+
+@lippe_invite_vrp
+view-if: vrp_r_lippe > 0 and not lippe_vrp == 1
+choose-if: dvp_relation >= 5
+subtitle: The <span style="color: #0075EB;">**VHG**</span> demands efforts to compensate victims of inflation.
+on-arrival: lippe_coalition_r = lippe_coalition_r + vrp_r_lippe; lippe_vrp = 1
+go-to: lippe_coalition_creator
+
+@lippe_invite_others
+view-if: true_other_r_lippe > 0 and not lippe_true_others == 1
+choose-if: ddp_relation >= 5
+subtitle: The <span style="color: [+ i_colour +];">**Others**</span> represent very diverse interests.
+on-arrival: lippe_coalition_r = lippe_coalition_r + true_other_r_lippe; lippe_true_others = 1
+go-to: lippe_coalition_creator
+
+@lippe_invite_wp
+view-if: wp_r_lippe > 0 and not lippe_wp == 1
+choose-if: dvp_relation >= 78 and lippe_uspd == 0
+subtitle: The <span style="color: #b8996f;">**WP**</span> is very conservative and will demand tax cuts.
+on-arrival: lippe_coalition_r = lippe_coalition_r + wp_r_lippe; lippe_wp = 1
+go-to: lippe_coalition_creator
+
+Why did you do this?
+
+@lippe_invite_dnvp
+view-if: dnvp_r_lippe > 0
+choose-if: dnvp_relation >= 900
+subtitle: This won't happen.
+go-to: lippe_coalition_creator
+
+Why are you so desperate?
+
+@lippe_check_out
+choose-if: lippe_coalition_r >= 50
+subtitle: We can form a coalition!
+unavailable-subtitle: We need more partners
+on-arrival: lippe_gov = "Social-Agrarian" if lippe_cnbl == 1; lippe_gov = "Left" if lippe_kpd == 1; lippe_gov = "Social-Democratic" if lippe_uspd == 1 and not lippe_kpd == 1 and not lippe_ddp == 1; lippe_gov = "Social-Liberal" if lippe_ddp == 1 or lippe_lvp == 1 or lippe_dvp == 1; lippe_gov = "Progressive" if lippe_uspd == 1 and (lippe_ddp == 1 or lippe_lvp);  lippe_gov = "Grand" if lippe_wp == 1 or lippe_vrp == 1;
+go-to: final_checkout_lippe
+
+Congrats you have formed a [+ lippe_gov +] Coalition with [+ lippe_coalition_r +]% parliamentary support!
+
+@lippe_drop_kpd
+view-if: lippe_kpd == 1
+on-arrival: lippe_coalition_r = lippe_coalition_r - kpd_r_lippe; lippe_kpd = 0
+go-to: lippe_coalition_creator
+
+@lippe_drop_uspd
+view-if: lippe_uspd == 1
+on-arrival: lippe_coalition_r = lippe_coalition_r - uspd_r_lippe; lippe_uspd = 0
+go-to: lippe_coalition_creator
+
+@lippe_drop_ddp
+view-if: lippe_ddp == 1
+on-arrival: lippe_coalition_r = lippe_coalition_r - ddp_r_lippe; lippe_ddp = 0
+go-to: lippe_coalition_creator
+
+@lippe_drop_lvp
+view-if: lippe_lvp == 1
+on-arrival: lippe_coalition_r = lippe_coalition_r - lvp_r_lippe; lippe_lvp = 0
+go-to: lippe_coalition_creator
+
+@lippe_drop_dvp
+view-if: lippe_dvp == 1
+on-arrival: lippe_coalition_r = lippe_coalition_r - dvp_r_lippe; lippe_dvp = 0
+go-to: lippe_coalition_creator
+
+@lippe_drop_vrp
+view-if: lippe_vrp == 1
+on-arrival: lippe_coalition_r = lippe_coalition_r - vrp_r_lippe; lippe_vrp = 0
+go-to: lippe_coalition_creator
+
+@lippe_drop_others
+view-if: lippe_true_others == 1
+on-arrival: lippe_coalition_r = lippe_coalition_r - true_other_r_lippe; lippe_true_others = 0
+go-to: lippe_coalition_creator
+
+@lippe_drop_wp
+view-if: lippe_wp == 1
+on-arrival: lippe_coalition_r = lippe_coalition_r - wp_r_lippe; lippe_wp = 0
+go-to: lippe_coalition_creator
+
+
+
+@no_majority_lippe
+view-if: right_coalition_lippe < 50
+title: There is possible governing arragnment.
+subtitle: A caretaker government must rule for a while.
+
+
+- @dvp_lippe_minority
+- @spd_lippe_minority
+- @dnvp_lippe_minority
+- @nsdap_lippe_minority
+- @no_lippe_minority
+
+@dvp_lippe_minority
+view-if: dvp_coalition_lippe >= 50
+title: The DVP manages to gather enough support for a minority government of bourgeois experts.
+on-arrival: lippe_election_2_trigger_time = time + 37; lippe_gov = "Bourgeois"; lippe_ddp = 2; lippe_dnvp = 2; lippe_cnbl = 2; lippe_wp = 2; lippe_dvp = 1; lippe_vrp = 2; lippe_csvd = 2; lippe_true_other = 2;
+
+@spd_lippe_minority
+view-if: dvp_coalition_lippe < 50 and spd_r_lippe > nsdap_r_lippe and spd_r_lippe > dnvp_r_lippe
+title: We are the strongest party
+on-arrival: lippe_election_2_trigger_time = time + 25; lippe_gov = "SPD"; lippe_spd = 1;
+
+@dnvp_lippe_minority
+view-if: dvp_coalition_lippe < 50 and dnvp_r_lippe > nsdap_r_lippe and dnvp_r_lippe > spd_r_lippe
+title: The DNVP is the strongest party
+on-arrival: lippe_election_2_trigger_time = time + 26; lippe_gov = "Right"; lippe_dnvp = 1;
+
+
+@nsdap_lippe_minority
+view-if: dvp_coalition_lippe < 50 and nsdap_r_lippe > dnvp_r_lippe and nsdap_r_lippe > spd_r_lippe
+title: The NSDAP is the strongest party
+on-arrival: lippe_election_2_trigger_time = time + 27; lippe_gov = "NSDAP"; lippe_nsdap = 1;
+
+@no_lippe_minority
+view-if: dvp_coalition_lippe < 50 and (nsdap_r_lippe == spd_r_lippe or spd_r_lippe == dnvp_r_lippe or nsdap_r_lippe == dnvp_r_lippe)
+title: There is no clear party to lead this caretaker government
+subtitle: We need new elections
+on-arrival: lippe_election_2_trigger_time = time + 4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
