@@ -586,6 +586,13 @@ Q.dvp_r_oldenburg = 0.17;
 Q.true_other_r_oldenburg = 0.06;
 Q.dnvp_r_oldenburg = 0.04;
 Q.lb_r_oldenburg = 0.02;
+Q.lippe_seats = 21; // Lippe
+Q.kpd_r_lippe = 0.05;
+Q.spd_r_lippe = 0.35; Q.lippe_spd = 1; Q.lippe_mp = "Riecke"; Qlippe_mp_party = "SPD";
+Q.ddp_r_lippe = 0.1; Q.lippe_ddp = 1;
+Q.true_other_r_lippe = 0.05;
+Q.dvp_r_lippe = 0.19;
+Q.dnvp_r_lippe = 0.24;
 
 Q.spd_votes = 27.9;
 Q.uspd_votes = 0;
