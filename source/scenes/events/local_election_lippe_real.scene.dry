@@ -576,7 +576,6 @@ choose-if: lippe_coalition_r >= 50
 subtitle: We can form a coalition!
 unavailable-subtitle: We need more partners
 on-arrival: lippe_gov = "Social-Agrarian" if lippe_cnbl == 1; lippe_gov = "Left" if lippe_kpd == 1; lippe_gov = "Social-Democratic" if lippe_uspd == 1 and not lippe_kpd == 1 and not lippe_ddp == 1; lippe_gov = "Social-Liberal" if lippe_ddp == 1 or lippe_lvp == 1 or lippe_dvp == 1; lippe_gov = "Progressive" if lippe_uspd == 1 and (lippe_ddp == 1 or lippe_lvp);  lippe_gov = "Grand" if lippe_wp == 1 or lippe_vrp == 1;
-go-to: final_checkout_lippe
 
 Congrats you have formed a [+ lippe_gov +] Coalition with [+ lippe_coalition_r +]% parliamentary support!
 
