@@ -1,5 +1,5 @@
 title: Lippe Landtag Election
-view-if: (year == 1922 and month == 4 and not lippe_election_seen) or (lippe_election_2_trigger_time == time and lippe_election_seen_time != time)
+view-if: (year == 1925 and month == 1 and not lippe_election_seen) or (lippe_election_2_trigger_time == time and lippe_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: lippe_election_seen += 1 if lippe_election_seen; lippe_election_seen = 1 if not lippe_election_seen; lippe_election_seen_time = time; lippe_spd = 0; lippe_kpd = 0; lippe_uspd = 0; lippe_ddp = 0; lippe_true_others = 0; lippe_wp = 0; lippe_lvp = 0; lippe_csvd = 0; lippe_cnbl = 0; lippe_dvp = 0; lippe_vrp = 0; lippe_nsdap = 0
