@@ -18,8 +18,8 @@ The failure of Cuno has led Ebert to try out something new again.
   
 @join_stresemann
 on-arrival: spd_in_government = 1; dvp_in_government = 1; z_in_government = 1; ddp_in_government = 1; in_grand_coalition = 1; leverage = spd_votes
-choose-if: reformist_strength >= (left_strength) and early_dvp_cooperation >= 1 and dvp_relation >= 30
-unavailable-subtitle: [? if (reformist_strength < (left_strength) or early_dvp_cooperation < 1): Our party does not support this. ?][? if dvp_relation < 30: The DVP doesn't want us to join the coalition. ?]
+choose-if: reformist_strength >= (left_strength) and early_dvp_cooperation >= 1 and dvp_relation >= 25
+unavailable-subtitle: [? if (reformist_strength < (left_strength) or early_dvp_cooperation < 1): Our party does not support this. ?][? if dvp_relation < 25: The DVP doesn't want us to join the coalition. ?]
 
 The SPD agress to join the Stresemann government.
 
