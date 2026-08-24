@@ -1356,7 +1356,7 @@ lippe: {
       condition: function(Q) { return Q.nsdap_r_lippe; }
     }
   ]
-}
+},
 
       
       
