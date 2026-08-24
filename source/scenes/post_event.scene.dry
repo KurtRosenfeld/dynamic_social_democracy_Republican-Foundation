@@ -267,7 +267,7 @@ if (Q.spd_party_leader_2 == "Breitscheid" && Q.uspd_relation < 25) Q.uspd_relati
 if (Q.spd_party_leader_2 == "Breitscheid" && Q.france_relation < 20) Q.france_relation += 0.5;
 if (Q.spd_party_leader_2 == "Breitscheid" && Q.uk_relation < 20) Q.uk_relation += 0.5;
 if (Q.spd_party_leader_2 == "Breitscheid" && Q.belgium_relation < 20) Q.belgium_relation += 0.5;
-if (Q.spd_party_leader_3 == "Crispien") 
+if (Q.spd_party_leader_3 == "Crispien") {
 Q.left_dissent -= 0.05;
 Q.center_dissent -= 0.1;
 }
