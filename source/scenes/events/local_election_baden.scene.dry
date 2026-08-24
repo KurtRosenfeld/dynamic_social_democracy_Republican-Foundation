@@ -2,7 +2,7 @@ title: Baden Landtag Election
 view-if: (year == 1925 and month == 10 and not baden_election_seen) or (baden_election_2_trigger_time == time and baden_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: baden_election_seen += 1 if baden_election_seen; baden_election_seen = 1 if not baden_election_seen; baden_election_seen_time = time; baden_spd = "opposition"; baden_kpd = "opposition"; baden_sapd = "opposition"; baden_uspd = "opposition"; baden_ddp = "opposition"; baden_z = "opposition"; baden_true_others = "opposition"; baden_wp = "opposition"
+on-arrival: baden_election_seen += 1 if baden_election_seen; baden_election_seen = 1 if not baden_election_seen; baden_election_seen_time = time; baden_spd = 0; baden_kpd = 0; baden_sapd = 0; baden_uspd = 0; baden_ddp = 0; baden_z = 0; baden_true_others = 0; baden_wp = 0
 priority: 3
 on-display: {!  
     var cardEl = document.createElement('div');  
@@ -713,22 +713,22 @@ go-to: baden_coalition_creator
 
 @baden_drop_z
 view-if: baden_z = "government"
-on-arrival: baden_coalition_r = baden_coalition_r - z_r_baden; baden_z = "opposition"
+on-arrival: baden_coalition_r = baden_coalition_r - z_r_baden; baden_z = 0
 go-to: baden_coalition_creator
 
 @baden_drop_dvp
 view-if: baden_dvp = "government"
-on-arrival: baden_coalition_r = baden_coalition_r - dvp_r_baden; baden_dvp = "opposition"
+on-arrival: baden_coalition_r = baden_coalition_r - dvp_r_baden; baden_dvp = 0
 go-to: baden_coalition_creator
 
 @baden_drop_others
 view-if: baden_true_others = "government"
-on-arrival: baden_coalition_r = baden_coalition_r - true_other_r_baden; baden_true_others = "opposition"
+on-arrival: baden_coalition_r = baden_coalition_r - true_other_r_baden; baden_true_others = 0
 go-to: baden_coalition_creator
 
 @baden_drop_wp
 view-if: baden_wp = "government"
-on-arrival: baden_coalition_r = baden_coalition_r - wp_r_baden; baden_wp = "opposition"
+on-arrival: baden_coalition_r = baden_coalition_r - wp_r_baden; baden_wp = 0
 go-to: baden_coalition_creator
 
 It is better that way.
