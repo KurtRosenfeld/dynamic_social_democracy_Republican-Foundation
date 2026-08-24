@@ -262,7 +262,7 @@ Q.reformist_dissent -= 0.1;
 Q.reichsbanner_strength += 1;
 }
 if (Q.spd_party_leader_2 == "Müller" && Q.ddp_relation < 30) Q.ddp_relation += 0.5;
-if (Q.spd_party_leader_2 == "Müller" && Q.dvp_relation < 20) Q.dvp_relation += 0.5;
+if (Q.spd_party_leader_2 == "Müller" && Q.dvp_relation < 25) Q.dvp_relation += 0.5;
 if (Q.spd_party_leader_2 == "Breitscheid" && Q.uspd_relation < 25) Q.uspd_relation += 0.5;
 if (Q.spd_party_leader_2 == "Breitscheid" && Q.france_relation < 20) Q.france_relation += 0.5;
 if (Q.spd_party_leader_2 == "Breitscheid" && Q.uk_relation < 20) Q.uk_relation += 0.5;
