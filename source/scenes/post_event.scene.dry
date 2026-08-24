@@ -258,18 +258,18 @@ if (Q.kpd_relation < 35) Q.kapd_relation -= 5;
 // party leader boni
 
 if (Q.spd_party_leader_1 == "Wels") { 
-reformist_dissent -= 0.1;
-reichsbanner_strength += 1;
+Q.reformist_dissent -= 0.1;
+Q.reichsbanner_strength += 1;
 }
-if (Q.spd_party_leader_2 == "Müller" && ddp_relation < 30) ddp_relation += 0.5;
-if (Q.spd_party_leader_2 == "Müller" && dvp_relation < 20) dvp_relation += 0.5;
-if (Q.spd_party_leader_2 == "Breitscheid" && uspd_relation < 25) uspd_relation += 0.5;
-if (Q.spd_party_leader_2 == "Breitscheid" && france_relation < 20) france_relation += 0.5;
-if (Q.spd_party_leader_2 == "Breitscheid" && uk_relation < 20) uk_relation += 0.5;
-if (Q.spd_party_leader_2 == "Breitscheid" && belgium_relation < 20) belgium_relation += 0.5;
-if (Q.spd_party_leader_3 == "Crispien") { 
-left_dissent -= 0.05;
-center_dissent -= 0.1;
+if (Q.spd_party_leader_2 == "Müller" && Q.ddp_relation < 30) Q.ddp_relation += 0.5;
+if (Q.spd_party_leader_2 == "Müller" && Q.dvp_relation < 20) Q.dvp_relation += 0.5;
+if (Q.spd_party_leader_2 == "Breitscheid" && Q.uspd_relation < 25) Q.uspd_relation += 0.5;
+if (Q.spd_party_leader_2 == "Breitscheid" && Q.france_relation < 20) Q.france_relation += 0.5;
+if (Q.spd_party_leader_2 == "Breitscheid" && Q.uk_relation < 20) Q.uk_relation += 0.5;
+if (Q.spd_party_leader_2 == "Breitscheid" && Q.belgium_relation < 20) Q.belgium_relation += 0.5;
+if (Q.spd_party_leader_3 == "Crispien") 
+Q.left_dissent -= 0.05;
+Q.center_dissent -= 0.1;
 }
 
 // danymic party colouring
