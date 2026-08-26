@@ -597,7 +597,7 @@ Q.anhalt_seats = 36; // Anhalt
 Q.uspd_r_anhalt = 0.17;
 Q.spd_r_anhalt = 0.36; Q.anhalt_spd = 1;
 Q.ddp_r_anhalt = 0.17; Q.anhalt_ddp = 1;
-Q.dvp_r_anhalt = 0.14
+Q.dvp_r_anhalt = 0.14;
 Q.dnvp_r_anhalt = 0.17;
 
 Q.spd_votes = 27.9;
