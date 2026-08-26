@@ -593,6 +593,12 @@ Q.ddp_r_lippe = 0.1; Q.lippe_ddp = 1;
 Q.true_other_r_lippe = 0.05;
 Q.dvp_r_lippe = 0.19;
 Q.dnvp_r_lippe = 0.24;
+Q.anhalt_seats = 36; // Anhalt
+Q.uspd_r_anhalt = 0.17;
+Q.spd_r_anhalt = 0.36; Q.anhalt_spd = 1;
+Q.ddp_r_anhalt = 0.17; Q.anhalt_ddp = 1;
+Q.dvp_r_anhalt = 0.14
+Q.dnvp_r_anhalt = 0.17;
 
 Q.spd_votes = 27.9;
 Q.uspd_votes = 0;
