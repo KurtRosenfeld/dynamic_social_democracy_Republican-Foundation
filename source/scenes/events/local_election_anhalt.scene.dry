@@ -33,7 +33,7 @@ uspd: 1.06,
 kpd: 0.72,
 ddp: 0.78,
 lvp: 1.35,
-z: 0.06
+z: 0.06,
 dvp: 1.74,
 dnvp: 0.65,
 nsdap: 0.95,
@@ -48,6 +48,7 @@ Q.spd_r_anhalt = 0;
 Q.sapd_r_anhalt = 0;
 Q.uspd_r_anhalt = 0;
 Q.kpd_r_anhalt = 0;
+Q.z_r_anhalt = 0;
 Q.ddp_r_anhalt = 0;
 Q.lvp_r_anhalt = 0;
 Q.dvp_r_anhalt = 0;
@@ -90,7 +91,7 @@ Q.z_anhalt_elections_vote = Q.z_votes*anhalt_adjustment_factors.z;
 Q.dvp_anhalt_elections_vote = Q.dvp_votes*anhalt_adjustment_factors.dvp;
 if (Q.chancellor_party == "SPD") anhalt_adjustment_factors.dnvp -= 0.2;
 Q.dnvp_anhalt_elections_vote = Q.dnvp_votes*anhalt_adjustment_factors.dnvp;          
-if (Q.year >= 1930) Q.anhalt_adjustment_factors.nsdap += 0.1;
+if (Q.year >= 1930) anhalt_adjustment_factors.nsdap += 0.1;
 Q.nsdap_anhalt_elections_vote = Q.nsdap_votes*anhalt_adjustment_factors.nsdap;
 if (Q.dvfp_votes <= 2) anhalt_adjustment_factors.spd += 0.2;
 Q.dvfp_anhalt_elections_vote = Q.dvfp_votes*anhalt_adjustment_factors.dvfp;
@@ -298,8 +299,7 @@ dvp_r_anhalt: Q.dvp_r_anhalt,
 dnvp_r_anhalt: Q.dnvp_r_anhalt,
 nsdap_r_anhalt: Q.nsdap_r_anhalt,
 wp_r_anhalt: Q.wp_r_anhalt,
-vhg_r_anhalt: Q.vhg_r_anhalt,
-vrp_r_anhalt: Q.vrp_r_anhalt,
+lr_r_anhalt: Q.lr_r_anhalt,
 farm_r_anhalt: Q.farm_r_anhalt,
 true_other_r_anhalt: Q.true_other_r_anhalt,
 kvp_r_anhalt: Q.kvp_r_anhalt,
