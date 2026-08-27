@@ -316,9 +316,11 @@ Q[party] = parseFloat(((allocatedSeats[party] * 100) / 36).toFixed(1));
 
 Q.other_r_anhalt = Q.wp_r_anhalt + Q.true_other_r_anhalt + Q.lr_r_anhalt + Q.farm_r_anhalt;
 
+if (Q.anhalt_new_election_called == 1) Q.vg_r_anhalt = Q.dnvp_r_anhalt + Q.dvp_r_anhalt + Q.true_other_r_anhalt + Q.wp_r_anhalt + Q.farm_r_anhalt;
+
 Q.left_coalition_anhalt = parseFloat((Q.spd_r_anhalt + Q.kpd_r_anhalt + Q.sapd_r_anhalt + Q.uspd_r_anhalt).toFixed(1));
 Q.bourgeois_coalition_anhalt = parseFloat((Q.ddp_r_anhalt + Q.dvp_r_anhalt + Q.lvp_r_anhalt + Q.kvp_r_anhalt + Q.other_r_anhalt).toFixed(1));
-Q.right_coalition_anhalt = parseFloat((Q.dnvp_r_anhalt + Q.dvp_r_anhalt + Q.dvfp_r_anhalt + Q.nsdap_r_anhalt + Q.wp_r_anhalt + Q.vrp_r_anhalt).toFixed(1));
+Q.right_coalition_anhalt = parseFloat((Q.dnvp_r_anhalt + Q.dvp_r_anhalt + Q.dvfp_r_anhalt + Q.nsdap_r_anhalt + Q.wp_r_anhalt + Q.farm_r_anhalt).toFixed(1));
 Q.thick_bourgeois_coalition_anhalt = parseFloat((Q.ddp_r_anhalt + Q.dvp_r_anhalt + Q.lvp_r_anhalt + Q.kvp_r_anhalt + Q.other_r_anhalt + Q.dnvp_r_anhalt).toFixed(1));
 Q.social_liberal_coalition_anhalt = parseFloat((Q.spd_r_anhalt + Q.ddp_r_anhalt + Q.lvp_r_anhalt + Q.lr_r_anhalt).toFixed(1));
 
@@ -330,7 +332,10 @@ Q.wp_r_anhalt = (Q.wp_r_anhalt != undefined ? parseFloat(Q.wp_r_anhalt.toFixed(1
 Q.true_other_r_anhalt = (Q.true_other_r_anhalt != undefined ? parseFloat(Q.true_other_r_anhalt.toFixed(1)) : 0);
 Q.lr_r_anhalt = (Q.lr_r_anhalt != undefined ? parseFloat(Q.lr_r_anhalt.toFixed(1)) : 0);
 Q.farm_r_anhalt = (Q.farm_r_anhalt != undefined ? parseFloat(Q.farm_r_anhalt.toFixed(1)) : 0);             
-             
+
+
+if (Q.anhalt_new_election_called == 1) { Q.dnvp_r_anhalt; Q.dvp_r_anhalt; Q.true_other_r_anhalt; Q.wp_r_anhalt; Q.farm_r_anhalt; }
+
 !}
 on-display: {!
 data = [{
@@ -428,6 +433,15 @@ data.push({
 });
 }            
 
+if (Q.vg_r_anhalt) {
+data.push({
+"id": "rl",
+"legend": "Volksgemeinschaft",
+"name": "Volksgemeinschaft",
+"seats": Math.round(Q.vg_r_anhalt * 0.36),
+});
+}
+
 if (Q.wp_r_anhalt) {
 data.push({
 "id": "wp",
@@ -439,7 +453,7 @@ data.push({
 
 if (Q.farm_r_anhalt) {
 data.push({
-"id": "farm",
+"id": "farm3",
 "legend": "Farm",
 "name": "Farm",
 "seats": Math.round(Q.farm_r_anhalt * 0.36),
@@ -471,7 +485,7 @@ data.push({
 });
 
 data.push({
-"id": "nsfb",
+"id": "dvfp",
 "legend": "NSFB",
 "name": "NSFB",
 "seats": Math.round(Q.nsfb_r_anhalt * 0.36),
@@ -520,19 +534,19 @@ Anhalt results:
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td!} **[+ lvp_anhalt_elections_vote +]**% {!</td><td!} **[+ lvp_r_anhalt +]**% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#CEDD8A'> </div> !} VHG: {!</td><td!} **[+ vhg_anhalt_elections_vote +]**% {!</td><td!} **[+ vhg_r_anhalt +]**% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td!} **[+ z_anhalt_elections_vote +]**% {!</td><td!} **[+ z_r_anhalt +]**% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#AFAFAF'> </div> !} Others: {!</td><td!} **[+ true_other_anhalt_elections_vote +]**% {!</td><td!} **[+ true_other_r_anhalt +]**% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#AFAFAF'> </div> !} Land Reform: {!</td><td!} **[+ lr_anhalt_elections_vote +]**% {!</td><td!} **[+ lr_r_anhalt +]**% {!</td></tr>!}
 
 [? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td!} **[+ dvp_anhalt_elections_vote +]**% {!</td><td!} **[+ dvp_r_anhalt +]**% {!</td></tr>!} ?]
 
-[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td!} **[+ kvp_anhalt_elections_vote +]**% {!</td><td!} **[+ kvp_r_anhalt +]**% {!</td></tr>!} ?]
+{!<tr><td><div class="box" style='background-color:#AFAFAF'> </div> !} Others: {!</td><td!} **[+ true_other_anhalt_elections_vote +]**% {!</td><td!} **[+ true_other_r_anhalt +]**% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#38C538'> </div> !} Small Farmers: {!</td><td!} **[+ farm_anhalt_elections_vote +]**% {!</td><td!} **[+ farm_r_anhalt +]**% {!</td></tr>!}
+[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td!} **[+ kvp_anhalt_elections_vote +]**% {!</td><td!} **[+ kvp_r_anhalt +]**% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td!} **[+ wp_anhalt_elections_vote +]**% {!</td><td!} **[+ wp_r_anhalt +]**% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0075EB'> </div> !} VRP: {!</td><td!} **[+ vrp_anhalt_elections_vote +]**% {!</td><td!} **[+ vrp_r_anhalt +]**% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#38C538'> </div> !} LB: {!</td><td!} **[+ farm_anhalt_elections_vote +]**% {!</td><td!} **[+ farm_r_anhalt +]**% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td!} **[+ dnvp_anhalt_elections_vote +]**% {!</td><td!} **[+ dnvp_r_anhalt +]**% {!</td></tr>!}
 
@@ -549,7 +563,7 @@ Anhalt results:
   
 United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: [+ uspd_colour +];">**USPD**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: [+ sapd_colour +];">**SAPD**</span>?]): [+ left_coalition_anhalt +]%
   
-Social-Liberal Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: [+ lvp_colour +];">**LVP**</span>?][? if not lvp_formed: + <span style="color: [+ dvp_colour +];">**DVP**</span>?]): [+ social_liberal_coalition_anhalt +]%
+Social-Liberal Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: [+ lvp_colour +];">**LVP**</span>?]): [+ social_liberal_coalition_anhalt +]%
 
 Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + <span style="color: [+ dvp_colour +];">**DVP**</span> + <span style="color: #3D3D3D;">**DVFP**</span> + <span style="color: #b8996f;">**WP**</span>): [+ right_coalition_anhalt +]%
 
@@ -567,8 +581,8 @@ Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + 
 
 @social_liberal_coalition_anhalt
 title: A Social-Liberal Coalition will be formed
-choose-if: social_liberal_coalition_anhalt >= 50 and dvp_relation >= 30
-on-arrival: anhalt_election_2_trigger_time = time + 48; dvp_relation += 2; ddp_relation += 3; anhalt_gov = "Social-Liberal"; anhalt_spd = 1; anhalt_ddp = 1; anhalt_dvp = 1
+choose-if: social_liberal_coalition_anhalt >= 50 and ddp_relation >= 25
+on-arrival: anhalt_election_2_trigger_time = time + 48; dvp_relation += 2; ddp_relation += 3; anhalt_gov = "Social-Liberal"; anhalt_spd = 1; anhalt_ddp = 1; anhalt_lr = 2
 
 @bourgeois_coalition_anhalt
 title: A bourgeois coalition is formed.
@@ -578,11 +592,11 @@ view-if: bourgeois_coalition_anhalt < 50
 on-arrival: anhalt_election_2_trigger_time = time + 48; anhalt_gov = "Bourgeois"; anhalt_ddp = 1; anhalt_dvp = 1; anhalt_kvp = 1; anhalt_lvp = 1; anhalt_vrp = 1; anhalt_wp = 1; anhalt_true_other = 1; anhalt_farm = 1
 
 @thick_bourgeois_coalition_anhalt
-title: A bourgeois coalition is formed.
-subtitle: The <span style="color: [+ ddp_colour +];">DDP</span> will cooperate with the <span style="color: [+ dnvp_colour +];">DNVP</span>...
+title: A bourgeois united front?
+subtitle: The <span style="color: [+ ddp_colour +];">DVP</span> rallys the bourgeois behind itself
 choose-if: thick_bourgeois_coalition_anhalt >= 50
-view-if: bourgeois_coalition_anhalt < 50
-on-arrival: anhalt_election_2_trigger_time = time + 48; anhalt_gov = "Right"; anhalt_ddp = 1; anhalt_dvp = 1; anhalt_dnvp = 1; anhalt_kvp = 1; anhalt_lvp = 1; anhalt_vrp = 1; anhalt_wp = 1; anhalt_true_other = 1; anhalt_farm = 1
+view-if: bourgeois_coalition_anhalt < 50 and ddp_relation < 25
+on-arrival: anhalt_election_2_trigger_time = time + 48; anhalt_gov = "Bourgeois"; anhalt_ddp = 2; anhalt_dvp = 1; anhalt_dnvp = 2; anhalt_kvp = 2; anhalt_lvp = 1; anhalt_dvfp = 2; anhalt_wp = 2; anhalt_true_other = 2; anhalt_farm = 2
 
 You can't even rely on the <span style="color: [+ ddp_colour +];">DDP</span>...
 
@@ -590,7 +604,7 @@ You can't even rely on the <span style="color: [+ ddp_colour +];">DDP</span>...
 title: A Coalition of the Left will be formed
 subtitle: We will work alongside the KPD
 choose-if: left_coalition_anhalt >= 50 and kpd_relation >= 50
-on-arrival: anhalt_election_2_trigger_time = time + 48; rural_spd += 1; anhalt_gov = "Left"; anhalt_spd = 1; anhalt_sapd = 1; anhalt_uspd = 1; anhalt_kpd = 1
+on-arrival: anhalt_election_2_trigger_time = time + 48; anhalt_gov = "Left"; anhalt_spd = 1; anhalt_sapd = 1; anhalt_uspd = 1; anhalt_kpd = 1
 go-to: final_checkout_anhalt
 
 @spd_majority_anhalt
@@ -602,14 +616,14 @@ on-arrival: anhalt_election_2_trigger_time = time + 48; workers_spd += 1; worker
 title: The Right forms a government.
 choose-if: right_coalition_anhalt >= 50
 view-if: right_coalition_anhalt >= 50
-on-arrival: anhalt_election_2_trigger_time = time + 48; rural_nsdap += 1; dvp_relation -= 3; anhalt_gov = "Far-Right"; anhalt_dvfp = 1; anhalt_dvp = 1; anhalt_dnvp = 1; anhalt_nsdap = 1; anhalt_wp = 1; anhalt_vrp = 1
+on-arrival: anhalt_election_2_trigger_time = time + 48; dvp_relation -= 3; anhalt_gov = "Right"; anhalt_dvfp = 2; anhalt_dvp = 1; anhalt_dnvp = 1; anhalt_nsdap = 2; anhalt_wp = 2; anhalt_dvp = 1; anhalt_true_other = 2
 
 This can't end well...
 
 @no_coalition_anhalt
 title: There is no possible government arrangement
 subtitle: New elections will be called...
-on-arrival: anhalt_election_2_trigger_time = time + 3; new_middle_dnvp += 2; new_middle_ddp -= 1
+on-arrival: anhalt_election_2_trigger_time = time + 6; old_middle_dnvp += 1
 view-if: right_coalition_anhalt < 50 and bourgeois_coalition_anhalt < 50 and thick_bourgeois_coalition_anhalt < 50
 
 
