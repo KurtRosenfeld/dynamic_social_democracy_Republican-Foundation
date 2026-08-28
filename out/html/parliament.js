@@ -1496,7 +1496,7 @@ anhalt: {
       condition: function(Q) { return Q.nsdap_r_anhalt; }
     }
   ]
-}
+},
       
       
       waldeck: {
