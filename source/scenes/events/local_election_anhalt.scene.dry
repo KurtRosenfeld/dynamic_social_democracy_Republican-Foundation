@@ -643,7 +643,7 @@ Current support: [+ anhalt_coalition_r +]%
 - @anhalt_invite_uspd: Invite the <span style="color: [+ uspd_colour +];">**USPD**</span>
 - @anhalt_invite_ddp: Invite the <span style="color: [+ ddp_colour +];">**DDP**</span>
 - @anhalt_invite_lvp: Invite the <span style="color: [+ lvp_colour +];">**LVP**</span>
-- @anhalt_invite_ddp: Invite the <span style="color: [+ z_colour +];">**Zentrum**</span>
+- @anhalt_invite_z: Invite the <span style="color: [+ z_colour +];">**Zentrum**</span>
 - @anhalt_invite_vhg: Invite the <span style="color: #CEDD8A;">**Land Reform**</span>
 - @anhalt_invite_others: Invite the <span style="color: [+ i_colour +];">**Others**</span>
 - @anhalt_invite_dvp: Invite the <span style="color: [+ dvp_colour +];">**DVP**</span>
@@ -656,7 +656,7 @@ Current support: [+ anhalt_coalition_r +]%
 - @anhalt_drop_uspd: Drop the <span style="color: [+ uspd_colour +];">**USPD**</span>
 - @anhalt_drop_ddp: Drop the <span style="color: [+ ddp_colour +];">**DDP**</span>
 - @anhalt_drop_lvp: Drop the <span style="color: [+ lvp_colour +];">**LVP**</span>
-- @anhalt_drop_ddp: Drop the <span style="color: [+ z_colour +];">**Zentrum**</span>
+- @anhalt_drop_z: Drop the <span style="color: [+ z_colour +];">**Zentrum**</span>
 - @anhalt_drop_vhg: Drop the <span style="color: #CEDD8A;">**Land Reform**</span>
 - @anhalt_drop_others: Drop the <span style="color: [+ i_colour +];">**Others**</span>
 - @anhalt_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
