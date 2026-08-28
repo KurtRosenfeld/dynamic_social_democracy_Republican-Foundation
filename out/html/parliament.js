@@ -1358,6 +1358,145 @@ lippe: {
   ]
 },
 
+
+anhalt: {
+  totalSeatsKey: 'anhalt_seats',
+  conditionalParties: [
+    {
+      id: 'kpd',
+      legend: 'KPD',
+      name: 'KPD',
+      qualityKey: 'kpd_r_anhalt',
+      condition: function(Q) { return Q.kpd_r_anhalt; }
+    },
+    {
+      id: 'sapd',
+      legend: 'SAPD',
+      name: 'SAPD',
+      qualityKey: 'sapd_r_anhalt',
+      condition: function(Q) { return Q.sapd_r_anhalt; }
+    },
+    {
+      id: 'uspd',
+      legend: 'USPD',
+      name: 'USPD',
+      qualityKey: 'uspd_r_anhalt',
+      condition: function(Q) { return Q.uspd_r_anhalt; }
+    },
+    {
+      id: 'spd',
+      legend: 'SPD',
+      name: 'SPD',
+      qualityKey: 'spd_r_anhalt',
+      condition: function(Q) { return Q.spd_r_anhalt; }
+    },
+    {
+      id: 'ddp',
+      legend: function(Q) { return Q.ddp_name; },
+      name: function(Q) { return Q.ddp_name; },
+      qualityKey: 'ddp_r_anhalt',
+      condition: function(Q) { return Q.ddp_r_anhalt; }
+    },
+    {
+      id: 'lvp',
+      legend: 'LVP',
+      name: 'LVP',
+      qualityKey: 'lvp_r_anhalt',
+      condition: function(Q) { return Q.lvp_r_anhalt; }
+    },
+    {
+      id: 'z',
+      legend: 'Z',
+      name: 'Z',
+      qualityKey: 'z_r_anhalt',
+      condition: function(Q) { return Q.z_r_anhalt; }
+    },
+    {
+      id: 'kag',
+      legend: 'Land Reform',
+      name: 'Land Reform',
+      qualityKey: 'lr_r_anhalt',
+      condition: function(Q) { return Q.lr_r_anhalt; }
+    },
+    {
+      id: 'dvp',
+      legend: 'DVP',
+      name: 'DVP',
+      qualityKey: 'dvp_r_anhalt',
+      condition: function(Q) { return Q.dvp_r_anhalt; }
+    },
+    {
+      id: 'other',
+      legend: 'Other',
+      name: 'Others',
+      qualityKey: 'true_other_r_anhalt',
+      condition: function(Q) { return Q.true_other_r_anhalt; }
+    },
+    {
+      id: 'kvp',
+      legend: 'KVP',
+      name: 'KVP',
+      qualityKey: 'kvp_r_anhalt',
+      condition: function(Q) { return Q.kvp_r_anhalt; }
+    },
+    {
+      id: 'rl',
+      legend: 'Volksgemeinschaft',
+      name: 'Volksgemeinschaft',
+      qualityKey: 'vg_r_anhalt',
+      condition: function(Q) { return Q.vg_r_anhalt; }
+    },
+    {
+      id: 'wp',
+      legend: 'WP',
+      name: 'WP',
+      qualityKey: 'wp_r_anhalt',
+      condition: function(Q) { return Q.wp_r_anhalt; }
+    },
+    {
+      id: 'farm2',
+      legend: 'Farm',
+      name: 'Farm',
+      qualityKey: 'farm_r_anhalt',
+      condition: function(Q) { return Q.farm_r_anhalt; }
+    },
+    {
+      id: 'dnvp',
+      legend: 'DNVP',
+      name: 'DNVP',
+      qualityKey: 'dnvp_r_anhalt',
+      condition: function(Q) { return Q.dnvp_r_anhalt; }
+    },
+    {
+      id: 'dnf',
+      legend: 'DNF',
+      name: 'DNF',
+      qualityKey: 'dnf_r_anhalt',
+      condition: function(Q) { return Q.dnf_r_anhalt; }
+    },
+    {
+      id: 'dvfp',
+      legend: 'DVFP',
+      name: 'DVFP',
+      qualityKey: 'dvfp_r_anhalt',
+      condition: function(Q) { return Q.dvfp_r_anhalt; }
+    },
+    {
+      id: 'nsfb',
+      legend: 'NSFB',
+      name: 'NSFB',
+      qualityKey: 'nsfb_r_anhalt',
+      condition: function(Q) { return Q.nsfb_r_anhalt; }
+    },
+    {
+      id: 'nsdap',
+      legend: 'NSDAP',
+      name: 'NSDAP',
+      qualityKey: 'nsdap_r_anhalt',
+      condition: function(Q) { return Q.nsdap_r_anhalt; }
+    }
+  ]
+}
       
       
       waldeck: {
