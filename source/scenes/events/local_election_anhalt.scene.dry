@@ -1,5 +1,5 @@
 title: Anhalt Landtag Election
-view-if: (year == 1922 and month == 4 and not anhalt_election_seen) or (anhalt_election_2_trigger_time == time and anhalt_election_seen_time != time)
+view-if: (year == 1924 and month == 6 and not anhalt_election_seen) or (anhalt_election_2_trigger_time == time and anhalt_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: anhalt_election_seen += 1 if anhalt_election_seen; anhalt_election_seen = 1 if not anhalt_election_seen; anhalt_election_seen_time = time; anhalt_spd = 0; anhalt_kpd = 0; anhalt_sapd = 0; anhalt_uspd = 0; anhalt_ddp = 0; anhalt_kvp = 0; anhalt_true_others = 0; anhalt_wp = 0; anhalt_lvp = 0; anhalt_lr = 0; anhalt_z = 0; anhalt_dvp = 0; anhalt_dnvp = 0
@@ -934,7 +934,7 @@ go-to: anhalt_toleration_menu
 
 @final_checkout_anhalt
 title: This title does not matter
-on-arrival: workers_kpd += 2  if anhalt_kpd == 1; workers_dvp -= 2  if anhalt_kpd == 1; workers_dnvp -= 1 if anhalt_kpd == 1
+on-arrival: workers_kpd += 2  if anhalt_kpd == 1; workers_spd -= 1  if anhalt_kpd == 1
 
 
 
