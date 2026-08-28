@@ -1562,6 +1562,26 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   <div class="parliament-chart" data-state="anhalt" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: plhl</p>
     <p>SPD: [+ anhalt_spd : government +]</p>
+[? if kpd_r_anhalt:     <p>KPD: [+ anhalt_kpd : government +]</p>  ?]
+[? if sapd_r_anhalt:     <p>SAPD: [+ anhalt_sapd : government +]</p>  ?]
+[? if uspd_r_anhalt:     <p>USPD: [+ anhalt_uspd : government +]</p>  ?]
+[? if ddp_r_anhalt:     <p>[+ ddp_name +]: [+ anhalt_ddp : government +]</p>  ?]
+[? if lvp_r_anhalt:     <p>LVP: [+ anhalt_lvp : government +]</p>  ?]
+[? if z_r_anhalt:     <p>Z: [+ anhalt_z : government +]</p>  ?]
+[? if dvp_r_anhalt:     <p>DVP: [+ anhalt_dvp : government +]</p>  ?]
+[? if true_other_r_anhalt:     <p>Others: [+ anhalt_true_other : government +]</p>  ?]
+[? if wp_r_anhalt:     <p>WP: [+ anhalt_wp : government +]</p>  ?]
+[? if kvp_r_anhalt:     <p>KVP: [+ anhalt_kvp : government +]</p>  ?]
+[? if farm_r_anhalt:     <p>Farmers: [+ anhalt_farm : government +]</p>  ?]
+[? if csvd_r_anhalt:     <p>CSVD: [+ anhalt_csvd : government +]</p>  ?]
+[? if rl_r_anhalt:     <p>Landesblock: [+ anhalt_rl : government +]</p>  ?]
+[? if cnbl_r_anhalt:     <p>CNBL: [+ anhalt_cnbl : government +]</p>  ?]
+[? if dnvp_r_anhalt:     <p>DNVP: [+ anhalt_dnvp : government +]</p>  ?]
+[? if lb_r_anhalt:     <p>LB: [+ anhalt_lb : government +]</p>  ?]
+[? if dnf_r_anhalt:     <p>DNF: [+ anhalt_dnf : government +]</p>  ?]
+[? if dvfp_r_anhalt:     <p>DVFP: [+ anhalt_dvfp : government +]</p>  ?]
+[? if nsfb_r_anhalt:     <p>NSFB: [+ anhalt_nsfb : government +]</p>  ?]
+[? if nsdap_r_anhalt:     <p>NSDAP: [+ anhalt_nsdap : government +]</p>  ?]
 </div>
 <div id="brunswick-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Brunswick Politics</strong>
@@ -1580,6 +1600,20 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   <div class="parliament-chart" data-state="lippe" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: plhl</p>
     <p>SPD: [+ lippe_spd : government +]</p>
+[? if kpd_r_lippe:     <p>KPD: [+ lippe_kpd : government +]</p>  ?]
+[? if uspd_r_lippe:     <p>USPD: [+ lippe_uspd : government +]</p>  ?]
+[? if spd_r_lippe:     <p>SPD: [+ lippe_spd : government +]</p>  ?]
+[? if ddp_r_lippe:     <p>[+ ddp_name +]: [+ lippe_ddp : government +]</p>  ?]
+[? if lvp_r_lippe:     <p>LVP: [+ lippe_lvp : government +]</p>  ?]
+[? if true_other_r_lippe:     <p>Others: [+ lippe_true_other : government +]</p>  ?]
+[? if dvp_r_lippe:     <p>DVP: [+ lippe_dvp : government +]</p>  ?]
+[? if wp_r_lippe:     <p>WP: [+ lippe_wp : government +]</p>  ?]
+[? if vrp_r_lippe:     <p>VRP: [+ lippe_vrp : government +]</p>  ?]
+[? if csvd_r_lippe:     <p>CSVD: [+ lippe_csvd : government +]</p>  ?]
+[? if cnbl_r_lippe:     <p>CNBL: [+ lippe_cnbl : government +]</p>  ?]
+[? if dnvp_r_lippe:     <p>DNVP: [+ lippe_dnvp : government +]</p>  ?]
+[? if nsfb_r_lippe:     <p>NSFB: [+ lippe_nsfb : government +]</p>  ?]
+[? if nsdap_r_lippe:     <p>NSDAP: [+ lippe_nsdap : government +]</p>  ?]
 </div>
 <div id="schaum_lippe-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Schaumburg-Lippe Politics</strong>
