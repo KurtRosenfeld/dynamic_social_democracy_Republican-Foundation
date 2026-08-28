@@ -2,7 +2,7 @@ title: Anhalt Landtag Election
 view-if: (year == 1922 and month == 4 and not anhalt_election_seen) or (anhalt_election_2_trigger_time == time and anhalt_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: anhalt_election_seen += 1 if anhalt_election_seen; anhalt_election_seen = 1 if not anhalt_election_seen; anhalt_election_seen_time = time; anhalt_spd = 0; anhalt_kpd = 0; anhalt_sapd = 0; anhalt_uspd = 0; anhalt_ddp = 0; anhalt_kvp = 0; anhalt_true_others = 0; anhalt_wp = 0; anhalt_lvp = 0; anhalt_vhg = 0; anhalt_z = 0
+on-arrival: anhalt_election_seen += 1 if anhalt_election_seen; anhalt_election_seen = 1 if not anhalt_election_seen; anhalt_election_seen_time = time; anhalt_spd = 0; anhalt_kpd = 0; anhalt_sapd = 0; anhalt_uspd = 0; anhalt_ddp = 0; anhalt_kvp = 0; anhalt_true_others = 0; anhalt_wp = 0; anhalt_lvp = 0; anhalt_lr = 0; anhalt_z = 0; anhalt_dvp = 0; anhalt_dnvp = 0
 priority: 2
 on-display: {!
 var cardEl = document.createElement('div');
@@ -453,7 +453,7 @@ data.push({
 
 if (Q.farm_r_anhalt) {
 data.push({
-"id": "farm3",
+"id": "farm2",
 "legend": "Farm",
 "name": "Farm",
 "seats": Math.round(Q.farm_r_anhalt * 0.36),
@@ -643,6 +643,7 @@ Current support: [+ anhalt_coalition_r +]%
 - @anhalt_invite_uspd: Invite the <span style="color: [+ uspd_colour +];">**USPD**</span>
 - @anhalt_invite_ddp: Invite the <span style="color: [+ ddp_colour +];">**DDP**</span>
 - @anhalt_invite_lvp: Invite the <span style="color: [+ lvp_colour +];">**LVP**</span>
+- @anhalt_invite_ddp: Invite the <span style="color: [+ z_colour +];">**Zentrum**</span>
 - @anhalt_invite_vhg: Invite the <span style="color: #CEDD8A;">**Land Reform**</span>
 - @anhalt_invite_others: Invite the <span style="color: [+ i_colour +];">**Others**</span>
 - @anhalt_invite_dvp: Invite the <span style="color: [+ dvp_colour +];">**DVP**</span>
@@ -655,8 +656,9 @@ Current support: [+ anhalt_coalition_r +]%
 - @anhalt_drop_uspd: Drop the <span style="color: [+ uspd_colour +];">**USPD**</span>
 - @anhalt_drop_ddp: Drop the <span style="color: [+ ddp_colour +];">**DDP**</span>
 - @anhalt_drop_lvp: Drop the <span style="color: [+ lvp_colour +];">**LVP**</span>
+- @anhalt_drop_ddp: Drop the <span style="color: [+ z_colour +];">**Zentrum**</span>
 - @anhalt_drop_vhg: Drop the <span style="color: #CEDD8A;">**Land Reform**</span>
-- @anhalt_drop_others: Drop the <span style="color: [+ other_colour +];">**Others**</span>
+- @anhalt_drop_others: Drop the <span style="color: [+ i_colour +];">**Others**</span>
 - @anhalt_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
 - @anhalt_drop_kvp: Drop the <span style="color: [+ kvp_colour +];">**KVP**</span>
 - @anhalt_drop_wp: Drop the <span style="color: #b8996f;">**WP**</span>
@@ -701,9 +703,16 @@ subtitle: [? if lvp_relation >= 75: The <span style="color: [+ lvp_colour +];">*
 on-arrival: anhalt_coalition_r = anhalt_coalition_r + lvp_r_anhalt; anhalt_lvp = 1
 go-to: anhalt_coalition_creator
 
+@anhalt_invite_z
+view-if: z_r_anhalt > 0 and not anhalt_z == 1
+choose-if: z_relation >= 50 and (not anhalt_kpd == 1 or kpd_leader == "Conciliators")
+subtitle: The Catholics want pro religous policies.
+on-arrival: anhalt_coalition_r = anhalt_coalition_r + z_r_anhalt; anhalt_z = 1
+go-to: anhalt_coalition_creator
+
 @anhalt_invite_dvp
 view-if: dvp_r_anhalt > 0 and not anhalt_dvp == 1
-choose-if: dvp_relation >= 35 and anhalt_kpd == 0 and anhalt_sapd == 0
+choose-if: dvp_relation >= 55 and anhalt_kpd == 0 and anhalt_sapd == 0
 subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> demands tax cuts.
 on-arrival: anhalt_coalition_r = anhalt_coalition_r + dvp_r_anhalt; anhalt_dvp = 1
 go-to: anhalt_coalition_creator
@@ -716,16 +725,16 @@ on-arrival: anhalt_coalition_r = anhalt_coalition_r + kvp_r_anhalt; anhalt_kvp =
 go-to: anhalt_coalition_creator
 
 @anhalt_invite_vhg
-view-if: vhg_r_anhalt > 0 and not anhalt_vhg == 1
-choose-if: dvp_relation >= 65 and anhalt_kpd == 0 and anhalt_sapd == 0
-subtitle: The <span style="color: #CEDD8A;">**VHG**</span> demands tax cuts.
-on-arrival: anhalt_coalition_r = anhalt_coalition_r + vhg_r_anhalt; anhalt_vhg = 1
+view-if: vhg_r_anhalt > 0 and not anhalt_lr == 1
+choose-if: not ideology == "left"
+subtitle: The <span style="color: #CEDD8A;">**Georgists**</span> demands steps to a new legal system for land.
+on-arrival: anhalt_coalition_r = anhalt_coalition_r + lr_r_anhalt; anhalt_lr = 1
 go-to: anhalt_coalition_creator
 
 @anhalt_invite_others
 view-if: true_other_r_anhalt > 0 and not anhalt_true_others == 1
 choose-if: ddp_relation >= 70 and dvp_relation >= 20
-subtitle: The <span style="color: [+ i_colour +];">**Others**</span> are quite conservative.
+subtitle: The <span style="color: [+ i_colour +];">**Others**</span> are quite diverse.
 on-arrival: anhalt_coalition_r = anhalt_coalition_r + true_other_r_anhalt; anhalt_true_others = 1
 go-to: anhalt_coalition_creator
 
@@ -780,6 +789,11 @@ view-if: anhalt_lvp == 1
 on-arrival: anhalt_coalition_r = anhalt_coalition_r - lvp_r_anhalt; anhalt_lvp = 0
 go-to: anhalt_coalition_creator
 
+@anhalt_drop_z
+view-if: anhalt_z == 1
+on-arrival: anhalt_coalition_r = anhalt_coalition_r - z_r_anhalt; anhalt_z = 0
+go-to: anhalt_coalition_creator
+
 @anhalt_drop_dvp
 view-if: anhalt_dvp == 1
 on-arrival: anhalt_coalition_r = anhalt_coalition_r - dvp_r_anhalt; anhalt_dvp = 0
@@ -792,7 +806,7 @@ go-to: anhalt_coalition_creator
 
 @anhalt_drop_vhg
 view-if: anhalt_vhg == 1
-on-arrival: anhalt_coalition_r = anhalt_coalition_r - vhg_r_anhalt; anhalt_vhg = 0
+on-arrival: anhalt_coalition_r = anhalt_coalition_r - lr_r_anhalt; anhalt_lr = 0
 go-to: anhalt_coalition_creator
 
 @anhalt_drop_others
