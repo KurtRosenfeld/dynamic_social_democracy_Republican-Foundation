@@ -1,8 +1,8 @@
-title: <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>
+title: Paramiltary affairs
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: reichsbanner_timer <= 0 and not rb_explode
+view-if: reichsbanner_timer <= 0 and not rb_explode and rb_formed
 card-image: img/reichsbanner.jpg
 on-arrival: month_actions += 1; reichsbanner_timer += 6; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25
 max-visits: 6
@@ -10,7 +10,7 @@ max-visits: 6
 
 = <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>
 
-The *<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>* <span style="color: #000000;"><b><i>Schwarz</i></b></span>-<span style="color: #DD0000;"><b><i>Rot</i></b></span>-<span style="color: #FFCC00;"><b><i>Gold</i></b></span> is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the <span style="color: [+ spd_colour +];">**SPD**</span>, [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], and <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>, but by far the largest component is with the <span style="color: [+ spd_colour +];">**SPD**</span>.
+The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the <span style="color: [+ spd_colour +];">**SPD**</span>, [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], and <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>, but by far the largest component is with the <span style="color: [+ spd_colour +];">**SPD**</span>.
 
 [? if workers_spd < 46 or workers_spd < workers_nsdap or workers_spd < workers_kpd : The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> is having a more difficult time recruiting, as the <span style="color: [+ spd_colour +];">**SPD**</span> is no longer the dominant party among the workers. Many of its members have left. ?]
 
