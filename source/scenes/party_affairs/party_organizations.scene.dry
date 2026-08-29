@@ -50,6 +50,7 @@ It is not enough for the <span style="color: [+ spd_colour +];">**SPD**</span> t
 @rb
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
+view-if: rb_exists
 subtitle: -1 resources
 view-if: not rb_explode
 on-arrival: resources -= 1; rb_strength  += 100; rb_militancy += 0.01; reichsbanner_timer = 0; funded_reichsbanner += 1
