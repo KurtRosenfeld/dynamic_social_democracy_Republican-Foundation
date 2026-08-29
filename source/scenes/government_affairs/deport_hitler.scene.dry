@@ -14,7 +14,7 @@ go-to: deport_violence if sa_strength >= 200; deport_success if sa_strength < 20
 
 @deport_violence
 
-When the police approach, he is surrounded by his <span style="color: #7A3C00;">**SA**</span> guards, preventing him from being extricated! We can attempt to force a confrontation, but that may have negative consequences. The Reichsbanner may also attempt to draw off the <span style="color: #7A3C00;">**SA**</span>.
+When the police approach, he is surrounded by his <span style="color: #7A3C00;">**SA**</span> guards, preventing him from being extricated! We can attempt to force a confrontation, but that may have negative consequences. The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> may also attempt to draw off the <span style="color: #7A3C00;">**SA**</span>.
 
 - @force_approach: Force the approach!
 - @no_deport: Cancel the deportation.
@@ -43,7 +43,7 @@ Unfortunately, our forces fail to dislodge the <span style="color: #7A3C00;">**S
 on-arrival: hitler_deported = 1; sa_strength = sa_strength/2; workers_nsdap *= 0.7; new_middle_nsdap *= 0.7; old_middle_nsdap *= 0.7; rural_nsdap *= 0.7; unemployed_nsdap *= 0.7; interior_goal_prussia -= 1 if not sa_banned; sa_banned = 1; coup_progress -= 2; nsdap_leader = "Goebbels"; nsdap_chancellor = "Göring"; pro_republic += 10
 achievement: deport_hitler
 
-The confrontation ends with the police and Reichsbanner prevailing, capturing Hitler so he can be deported! This is a sign of weakness, and his physical distance makes organizing difficult, impeding the <span style="color: #7A3C00;">Nazi</span> effort to win more votes.
+The confrontation ends with the police and <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> prevailing, capturing Hitler so he can be deported! This is a sign of weakness, and his physical distance makes organizing difficult, impeding the <span style="color: #7A3C00;">Nazi</span> effort to win more votes.
 
 In Hitler's absence, Joseph Goebbels has become the temporary leader of the <span style="color: #7A3C00;">Nazi</span> party, with substantial influence from Hermann Göring.
 

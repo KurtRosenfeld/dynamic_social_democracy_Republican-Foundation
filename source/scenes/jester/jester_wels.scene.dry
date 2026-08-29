@@ -11,7 +11,7 @@ new-page: true
 
 Reformist dissent reduction
 
-Reichsbanner(name) member increase
+<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>(name) member increase
 
 IDK WIP
 

@@ -186,7 +186,7 @@ Q.prussia_leader = "Braun"
 
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
-// Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
+// <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>, stahlhelm, SA, rotfrontkämpferbund
 Q.rb_strength = 2000;
 Q.rb_militancy = 0.01;
 Q.women_in_rb = 0;
@@ -1292,7 +1292,7 @@ Q.i_colour = '#808080';
 
 // Political Compass
 // 30 social (x) is communist; 30 republican (y) is anti republican
-// 470 social (x) is Argentina; 470 republican (y) is Reichsbanner
+// 470 social (x) is Argentina; 470 republican (y) is <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>
 Q.soc_spd = 190;
 Q.rep_spd = 430;
 Q.soc_aspd = 230;

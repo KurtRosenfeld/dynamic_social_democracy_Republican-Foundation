@@ -18,7 +18,7 @@ on-display: {!
 
 = The Enabling Act
 
-As the Reichstag gets back to business once again, the bill on debate is not one of no-confidence, but rather an "Enabling Act" proposed by [+ nsdap_chancellor +] and the <span style="color: #7A3C00;">**NSDAP**</span>. With Schleicher's blessing, the cabinet believes that certain elements of the constitution will have to suspended in order to crush the <span style="color: #700000;">**Communists**</span> and Reichsbanner. 
+As the Reichstag gets back to business once again, the bill on debate is not one of no-confidence, but rather an "Enabling Act" proposed by [+ nsdap_chancellor +] and the <span style="color: #7A3C00;">**NSDAP**</span>. With Schleicher's blessing, the cabinet believes that certain elements of the constitution will have to suspended in order to crush the <span style="color: #700000;">**Communists**</span> and <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>. 
 
 However, this is not something the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] can easily swallow...
 

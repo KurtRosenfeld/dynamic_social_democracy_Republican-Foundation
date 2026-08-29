@@ -26,12 +26,12 @@ If a majority isn't received, the alternative would be to pit the <span style="c
 - @nazi
 
 @nazi
-title: Immediately strengthen the Reichsbanner in response.
+title: Immediately strengthen the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> in response.
 subtitle: -1 resource
 unavailable-subtitle: Not enough resources.
 choose-if: resources >= 1
 on-arrival: nazi_urgency += 1; resources -= 1; rb_strength += 200; rb_militancy += 0.05
 
-This development has persuaded the <span style="color: [+ spd_colour +];">**SPD**</span> leadership—and Otto Wels himself—to grant the Reichsbanner independent authority and financial support, which its leaders deem essential.
+This development has persuaded the <span style="color: [+ spd_colour +];">**SPD**</span> leadership—and Otto Wels himself—to grant the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> independent authority and financial support, which its leaders deem essential.
 
 Such backing is especially critical following our loss of Prussia and its well-equipped police force.

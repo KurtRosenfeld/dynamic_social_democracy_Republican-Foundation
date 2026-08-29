@@ -485,7 +485,7 @@ face-image: img/reichsbanner_2.jpg
 max-visits: 1
 go-to: campaigning_thalmann
 
-Closer ties between the Reichsbanner and the <span style="color: #700000;">**RFB**</span> are established, protecting local party officials from political violence.
+Closer ties between the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> and the <span style="color: #700000;">**RFB**</span> are established, protecting local party officials from political violence.
 
 @media_communist
 title: Use our radio stations to broadcast in favor of [+ communist_candidate_1932 +].

@@ -602,7 +602,7 @@ go-to: menu
 
 **Paramilitary groups:**
 
-**Reichsbanner** <span style="color: #000000;"><b>Schwarz</b></span>-<span style="color: #DD0000;"><b>Rot</b></span>-<span style="color: #FFCC00;"><b>Gold</b></span>: The Reichsbanner is an organization affiliated with all of the democratic parties - the <span style="color: [+ spd_colour +];">**SPD**</span>, <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span>, and [? if lvp_formed: the former ?]<span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>, but primarily with the <span style="color: [+ spd_colour +];">**SPD**</span>. Historically, this has been an unarmed organization.
+**<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>** <span style="color: #000000;"><b>Schwarz</b></span>-<span style="color: #DD0000;"><b>Rot</b></span>-<span style="color: #FFCC00;"><b>Gold</b></span>: The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> is an organization affiliated with all of the democratic parties - the <span style="color: [+ spd_colour +];">**SPD**</span>, <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span>, and [? if lvp_formed: the former ?]<span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>, but primarily with the <span style="color: [+ spd_colour +];">**SPD**</span>. Historically, this has been an unarmed organization.
 
 Strength: [+ rb_strength +] thousand
 

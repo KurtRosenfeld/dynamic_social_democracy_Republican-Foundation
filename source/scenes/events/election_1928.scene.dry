@@ -2976,7 +2976,7 @@ subtitle: This is a point of no return.
 unavailable-subtitle: [? if schleicher_spd_r < 5: Our relations with Schleicher are too low. ?][? if schleicher_spd_support < 8: Our party won't support compromising our independence. ?]
 choose-if: schleicher_spd_r >= 5 and schleicher_spd_support >= 8
 
-Exploiting our unusually good relations with the chancellor, we have moved to strike a deal with him to block <span style="color: #7A3C00;">Nazi</span> entry into the cabinet. We have threatened mass action by organized labor and the withdrawal of the Reichsbanner from his plans. Yet Schleicher sees greater advantage in aligning with the <span style="color: #7A3C00;">Nazis</span> regardless, and we are negotiating from a position of weakness.
+Exploiting our unusually good relations with the chancellor, we have moved to strike a deal with him to block <span style="color: #7A3C00;">Nazi</span> entry into the cabinet. We have threatened mass action by organized labor and the withdrawal of the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> from his plans. Yet Schleicher sees greater advantage in aligning with the <span style="color: #7A3C00;">Nazis</span> regardless, and we are negotiating from a position of weakness.
 
 What shall we give up?
 
@@ -3007,13 +3007,13 @@ The working class is not entirely won over to the chancellor yet, and we stand t
 - @schleicher_dsu_nay_2
 
 @schleicher_reichsbanner
-title: The Reichsbanner is integrated into the state.
+title: The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> is integrated into the state.
 subtitle: We will be defenseless.
 on-arrival: schleicher_spd_para = 1; schleicher_spd_concession += 1; schleicher_spd_influence += 2; reichswehr_strength += 75; reichswehr_militancy -= (1 - rb_militancy); rb_militancy = 0.02; rb_strength = 300; sa_strength += 50; rfb_strength += 200; prussian_police_militancy = 1.5; prussian_police_strength += 15; workers_spd -= 4; unemployed_spd -= 6; new_middle_spd -= 2; workers_kpd += 2; unemployed_kpd += 4; neorevisionist_dissent += 60; neorevisionist_strength -= 10; labor_dissent += 30; center_dissent += 20; left_dissent += 50; reformist_dissent += 10; dues -= 1 if dues > 1; pro_republic -= 10
 
-The Reichsbanner has been largely disarmed, with Schleicher promising increased funding for the police to maintain order in the streets.
+The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> has been largely disarmed, with Schleicher promising increased funding for the police to maintain order in the streets.
 
-The <span style="color: [+ spd_colour +];">**SPD**</span> is demoralized, as many Reichsbanner members defect to the <span style="color: [+ kpd_colour +];">**KPD**</span> and their <span style="color: #700000;">**RFB**</span>. We are now compelled to back the Reichswehr's auxiliaries in their campaigns against the <span style="color: #700000;">**Communists**</span>.
+The <span style="color: [+ spd_colour +];">**SPD**</span> is demoralized, as many <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> members defect to the <span style="color: [+ kpd_colour +];">**KPD**</span> and their <span style="color: #700000;">**RFB**</span>. We are now compelled to back the Reichswehr's auxiliaries in their campaigns against the <span style="color: #700000;">**Communists**</span>.
 
 - @schleicher_dsu_nay_2
 
@@ -3530,7 +3530,7 @@ go-to: cvp_demands_menu
 A demand put forth by their <span style="color: #3E88B3;">nationalist</span> Right-<span style="color: #000000;">Catholic</span>, and <span style="color: #C0A054;">industrial</span> wing, meeting this has secured us substantial progress in negotiations.
 
 @cvp_reichsbanner
-title: We must disarm the Reichsbanner.
+title: We must disarm the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
 subtitle: The <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> insist that they pose a threat to the stability of the government—and that the job should be left to the police.
 tags: cvp_demands
 view-if: cvp_reichsbanner_accepted = 0
@@ -3571,7 +3571,7 @@ on-arrival: cvp_chancellor_accepted = 0; cvp_negotiations_points -= 10
 go-to: cvp_demands_menu
 
 @drop_cvp_reichsbanner
-title: Drop our promise to disarm the Reichsbanner.
+title: Drop our promise to disarm the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
 tags: drop_cvp_demands
 view-if: cvp_reichsbanner_accepted = 1
 on-arrival: cvp_reichsbanner_accepted = 0; cvp_negotiations_points -= 10

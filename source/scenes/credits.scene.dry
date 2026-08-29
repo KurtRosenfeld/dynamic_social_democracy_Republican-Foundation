@@ -65,7 +65,7 @@ Bowlby, Chris. “Blutmai 1929: Police, Parties and Proletarians in a Berlin Con
 
 Chanady, Attila. “The Dissolution of the German Democratic Party in 1930.” The American Historical Review 73, no. 5 (1968): 1433–53. https://doi.org/10.2307/1851377.
 
-Chickering, Roger Philip. “The Reichsbanner and the Weimar Republic, 1924-26.” The Journal of Modern History, Dec. 1968. world, www.journals.uchicago.edu, https://doi.org/10.1086/240238.
+Chickering, Roger Philip. “The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> and the Weimar Republic, 1924-26.” The Journal of Modern History, Dec. 1968. world, www.journals.uchicago.edu, https://doi.org/10.1086/240238.
 
 Diehl, Benjamin. “Sergei Chakhotin against the Swastika: Mass Psychology and Scientific Organization in the Iron Front’s Three Arrows Campaign.” Central European History, Mar. 2024, pp. 1–20. Cambridge University Press, https://doi.org/10.1017/S0008938924000025.
 
@@ -247,7 +247,7 @@ iron_front_rally.jpg: Berlin, Aufmarsch Der “Eisernen Front.” 3 Mar. 1932. G
 
 blutmai_2.jpg: Berlin, Blutmai, Straßenbarrikade. 5 May 1929. German Federal Archives, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Bundesarchiv_B_145_Bild-P046278,_Berlin,_Blutmai,_Stra%C3%9Fenbarrikade.jpg. CC-BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/de/deed.en
 
-reichsbanner.jpg: Berlin, Kundgebung Des Reichsbanners Im Lustgarten. 3 Mar. 1928. German Federal Archives, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-05611,_Berlin,_Kundgebung_des_Reichsbanners_im_Lustgarten.jpg. CC-BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/de/deed.en
+reichsbanner.jpg: Berlin, Kundgebung Des <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>s Im Lustgarten. 3 Mar. 1928. German Federal Archives, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-05611,_Berlin,_Kundgebung_des_<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>s_im_Lustgarten.jpg. CC-BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/de/deed.en
 
 stahlhelm.jpg: Berlin, Lustgarten, Stahlhelmaufmarsch. 3 Mar. 1931. German Federal Archives, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-11416,_Berlin,_Lustgarten,_Stahlhelmaufmarsch.jpg. CC-BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/de/deed.en
 
@@ -267,7 +267,7 @@ spartakus.jpg: Leipzig, Verlag J. J. Weber in. Deutsch:  Barrikade Während Des 
 
 workers.jpg: Marcus, Otto. Français :  "Prolétaires de Tous Les Pays, Unissez-Vous! 1901. http://cjouneau1.free.fr/4eme/mvt_ouvriers/socialisme.html, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Proletarier_aller_L%C3%A4nder,_vereinigt_euch_(cropped).jpg. Public Domain
 
-reichsbanner_flag.jpg: Michel, Der. Flagge Des Reichsbanners Schwarz-Rot-Gold, Bund Aktiver Demokraten. 15 June 2013. Own work, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Flagge_Reichsbanner_2013.jpg. CC-BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/deed.en
+reichsbanner_flag.jpg: Michel, Der. Flagge Des <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>s Schwarz-Rot-Gold, Bund Aktiver Demokraten. 15 June 2013. Own work, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Flagge_<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>_2013.jpg. CC-BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/deed.en
 
 bankrun.jpg: Berlin, Bankenkrach, Andrang Bei Der Sparkasse. 13 July 1931. German Federal Archives, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-12023,_Berlin,_Bankenkrach,_Andrang_bei_der_Sparkasse.jpg. CC-BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/de/deed.en
 

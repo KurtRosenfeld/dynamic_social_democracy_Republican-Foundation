@@ -30,7 +30,7 @@ With the <span style="color: #7A3C00;">Nazis</span> in government, they seek to 
 - @works_alt
 
 @interior
-title: The <span style="color: #7A3C00;">Nazis</span> crack down on the Reichsbanner and <span style="color: #700000;">**RFB**</span>!
+title: The <span style="color: #7A3C00;">Nazis</span> crack down on the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> and <span style="color: #700000;">**RFB**</span>!
 subtitle: Ordered by Wilhelm Frick of the Interior Ministry.
 on-arrival: {!
 Q.schleicher_spd_r -= 1;
@@ -73,7 +73,7 @@ face-image: img/portraits/frick.jpg
 
 With the <span style="color: #7A3C00;">Nazis</span> now controlling the Interior Ministry, they hold jurisdiction over the federal police. [? if prussia_leader != "Strasser": Without control of the Prussian Interior Ministry, their reach is limited—though they have already begun turning the federal police into a force loyal to the <span style="color: #7A3C00;">Nazis</span>. ?][? if prussia_leader == "Strasser": The Prussian Interior Ministry, however, is the real prize—its police force now answers entirely to them, with widespread purges of <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> officials taking place. ?]Fortunately, Schleicher has barred <span style="color: #7A3C00;">Nazi</span> Party members from joining the police, maintaining the same restriction already enforced in the Reichswehr.
 
-Lately, we have observed the police exclusively targeting Reichsbanner and <span style="color: #700000;">**RFB**</span> fighters, while openly shielding <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> demonstrations from our protests. They have even persuaded Schleicher to transfer command of the Reichswehr's militia to the Interior Ministry, citing the need for centralized control.
+Lately, we have observed the police exclusively targeting <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> and <span style="color: #700000;">**RFB**</span> fighters, while openly shielding <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> demonstrations from our protests. They have even persuaded Schleicher to transfer command of the Reichswehr's militia to the Interior Ministry, citing the need for centralized control.
 
 @interior_2
 

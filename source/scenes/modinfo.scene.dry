@@ -57,7 +57,7 @@ Woytinsky only came up with the plan in late 1931 after the Banking Crisis, so t
 
 **What is Dynamic Mode?**
 
-Dynamic mode is the intended way to play the mod, combining elements of both easy and historical modes. It reduces RNG with the shuffle leadership and card dismissal features of easy mode while retaining the starting variables of historical mode, such as relations and Reichsbanner strength.
+Dynamic mode is the intended way to play the mod, combining elements of both easy and historical modes. It reduces RNG with the shuffle leadership and card dismissal features of easy mode while retaining the starting variables of historical mode, such as relations and <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> strength.
 
 **How do I elect Stegerwald?**
 

@@ -9,7 +9,7 @@ face-image: img/Reichswehr.jpg
 
 = Prussian Government Dismissed
 
-President [+ president +] has invoked the <i>Reichsexekution</i> to dismiss the Prussian government, citing its "ungovernable" state caused by the repeated failure to form a functioning government amidst escalating clashes between the <span style="color: #7A3C00;">**SA**</span>, Reichsbanner, and other paramilitary groups. 
+President [+ president +] has invoked the <i>Reichsexekution</i> to dismiss the Prussian government, citing its "ungovernable" state caused by the repeated failure to form a functioning government amidst escalating clashes between the <span style="color: #7A3C00;">**SA**</span>, <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>, and other paramilitary groups. 
 
 Although the action has decent justification behind it, rumor has it that President [+ president +] will install a <span style="color: #808080;">reactionary</span> conservative as <i>Reichskommissar</i> for the foreseeable future.
 

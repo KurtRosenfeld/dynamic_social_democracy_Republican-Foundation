@@ -1,4 +1,4 @@
-title: The <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> Disaffiliates with the Reichsbanner
+title: The <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> Disaffiliates with the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>
 subtitle: Expectedly, the <span style="color: #000000;">Christians</span> have left the <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> organization.
 view-if: not rb_exit and cvp_formed
 new-page: true
@@ -17,9 +17,9 @@ on-display: {!
 !}
 max-visits: 1
 
-= The <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> disaffiliates with the Reichsbanner
+= The <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> disaffiliates with the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>
 
-The merger between the <span style="color: #000000;">Catholics</span> and the <span style="color: #3E88B3;">nationalists</span> has compelled them to disaffiliate from the Reichsbanner, for obvious reasons. A small group from the <span style="color: #FF7F00;">Christian Left</span> has remained in the organization, including figures like former Chancellor Joseph Wirth, who has defied orders to resign from the party’s leadership. It is expected that he will leave the party in the near future.
+The merger between the <span style="color: #000000;">Catholics</span> and the <span style="color: #3E88B3;">nationalists</span> has compelled them to disaffiliate from the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>, for obvious reasons. A small group from the <span style="color: #FF7F00;">Christian Left</span> has remained in the organization, including figures like former Chancellor Joseph Wirth, who has defied orders to resign from the party’s leadership. It is expected that he will leave the party in the near future.
 
 In the meantime, the party is debating its stance on ties with the <span style="color: #3E88B3;">**Stahlhelm**</span>, who are now awkwardly sandwiched between Hugenberg’s <span style="color: #003755;">**DNF**</span> and the <span style="color: #000000;">Christians</span>.
 
@@ -28,7 +28,7 @@ In the meantime, the party is debating its stance on ties with the <span style="
 @let_go
 on-arrival: rb_strength *= 0.85; z_relation -= 5; lvp_relation -= 3; lvp_right += 3; pro_republic -= 5; cvp_right += 3; cvp_leave_reichsbanner = 1
 
-Despite the vigorous protest from the <span style="color: #FF7F00;">Christian Left</span> faction, and the refusal of ardent <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span> like Wirth to leave, this has dealt a significant blow to the organization. With the <span style="color: #000000;">Christians</span> gone, the Reichsbanner, in the public's eye, is nothing more than a <span style="color: #c00000;">socialist</span> militia.
+Despite the vigorous protest from the <span style="color: #FF7F00;">Christian Left</span> faction, and the refusal of ardent <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span> like Wirth to leave, this has dealt a significant blow to the organization. With the <span style="color: #000000;">Christians</span> gone, the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>, in the public's eye, is nothing more than a <span style="color: #c00000;">socialist</span> militia.
 
 The <span style="color: #3E88B3;">**Stahlhelm**</span> has reaffirmed political neutrality, but leans closer to the more politically successful <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span>.
 

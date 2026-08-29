@@ -34,7 +34,7 @@ on-display: {!
 !}
 on-arrival: hindenburg_papen_r -= 1
 
-In a cabinet meeting convened to discuss plans for imposing martial law, Schleicher turned the tables against the chancellor by revealing the results of Reichswehr war games simulating conflict with the <span style="color: #7A3C00;">**SA**</span>, <span style="color: #700000;">**RFB**</span>, and the Reichsbanner. The exercises concluded that the army would be unable to cope with a civil war against all three groups.
+In a cabinet meeting convened to discuss plans for imposing martial law, Schleicher turned the tables against the chancellor by revealing the results of Reichswehr war games simulating conflict with the <span style="color: #7A3C00;">**SA**</span>, <span style="color: #700000;">**RFB**</span>, and the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>. The exercises concluded that the army would be unable to cope with a civil war against all three groups.
 
 With his last hope for salvaging power extinguished and all but one minister turning against him, Papen is left with no viable path forward—resign now, or be crushed by the Reichstag later in the week.
 

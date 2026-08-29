@@ -1,4 +1,4 @@
-title: The Reichsbanner Is Banned!
+title: The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> Is Banned!
 subtitle: Our so-called "revolutionary militia" is now officially outlawed nationwide.
 view-if: chancellor == "Schleicher" and (dsu_in_gov or dsu_was_gov) and dsu_policy and ((reichstag_joever_time >= 8 and not schleicher_post_protests) or (reichstag_joever_time >= 18 and schleicher_post_protests)) and rb_force < 20 and (state_force + far_right_force) >= 80 and not schleicher_pause and (prussia_leader == "Strasser" or prussia_leader == "Goerdeler")
 max-visits: 1
@@ -18,9 +18,9 @@ on-display: {!
     contentDiv.appendChild(cardEl);
 !}
 
-= Reichsbanner Banned
+= <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> Banned
 
-Following months of state repression, the hollowed-out remnants of the Reichsbanner are officially banned. With the more moderate fighters having retired or been absorbed into the state’s militias, only die-hard <span style="color: #c00000;">socialists</span> remain in the self-defense organization. This has given Schleicher the pretext to brand the <span style="color: #700000;">**RFB**</span> and the Reichsbanner as jointly conspiring toward revolutionary overthrow—and to extend the ban to both.
+Following months of state repression, the hollowed-out remnants of the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> are officially banned. With the more moderate fighters having retired or been absorbed into the state’s militias, only die-hard <span style="color: #c00000;">socialists</span> remain in the self-defense organization. This has given Schleicher the pretext to brand the <span style="color: #700000;">**RFB**</span> and the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> as jointly conspiring toward revolutionary overthrow—and to extend the ban to both.
 
 If this ban goes through, we will be left defenseless against state oppression. Many in the party urge us to resist, while others claim that the era of paramilitaries is over and argue for preemptive disarmament to placate Schleicher.
 
@@ -30,7 +30,7 @@ If this ban goes through, we will be left defenseless against state oppression. 
 @fight
 title: Fight!
 
-Are you sure? Schleicher is only moving against the Reichsbanner because he feels confident now that it’s weak. He may be eagerly awaiting a pretext to strike at the <span style="color: [+ spd_colour +];">**SPD**</span> itself. The full force of the state is more than we can resist.
+Are you sure? Schleicher is only moving against the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> because he feels confident now that it’s weak. He may be eagerly awaiting a pretext to strike at the <span style="color: [+ spd_colour +];">**SPD**</span> itself. The full force of the state is more than we can resist.
 
 You should reconsider.
 
@@ -38,7 +38,7 @@ You should reconsider.
 - @rb_explode
 
 @rb_explode
-title: Disband the Reichsbanner.
+title: Disband the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
 subtitle: +2 resources
 on-arrival: {!
 Q.rb_explode = 1;

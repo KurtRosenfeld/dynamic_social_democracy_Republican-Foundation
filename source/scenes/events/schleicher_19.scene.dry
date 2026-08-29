@@ -226,7 +226,7 @@ title: Our protests are ineffective.
 view-if: spd_lose
 on-arrival: hammerstein_win = 1
 
-The general strike proves short-lived. An endless supply of unemployed strikebreakers and Schleicher's own sympathizers within the unions render it largely ineffective. Protesters are shot, civilians killed. The Reichsbanner is no match for the Reichswehr.
+The general strike proves short-lived. An endless supply of unemployed strikebreakers and Schleicher's own sympathizers within the unions render it largely ineffective. Protesters are shot, civilians killed. The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> is no match for the Reichswehr.
 
 Seizing the moment, Schleicher expands his crackdown, accusing the <span style="color: [+ spd_colour +];">**SPD**</span> of conspiring with the <span style="color: #700000;">**Communists**</span> to incite revolution.
 

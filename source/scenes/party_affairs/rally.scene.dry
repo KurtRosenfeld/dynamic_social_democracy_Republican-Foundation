@@ -12,8 +12,8 @@ go-to: main_rally; sa_disrupt if sa_force > 25 and not sa_banned and not return_
 The <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> has disrupted our rally! Their street troops are preventing us from meeting.
 
 - @police_protect: Call the police to protect our rally.
-- @rb_protect: Use the Reichsbanner to protect our rally.
-- @both_protect: The police and Reichsbanner should work together to protect our rally.
+- @rb_protect: Use the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> to protect our rally.
+- @both_protect: The police and <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> should work together to protect our rally.
 - @cancel: Cancel the rally.
 
 @police_protect
@@ -38,29 +38,29 @@ go-to: rb_protect_win if rb_success >= 0; rb_protect_lose if rb_success < 0
 @rb_protect_win
 go-to: main_rally
 
-The Reichsbanner has successfully protected our rally against the <span style="color: #7A3C00;">**SA**</span>! Our meeting can go ahead as usual.
+The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> has successfully protected our rally against the <span style="color: #7A3C00;">**SA**</span>! Our meeting can go ahead as usual.
 
 @rb_protect_lose
 on-arrival: workers_nsdap += 3; rb_strength -= 50
 
-Unfortunately, the Reichsbanner was not able to hold back the <span style="color: #7A3C00;">**SA**</span> mob. The <span style="color: #7A3C00;">Nazis</span> have won this show of strength.
+Unfortunately, the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> was not able to hold back the <span style="color: #7A3C00;">**SA**</span> mob. The <span style="color: #7A3C00;">Nazis</span> have won this show of strength.
 
 @both_protect
 view-if: prussia_leader = "Braun" or prussia_leader = "Rosenfeld"
 choose-if: prussian_police_training > 0
-unavailable-subtitle: The loyal sections of the police have never coordinated with the Reichsbanner before.
+unavailable-subtitle: The loyal sections of the police have never coordinated with the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> before.
 on-arrival: rb_success = rb_strength*rb_militancy - sa_strength*sa_militancy + prussian_police_loyalty*prussian_police_militancy*prussian_police_strength*2; strife += 1
 go-to: both_protect_win if rb_success >= 0; both_protect_lose if rb_success < 0
 
 @both_protect_win
 go-to: main_rally
 
-The police and Reichsbanner have successfully protected our rally against the <span style="color: #7A3C00;">**SA**</span>! Our meeting can go ahead as usual.
+The police and <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> have successfully protected our rally against the <span style="color: #7A3C00;">**SA**</span>! Our meeting can go ahead as usual.
 
 @both_protect_lose
 on-arrival: workers_nsdap += 3; rb_strength -= 50
 
-Unfortunately, the police and Reichsbanner were not able to hold back the <span style="color: #7A3C00;">**SA**</span> mob. The <span style="color: #7A3C00;">Nazi</span> have won this show of strength.
+Unfortunately, the police and <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> were not able to hold back the <span style="color: #7A3C00;">**SA**</span> mob. The <span style="color: #7A3C00;">Nazi</span> have won this show of strength.
 
 @cancel
 on-arrival: workers_nsdap += 3;

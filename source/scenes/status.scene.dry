@@ -288,9 +288,9 @@ Q.sa_strength_2 = Q.sa_strength.toFixed(1);
 
 = Paramilitaries
 
-<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: [+ spd_colour +];">**Reichsbanner**</span> Strength: [+ rb_strength_2 +] thousand
+<span class="tooltip-text" title="The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: [+ spd_colour +];">**<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>**</span> Strength: [+ rb_strength_2 +] thousand
 
-<span style="color: [+ spd_colour +];">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
+<span style="color: [+ spd_colour +];">**<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>**</span> Militarization: [+ rb_militancy : militancy +]
 
 [? if year <= 1924: <span class="tooltip-text" title="The Proletarische Hundertschaften are communist militias associated with the KPD." style="color: [+ kpd_colour +];">**PH**</span> Strength: [+ rfb_strength_2 +] thousand ?]
 
@@ -312,7 +312,7 @@ Q.sa_strength_2 = Q.sa_strength.toFixed(1);
 
 [? if year >= 1930 and not streetfighting_joever: <h4>[? if not kpd_truce: <span style="color: #000000;">Rep</span><span style="color: #DD0000;">upli</span><span style="color: #FFCC00;">can</span>?][? if kpd_truce: Anti-<span style="color: #7A3C00;">Fascist</span>?] strength: [+ democracy_force +]%</h4>?]
 
-[? if year >= 1930 and not streetfighting_joever: <span style="color: [+ spd_colour +];">**Reichsbanner**</span>: [+ rb_force +]%?]
+[? if year >= 1930 and not streetfighting_joever: <span style="color: [+ spd_colour +];">**<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>**</span>: [+ rb_force +]%?]
 
 [? if year >= 1930 and not streetfighting_joever and prussia_leader != "Papen" and prussia_leader != "Schleicher" and prussia_leader != "Strasser": <b>Prussian police: [+ prussia_force +]%</b>?]
 

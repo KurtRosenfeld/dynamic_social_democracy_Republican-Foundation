@@ -83,7 +83,7 @@ if ((Q.dynamic_mode || Q.historical_mode || Q.difficulty == 1) && !((Q.year == 1
   if (Q.homosexual_rights >= 2) {
       this.achieve('hirschfeld');
   }
-  // Mädchen und Uniform - a woman's place is in the Reichsbanner.
+  // Mädchen und Uniform - a woman's place is in the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
   // Gleichheit - Support and enact reforms for women's rights.
   if ((Q.womens_work && Q.womens_rights >= 5) || (Q.abortion_rights && Q.womens_rights >= 3)) {
       this.achieve('equality');
@@ -1217,7 +1217,7 @@ All achievements require <span style="color: #0077FF;">dynamic</span>, <span sty
   {!<td style="border: 2px solid #c00000; background-color: rgba(196, 177, 86, 0.1);">!}
     <div style="padding-left: 0.5em;">
       <div style="font-weight: bold;">Mädchen in Uniform</div>
-      <div class="achievement_subtitle"> - a woman's place is in the Reichsbanner.</div>
+      <div class="achievement_subtitle"> - a woman's place is in the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.</div>
     </div>
   {!</td>!}
 {!</tr>!}
@@ -2252,7 +2252,7 @@ All achievements require <span style="color: #0077FF;">dynamic</span>, <span sty
   {!<td style="border: 2px solid #0077FF; background-color: rgba(128, 0, 0, 0.15);">!}
     <div style="padding-left: 0.5em;">
       <div style="font-weight: bold;">Mit allen notwendigen Stimmen</div>
-      <div class="achievement_subtitle"> - govern with an <span style="color: #c00000; font-weight: bold;">SPD</span>-only majority with a completely demilitarized Reichsbanner.
+      <div class="achievement_subtitle"> - govern with an <span style="color: #c00000; font-weight: bold;">SPD</span>-only majority with a completely demilitarized <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
     </div>
   {!</td>!}
 {!</tr>!}
@@ -3054,7 +3054,7 @@ All achievements require <span style="color: #0077FF;">dynamic</span>, <span sty
   {!<td style="border: 2px solid #c00000; background-color: rgba(196, 177, 86, 0.1);">!}
     <div style="padding-left: 0.5em;">
       <div style="font-weight: bold;">Mädchen in Uniform</div>
-      <div class="achievement_subtitle"> - a woman's place is in the Reichsbanner.</div>
+      <div class="achievement_subtitle"> - a woman's place is in the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.</div>
     </div>
   {!</td>!}
 {!</tr>!}
@@ -4089,7 +4089,7 @@ All achievements require <span style="color: #0077FF;">dynamic</span>, <span sty
   {!<td style="border: 2px solid #0077FF; background-color: rgba(128, 0, 0, 0.15);">!}
     <div style="padding-left: 0.5em;">
       <div style="font-weight: bold;">Mit allen notwendigen Stimmen</div>
-      <div class="achievement_subtitle"> - govern with an <span style="color: #c00000; font-weight: bold;">SPD</span>-only majority with a completely demilitarized Reichsbanner.
+      <div class="achievement_subtitle"> - govern with an <span style="color: #c00000; font-weight: bold;">SPD</span>-only majority with a completely demilitarized <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
     </div>
   {!</td>!}
 {!</tr>!}
@@ -4890,7 +4890,7 @@ All achievements require <span style="color: #0077FF;">dynamic</span>, <span sty
   {!<td style="border: 2px solid #c00000; background-color: rgba(196, 177, 86, 0.1);">!}
     <div style="padding-left: 0.5em;">
       <div style="font-weight: bold;">Mädchen in Uniform</div>
-      <div class="achievement_subtitle"> - a woman's place is in the Reichsbanner.</div>
+      <div class="achievement_subtitle"> - a woman's place is in the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.</div>
     </div>
   {!</td>!}
 {!</tr>!}
@@ -5925,7 +5925,7 @@ All achievements require <span style="color: #0077FF;">dynamic</span>, <span sty
   {!<td style="border: 2px solid #0077FF; background-color: rgba(128, 0, 0, 0.15);">!}
     <div style="padding-left: 0.5em;">
       <div style="font-weight: bold;">Mit allen notwendigen Stimmen</div>
-      <div class="achievement_subtitle"> - govern with an <span style="color: #c00000; font-weight: bold;">SPD</span>-only majority with a completely demilitarized Reichsbanner.
+      <div class="achievement_subtitle"> - govern with an <span style="color: #c00000; font-weight: bold;">SPD</span>-only majority with a completely demilitarized <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
     </div>
   {!</td>!}
 {!</tr>!}

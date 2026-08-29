@@ -365,7 +365,7 @@ subtitle: But he may seize on this as a pretext to escalate the crackdown.
 unavailable-subtitle: Schleicher has too much influence over us.
 choose-if: schleicher_spd_influence < 6
 
-We are in no position to fight a civil war against the full force of the state, but we cannot let Schleicher live without consequences. We have an array of options at our disposal, the [? if not unions_independent: ADGB?][? if unions_independent: workers?] can launch a general strike, and use the Reichsbanner as leverage, if we had maintained its strength. Cracking down on the universally hated <span style="color: #700000;">**RFB**</span> is one thing, but a mass <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> movement?
+We are in no position to fight a civil war against the full force of the state, but we cannot let Schleicher live without consequences. We have an array of options at our disposal, the [? if not unions_independent: ADGB?][? if unions_independent: workers?] can launch a general strike, and use the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> as leverage, if we had maintained its strength. Cracking down on the universally hated <span style="color: #700000;">**RFB**</span> is one thing, but a mass <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> movement?
 
 We don't know if Schleicher will budge. Our former coalition partners and members are skeptical to potentially risk the survival of the <span style="color: [+ spd_colour +];">**SPD**</span> to protest in solidarity with the <span style="color: #700000;">**Communists**</span>. 
 
@@ -503,7 +503,7 @@ Q.labor_dissent -= 20;
 !}
 view-if: spd_win
 
-The mass general strike has crippled the German economy, bringing the country to a complete standstill. With the Reichsbanner strong and organized, the government cannot simply crush the hundreds of thousands of <span style="color: #c00000;">socialist</span> protesters flooding the streets.
+The mass general strike has crippled the German economy, bringing the country to a complete standstill. With the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> strong and organized, the government cannot simply crush the hundreds of thousands of <span style="color: #c00000;">socialist</span> protesters flooding the streets.
 
 Meanwhile, in defiance of the indefinite adjournment of the Reichstag, the <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> parties have banded together to unofficially reconvene the chamber at a separate location, openly challenging federal authority.
 
@@ -563,7 +563,7 @@ title: Our protests are ineffective.
 view-if: spd_lose
 on-arrival: hammerstein_win = 1
 
-The general strike proves short-lived. An endless supply of unemployed strikebreakers and Schleicher's own sympathizers within the unions render it largely ineffective. Protesters are shot, civilians killed. The Reichsbanner is no match for the Reichswehr.
+The general strike proves short-lived. An endless supply of unemployed strikebreakers and Schleicher's own sympathizers within the unions render it largely ineffective. Protesters are shot, civilians killed. The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> is no match for the Reichswehr.
 
 Seizing the moment, Schleicher expands his crackdown, accusing the <span style="color: [+ spd_colour +];">**SPD**</span> of conspiring with the <span style="color: #700000;">**Communists**</span> to incite revolution.
 

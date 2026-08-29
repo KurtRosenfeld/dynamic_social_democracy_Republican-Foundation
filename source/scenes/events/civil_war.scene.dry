@@ -94,9 +94,9 @@ Our enemies are the <span style="color: #808080;">nationalist</span> <span style
 
 [? if chancellor_party == "KPD" or president == "Thälmann" : The <span style="color: [+ kpd_colour +];">**KPD**</span>'s paramilitary, the <span style="color: #8B0000;">**RFB**</span>, is leading the battle, and we are their co-combatants. ?]
 
-On our side, we have the Reichsbanner, at [+ rb_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
+On our side, we have the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>, at [+ rb_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
 
-[? if rb_militancy < 0.25 : Unfortunately, the Reichsbanner are poorly trained and equipped, and will not be able to stand against our more militarized opponents. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : We have spent some resources training and equipping the Reichsbanner. Let us hope our people can persist. ?][? if rb_militancy >= 0.5 : We have spent quite a great deal of resources on turning the Reichsbanner into a fighting force. Let us hope that they survive. ?]
+[? if rb_militancy < 0.25 : Unfortunately, the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> are poorly trained and equipped, and will not be able to stand against our more militarized opponents. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : We have spent some resources training and equipping the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>. Let us hope our people can persist. ?][? if rb_militancy >= 0.5 : We have spent quite a great deal of resources on turning the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> into a fighting force. Let us hope that they survive. ?]
 
 What else do we have?
 
@@ -162,7 +162,7 @@ go-to: defeat if total_defeat = 1; long_war if long_war = 1; republic_victory if
 
 = Total Defeat
 
-Our forces are no match for those of the <span style="color: #808080;">reactionaries</span>. Reichsbanner fighters are quickly overpowered by the forces of the <span style="color: #3E88B3;">**Stahlhelm**</span>, <span style="color: #7A3C00;">**SA**</span>, and Reichswehr. Many are killed before the rest surrender. Our remaining leaders flee the country or face execution, as the <span style="color: #808080;">reactionaries</span> take absolute power over Germany.
+Our forces are no match for those of the <span style="color: #808080;">reactionaries</span>. <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> fighters are quickly overpowered by the forces of the <span style="color: #3E88B3;">**Stahlhelm**</span>, <span style="color: #7A3C00;">**SA**</span>, and Reichswehr. Many are killed before the rest surrender. Our remaining leaders flee the country or face execution, as the <span style="color: #808080;">reactionaries</span> take absolute power over Germany.
 
 Our resistance will be recorded in the history books, and in the future, our names will be honored. But for now, all is lost.
 
@@ -208,7 +208,7 @@ unavailable-subtitle: Our relations are not strong enough.
 max-visits: 1
 go-to: long_war_intervention
 
-We send a call for help to the <span style="color: #750e0e;">Soviet Union</span>. The <span style="color: [+ kpd_colour +];">**KPD**</span> receives the bulk of the aid, while the Reichsbanner and our loyal military units are left floundering. If we win, this does not bode well for our future.
+We send a call for help to the <span style="color: #750e0e;">Soviet Union</span>. The <span style="color: [+ kpd_colour +];">**KPD**</span> receives the bulk of the aid, while the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> and our loyal military units are left floundering. If we win, this does not bode well for our future.
 
 @east_aid
 choose-if: east_relation >= 75

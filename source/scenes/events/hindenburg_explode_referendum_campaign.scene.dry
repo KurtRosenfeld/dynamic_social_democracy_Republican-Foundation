@@ -57,10 +57,10 @@ face-image: img/weimar_coalition_3.jpg
 go-to: do_campaign
 max-visits: 1
 
-We manage to funnel state funds into the coffers of the Reichsbanner and various supporting <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> parties and organizations. Still, it pales in comparison to the mountains of silver and gold flowing to Hindenburg from the Reichswehr.
+We manage to funnel state funds into the coffers of the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> and various supporting <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> parties and organizations. Still, it pales in comparison to the mountains of silver and gold flowing to Hindenburg from the Reichswehr.
 
 @reichsbanner
-title: It’s time for the Reichsbanner to get a little more <i>active</i>.
+title: It’s time for the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> to get a little more <i>active</i>.
 subtitle: -2 resource
 view-if: not bourgeois_campaign_hindenburg
 choose-if: resources >= 2 and neorevisionist_strength >= reformist_strength
@@ -70,7 +70,7 @@ face-image: img/reichsbanner_2.jpg
 go-to: do_campaign
 max-visits: 1
 
-The <span style="color: #3E88B3;">**Stahlhelm**</span> and <span style="color: #7A3C00;">**SA**</span> have harassed us long enough—it’s time to strike back. The bourgeois parties are criticizing us turning the Reichsbanner into a <span style="color: #c00000;">socialist</span> militia.
+The <span style="color: #3E88B3;">**Stahlhelm**</span> and <span style="color: #7A3C00;">**SA**</span> have harassed us long enough—it’s time to strike back. The bourgeois parties are criticizing us turning the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> into a <span style="color: #c00000;">socialist</span> militia.
 
 @hope
 view-if: bourgeois_campaign_hindenburg or prussia_campaign_hindenburg or bourgeois_campaign_hindenburg

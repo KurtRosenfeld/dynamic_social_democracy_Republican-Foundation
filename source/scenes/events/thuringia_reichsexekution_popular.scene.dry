@@ -9,7 +9,7 @@ face-image: img/Reichswehr.jpg
 
 = Reichsexekution of Thuringia
 
-President [+ president +] has invoked the <i>Reichsexekution</i> to dismiss the Thuringian government, citing its "inability to maintain order" amidst escalating clashes between the <span style="color: #7A3C00;">**SA**</span>, Reichsbanner, and the increasingly militant <span style="color: #700000;">**RFB**</span>.
+President [+ president +] has invoked the <i>Reichsexekution</i> to dismiss the Thuringian government, citing its "inability to maintain order" amidst escalating clashes between the <span style="color: #7A3C00;">**SA**</span>, <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>, and the increasingly militant <span style="color: #700000;">**RFB**</span>.
 
 However, the true motivation is clear: the left-wing coalition governing Thuringia poses a direct threat to the conservative and nationalist establishment in Germany.
 
@@ -18,7 +18,7 @@ However, the true motivation is clear: the left-wing coalition governing Thuring
 
 @defend
 title: Fight against this overthrow attempt!
-subtitle: Labor will call a general strike. The Reichsbanner and RFB will be mobilized to resist the Reichswehr. 
+subtitle: Labor will call a general strike. The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> and RFB will be mobilized to resist the Reichswehr. 
 
 The Reichswehr and Stalhelm are already preparing to enter Thuringia. Our forces are unprepared for a fight and many Reformists think that the risk of civl war over Thuringia is too high. Do we recognize this?
 
@@ -39,7 +39,7 @@ As the Reichswehr and their reactionary auxiliaries march into Thuringia, armed 
 on-arrival: sa_strength *= 0.8; sh_strength *= 0.8; left_dissent -= 10; reformist_dissent -= 10; reichsexekution_defeated = 1; pro_republic += 5; workers_spd += 4; unemployed_spd += 4; workers_kpd += 3; unemployed_kpd += 3; workers_nsdap -= 6; unemployed_nsdap -= 6; hindenburg_angry -= 35; hindenburg_angry_bruning += 30; coup_victory = 1; kpd_relation += 15; rfb_strength += 100; rfb_militancy += 0.1; rb_strength += 200
 achievement: drei_pfeile
 
-The Reichsbanner and RFB confront the reactionaries on the road to Thuringia and somehow, the enemy has retreated without a fight! They were surprised by our resistance and Hindenburg has decided to not risk a civil war over Thuringia.
+The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> and RFB confront the reactionaries on the road to Thuringia and somehow, the enemy has retreated without a fight! They were surprised by our resistance and Hindenburg has decided to not risk a civil war over Thuringia.
 
 This show of force has reinvigorated support for both the <span style="color: [+ spd_colour +];">**SPD**</span> and <span style="color: [+ kpd_colour +];">**KPD**</span> and has weakened the fascists and reactionaries. Hindenburg's ire has also been turned away from us. For now. 
 

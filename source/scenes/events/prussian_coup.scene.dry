@@ -9,7 +9,7 @@ face-image: img/Reichswehr.jpg
 
 = Coup in Prussia
 
-A crisis! Chancellor [+ chancellor +] has ordered the dismissal of the Prussian government through a procedure known as the <i>Reichsexekution</i>. He claims the state government can no longer maintain order amid escalating street battles between the <span style="color: #7A3C00;">**SA**</span>, Reichsbanner, and other paramilitary groups—despite his own administration having legalized them.
+A crisis! Chancellor [+ chancellor +] has ordered the dismissal of the Prussian government through a procedure known as the <i>Reichsexekution</i>. He claims the state government can no longer maintain order amid escalating street battles between the <span style="color: #7A3C00;">**SA**</span>, <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>, and other paramilitary groups—despite his own administration having legalized them.
 
 [? if not altona_good: The recent clashes in Altona have handed him the pretext to depose the Prussian government?][? if altona_good: The surge in politically motivated violence has given Papen the pretext to depose the Prussian government?]. [? if prussia_leader == "Braun": With Otto Braun still abroad on convalescent leave following the heartbreaking events of the past few months?][? if prussia_leader != "Braun": With Minister-President [+ prussia_leader +] unwilling to risk a civil war to defend his administration?], Papen is moving to seize control. If this coup is successful, Papen will transfer control of Prussia to a <span style="color: #808080;">reactionary</span> <i>Reichskommissar</i>, a calculated move to win over the <span style="color: #7A3C00;">**NSDAP**</span> by granting the <span style="color: #7A3C00;">**SA**</span> free rein in the state. We suspect Defense Minister Schleicher to be the mastermind behind this scheme—another step in advancing his <span class="tooltip-text" title="Coined by conservative elites like Schleicher and Papen, this strategy aims to control the dynamic Nazi movement and integrate it into the state by introducing the party to government. In their eyes, this would moderate the Nazis, transforming them into a constructive component of the state.">taming strategy</span>.
 
@@ -20,13 +20,13 @@ The legality of this action is dubious. Severing has responded that he'll only y
 
 @defend
 title: Fight against the overthrow attempt!
-subtitle: Labor will call a general strike. The Reichsbanner and the loyal elements of the Prussian police will resist the coup.
+subtitle: Labor will call a general strike. The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> and the loyal elements of the Prussian police will resist the coup.
 unavailable-subtitle: We do not have the forces to resist.
 choose-if: democracy_force >= 35
 
-[? if prussia_leader == "Stegerwald" or prussia_leader == "Brüning": A potential roadblock to armed resistance is the unwillingness of Minister President [+ prussia_leader +] to do so, [? if not rb_stay:as a result, they've overruled Severing's call to resist the coup and has made the whole situation a mess. ?][? if rb_stay:however, the <span style="color: #000000;">Center</span>'s decision to remain in a militarized Reichsbanner has rallied the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition parties to the defense of the republic they helped create. ?] ?]
+[? if prussia_leader == "Stegerwald" or prussia_leader == "Brüning": A potential roadblock to armed resistance is the unwillingness of Minister President [+ prussia_leader +] to do so, [? if not rb_stay:as a result, they've overruled Severing's call to resist the coup and has made the whole situation a mess. ?][? if rb_stay:however, the <span style="color: #000000;">Center</span>'s decision to remain in a militarized <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> has rallied the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition parties to the defense of the republic they helped create. ?] ?]
 
-The Reichswehr are already on the streets of Berlin, with a national force of a hundred thousand men on standby, ready to crush any resistance. The <span style="color: #3E88B3;">**Stahlhelm**</span> and the recently legalized <span style="color: #7A3C00;">**SA**</span> are poised to back them. The Reichsbanner simply cannot match the small, but well-trained and heavily armed Reichswehr. If we resist, we face the very real prospect of civil war. We understand the gravity of this, don’t we?
+The Reichswehr are already on the streets of Berlin, with a national force of a hundred thousand men on standby, ready to crush any resistance. The <span style="color: #3E88B3;">**Stahlhelm**</span> and the recently legalized <span style="color: #7A3C00;">**SA**</span> are poised to back them. The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> simply cannot match the small, but well-trained and heavily armed Reichswehr. If we resist, we face the very real prospect of civil war. We understand the gravity of this, don’t we?
 
 - @defend_2: We will fight, even if it leads to a civil war.
 - @defend_3: We will fight, even if it leads to a civil war.
@@ -100,6 +100,6 @@ on-arrival: older_prussia_leader = prussia_leader; prussia_coup_lose = 1; pre_in
 
 On the morning of the coup, the decree is presented to the Prussian government. Despite fierce objections to its constitutionality—and Severing’s vow to yield only to force—a hundred thousand Reichswehr troops occupy key government buildings in Berlin. One by one, Severing and the police chiefs allow themselves to be removed without resistance.
 
-A pall of hopelessness and despair descends over <span style="color: #c00000;">Social Democracy</span>. We have failed. Many in the Reichsbanner simply quit, demoralized by their leaders' lack of a call to action. 
+A pall of hopelessness and despair descends over <span style="color: #c00000;">Social Democracy</span>. We have failed. Many in the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> simply quit, demoralized by their leaders' lack of a call to action. 
 
 President Hindenburg appoints the <span style="color: #808080;">reactionary</span> Franz von Papen as <i>Reichskommissar</i> of Prussia, tasked with dismantling the democratic structures we fought to preserve. This furthers Papen’s ambition for a “New State”—one that unites the chancellorship and the Prussian premiership under a single authoritarian hand.
