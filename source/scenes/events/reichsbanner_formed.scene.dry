@@ -15,7 +15,7 @@ Due to the events of the last years many voices in the <span style="color: [+ sp
 @huuuuuhhuuuuhuhuuh
 choose-if: pro_republic >= 67 and spd_votes >= 33
 unavailable-subtitle: We have to do something.
-on-arrival: spd_chilling_for_real += 1; rb_strength = 1700; 
+on-arrival: spd_chilling_for_real += 1; rb_strength = 1700; rb_exists = 1
 
 
 @form_para
