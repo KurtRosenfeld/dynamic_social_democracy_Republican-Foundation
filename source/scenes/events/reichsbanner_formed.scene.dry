@@ -15,7 +15,7 @@ Due to the events of the last years many voices in the <span style="color: [+ sp
 @huuuuuhhuuuuhuhuuh
 choose-if: pro_republic >= 67 and spd_votes >= 33
 unavailable-subtitle: We have to do something.
-on-arrival: spd_chilling_for_real += 1
+on-arrival: spd_chilling_for_real += 1; rb_strength = 1700; 
 
 
 @form_para
@@ -129,36 +129,46 @@ How should this organisation be called?
 @name_reichsbanner
 view-if: not kpd_reichsbanner == 1
 on-arrival: reichsbanner_name = "Reichsbanner"
+go-to: establish_reichsbanner
 
 @name_republikanischer_bund
 view-if: not kpd_reichsbanner == 1
 on-arrival: reichsbanner_name = "Republikbund"
+go-to: establish_reichsbanner
 
 @name_schutzbund
 view-if: not kpd_reichsbanner == 1
 on-arrival: reichsbanner_name = "Schutzbund"
+go-to: establish_reichsbanner
 
 @name_arbeiterkampfbund
 view-if: ddp_reichsbanner == 0 and z_reichsbanner == 0
 on-arrival: reichsbanner_name = "Arbeiterbund"
+go-to: establish_reichsbanner
 
 @name_proletarischer_schutzbund
 view-if: ddp_reichsbanner == 0 and z_reichsbanner == 0
 on-arrival: reichsbanner_name = "Schutzbund"
+go-to: establish_reichsbanner
 
 @name_roter_frontkamperbund
 view-if: ddp_reichsbanner == 0 and z_reichsbanner == 0
 on-arrival: reichsbanner_name = "RFB"
+go-to: establish_reichsbanner
 
 @name_volksbund
 on-arrival: reichsbanner_name = "Volksbund"
+go-to: establish_reichsbanner
 
 @name_schildbund
 subtitle: This is the most boring optio you can choose
 on-arrival: reichsbanner_name = "Schildbund"
+go-to: establish_reichsbanner
 
 
-
+@establish_reichsbanner
+title: Establish the Paramiltary
+on-arrival: rb_strength += 50 if ddp_reichsbanner; rb_strength += 100 if z_reichsbanner; rb_strength += 50 if uspd_reichsbanner; rb_strength += 100 if kpd_reichsbanner; rb_militancy += 0.2 if kpd_reichsbanner; rb_colour = spd_colour; rb_colour = '#DD62AE' if z_reichsbanner or ddp_reichsbanner; rb_colour = '#DD6833' if uspd_reichsbanner; rb_colour = '#9D1D1D' if kpd_reichsbanner
 
 
 
