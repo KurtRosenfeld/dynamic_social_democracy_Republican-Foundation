@@ -1,6 +1,6 @@
 title: Exodus from the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>
 subtitle: Owing to its militarization, the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] [? if not lvp_formed: and <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed and not lvp_leave_reichsbanner: and <span style="color: #FFCC00;">**LVP**</span>?] are leaving the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
-view-if: rb_militancy >= 0.2 and not rb_exit and not rb_stay and not lvp_leave and not cvp_formed
+view-if: rb_militancy >= 0.2 and not rb_exit and not rb_stay and not lvp_leave and not cvp_formed and (z_reichsbanner or ddp_reichsbanner)
 new-page: true
 tags: event
 on-display: {!  
