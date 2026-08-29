@@ -1,8 +1,8 @@
 title: What about a paramilitary?
-view-if: year == 1922 and month == 4
+view-if: year == 1924 and month == 2
 new-page: true
 max-visits: 1
-face-image: img/Magdeburg_Teilansicht_vom_Domplatz_Magdeburg_anläßlich_der_1_Bundes-Gründungsfeier_22_2_25.jpg‎
+face-image: img/Magdeburg_Teilansicht_vom_Domplatz_Magdeburg_anläßlich_der_1_Bundes-Gründungsfeier_22_2_25.jpg
 tags: event
 
 = What about a paramilitary?
