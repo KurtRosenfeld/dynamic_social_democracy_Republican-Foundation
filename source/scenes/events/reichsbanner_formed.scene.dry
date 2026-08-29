@@ -108,9 +108,8 @@ go-to: z_ddp_reichsbanner
 
 @lefsoc_banner
 subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> is willing
-view-if: uspd_reichsbanner == 0
 choose-if: uspd_relation >= 35
-view-if: uspd_leader == "Crispien" or uspd_leader == "Breitscheid"
+view-if: (uspd_leader == "Crispien" or uspd_leader == "Breitscheid") and uspd_reichsbanner == 0
 unavailable-subtitle: The USPD is not convinced.
 on-arrival: uspd_reichsbanner = 1
 go-to: z_ddp_reichsbanner
