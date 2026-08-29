@@ -259,7 +259,7 @@ if (Q.kpd_relation < 35) Q.kapd_relation -= 5;
 
 if (Q.spd_party_leader_1 == "Wels") { 
 Q.reformist_dissent -= 0.1;
-Q.reichsbanner_strength += 1;
+Q.rb_strength += 1;
 }
 if (Q.spd_party_leader_2 == "Müller" && Q.ddp_relation < 30) Q.ddp_relation += 0.5;
 if (Q.spd_party_leader_2 == "Müller" && Q.dvp_relation < 25) Q.dvp_relation += 0.5;
