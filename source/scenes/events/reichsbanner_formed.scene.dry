@@ -84,6 +84,7 @@ subtitle: The Center Party is willing
 choose-if: z_relation >= 40 or (ddp_reichsbanner and z_relation >= 35)
 unavailable-subtitle: The Center Party is not convinced.
 on-arrival: z_reichsbanner = 1
+go-to: z_ddp_reichsbanner
 
 
 @lib_banner
@@ -91,6 +92,7 @@ subtitle: The <span style="color: [+ ddp_colour +];">**DDP**</span> is willing
 choose-if: ddp_relation >= 30
 unavailable-subtitle: The DDP is not convinced.
 on-arrival: ddp_reichsbanner = 1
+go-to: z_ddp_reichsbanner
 
 
 @rlib_banner
@@ -99,6 +101,7 @@ view-if: rep_dvp >= 180
 choose-if: dvp_relation >= 3000
 unavailable-subtitle: The DVP won't join such an organisation.
 on-arrival: old_middle_dvp -= 100
+go-to: z_ddp_reichsbanner
 
 
 @lefsoc_banner
@@ -107,7 +110,7 @@ choose-if: uspd_relation >= 35
 view-if: uspd_leader == "Crispien" or uspd_leader == "Breitscheid"
 unavailable-subtitle: The USPD is not convinced.
 on-arrival: uspd_reichsbanner = 1
-
+go-to: z_ddp_reichsbanner
 
 
 @reichsbanner_naming
