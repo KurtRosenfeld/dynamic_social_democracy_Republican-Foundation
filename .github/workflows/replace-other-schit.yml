@@ -1,0 +1,88 @@
+name: Replace Colours Second Draft
+
+on:
+  workflow_dispatch:
+
+jobs:
+  replace-text:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Debug - Show what files contain the text
+        run: |
+          echo -e "\n=== FILES CONTAINING DVP ==="
+          grep -l 'style="color: #[CD][0-9A-F][0-9A-F][0-9A-F][0-9A-F];">\*\*DVP\*\*' . -r --include="*.dry" || echo "No DVP found"
+      
+      - name: Replace codes
+        run: |
+          python3 << 'PYTHON_SCRIPT'
+          import os
+          import re
+          
+          # Define all replacements
+          replacements = [
+              # DVP variations
+              ('<span style="color: #C0A054;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
+              ('<span style="color: #D5AC27;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
+
+              # Reichsbanner variations
+              ('Reichsbanner', '<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>'),
+          ]
+          
+          total_replacements = 0
+          files_modified = []
+          
+          # Walk through all .dry files
+          for root, dirs, files in os.walk('.'):
+              if '.git' in root:
+                  continue
+              
+              for filename in files:
+                  if filename.endswith('.dry'):
+                      filepath = os.path.join(root, filename)
+                      try:
+                          with open(filepath, 'r', encoding='utf-8') as f:
+                              content = f.read()
+                          
+                          modified_content = content
+                          file_modified = False
+                          
+                          for old, new in replacements:
+                              if old in modified_content:
+                                  count = modified_content.count(old)
+                                  modified_content = modified_content.replace(old, new)
+                                  file_modified = True
+                                  total_replacements += count
+                          
+                          if file_modified:
+                              with open(filepath, 'w', encoding='utf-8') as f:
+                                  f.write(modified_content)
+                              files_modified.append(filepath)
+                              print(f"✅ MODIFIED: {filepath}")
+                      except Exception as e:
+                          print(f"⚠️  Error with {filepath}: {e}")
+          
+          print(f"\n{'='*50}")
+          print(f"📊 SUMMARY:")
+          print(f"   Files modified: {len(files_modified)}")
+          print(f"   Total replacements: {total_replacements}")
+          print(f"{'='*50}")
+          
+          if len(files_modified) == 0:
+              print("\n⚠️  NO FILES WERE MODIFIED!")
+              print("   This means the exact text wasn't found in any .dry files.")
+              print("   Check the debug output above to see what was found.")
+          PYTHON_SCRIPT
+      
+      - name: Commit changes if any were made
+        if: success()
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Replace hardcoded colors with dynamic variables"
+          file_pattern: "*.dry"
