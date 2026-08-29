@@ -121,7 +121,7 @@ How should this organisation be called?
 - @name_schutzbund: Schutzbund der Demokraten
 - @name_arbeiterkampfbund: <span style="color: #DD0000;">**Arbeiterkampfbund**</span>
 - @name_proletarischer_schutzbund: <span style="color: #DD0000;">**Proletarischer**</span> Schutzbund
-- @name_roter_frontkämperbund: <span style="color: [+ kpd_colour +];">**Roter Frontkämpferbund**</span>
+- @name_roter_frontkamperbund: <span style="color: [+ kpd_colour +];">**Roter Frontkämpferbund**</span>
 - @name_volksbund: <span style="color: #DD1212;">**Volksbund**</span>
 - @name_schildbund: Schildbund
 
@@ -146,7 +146,7 @@ on-arrival: reichsbanner_name = "Arbeiterbund"
 view-if: ddp_reichsbanner == 0 and z_reichsbanner == 0
 on-arrival: reichsbanner_name = "Schutzbund"
 
-@name_roter_frontkämperbund
+@name_roter_frontkamperbund
 view-if: ddp_reichsbanner == 0 and z_reichsbanner == 0
 on-arrival: reichsbanner_name = "RFB"
 
