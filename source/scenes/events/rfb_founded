@@ -1,0 +1,12 @@
+title: RFB founded
+subtitle: The <span style="color: [+ kpd_colour +];">KPD</span> forms a paramiltary
+view-if: year == 1924 and month == 8 and kpd_reichsbanner == 0
+on-arrival: rfb_strength += 100; rfb_militancy += 0.02; rfb_founded
+new-page: true
+max-visits: 1
+tags: event
+
+= RFB founded
+
+
+IDK
