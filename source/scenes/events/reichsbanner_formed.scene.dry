@@ -1,0 +1,166 @@
+title: What about a paramilitary?
+view-if: year == 1922 and month == 4
+new-page: true
+max-visits: 1
+face-image: img/July1922_poland_silesia.jpg
+tags: event
+
+= What about a paramilitary?
+
+Due to the events of the last years many voices in the <span style="color: [+ spd_colour +];">**SPD**</span> have called for a social and democratic armed organization that can protect both workers and the state.
+
+- @form_para: We have no other choice
+- @huuuuuhhuuuuhuhuuh: Why should we do this?
+
+@huuuuuhhuuuuhuhuuh
+choose-if: pro_republic >= 67 and spd_votes >= 33
+unavailable-subtitle: We have to do something.
+on-arrival: spd_chilling_for_real += 1
+
+
+@form_para
+
+While some voices call for an organisation of republican leaning only closely aligned with the republican parties, others prefer an alliance of the worker's parties arming the working class.
+
+Who should we contact?
+
+- @z_ddp_reichsbanner: We need to protect the Republic at all cost. It will be an alliance with the bourgeois parties.
+- @kpd_reichsbanner: We need to protect the workers at all cost. It will be an alliance with worker's parties.
+- @spd_reichsbanner: No other party shares our interests to a sufficient extent. It will be the paramilitary of the <span style="color: [+ spd_colour +];">**SPD**</span>.
+
+
+@kpd_reichsbanner
+choose-if: kpd_relation >= 55
+unavailable-subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> won't cooperate with us.
+on-arrival: uspd_reichsbanner = 1; kpd_reichsbanner = 1
+
+The <span style="color: [+ kpd_colour +];">**KPD**</span> is willing to join talks for a united working class paramiltary. Some minor parties have sent delegations as well.
+
+What should be the precise nature of this new organisation?
+
+- @worker_denfense: We will seek to defend striking workers from the forces of the state and reaction.
+- @marxist_propaganda: We will seek to educate young men in Marxist theory.
+- @kill_these_crakkkkkkerssss: We will seek open combat with the right to weaken them in the long run.
+
+
+@worker_denfense
+on-arrival: reichsbanner_orientation = "Worker Defense"
+go-to: reichsbanner_naming
+
+
+@marxist_propaganda
+on-arrival: reichsbanner_orientation = "Marxist Propaganda"
+choose-if: left_strength > reformist_strength
+go-to: reichsbanner_naming
+
+
+@kill_these_crakkkkkkerssss
+on-arrival: reichsbanner_orientation = "Open Combat"
+choose-if: pro_republic < 35
+go-to: reichsbanner_naming
+
+
+
+@spd_reichsbanner
+subtitle: There are some upsides to this.
+go-to: reichsbanner_naming
+
+
+
+@z_ddp_reichsbanner
+choose-if: ddp_relation >= 30 or z_relation >= 40
+unavailable-subtitle: The bourgeois parties don't trust us.
+
+We will form a republican paramilitary! Now we have to see who will join us...
+
+- @center_banner: Ask the <span style="color: [+ z_colour +];">**Zentrum**</span>
+- @lib_banner: Ask the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @rlib_banner: Ask the <span style="color: [+ dvp_colour +];">**DVP**</span>
+- @lefsoc_banner: Ask the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @reichsbanner_naming: That should be all support we can gather.
+
+@center_banner
+subtitle: The Center Party is willing
+choose-if: z_relation >= 40 or (ddp_reichsbanner and z_relation >= 35)
+unavailable-subtitle: The Center Party is not convinced.
+on-arrival: z_reichsbanner = 1
+
+
+@lib_banner
+subtitle: The <span style="color: [+ ddp_colour +];">**DDP**</span> is willing
+choose-if: ddp_relation >= 30
+unavailable-subtitle: The DDP is not convinced.
+on-arrival: ddp_reichsbanner = 1
+
+
+@rlib_banner
+subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> is willing
+view-if: rep_dvp >= 180
+choose-if: dvp_relation >= 3000
+unavailable-subtitle: The DVP won't join such an organisation.
+on-arrival: old_middle_dvp -= 100
+
+
+@lefsoc_banner
+subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> is willing
+choose-if: uspd_relation >= 35
+view-if: uspd_leader == "Crispien" or uspd_leader == "Breitscheid"
+unavailable-subtitle: The USPD is not convinced.
+on-arrival: uspd_reichsbanner = 1
+
+
+
+@reichsbanner_naming
+
+How should this organisation be called?
+
+
+
+- @name_reichsbanner: Reichsbanner <span style="color: #000000;">**Schwarz**</span>-<span style="color: #DD0000;">**Rot**</span>-<span style="color: #FFCC00;">**Gold**</span>
+- @name_republikanischer_bund: <span style="color: #000000;">**Repub**</span><span style="color: #DD0000;">**likan**</span><span style="color: #FFCC00;">**ischer**</span> Bund
+- @name_schutzbund: Schutzbund der Demokraten
+- @name_arbeiterkampfbund: <span style="color: #DD0000;">**Arbeiterkampfbund**</span>
+- @name_proletarischer_schutzbund: <span style="color: #DD0000;">**Proletarischer**</span> Schutzbund
+- @name_roter_frontkämperbund: <span style="color: [+ kpd_colour +];">**Roter Frontkämpferbund**</span>
+- @name_volksbund: <span style="color: #DD1212;">**Volksbund**</span>
+- @name_schildbund: Schildbund
+
+
+@name_reichsbanner
+view-if: not kpd_reichsbanner == 1
+on-arrival: reichsbanner_name = "Reichsbanner"
+
+@name_republikanischer_bund
+view-if: not kpd_reichsbanner == 1
+on-arrival: reichsbanner_name = "Republikbund"
+
+@name_schutzbund
+view-if: not kpd_reichsbanner == 1
+on-arrival: reichsbanner_name = "Schutzbund"
+
+@name_arbeiterkampfbund
+view-if: ddp_reichsbanner == 0 and z_reichsbanner == 0
+on-arrival: reichsbanner_name = "Arbeiterbund"
+
+@name_proletarischer_schutzbund
+view-if: ddp_reichsbanner == 0 and z_reichsbanner == 0
+on-arrival: reichsbanner_name = "Schutzbund"
+
+@name_roter_frontkämperbund
+view-if: ddp_reichsbanner == 0 and z_reichsbanner == 0
+on-arrival: reichsbanner_name = "RFB"
+
+@name_volksbund
+on-arrival: reichsbanner_name = "Volksbund"
+
+@name_schildbund
+subtitle: This is the most boring optio you can choose
+on-arrival: reichsbanner_name = "Schildbund"
+
+
+
+
+
+
+
+
