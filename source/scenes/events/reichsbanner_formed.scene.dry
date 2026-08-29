@@ -173,7 +173,7 @@ go-to: establish_reichsbanner
 
 @establish_reichsbanner
 title: Establish the Paramiltary
-on-arrival: rb_strength += 50 if ddp_reichsbanner; rb_strength += 100 if z_reichsbanner; rb_strength += 50 if uspd_reichsbanner; rb_strength += 100 if kpd_reichsbanner; rb_militancy += 0.2 if kpd_reichsbanner; rb_colour = spd_colour; rb_colour = '#DD62AE' if z_reichsbanner or ddp_reichsbanner; rb_colour = '#DD6833' if uspd_reichsbanner; rb_colour = '#9D1D1D' if kpd_reichsbanner
+on-arrival: rb_strength += 20 if ddp_reichsbanner; rb_strength += 80 if z_reichsbanner; rb_strength += 30 if uspd_reichsbanner; rb_strength += 20 if kpd_reichsbanner; rb_strength + rfb_strength if kpd_reichsbanner; rb_militancy += 0.2 if kpd_reichsbanner; rb_colour = spd_colour; rb_colour = '#DD62AE' if z_reichsbanner or ddp_reichsbanner; rb_colour = '#DD6833' if uspd_reichsbanner; rb_colour = '#9D1D1D' if kpd_reichsbanner; rfb_strength = 0 if kpd_reichsbanner
 
 
 
