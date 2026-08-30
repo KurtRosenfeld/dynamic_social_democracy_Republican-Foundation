@@ -776,8 +776,11 @@ if (window && d3) {
     parliament.exit.toCenter(false).bigToSmall(true);
     d3.select("#kiel_parteitag").datum(data).call(parliament);
 }
+
+{ window.ParliamentData.renderParliament('parteitag', document.getElementById('parteitag_landtag')); }
 !}
-on-display: { window.ParliamentData.renderParliament('parteitag', document.getElementById('parteitag_landtag')); }
+
+{ window.ParliamentData.renderParliament('parteitag', document.getElementById('parteitag_landtag')); }
 
 {!<svg id="kiel_parteitag" style="width: 500px; height: 250px;"> </svg>!}
 
