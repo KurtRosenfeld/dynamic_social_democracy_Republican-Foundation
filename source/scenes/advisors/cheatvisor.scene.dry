@@ -706,72 +706,72 @@ var data = [];
 
 if (Q.left_pas_r > 0) {
     data.push({
-        "id": "uspd",
-        "legend": "USPD",
-        "name": "USPD",
+        "id": "left_pas",
+        "legend": "Left",
+        "name": "Left",
         "seats": Math.round(Q.left_pas_r * 4.15)
     });
 }
 
 if (Q.center_pas_r > 0) {
     data.push({
-        "id": "spd",
-        "legend": Q.ddp_name || "SPD",
-        "name": Q.ddp_name || "SPD",
+        "id": "center_pas",
+        "legend": "Center",
+        "name": "Center",
         "seats": Math.round(Q.center_pas_r * 4.15)
     });
 }
 
 if (Q.non_inscrit_pas_r > 0) {
     data.push({
-        "id": "other",
-        "legend": "LVP",
-        "name": "LVP",
+        "id": "non_inscrit_pas",
+        "legend": "NI",
+        "name": "NI",
         "seats": Math.round(Q.non_inscrit_pas_r * 4.15)
     });
 }
 
 if (Q.labor_pas_r > 0) {
     data.push({
-        "id": "lvp",
-        "legend": "Other",
-        "name": "Others",
+        "id": "labor_paS",
+        "legend": "Labor",
+        "name": "Labor",
         "seats": Math.round(Q.labor_pas_r * 4.15)
     });
 }
 
 if (Q.reformist_pas_r > 0) {
     data.push({
-        "id": "wp",
-        "legend": "WP",
-        "name": "WP",
+        "id": "reformist_pas",
+        "legend": "Reformist",
+        "name": "Reformist",
         "seats": Math.round(Q.reformist_pas_r * 4.15)
     });
 }
 
 if (Q.other_pas_r > 0) {
     data.push({
-        "id": "dvp",
-        "legend": "DVP",
-        "name": "DVP",
+        "id": "other_pas",
+        "legend": "Other",
+        "name": "Other",
         "seats": Math.round(Q.other_pas_r * 4.15)
     });
 }
 
 if (Q.neorev_pas_r > 0 && Q.neorevisionism !== 0) {
     data.push({
-        "id": "sapd",
-        "legend": "SAPD",
-        "name": "SAPD",
+        "id": "neorev_pas",
+        "legend": "Neorevison",
+        "name": "Neo",
         "seats": Math.round(Q.neorev_pas_r * 4.15)
     });
 }
 
 if (Q.socpat_pas_r > 0 && Q.social_patriot !== 0) {
     data.push({
-        "id": "bvp",
-        "legend": "BVP",
-        "name": "BVP",
+        "id": "socpat_pas",
+        "legend": "Patriot",
+        "name": "Patriot",
         "seats": Math.round(Q.socpat_pas_r * 4.15)
     });
 }
