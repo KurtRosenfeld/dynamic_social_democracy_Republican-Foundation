@@ -64,6 +64,7 @@ go-to: reichsbanner_naming
 
 @spd_reichsbanner
 subtitle: There are some upsides to this.
+on-arrival: reichsbanner_orientation = "SPD"
 go-to: reichsbanner_naming
 
 
@@ -174,7 +175,9 @@ go-to: establish_reichsbanner
 
 @establish_reichsbanner
 title: Establish the Paramiltary
-on-arrival: rb_strength += 20 if ddp_reichsbanner; rb_strength += 80 if z_reichsbanner; rb_strength += 30 if uspd_reichsbanner; rb_strength += 20 if kpd_reichsbanner; rb_strength += rfb_strength if kpd_reichsbanner; rb_militancy += 0.2 if kpd_reichsbanner; rb_colour = spd_colour; rb_colour = '#DD62AE' if z_reichsbanner or ddp_reichsbanner; rb_colour = '#DD6833' if uspd_reichsbanner; rb_colour = '#9D1D1D' if kpd_reichsbanner; rfb_strength = 0 if kpd_reichsbanner
+on-arrival: rb_strength += 20 if ddp_reichsbanner; rb_strength += 80 if z_reichsbanner; rb_strength += 30 if uspd_reichsbanner; rb_strength += 20 if kpd_reichsbanner; rb_strength += rfb_strength if kpd_reichsbanner; rb_militancy += 0.2 if kpd_reichsbanner; rb_colour = spd_colour; rb_colour = '#DD62AE' if z_reichsbanner or ddp_reichsbanner; rb_colour = '#DD6833' if uspd_reichsbanner; rb_colour = '#9D1D1D' if kpd_reichsbanner; rfb_strength = 0 if kpd_reichsbanner; rb_funding_cealing = 4 if reichsbanner_orientation = "SPD"; rb_funding_cealing = 2 if not reichsbanner_orientation = "SPD"; rb_funding_cealing -= 1 if ideology == "reformist"
+
+
 
 
 
