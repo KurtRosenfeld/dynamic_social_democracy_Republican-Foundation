@@ -1499,53 +1499,6 @@ anhalt: {
 },
 
 
-
-      parteitag: {
-        totalSeatsKey: 'parteitag_seats',
-        conditionalParties: [
-          {
-            id: 'kpd', legend: 'KPD', name: 'KPD', 
-            qualityKey: 'left_pas_r',
-            condition: function(Q) { return Q.left_pas_r; }
-          },
-          {
-            id: 'sapd', legend: 'SAPD', name: 'SAPD', 
-            qualityKey: 'center_pas_r',
-            condition: function(Q) { return Q.center_pas_r; }
-          },
-          {
-            id: 'uspd', legend: 'USPD', name: 'USPD',
-            qualityKey: 'non_incrit_pas_r',
-            condition: function(Q) { return Q.non_inscrit_pas_r; }
-          },
-          {
-            id: 'spd', legend: 'SPD', name: 'SPD', 
-            qualityKey: 'labor_pas_r',
-            condition: function(Q) { return Q.labor_pas_r; }
-          },
-          {
-            id: 'kag', legend: 'CSP', name: 'CSP',
-            qualityKey: 'reformist_pas_r',
-            condition: function(Q) { return Q.reformist_pas_r; }
-          },
-          {
-            id: 'lvp', legend: 'LVP', name: 'LVP',
-            qualityKey: 'neorev_pas_r',
-            condition: function(Q) { return Q.neorev_pas_r; }
-          },
-          {
-            id: 'z', legend: 'Z', name: 'Z',
-            qualityKey: 'other_pas_r',
-            condition: function(Q) { return Q.other_pas_r; }
-          },
-          {
-            id: 'bvp', legend: 'BVP', name: 'BVP',
-            qualityKey: 'socpat_pas_r',
-            condition: function(Q) { return Q.socpat_r; }
-          }
-        ]
-      },
-      
       
       waldeck: {
         totalSeatsKey: 'waldeck_seats',
