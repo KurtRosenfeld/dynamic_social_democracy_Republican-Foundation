@@ -762,7 +762,7 @@ if (window && d3) {
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#hamburg_landtag").datum(data).call(parliament);
+    d3.select("#kiel_parteitag").datum(data).call(parliament);
 }
 !}
 
