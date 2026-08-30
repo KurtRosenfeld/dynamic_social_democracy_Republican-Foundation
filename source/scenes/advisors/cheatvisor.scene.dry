@@ -20,6 +20,7 @@ The Cheatvisor is just a tool to make testing the mod easier, nothing special
 - @new_president
 - @go_to_thuringia
 - @assemble_reichsrat
+- @party_assembly
 - @give_absurd_other
 - @media_shit
 - @hide
@@ -589,3 +590,196 @@ on-arrival: volkisch_media += 3
 @increase_liberal
 title: Increase Liberal
 on-arrival: liberal_media += 3
+
+
+
+@party_assembly
+title: Show hypothetical Parteitag
+on-arrival: {!
+
+
+Q.left_pas = 0;
+Q.center_pas = 0;
+Q.labor_pas = 0;
+Q.reformist_pas = 0;
+Q.neorev_pas = 0;
+Q.socpat_pas = 0;
+Q.other_pas = 0;
+Q.non_inscrit_pas = 0;
+
+
+Q.left_pas = (Q.left_strength + Q.left_spd_r)*((100-Q.left_dissent)/100);
+Q.center_pas = (Q.center_strength + Q.center_spd_r)*((100-Q.center_dissent)/100);
+Q.labor_pas = (Q.labor_strength + Q.labor_spd_r)*((100-Q.labor_dissent)/100);
+Q.reformist_pas = (Q.reformist_strength + Q.reformist_spd_r)*((100-Q.reformist_dissent)/100);
+Q.neorev_pas = (Q.neorev_strength + Q.neorev_spd_r)*((100-Q.neorev_dissent)/100);
+Q.socpat_pas = (Q.socpat_strength + Q.scopat_spd_r)*((100-Q.socpat_dissent)/100);
+
+Q.other_pas = 2;
+if (Q.neorevisionism == 0) Q.other_pas += Q.neorev_pas;
+if (Q.social_patriot == 0) Q.other_pas += Q.socpat_pas;
+
+Q.non_inscrit_pas = 4;
+if (Q.left_pas < 5) Q.non_inscrit_pas += 1;
+if (Q.labor_pas < 6) Q.non_inscrit_pas += 3;
+if (Q.center_pas < 10) Q.non_inscrit_pas += 1.5;
+if (Q.reformist_pas < 8) Q.non_inscrit_pas += 1;
+if (Q.left_split) Q.non_inscrit_pas += 0.5;
+if (Q.centrists_resign) Q.non_inscrit_pas += 0.5;
+if (Q.unions_independent ) Q.non_inscrit_pas += 0.5;
+if (Q.reformists_resigned ) Q.non_inscrit_pas += 0.5;
+
+
+function allocateSeats(percentages, totalSeats = 415) {
+    const exactSeats = {};
+    const flooredSeats = {};
+    const remainders = [];
+
+    let totalFlooredSeats = 0;
+    for (const party in percentages) {
+        const exact = (percentages[party] * totalSeats) / 100;
+        const floored = Math.floor(exact);
+        const remainder = exact - floored;
+
+        exactSeats[party] = exact;
+        flooredSeats[party] = floored;
+        totalFlooredSeats += floored;
+
+        remainders.push({ party, remainder });
+    }
+
+    const seatsToDistribute = totalSeats - totalFlooredSeats;
+    remainders.sort((a, b) => b.remainder - a.remainder);
+
+    for (let i = 0; i < seatsToDistribute; i++) {
+        flooredSeats[remainders[i].party]++;
+    }
+
+    return flooredSeats;
+}
+
+const inputPercentages = {
+    left_pas: Q.left_pas,
+    center_pas: Q.center_pas,
+    labor_pas: Q.labor_pas,
+    reformist_pas: Q.reformist_pas,
+    neorev_pas: Q.neorev_pas,
+    socpat: Q.socpat_pas,
+    other_pas: Q.other_pas,
+    non_inscrit_pas: Q.non_inscrit_pas
+};
+
+const allocatedSeats = allocateSeats(inputPercentages);
+
+for (const party in allocatedSeats) {
+    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 415).toFixed(1));
+}
+
+!}
+on-display: {!
+data = [{
+    "id": "kpd",
+    "legend": "KPD",
+    "name": "KPD",
+    "seats": Math.round(Q.kpd_r_hamburg * 0),
+}];
+
+
+if (Q.left_pas) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.left_pas * 4.15),
+    });
+}
+
+
+if (Q.center_pas) {
+    data.push({
+        "id": "spd",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.center_pas * 4.15),
+    });
+}
+
+if (Q.non_inscrit_pas) {
+    data.push({
+        "id": "other",
+        "legend": "LVP",
+        "name": "LVP",
+        "seats": Math.round(Q.non_inscrit_pas * 4.15),
+    });
+}
+
+
+if (Q.labor_pas) {
+    data.push({
+        "id": "lvp",
+        "legend": "Other",
+        "name": "Others",
+        "seats": Math.round(Q.labor_pas * 4.15),
+    });
+}
+
+if (Q.reformist_pas) {
+    data.push({
+        "id": "wp",
+        "legend": "WP",
+        "name": "WP",
+        "seats": Math.round(Q.reformist_pas * 4.15),
+    });
+}
+
+if (Q.other_pas) {
+    data.push({
+        "id": "dvp",
+        "legend": "DVP",
+        "name": "DVP",
+        "seats": Math.round(Q.other_pas *4.15),
+    });
+}
+
+
+data = data.concat([{
+    "id": "nsdap",
+    "legend": "NSDAP",
+    "name": "NSDAP",
+    "seats": Math.round(Q.nsdap_r_hamburg * 0),
+}]);
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("kiel_parteitag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#hamburg_landtag").datum(data).call(parliament);
+}
+!}
+
+{!<svg id="kiel_parteitag" style="width: 500px; height: 250px;"> </svg>!}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
