@@ -2,7 +2,7 @@ title: Rudlof Breitscheid
 is-pinned-card: true
 tags: jester
 card-image: img/portraits/BreitscheidRudolf.jpg
-view-if: spd_party_leader_2 == "Breitscheid"
+view-if: spd_party_leader_1 == "Breitscheid"
 new-page: true
 
 = Rudlof Breitscheid
