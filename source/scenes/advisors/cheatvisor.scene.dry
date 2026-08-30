@@ -733,7 +733,7 @@ if (Q.non_inscrit_pas_r > 0) {
 
 if (Q.labor_pas_r > 0) {
     data.push({
-        "id": "labor_paS",
+        "id": "labor_pas",
         "legend": "Labor",
         "name": "Labor",
         "seats": Math.round(Q.labor_pas_r * 4.15)
