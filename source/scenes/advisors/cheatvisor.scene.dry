@@ -664,7 +664,7 @@ const inputPercentages = {
     labor_pas: Q.labor_pas,
     reformist_pas: Q.reformist_pas,
     neorev_pas: Q.neorev_pas,
-    socpat: Q.socpat_pas,
+    socpat_pas: Q.socpat_pas,
     other_pas: Q.other_pas,
     non_inscrit_pas: Q.non_inscrit_pas
 };
