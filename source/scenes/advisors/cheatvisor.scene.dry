@@ -597,6 +597,8 @@ on-arrival: liberal_media += 3
 title: Show hypothetical Parteitag
 on-arrival: {!
 
+Q.parteitag_seats = 415; 
+
 Q.neorev_spd_r = 0.5; Q.socpat_strength = 1; Q.socpat_spd_r = 0.5;
 
 Q.left_pas = 0;
@@ -778,8 +780,9 @@ if (window && d3) {
 
 {!<svg id="kiel_parteitag" style="width: 500px; height: 250px;"> </svg>!}
 
+- - - - Line - - - - 
 
-
+<div class="parliament-chart" data-state="parteitag" style="width: 500px; height: 250px;"></div>
 
 
 
