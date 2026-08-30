@@ -689,104 +689,126 @@ for (const party in allocatedSeats) {
 
 !}
 on-display: {!
-data = [{
-    "id": "kpd",
-    "legend": "KPD",
-    "name": "KPD",
-    "seats": Math.round(Q.kpd_r_hamburg * 0),
-}];
+// Calculate seats using your allocation function
+const inputPercentages = {
+    left_pas_r: Q.left_pas_r,
+    center_pas_r: Q.center_pas_r,
+    labor_pas_r: Q.labor_pas_r,
+    reformist_pas_r: Q.reformist_pas_r,
+    neorev_pas_r: Q.neorev_pas_r,
+    socpat_pas_r: Q.socpat_pas_r,
+    other_pas_r: Q.other_pas_r,
+    non_inscrit_pas_r: Q.non_inscrit_pas_r
+};
 
+// Build the data array directly
+var data = [];
 
-if (Q.left_pas) {
+if (Q.left_pas_r > 0) {
     data.push({
         "id": "uspd",
         "legend": "USPD",
         "name": "USPD",
-        "seats": Math.round(Q.left_pas_r * 4.15),
+        "seats": Math.round(Q.left_pas_r * 4.15)
     });
 }
 
-
-if (Q.center_pas) {
+if (Q.center_pas_r > 0) {
     data.push({
         "id": "spd",
-        "legend": Q.ddp_name,
-        "name": Q.ddp_name,
-        "seats": Math.round(Q.center_pas_r * 4.15),
+        "legend": Q.ddp_name || "SPD",
+        "name": Q.ddp_name || "SPD",
+        "seats": Math.round(Q.center_pas_r * 4.15)
     });
 }
 
-if (Q.non_inscrit_pas) {
+if (Q.non_inscrit_pas_r > 0) {
     data.push({
         "id": "other",
         "legend": "LVP",
         "name": "LVP",
-        "seats": Math.round(Q.non_inscrit_pas_r * 4.15),
+        "seats": Math.round(Q.non_inscrit_pas_r * 4.15)
     });
 }
 
-
-if (Q.labor_pas) {
+if (Q.labor_pas_r > 0) {
     data.push({
         "id": "lvp",
         "legend": "Other",
         "name": "Others",
-        "seats": Math.round(Q.labor_pas_r * 4.15),
+        "seats": Math.round(Q.labor_pas_r * 4.15)
     });
 }
 
-if (Q.reformist_pas) {
+if (Q.reformist_pas_r > 0) {
     data.push({
         "id": "wp",
         "legend": "WP",
         "name": "WP",
-        "seats": Math.round(Q.reformist_pas_r * 4.15),
+        "seats": Math.round(Q.reformist_pas_r * 4.15)
     });
 }
 
-if (Q.other_pas) {
+if (Q.other_pas_r > 0) {
     data.push({
         "id": "dvp",
         "legend": "DVP",
         "name": "DVP",
-        "seats": Math.round(Q.other_pas_r *4.15),
+        "seats": Math.round(Q.other_pas_r * 4.15)
     });
 }
 
-
-data = data.concat([{
-    "id": "nsdap",
-    "legend": "NSDAP",
-    "name": "NSDAP",
-    "seats": Math.round(Q.nsdap_r_hamburg * 0),
-}]);
-
-if (window && d3) {
-    var width = 500;
-    var height = 500;
-    var screenWidth = document.getElementById('content').offsetWidth;
-    if (screenWidth < width - 50) {
-        width = screenWidth - 50;
-        height = width;
-        document.getElementById("kiel_parteitag").style.height = screenWidth/2 + "px";
-    }
-    var parliament = d3.parliament();
-    parliament.width(width).height(height).innerRadiusCoef(0.4);
-    parliament.enter.fromCenter(true).smallToBig(true);
-    parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#kiel_parteitag").datum(data).call(parliament);
+if (Q.neorev_pas_r > 0 && Q.neorevisionism !== 0) {
+    data.push({
+        "id": "sapd",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Math.round(Q.neorev_pas_r * 4.15)
+    });
 }
 
-{ window.ParliamentData.renderParliament('parteitag', document.getElementById('parteitag_landtag')); }
+if (Q.socpat_pas_r > 0 && Q.social_patriot !== 0) {
+    data.push({
+        "id": "bvp",
+        "legend": "BVP",
+        "name": "BVP",
+        "seats": Math.round(Q.socpat_pas_r * 4.15)
+    });
+}
+
+// Render the parliament chart
+if (window && d3 && data.length > 0) {
+    // Clear previous chart
+    var container = document.getElementById('kiel_parteitag');
+    if (container) {
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+        
+        var width = 500;
+        var height = 250;
+        var screenWidth = document.getElementById('content').offsetWidth;
+        if (screenWidth < width - 50) {
+            width = screenWidth - 50;
+            height = width / 2;
+        }
+        
+        var svg = d3.select(container)
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height);
+        
+        var parliament = d3.parliament();
+        parliament.width(width).height(height).innerRadiusCoef(0.4);
+        parliament.enter.fromCenter(true).smallToBig(true);
+        parliament.exit.toCenter(false).bigToSmall(true);
+        
+        svg.datum(data).call(parliament);
+    }
+}
 !}
 
-{ window.ParliamentData.renderParliament('parteitag', document.getElementById('parteitag_landtag')); }
-
-{!<svg id="kiel_parteitag" style="width: 500px; height: 250px;"> </svg>!}
-
-<div class="parliament-chart" data-state="parteitag" style="width: 500px; height: 250px;"></div>
-
-
+<svg id="kiel_parteitag" style="width: 500px; height: 250px;"> </svg>
 
 
 
