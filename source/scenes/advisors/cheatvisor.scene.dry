@@ -777,11 +777,11 @@ if (window && d3) {
     d3.select("#kiel_parteitag").datum(data).call(parliament);
 }
 !}
+on-display: { window.ParliamentData.renderParliament('parteitag', document.getElementById('parteitag_landtag')); }
 
 {!<svg id="kiel_parteitag" style="width: 500px; height: 250px;"> </svg>!}
 
 <div class="parliament-chart" data-state="parteitag" style="width: 500px; height: 250px;"></div>
-
 
 
 
