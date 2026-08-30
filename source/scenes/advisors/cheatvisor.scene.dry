@@ -614,7 +614,7 @@ Q.center_pas = (Q.center_strength + Q.center_spd_r)*((100-Q.center_dissent)/100)
 Q.labor_pas = (Q.labor_strength + Q.labor_spd_r)*((100-Q.labor_dissent)/100);
 Q.reformist_pas = (Q.reformist_strength + Q.reformist_spd_r)*((100-Q.reformist_dissent)/100);
 Q.neorev_pas = (Q.neorev_strength + Q.neorev_spd_r)*((100-Q.neorev_dissent)/100);
-Q.socpat_pas = (Q.socpat_strength + Q.scopat_spd_r)*((100-Q.socpat_dissent)/100);
+Q.socpat_pas = (Q.socpat_strength + Q.socpat_spd_r)*((100-Q.socpat_dissent)/100);
 
 Q.other_pas = 2;
 if (Q.neorevisionism == 0) Q.other_pas += Q.neorev_pas;
@@ -635,7 +635,7 @@ Q.center_pas_r = Q.center_pas;
 Q.labor_pas_r = Q.labor_pas;
 Q.reformist_pas_r = Q.reformist_pas;
 Q.neorev_pas_r = Q.neorev_pas;
-Q.socpat_pas_r = Q.neorev_pas;
+Q.socpat_pas_r = Q.socpat_pas;
 Q.other_pas_r = Q.other_pas;
 Q.non_inscrit_pas_r = Q.non_inscrit_pas;
 
