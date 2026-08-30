@@ -597,6 +597,7 @@ on-arrival: liberal_media += 3
 title: Show hypothetical Parteitag
 on-arrival: {!
 
+Q.neorev_spd_r = 0.5; Q.socpat_strength = 1; Q.socpat_spd_r = 0.5;
 
 Q.left_pas = 0;
 Q.center_pas = 0;
@@ -629,6 +630,15 @@ if (Q.centrists_resign) Q.non_inscrit_pas += 0.5;
 if (Q.unions_independent ) Q.non_inscrit_pas += 0.5;
 if (Q.reformists_resigned ) Q.non_inscrit_pas += 0.5;
 
+Q.left_pas_r = Q.left_pas;
+Q.center_pas_r = Q.center_pas;
+Q.labor_pas_r = Q.labor_pas;
+Q.reformist_pas_r = Q.reformist_pas;
+Q.neorev_pas_r = Q.neorev_pas;
+Q.socpat_pas_r = Q.neorev_pas;
+Q.other_pas_r = Q.other_pas;
+Q.non_inscrit_pas_r = Q.non_inscrit_pas;
+
 
 function allocateSeats(percentages, totalSeats = 415) {
     const exactSeats = {};
@@ -659,14 +669,14 @@ function allocateSeats(percentages, totalSeats = 415) {
 }
 
 const inputPercentages = {
-    left_pas: Q.left_pas,
-    center_pas: Q.center_pas,
-    labor_pas: Q.labor_pas,
-    reformist_pas: Q.reformist_pas,
-    neorev_pas: Q.neorev_pas,
-    socpat_pas: Q.socpat_pas,
-    other_pas: Q.other_pas,
-    non_inscrit_pas: Q.non_inscrit_pas
+    left_pas_r: Q.left_pas_r,
+    center_pas_r: Q.center_pas_r,
+    labor_pas_r: Q.labor_pas_r,
+    reformist_pas_r: Q.reformist_pas_r,
+    neorev_pas_r: Q.neorev_pas_r,
+    socpat_pas_r: Q.socpat_pas_r,
+    other_pas_r: Q.other_pas_r,
+    non_inscrit_pas_r: Q.non_inscrit_pas_r
 };
 
 const allocatedSeats = allocateSeats(inputPercentages);
@@ -690,7 +700,7 @@ if (Q.left_pas) {
         "id": "uspd",
         "legend": "USPD",
         "name": "USPD",
-        "seats": Math.round(Q.left_pas * 4.15),
+        "seats": Math.round(Q.left_pas_r * 4.15),
     });
 }
 
@@ -700,7 +710,7 @@ if (Q.center_pas) {
         "id": "spd",
         "legend": Q.ddp_name,
         "name": Q.ddp_name,
-        "seats": Math.round(Q.center_pas * 4.15),
+        "seats": Math.round(Q.center_pas_r * 4.15),
     });
 }
 
@@ -709,7 +719,7 @@ if (Q.non_inscrit_pas) {
         "id": "other",
         "legend": "LVP",
         "name": "LVP",
-        "seats": Math.round(Q.non_inscrit_pas * 4.15),
+        "seats": Math.round(Q.non_inscrit_pas_r * 4.15),
     });
 }
 
@@ -719,7 +729,7 @@ if (Q.labor_pas) {
         "id": "lvp",
         "legend": "Other",
         "name": "Others",
-        "seats": Math.round(Q.labor_pas * 4.15),
+        "seats": Math.round(Q.labor_pas_r * 4.15),
     });
 }
 
@@ -728,7 +738,7 @@ if (Q.reformist_pas) {
         "id": "wp",
         "legend": "WP",
         "name": "WP",
-        "seats": Math.round(Q.reformist_pas * 4.15),
+        "seats": Math.round(Q.reformist_pas_r * 4.15),
     });
 }
 
@@ -737,7 +747,7 @@ if (Q.other_pas) {
         "id": "dvp",
         "legend": "DVP",
         "name": "DVP",
-        "seats": Math.round(Q.other_pas *4.15),
+        "seats": Math.round(Q.other_pas_r *4.15),
     });
 }
 
