@@ -780,8 +780,6 @@ if (window && d3) {
 
 {!<svg id="kiel_parteitag" style="width: 500px; height: 250px;"> </svg>!}
 
-- - - - Line - - - - 
-
 <div class="parliament-chart" data-state="parteitag" style="width: 500px; height: 250px;"></div>
 
 
