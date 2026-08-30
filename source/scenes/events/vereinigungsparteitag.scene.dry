@@ -72,7 +72,7 @@ A new party programme is surely logical.
 subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> will be pleased by this.
 unavailable-subtitle: Hermann Müller and Otto Wels are already a pivot to our center.
 choose-if: left_strength >= 10
-on-arrival: spd_party_leader_1 = "Breitscheid"; reformist_dissent += 3; not_bad_vspd_deal = 1
+on-arrival: spd_party_leader_2 = "Breitscheid"; reformist_dissent += 3; not_bad_vspd_deal = 1
 go-to: lowest_uspd
 
 Our new leadership election has decided on the ousting of Otto Wels in favour of Rudolf Breitscheid, a pragmatic, yet principaled internationalist socialist democrat. Hermann Müller on the other hand remains firm in his position.
@@ -82,7 +82,7 @@ unavailable-subtitle: We will likely need to work with them at some point.
 subtitle: Working with the <span style="color: [+ dvp_colour +];">**DVP**</span> is already unpoplular with our proper base.
 view-if: left_strength >= 10
 choose-if: left_strength > reformist_strength
-on-arrival: good_uspd_vspd_deal = 1; spd_party_leader_1 = "Breitscheid"
+on-arrival: good_uspd_vspd_deal = 1; spd_party_leader_2 = "Breitscheid"
 go-to: lowest_uspd
 
 We don't know how this will end...
@@ -92,7 +92,7 @@ subtitle: The reformists are outraged!
 view-if: left_strength >= 20
 choose-if: left_strength >= 40 and left_strength > reformist_strength
 unavailable-subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> has actually agreed to work with the <span style="color: [+ z_colour +];">**Center**</span> by now.
-on-arrival: second_kpd_essentially = 1; reformist_dissent += 25; spd_party_leader_1 = "Breitscheid"
+on-arrival: second_kpd_essentially = 1; reformist_dissent += 25; spd_party_leader_2 = "Breitscheid"
 go-to: lowest_uspd
 
 The <span style="color: [+ spd_colour +];">**SPD**</span> will dedicate itself to the proletarian revolution!
