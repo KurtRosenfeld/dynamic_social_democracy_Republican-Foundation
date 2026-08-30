@@ -979,6 +979,38 @@ fill: #D5AC27;
   fill: #ADC1FD;
 }
 
+.seat.left_pas {
+ fill: #960000;
+}
+
+.seat.center_pas [
+  fill: #C90000;
+}
+
+.seat.non_inscrit_pas {
+  fill: #DDB6B6;
+}
+
+.seat.labor_pas {
+  fill: #CB2B78;
+}
+
+.seat.reformist_pas {
+  fill: #DD5A24;
+}
+
+.seat.neorev_pas {
+  fill: #9921AD;
+}
+
+.seat.other_pas {
+  fill: #EF7254;
+}
+
+.seat.scopat_pas {
+  fill: #6D4B60;
+}
+
 .tooltip-text {
   text-decoration: underline;
   text-decoration-style: dotted;
