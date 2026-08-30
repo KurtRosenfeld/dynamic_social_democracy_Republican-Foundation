@@ -1,0 +1,51 @@
+title: RFB founded
+subtitle: The <span style="color: [+ kpd_colour +];">KPD</span> forms a paramiltary
+view-if: year == 1924 and month == 8 and kpd_reichsbanner == 0
+on-arrival: rfb_strength += 40; rfb_militancy += 0.02; rfb_founded = 1; rfb_strength += 70 if rb_exists == 0
+new-page: true
+max-visits: 1
+tags: event
+
+= RFB founded
+
+Place holder for a detailed text
+
+- @f_huh_lol: Ok.
+- @dammmmmmmmmnnn: Some of our members would like to join
+
+@dammmmmmmmmnnn
+subtitle: The lack of an SPD-associated organisation makes this organisation more attractive for many in our rows.
+view-if: rb_exists == 0
+on-arrival: workers_spd -= 2; workers_kpd += 2
+
+What will we do?
+
+  
+- @who_cars_rfb: We will allow or members to join the RFB
+- @nooooooo_rfb: We won't allow our members to join the RFB
+
+
+@who_cars_rfb
+on-arrival: rfb_strength += 50; reformist_dissent += 5; z_relation -= 3
+
+
+@nooooooo_rfb
+on-arrival: left_dissent += 6; labor_dissent += 2
+
+
+
+@f_huh_lol
+view-if: rb_exists == 1
+
+
+
+
+
+
+
+
+
+
+
+
+  
