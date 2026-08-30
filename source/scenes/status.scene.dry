@@ -418,55 +418,30 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 @state
 
-= State of the State (currently placeholders)
+= State of the State
+
+Railway status:
+
+= Women's Rights
 
 Women's rights: [+ womens_rights +]
 
 Abortion status: [+ abortion +]
 
-Average Working Day: 8.5-9 hours, I guess?
+= Worker Affaires
 
-Railway status:
+Average Working Day: []
+
+Urban Antisemitism: []
+
+= Rural Affaires
 
 Land Ownership: [State% Large Holders% Small Holders%] ([+ land_reform +])
 
-= Local Governments
+Rural Antisemtism: [+ rural_antisemtism +]
 
-Prussia: [+ prussia_gov +] Coalition
+Peasant Consciousness: []
 
-Bavaria: [+ bavaria_gov +] Coalition
-
-Saxony: [+ saxony_gov +] Coalition
-
-Thuringia: [+ thuringia_gov +] Coalition
-
-Hesse: [+ hesse_gov +] Coalition
-
-Wurttemberg: [+ wurttemberg_gov +] Coalition
-
-Baden: [+ baden_gov +] Coalition
-
-Mecklenburg-Schwerin: [+ meck_schwe_gov +] Coalition
-
-Mecklenburg-Strelitz: [+ meck_stre_gov +] Coalition
-
-Hamburg: [+ hamburg_gov +] Coalition
-
-Bremen: [+ bremen_gov +] Coalition
-
-Lübeck: [+ lubeck_gov +] Coalition
-
-Oldenburg: [+ oldenburg_gov +] Coalition 
-
-Anhalt: [+ anhalt_gov +] Coalition
-
-Brunswick: [+ brunswick_gov +] Coalition
-
-Lippe: [+ lippe_gov +] Coalition
-
-Schaumburg-Lippe: [+ schaum_lippe_gov +] Coalition
-
-Waldeck: [+ waldeck_gov +] Coalition
 
 @relations
 
