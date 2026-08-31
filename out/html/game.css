@@ -983,7 +983,7 @@ fill: #D5AC27;
  fill: #960000;
 }
 
-.seat.center_pas [
+.seat.center_pas {
   fill: #C90000;
 }
 
