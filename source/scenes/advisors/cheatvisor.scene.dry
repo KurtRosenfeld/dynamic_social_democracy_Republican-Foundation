@@ -758,7 +758,7 @@ if (Q.other_pas_r > 0) {
     });
 }
 
-if (Q.neorev_pas_r > 0 && Q.neorevisionism !== 0) {
+if (Q.neorev_pas_r > 0) {
     data.push({
         "id": "neorev_pas",
         "legend": "Neorevison",
@@ -767,7 +767,7 @@ if (Q.neorev_pas_r > 0 && Q.neorevisionism !== 0) {
     });
 }
 
-if (Q.socpat_pas_r > 0 && Q.social_patriot !== 0) {
+if (Q.socpat_pas_r > 0) {
     data.push({
         "id": "socpat_pas",
         "legend": "Patriot",
