@@ -1,0 +1,284 @@
+title: SPD Party Conference of Berlin
+view-if: year == 1924 and month == 6
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: {!
+
+Q.parteitag_seats = 390; 
+
+Q.neorev_spd_r = 0.5; Q.socpat_strength = 1; Q.socpat_spd_r = 0.5;
+
+Q.left_pas = 0;
+Q.center_pas = 0;
+Q.labor_pas = 0;
+Q.reformist_pas = 0;
+Q.neorev_pas = 0;
+Q.socpat_pas = 0;
+Q.other_pas = 0;
+Q.non_inscrit_pas = 0;
+
+
+Q.left_pas = (Q.left_strength + Q.left_spd_r)*((100-Q.left_dissent)/100);
+Q.center_pas = (Q.center_strength + Q.center_spd_r)*((100-Q.center_dissent)/100);
+Q.labor_pas = (Q.labor_strength + Q.labor_spd_r)*((100-Q.labor_dissent)/100);
+Q.reformist_pas = (Q.reformist_strength + Q.reformist_spd_r)*((100-Q.reformist_dissent)/100);
+Q.neorev_pas = (Q.neorev_strength + Q.neorev_spd_r)*((100-Q.neorev_dissent)/100);
+Q.socpat_pas = (Q.socpat_strength + Q.socpat_spd_r)*((100-Q.socpat_dissent)/100);
+
+Q.other_pas = 2;
+if (Q.neorevisionism == 0) Q.other_pas += Q.neorev_pas + 1;
+if (Q.social_patriot == 0) Q.other_pas += Q.socpat_pas + 1;
+
+Q.non_inscrit_pas = 4;
+if (Q.left_pas < 5) Q.non_inscrit_pas += 1;
+if (Q.labor_pas < 6) Q.non_inscrit_pas += 3;
+if (Q.center_pas < 10) Q.non_inscrit_pas += 1.5;
+if (Q.reformist_pas < 8) Q.non_inscrit_pas += 1;
+if (Q.left_split) Q.non_inscrit_pas += 0.5;
+if (Q.centrists_resign) Q.non_inscrit_pas += 0.5;
+if (Q.unions_independent ) Q.non_inscrit_pas += 0.5;
+if (Q.reformists_resigned ) Q.non_inscrit_pas += 0.5;
+
+Q.left_pas_r = Q.left_pas;
+Q.center_pas_r = Q.center_pas;
+Q.labor_pas_r = Q.labor_pas;
+Q.reformist_pas_r = Q.reformist_pas;
+Q.neorev_pas_r = Q.neorev_pas;
+Q.socpat_pas_r = Q.socpat_pas;
+Q.other_pas_r = Q.other_pas;
+Q.non_inscrit_pas_r = Q.non_inscrit_pas;
+
+
+function allocateSeats(percentages, totalSeats = 390) {
+    const exactSeats = {};
+    const flooredSeats = {};
+    const remainders = [];
+
+    let totalFlooredSeats = 0;
+    for (const party in percentages) {
+        const exact = (percentages[party] * totalSeats) / 100;
+        const floored = Math.floor(exact);
+        const remainder = exact - floored;
+
+        exactSeats[party] = exact;
+        flooredSeats[party] = floored;
+        totalFlooredSeats += floored;
+
+        remainders.push({ party, remainder });
+    }
+
+    const seatsToDistribute = totalSeats - totalFlooredSeats;
+    remainders.sort((a, b) => b.remainder - a.remainder);
+
+    for (let i = 0; i < seatsToDistribute; i++) {
+        flooredSeats[remainders[i].party]++;
+    }
+
+    return flooredSeats;
+}
+
+const inputPercentages = {
+    left_pas_r: Q.left_pas_r,
+    center_pas_r: Q.center_pas_r,
+    labor_pas_r: Q.labor_pas_r,
+    reformist_pas_r: Q.reformist_pas_r,
+    neorev_pas_r: Q.neorev_pas_r,
+    socpat_pas_r: Q.socpat_pas_r,
+    other_pas_r: Q.other_pas_r,
+    non_inscrit_pas_r: Q.non_inscrit_pas_r
+};
+
+const allocatedSeats = allocateSeats(inputPercentages);
+
+for (const party in allocatedSeats) {
+    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 390).toFixed(1));
+}
+
+!}
+on-display: {!
+// Calculate seats using your allocation function
+const inputPercentages = {
+    left_pas_r: Q.left_pas_r,
+    center_pas_r: Q.center_pas_r,
+    labor_pas_r: Q.labor_pas_r,
+    reformist_pas_r: Q.reformist_pas_r,
+    neorev_pas_r: Q.neorev_pas_r,
+    socpat_pas_r: Q.socpat_pas_r,
+    other_pas_r: Q.other_pas_r,
+    non_inscrit_pas_r: Q.non_inscrit_pas_r
+};
+
+// Build the data array directly
+var data = [];
+
+if (Q.left_pas_r > 0) {
+    data.push({
+        "id": "left_pas",
+        "legend": "Left",
+        "name": "Left",
+        "seats": Math.round(Q.left_pas_r * 3.9)
+    });
+}
+
+if (Q.center_pas_r > 0) {
+    data.push({
+        "id": "center_pas",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Math.round(Q.center_pas_r * 3.9)
+    });
+}
+
+if (Q.non_inscrit_pas_r > 0) {
+    data.push({
+        "id": "non_inscrit_pas",
+        "legend": "NI",
+        "name": "NI",
+        "seats": Math.round(Q.non_inscrit_pas_r * 3.9)
+    });
+}
+
+if (Q.labor_pas_r > 0) {
+    data.push({
+        "id": "labor_pas",
+        "legend": "Labor",
+        "name": "Labor",
+        "seats": Math.round(Q.labor_pas_r * 3.9)
+    });
+}
+
+if (Q.reformist_pas_r > 0) {
+    data.push({
+        "id": "reformist_pas",
+        "legend": "Reformist",
+        "name": "Reformist",
+        "seats": Math.round(Q.reformist_pas_r * 3.9)
+    });
+}
+
+if (Q.other_pas_r > 0) {
+    data.push({
+        "id": "other_pas",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_pas_r * 3.9)
+    });
+}
+
+if (Q.neorev_pas_r > 0) {
+    data.push({
+        "id": "neorev_pas",
+        "legend": "Neorevison",
+        "name": "Neo",
+        "seats": Math.round(Q.neorev_pas_r * 3.9)
+    });
+}
+
+if (Q.socpat_pas_r > 0) {
+    data.push({
+        "id": "socpat_pas",
+        "legend": "Patriot",
+        "name": "Patriot",
+        "seats": Math.round(Q.socpat_pas_r * 3.9)
+    });
+}
+
+// Render the parliament chart
+if (window && d3 && data.length > 0) {
+    // Clear previous chart
+    var container = document.getElementById('berlin_parteitag');
+    if (container) {
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+        
+        var width = 500;
+        var height = 250;
+        var screenWidth = document.getElementById('content').offsetWidth;
+        if (screenWidth < width - 50) {
+            width = screenWidth - 50;
+            height = width / 2;
+        }
+        
+        var svg = d3.select(container)
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height);
+        
+        var parliament = d3.parliament();
+        parliament.width(width).height(height).innerRadiusCoef(0.4);
+        parliament.enter.fromCenter(true).smallToBig(true);
+        parliament.exit.toCenter(false).bigToSmall(true);
+        
+        svg.datum(data).call(parliament);
+    }
+}
+!}
+
+= SPD Party Congress
+
+<svg id="berlin_parteitag" style="width: 500px; height: 250px;"> </svg>
+
+
+- @berlin_menu
+
+@berlin_menu
+title: What is on the agenda?
+
+- @coalition_questions: Our stance to coalitions
+- @expelling_ebert_from_the_party: Expelling Ebert from the party
+- @reichswehr_etat: The Reichswehr Etat
+- @iah_and_membership: SPD members in the International Worker's Relief
+- @paramilitary: The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>
+- @rural_electoral_strategy: Rural electoral strategy
+- @party_leader_election: Party leader election
+- @free_advisor: We are done
+
+
+@expelling_ebert_from_the_party
+subtitle: A group in Frankfurt has demanded the expulsion of Ebert from the SPD.
+view-if: ebert_in == "SPD"
+
+- @hold_ebert: Ebert will remain in the party
+- @fuck_that_stupid_bitch: Ebert will be expelled
+
+
+@hold_ebert
+subtitle: ([+ pro_ebert_r +]%)
+choose-if: pro_ebert_r >= 50
+on-arrival: left_strength -= 2; left_dissent += 1
+
+Ebert will remain.
+
+@fuck_that_stupid_bitch
+subtitle: ([+ anti_ebert_r +]%)
+choose-if: anti_ebert_r > 50
+on-arrival: ebert_in = "I"; reformist_dissent += 10; reformist_strength -= 1; left_dissent -= 4
+
+Ebert will be kicked out.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// don't forget to add .dry to the file name
