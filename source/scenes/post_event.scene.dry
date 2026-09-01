@@ -467,17 +467,15 @@ Q.republican_media = Math.round(Q.republican_media * 10) / 10;
 Q.far_right_media = Math.round(Q.far_right_media * 10) / 10;
 
 
-// media power
+// media power and voting cealings
 
-if (Q.socdem_media < 30 && Q.new_middle_spd > 25) Q.new_middle_spd -= 0.2;
-if (Q.socdem_media < 30 && Q.old_middle_spd > 15) Q.old_middle_spd -= 0.2;
-if (Q.socdem_media < 30 && Q.workers_spd > 70) Q.workers_spd -= 0.1;
+// here I want to add cealing for different factions but I have to do Parteitage first
 if (Q.no_youth_wing == 1 && Q.unemployed_spd > 45) Q.unemployed_spd -= 0.1;
 
 if (Q.year >= 1924 && Q.volkisch_media < 14 && Q.monarchist_media > 5) Q.monarchist_media -= 0.2;
 if (Q.year >= 1924 && Q.volkisch_media < 14 && Q.monarchist_media > 5) Q.volkisch_media += 0.2;
 
-if (Q.in_left_coalition && Q.left_media < 35 && Q.old_middle_spd > 3) Q.old_middle_spd -= 0.2;
+// coalition based vote loss tba
 
 
 // re-calculate dissent.
