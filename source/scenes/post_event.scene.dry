@@ -432,7 +432,7 @@ Q.poland_relation -= 0.4;
 
 // media stuuuuuff
 
-Q.total_media = (Q.anarchist_media + Q.communist_media + Q.liberal_media + Q.catholic_media + Q.socdem_media + Q.volkisch_media + Q.monarchist_media + Q.conservative_media);
+Q.total_media = (Q.anarchist_media + Q.communist_media + Q.liberal_media + Q.catholic_media + Q.socdem_media + Q.volkisch_media + Q.monarchist_media + Q.conservative_media + Q.other_media);
 
 Q.left_media = (Q.anarchist_media + Q.communist_media);
 if (Q.editorial_line == "Left") Q.left_media = (Q.anarchist_media + Q.communist_media + Q.socdem_media);
