@@ -49,6 +49,8 @@ Q.socpat_pas_r = Q.socpat_pas;
 Q.other_pas_r = Q.other_pas;
 Q.non_inscrit_pas_r = Q.non_inscrit_pas;
 
+Q.anti_ebert_r = Q.left_pas + Q.labor_pas*0.05;
+Q.pro_ebert_r = 100 - Q.anti_ebert_r
 
 function allocateSeats(percentages, totalSeats = 390) {
     const exactSeats = {};
@@ -248,6 +250,7 @@ view-if: ebert_in == "SPD"
 subtitle: ([+ pro_ebert_r +]%)
 choose-if: pro_ebert_r >= 50
 on-arrival: left_strength -= 2; left_dissent += 1
+go-to: berlin_menu
 
 Ebert will remain.
 
@@ -255,8 +258,152 @@ Ebert will remain.
 subtitle: ([+ anti_ebert_r +]%)
 choose-if: anti_ebert_r > 50
 on-arrival: ebert_in = "I"; reformist_dissent += 10; reformist_strength -= 1; left_dissent -= 4
+go-to: berlin_menu
 
 Ebert will be kicked out.
+
+
+@coalition_questions
+
+
+
+- @maximalism: We will defend the interests of the proletariat without compromise. The only acceptable coalition type is cooperation among worker's parties.
+- @centrism: We have to participate in parliament to protect the working class from the worst excesses of capitalism while preparing for a Social-Democratic majority.
+- @reformism: The democratic parliament is our greatest achievement, we need to form coalitions with the bourgeois parties to strengthen our appeal to multiple demographics and fulfill our programme
+
+
+@maximalism
+choose-if: (left_pas_r + non_inscrit_pas) > 35 or labor_pas_r > 33
+on-arrival: left_strength += 5; unemployed_spd += 2; left_dissent -= 3; reformist_dissent += 3
+go-to: berlin_menu
+
+
+@centrism
+choose-if: (center_pas_r + non_inscrit_pas) > 35 or labor_pas_r > 33
+on-arrival: center_strength += 5; left_dissent -= 2; reformist_dissent -= 2
+go-to: berlin_menu
+
+
+@reformism
+choose-if: reformist_pas_r > 35 or labor_pas_r > 33
+on-arrival: reformist_strength += 5; new_middle_spd += 2; left_dissent += 3; reformist_dissent -= 3
+go-to: berlin_menu
+
+
+@reichswehr_etat
+
+- @childrens_meals: We should not finance the reaction, tax money should be spent on the needs of the poor.
+- @noooooooooske: We need to maintain the armed forces to prevent the from revolting and eventually turn them into a republican army.
+
+
+@childrens_meals
+on-arrival: z_relation -= 3; dvp_relation -= 3; uspd_relation += 2; sb_relation += 2
+go-to: berlin_menu
+
+
+@noooooooooske
+on-arrival: left_dissent += 3; labor_dissent += 2; uspd_relation -= 2
+go-to: berlin_menu
+
+
+@iah_and_membership
+
+The Worker's International Relief is a communist organisation.
+
+Should SPD members be allowed to join?
+
+- @yes_iah: It is their right
+- @noo_iah: This is not possible
+
+
+@yes_iah
+on-arrival: sb_relation += 3; kpd_relation += 1
+go-to: berlin_menu
+
+
+@noo_iah
+on-arrival: soviet_relation -= 2; kpd_relation -= 1
+go-to: berlin_menu
+
+
+@paramilitary
+view-if: rb_exists
+
+- @rb_founding: We should increase founding for the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
+- @no_rb_found: We should not put resources into the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
+
+
+@rb_founding
+choose-if: (kpd_reichsbanner and (left_pas_r + non_inscrit_pas_r >= 50)) or ((center_pas_r + non_inscrit_pas_r >= 50) and z_reichsbanner) or reichsbanner_orientation == "SPD"
+on-arrival: rb_funding_cealing += 2
+unavailable-subtitle: There is no majority for this.
+go-to: berlin_menu
+
+
+@no_rb_found
+on-arrival: reformist_dissent -= 3
+go-to: berlin_menu
+
+
+
+@rural_electoral_strategy
+
+- @agrarian_programme: We should adopt an agricultural programme to give small farmers a reason to vote for us.
+- @educate_rural_folk: We should combat Antisemitism in rural communties.
+- @rural_class_war: We should agitate for class politics in the countryside.
+
+
+
+@agrarian_programme
+go-to: berlin_menu
+
+
+@educate_rural_folk
+go-to: berlin_menu
+
+
+
+@rural_class_war
+go-to: berlin_menu
+
+
+
+
+@party_leader_election
+go-to: berlin_menu
+
+Placeholder lÖl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
