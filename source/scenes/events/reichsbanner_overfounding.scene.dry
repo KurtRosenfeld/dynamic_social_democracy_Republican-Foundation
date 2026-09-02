@@ -1,0 +1,47 @@
+title: <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> overfounding 
+subtitle: The party does not approve of the sums we've spent on pur paramilitary.
+on-arrival: rb_founding_cealing += 1; left_dissent += 3; center_dissnet += 3; labor_dissent += 3; reformist_dissent += 5
+tags: event
+view-if: rb_founding_cealing < 0
+priority: 1
+max-visits: 1
+
+
+= <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> overfounding 
+
+
+Many in the party see our founding of the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> as a burden that deprives the other party organs of their resources.
+
+
+- @pull_out: Cut founding for the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> 
+- @bribe_spd: Give handouts to dissenters
+- @ignore_l: Oh, you think this is too much spending, huh? Well, guess what, we will put even more Reichsmarks into the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> until we have the strongest army not just in Germany but in all of Europe and there. is. nothing. you can do. about it.
+
+
+@pull_out
+subtitle: +1 resources
+on-arrival: resources += 1; rb_militancy -= 0.05; rb_strength -= 100; reformist_dissent -= 2; labor_dissent -= 2
+
+The money has returned.
+  
+@bribe_spd
+subtitle: -1 resources
+on-arrival: resources -= 1; left_dissent -= 2; center_dissent -= 3; labor_dissnet -= 4; reformist_dissent -= 6
+choose-if: resources >= 1
+
+We have given resources to the party branches voicing most opposition. Obviously they will use that for sensible goals.
+
+
+@ignore_l
+on-arrival: rb_founding_cealing += 3; left_dissent += 2; center_dissent += 2; labor_dissent += 3; reformist_dissent += 3; old_middle_spd -= 2; catholic_spd -= 2; new_middle_spd -= 1; rb_strength += 40; rb_militancy += 0.01
+
+Help?
+
+
+
+
+
+
+
+
+  
