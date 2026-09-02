@@ -10,7 +10,7 @@ if (Q.uspd_leader == "Liebknecht") Q.rep_uspd -= 30;
 if (Q.uspd_leader == "Ledebour") Q.rep_uspd -= 40;
 // SPD should lose votes, I guess
 
-
+rb_founding_cealing += 1;
              
 !}
 tags: event
