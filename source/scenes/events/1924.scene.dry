@@ -1,0 +1,21 @@
+title: 1924
+subtitle: A new year
+on-arrival: {!
+Q.rep_dhp += 20;
+Q.soc_nsdap += 20;
+Q.soc_z += 20;
+Q.soc_ddp += 20;
+Q.rep_dbp -= 10;
+if (Q.uspd_leader == "Liebknecht") Q.rep_uspd -= 30;
+if (Q.uspd_leader == "Ledebour") Q.rep_uspd -= 40;
+// SPD should lose votes, I guess
+
+
+             
+!}
+tags: event
+view-if: year = 1924 and month = 1
+priority: 2
+max-visits: 1
+
+Literally 1924.
