@@ -3114,6 +3114,7 @@ go-to: map_menu
        style="fill:[+ romania +];stroke-width:0.143765"
        d="m 107.43256,138.27281 -0.0706,0.15907 -0.0177,0.40616 0.1237,0.19431 -0.1237,0.15892 -0.26492,0.0529 -0.1943,0.0177 -0.24724,0.0354 -0.22955,0.26492 -0.14138,0.17662 -0.12355,0.19417 -0.14137,0.21199 -0.0706,0.31786 -0.0291,0.26211 c 0.004,0.009 0.007,0.0169 0.0107,0.0257 0.0172,0.0491 0.0357,0.0979 0.0482,0.14854 0.004,0.0219 0.008,0.0438 0.0107,0.0659 l 0.24218,0.0807 0.12369,0.15893 0.17661,0.35324 -0.0531,0.22954 -0.0529,0.31799 0.0706,0.15894 0.15893,0.0883 h 0.17661 l 0.21199,0.0352 0.12355,0.14138 0.0706,0.14123 0.24737,0.10606 0.21185,0.17661 0.26494,0.0529 0.15892,0.26493 0.21199,0.28261 0.0883,0.22955 v 0.24738 l 0.0354,0.15892 0.14124,0.0529 0.12368,0.28262 0.0352,0.24724 v 0.12368 l 0.14138,0.0177 0.21187,0.10584 -0.0883,0.33568 -0.0529,0.21186 -0.0177,0.17661 -0.2478,0.12384 -0.33765,0.0528 h -0.0327 l -0.0289,0.01 -0.43452,0.0679 -0.0487,-0.006 -0.0354,0.0177 -0.15892,-0.0883 -0.1237,-0.0529 -0.14123,-0.14139 v -0.22954 l -0.0177,-0.17662 -0.14123,-0.0354 -0.19431,-0.15892 -0.17662,-0.0883 -0.33555,-0.0352 -0.14124,-0.1943 -0.14137,-0.053 -0.24724,-0.14123 -0.15893,-0.12369 -0.1943,-0.0175 -0.22955,-0.0883 -0.212,-0.17662 -0.0706,-0.15907 -0.14138,-0.0529 -0.0175,-0.14123 -0.12369,-0.15907 -0.0883,-0.15893 -0.10599,-0.14124 -0.21186,-0.15892 -0.26492,-0.053 -0.106,-0.14124 -0.17662,-0.0529 h -0.19431 l -0.19431,0.12354 -0.0352,0.1943 -0.0531,0.21187 -0.10586,0.17661 -0.15907,0.14138 h -0.15892 l -0.24724,-0.19431 -0.30017,-0.22955 h -0.3003 l -0.0883,-0.21199 -0.14124,0.15892 -0.15907,0.0883 -0.15892,-0.15892 -0.31786,-0.10606 h -0.17662 l -0.0706,-0.14124 -0.35323,-0.0883 -0.26493,-0.12369 -0.28261,0.0177 -0.212001,0.22955 -0.105862,0.0707 -0.211995,0.0706 -0.247236,0.0177 H 99.06098 l -0.247376,0.0706 -0.12355,0.0352 -0.07062,0.14137 -0.106002,0.12355 -0.05307,0.38862 -0.01755,0.17661 -0.229685,0.22955 -0.247237,0.10605 -0.229547,0.0883 -0.282614,0.0177 -0.247235,0.12369 -0.08831,0.15893 -0.229687,0.0352 -0.476782,0.0354 -0.07062,0.33555 0.282475,0.17662 0.370924,0.28262 0.106002,0.1943 0.123548,0.40617 v 0.28261 l 0.229687,0.42386 0.282614,0.10595 0.353235,0.0529 0.08831,0.14138 0.247235,0.12354 0.264925,0.0354 -0.01769,0.38848 -0.01769,0.35324 0.300306,0.15906 0.194306,0.22955 0.229546,0.0354 0.282617,0.0883 0.123548,0.17662 0.353237,0.0529 0.15893,-0.14124 0.17662,-0.10606 0.1943,-0.0706 0.0531,-0.12369 0.17661,0.0883 0.14123,0.17662 0.106,0.19431 -0.14138,0.14123 -0.17661,0.1943 0.0177,0.19432 0.22968,0.0529 0.0352,0.28261 0.19431,0.0883 0.54754,0.12354 0.0175,0.22968 -0.15893,0.14124 -0.15893,0.14138 -0.0529,0.15893 0.15893,0.12355 0.37092,-0.0883 0.0352,-0.17663 h 0.33554 l 0.35323,0.14139 0.44155,0.0706 0.35323,0.0354 0.106,0.15892 0.68877,0.0529 h 1.0069 l 0.52985,0.0177 0.56509,0.0177 h 0.42385 l 0.17662,0.17662 0.24739,-0.10605 0.30016,-0.212 0.14139,-0.21186 0.24723,-0.15892 0.24723,-0.10606 0.37093,-0.0354 0.26492,-0.21186 0.31786,0.0352 0.31785,-0.0352 0.28262,-0.0707 0.0706,-0.12354 0.38861,-0.0177 0.44154,0.0354 0.33555,0.0706 0.15893,0.14123 0.35323,0.15893 0.3003,0.0354 0.24724,0.0706 0.30031,0.0883 0.17661,0.17662 0.0529,0.15893 0.37093,0.053 0.26492,-0.0177 0.0175,-0.21199 0.12369,-0.15892 0.10595,-0.19432 -0.14138,-0.24723 -0.15893,-0.26492 0.12369,-0.14125 0.15893,-0.28261 0.10594,-0.17661 0.28262,-0.22956 0.0706,-0.0177 0.0529,-0.31785 v -0.35324 l -0.10596,-0.17662 v -0.19431 l 0.30031,-0.0883 0.10605,0.0706 v 0.24724 l 0.26493,0.12369 0.40616,-0.0706 0.4063,-0.10595 0.19417,-0.17663 0.053,-0.37092 v -0.26493 l 0.14123,-0.12369 0.053,-0.33554 -0.33569,-0.10595 -0.24723,-0.0883 -0.15892,-0.0883 h -0.28263 l -0.12354,0.15907 -0.3003,0.0529 -0.24724,0.14124 -0.318,0.053 -0.61802,0.0177 -0.21199,-0.053 -0.15893,-0.12355 -0.24724,-0.14139 -0.0883,-0.10594 -0.0883,-0.15894 0.0529,-0.47677 -0.10605,-0.37093 -0.0177,-0.44155 0.1237,-0.3886 0.14124,-0.37079 0.0883,-0.212 v -0.45923 l -0.0883,-0.4591 -0.10584,-0.3886 -0.26493,-0.15893 -0.212,-0.14139 c 0,0 -0.28264,-0.1589 -0.3003,-0.22954 -0.0177,-0.0706 -0.0884,-0.35324 -0.0884,-0.35324 l -0.30016,-0.22954 0.0352,-0.1943 -0.22955,-0.22969 -0.26492,-0.40616 -0.38848,-0.33555 0.0883,-0.3003 -0.1237,-0.33555 -0.15892,-0.10595 -0.28261,-0.0529 -0.0529,-0.17661 -0.15908,-0.0706 -0.42384,0.0177 -0.10595,0.19416 -0.26478,-0.12355 h -0.212 -0.14124 l -0.0177,-0.0883 -0.0177,-0.15893 -0.0884,-0.12369 -0.14123,-0.17662 -0.15907,-0.1943 -0.10584,-0.21187 -0.0177,-0.24723 -0.38862,-0.053 -0.0352,-0.15892 z m 1.21076,7.63933 -0.002,0.009 h -0.035 z"
        inkscape:label="Romania" /><circle
+       class="trigger-group" data-tooltip="britain-tooltip"
        style="opacity:1;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242"
        cx="53.739521"
@@ -3132,12 +3133,14 @@ go-to: map_menu
        cy="135.83936"
        inkscape:label="Luxembourg"
        r="0.5" /><circle
+       class="trigger-group" data-tooltip="belgium-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-2"
        cx="64.062462"
        cy="132.8624"
        inkscape:label="Bruxelles"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="netherlands-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-23"
        cx="64.55336"
@@ -3193,12 +3196,14 @@ go-to: map_menu
        cy="127.7114"
        inkscape:label="Berlin"
        r="0.5" /><circle
+       class="trigger-group" data-tooltip="czechoslovakia-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-50"
        cx="84.594513"
        cy="134.17905"
        inkscape:label="Prague"
        r="0.5" /><circle
+       class="trigger-group" data-tooltip="austria-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-13"
        cx="88.414803"
@@ -3211,12 +3216,14 @@ go-to: map_menu
        cy="143.22746"
        inkscape:label="Berne"
        r="0.5" /><circle
+       class="trigger-group" data-tooltip="france-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-84"
        cx="59.85997"
        cy="137.61188"
        inkscape:label="Paris"
        r="0.5" /><circle
+       class="trigger-group" data-tooltip="italy-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-88"
        cx="80.577866"
@@ -3404,7 +3411,7 @@ go-to: map_menu
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Russian Soviet Federative Socialist Republic</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
     <p>Population: why do you ask?</p>
-    <p>Head of State: Lev Kamenev (RCP)</p>
+    <p>Head of State: Kamenev (RCP)</p>
     <p>Federative Soviet Socialist Republic</p>
     <p>Relations: [+ soviet_relation : relationships +]</p>
   </div>
@@ -3423,5 +3430,95 @@ go-to: map_menu
   </div>
   </div>
 
+<div id="britain-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/UK.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">United Kingdom of Great Britain and Northern Ireland</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~43.100.000</p>
+    <p>Head of State: George V</p>
+    <p>Parliamentary Monarchy</p>
+    <p>Relations: [+ uk_relation : relationships +]</p>
+  </div>
+  </div>
+
+<div id="france-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/France.jpg" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">French Third Republic</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~37.900.000</p>
+    <p>Head of State: plhl</p>
+    <p>Republic</p>
+    <p>Relations: [+ france_relation : relationships +]</p>
+  </div>
+  </div>
+
+<div id="belgium-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Belgie.jpg" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of Belgium</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~7.700.000</p>
+    <p>Head of State: Albert I</p>
+    <p>Parliamentary Monarchy</p>
+    <p>Relations: [+ belgium_relation : relationships +]</p>
+  </div>
+  </div>
+
+<div id="netherlands-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Nederland.jpg" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of the Netherlands</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~7.100.000</p>
+    <p>Head of State: Wilhelmina</p>
+    <p>Parliamentary Monarchy</p>
+    <p>Relations: [+ dutch_relation : relationships +]</p>
+  </div>
+  </div>
+
+<div id="czechoslovakia-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Czecho.jpg" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Republic of Czechoslovakia</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~11.200.000</p>
+    <p>Head of State: plhl</p>
+    <p>Republic</p>
+    <p>Relations: [+ czech_relation : relationships +]</p>
+  </div>
+  </div>
+
+<div id="austria-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/öSSterREICH.jpg" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Republic of Austria</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~6.500.000</p>
+    <p>Head of State: plhl</p>
+    <p>Federal Republic</p>
+    <p>Relations: [+ austria_relation : relationships +]</p>
+  </div>
+  </div>
+
+<div id="italia-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Italia.jpg" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of Italy</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~38.000.000</p>
+    <p>Head of State: Vittoria Emmanuele III</p>
+    <p>*Parliamentary* Monarchy</p>
+    <p>Relations: [+ italia_relation : relationships +]</p>
+  </div>
+  </div>
 
 </div>
