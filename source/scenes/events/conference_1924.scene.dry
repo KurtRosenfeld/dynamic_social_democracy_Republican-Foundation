@@ -240,7 +240,7 @@ title: What is on the agenda?
 
 @expelling_ebert_from_the_party
 subtitle: A group in Frankfurt has demanded the expulsion of Ebert from the SPD.
-view-if: ebert_in == "SPD"
+view-if: ebert_in == "SPD" and berlin_point_two == 0
 
 - @hold_ebert: Ebert will remain in the party
 - @fuck_that_stupid_bitch: Ebert will be expelled
@@ -249,7 +249,7 @@ view-if: ebert_in == "SPD"
 @hold_ebert
 subtitle: ([+ pro_ebert_r +]%)
 choose-if: pro_ebert_r >= 50
-on-arrival: left_strength -= 2; left_dissent += 1
+on-arrival: left_strength -= 2; left_dissent += 1; berlin_point_two += 1
 go-to: berlin_menu
 
 Ebert will remain.
@@ -257,14 +257,14 @@ Ebert will remain.
 @fuck_that_stupid_bitch
 subtitle: ([+ anti_ebert_r +]%)
 choose-if: anti_ebert_r > 50
-on-arrival: ebert_in = "I"; reformist_dissent += 10; reformist_strength -= 1; left_dissent -= 4
+on-arrival: ebert_in = "I"; reformist_dissent += 10; reformist_strength -= 1; left_dissent -= 4; berlin_point_two += 1
 go-to: berlin_menu
 
 Ebert will be kicked out.
 
 
 @coalition_questions
-
+view-if: berlin_point_one == 0
 
 
 - @maximalism: We will defend the interests of the proletariat without compromise. The only acceptable coalition type is cooperation among worker's parties.
@@ -274,39 +274,41 @@ Ebert will be kicked out.
 
 @maximalism
 choose-if: (left_pas_r + non_inscrit_pas) > 35 or labor_pas_r > 33
-on-arrival: left_strength += 5; unemployed_spd += 2; left_dissent -= 3; reformist_dissent += 3
+on-arrival: left_strength += 5; unemployed_spd += 2; left_dissent -= 3; reformist_dissent += 3; berlin_point_one += 1
 go-to: berlin_menu
 
 
 @centrism
 choose-if: (center_pas_r + non_inscrit_pas) > 35 or labor_pas_r > 33
-on-arrival: center_strength += 5; left_dissent -= 2; reformist_dissent -= 2
+on-arrival: center_strength += 5; left_dissent -= 2; reformist_dissent -= 2; berlin_point_one += 1
 go-to: berlin_menu
 
 
 @reformism
 choose-if: reformist_pas_r > 35 or labor_pas_r > 33
-on-arrival: reformist_strength += 5; new_middle_spd += 2; left_dissent += 3; reformist_dissent -= 3
+on-arrival: reformist_strength += 5; new_middle_spd += 2; left_dissent += 3; reformist_dissent -= 3; berlin_point_one += 1
 go-to: berlin_menu
 
 
 @reichswehr_etat
+view-if: berlin_point_three == 0
 
 - @childrens_meals: We should not finance the reaction, tax money should be spent on the needs of the poor.
 - @noooooooooske: We need to maintain the armed forces to prevent the from revolting and eventually turn them into a republican army.
 
 
 @childrens_meals
-on-arrival: z_relation -= 3; dvp_relation -= 3; uspd_relation += 2; sb_relation += 2
+on-arrival: z_relation -= 3; dvp_relation -= 3; uspd_relation += 2; sb_relation += 2; berlin_point_three += 1
 go-to: berlin_menu
 
 
 @noooooooooske
-on-arrival: left_dissent += 3; labor_dissent += 2; uspd_relation -= 2
+on-arrival: left_dissent += 3; labor_dissent += 2; uspd_relation -= 2; berlin_point_three += 1
 go-to: berlin_menu
 
 
 @iah_and_membership
+view-if: berlin_point_four == 0
 
 The Worker's International Relief is a communist organisation.
 
@@ -317,17 +319,17 @@ Should SPD members be allowed to join?
 
 
 @yes_iah
-on-arrival: sb_relation += 3; kpd_relation += 1
+on-arrival: sb_relation += 3; kpd_relation += 1; berlin_point_four += 1
 go-to: berlin_menu
 
 
 @noo_iah
-on-arrival: soviet_relation -= 2; kpd_relation -= 1
+on-arrival: soviet_relation -= 2; kpd_relation -= 1; berlin_point_four += 1
 go-to: berlin_menu
 
 
 @paramilitary
-view-if: rb_exists
+view-if: rb_exists and berlin_point_five == 0
 
 - @rb_founding: We should increase founding for the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
 - @no_rb_found: We should not put resources into the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
@@ -335,18 +337,19 @@ view-if: rb_exists
 
 @rb_founding
 choose-if: (kpd_reichsbanner and (left_pas_r + non_inscrit_pas_r >= 50)) or ((center_pas_r + non_inscrit_pas_r >= 50) and z_reichsbanner) or reichsbanner_orientation == "SPD"
-on-arrival: rb_funding_cealing += 2
+on-arrival: rb_funding_cealing += 2; berlin_point_five += 1
 unavailable-subtitle: There is no majority for this.
 go-to: berlin_menu
 
 
 @no_rb_found
-on-arrival: reformist_dissent -= 3
+on-arrival: reformist_dissent -= 3; berlin_point_five += 1
 go-to: berlin_menu
 
 
 
 @rural_electoral_strategy
+view-if: berlin_point_six == 0
 
 - @agrarian_programme: We should adopt an agricultural programme to give small farmers a reason to vote for us.
 - @educate_rural_folk: We should combat Antisemitism in rural communties.
@@ -356,27 +359,34 @@ go-to: berlin_menu
 
 @agrarian_programme
 go-to: berlin_menu
+choose-if: reformist_pas_r < 33
+on-arrival: berlin_point_six += 1; rural_strategy = "Reformism"
 
 
 @educate_rural_folk
 go-to: berlin_menu
+on-arrival: berlin_point_six += 1; rural_strategy = "Education"
 
 
 
 @rural_class_war
 go-to: berlin_menu
+choose-if: left_pas_r > 43
+on-arrival: berlin_point_six += 1; rural_strategy = "Class War"
 
 
 
 
 @party_leader_election
+view-if: berlin_point_seven == 0
+on-arrival: berlin_point_seven += 1
 go-to: berlin_menu
 
 Placeholder lÖl
 
 
 @free_advisor
-
+view-if: berlin_point_six == 1
 
 
 
