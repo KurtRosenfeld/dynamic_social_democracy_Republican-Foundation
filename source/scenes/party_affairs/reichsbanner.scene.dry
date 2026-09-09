@@ -28,7 +28,7 @@ The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> is 
 choose-if: resources >= rb_militarization_cost
 unavailable-subtitle: Not enough resources ([+ rb_militarization_cost +] needed).
 subtitle: -[+ rb_militarization_cost +] resources
-on-arrival: resources -= rb_militarization_cost; rb_investment += 1; rb_strength += 100; rb_militancy += 0.05; left_strength += 2; left_dissent -= 2; reformist_dissent += 5; spd_militancy += 0.05; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent); z_relation -= 3 if strife < 5; ddp_relation -= 3 if strife < 5; lvp_relation -= 3 if strife < 5
+on-arrival: resources -= rb_militarization_cost; rb_founding_cealing -= rb_militarization_cost; rb_investment += 1; rb_strength += 100; rb_militancy += 0.05; left_strength += 2; left_dissent -= 2; reformist_dissent += 5; spd_militancy += 0.05; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent); z_relation -= 3 if strife < 5; ddp_relation -= 3 if strife < 5; lvp_relation -= 3 if strife < 5
 
 Some in our party decry the increasing militarization of the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>. They say it is emulating the <span style="color: #3E88B3;">right-wing nationalists</span> or the <span style="color: #700000;">communists</span>, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the <span style="color: #700000;">communists</span>.
 
@@ -61,7 +61,7 @@ title: Allow women to join the <span style="color: [+ rb_colour +];">**[+ reichs
 subtitle: -1 resources - This might cause a backlash from existing members.
 choose-if: resources > 0
 view-if: womens_rights >= 4 and sender_advisor == 1 and iron_front_formed == 1
-on-arrival: resources -= 1; rb_militancy *= 0.85; rb_strength += 400; women_in_rb = 1; rb_militancy += 0.05 if repealed_175; rb_militancy += 0.04 if trans_rights; rb_militancy += 0.02 if reformed_183;
+on-arrival: resources -= 1; rb_militancy *= 0.85; rb_strength += 400; women_in_rb = 1; rb_militancy += 0.05 if repealed_175; rb_militancy += 0.04 if trans_rights; rb_militancy += 0.02 if reformed_183; rb_founding_cealing -=  1
 go-to: homosexual if trans_rights or repealed_175 or reformed_183
 max-visits: 1
 achievement: women_reichsbanner
