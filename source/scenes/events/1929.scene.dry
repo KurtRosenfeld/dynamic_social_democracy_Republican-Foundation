@@ -3,6 +3,7 @@ subtitle: A new year
 on-arrival: {!
 // see post_event.scene.dry for changes.
 Q.economic_growth -= 4;
+Q.rb_founding_cealing += 1;
 
 !}
 tags: event
