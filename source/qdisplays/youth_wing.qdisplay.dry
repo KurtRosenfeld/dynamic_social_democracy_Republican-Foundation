@@ -5,4 +5,4 @@
 (0.5..1.5) <span style="color: #FFB74D;">sidelined</span>
 (1.5..2.5) <span style="color: #FFD54F;">established</span>
 (2.5..3.5) <span style="color: #81C784;">well-sestablished</span>
-(3.5) <span style="color: #66BB6A;">popular</span>
+(3.5..) <span style="color: #66BB6A;">popular</span>
