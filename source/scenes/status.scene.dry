@@ -42,6 +42,8 @@ Prussian government: [? if spd_prussia : in government - ?]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
+SPD youth wing: [+ youth_wing : youth_wing +]
+
 = Government
 
 President: <span style="color: [+ president_colour +];">[+ president +]</span> (<span style="color: [+ president_colour +];">**[+ president_party +]**</span>)
@@ -440,15 +442,17 @@ Abortion status: [+ abortion +]
 
 Average Working Day: []
 
-Urban Antisemitism: []
+Urban Antisemitism: [+ urban_antisemtism : dissent +]
 
 = Rural Affaires
 
 Land Ownership: [State% Large Holders% Small Holders%] ([+ land_reform +])
 
-Rural Antisemtism: [+ rural_antisemtism +]
+Rural Antisemtism: [+ rural_antisemtism : dissent +]
 
-Peasant Consciousness: []
+Peasant Consciousness: [+ peasant_conciousness : peasant_conciousness +]
+
+Rural trust in SPD: [+ rural_trust : rural_trust +]
 
 
 @relations
