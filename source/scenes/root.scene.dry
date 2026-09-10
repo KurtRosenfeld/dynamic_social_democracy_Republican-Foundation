@@ -289,7 +289,7 @@ Q.rural_trust = 1;
 Q.peasant_conciousness = 1;
 Q.rural_antisemitism = 45;
 Q.urban_antisemitism = 20;
-Q.youth_wing = 4; // none - sidelined - established - well established - poplular
+Q.youth_wing = 3; // none - sidelined - established - well established - poplular
 Q.concordat_n = 0;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
