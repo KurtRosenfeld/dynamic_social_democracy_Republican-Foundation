@@ -283,6 +283,15 @@ Q.unemployed_qol = 100;
 Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
+// electoral cealing factors - the highest amount of people that can be reached in each demographic; workers are unlimited
+
+Q.rural_trust = 1;
+Q.peasant_conciousness = 1;
+Q.rural_antisemitism = 45;
+Q.urban_antisemitism = 20;
+Q.youth_wing = 4; // none - sidelined - established - well established - poplular
+Q.concordat_n = 0;
+
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 Q.parties = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'dvfp', 'nsdap', 'other', 'nsfb'];
 Q.parties_graph = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'dvfp', 'nsdap', 'other', 'nsfb'];
@@ -356,16 +365,16 @@ Q.unemployed_dvfp = 0;
 Q.unemployed_other = 1;
 Q.unemployed_nsfb = 0;
 
-Q.catholics_spd = 12;
+Q.catholics_spd = 10;
 Q.catholics_uspd = 4;
 Q.catholics_kpd = 1;
 Q.catholics_z = 60;
 Q.catholics_ddp = 2;
 Q.catholics_dvp = 7;
-Q.catholics_dnvp = 6;
+Q.catholics_dnvp = 7;
 Q.catholics_nsdap = 3;
 Q.catholics_dvfp = 0;
-Q.catholics_other = 7;
+Q.catholics_other = 8;
 Q.catholics_nsfb = 0;
 
 Q.workers_spd_old = 44;
