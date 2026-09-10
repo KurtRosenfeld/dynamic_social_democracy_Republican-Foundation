@@ -422,6 +422,14 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 Railway status:
 
+Railway profitability: 
+
+Postal Leaning:
+
+National Judiciary Leaning: 
+
+Foreign Office Leaning: 
+
 = Women's Rights
 
 Women's rights: [+ womens_rights +]
