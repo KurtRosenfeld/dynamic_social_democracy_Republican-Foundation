@@ -1,6 +1,6 @@
 title: <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> overfounding 
 subtitle: The party does not approve of the sums we've spent on pur paramilitary.
-on-arrival: rb_founding_cealing += 1; left_dissent += 3; center_dissnet += 3; labor_dissent += 3; reformist_dissent += 5
+on-arrival: rb_founding_cealing += 1; left_dissent += 3; center_dissent += 3; labor_dissent += 3; reformist_dissent += 5
 tags: event
 view-if: rb_founding_cealing < 0
 priority: 1
