@@ -1279,6 +1279,13 @@ Q.conservative_media = 23.6
 Q.monarchist_media = 18.6;
 Q.volkisch_media = 1.6;
 
+// land distribution
+
+Q.small_holders = 10.9;
+Q.regular_estates = 61.2;
+Q.large_estates = 27.6;
+Q.state_land = 0.3;
+
 // (dynamic) party_colours - mostly major and dynmaic parties
 
 Q.spd_colour = '#c00000';
