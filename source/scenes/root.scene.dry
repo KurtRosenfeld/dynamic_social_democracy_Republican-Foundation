@@ -883,6 +883,7 @@ Q.womens_rights = 0;
 Q.radio_dues = 'medium';
 Q.postal_reform = 0;
 Q.railway_profitability = -1;
+Q.working_day = 5;
 // level of welfare relative to 1928 (can go negative)
 Q.welfare = 0;
 // level of support for farmers
