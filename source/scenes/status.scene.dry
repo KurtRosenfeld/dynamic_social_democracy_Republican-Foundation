@@ -440,7 +440,7 @@ Abortion status: [+ abortion +]
 
 = Worker Affaires
 
-Average Working Day: []
+Eight-hour-day: [+ working_day : eight_hours +]
 
 Urban Antisemitism: [+ urban_antisemitism : dissent +]
 
