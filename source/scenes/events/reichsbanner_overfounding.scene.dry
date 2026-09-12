@@ -26,7 +26,7 @@ The money has returned.
   
 @bribe_spd
 subtitle: -1 resources
-on-arrival: resources -= 1; left_dissent -= 2; center_dissent -= 3; labor_dissnet -= 4; reformist_dissent -= 6
+on-arrival: resources -= 1; left_dissent -= 2; center_dissent -= 3; labor_dissent -= 4; reformist_dissent -= 6
 choose-if: resources >= 1
 
 We have given resources to the party branches voicing most opposition. Obviously they will use that for sensible goals.
