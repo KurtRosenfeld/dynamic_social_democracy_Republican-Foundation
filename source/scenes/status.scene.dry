@@ -42,7 +42,7 @@ Prussian government: [? if spd_prussia : in government - ?]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
-SPD youth wing: [+ youth_wing : youth_wing +]
+youth wing: [+ youth_wing : youth_wing +]
 
 = Government
 
