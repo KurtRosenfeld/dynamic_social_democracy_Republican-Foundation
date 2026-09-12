@@ -1,0 +1,44 @@
+title: Stresemann offer
+subtitle: Hard times, hard meassures or something...
+view-if: ruhr_occupied and spd_in_government == 0 and chancellor == "Cuno" and month == 4
+max-visits: 1 
+tags: event 
+new-page: true 
+face-image: img/portraits/StresemannGustav.jpg 
+
+
+= Stresemann offer
+
+Some members of the <span style="color: [+ dvp_colour +];">**DVP**</span> have gown tired of the Ruhrkampf policy. While most nationalists oppose any concessions to <span style="color: #002654;">**France**</span>, the realist Realpolitik-faction views cooperation with the <span style="color: [+ spd_colour +];">**SPD**</span> as the best chance to end the crisis without destroying <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span> alltogether.
+
+  
+- @easymann: For the duration of the crisis, we are willing to work with the <span style="color: [+ dvp_colour +];">**DVP**</span>.
+- @who_koowww: Remain ambigous.
+- @f_u_c_k_youu: No.
+
+
+@easymann
+on-arrival: dvp_relation += 5; early_dvp_cooperation += 1; early_dvp_cooperation += 1*(1-dissent); dvp_relation += 2 if left_strength < 15; dvp_relation += 1 if z_relation >= 60
+choose-if: early_dvp_cooperation >= 0
+unavailable-subtitle: Those bridges are burnt.
+subtitle: This could lead to a Grand Coalition.
+
+There are still large parts of both parties opposing any kind of arrangement but progress is being made.
+
+
+@who_koowww
+on-arrival: dvp_relation += 2; early_dvp_cooperation += 1*(1-dissent); dvp_relation += 1 if z_relation >= 60
+subtitle: Don't do anything crazy yet.
+
+Regarding all the opposition and hostile sentiments, we should not promise anything concrete.
+
+
+@f_u_c_k_youu
+on-arrival: dvp_relation -= 3; early_dvp_cooperation -= 2; left_strength += 2
+
+Oh, so you think you can use the name of the <span style="color: [+ spd_colour +];">**SPD**</span> to pass an anti-working class agenda destroying the eight-hour-workday and the bits of worker's rights still left in this shitty country, huh? Well, guess what, the <span style="color: [+ spd_colour +];">**SPD**</span> won't just be your instrument of class suppression. We will never leave our comrades to strave. JUST GO TO THAT FUCKING <span style="color: [+ dnvp_colour +];">**DNVP**</span> TO FORM YOUR GOVERNMENT, THEY ARE QUITE FOND OF KILLING THE POOR ANRE'T THEY?!??!?!
+
+
+
+  
+  
