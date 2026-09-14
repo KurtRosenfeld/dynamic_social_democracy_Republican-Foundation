@@ -42,7 +42,7 @@ on-arrival: uspd_relation += 3; z_relation -= 1; ddp_relation -= 2; dvp_relation
 
 The coalition is done. [+ chancellor +] resigns.
   
-@to_compromise
+@to_reject
 view-if: in_toleration == 1
 on-arrival: uspd_relation += 3; z_relation -= 1; ddp_relation -= 2; dvp_relation -= 2; early_dvp_cooperation -= 0.5; in_toleration = 0; chancellor = "vacant"; chancellor_party = "I"
 
