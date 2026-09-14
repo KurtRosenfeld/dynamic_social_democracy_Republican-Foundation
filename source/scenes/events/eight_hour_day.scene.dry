@@ -1,0 +1,83 @@
+title: Abolition of the Eight-Hour-Day?
+view-if: ruhr_occupied and (spd_in_government == 1 or in_toleration == 1) and year == 1923 and month == 10
+max-visits: 1 
+priority: 5
+tags: event 
+new-page: true 
+on-arrival: new_middle_dnvp += 3; rural_dnvp += 1; catholic_other += 2; rural_other += 1; old_middle_other += 1
+face-image: img/portraits/stinnes_and_the_boyyys.jpg 
+
+
+= Abolition of the Eight-Hour-Day?
+
+Large industrialists cry about their crisis and loss of profit. The coalition is sure they'll give in to the demand to abolish the constitutional eight hour work day. If we were tu support this measure, the unions and our base would cry out treason, what should we do?
+
+- @co_give_in: The economic situation necsesitates this measure.
+- @co_compromise: Perhaps we can reach a compromise?
+- @co_reject: Fine, we will end this coalition.
+- @to_give_in: The economic situation necsesitates this measure.
+- @to_compromise: Perhaps we can reach a compromise?
+- @to_reject: Fine, we will end this arrangement.
+
+
+@co_give_in
+subtitle: This is suicide!
+view-if: spd_in_government == 1
+on-arrival: workers_spd -= 8; unemployed_spd -= 3; new_middle_spd -= 2; eight_hours = 0.5; kpd_relation -= 8; uspd_relation -= 10; sb_relation -= 7; ddp_relation += 6; dvp_relation += 10; z_relation += 4; economic_growth += 0.1; left_dissent += 8; labor_dissent = 8; center_dissent += 4; reformist_dissent += 3; workers_dtsp += 2
+
+Oh boy...
+
+
+@to_give_in
+subtitle: This is suicide!
+view-if: in_toleration == 1
+on-arrival: workers_spd -= 6; unemployed_spd -= 2; new_middle_spd -= 2; eight_hours = 0.5; kpd_relation -= 8; uspd_relation -= 8; sb_relation -= 8; ddp_relation += 6; dvp_relation += 8; z_relation += 4; economic_growth += 0.1; left_dissent += 8; labor_dissent = 8; center_dissent += 4; reformist_dissent += 3; workers_dtsp += 2
+
+Oh boy...
+
+
+@co_reject
+view-if: spd_in_government == 1
+on-arrival: uspd_relation += 3; z_relation -= 1; ddp_relation -= 2; dvp_relation -= 2; early_dvp_cooperation -= 0.5; spd_in_goverment = 0; chancellor = "vacant"; chancellor_party = "I"
+
+The coalition is done. [+ chancellor +] resigns.
+  
+@to_compromise
+view-if: in_toleration == 1
+on-arrival: uspd_relation += 3; z_relation -= 1; ddp_relation -= 2; dvp_relation -= 2; early_dvp_cooperation -= 0.5; in_toleration = 0; chancellor = "vacant"; chancellor_party = "I"
+
+The coalition is done. [+ chancellor +] resigns.
+
+
+@co_compromise
+view-if: spd_in_government == 1
+
+We could allow for a loosening of the legal framework to up to ten hours while maintaining the eight hour work day in principle.
+
+- @accept: We have to.
+- @co_reject: Fine, we will end this coalition.
+
+
+@to_compromise
+view-if: in_toleration == 1
+
+We could allow for a loosening of the legal framework to up to ten hours while maintaining the eight hour work day in principle.
+
+- @accept: We have to.
+- @to_reject: Fine, we will end this arrangement.
+
+
+@accept
+subtitle: Our base won't be happy.
+on-arrival: workers_spd -= 3; unemployed_spd -= 2; new_middle_spd -= 1; eight_hours = 4; kpd_relation -= 7; uspd_relation -= 5; sb_relation -= 5; ddp_relation += 3; dvp_relation += 4; z_relation += 2; economic_growth += 0.05; left_dissent += 5; labor_dissent = 5; center_dissent += 2; workers_dtsp += 2
+
+
+
+
+
+
+
+
+
+
+  
