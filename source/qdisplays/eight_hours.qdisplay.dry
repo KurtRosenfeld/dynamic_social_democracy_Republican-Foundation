@@ -1,8 +1,8 @@
 
-(..0) <span style="color: #66BB6A;">no spare time</span>
-(0..0.9) <span style="color: #81C784;">abolished</span>
-(0.9..4.9) <span style="color: #FFD54F;">loose</span>
-(4.9..9.9) <span style="color: #FFB74D;">respected</span>
-(9.9..) <span style="color: #d42f2f;">well-respected</span>
+(..0) <span style="color: #47423A;">no spare time</span>
+(0.1..0.9) <span style="color: #D42F2F;">abolished</span>
+(0.9..4.9) <span style="color: #FFB74D;">loose</span>
+(4.9..9.9) <span style="color: #7ABC7D;">respected</span>
+(9.9..) <span style="color: #529655;">well-respected</span>
 
   
