@@ -568,37 +568,37 @@ Support for the Republic: [+ pro_republic_disp +]%
 
 <div id="break-rur" style="display:none">
 
-*KPD: [+ rural_middle_kpd_display +]%*
+*KPD: [+ rural_kpd_display +]%*
 
-*[? if sapd_formed: SAPD: [+ rural_middle_sapd_display +]% ?]*
+*[? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]*
 
- *[? if not uspd_joined = 3: USPD: [+ rural_middle_uspd_display +]% ?]*
+ *[? if not uspd_joined = 3: USPD: [+ rural_uspd_display +]% ?]*
 
-  *SPD: [+ rural_middle_spd_display +]%*
+  *SPD: [+ rural_spd_display +]%*
 
-*[? if not lvp_formed: [+ ddp_name +]: [+ rural_middle_ddp_display +]% ?]*
+*[? if not lvp_formed: [+ ddp_name +]: [+ rural_ddp_display +]% ?]*
 
-*[? if lvp_formed: LVP: [+ rural_middle_lvp_display +]% ?]*
+*[? if lvp_formed: LVP: [+ rural_lvp_display +]% ?]*
 
-  *[+ z_party_name +]: [+ rural_middle_z_display +]%*
+  *[+ z_party_name +]: [+ rural_z_display +]%*
 
-*[? if not lvp_formed and dvp_exist: DVP: [+ rural_middle_dvp_display +]% ?]*
+*[? if not lvp_formed and dvp_exist: DVP: [+ rural_dvp_display +]% ?]*
 
-*Others: [+ rural_middle_other_display +]%*
+*Others: [+ rural_other_display +]%*
 
-  *[? if dnef_formed: DNEF: [+ rural_middle_dnef_display +]% ?]*
+  *[? if dnef_formed: DNEF: [+ rural_dnef_display +]% ?]*
 
-* [? if kvp_formed: KVP: [+ rural_middle_kvp_display +]%  ?]*
+* [? if kvp_formed: KVP: [+ rural_kvp_display +]%  ?]*
 
-*[? if not cvp_formed: DNVP: [+ rural_middle_dnvp_display +]% ?]*
+*[? if not cvp_formed: DNVP: [+ rural_dnvp_display +]% ?]*
 
-*[? if dnf_formed: DNF: [+ rural_middle_dnf_display +]%  ?]*
+*[? if dnf_formed: DNF: [+ rural_dnf_display +]%  ?]*
 
-*[? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ rural_middle_dvfp_display +]% ?]*
+*[? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ rural_dvfp_display +]% ?]*
 
-*[? if nsfb_exists = 0: NSDAP: [+ rural_middle_nsdap_display +]% ?]*
+*[? if nsfb_exists = 0: NSDAP: [+ rural_nsdap_display +]% ?]*
 
-*[? if nsfb_exists = 1: NSFB: [+ rural_middle_nsfb_display +]% ?]*
+*[? if nsfb_exists = 1: NSFB: [+ rural_nsfb_display +]% ?]*
 </div>
 
 <script>
