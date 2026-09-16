@@ -413,7 +413,7 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
   <span style="color: #006400;">**LB**</span>:
 
-  *irrelevant rest*:
+  **Rest**: 
 </div>
 
 <script>
@@ -564,11 +564,140 @@ Support for the Republic: [+ pro_republic_disp +]%
   });
 </script>
 
-Rural: [? if dnef_formed: DNEF: [+ rural_dnef_display +]%, ?]SPD: [+ rural_spd_display +]%, [+ z_party_name +]: [+ rural_z_display +]%, [? if not uspd_joined = 3: USPD: [+ rural_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ rural_sapd_display +]%, ?]KPD: [+ rural_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ rural_ddp_display +]%, [? if dvp_exist: DVP: [+ rural_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ rural_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ rural_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ rural_dnf_display +]%  ?][? if kvp_formed: KVP: [+ rural_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ rural_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ rural_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ rural_nsfb_display +]%, ?]Others: [+ rural_other_display +]%
+<span id="mother-rur" style="cursor:pointer">⇊</span> Rural:
 
-Unemployed: [? if dnef_formed: DNEF: [+ unemployed_dnef_display +]%, ?]SPD: [+ unemployed_spd_display +]%, [+ z_party_name +]: [+ unemployed_z_display +]%, [? if not uspd_joined = 3: USPD: [+ unemployed_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ unemployed_sapd_display +]%, ?]KPD: [+ unemployed_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ unemployed_ddp_display +]%, [? if dvp_exist: DVP: [+ unemployed_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ unemployed_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ unemployed_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ unemployed_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ unemployed_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ unemployed_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ unemployed_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ unemployed_nsfb_display +]%, ?]Others: [+ unemployed_other_display +]%
+<div id="break-rur" style="display:none">
 
-Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ catholics_spd_display +]%, [+ z_party_name +]: [+ catholics_z_display +]%, [? if not uspd_joined = 3: USPD: [+ catholic_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ catholic_sapd_display +]%, ?]KPD: [+ catholics_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ catholics_ddp_display +]%, [? if dvp_exist: DVP: [+ catholics_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ catholics_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ catholics_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ catholics_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ catholics_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ catholics_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ catholics_nsdap_display +]%,?][? if nsfb_exists = 1: NSFB: [+ catholics_nsfb_display +]%,?] Others: [+ catholics_other_display +]%
+*KPD: [+ rural_middle_kpd_display +]%*
+
+*[? if sapd_formed: SAPD: [+ rural_middle_sapd_display +]% ?]*
+
+ *[? if not uspd_joined = 3: USPD: [+ rural_middle_uspd_display +]% ?]*
+
+  *SPD: [+ rural_middle_spd_display +]%*
+
+*[? if not lvp_formed: [+ ddp_name +]: [+ rural_middle_ddp_display +]% ?]*
+
+*[? if lvp_formed: LVP: [+ rural_middle_lvp_display +]% ?]*
+
+  *[+ z_party_name +]: [+ rural_middle_z_display +]%*
+
+*[? if not lvp_formed and dvp_exist: DVP: [+ rural_middle_dvp_display +]% ?]*
+
+*Others: [+ rural_middle_other_display +]%*
+
+  *[? if dnef_formed: DNEF: [+ rural_middle_dnef_display +]% ?]*
+
+* [? if kvp_formed: KVP: [+ rural_middle_kvp_display +]%  ?]*
+
+*[? if not cvp_formed: DNVP: [+ rural_middle_dnvp_display +]% ?]*
+
+*[? if dnf_formed: DNF: [+ rural_middle_dnf_display +]%  ?]*
+
+*[? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ rural_middle_dvfp_display +]% ?]*
+
+*[? if nsfb_exists = 0: NSDAP: [+ rural_middle_nsdap_display +]% ?]*
+
+*[? if nsfb_exists = 1: NSFB: [+ rural_middle_nsfb_display +]% ?]*
+</div>
+
+<script>
+  let click_br_rur = 0;
+  document.getElementById('mother-rur').addEventListener('click', () => {
+    click_br_rur = 1 - click_br_rur;
+    document.getElementById('break-rur').style.display = click_br_rur ? 'block' : 'none';
+  });
+</script>
+
+<span id="mother-unp" style="cursor:pointer">⇊</span> Unemployed:
+
+<div id="break-unp" style="display:none">
+
+*KPD: [+ unemployed_kpd_display +]%*
+
+*[? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]*
+
+ *[? if not uspd_joined = 3: USPD: [+ unemployed_uspd_display +]% ?]*
+
+  *SPD: [+ unemployed_spd_display +]%*
+
+*[? if not lvp_formed: [+ ddp_name +]: [+ unemployed_ddp_display +]% ?]*
+
+*[? if lvp_formed: LVP: [+ unemployed_lvp_display +]% ?]*
+
+  *[+ z_party_name +]: [+ unemployed_z_display +]%*
+
+*[? if not lvp_formed and dvp_exist: DVP: [+ unemployed_dvp_display +]% ?]*
+
+*Others: [+ unemployed_other_display +]%*
+
+  *[? if dnef_formed: DNEF: [+ unemployed_dnef_display +]% ?]*
+
+* [? if kvp_formed: KVP: [+ unemployed_kvp_display +]%  ?]*
+
+*[? if not cvp_formed: DNVP: [+ unemployed_dnvp_display +]% ?]*
+
+*[? if dnf_formed: DNF: [+ unemployed_dnf_display +]%  ?]*
+
+*[? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ unemployed_dvfp_display +]% ?]*
+
+*[? if nsfb_exists = 0: NSDAP: [+ unemployed_nsdap_display +]% ?]*
+
+*[? if nsfb_exists = 1: NSFB: [+ unemployed_nsfb_display +]% ?]*
+</div>
+
+<script>
+  let click_br_unp = 0;
+  document.getElementById('mother-unp').addEventListener('click', () => {
+    click_br_unp = 1 - click_br_unp;
+    document.getElementById('break-unp').style.display = click_br_unp ? 'block' : 'none';
+  });
+</script>
+
+<span id="mother-cat" style="cursor:pointer">⇊</span> Catholics:
+
+<div id="break-cat" style="display:none">
+
+*KPD: [+ catholics_kpd_display +]%*
+
+*[? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]*
+
+ *[? if not uspd_joined = 3: USPD: [+ catholics_uspd_display +]% ?]*
+
+  *SPD: [+ catholics_spd_display +]%*
+
+*[? if not lvp_formed: [+ ddp_name +]: [+ catholics_ddp_display +]% ?]*
+
+*[? if lvp_formed: LVP: [+ catholics_lvp_display +]% ?]*
+
+  *[+ z_party_name +]: [+ catholics_z_display +]%*
+
+*[? if not lvp_formed and dvp_exist: DVP: [+ catholics_dvp_display +]% ?]*
+
+*Others: [+ catholics_other_display +]%*
+
+  *[? if dnef_formed: DNEF: [+ catholics_dnef_display +]% ?]*
+
+* [? if kvp_formed: KVP: [+ catholics_kvp_display +]%  ?]*
+
+*[? if not cvp_formed: DNVP: [+ catholics_dnvp_display +]% ?]*
+
+*[? if dnf_formed: DNF: [+ catholics_dnf_display +]%  ?]*
+
+*[? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ catholics_dvfp_display +]% ?]*
+
+*[? if nsfb_exists = 0: NSDAP: [+ catholics_nsdap_display +]% ?]*
+
+*[? if nsfb_exists = 1: NSFB: [+ catholics_nsfb_display +]% ?]*
+</div>
+
+<script>
+  let click_br_cat = 0;
+  document.getElementById('mother-cat').addEventListener('click', () => {
+    click_br_cat = 1 - click_br_cat;
+    document.getElementById('break-cat').style.display = click_br_cat ? 'block' : 'none';
+  });
+</script>
 
 @state
 
@@ -628,7 +757,7 @@ Rural trust in SPD: [+ rural_trust : rural_trust +]
 
 @relations
 
-= <span class="tooltip-text" title="Foreign Relastions are the relations between countries in a broad sense. They adapt to government policies and to a lesser extent to inter-party relations.
+= <span class="tooltip-text" title="Foreign Relations are the relations between countries in a broad sense. They adapt to government policies and to a lesser extent to inter-party relations.
 " >Foreign Relations</span>
 
 <span style="color: #002654;">**Western**</span> <span style="color: #D7141A;">**Allies**</span>: [+ west_relation : relationships +]
