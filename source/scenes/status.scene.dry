@@ -403,17 +403,17 @@ Q.socialism_disp = Math.floor(Q.socialism);
 <span id="other-pats" style="cursor:pointer">⇊</span> **Others**: [+ other_votes +]%
 
 <div id="other-friends" style="display:none">
-  <span style="color: #226510;">**[+ dbp_name +]**</span>: 
+  <span style="color: #226510;">**[+ dbp_name +]**</span>: [+ ors_dbp +]%
 
-  <span style="color: #63C489;">**DHP**</span>: 🙏
+  <span style="color: #63C489;">**DHP** 🙏</span>: [+ ors_dhp +]%
 
-  <span style="color: #b8996f;">**WP**</span>: This is all tba btw
+  <span style="color: #b8996f;">**WP**</span>: [+ ors_wp +]%
 
-  <span style="color: #0075EB;">**VRP**</span>:
+  [? if vrp_exists: <span style="color: #0075EB;">**VRP**</span>: [+ ors_vrp +]% ?]
 
-  <span style="color: #006400;">**LB**</span>:
+  <span style="color: #006400;">**LB**</span>: [+ ors_lb +]%
 
-  **Rest**: 
+  **Rest**: [+ ors_rest +]%
 </div>
 
 <script>
