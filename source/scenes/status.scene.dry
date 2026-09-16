@@ -403,15 +403,15 @@ Q.socialism_disp = Math.floor(Q.socialism);
 <span id="other-pats" style="cursor:pointer">⇊</span> **Others**: [+ other_votes +]%
 
 <div id="other-friends" style="display:none">
-  **[+ dbp_name +]**: 
+  **<span style="color: #226510;">**[+ dbp_name +]**</span>**: 
 
-  **DHP**:
+  **<span style="color: #63C489;">**DHP**</span>**: 🙏
 
-  **WP**: This is al tba btw
+  **<span style="color: #b8996f;">**WP**</span>**: This is al tba btw
 
-  **VRP**:
+  **<span style="color: #0075EB;">**VRP**</span>**:
 
-  **LB**:
+  **<span style="color: #006400;">**LB**</span>**:
 </div>
 
 <script>
@@ -451,13 +451,13 @@ Postal Leaning:
 <span id="nat-jud" style="cursor:pointer">⇊</span> National Judiciary: 
 
 <div id="jud-breakdown" style="display:none">
-  Prussian Judiciary: 
+  *Prussian Judiciary*: 
 
-  Bavarian Judiciary: 
+  *Bavarian Judiciary*: 
 
-  Saxon Judiciary:
+  *Saxon Judiciary*:
 
-  Other Judiciary:
+  *Other Judiciary*:
 </div>
 
 <script>
