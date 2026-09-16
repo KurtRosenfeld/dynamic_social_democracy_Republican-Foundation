@@ -432,6 +432,21 @@ National Judiciary Leaning:
 
 Foreign Office Leaning: 
 
+National Judiciary: <span id="nat-jud" style="cursor:pointer">[click to expand]</span>
+
+<div id="jud-breakdown" style="display:none">
+  Prussian Judiciary: ...
+  Bavarian Judiciary: ...
+</div>
+
+<script>
+  let click_jud = 0;
+  document.getElementById('nat-jud').addEventListener('click', () => {
+    click_jud = 1 - click_jud;
+    document.getElementById('jud-breakdown').style.display = click_jud ? 'block' : 'none';
+  });
+</script>
+
 = Women's Rights
 
 Women's rights: [+ womens_rights +]
