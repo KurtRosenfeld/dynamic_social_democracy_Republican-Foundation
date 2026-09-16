@@ -407,11 +407,13 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
   <span style="color: #63C489;">**DHP**</span>: 🙏
 
-  <span style="color: #b8996f;">**WP**</span>: This is al tba btw
+  <span style="color: #b8996f;">**WP**</span>: This is all tba btw
 
   <span style="color: #0075EB;">**VRP**</span>:
 
   <span style="color: #006400;">**LB**</span>:
+
+  *irrelevant rest*:
 </div>
 
 <script>
@@ -430,7 +432,6 @@ Support for the Republic: [+ pro_republic_disp +]%
 <span id="mother-work" style="cursor:pointer">⇊</span> Workers:
 
 <div id="break-work" style="display:none">
-  *[? if dnef_formed: DNEF: [+ workers_dnef_display +]% ?]*
 
 *KPD: [+ workers_kpd_display +]%*
 
@@ -449,6 +450,8 @@ Support for the Republic: [+ pro_republic_disp +]%
 *[? if not lvp_formed and dvp_exist: DVP: [+ workers_dvp_display +]% ?]*
 
 *Others: [+ workers_other_display +]%*
+
+  *[? if dnef_formed: DNEF: [+ workers_dnef_display +]% ?]*
 
 * [? if kvp_formed: KVP: [+ workers_kvp_display +]%  ?]*
 
@@ -471,9 +474,95 @@ Support for the Republic: [+ pro_republic_disp +]%
   });
 </script>
 
-New Middle Class: [? if dnef_formed: DNEF: [+ new_middle_dnef_display +]%, ?]SPD: [+ new_middle_spd_display +]%, [+ z_party_name +]: [+ new_middle_z_display +]%, [? if not uspd_joined = 3: USPD: [+ new_middle_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ new_middle_sapd_display +]%, ?]KPD: [+ new_middle_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ new_middle_ddp_display +]%, [? if dvp_exist: DVP: [+ new_middle_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ new_middle_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ new_middle_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ new_middle_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ new_middle_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ new_middle_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ new_middle_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ new_middle_nsfb_display +]%, ?]Others: [+ new_middle_other_display +]%
+<span id="mother-new" style="cursor:pointer">⇊</span> New Middle Class:
 
-Old Middle Class: [? if dnef_formed: DNEF: [+ old_middle_dnef_display +]%, ?]SPD: [+ old_middle_spd_display +]%, [+ z_party_name +]: [+ old_middle_z_display +]%, [? if not uspd_joined = 3: USPD: [+ old_middle_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ old_middle_sapd_display +]%, ?]KPD: [+ old_middle_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ old_middle_ddp_display +]%, [? if dvp_exist: DVP: [+ old_middle_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ old_middle_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ old_middle_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ old_middle_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ old_middle_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ old_middle_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ old_middle_nsdap_display +]%,?][? if nsfb_exists = 1: NSFB: [+ old_middle_nsfb_display +]%,?] Others: [+ old_middle_other_display +]%
+<div id="break-new" style="display:none">
+
+*KPD: [+ new_middle_kpd_display +]%*
+
+*[? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]*
+
+ *[? if not uspd_joined = 3: USPD: [+ new_middle_uspd_display +]% ?]*
+
+  *SPD: [+ new_middle_spd_display +]%*
+
+*[? if not lvp_formed: [+ ddp_name +]: [+ new_middle_ddp_display +]% ?]*
+
+*[? if lvp_formed: LVP: [+ new_middle_lvp_display +]% ?]*
+
+  *[+ z_party_name +]: [+ new_middle_z_display +]%*
+
+*[? if not lvp_formed and dvp_exist: DVP: [+ new_middle_dvp_display +]% ?]*
+
+*Others: [+ new_middle_other_display +]%*
+
+  *[? if dnef_formed: DNEF: [+ new_middle_dnef_display +]% ?]*
+
+* [? if kvp_formed: KVP: [+ new_middle_kvp_display +]%  ?]*
+
+*[? if not cvp_formed: DNVP: [+ new_middle_dnvp_display +]% ?]*
+
+*[? if dnf_formed: DNF: [+ new_middle_dnf_display +]%  ?]*
+
+*[? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ new_middle_dvfp_display +]% ?]*
+
+*[? if nsfb_exists = 0: NSDAP: [+ new_middle_nsdap_display +]% ?]*
+
+*[? if nsfb_exists = 1: NSFB: [+ new_middle_nsfb_display +]% ?]*
+</div>
+
+<script>
+  let click_br_new = 0;
+  document.getElementById('mother-new').addEventListener('click', () => {
+    click_br_new = 1 - click_br_new;
+    document.getElementById('break-new').style.display = click_br_new ? 'block' : 'none';
+  });
+</script>
+
+<span id="mother-old" style="cursor:pointer">⇊</span> Old Middle Class:
+
+<div id="break-old" style="display:none">
+
+*KPD: [+ old_middle_kpd_display +]%*
+
+*[? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]*
+
+ *[? if not uspd_joined = 3: USPD: [+ old_middle_uspd_display +]% ?]*
+
+  *SPD: [+ old_middle_spd_display +]%*
+
+*[? if not lvp_formed: [+ ddp_name +]: [+ old_middle_ddp_display +]% ?]*
+
+*[? if lvp_formed: LVP: [+ old_middle_lvp_display +]% ?]*
+
+  *[+ z_party_name +]: [+ old_middle_z_display +]%*
+
+*[? if not lvp_formed and dvp_exist: DVP: [+ old_middle_dvp_display +]% ?]*
+
+*Others: [+ old_middle_other_display +]%*
+
+  *[? if dnef_formed: DNEF: [+ old_middle_dnef_display +]% ?]*
+
+* [? if kvp_formed: KVP: [+ old_middle_kvp_display +]%  ?]*
+
+*[? if not cvp_formed: DNVP: [+ old_middle_dnvp_display +]% ?]*
+
+*[? if dnf_formed: DNF: [+ old_middle_dnf_display +]%  ?]*
+
+*[? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ old_middle_dvfp_display +]% ?]*
+
+*[? if nsfb_exists = 0: NSDAP: [+ old_middle_nsdap_display +]% ?]*
+
+*[? if nsfb_exists = 1: NSFB: [+ old_middle_nsfb_display +]% ?]*
+</div>
+
+<script>
+  let click_br_old = 0;
+  document.getElementById('mother-old').addEventListener('click', () => {
+    click_br_old = 1 - click_br_old;
+    document.getElementById('break-old').style.display = click_br_old ? 'block' : 'none';
+  });
+</script>
 
 Rural: [? if dnef_formed: DNEF: [+ rural_dnef_display +]%, ?]SPD: [+ rural_spd_display +]%, [+ z_party_name +]: [+ rural_z_display +]%, [? if not uspd_joined = 3: USPD: [+ rural_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ rural_sapd_display +]%, ?]KPD: [+ rural_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ rural_ddp_display +]%, [? if dvp_exist: DVP: [+ rural_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ rural_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ rural_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ rural_dnf_display +]%  ?][? if kvp_formed: KVP: [+ rural_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ rural_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ rural_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ rural_nsfb_display +]%, ?]Others: [+ rural_other_display +]%
 
