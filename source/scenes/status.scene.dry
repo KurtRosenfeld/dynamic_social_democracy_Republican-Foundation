@@ -400,7 +400,27 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
 [? if nvf_exist: <span style="color: #142e20;">**NVF**</span>: [+ nvf_votes +]% ?]
 
-**Others**: [+ other_votes +]%
+<span id="other-pats" style="cursor:pointer">⇊</span> **Others**: [+ other_votes +]%
+
+<div id="other-friends" style="display:none">
+  **[+ dbp_name +]**: 
+
+  **DHP**:
+
+  **WP**: This is al tba btw
+
+  **VRP**:
+
+  **LB**:
+</div>
+
+<script>
+  let click_other = 0;
+  document.getElementById('other-pats').addEventListener('click', () => {
+    click_other = 1 - click_other;
+    document.getElementById('other-friends').style.display = click_other ? 'block' : 'none';
+  });
+</script>
 
 Support for the Republic: [+ pro_republic_disp +]%
 
@@ -428,15 +448,16 @@ Railway profitability:
 
 Postal Leaning:
 
-National Judiciary Leaning: 
-
-Foreign Office Leaning: 
-
-National Judiciary: <span id="nat-jud" style="cursor:pointer">[click to expand]</span>
+<span id="nat-jud" style="cursor:pointer">⇊</span> National Judiciary: 
 
 <div id="jud-breakdown" style="display:none">
-  Prussian Judiciary: ...
-  Bavarian Judiciary: ...
+  Prussian Judiciary: 
+
+  Bavarian Judiciary: 
+
+  Saxon Judiciary:
+
+  Other Judiciary:
 </div>
 
 <script>
@@ -446,6 +467,9 @@ National Judiciary: <span id="nat-jud" style="cursor:pointer">[click to expand]<
     document.getElementById('jud-breakdown').style.display = click_jud ? 'block' : 'none';
   });
 </script>
+
+Foreign Office Leaning: 
+
 
 = Women's Rights
 
