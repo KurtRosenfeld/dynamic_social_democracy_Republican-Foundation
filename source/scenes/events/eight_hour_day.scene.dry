@@ -38,13 +38,13 @@ Oh boy...
 
 @co_reject
 view-if: spd_in_government == 1
-on-arrival: uspd_relation += 3; z_relation -= 1; ddp_relation -= 2; dvp_relation -= 2; early_dvp_cooperation -= 0.5; spd_in_goverment = 0; chancellor = "vacant"; chancellor_party = "I"
+on-arrival: uspd_relation += 3; z_relation -= 1; ddp_relation -= 2; dvp_relation -= 2; early_dvp_cooperation -= 0.5; spd_in_goverment = 0; chancellor = "vacant"; chancellor_party = "I"; ebert_jesters_stressy = 1
 
 The coalition is done. [+ chancellor +] resigns.
   
 @to_reject
 view-if: in_toleration == 1
-on-arrival: uspd_relation += 3; z_relation -= 1; ddp_relation -= 2; dvp_relation -= 2; early_dvp_cooperation -= 0.5; in_toleration = 0; chancellor = "vacant"; chancellor_party = "I"
+on-arrival: uspd_relation += 3; z_relation -= 1; ddp_relation -= 2; dvp_relation -= 2; early_dvp_cooperation -= 0.5; in_toleration = 0; chancellor = "vacant"; chancellor_party = "I"; ebert_jesters_stressy = 1
 
 The coalition is done. [+ chancellor +] resigns.
 
