@@ -879,6 +879,10 @@ fill: #D5AC27;
   fill: #b8996f;
 }
 
+.seat.dhp {
+  fill: #63C489;
+}
+
 .seat.hb {
   fill: #CEDD8A;
 }
