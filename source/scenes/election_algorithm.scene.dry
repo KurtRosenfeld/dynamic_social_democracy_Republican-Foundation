@@ -40,7 +40,7 @@ for (var party of Q.parties) {
         if (Q.csvd_formed && !Q.aspd_other) Q.csvd_normalized = (Q.wor_csvd + Q.un_csvd);
         Q.dbp_normalized = (Q.rur_dbp + Q.cat_dbp);
         Q.dhp_normalized = (Q.rur_dhp + Q.new_dhp + Q.old_dhp + Q.wor_dhp);
-        Q.lb_normalized = Q.rur_lb;
+        Q.lb_normalized = (Q.rur_lb);
         Q.vrp_normalized = (Q.new_vrp + Q.old_vrp)
         if (Q.aspd_other) Q.aspd_normalized = (Q.wor_aspd + Q.un_aspd + Q.new_aspd);
         if (Q.aspd_kvp) Q.aspd_normalized = (Q.workers_kvp_normalized*Q.workers) + (Q.unemployed_kvp_normalized*Q.unemployed);
