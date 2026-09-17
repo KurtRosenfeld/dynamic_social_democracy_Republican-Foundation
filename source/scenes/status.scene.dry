@@ -403,6 +403,7 @@ Q.socialism_disp = Math.floor(Q.socialism);
 <span id="other-pats" style="cursor:pointer">⇊</span> **Others**: [+ other_votes +]%
 
 <div id="other-friends" style="display:none">
+
   <span style="color: #226510;">**[+ dbp_name +]**</span>: [+ ors_dbp +]%
 
   <span style="color: #63C489;">**DHP** 🙏</span>: [+ ors_dhp +]%
@@ -415,7 +416,6 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
   **Rest**: [+ ors_rest +]%
 
-  Test: [+ new_middle_other_normalized +] - [+ rural_other_normalized +] 
 </div>
 
 <script>
