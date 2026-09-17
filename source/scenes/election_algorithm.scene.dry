@@ -83,6 +83,8 @@ for (var party of Q.parties) {
         Q.wp_votes = (Q.wp_normalized/total_support);
         Q.dbp_votes = (Q.dbp_normalized/total_support);
         Q.dhp_votes = (Q.dhp_normalized/total_support);
+        Q.lb_votes = (Q.lb_normalized/total_support);
+        Q.vrp_votes = (Q.vrp_normalized/total_support);
         if (Q.csvd_formed && !Q.aspd_other) Q.csvd_votes = (Q.csvd_normalized/total_support);
         if (Q.aspd_other || Q.aspd_kvp) Q.aspd_votes = (Q.aspd_normalized/total_support);
         if (Q.right_dnef) Q.right_dnef_votes = (Q.right_dnef_normalized/total_support);
@@ -102,6 +104,8 @@ for (var party of Q.parties) {
         Q.wp_votes = Math.round((Q.wp_votes*1000)/10);
         Q.dhp_votes = Math.round((Q.dhp_votes*1000)/10);
         Q.dbp_votes = Math.round((Q.dbp_votes*1000)/10);
+        Q.lb_votes = Math.round((Q.lb_votes*1000)/10);
+        Q.vrp_votes = Math.round((Q.vrp_votes*1000)/10);
         if (Q.csvd_formed && !Q.aspd_other) Q.csvd_votes = Math.round((Q.csvd_votes*1000)/10);
         if (Q.aspd_other || Q.aspd_kvp) Q.aspd_votes = Math.round((Q.aspd_votes*1000)/10);
         if (Q.right_dnef) Q.right_dnef_votes = Math.round((Q.right_dnef_votes*1000)/10);
