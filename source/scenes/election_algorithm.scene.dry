@@ -37,7 +37,7 @@ for (var party of Q.parties) {
     if (party == "other") {
         if (Q.cnblp_exists) Q.cnblp_normalized = Q.ors_cnbl;
         Q.wp_normalized = Q.ors_wp;
-        if (Q.csvd_formed && !Q.aspd_other) Q.ors_csvd;
+        if (Q.csvd_formed && !Q.aspd_other) Q.csvd_normalized = Q.ors_csvd;
         Q.dbp_normalized = Q.ors_dbp;
         Q.dhp_normalized = Q.ors_dhp;
         Q.lb_normalized = Q.ors_lb;
