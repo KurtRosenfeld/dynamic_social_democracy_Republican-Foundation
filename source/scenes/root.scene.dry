@@ -451,6 +451,14 @@ Q.previous_nsdap_hitler_last_election_votes_prussia = 0.0;
 Q.previous_nvf_last_election_votes_prussia = 0.0;
 Q.previous_schleicher_dnef_last_election_votes_prussia = 0.0;
 
+// you can't stop me from trying
+
+var election_result = {'date': new Date(1920, 6)};
+for (var party of Q.parties_graph) {
+    election_result[party] = Q['old_' + party + '_r'];
+}
+Q.election_records.push(election_result);
+
 // prussian gov right now
 Q.spd_r_prussia = 25.9;
 Q.uspd_r_prussia = 6.4;
