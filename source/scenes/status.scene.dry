@@ -414,6 +414,8 @@ Q.socialism_disp = Math.floor(Q.socialism);
   <span style="color: #006400;">**LB**</span>: [+ ors_lb +]%
 
   **Rest**: [+ ors_rest +]%
+
+  Test: [+ new_middle_other_normalized +] - [+ rural_other_normalized +] 
 </div>
 
 <script>
