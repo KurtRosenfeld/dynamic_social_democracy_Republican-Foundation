@@ -561,6 +561,7 @@ Q.csvd_r = 0;
 Q.aspd_r = 0;
 Q.dbp_r = 0;
 Q.dhp_r = 0;
+Q.lb_r = 0;
 
 if (Q.cnblp_votes) Q.cnblp_r = Math.round(Q.cnblp_votes * Q.adjustmentFactors_other * 1000) / 1000;
 if (Q.wp_votes) Q.wp_r = Math.round(Q.wp_votes * Q.adjustmentFactors_other * 1000) / 1000;
@@ -568,6 +569,7 @@ if (Q.csvd_votes) Q.csvd_r = Math.round(Q.csvd_votes * Q.adjustmentFactors_other
 if (Q.aspd_votes) Q.aspd_r = Math.round(Q.aspd_votes * Q.adjustmentFactors_other * 1000) / 1000;
 if (Q.dbp_votes) Q.dbp_r = Math.round(Q.dbp_votes * Q.adjustmentFactors_other * 1000) / 1000;
 if (Q.dhp_votes) Q.dhp_r = Math.round(Q.dhp_votes * Q.adjustmentFactors_other * 1000) / 1000;
+if (Q.lb_votes) Q.lb_r = Math.round(Q.lb_votes * Q.adjustmentFactors_other * 1000) / 1000;
 
 if (Q.dnef_formed) {
     Q.cnblp_r = 0;
@@ -579,7 +581,7 @@ if (Q.electoral_threshold > 1) {
     Q.wp_r = 0;
     Q.csvd_r = 0;
 }
-Q.true_other_r = Q.other_r - Q.cnblp_r - Q.wp_r - Q.csvd_r - Q.aspd_r - Q.dbp_r - Q.dhp_r;
+Q.true_other_r = Q.other_r - Q.cnblp_r - Q.wp_r - Q.csvd_r - Q.aspd_r - Q.dbp_r - Q.dhp_r - Q.lb_r;
 if (!Q.csvd_formed && !Q.aspd_other) Q.true_other_r += Q.csvd_r;
 if (!Q.aspd_other) Q.true_other_r += Q.aspd_r;
 
@@ -1478,7 +1480,7 @@ if (Q.lvp_r && Q.lvp_formed) {
 
 if (Q.dbp_r) {
  data.push({
-        "id": "farm2",
+        "id": "farm1",
         "legend": "DBP",
         "name": "DBP",
         "seats": Math.round(Q.dbp_r * Q.reichstag_size),
@@ -1505,7 +1507,7 @@ if (Q.bvp_r) {
 
 if (Q.dhp_r) {
  data.push({
-        "id": "vrp",
+        "id": "dhp",
         "legend": "DHP",
         "name": "DHP",
         "seats": Math.round(Q.dhp_r * Q.reichstag_size),
@@ -1633,6 +1635,15 @@ if (Q.dnvp_dvp_formed) {
         "legend": "FKP",
         "name": "FKP",
         "seats": Math.round(Q.kvp_r * Q.reichstag_size),
+    });
+}
+
+if (Q.lb_r) {
+ data.push({
+        "id": "farm2",
+        "legend": "LB",
+        "name": "LB",
+        "seats": Math.round(Q.lb_r * Q.reichstag_size),
     });
 }
 
@@ -1783,9 +1794,6 @@ go-to: achievement_check_e
 
 [? if dnef_formed: <tr><td colspan="5" style="text-align: center;"><hr id="read-marker"></td></tr> ?]
 
-{!<tr><td><div class="box2" style='background-color:#AA861F'> </div> !} WP (test): {!</td><td>!} [+ wp_votes +]% {!</td><td>!} [+ wp_r +]% {!</td><tr>!}
-
-{!<tr><td><div class="box2" style='background-color:#AA861F'> </div> !} DHP (test): {!</td><td>!} [+ dhp_votes +]% {!</td><td>!} [+ dhp_r +]% {!</td><tr>!}
 
 [? if dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F;'> </div> !} SPD: {!</td><td>!} [+ spd_votes +]% {!</td><td>!} [+ str_votes_change_spd +] {!</td><td>!} [+ spd_r +]% {!</td><td>!} [+ str_change_spd +] {!</td></tr>!} ?]
 
@@ -1810,6 +1818,14 @@ go-to: achievement_check_e
 [? if not lvp_formed and dvp_exist and not dvp_dnef: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!} ?]
  
 [? if not other_dnef: {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!} ?]
+
+[? if dhp_r > 0: {!<tr><td><div class="box2" style='background-color:#63C489'> </div> !} DHP: {!</td><td>!} [+ str_votes_change_dhp +] {!</td><td>!} [+ dhp_votes +]% {!</td><td>!} [+ dhp_r +]% {!</td><td>!} [+ str_change_dhp +] {!</td><tr>!} ?]
+
+[? if dbp_r > 0: {!<tr><td><div class="box2" style='background-color:#a0a0a0'> </div> !} [+ dbp_name +]: {!</td><td>!} [+ str_votes_change_dbp +] {!</td><td>!} [+ dbp_votes +]% {!</td><td>!} [+ dbp_r +]% {!</td><td>!} [+ str_change_dbp +] {!</td><tr>!} ?]
+
+[? if wp_r > 0: {!<tr><td><div class="box2" style='background-color:#AA861F'> </div> !} WP: {!</td><td>!} [+ str_votes_change_wp +] {!</td><td>!} [+ wp_votes +]% {!</td><td>!} [+ wp_r +]% {!</td><td>!} [+ str_change_wp +] {!</td></tr>!} ?]
+
+[? if lb_r > 0: {!<tr><td><div class="box2" style='background-color:#a0a0a0'> </div> !} LB: {!</td><td>!} [+ str_votes_change_lb +] {!</td><td>!} [+ lb_votes +]% {!</td><td>!} [+ lb_r +]% {!</td><td>!} [+ str_change_lb +] {!</td><tr>!} ?]
 
 [? if aspd_other: {!<tr><td><div class="box2" style='background-color:#fe9e00'> </div> !} ASPD: {!</td><td>!} [+ aspd_votes +]% {!</td><td>!} [+ str_votes_change_aspd +] {!</td><td>!} [+ aspd_r +]% {!</td><td>!} [+ str_change_aspd +] {!</td></tr>!} ?]
 
