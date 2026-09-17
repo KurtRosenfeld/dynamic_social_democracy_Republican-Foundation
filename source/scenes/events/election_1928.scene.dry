@@ -215,6 +215,13 @@ on-arrival: {!
     Q.adjustmentFactors_dnef = 1.0;
     Q.adjustmentFactors_kvp = 1.0;
     Q.adjustmentFactors_other = 0.75;
+Q.adjustmentFactors_dhp = 1.01;
+Q.adjustmentFactors_dbp = 0.93;
+Q.adjustmentFactors_wp = 0.88;
+Q.adjustmentFactors_lb = 1.01;
+Q.adjustmentFactors_vrp = 0.23;
+Q.adjustmentFactors_cnbl = 1.0;
+Q.adjustmentFactors_csvd = 1.0
 
     var new_party_sum = 0;
     var total_reichstag_without = 0;  // Initialize a variable to accumulate 'reichstag_without_' values
@@ -562,14 +569,16 @@ Q.aspd_r = 0;
 Q.dbp_r = 0;
 Q.dhp_r = 0;
 Q.lb_r = 0;
+Q.vrp_r = 0;
 
-if (Q.cnblp_votes) Q.cnblp_r = Math.round(Q.cnblp_votes * Q.adjustmentFactors_other * 1000) / 1000;
-if (Q.wp_votes) Q.wp_r = Math.round(Q.wp_votes * Q.adjustmentFactors_other * 1000) / 1000;
-if (Q.csvd_votes) Q.csvd_r = Math.round(Q.csvd_votes * Q.adjustmentFactors_other * 1000) / 1000;
+if (Q.cnblp_votes) Q.cnblp_r = Math.round(Q.cnblp_votes * Q.adjustmentFactors_cnbl * 1000) / 1000;
+if (Q.wp_votes) Q.wp_r = Math.round(Q.wp_votes * Q.adjustmentFactors_wp * 1000) / 1000;
+if (Q.csvd_votes) Q.csvd_r = Math.round(Q.csvd_votes * Q.adjustmentFactors_csvd * 1000) / 1000;
 if (Q.aspd_votes) Q.aspd_r = Math.round(Q.aspd_votes * Q.adjustmentFactors_other * 1000) / 1000;
-if (Q.dbp_votes) Q.dbp_r = Math.round(Q.dbp_votes * Q.adjustmentFactors_other * 1000) / 1000;
-if (Q.dhp_votes) Q.dhp_r = Math.round(Q.dhp_votes * Q.adjustmentFactors_other * 1000) / 1000;
-if (Q.lb_votes) Q.lb_r = Math.round(Q.lb_votes * Q.adjustmentFactors_other * 1000) / 1000;
+if (Q.dbp_votes) Q.dbp_r = Math.round(Q.dbp_votes * Q.adjustmentFactors_dbp * 1000) / 1000;
+if (Q.dhp_votes) Q.dhp_r = Math.round(Q.dhp_votes * Q.adjustmentFactors_dhp * 1000) / 1000;
+if (Q.lb_votes) Q.lb_r = Math.round(Q.lb_votes * Q.adjustmentFactors_lb * 1000) / 1000;
+if (Q.vrp_votes) Q.vrp_r = Math.round(Q.vrp_votes * Q.adjustmentFactors_vrp * 1000) / 1000;
 
 if (Q.dnef_formed) {
     Q.cnblp_r = 0;
@@ -581,7 +590,7 @@ if (Q.electoral_threshold > 1) {
     Q.wp_r = 0;
     Q.csvd_r = 0;
 }
-Q.true_other_r = Q.other_r - Q.cnblp_r - Q.wp_r - Q.csvd_r - Q.aspd_r - Q.dbp_r - Q.dhp_r - Q.lb_r;
+Q.true_other_r = Q.other_r - Q.cnblp_r - Q.wp_r - Q.csvd_r - Q.aspd_r - Q.dbp_r - Q.dhp_r - Q.lb_r - Q.vrp_r;
 if (!Q.csvd_formed && !Q.aspd_other) Q.true_other_r += Q.csvd_r;
 if (!Q.aspd_other) Q.true_other_r += Q.aspd_r;
 
@@ -1817,17 +1826,29 @@ go-to: achievement_check_e
 
 [? if not lvp_formed and dvp_exist and not dvp_dnef: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!} ?]
  
-[? if not other_dnef: {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!} ?]
+[? if not other_dnef: {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} <span id="other-pats" style="cursor:pointer">⇊ Others</span>: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!} ?]
 
-[? if dhp_r > 0: {!<tr><td><div class="box2" style='background-color:#63C489'> </div> !} DHP: {!</td><td>!} [+ str_votes_change_dhp +] {!</td><td>!} [+ dhp_votes +]% {!</td><td>!} [+ dhp_r +]% {!</td><td>!} [+ str_change_dhp +] {!</td><tr>!} ?]
+<div id="other-friends" style="display:none">
 
-[? if dbp_r > 0: {!<tr><td><div class="box2" style='background-color:#a0a0a0'> </div> !} [+ dbp_name +]: {!</td><td>!} [+ str_votes_change_dbp +] {!</td><td>!} [+ dbp_votes +]% {!</td><td>!} [+ dbp_r +]% {!</td><td>!} [+ str_change_dbp +] {!</td><tr>!} ?]
+[? if ors_dbp > 0: {!<tr><td><div class="box2" style='background-color:#38C538'> </div> !} [+ dbp_name +]: {!</td><td>!} [+ dbp_votes +]% {!</td><td>!} [+ str_votes_change_dbp +] {!</td><td>!} [+ dbp_r +]% {!</td><td>!} [+ str_change_dbp +] {!</td><tr>!} ?]
 
-[? if wp_r > 0: {!<tr><td><div class="box2" style='background-color:#AA861F'> </div> !} WP: {!</td><td>!} [+ str_votes_change_wp +] {!</td><td>!} [+ wp_votes +]% {!</td><td>!} [+ wp_r +]% {!</td><td>!} [+ str_change_wp +] {!</td></tr>!} ?]
+[? if ors_dhp > 0: {!<tr><td><div class="box2" style='background-color:#63C489'> </div> !} DHP: {!</td><td>!} [+ dhp_votes +]% {!</td><td>!} [+ str_votes_change_dhp +] {!</td><td>!} [+ dhp_r +]% {!</td><td>!} [+ str_change_dhp +] {!</td><tr>!} ?]
 
-[? if lb_r > 0: {!<tr><td><div class="box2" style='background-color:#a0a0a0'> </div> !} LB: {!</td><td>!} [+ str_votes_change_lb +] {!</td><td>!} [+ lb_votes +]% {!</td><td>!} [+ lb_r +]% {!</td><td>!} [+ str_change_lb +] {!</td><tr>!} ?]
+[? if ors_wp > 0: {!<tr><td><div class="box2" style='background-color:#AA861F'> </div> !} WP: {!</td><td>!} [+ wp_votes +]% {!</td><td>!} [+ str_votes_change_wp +] {!</td><td>!} [+ wp_r +]% {!</td><td>!} [+ str_change_wp +] {!</td></tr>!} ?]
+
+[? if ors_lb > 0: {!<tr><td><div class="box2" style='background-color:#006400'> </div> !} LB: {!</td><td>!} [+ lb_votes +]% {!</td><td>!} [+ str_votes_change_lb +] {!</td><td>!} [+ lb_r +]% {!</td><td>!} [+ str_change_lb +] {!</td><tr>!} ?]
 
 [? if aspd_other: {!<tr><td><div class="box2" style='background-color:#fe9e00'> </div> !} ASPD: {!</td><td>!} [+ aspd_votes +]% {!</td><td>!} [+ str_votes_change_aspd +] {!</td><td>!} [+ aspd_r +]% {!</td><td>!} [+ str_change_aspd +] {!</td></tr>!} ?]
+
+</div>
+
+<script>
+  let click_other = 0;
+  document.getElementById('other-pats').addEventListener('click', () => {
+    click_other = 1 - click_other;
+    document.getElementById('other-friends').style.display = click_other ? 'block' : 'none';
+  });
+</script>
 
 [? if dnvp_dvp_formed and not kvp_dnef: {!<tr><td><div class="box" style='background-color:#00C0FF'> </div> !}FKP: {!</td><td>!} [+ kvp_votes +]% {!</td><td>!} [+ str_votes_change_kvp +] {!</td><td>!} [+ kvp_r +]% {!</td><td>!} [+ str_change_kvp +] {!</td></tr>!} ?]
 
