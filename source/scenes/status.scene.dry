@@ -400,7 +400,7 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
 [? if nvf_exist: <span style="color: #142e20;">**NVF**</span>: [+ nvf_votes +]% ?]
 
-<span id="other-pats" style="cursor:pointer">⇊</span> **Others**: [+ other_votes +]%
+<span id="other-pats" style="cursor:pointer">⇊ **Others**:</span> [+ other_votes +]%
 
 <div id="other-friends" style="display:none">
 
@@ -709,9 +709,11 @@ Railway status:
 
 Railway profitability: 
 
-Postal Leaning:
+Postal Office:
 
-<span id="nat-jud" style="cursor:pointer">⇊</span> National Judiciary: 
+Foreign Office: 
+
+<span id="nat-jud" style="cursor:pointer">⇊ National Judiciary: </span>
 
 <div id="jud-breakdown" style="display:none">
   *Prussian Judiciary*: 
@@ -730,8 +732,6 @@ Postal Leaning:
     document.getElementById('jud-breakdown').style.display = click_jud ? 'block' : 'none';
   });
 </script>
-
-Foreign Office Leaning: 
 
 
 = Women's Rights
