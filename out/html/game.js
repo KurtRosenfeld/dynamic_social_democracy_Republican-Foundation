@@ -269,6 +269,7 @@
         window.justLoaded = false;
     }
     setTimeout(window.initTooltips, 500);
+    setTimeout(window.wireDoorHubs, 100);
   };
 
 window.updateSidebar = function() {
@@ -393,6 +394,34 @@ window.updateSidebarRight = function() {
       }
       bar.appendChild(value);
       return bar;
+  };
+
+  // ============================================
+  // SVG DOOR HUBS
+  // ============================================
+
+  window.wireDoorHubs = function() {
+    const doorScenes = {
+      'saxony-hub':    'saxony_state',
+      'thuringia-hub': 'thuringia_state',
+      'bavaria-hub':   'bavaria_state'
+    };
+
+    Object.entries(doorScenes).forEach(function ([id, scene]) {
+      const el = document.getElementById(id);
+      if (!el || el.dataset.doorWired) return;
+      el.dataset.doorWired = "1";
+      el.style.cursor = 'pointer';
+
+      el.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        if (window.dendryUI && window.dendryUI.dendryEngine) {
+          window.dendryUI.dendryEngine.goToScene(scene);
+        } else {
+          console.warn('Dendry engine not ready, cannot go to scene:', scene);
+        }
+      });
+    });
   };
 
   // ============================================
@@ -547,6 +576,7 @@ function updateTooltipPos(e, tooltip) {
   tooltip.style.left = left + 'px';
   tooltip.style.top = top + 'px';
 }
+  
 
   // ============================================
 
@@ -569,6 +599,7 @@ function updateTooltipPos(e, tooltip) {
     window.statusTabRight = "status_right";
     window.updateSidebarRight();
     setTimeout(window.initTooltips, 500);
+    setTimeout(window.wireDoorHubs, 100);
   };
 
 })();
