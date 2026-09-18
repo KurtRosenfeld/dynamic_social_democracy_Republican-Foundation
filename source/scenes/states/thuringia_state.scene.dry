@@ -1,8 +1,8 @@
-title: maps
+title: thuringia state
 new-page: true
 face-image: img/land/Thuringia.svg.webp
 
-= Saxony
+= Thuringia
 
 <div class="parliament-chart" data-state="thuringia" style="width: 500px; height: 250px;"></div>
 
