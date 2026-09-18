@@ -5,6 +5,8 @@ face-image: land/Saxony.svg.webp
 
 = Saxony
 
+<div class="parliament-chart" data-state="saxony" style="width: 500px; height: 250px;"></div>
+
 This is a placeholder
 
 - @root: Return to main
