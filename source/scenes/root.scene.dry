@@ -10,7 +10,7 @@ go-to: start_menu_2
 
 @start_menu_2
 
-- @start: Start game - currently there seeems to be a problem, will be dealt with soon
+- @start: Start game
 - @modinfo: Mod Info - only updates for changelog
 - @credits: Credits
 - @game_over.achievements
