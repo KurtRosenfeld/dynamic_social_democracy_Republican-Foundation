@@ -10,8 +10,8 @@ go-to: start_menu_2
 
 @start_menu_2
 
-- @start: Start game
-- @modinfo: Mod Info - Last Updated 2026/01/25
+- @start: Start game - currently there seeems to be a problem, will be dealt with soon
+- @modinfo: Mod Info - only updates for changelog
 - @credits: Credits
 - @game_over.achievements
 - @start_1: currently hidden
