@@ -499,14 +499,14 @@ Q.rur_dhp = (Q.rural_other_normalized*Q.rural*Q.rur_dhp_s);
 Q.rur_lb = (Q.rural_other_normalized*Q.rural*Q.rur_lb_s);
 Q.rur_cnbl = (Q.rural_other_normalized*Q.rural*Q.rur_cnbl_s);
 
-Q.ors_wp = Math.round(Q.new_wp + Q.old_wp)/100;
-Q.ors_lb = Math.round(Q.rur_lb)/100;
-Q.ors_dbp = Math.round(Q.rur_dbp + Q.cat_dbp)/100;
-Q.ors_dhp = Math.round(Q.rur_dhp + Q.new_dhp + Q.old_dhp + Q.wor_dhp)/100;
-Q.ors_vrp = Math.round(Q.new_vrp + Q.old_vrp)/100;
-Q.ors_cnbl = Math.round(Q.rur_cnbl)/100;
-Q.ors_csvd = Math.round(Q.wor_csvd + Q.un_csvd)/100;
-Q.ors_aspd = Math.round(Q.wor_aspd + Q.un_aspd + Q.new_aspd)/100;
+Q.ors_wp = Math.round(Q.new_wp + Q.old_wp)/100; Q.ors_wp = Math.round(Q.ors_wp * 10)/10;
+Q.ors_lb = Math.round(Q.rur_lb)/100; Q.ors_lb = Math.round(Q.ors_lb * 10)/10;
+Q.ors_dbp = Math.round(Q.rur_dbp + Q.cat_dbp)/100; Q.ors_dbp = Math.round(Q.ors_dbp * 10)/10;
+Q.ors_dhp = Math.round(Q.rur_dhp + Q.new_dhp + Q.old_dhp + Q.wor_dhp)/100; Q.ors_dhp = Math.round(Q.ors_dhp * 10)/10;
+Q.ors_vrp = Math.round(Q.new_vrp + Q.old_vrp)/100; Q.ors_vrp = Math.round(Q.ors_vrp * 10)/10;
+Q.ors_cnbl = Math.round(Q.rur_cnbl)/100; Q.ors_cnbl = Math.round(Q.ors_cnbl * 10)/10;
+Q.ors_csvd = Math.round(Q.wor_csvd + Q.un_csvd)/100; Q.ors_csvd = Math.round(Q.ors_csvd * 10)/10;
+Q.ors_aspd = Math.round(Q.wor_aspd + Q.un_aspd + Q.new_aspd)/100; Q.ors_aspd = Math.round(Q.ors_aspd * 10)/10;
 Q.ors_rest = Q.other_votes;
 if (Q.ors_wp) Q.ors_rest -= Q.ors_wp;
 if (Q.ors_lb) Q.ors_rest -= Q.ors_lb;
@@ -516,7 +516,7 @@ if (Q.ors_vrp) Q.ors_rest -= Q.ors_vrp;
 if (Q.ors_cnbl) Q.ors_rest -= Q.ors_cnbl;
 if (Q.ors_csvd) Q.ors_rest -= Q.ors_csvd;
 if (Q.ors_aspd) Q.ors_rest -= Q.ors_aspd;
-
+Q.ors_rest = Math.round(Q.ors_rest * 10)/10;
 
 
 // re-calculate dissent.
