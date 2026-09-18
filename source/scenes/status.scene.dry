@@ -1065,7 +1065,7 @@ style="display:inline;fill:[? if bremen_spd == 1 and bremen_action <= 0: #43C431
     </g>
     <g
        id="g9"
-onclick="window.dendryUI.dendryEngine.goToScene('advisor/wels'); return false;"
+onclick="window.dendryUI.dendryEngine.goToScene('maps'); return false;"
 style="display:inline;fill:[? if oldenburg_spd == 1 and oldenburg_action <= 0: #43C431 ?][? if oldenburg_spd == 1 and oldenburg_action == 1: #DDB93C ?][? if oldenburg_spd == 1 and oldenburg_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
