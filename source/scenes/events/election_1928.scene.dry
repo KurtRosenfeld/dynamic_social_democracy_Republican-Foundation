@@ -580,6 +580,10 @@ if (Q.dhp_votes) Q.dhp_r = Math.round(Q.dhp_votes * Q.adjustmentFactors_dhp * 10
 if (Q.lb_votes) Q.lb_r = Math.round(Q.lb_votes * Q.adjustmentFactors_lb * 1000) / 1000;
 if (Q.vrp_votes) Q.vrp_r = Math.round(Q.vrp_votes * Q.adjustmentFactors_vrp * 1000) / 1000;
 
+if (Q.cnblp_r) Q.cnblp_r = Math.round(Q.cnblp_r * 10) / 10;
+if (Q.wp_r) Q.wp_r = Math.round(Q.wp_r * 10) / 10;
+if (Q.dhp_r) Q.dhp_r = Math.round(Q.dhp_r * 10) / 10;
+
 if (Q.dnef_formed) {
     Q.cnblp_r = 0;
     Q.wp_r = 0;
@@ -593,6 +597,8 @@ if (Q.electoral_threshold > 1) {
 Q.true_other_r = Q.other_r - Q.cnblp_r - Q.wp_r - Q.csvd_r - Q.aspd_r - Q.dbp_r - Q.dhp_r - Q.lb_r - Q.vrp_r;
 if (!Q.csvd_formed && !Q.aspd_other) Q.true_other_r += Q.csvd_r;
 if (!Q.aspd_other) Q.true_other_r += Q.aspd_r;
+
+Q.true_other_votes = Q.other_votes - Q.cnblp_votes - Q.wp_votes - Q.csvd_votes - Q.aspd_votes - Q.dbp_votes - Q.dhp_votes - Q.lb_votes - Q.vrp_votes;
 
 if (!Q.bavaria_spd) Q.bvp_votes = Q.z_votes*0.2;
 if (Q.bavaria_spd) Q.bvp_votes = Q.z_votes*0.1;
@@ -1839,6 +1845,8 @@ go-to: achievement_check_e
 [? if ors_lb > 0: {!<tr><td><div class="box2" style='background-color:#006400'> </div> !} LB: {!</td><td>!} [+ lb_votes +]% {!</td><td>!} [+ str_votes_change_lb +] {!</td><td>!} [+ lb_r +]% {!</td><td>!} [+ str_change_lb +] {!</td><tr>!} ?]
 
 [? if aspd_other: {!<tr><td><div class="box2" style='background-color:#fe9e00'> </div> !} ASPD: {!</td><td>!} [+ aspd_votes +]% {!</td><td>!} [+ str_votes_change_aspd +] {!</td><td>!} [+ aspd_r +]% {!</td><td>!} [+ str_change_aspd +] {!</td></tr>!} ?]
+
+[? if not other_dnef: {!<tr><td><div class="box2" style='background-color:#a0a0a0'> </div> !} Rest: {!</td><td>!} [+ true_other_votes +]% {!</td><td>!} [+ str_votes_change_true_other +] {!</td><td>!} [+ true_other_r +]% {!</td><td>!} [+ str_change_true_other +] {!</td><tr>!} ?]
 
 </div>
 
