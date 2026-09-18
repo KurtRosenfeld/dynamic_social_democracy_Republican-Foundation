@@ -796,7 +796,7 @@ Rural trust in SPD: [+ rural_trust : rural_trust +]
      id="g1"
      style="display:inline">
     <g
-       id="g3"
+       id="prussia-hub" class="door" data-scene="prussia_state" cursor="pointer"
        style="display:inline"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
@@ -863,7 +863,7 @@ Rural trust in SPD: [+ rural_trust : rural_trust +]
          id="path36" />
     </g>
     <g
-       id="g68"
+       id="hesse-hub" class="door" data-scene="hesse_state" cursor="pointer"
 style="display:inline;fill:[? if hesse_spd == 1 and hesse_action <= 0: #43C431 ?][? if hesse_spd == 1 and hesse_action == 1: #DDB93C ?][? if hesse_spd == 1 and hessse_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315";fill-opacity:1;stroke-width:20.0315"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
@@ -875,8 +875,7 @@ style="display:inline;fill:[? if hesse_spd == 1 and hesse_action <= 0: #43C431 ?
          id="path28" />
     </g>
     <g
-       id="g4"
-       style="display:inline"
+       id="baden-hub" class="door" data-scene="baden_state" cursor="pointer"
 style="display:inline;fill:[? if baden_spd == 1 and baden_action <= 0: #43C431 ?][? if baden_spd == 1 and baden_action == 1: #DDB93C ?][? if baden_spd == 1 and baden_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
@@ -893,7 +892,7 @@ style="display:inline;fill:[? if baden_spd == 1 and baden_action <= 0: #43C431 ?
          sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
     </g>
     <g
-       id="g81"
+id="wurttemberg-hub" class="door" data-scene="wurttemberg_state" cursor="pointer"
 style="display:inline;fill:[? if wurttemberg_spd == 1 and wurttemberg_action <= 0: #43C431 ?][? if wurttemberg_spd == 1 and wurttemberg_action == 1: #DDB93C ?][? if wurttemberg_spd == 1 and wurttemberg_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
@@ -916,7 +915,7 @@ style="display:inline;fill:[? if saar_spd == 1 and saar_action <= 0: #43C431 ?][
          id="path82" />
     </g>
     <g
-       id="g5"
+id="hamburg-hub" class="door" data-scene="hamburg_state" cursor="pointer"
 style="display:inline;fill:[? if hamburg_spd == 1 and hamburg_action <= 0: #43C431 ?][? if hamburg_spd == 1 and hamburg_action == 1: #DDB93C ?][? if hamburg_spd == 1 and hamburg_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"       
          transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
@@ -1066,6 +1065,7 @@ style="display:inline;fill:[? if bremen_spd == 1 and bremen_action <= 0: #43C431
     </g>
     <g
        id="g9"
+onclick="window.dendryUI.dendryEngine.goToScene('maps'); return false;"
 style="display:inline;fill:[? if oldenburg_spd == 1 and oldenburg_action <= 0: #43C431 ?][? if oldenburg_spd == 1 and oldenburg_action == 1: #DDB93C ?][? if oldenburg_spd == 1 and oldenburg_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
