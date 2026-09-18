@@ -3221,7 +3221,7 @@ class="trigger-group" data-tooltip="netherlands-tooltip"
        cy="137.61188"
        inkscape:label="Paris"
        r="0.5" /><circle
-       class="trigger-group" data-tooltip="italy-tooltip"
+       class="trigger-group" data-tooltip="italia-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-88"
        cx="80.577866"
@@ -3476,7 +3476,7 @@ class="trigger-group" data-tooltip="netherlands-tooltip"
     <p>Population: ~7.100.000</p>
     <p>Head of State: Wilhelmina</p>
     <p>Parliamentary Monarchy</p>
-    <p>Relations: [+ dutch_relation : relationships +]</p>
+    <p>Relations: [+ netherlands_relation : relationships +]</p>
   </div>
   </div>
 
