@@ -431,7 +431,7 @@ Support for the Republic: [+ pro_republic_disp +]%
 **Detailed results for each demographic**
 
 
-<span id="mother-work" style="cursor:pointer">⇊</span> Workers:
+<span id="mother-work" style="cursor:pointer">⇊</span> <span style="color: #DD8B59;">Workers</span>:
 
 <div id="break-work" style="display:none">
 
@@ -476,7 +476,7 @@ Support for the Republic: [+ pro_republic_disp +]%
   });
 </script>
 
-<span id="mother-new" style="cursor:pointer">⇊</span> New Middle Class:
+<span id="mother-new" style="cursor:pointer">⇊</span> <span style="color: #EAB42D;">New Middle Class</span>:
 
 <div id="break-new" style="display:none">
 
@@ -521,7 +521,7 @@ Support for the Republic: [+ pro_republic_disp +]%
   });
 </script>
 
-<span id="mother-old" style="cursor:pointer">⇊</span> Old Middle Class:
+<span id="mother-old" style="cursor:pointer">⇊</span> <span style="color: #D0CA8A;">Old Middle Class</span>:
 
 <div id="break-old" style="display:none">
 
@@ -566,7 +566,7 @@ Support for the Republic: [+ pro_republic_disp +]%
   });
 </script>
 
-<span id="mother-rur" style="cursor:pointer">⇊</span> Rural:
+<span id="mother-rur" style="cursor:pointer">⇊</span> <span style="color: #596D44;">Rural</span>:
 
 <div id="break-rur" style="display:none">
 
@@ -611,7 +611,7 @@ Support for the Republic: [+ pro_republic_disp +]%
   });
 </script>
 
-<span id="mother-unp" style="cursor:pointer">⇊</span> Unemployed:
+<span id="mother-unp" style="cursor:pointer">⇊</span> <span style="color: #DD9290;">Unemployed</span>:
 
 <div id="break-unp" style="display:none">
 
@@ -656,7 +656,7 @@ Support for the Republic: [+ pro_republic_disp +]%
   });
 </script>
 
-<span id="mother-cat" style="cursor:pointer">⇊</span> Catholics:
+<span id="mother-cat" style="cursor:pointer">⇊</span> <span style="color: #3C466D;">Catholics</span>:
 
 <div id="break-cat" style="display:none">
 
