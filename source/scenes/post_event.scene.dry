@@ -507,7 +507,7 @@ Q.ors_vrp = Math.round(Q.new_vrp + Q.old_vrp)/100;
 Q.ors_cnbl = Math.round(Q.rur_cnbl)/100;
 Q.ors_csvd = Math.round(Q.wor_csvd + Q.un_csvd)/100;
 Q.ors_aspd = Math.round(Q.wor_aspd + Q.un_aspd + Q.new_aspd)/100;
-Q.ors_rest = Q.other_votes - Q.ors_wp - Q.ors_lb - Q.ors_dbp - Q.ors_dhp - Q.ors_vrp - Q.ors_cnbl - Q.ors_csvd - Q.ors_aspd;
+Q.ors_rest = Q.other_votes; Q.other_votes -= Q.ors_wp; Q.other_votes -= Q.ors_lb; Q.other_votes -= Q.ors_dbp; Q.other_votes -= Q.ors_dhp; Q.other_votes -= Q.ors_vrp; Q.other_votes -= Q.ors_cnbl; Q.other_votes -= Q.ors_csvd; Q.other_votes -= Q.ors_aspd;
 
 
 
