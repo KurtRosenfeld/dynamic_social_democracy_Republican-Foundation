@@ -1826,9 +1826,9 @@ go-to: achievement_check_e
 
 [? if not lvp_formed and dvp_exist and not dvp_dnef: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!} ?]
  
-[? if not other_dnef: {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} <span id="other-pats" style="cursor:pointer">⇊ Others</span>: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!} ?]
+[? if not other_dnef: {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} <span id="other-patse" style="cursor:pointer">⇊ Others</span>: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!} ?]
 
-<div id="other-friends" style="display:none">
+<div id="other-friendse" style="display:none">
 
 [? if ors_dbp > 0: {!<tr><td><div class="box2" style='background-color:#38C538'> </div> !} [+ dbp_name +]: {!</td><td>!} [+ dbp_votes +]% {!</td><td>!} [+ str_votes_change_dbp +] {!</td><td>!} [+ dbp_r +]% {!</td><td>!} [+ str_change_dbp +] {!</td><tr>!} ?]
 
@@ -1844,9 +1844,9 @@ go-to: achievement_check_e
 
 <script>
   let click_other = 0;
-  document.getElementById('other-pats').addEventListener('click', () => {
-    click_other = 1 - click_other;
-    document.getElementById('other-friends').style.display = click_other ? 'block' : 'none';
+  document.getElementById('other-patse').addEventListener('click', () => {
+    click_othere = 1 - click_othere;
+    document.getElementById('other-friendse').style.display = click_othere ? 'block' : 'none';
   });
 </script>
 
