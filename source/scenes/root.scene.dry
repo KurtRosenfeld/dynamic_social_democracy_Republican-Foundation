@@ -743,14 +743,14 @@ Q.aspd_influence = 0;
 
 // Other and teir shares
 
-Q.rur_lb_s = 0.65
-Q.rur_dbp_s = 0.2
-Q.rur_dhp_s = 0.1
-Q.wor_dhp_s = 0.3
+Q.rur_lb_s = 0.55
+Q.rur_dbp_s = 0.15
+Q.rur_dhp_s = 0.2
+Q.wor_dhp_s = 0.2
 Q.new_dhp_s = 0.2
-Q.new_wp_s = 0.6
-Q.old_dhp_s = 0.2
-Q.old_wp_s = 0.7
+Q.new_wp_s = 0.7
+Q.old_dhp_s = 0.1
+Q.old_wp_s = 0.8
 
 Q.ors_wp   = 0
 Q.ors_lb   = 0
