@@ -1839,26 +1839,19 @@ go-to: achievement_check_e
 
 [? if not lvp_formed and dvp_exist and not dvp_dnef: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!} ?]
 
-[? if not other_dnef: {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} <span style="cursor:pointer"
-      onclick="$('.other-row').toggle()">
-  ⇊ Others:
-</span> {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!} ?]
+[? if not other_dnef: {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} <span style="cursor:pointer" onclick="$('.other-row').toggle()">⇊ Others:</span> {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!} ?]
 
-<tr class="other-row" style="display:none">
+[? if ors_dbp > 0: {!<tr class="other-row" style="display:none"><td><div class="box2" style='background-color:#38C538'> </div> !} [+ dbp_name +]: {!</td><td>!} [+ dbp_votes +]% {!</td><td>!} [+ str_votes_change_dbp +] {!</td><td>!} [+ dbp_r +]% {!</td><td>!} [+ str_change_dbp +] {!</td></tr>!} ?]
 
-[? if ors_dbp > 0: {!<tr><td><div class="box2" style='background-color:#38C538'> </div> !} [+ dbp_name +]: {!</td><td>!} [+ dbp_votes +]% {!</td><td>!} [+ str_votes_change_dbp +] {!</td><td>!} [+ dbp_r +]% {!</td><td>!} [+ str_change_dbp +] {!</td></tr>!} ?]
+[? if ors_dhp > 0: {!<tr class="other-row" style="display:none"><td><div class="box2" style='background-color:#63C489'> </div> !} DHP: {!</td><td>!} [+ dhp_votes +]% {!</td><td>!} [+ str_votes_change_dhp +] {!</td><td>!} [+ dhp_r +]% {!</td><td>!} [+ str_change_dhp +] {!</td></tr>!} ?]
 
-[? if ors_dhp > 0: {!<tr><td><div class="box2" style='background-color:#63C489'> </div> !} DHP: {!</td><td>!} [+ dhp_votes +]% {!</td><td>!} [+ str_votes_change_dhp +] {!</td><td>!} [+ dhp_r +]% {!</td><td>!} [+ str_change_dhp +] {!</td></tr>!} ?]
+[? if ors_wp > 0: {!<tr class="other-row" style="display:none"><td><div class="box2" style='background-color:#AA861F'> </div> !} WP: {!</td><td>!} [+ wp_votes +]% {!</td><td>!} [+ str_votes_change_wp +] {!</td><td>!} [+ wp_r +]% {!</td><td>!} [+ str_change_wp +] {!</td></tr>!} ?]
 
-[? if ors_wp > 0: {!<tr><td><div class="box2" style='background-color:#AA861F'> </div> !} WP: {!</td><td>!} [+ wp_votes +]% {!</td><td>!} [+ str_votes_change_wp +] {!</td><td>!} [+ wp_r +]% {!</td><td>!} [+ str_change_wp +] {!</td></tr>!} ?]
+[? if ors_lb > 0: {!<tr class="other-row" style="display:none"><td><div class="box2" style='background-color:#006400'> </div> !} LB: {!</td><td>!} [+ lb_votes +]% {!</td><td>!} [+ str_votes_change_lb +] {!</td><td>!} [+ lb_r +]% {!</td><td>!} [+ str_change_lb +] {!</td></tr>!} ?]
 
-[? if ors_lb > 0: {!<tr><td><div class="box2" style='background-color:#006400'> </div> !} LB: {!</td><td>!} [+ lb_votes +]% {!</td><td>!} [+ str_votes_change_lb +] {!</td><td>!} [+ lb_r +]% {!</td><td>!} [+ str_change_lb +] {!</td></tr>!} ?]
+[? if aspd_other: {!<tr class="other-row" style="display:none"><td><div class="box2" style='background-color:#fe9e00'> </div> !} ASPD: {!</td><td>!} [+ aspd_votes +]% {!</td><td>!} [+ str_votes_change_aspd +] {!</td><td>!} [+ aspd_r +]% {!</td><td>!} [+ str_change_aspd +] {!</td></tr>!} ?]
 
-[? if aspd_other: {!<tr><td><div class="box2" style='background-color:#fe9e00'> </div> !} ASPD: {!</td><td>!} [+ aspd_votes +]% {!</td><td>!} [+ str_votes_change_aspd +] {!</td><td>!} [+ aspd_r +]% {!</td><td>!} [+ str_change_aspd +] {!</td></tr>!} ?]
-
-[? if not other_dnef: {!<tr><td><div class="box2" style='background-color:#a0a0a0'> </div> !} Rest: {!</td><td>!} [+ true_other_votes +]% {!</td><td>!} [+ str_votes_change_true_other +] {!</td><td>!} [+ true_other_r +]% {!</td><td>!} [+ str_change_true_other +] {!</td></tr>!} ?]
-
-</tr>
+[? if not other_dnef: {!<tr class="other-row" style="display:none"><td><div class="box2" style='background-color:#a0a0a0'> </div> !} Rest: {!</td><td>!} [+ true_other_votes +]% {!</td><td>!} [+ str_votes_change_true_other +] {!</td><td>!} [+ true_other_r +]% {!</td><td>!} [+ str_change_true_other +] {!</td></tr>!} ?]
 
 [? if dnvp_dvp_formed and not kvp_dnef: {!<tr><td><div class="box" style='background-color:#00C0FF'> </div> !}FKP: {!</td><td>!} [+ kvp_votes +]% {!</td><td>!} [+ str_votes_change_kvp +] {!</td><td>!} [+ kvp_r +]% {!</td><td>!} [+ str_change_kvp +] {!</td></tr>!} ?]
 
