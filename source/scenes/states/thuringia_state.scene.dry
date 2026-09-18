@@ -1,0 +1,11 @@
+title: maps
+new-page: true
+face-image: img/land/Thuringia.svg.webp
+
+= Saxony
+
+<div class="parliament-chart" data-state="thuringia" style="width: 500px; height: 250px;"></div>
+
+This is a placeholder
+
+- @root: Return to main
