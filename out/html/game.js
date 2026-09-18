@@ -405,6 +405,11 @@ window.updateSidebarRight = function() {
       'saxony-hub':    'saxony_state',
       'thuringia-hub': 'thuringia_state',
       'bavaria-hub':   'bavaria_state'
+            'prussia-hub':   'prussia_state'
+    'hesse-hub':   'hesse_state'
+    'baden-hub':   'baden_state'
+    'wurttemberg-hub':   'wurttemberg_state'
+    'hamburg-hub':   'hamburg_state'
     };
 
     Object.entries(doorScenes).forEach(function ([id, scene]) {
