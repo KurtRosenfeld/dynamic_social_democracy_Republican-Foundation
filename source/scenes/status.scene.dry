@@ -853,6 +853,7 @@ Rural trust in SPD: [+ rural_trust : rural_trust +]
     </g>
     <g
        id="g69"
+<g id="bavaria-hub" class="door" data-scene="bavaria_state" cursor="pointer">
          style="display:inline;fill:[? if bavaria_spd == 1 and bavaria_action <= 0: #43C431 ?][? if bavaria_spd == 1 and bavaria_action == 1: #DDB93C ?][? if bavaria_spd == 1 and bavaria_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
@@ -931,6 +932,7 @@ style="display:inline;fill:[? if hamburg_spd == 1 and hamburg_action <= 0: #43C4
     </g>
     <g
        id="g2"
+<g id="thuringia-hub" class="door" data-scene="thuringia_state" cursor="pointer">
        style="display:inline;fill:[? if thuringia_spd == 1 and thuringia_action <= 0: #43C431 ?][? if thuringia_spd == 1 and thuringia_action == 1: #DDB93C ?][? if thuringia_spd == 1 and thuringia_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
@@ -961,6 +963,7 @@ style="display:inline;fill:[? if hamburg_spd == 1 and hamburg_action <= 0: #43C4
     </g>
     <g
        id="g80"
+<g id="saxony-hub" class="door" data-scene="saxony_state" cursor="pointer">
        style="display:inline;fill:[? if saxony_spd == 1 and saxony_action <= 0: #43C431 ?][? if saxony_spd == 1 and saxony_action == 1: #DDB93C ?][? if saxony_spd == 1 and saxony_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
