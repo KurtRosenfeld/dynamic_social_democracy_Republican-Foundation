@@ -1,0 +1,12 @@
+title: bavaria state
+new-page: true
+is-special: true
+face-image: img/land/Bavaria.svg.webp
+
+= Bavaria
+
+<div class="parliament-chart" data-state="bavaria" style="width: 500px; height: 250px;"></div>
+
+This is a placeholder
+
+- @states: Exit Bavaria
