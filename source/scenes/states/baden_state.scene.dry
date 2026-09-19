@@ -1,0 +1,89 @@
+title: baden state
+new-page: true
+is-special: true
+face-image: img/land/Baden.svg.webp
+on-arrival: {!
+  setTimeout(function() {
+    var el = document.getElementById('baden');
+    if (!el || typeof d3 === 'undefined' || !window.ParliamentData) return;
+    el.removeAttribute('data-parliament');
+    el.innerHTML = '';
+    window.ParliamentData.renderParliament('baden', el);
+  }, 0);
+!}
+
+= Baden
+
+Baden sits at the sweet-spot between high catholicism and republicanism. 
+
+In a 1919 referndum 93% of the population have voted in favour of the constitution that was drafted by a constituent assambley of combined 90% Weimar Coalition parties' support.
+
+Currently ruled by plhl (party) in a [+ bavaria_gov +]-Coalition with [+ bavaria_support +]% support.
+
+
+<div id="baden" style="width:500px; height:250px;"></div>
+
+
+
+
+
+
+- @coalition_baden: Coalition
+- @toleration_baden: Toleration
+- @policies_baden: Policies
+- @states: Exit Baden
+
+
+@coalition_baden
+choose-if: baden_spd == 1
+unavailable-subtitle: We are not part of the Coalition
+
+@toleration_baden
+choose-if: baden_spd == 2
+unavailable-subtitle: We are not in toleration
+
+@policies_baden
+choose-if: baden_spd == 1
+unavailable-subtitle: We are not part of the Coalition
+
+
+- @reform_the_administration
+- @negotiate_concordat
+- @sign_baden_concordat
+- @give_tax_breaks_to_local_buisnesses
+
+
+@reform_the_administration
+title: Reform the administration of Baden
+on-arrival: baden_reform += 1; baden_action_timer += 7
+go-to: baden_state
+  
+@negotiate_concordat
+title: Negotiate a concordat with the Holy See
+on-arrival: z_relation += 5; kpd_relation -= 3; baden_concordat_progress += 1*(1 -dissent); left_dissent += 2; center_dissent += 1; baden_action_timer += 8
+choose-if: not baden_gov == "Left"
+view-if: baden_concordat_progress < 4
+go-to: baden_state
+  
+@sign_baden_concordat
+title: Sign a concordat
+view-if: baden_concordat_progress >= 4
+on-arrival: z_relation += 5; vatican_relation += 10; left_dissent += 3; center_dissent += 1; baden_action_timer += 12
+go-to: baden_state
+  
+@give_tax_breaks_to_local_buisnesses
+title: Give tax breaks to local buisnesses
+on-arrival: ddp_relation += 5; dvp_relation += 5; old_middle_spd += 2; workers_spd -= 1; baden_action_timer += 9
+choose-if: not (baden_gov == "Social-Democratic" or baden_gov == "Left")
+go-to: baden_state
+  
+
+
+
+
+
+
+
+
+
+  
