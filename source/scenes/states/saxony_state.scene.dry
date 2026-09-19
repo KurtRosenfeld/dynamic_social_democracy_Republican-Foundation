@@ -44,8 +44,8 @@ unavailable-subtitle: We are not in toleration
 
 
 @policies_saxony
-choose-if: saxony_spd == 1
-unavailable-subtitle: We are not part of the Coalition
+choose-if: saxony_spd == 1 and saxony_action_timer <= 0
+unavailable-subtitle: [? if not saxony_spd == 1: We are not part of the Coalition. ?][? if saxony_spd == 1 and saxony_action_timer > 0: We have to wait [+ saxony_action_timer +] months before our next action. ?]
 
 
 
