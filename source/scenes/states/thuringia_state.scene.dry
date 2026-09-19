@@ -43,8 +43,8 @@ unavailable-subtitle: We are not in toleration
 
 
 @policies_thuringia
-choose-if: thuringia_spd == 1
-unavailable-subtitle: We are not part of the Coalition
+choose-if: thuringia_spd == 1 and thuringia_action_timer <= 0
+unavailable-subtitle: [? if not thuringia_spd == 1: We are not part of the Coalition. ?][? if thuringia_spd == 1 and thuringia_action_timer > 0: We have to wait [+ thuringia_action_timer +] months before our next action. ?]
 
 
 - @reform_the_administration
