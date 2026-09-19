@@ -979,7 +979,7 @@ id="thuringia-hub" class="door" data-scene="thuringia_state" cursor="pointer"
          id="path15" />
     </g>
     <g
-onclick="window.dendryUI.dendryEngine.goToScene('states/saxony_state');" />
+id="saxony-hub" class="door" data-scene="saxony_state" cursor="pointer"
        style="display:inline;fill:[? if saxony_spd == 1 and saxony_action <= 0: #43C431 ?][? if saxony_spd == 1 and saxony_action == 1: #DDB93C ?][? if saxony_spd == 1 and saxony_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
