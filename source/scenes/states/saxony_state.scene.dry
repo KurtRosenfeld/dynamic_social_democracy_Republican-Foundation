@@ -67,7 +67,7 @@ go-to: saxony_state
 
 @give_tax_breaks_to_local_buisnesses
 title: Give tax breaks to local buisnesses
-on-arrival: ddp_relation += 5; dvp_relation += 5; old_middle_spd += 3; workers_spd -= 2; saxony_action_timer += 9; ; saxony_action_timer -= 2 if saxony_dvp == 1
+on-arrival: ddp_relation += 5; dvp_relation += 5; old_middle_spd += 3; workers_spd -= 2; saxony_action_timer += 9; saxony_action_timer -= 2 if saxony_dvp == 1
 choose-if: not (saxony_kpd >= 1 or saxony_uspd >= 1 or saxony_sapd >= 1)
 go-to: saxony_state
 
