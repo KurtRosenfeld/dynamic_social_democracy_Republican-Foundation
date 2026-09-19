@@ -1580,39 +1580,36 @@ buildData: function(stateId) {
   var Q = window.dendryUI.dendryEngine.state.qualities;
   var config = this.configs[stateId];
   if (!config) return [];
-  
+
   var totalSeats = config.totalSeats || 0;
   if (config.totalSeatsKey && typeof Q[config.totalSeatsKey] === 'number') {
     totalSeats = Q[config.totalSeatsKey];
   }
-  
+
   var data = [];
-  
+
   if (config.conditionalParties) {
     config.conditionalParties.forEach(function(party) {
       if (party.condition(Q)) {
         var rawValue = Q[party.qualityKey];
-        // If value is on 0-100 scale (percentage), convert it
-        var seats;
-        if (rawValue > 1) {
-          // It's a percentage (like 35.2 for 35.2%)
-          seats = Math.round((rawValue / 100) * totalSeats);
-        } else {
-          // It's already a fraction (like 0.352)
-          seats = Math.round(rawValue * totalSeats);
+        if (typeof rawValue !== 'number' || isNaN(rawValue)) rawValue = 0;
+
+        // All *_r_* qualities are on the 0-100 scale.
+        var seats = Math.round((rawValue / 100) * totalSeats);
+
+        if (seats > 0) {
+          data.push({
+            id: party.id,
+            legend: typeof party.legend === 'function' ? party.legend(Q) : party.legend,
+            name: typeof party.name === 'function' ? party.name(Q) : party.name,
+            seats: seats,
+            color: party.color
+          });
         }
-        
-        data.push({
-          id: party.id,
-          legend: typeof party.legend === 'function' ? party.legend(Q) : party.legend,
-          name: typeof party.name === 'function' ? party.name(Q) : party.name,
-          seats: seats,
-          color: party.color
-        });
       }
     });
   }
-  
+
   return data;
 },
     
