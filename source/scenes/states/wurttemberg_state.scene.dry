@@ -1,7 +1,7 @@
 title: wurttemberg state
 new-page: true
 is-special: true
-face-image: img/land/Wurttemberg.svg.webp
+face-image: img/land/Württemberg.svg.webp
 on-arrival: {!
   setTimeout(function() {
     var el = document.getElementById('wurttemberg');
