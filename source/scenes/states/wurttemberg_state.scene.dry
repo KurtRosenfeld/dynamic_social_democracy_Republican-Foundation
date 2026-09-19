@@ -42,6 +42,18 @@ unavailable-subtitle: We are not part of the Coalition
 choose-if: wurttemberg_spd == 2
 unavailable-subtitle: We are not in toleration
 
+- @withdraw_toleration: Withdraw Toleration
+- @make_demand: Make a demand
+
+@withdraw_toleration
+on-arrival: wurttemberg_spd = 0; z_relation -= 2
+
+The Center party doesn't care
+
+@make_demand
+
+HAHAHA, you can't make demands.
+
 @policies_wurttemberg
 choose-if: wurttemberg_spd == 1 and wurttemberg_action_timer <= 0
 unavailable-subtitle: [? if not wurttemberg_spd == 1: We are not part of the Coalition. ?][? if wurttemberg_spd == 1 and baden_action_timer > 0: We have to wait [+ wurttemberg_action_timer +] months before our next action. ?]
