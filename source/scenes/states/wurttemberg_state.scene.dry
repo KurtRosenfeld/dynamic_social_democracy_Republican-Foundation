@@ -1,0 +1,85 @@
+title: wurttemberg state
+new-page: true
+is-special: true
+face-image: img/land/Wurttemberg.svg.webp
+on-arrival: {!
+  setTimeout(function() {
+    var el = document.getElementById('wurttemberg');
+    if (!el || typeof d3 === 'undefined' || !window.ParliamentData) return;
+    el.removeAttribute('data-parliament');
+    el.innerHTML = '';
+    window.ParliamentData.renderParliament('wurttemberg', el);
+  }, 0);
+!}
+
+= Württemberg
+
+Historically Württemberg has always been an odd state while the population is largely protestant with large influences of Pietistic Lutheranism, the rulers have been Catholic and bouncing between French, Prussian and Austrian influences.
+
+During the November Revolution the SPD has enterred a coalition government with the USPD that was expanded to include the other Republican parties.
+
+Currently ruled by [+ wurttemberg_mp +] ([+ wurttemberg_mp_party +]) in a [+ wurttemberg_gov +]-Coalition with [+ wurttemberg_coalition_r +]% support.
+
+
+<div id="wurttemberg" style="width:500px; height:250px;"></div>
+
+
+
+
+
+
+- @coalition_wurttemberg: Coalition
+- @toleration_wurttemberg: Toleration
+- @policies_wurttemberg: Policies
+- @states: Exit Württemberg
+
+
+@coalition_wurttemberg
+choose-if: wurttemberg_spd == 1
+unavailable-subtitle: We are not part of the Coalition
+
+@toleration_wurttemberg
+choose-if: wurttemberg_spd == 2
+unavailable-subtitle: We are not in toleration
+
+@policies_wurttemberg
+choose-if: wurttemberg_spd == 1 and wurttemberg_action_timer <= 0
+unavailable-subtitle: [? if not wurttemberg_spd == 1: We are not part of the Coalition. ?][? if wurttemberg_spd == 1 and baden_action_timer > 0: We have to wait [+ wurttemberg_action_timer +] months before our next action. ?]
+
+
+- @reform_the_administration
+- @enforce_eight_hours
+- @enforce_eight_years
+- @give_tax_breaks_to_local_buisnesses
+
+
+@reform_the_administration
+title: Reform the administration of Württemberg
+on-arrival: wurttemberg_reform += 1; wurttemberg_action_timer += 7
+choose-if: not wurttemberg_z == 1
+unavailable-subtitle: The Zentrum thinks the admin is fine
+go-to: wurttemberg_state
+
+@enforce_eight_hours
+title: Enforce the eight hour workday
+on-arrival: working_day += 0.2; dvp_relation -= 4; workers_spd += 2; wurttemberg_action_timer += 8
+choose-if: not wurttemberg_z == 1
+unavailable-subtitle: The Zentrum thinks the workday is fine
+go-to: wurttemberg_state
+
+@enforce_eight_years
+title: Establish a generally binding eighth year of school
+on-arrival: z_relation -= 3; dvp_relation -= 4; unemployed_spd += 1; new_middle_spd += 1; wurttemberg_action_timer += 13
+choose-if: not wurttemberg_z == 1
+unavailable-subtitle: The Zentrum thinks the school is fine
+go-to: wurttemberg_state
+
+  
+  
+@give_tax_breaks_to_local_buisnesses
+title: Give tax breaks to local buisnesses
+on-arrival: ddp_relation += 3; z_relation += 3; old_middle_spd += 2; workers_spd -= 1; wurttemberg_action_timer += 9
+choose-if: not (wurttemberg_gov == "Social-Democratic" or wurttemberg_gov == "Left")
+go-to: wurttemberg_state
+
+  
