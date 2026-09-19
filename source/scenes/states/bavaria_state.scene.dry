@@ -14,6 +14,44 @@ on-arrival: {!
 
 = Bavaria
 
+Bavaria is one of the most conservative and catholic states. It is historically associated with the Bavarian Zentrum, now BVP, that has always highlighted a unique cultural identity.
+
+More recently Bavaria has been the showplace of multiple consecutive council republics that were ultimately replaced by the Free State.
+
+Currently ruled by plhl (party) in a [+ bavaria_gov +]-Coalition with [+ bavaria_support +]% support.
+
+
+
+
+
 <div id="bavaria" style="width:500px; height:250px;"></div>
 
+
+
+
+
+
+- @coalition_bavaria: Coalition
+- @toleration_bavaria: Toleration
+- @policies_bavaria: Policies
 - @states: Exit Bavaria
+
+
+@coalition_bavaria
+choose-if: bavaria_spd == 1
+unavailable-subtitle: We are not part of the Coalition
+
+@toleration_bavaria
+choose-if: bavaria_spd == 2
+unavailable-subtitle: We are not in toleration
+
+@policies_bavaria
+choose-if: bavaria_spd == 1
+unavailable-subtitle: We are not part of the Coalition
+
+
+
+
+
+
+
