@@ -92,7 +92,7 @@ The new government is formed but the left delegates refuse to vote alongside the
 
 @join_government
 title: We will join into the government
-on-arrival: saxony_mp = "Seyfert"; saxony_pm_party = "DDP"; saxony_gov = "Social-Liberal"; saxony_dnvp = 0; saxony_spd = 0; kpd_relation -= 6; ddp_relation += 5; dvp_relation += 2; workers_spd -= 2; workers_uspd += 2; unemployed_spd -= 4; unemployed_kpd += 4
+on-arrival: saxony_mp = "Seyfert"; saxony_pm_party = "DDP"; saxony_gov = "Social-Liberal"; saxony_dnvp = 0; saxony_spd = 1; kpd_relation -= 6; ddp_relation += 5; dvp_relation += 2; workers_spd -= 2; workers_uspd += 2; unemployed_spd -= 4; unemployed_kpd += 4
 
 The new government is formed but the left delegates refuse to vote alongside the coalition.
 
