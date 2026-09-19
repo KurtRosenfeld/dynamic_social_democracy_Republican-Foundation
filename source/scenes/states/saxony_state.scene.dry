@@ -9,4 +9,4 @@ face-image: img/land/Saxony.svg.webp
 
 This is a placeholder
 
-- @backSpecialScene: Exit Saxony
+- @state: Exit Saxony
