@@ -1174,8 +1174,8 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action <= 0: #43C431
 </svg>
 
 <svg
-   width="200mm"
-   height="80mm"
+   width="200"
+   height="80"
    viewBox="0 0 200 80"
    version="1.1"
    id="svg1"
