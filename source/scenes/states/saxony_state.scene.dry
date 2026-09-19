@@ -2,11 +2,85 @@ title: saxony state
 new-page: true
 is-special: true
 face-image: img/land/Saxony.svg.webp
+on-arrival: {!
+  setTimeout(function() {
+    var el = document.getElementById('saxony');
+    if (!el || typeof d3 === 'undefined' || !window.ParliamentData) return;
+    el.removeAttribute('data-parliament');
+    el.innerHTML = '';
+    window.ParliamentData.renderParliament('saxony', el);
+  }, 0);
+!}
 
 = Saxony
 
-<div class="parliament-chart" data-state="saxony" style="width: 500px; height: 250px;"></div>
+Saxony has historically been the country of literature and the printing industry - but it was not just that domain that lead to a proletarian and liberal state.
 
-This is a placeholder
+More recently Saxony has been the center of the Märzaktion, a coup attempt by communist parties.
 
+Currently ruled by [+ saxony_mp +] ([+ saxony_mp_party +]) in a [+ saxony_gov +]-Coalition with [+ saxony_support +]% support.
+
+<div id="saxony" style="width:500px; height:250px;"></div>
+
+
+
+- @coalition_saxony: Coalition
+- @toleration_saxony: Toleration
+- @policies_saxony: Policies
 - @states: Exit Saxony
+
+
+
+@coalition_saxony
+choose-if: saxony_spd == 1
+unavailable-subtitle: We are not part of the Coalition
+go-to: saxony_state
+
+This is where some new arrangments would be possible, some day
+
+@toleration_saxony
+choose-if: saxony_spd == 2
+unavailable-subtitle: We are not in toleration
+
+
+@policies_saxony
+choose-if: saxony_spd == 1
+unavailable-subtitle: We are not part of the Coalition
+
+
+
+- @reform_the_administration
+- @fund_workers_militias
+- @give_tax_breaks_to_local_buisnesses
+
+
+@reform_the_administration
+title: Reform the administration of Saxony
+on-arrival: saxony_reform += 1; saxony_action_timer += 7
+go-to: saxony_state
+
+@fund_workers_militias
+title: Fund worker's militias
+on-arrival: rfb_strength += 1; kpd_relation += 5; saxony_action_timer += 8
+choose-if: saxony_gov == "SPD" or saxony_gov == "Social-Democratic" or saxony_gov == "Left" and not saxony_ddp == 2
+go-to: saxony_state
+
+@give_tax_breaks_to_local_buisnesses
+title: Give tax breaks to local buisnesses
+on-arrival: ddp_relation += 5; dvp_relation += 5; old_middle_spd += 3; workers_spd -= 2; saxony_action_timer += 9; ; saxony_action_timer -= 2 if saxony_dvp == 1
+choose-if: not (saxony_kpd >= 1 or saxony_uspd >= 1 or saxony_sapd >= 1)
+go-to: saxony_state
+
+
+
+
+
+
+
+
+
+
+
+
+
+
