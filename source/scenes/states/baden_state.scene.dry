@@ -43,8 +43,8 @@ choose-if: baden_spd == 2
 unavailable-subtitle: We are not in toleration
 
 @policies_baden
-choose-if: baden_spd == 1
-unavailable-subtitle: We are not part of the Coalition
+choose-if: baden_spd == 1 and baden_action_timer <= 0
+unavailable-subtitle: [? if not baden_spd == 1: We are not part of the Coalition. ?][? if baden_spd == 1 and baden_action_timer > 0: We have to wait [+ baden_action_timer +] months before our next action. ?]
 
 
 - @reform_the_administration
