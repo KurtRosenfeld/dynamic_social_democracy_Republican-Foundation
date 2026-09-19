@@ -2,11 +2,18 @@ title: bavaria state
 new-page: true
 is-special: true
 face-image: img/land/Bavaria.svg.webp
+on-arrival: {!
+  setTimeout(function() {
+    var el = document.getElementById('bavaria');
+    if (!el || typeof d3 === 'undefined' || !window.ParliamentData) return;
+    el.removeAttribute('data-parliament');
+    el.innerHTML = '';
+    window.ParliamentData.renderParliament('bavaria', el);
+  }, 0);
+!}
 
 = Bavaria
 
-<div class="parliament-chart" data-state="bavaria" style="width: 500px; height: 250px;"></div>
-
-This is a placeholder
+<div id="bavaria" style="width:500px; height:250px;"></div>
 
 - @states: Exit Bavaria
