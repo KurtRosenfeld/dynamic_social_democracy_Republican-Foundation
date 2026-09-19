@@ -1175,8 +1175,8 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action <= 0: #43C431
 
 <svg
    width="200"
-   height="80"
-   viewBox="0 0 200 80"
+   height="70"
+   viewBox="0 0 52.916666 18.520833"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
@@ -1196,9 +1196,9 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action <= 0: #43C431
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.94"
-     inkscape:cx="287.23404"
-     inkscape:cy="182.44681"
+     inkscape:zoom="1.64"
+     inkscape:cx="118.90244"
+     inkscape:cy="148.47561"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -1229,22 +1229,23 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action <= 0: #43C431
        id="linearGradient3"
        x1="28.445522"
        y1="39.968971"
-       x2="168.8657"
+       x2="168.86571"
        y2="39.968971"
        gradientUnits="userSpaceOnUse" />
   </defs>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    onclick="window.dendryUI.dendryEngine.goToScene('states');"
+     id="layer1"
+     transform="matrix(0.35565507,0,0,0.35565507,-8.4338886,-5.3917183)">
     <rect
-       style="stroke:#000000;stroke-width:0.529;fill:url(#linearGradient3);stroke-dasharray:none"
-       id="rect1"
-       width="139.89101"
-       height="34.902481"
-       x="28.710106"
-       y="22.517731" />
+   style="fill:url(#linearGradient3);stroke:#000000;stroke-width:0.529;stroke-dasharray:none"
+   id="rect1"
+   width="139.89101"
+   height="34.902481"
+   x="28.710106"
+   y="22.517731"
+   onclick="window.dendryUI.dendryEngine.goToScene('states');" />
     <text
        xml:space="preserve"
        style="font-weight:600;font-size:15.4871px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift Semi-Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#cfcfcf;fill-opacity:1;stroke:#000000;stroke-width:0.581;stroke-dasharray:none"
