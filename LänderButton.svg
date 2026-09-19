@@ -73,7 +73,7 @@
        height="34.902481"
        x="28.710106"
        y="22.517731"
-       onclick="onclick=&quot;window.dendryUI.dendryEngine.goToScene('states');&quot;&#10;" />
+       onclick="window.dendryUI.dendryEngine.goToScene('states');"
     <text
        xml:space="preserve"
        style="font-weight:600;font-size:15.4871px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift Semi-Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#cfcfcf;fill-opacity:1;stroke:#000000;stroke-width:0.581;stroke-dasharray:none"
