@@ -1,6 +1,7 @@
 title: saxony state
 new-page: true
-face-image: land/Saxony.svg.webp
+is-special: true
+face-image: img/land/Saxony.svg.webp
 
 = Saxony
 
@@ -8,4 +9,4 @@ face-image: land/Saxony.svg.webp
 
 This is a placeholder
 
-- @root: Return to main
+- @backSpecialScene: Exit Saxony
