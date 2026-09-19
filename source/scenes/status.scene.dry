@@ -763,7 +763,7 @@ Small Holders: [+ small_holders +]%
 </div>
 
 <script>
-  let click_jud = 0;
+  let click_land = 0;
   document.getElementById('nat-land').addEventListener('click', () => {
     click_land = 1 - click_land;
     document.getElementById('land-breakdown').style.display = click_land ? 'block' : 'none';
