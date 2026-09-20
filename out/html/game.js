@@ -401,33 +401,33 @@ window.updateSidebarRight = function() {
   // ============================================
 
   window.wireDoorHubs = function() {
-    const doorScenes = {
-      'saxony-hub':    'saxony_state',
-      'thuringia-hub': 'thuringia_state',
-      'bavaria-hub':   'bavaria_state',
-            'prussia-hub':   'prussia_state',
-    'hesse-hub':   'hesse_state',
-    'baden-hub':   'baden_state',
-    'wurttemberg-hub':   'wurttemberg_state',
+  if (window._doorHubsInitialized) return;
+  window._doorHubsInitialized = true;
+
+  const doorScenes = {
+    'saxony-hub':    'saxony_state',
+    'thuringia-hub': 'thuringia_state',
+    'bavaria-hub':   'bavaria_state',
+    'prussia-hub':   'prussia_state',
+    'hesse-hub':     'hesse_state',
+    'baden-hub':     'baden_state',
+    'wurttemberg-hub':'wurttemberg_state',
     'hamburg-hub':   'hamburg_state'
-    };
-
-    Object.entries(doorScenes).forEach(function ([id, scene]) {
-      const el = document.getElementById(id);
-      if (!el || el.dataset.doorWired) return;
-      el.dataset.doorWired = "1";
-      el.style.cursor = 'pointer';
-
-      el.addEventListener('click', function (evt) {
-        evt.preventDefault();
-        if (window.dendryUI && window.dendryUI.dendryEngine) {
-          window.dendryUI.dendryEngine.goToScene(scene);
-        } else {
-          console.warn('Dendry engine not ready, cannot go to scene:', scene);
-        }
-      });
-    });
   };
+
+  document.body.addEventListener('click', function (evt) {
+    const hub = evt.target.closest('.door');
+    if (!hub) return;
+    const scene = doorScenes[hub.id];
+    if (!scene) return;
+    evt.preventDefault();
+    if (window.dendryUI && window.dendryUI.dendryEngine) {
+      window.dendryUI.dendryEngine.goToScene(scene);
+    } else {
+      console.warn('Dendry engine not ready, cannot go to scene:', scene);
+    }
+  });
+};
 
   // ============================================
   // TOOLTIP SYSTEM
