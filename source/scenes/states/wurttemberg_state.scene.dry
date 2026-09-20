@@ -56,7 +56,7 @@ HAHAHA, you can't make demands.
 
 @policies_wurttemberg
 choose-if: wurttemberg_spd == 1 and wurttemberg_action_timer <= 0
-unavailable-subtitle: [? if not wurttemberg_spd == 1: We are not part of the Coalition. ?][? if wurttemberg_spd == 1 and baden_action_timer > 0: We have to wait [+ wurttemberg_action_timer +] months before our next action. ?]
+unavailable-subtitle: [? if not wurttemberg_spd == 1: We are not part of the Coalition. ?][? if wurttemberg_spd == 1 and wurttemberg_action_timer > 0: We have to wait [+ wurttemberg_action_timer +] months before our next action. ?]
 
 
 - @reform_the_administration
