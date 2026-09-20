@@ -1,18 +1,6 @@
 title: states
 new-page: true
 is-special: true
-on-display: {!  
-    var cardEl = document.createElement('div');  
-    cardEl.className = "face-figure2";  
-
-    var image = new Image();  
-    image.className = "face-img";  
-    image.src = "img/states.png";  
-
-    cardEl.appendChild(image);  
-    var contentDiv = document.querySelector("#page #mid_panel #content");
-    contentDiv.appendChild(cardEl);
-!}
 
 = State actions
 
@@ -55,8 +43,8 @@ on-display: {!
      id="g1"
      style="display:inline">
     <g
-       id="prussia-hub" class="door" data-scene="prussia_state" cursor="pointer"
-       class="trigger-group" data-tooltip="aprussia-tooltip"
+       id="prussia-hub" class="door trigger-group" data-scene="prussia_state" cursor="pointer"
+       data-tooltip="aprussia-tooltip"
          style="display:inline;fill:[? if prussia_spd == 1 and prussia_action <= 0: #43C431 ?][? if prussia_spd == 1 and prussia_action == 1: #DDB93C ?][? if prussia_spd == 1 and prussia_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -100,8 +88,8 @@ on-display: {!
          sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
     </g>
     <g
-   id="bavaria-hub" class="door" data-scene="bavaria_state" cursor="pointer"
-       class="trigger-group" data-tooltip="abavaria-tooltip"
+   id="bavaria-hub" class="door trigger-group" data-scene="bavaria_state" cursor="pointer"
+       data-tooltip="abavaria-tooltip"
 style="display:inline;fill:[? if hesse_spd == 1 and hesse_action <= 0: #43C431 ?][? if hesse_spd == 1 and hesse_action == 1: #DDB93C ?][? if hesse_spd == 1 and hessse_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315";fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -112,9 +100,9 @@ style="display:inline;fill:[? if hesse_spd == 1 and hesse_action <= 0: #43C431 ?
          id="path36" />
     </g>
     <g
-       id="hesse-hub" class="door" data-scene="hesse_state" cursor="pointer"
-       class="trigger-group" data-tooltip="ahesse-tooltip"
-style="display:inline;fill:[? if hesse_gov == "Bourgeois": #818181 ?][? if hesse_gov == "Weimar": #FC6D6D ?][? if hesse_gov == "Popular-Front": #6C168E ?][? if hesse_gov == "SPD": [+ spd_colour +] ?][? if hesse_gov == "Left": #8E0000 ?][? if hesse_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
+       id="hesse-hub" class="door trigger-group" data-scene="hesse_state" cursor="pointer"
+       data-tooltip="ahesse-tooltip"
+style="display:inline;fill:[? if hesse_spd == 1 and hesse_action <= 0: #43C431 ?][? if hesse_spd == 1 and hesse_action == 1: #DDB93C ?][? if hesse_spd == 1 and hessse_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315";fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          d="m 82.668977,177.81629 1.039862,2.25303 v 0.92433 l -0.17331,0.63547 0.40439,1.44425 v 1.44425 l -0.17331,1.32871 0.34662,1.96418 -0.40439,0.5777 -0.11554,1.32872 0.17331,1.50202 0.17331,1.21317 -0.34662,0.69324 -0.982092,0.46216 -0.866551,0.69324 -0.46216,0.80878 -0.635471,0.92432 -0.577701,0.92433 -0.751011,0.63547 -1.270942,-0.11554 -0.63547,-0.86655 -0.231081,-0.40439 0.635471,-0.4044 0.404391,-0.92432 0.5777,-0.23108 0.05777,-0.69324 -0.519931,-0.51993 -1.097632,-0.34662 -0.924321,-0.0578 -0.28885,-1.1554 -0.499409,-0.004 -0.309372,0.0616 -0.11554,1.09763 -0.519931,0.23108 -1.039861,-0.17331 -0.404391,-0.75101 -0.577701,-0.46216 h -0.63547 l -0.635471,-0.28885 -0.577701,-0.63547 -0.866551,-0.0578 -1.270942,-0.0578 -0.693241,-0.80878 -0.866551,-0.63547 -0.05777,-1.09764 -1.039861,-0.92432 -0.635471,-0.34662 -1.213172,-0.17331 -0.46216,0.40439 -0.577701,-0.5777 -0.693241,-0.86655 -0.635471,-0.69324 -0.05777,-0.34662 0.577701,-0.0578 v -1.55979 l 0.635471,-1.84864 1.039861,-1.5598 1.733102,-0.86655 2.484114,-0.5777 0.866551,0.98209 2.079722,-0.11554 1.790873,-0.75101 1.155401,-0.46216 0.924321,-0.0578 0.866552,0.69324 1.964182,0.0578 0.28885,-0.51993 0.924322,-0.86655 1.386481,0.17331 1.039862,0.86655 0.751011,-0.11554 z"
@@ -125,8 +113,8 @@ style="display:inline;fill:[? if hesse_gov == "Bourgeois": #818181 ?][? if hesse
          id="path28" />
     </g>
     <g
-       id="baden-hub" class="door" data-scene="baden_state" cursor="pointer"
-       class="trigger-group" data-tooltip="abaden-tooltip"
+       id="baden-hub" class="door trigger-group" data-scene="baden_state" cursor="pointer"
+       data-tooltip="abaden-tooltip"
 style="display:inline;fill:[? if baden_spd == 1 and baden_action_timer <= 0: #43C431 ?][? if baden_spd == 1 and baden_action_timer == 1: #DDB93C ?][? if baden_spd == 1 and baden_action_timer > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -143,8 +131,8 @@ style="display:inline;fill:[? if baden_spd == 1 and baden_action_timer <= 0: #43
          sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
     </g>
     <g
-id="wurttemberg-hub" class="door" data-scene="wurttemberg_state" cursor="pointer"
-       class="trigger-group" data-tooltip="awurttemberg-tooltip"
+id="wurttemberg-hub" class="door trigger-group" data-scene="wurttemberg_state" cursor="pointer"
+       data-tooltip="awurttemberg-tooltip"
 style="display:inline;fill:[? if wurttemberg_spd == 1 and wurttemberg_action <= 0: #43C431 ?][? if wurttemberg_spd == 1 and wurttemberg_action == 1: #DDB93C ?][? if wurttemberg_spd == 1 and wurttemberg_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -183,8 +171,8 @@ style="display:inline;fill:[? if hamburg_spd == 1 and hamburg_action <= 0: #43C4
          id="path41" />
     </g>
     <g
-id="thuringia-hub" class="door" data-scene="thuringia_state" cursor="pointer"
-       class="trigger-group" data-tooltip="athuringia-tooltip"
+id="thuringia-hub" class="door trigger-group" data-scene="thuringia_state" cursor="pointer"
+       data-tooltip="athuringia-tooltip"
        style="display:inline;fill:[? if thuringia_spd == 1 and thuringia_action_timer <= 0: #43C431 ?][? if thuringia_spd == 1 and thuringia_action_timer == 1: #DDB93C ?][? if thuringia_spd == 1 and thuringia_action_timer > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -214,8 +202,8 @@ id="thuringia-hub" class="door" data-scene="thuringia_state" cursor="pointer"
          id="path15" />
     </g>
     <g
-id="saxony-hub" class="door" data-scene="saxony_state" cursor="pointer"
-       class="trigger-group" data-tooltip="asaxony-tooltip"
+id="saxony-hub" class="door trigger-group" data-scene="saxony_state" cursor="pointer"
+       data-tooltip="asaxony-tooltip"
        style="display:inline;fill:[? if saxony_spd == 1 and saxony_action_timer <= 0: #43C431 ?][? if saxony_spd == 1 and saxony_action_timer == 1: #DDB93C ?][? if saxony_spd == 1 and saxony_action_timer > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -407,18 +395,6 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action <= 0: #43C431
          d="m 257.96767,56.235566 -0.92379,1.039261 1.03926,0.230947 z"
          id="path83" />
     </g>
-    <g
-       id="g84"
-       transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
-      <path
-         style="fill:#800066;stroke-width:20.0315"
-         d="m 313.62229,25.758514 -0.55727,-1.30031 -4.39629,0.123839 -1.9195,-1.052631 -2.5387,-1.114551 -1.79567,-1.671827 -1.23839,-0.495356 -1.11455,0.06192 -2.35294,-2.043344 -0.43344,-1.424149 -1.36223,-1.919504 -1.9195,-2.229103 -2.16718,-2.9102163 -0.80496,-2.0433436 -1.05263,-0.4334366 -1.17647,-0.8049535 -1.36223,-0.9287926 -0.49536,0.247678 0.37152,1.6718267 1.42415,1.5479876 0.43344,1.6718263 1.48606,3.591332 -1.05263,1.052631 -0.55727,2.291022 -1.05263,3.962848 0.55727,-0.06192 0.43344,-2.414861 0.49535,-2.167183 0.49536,-1.733746 1.05263,-0.743034 0.49536,1.671827 0.37151,1.424148 0.24768,0.990712 1.11455,0.06192 0.99072,0.804953 -0.18576,1.36223 -0.6192,0.433436 -0.68111,0.433437 -0.24768,0.990712 2.2291,0.433436 0.74304,0.928793 3.90092,0.866873 0.6192,1.114551 2.60062,0.619195 1.30031,0.743034 1.36223,0.433437 0.92879,-0.247678 0.68112,-0.804954 2.53869,-0.185759 h 3.03406 z"
-         id="path65" />
-      <path
-         style="display:inline;fill:#800066;stroke-width:20.031"
-         d="m 299.19169,22.401848 -1.61663,0.69284 2.77136,1.039261 z"
-         id="path84" />
-    </g>
 </svg>
 
 <div id="aprussia-tooltip" class="tooltip-group">
@@ -552,7 +528,7 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action <= 0: #43C431
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Anhalt</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    <p>We are in Anhalt</p>
+    <p>We are in [+ anhalt_spd : government +]</p>
     <p></p>
   </div>
   </div>
