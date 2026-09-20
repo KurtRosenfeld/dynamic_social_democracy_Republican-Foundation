@@ -1,11 +1,27 @@
 title: states
 new-page: true
 is-special: true
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/states.png";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 
 = State actions
 
+
 - @saxony_state
 - @thuringia_state
+- @bavaria_state
+- @baden_sate
+- @wurttemberg_state
 - @backSpecialScene: Leave State actions...
 
 
