@@ -974,7 +974,8 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'education_science', 'curriculum',
     // local govt
     'saxony_action', 'thuringia_action', 'hamburg_action', 'bavaria_action', 'baden_action',
-    'wurttemberg_action', 'meck_schwe_action', 'hesse_action',
+    'wurttemberg_action', 'meck_schwe_action', 'hesse_action', 'prussia_action',
+    'bremen_action', 'luebeck_action', 'meck_stre_action', 'brunswick_action', 'anhalt_action', 'waldeck_action', 'lippe_action', 'schaum_lippe_action', 'danzig_action', 'saar_action',
     // events
     'cuno_bitching', 'crackdown_nazis_thuringia', 'uspd_decline', 'emergency_cuts', 'unemployment_insurance',
     'sa_ban', 'sh_ban', 'papen_chancellor', 'schleicher_chancellor',
@@ -1071,14 +1072,27 @@ Q.homosexual_rights_timer = 0;
 Q.economic_democracy_timer = 0;
 Q.coalition_affairs_timer = 0;
 // local government timers
-Q.saxony_action_timer = 0;
-Q.thuringia_action_timer = 0;
-Q.hamburg_action_timer = 0;
+Q.saxony_action_timer = 1;
+Q.thuringia_action_timer = 1;
+Q.hamburg_action_timer = 3;
 Q.bavaria_action_timer = 0;
-Q.baden_action_timer = 0;
+Q.baden_action_timer = 2;
 Q.wurttemberg_action_timer = 0;
-Q.meck_schwe_action_timer = 0;
-Q.hesse_action_timer = 0;
+Q.meck_schwe_action_timer = 5;
+Q.meck_stre_action_timer = 3;
+Q.luebeck_action_timer = 5;
+Q.oldenburg_action_timer = 10;
+Q.hesse_action_timer = 4;
+Q.prussia_action_timer = 4;
+Q.lippe_action_timer = 8;
+Q.schaum_lippe_action_timer = 8;
+Q.anhalt_action_timer = 4;
+Q.brunswick_action_timer = 3;
+Q.bremen_action_timer = 0;
+Q.waldeck_action_timer = 0;
+Q.danzig_action_timer = 0;
+Q.saar_action_timer = 0;
+
 // event timers
 Q.cuno_bitching_timer = 0;
 Q.uspd_decline_timer = 0;
