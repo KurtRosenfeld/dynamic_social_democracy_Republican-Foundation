@@ -1072,7 +1072,6 @@ style="display:inline;fill:[? if bremen_spd == 1 and bremen_action <= 0: #43C431
     </g>
     <g
        id="g9"
-onclick="window.dendryUI.dendryEngine.goToScene('maps');"
 style="display:inline;fill:[? if oldenburg_spd == 1 and oldenburg_action <= 0: #43C431 ?][? if oldenburg_spd == 1 and oldenburg_action == 1: #DDB93C ?][? if oldenburg_spd == 1 and oldenburg_action > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
@@ -1232,6 +1231,7 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action <= 0: #43C431
    height="34.902481"
    x="28.710106"
    y="22.517731"
+cursor="pointer"
    onclick="window.dendryUI.dendryEngine.goToScene('states');" />
     <text
        xml:space="preserve"
@@ -1242,6 +1242,8 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action <= 0: #43C431
        transform="scale(1.0995372,0.90947356)"><tspan
          sodipodi:role="line"
          id="tspan4"
+cursor="pointer"
+onclick="window.dendryUI.dendryEngine.goToScene('states');"
          style="fill:#cfcfcf;fill-opacity:1;stroke-width:0.581;stroke-dasharray:none"
          x="66.325134"
          y="39.931591">Länder</tspan><tspan
