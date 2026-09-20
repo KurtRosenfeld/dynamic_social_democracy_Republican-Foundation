@@ -18,7 +18,7 @@ Saxony has historically been the country of literature and the printing industry
 
 More recently Saxony has been the center of the Märzaktion, a coup attempt by the KPD and KAPD that sought to spark a late continuation of the November Revolution.
 
-Currently ruled by [+ saxony_mp +] ([+ saxony_mp_party +]) in a [+ saxony_gov +]-Coalition with [+ saxony_coalition_r +]% support.
+Currently ruled by [+ saxony_mp +] ([+ saxony_mp_party +]) in a [+ saxony_gov +] Coalition with [+ saxony_coalition_r +]% support.
 
 <div id="saxony" style="width:500px; height:250px;"></div>
 
@@ -50,23 +50,45 @@ unavailable-subtitle: [? if not saxony_spd == 1: We are not part of the Coalitio
 
 
 - @reform_the_administration
+- @protect_left
 - @fund_workers_militias
+- @subsidize_printing
 - @give_tax_breaks_to_local_buisnesses
 
 
 @reform_the_administration
 title: Reform the administration of Saxony
-on-arrival: saxony_reform += 1; saxony_action_timer += 7
+subtitle: Most of the aspects of the Saxon state administration still have an anti-worker bias.
+view-if: saxony_reform < 7
+on-arrival: saxony_reform += 1; saxony_action_timer += 7; saxony_jud += 1
 go-to: saxony_state
+
+@protect_left
+title: Protect Communist and Anarchist organisations
+subtitle: The burocracy has largely been biased against the left
+unavailable-subtitle: [? if saxony_reform < 3: The administration won't let this happen. ?][? if saxony_ddp == 2: The DDP would withdraw its toleration ?]
+choose-if: saxony_reform >= 3 and (saxony_gov == "SPD" or saxony_gov == "Social-Democratic" or saxony_gov == "Left") and not saxony_ddp == 2
+on-arrival:  saxony_action_timer += 8; saxony_jud += 0.5; kpd_relation += 4; sb_relation += 6; uspd_relation += 4; unemployed_kpd += 1; anarchist_media += 0.3; communist_media += 0.3
+go-to: saxony_state
+
+We have revised a few prison terms and unbanned some periodicals.
 
 @fund_workers_militias
 title: Fund worker's militias
-on-arrival: rfb_strength += 1; kpd_relation += 5; saxony_action_timer += 8
+subtitle: There are some worker's militas, often aligned with the KPD.
+on-arrival: rfb_strength += 1; kpd_relation += 5; saxony_action_timer += 8; ddp_relation -= 3; z_relation -= 1; dvp_relation -= 4
 choose-if: saxony_gov == "SPD" or saxony_gov == "Social-Democratic" or saxony_gov == "Left" and not saxony_ddp == 2
+go-to: saxony_state
+
+@subsidize_printing
+title: Subsidize the printing industry
+subtitle: We could give handouts to liberal publishing houses.
+on-arrival: liberal_media += 0.5; other_media += 1; ddp_relation += 3; new_middle_spd += 2; conservative_media -= 0.4; old_middle_spd += 1; workers_spd += 1; saxony_action_timer += 10
 go-to: saxony_state
 
 @give_tax_breaks_to_local_buisnesses
 title: Give tax breaks to local buisnesses
+subtitle: The Bourgeois will love this.
 on-arrival: ddp_relation += 5; dvp_relation += 5; old_middle_spd += 3; workers_spd -= 2; saxony_action_timer += 9; saxony_action_timer -= 2 if saxony_dvp == 1
 choose-if: not (saxony_kpd >= 1 or saxony_uspd >= 1 or saxony_sapd >= 1)
 go-to: saxony_state
