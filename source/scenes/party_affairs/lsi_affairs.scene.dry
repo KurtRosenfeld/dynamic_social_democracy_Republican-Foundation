@@ -1,0 +1,68 @@
+title: Socialist International 
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: lsi_timer <= 0 and lsi_founded == 1
+on-arrival: month_actions += 1; lsi_timer += 12;
+card-image: img/Labour_and_Socialist_International_logo.jpg
+
+
+
+= Labour and Socialist International
+
+We are an important part of the current Socialist International. We can try out a few things. 
+
+(Note: This doesn't do anything yet)
+
+- @increase_founding: Put party resources into the International
+- @colonial_stance: Work towards a clear position on Colonialism
+- @comintern_relation: Improve relations with the Comintern
+- @fourth_relation: Improve relation with the Trotskyist Fourth International
+
+
+
+@increase_founding
+subtitle: This organ is severly underfounded compared to the ammount of it's membership.
+
+
+We are still laking behind the Comintern's resources founded by the Soviet Union.
+
+
+@colonial_stance
+subtitle: Our organisation can't agitate coherently on the colonial question.
+
+- @british: Support the British position
+- @austrian: Support the Austrian position
+- @french: Support the French position
+
+
+@british
+subtitle: The colonial administration should be reformed but it is not sensible to give them independence (in the near future).
+
+@french
+subtitle: What position?
+
+@austrian
+subtitle: Colonies should be abolished, self-determination for all.
+
+
+@comintern_relation
+subtitle: We should not be rivals, we have more in common than we want to admit.
+
+
+@fourth_relation
+subtitle: They aren't that influential.
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+  
