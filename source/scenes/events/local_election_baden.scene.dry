@@ -2,7 +2,7 @@ title: Baden Landtag Election
 view-if: (year == 1925 and month == 10 and not baden_election_seen) or (baden_election_2_trigger_time == time and baden_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: baden_election_seen += 1 if baden_election_seen; baden_election_seen = 1 if not baden_election_seen; baden_election_seen_time = time; baden_spd = 0; baden_kpd = 0; baden_sapd = 0; baden_uspd = 0; baden_ddp = 0; baden_z = 0; baden_true_others = 0; baden_wp = 0
+on-arrival: baden_election_seen += 1 if baden_election_seen; baden_election_seen = 1 if not baden_election_seen; baden_election_seen_time = time; baden_spd = 0; baden_kpd = 0; baden_sapd = 0; baden_uspd = 0; baden_ddp = 0; baden_z = 0; baden_true_others = 0; baden_wp = 0; baden_dvp = 0; baden_dnvp = 0; baden_farm = 0; baden_lvp = 0; baden_cnbl = 0; baden_csvd = 0; baden_dnf = 0; baden_dvfp = 0; baden_nsdap = 0; baden_nsfb = 0; baden_kvp = 0
 priority: 3
 on-display: {!  
     var cardEl = document.createElement('div');  
@@ -535,43 +535,43 @@ Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + 
 title: SPD majority
 subtitle: We can govern alone
 view-if: spd_r_baden >= 50
-on-arrival: baden_election_2_trigger_time = time + 48; catholic_spd += 1; catholic_z -= 2; rural_spd += 1; rural_others -= 2; baden_gov = "SPD"
+on-arrival: baden_election_2_trigger_time = time + 48; catholic_spd += 1; catholic_z -= 2; rural_spd += 1; rural_others -= 2; baden_gov = "SPD"; baden_spd = 1
 
 @weimar_coalition_baden
 title: A Weimar Coalition will be formed
 choose-if: weimar_coalition_baden >= 50 and z_relation >= 30
-on-arrival: baden_election_2_trigger_time = time + 48; z_relation += 1; ddp_relation += 1; baden_gov = "Weimar"
+on-arrival: baden_election_2_trigger_time = time + 48; z_relation += 1; ddp_relation += 1; baden_gov = "Weimar"; baden_spd = 1; baden_ddp = 1; baden_z = 1
 
 @grand_coalition_baden
 title: A Grand Coalition will be formed
 choose-if: grand_coalition_baden >= 50 and z_relation >= 25 and dvp_relation >= 40
-on-arrival: baden_election_2_trigger_time = time + 48; z_relation += 2; dvp_relation += 3; baden_gov = "Grand"
+on-arrival: baden_election_2_trigger_time = time + 48; z_relation += 2; dvp_relation += 3; baden_gov = "Grand"; baden_spd = 1; baden_ddp = 1; baden_z = 1; baden_dvp = 1
 
 @bourgeois_coalition_baden
 title: A bourgeois coalition must be formed
 choose-if: true_bourgeois_coalition_baden > 50
-view-if: (weimar_coalition_baden < 50 and z_relation <= 30 and right_coalition_baden < 50) or kpd_relation >= 60
+view-if: (weimar_coalition_baden < 50 and z_relation <= 30 and right_coalition_baden < 50) or kpd_relation >= 60; baden_lvp = 1; baden_ddp = 1; baden_z = 1; baden_dvp = 1; baden_wp = 2; baden_true_other = 2
 on-arrival: baden_election_2_trigger_time = time + 48; baden_gov = "Bourgeois"
 
 @left_coalition_baden
 title: A Coalition of the Left will be formed
 subtitle: We will work alongside the KPD
 choose-if: left_coalition_badenn >= 50 and kpd_relation >= 65
-on-arrival: baden_election_2_trigger_time = time + 48; ruarl_kpd += 3; rural_others -= 2; catholic_dvp -= 1; catholic_spd += 1; baden_gov = "Left"
+on-arrival: baden_election_2_trigger_time = time + 48; ruarl_kpd += 3; rural_others -= 2; catholic_dvp -= 1; catholic_spd += 1; baden_gov = "Left"; baden_spd = 1; baden_kpd = 1; baden_uspd = 1; baden_sapd = 1
 
 @right_wing_coalition_baden
 title: The right forms a government...
 subtitle: This doesn't make sense.
 choose-if: right_coalition_baden >= 50
 view-if: right_coalition_baden >= 50
-on-arrival: baden_election_2_trigger_time = time + 48; rural_nsdap += 2; dvp_relation -= 5; baden_gov = "Right"
+on-arrival: baden_election_2_trigger_time = time + 48; rural_nsdap += 2; dvp_relation -= 5; baden_gov = "Right"; baden_nsdap = 1; baden_dvfp = 2; baden_nsfb = 1; baden_dvp = 1; baden_wp = 2; baden_true_other = 2; baden_dnvp = 1; baden_csvd = 2; baden_cnbl = 2
 
 This can't end well...
 
 @social_catholic_coalition_baden
 title: Why not form a <span style="color: [+ spd_colour +];">**Social**</span>-<span style="color: [+ z_colour +];">**Catholic**</span> Coalition?
 choose-if: (z_r_baden + spd_r_baden) >= 50 and z_relation >= 40 and ddp_r_baden <= 5.5
-on-arrival: baden_election_2_trigger_time = time + 48; z_relation += 2; ddp_relation -= 2; baden_gov = "Social-Catholic"
+on-arrival: baden_election_2_trigger_time = time + 48; z_relation += 2; ddp_relation -= 2; baden_gov = "Social-Catholic"; baden_spd = 1; baden_z = 1
 
 The poor performance of the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> has allowed us to try a <span style="color: [+ spd_colour +];">**Social**</span>-<span style="color: [+ z_colour +];">**Catholic**</span> Coalition.
   
