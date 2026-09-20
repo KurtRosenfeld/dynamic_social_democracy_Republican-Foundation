@@ -1,4 +1,4 @@
-title: saxony state
+title: Go to Saxony
 new-page: true
 is-special: true
 face-image: img/land/Saxony.svg.webp
@@ -16,7 +16,7 @@ on-arrival: {!
 
 Saxony has historically been the country of literature and the printing industry - but it was not just that domain that lead to a proletarian and liberal state.
 
-More recently Saxony has been the center of the Märzaktion, a coup attempt by communist parties.
+More recently Saxony has been the center of the Märzaktion, a coup attempt by the KPD and KAPD that sought to spark a late continuation of the November Revolution.
 
 Currently ruled by [+ saxony_mp +] ([+ saxony_mp_party +]) in a [+ saxony_gov +]-Coalition with [+ saxony_coalition_r +]% support.
 
