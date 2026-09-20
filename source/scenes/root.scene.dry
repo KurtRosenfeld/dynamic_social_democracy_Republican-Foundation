@@ -555,7 +555,7 @@ Q.kpd_r_baden = 3;
 Q.uspd_r_baden = 2;
 Q.spd_r_baden = 23; Q.baden_spd = 1;
 Q.ddp_r_baden = 8; Q.baden_ddp = 1;
-Q.z_r_baden = 4; Q.baden_z = 1;
+Q.z_r_baden = 40; Q.baden_z = 1;
 Q.dvp_r_baden = 6;
 Q.wp_r_baden = 1;
 Q.farm_r_baden = 8;
