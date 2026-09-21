@@ -302,7 +302,8 @@ title: End negotiations
 
 @tolerate_stress
 
-@braunermuell                                                                                                                                  subtitle: We would surely be denied all too many ministries.
+@braunermuell                                                                                                                                  
+subtitle: We would surely be denied all too many ministries.
 choose-if: z_relation >= 60 and dvp_relation >= 40 and (reformist_strength >= left_strength) and early_dvp_cooperation >= 1 and reformist_strength >= 50
 unavailable-subtitle: [? if z_relation < 60 or dvp_relation < 40: Our partners don't even consider this option. ?][? if (reformist_strength < left_strength) or early_dvp_cooperation < 1: Our party is opposed to cooperation with the DVP. ?][? if reformist_strength < 50: Our party doesn't want to take that responsibility. ?]
 on-arrival:{!
