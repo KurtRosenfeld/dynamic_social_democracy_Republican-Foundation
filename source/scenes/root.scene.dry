@@ -893,7 +893,10 @@ Q.unemployment_insurance_threshold = 10;
 Q.blutmai = 0;
 
 // have we reformed these institutions to be more democratic?
-Q.judicial_reform = 0;
+Q.judicial_reform = - 0.5;
+Q.bavaria_jud = -2;
+Q.saxony_jud = -1;
+Q.prussia_jud = 0;
 Q.foreign_reform = 0;
 Q.foreign_ministy_aristocrization = 2;
 Q.bureaucratic_reform = 0;
