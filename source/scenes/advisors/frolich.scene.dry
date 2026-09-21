@@ -1,0 +1,34 @@
+title: August Frölich
+is-pinned-card: true
+tags: advisor, left
+card-image: img/portraits/FrölichAugust.jpg
+view-if: frolich_advisor = 1
+new-page: true 
+
+= August Frölich
+
+August Frölich is a Thuringian member of our party. He is a left-winger but definetly capable of compromise if the situation nececitates it.
+
+- @thur_works: Speed up work in the Thuringian government
+- @appeal_to_logic: Appeal to logic
+- @negotiate_left: Negotiate woth the Left
+
+@thur_works
+subtitle: Frölich is part of the government in Thuringia.
+choose-if: thuringia_spd == 1
+unavailable-subtitle: Frölich is not part of the government in Thuringia.
+on-arrival: thuringia_action_timer -= 8; advisor_action_timer = 6
+
+Things are getting done faster.
+
+@appeal_to_logic
+subtitle: Tell the our left-wing that they have to wait for the circumstances to turn in our favour.
+on-arrival: advisor_action_timer = 6; left_dissent -= 8; center_dissent -= 1; labor_dissent -= 1
+
+We will have our class war when the time is ripe.
+
+@negotiate_left
+subtitle: Frölich is one of the most respected SPD members in the other worker's parties.
+on-arrival: uspd_relation += 6; sb_relation += 5; kapd_relation += 1; kpd_relation += 3; sapd_relation += 5
+
+  
