@@ -29,6 +29,6 @@ We will have our class war when the time is ripe.
 
 @negotiate_left
 subtitle: Frölich is one of the most respected SPD members in the other worker's parties.
-on-arrival: uspd_relation += 6; sb_relation += 5; kapd_relation += 1; kpd_relation += 3; sapd_relation += 5
+on-arrival: uspd_relation += 6; sb_relation += 5; kapd_relation += 1; kpd_relation += 3; sapd_relation += 5; advisor_action_timer = 6
 
   
