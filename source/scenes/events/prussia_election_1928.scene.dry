@@ -966,15 +966,15 @@ Finally, the <span style="color: [+ spd_colour +];">**SPD**</span> can govern al
 - @spdmajority_liebknecht
 
 @spdmajority_braun
-title: Otto Braun
+title: Otto Braun ([+ braun_in +])
 on-arrival: prussia_leader = "Braun"; prussia_leader_party = braun_in; reformist_dissent -= 5
 
 @spdmajority_rosenfeld
-title: Kurt Rosenfeld
+title: Kurt Rosenfeld ([+ rosenfeld_in +])
 on-arrival: prussia_leader = "Rosenfeld"; prussia_leader_party = rosenfeld_in; left_dissent -= 5
 
 @spdmajority_liebknecht
-title: Theodor Liebknecht
+title: Theodor Liebknecht ([+ liebknecht_in +])
 on-arrival: prussia_leader = "Liebknecht"; prussia_leader_party = liebknecht_in; left_dissent -= 5
 
 
