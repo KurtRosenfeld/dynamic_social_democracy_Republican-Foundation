@@ -713,9 +713,10 @@ Postal Office:
 
 Foreign Office: 
 
-<span id="nat-jud" style="cursor:pointer">⇊ National Judiciary: </span>
+<span id="nat-jud" style="cursor:pointer">⇊ National Judiciary: </span> [+ judiciary_reform : judiciary +]
 
 <div id="jud-breakdown" style="display:none">
+
   *Prussian Judiciary*: [+ prussia_jud : judiciary +]
 
   *Bavarian Judiciary*: [+ bavaria_jud : judiciary +]
@@ -723,6 +724,7 @@ Foreign Office:
   *Saxon Judiciary*: [+ saxony_jud : judiciary +]
 
   *Other Judiciary*: [+ other_jud : judiciary +]
+
 </div>
 
 <script>
