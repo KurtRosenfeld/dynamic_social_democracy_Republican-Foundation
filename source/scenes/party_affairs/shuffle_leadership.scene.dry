@@ -269,6 +269,15 @@ go-to: rm_main_menu
 
 Seydewitz has been removed as an advisor. The Leftist faction disapproves.
 
+@remove_frolich
+title: Remove Frölich
+view-if: frolich_advisor = 1
+tags: remove_advisor
+on-arrival: frolich_advisor = 0; left_dissent += 7; n_advisors -= 1
+go-to: rm_main_menu
+
+Frölich has been removed as an advisor. The Leftist faction disapproves.
+
 @remove_siemsen
 title: Remove Siemsen
 view-if: siemsen_advisor = 1
@@ -652,6 +661,18 @@ go-to: advisor_menu
 tags: left_advisor
 
 Max Seydewitz is now an advisor.
+
+@add_frolich
+title: August Frölich
+subtitle: August Frölich is a Thuringian member of our party. He is a left-winger but definetly capable of compromise if the situation nececitates it. {!<br><br>!}[? if difficulty < 0 : Actions - Thurnigia Works, Left Persuasion, Left Negotiation ?]
+is-card: true
+card-image: img/portraits/FrolichAugust.jpg
+view-if: frolich_advisor = 0 and n_advisors < 4 and frolich_in == "SPD"
+on-arrival: frolich_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
+go-to: advisor_menu
+tags: left_advisor
+
+August Frölich is now an advisor.
 
 @add_siemsen
 title: Anna Siemsen
