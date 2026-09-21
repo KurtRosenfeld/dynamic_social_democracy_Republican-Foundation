@@ -15,8 +15,8 @@ August Frölich is a Thuringian member of our party. He is a left-winger but def
 
 @thur_works
 subtitle: Frölich is part of the government in Thuringia.
-choose-if: thuringia_spd == 1
-unavailable-subtitle: Frölich is not part of the government in Thuringia.
+choose-if: thuringia_spd == 1 and advisor_action_timer <= 0
+unavailable-subtitle: [? if not thuringia_spd == 1: Frölich is not part of the government in Thuringia. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: thuringia_action_timer -= 8; advisor_action_timer = 6
 
 Things are getting done faster.
@@ -24,11 +24,15 @@ Things are getting done faster.
 @appeal_to_logic
 subtitle: Tell the our left-wing that they have to wait for the circumstances to turn in our favour.
 on-arrival: advisor_action_timer = 6; left_dissent -= 8; center_dissent -= 1; labor_dissent -= 1
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
 
 We will have our class war when the time is ripe.
 
 @negotiate_left
 subtitle: Frölich is one of the most respected SPD members in the other worker's parties.
 on-arrival: uspd_relation += 6; sb_relation += 5; kapd_relation += 1; kpd_relation += 3; sapd_relation += 5; advisor_action_timer = 6
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
 
-  
+The other parties consider his points.
