@@ -49,7 +49,7 @@ title: The Prussian Bulwark
 subtitle: Speed up work in Prussia. As the Minister-President of Prussia, Braun has power over the Prussian bureaucracy and security services.
 choose-if: advisor_action_timer <= 0 and prussia_leader = "Braun"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if prussia_leader != "Braun": Braun doesn't control Prussia anymore. ?]
-on-arrival: prussia_action_timer -= 9
+on-arrival: prussia_action_timer -= 9; advisor_action_timer = 6
 
 @snap_election
 title: Snap Election
