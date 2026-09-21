@@ -1,27 +1,27 @@
-title: Stresemann new Chancellor
+title: Stresemann new Chancellor [? if chancellor == "Stresemann": (again) ?]
 subtitle: Ebert appoints Gustav Stresemann of the DVP chnacellor.
-view-if: cuno_slapped
+view-if: ebert_jesters_stressy
 max-visits: 1 
 tags: event 
 new-page: true 
-on-arrival: chancellor = 'Stresemann'; chancellor_party = 'DVP'; in_weimar_coalition = 0; in_toleration = 0; in_grand_coalition = 1; foreign_minister = 'Stresemann'; foreign_minister_party = 'DVP'; interior_minister = 'Jarres'; interior_minister_party = 'DVP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Raumer'; economic_minister_party = 'DVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Luther'; agriculture_minister_party = 'I'; transport_minister = 'Oeser'; transport_minister_party = 'DDP'; postal_minister = 'Höfle'; postal_minister_party = 'Z'; workers_kpd += 2
+on-arrival: chancellor = 'Stresemann'; chancellor_party = 'DVP'; in_weimar_coalition = 0; in_toleration = 0; in_grand_coalition = 1; foreign_minister = 'Stresemann'; foreign_minister_party = 'DVP'; interior_minister = 'Jarres'; interior_minister_party = 'DVP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Koelth'; economic_minister_party = 'I'; finance_minister = 'Luther'; finance_minister_party = 'I'; agriculture_minister = 'Kanitz'; agriculture_minister_party = 'I'; transport_minister = 'Oeser'; transport_minister_party = 'DDP'; postal_minister = 'Höfle'; postal_minister_party = 'Z'; workers_kpd += 1; new_middle_other += 2
 face-image: img/portraits/StresemannGustav.jpg 
   
 = Stresemann to be Chancellor
 
-The failure of Cuno has led Ebert to try out something new again.
+Ebert asks us to join Stresemann's cabinet
 
 - @join_stresemann: The SPD joins the Stresemann government.
 - @tolerate_stress: The SPD tolerates Stresemann but won't participate.
-- @braunermuell: The SPD will demand the chancellorship.
-- @fuck_monarchism: Maybe the DNVP should have a try at ruining their electoral performance for once...
+- @fuck_stressy: We won't elect this government but we will support sensible policies.
   
 @join_stresemann
-on-arrival: spd_in_government = 1; dvp_in_government = 1; z_in_government = 1; ddp_in_government = 1; in_grand_coalition = 1; leverage = spd_votes
+on-arrival: spd_in_government = 1; dvp_in_government = 1; z_in_government = 1; ddp_in_government = 1; in_grand_coalition = 1; leverage = spd_votes; workers_spd -= 3; unemployed_spd -= 2; new_middle_spd -= 1; eight_hours = 4.3; kpd_relation -= 7; uspd_relation -= 4; sb_relation -= 4; ddp_relation += 2; dvp_relation += 3; z_relation += 1; economic_growth += 0.05; left_dissent += 5; labor_dissent = 5; center_dissent += 2; workers_dtsp += 2; new_middle_other += 2
+subtitle: We'd have to accept a compromise on the eight hour question.
 choose-if: reformist_strength >= (left_strength) and early_dvp_cooperation >= 1 and dvp_relation >= 25
 unavailable-subtitle: [? if (reformist_strength < (left_strength) or early_dvp_cooperation < 1): Our party does not support this. ?][? if dvp_relation < 25: The DVP doesn't want us to join the coalition. ?]
 
-The SPD agress to join the Stresemann government.
+The SPD agress to join the Stresemann government and accepts a compromise solution for the eight hour workday.
 
 - @selection_of_ministries_stresemann
 
@@ -301,36 +301,13 @@ Robert Schmidt of the <span style="color: [+ spd_colour +];">**SPD**</span> has 
 title: End negotiations
 
 @tolerate_stress
+on-arrival: in_toleration = 1; kpd_relation -= 4; z_relation += 2; unemployed_spd -= 3
 
-@braunermuell
-subtitle: We would surely be denied all too many ministries.
-choose-if: z_relation >= 60 and dvp_relation >= 40 and (reformist_strength >= left_strength) and early_dvp_cooperation >= 1 and reformist_strength >= 50
-unavailable-subtitle: [? if z_relation < 60 or dvp_relation < 40: Our partners don't even consider this option. ?][? if (reformist_strength < left_strength) or early_dvp_cooperation < 1: Our party is opposed to cooperation with the DVP. ?][? if reformist_strength < 50: Our party doesn't want to take that responsibility. ?]
-on-arrival:{!
-if (Q.prussia_leader !== "Braun") { 
-Q.chancellor = 'Braun'; 
-Q.chancellor_party = Q.braun_in; 
-} 
-if (Q.prussia_leader == "Braun") { 
-Q.chancellor = 'Müller'; 
-Q.chancellor_party = Q.muller_in; 
-}
+@fuck_stressy
+subtitle: The DNVP would profit from that
+on-arrival: old_middle_dnvp += 3; catholic_nsdap += 2; new_middle_dvfp += 2; unemployed_spd += 1; workers_spd += 1
 
-Q.spd_in_government = 1; 
-Q.left_dissent += 2;
-Q.kpd_relation -= 3;
-Q.leverage = 15;
-!}
-go-to: selection_of_ministries_stresemann
-
-The bourgeois parties agreed to let [+ chancellor +] ([+ chancellor_party +]) be chancellor.
-
-@fuck_monarchism
-choose-if: ddp_relation <= 50 and left_strength > reformist_strength
-unavailable-subtitle: The DNVP is in favour of the Ruhrkampf. We need to find a way to end it.
-on-arrival: dnvp_in_government = 1; unemplyoed_dnvp -= 4; rural_dnvp += 1; agriculture_minister = "Schiele"; agriculture_minister_party = "DNVP"; interior_minister = "Schiele"; interior_minister_party = "DNVP"; workers_nsdap += 2; unemployed_dvfp += 2
-
-The DNVP just entered a national government...
+The DNVP sort of tolerates the government now.
 
 
 
