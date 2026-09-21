@@ -542,7 +542,7 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action_timer <= 0: #
     <p></p>
   </div>
   </div>
-  <div id="aschaumburg-tooltip" class="tooltip-group">
+  <div id="aschaum_lippe-tooltip" class="tooltip-group">
 <div style="text-align: center;">
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Schaumburg-Lippe</strong>
