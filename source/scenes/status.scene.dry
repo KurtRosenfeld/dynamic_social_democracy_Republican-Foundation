@@ -716,13 +716,13 @@ Foreign Office:
 <span id="nat-jud" style="cursor:pointer">⇊ National Judiciary: </span>
 
 <div id="jud-breakdown" style="display:none">
-  *Prussian Judiciary*: 
+  *Prussian Judiciary*: [+ prussia_jud : judiciary +]
 
-  *Bavarian Judiciary*: 
+  *Bavarian Judiciary*: [+ bavaria_jud : judiciary +]
 
-  *Saxon Judiciary*:
+  *Saxon Judiciary*: [+ saxony_jud : judiciary +]
 
-  *Other Judiciary*:
+  *Other Judiciary*: [+ other_jud : judiciary +]
 </div>
 
 <script>
@@ -872,7 +872,7 @@ Rural trust in SPD: [+ rural_trust : rural_trust +]
     </g>
     <g
        id="hesse-hub" class="door" data-scene="hesse_state" cursor="pointer"
-style="display:inline;fill:[? if hesse_spd == 1 and hesse_action_timer <= 0: #43C431 ?][? if hesse_spd == 1 and hesse_action_timer == 1: #DDB93C ?][? if hesse_spd == 1 and hessse_action_timer > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315";fill-opacity:1;stroke-width:20.0315"
+style="display:inline;fill:[? if hesse_spd == 1 and hesse_action_timer <= 0: #43C431 ?][? if hesse_spd == 1 and hesse_action_timer == 1: #DDB93C ?][? if hesse_spd == 1 and hesse_action_timer > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315";fill-opacity:1;stroke-width:20.0315"
        transform="matrix(0.67208696,0,0,0.71260782,-15.600755,-0.22770071)">
       <path
          d="m 82.668977,177.81629 1.039862,2.25303 v 0.92433 l -0.17331,0.63547 0.40439,1.44425 v 1.44425 l -0.17331,1.32871 0.34662,1.96418 -0.40439,0.5777 -0.11554,1.32872 0.17331,1.50202 0.17331,1.21317 -0.34662,0.69324 -0.982092,0.46216 -0.866551,0.69324 -0.46216,0.80878 -0.635471,0.92432 -0.577701,0.92433 -0.751011,0.63547 -1.270942,-0.11554 -0.63547,-0.86655 -0.231081,-0.40439 0.635471,-0.4044 0.404391,-0.92432 0.5777,-0.23108 0.05777,-0.69324 -0.519931,-0.51993 -1.097632,-0.34662 -0.924321,-0.0578 -0.28885,-1.1554 -0.499409,-0.004 -0.309372,0.0616 -0.11554,1.09763 -0.519931,0.23108 -1.039861,-0.17331 -0.404391,-0.75101 -0.577701,-0.46216 h -0.63547 l -0.635471,-0.28885 -0.577701,-0.63547 -0.866551,-0.0578 -1.270942,-0.0578 -0.693241,-0.80878 -0.866551,-0.63547 -0.05777,-1.09764 -1.039861,-0.92432 -0.635471,-0.34662 -1.213172,-0.17331 -0.46216,0.40439 -0.577701,-0.5777 -0.693241,-0.86655 -0.635471,-0.69324 -0.05777,-0.34662 0.577701,-0.0578 v -1.55979 l 0.635471,-1.84864 1.039861,-1.5598 1.733102,-0.86655 2.484114,-0.5777 0.866551,0.98209 2.079722,-0.11554 1.790873,-0.75101 1.155401,-0.46216 0.924321,-0.0578 0.866552,0.69324 1.964182,0.0578 0.28885,-0.51993 0.924322,-0.86655 1.386481,0.17331 1.039862,0.86655 0.751011,-0.11554 z"
