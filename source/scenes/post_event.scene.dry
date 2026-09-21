@@ -518,6 +518,30 @@ if (Q.ors_csvd) Q.ors_rest -= Q.ors_csvd;
 if (Q.ors_aspd) Q.ors_rest -= Q.ors_aspd;
 Q.ors_rest = Math.round(Q.ors_rest * 10)/10;
 
+// translate prussia into my system because I would rather use two systems than rewrite all the Prussia content
+
+if (Q.in_weimar_coalition_prussia) {
+Q.prussia_gov = "Weimar"; Q.prussia_spd = 1; Q.prussia_z = 1; Q.prussia_ddp = 1; Q.prussia_lvp = 1;}
+if (Q.in_minority_weimar_coalition_prussia) {
+Q.prussia_gov = "Weimar"; Q.prussia_spd = 1; Q.prussia_z = 1; Q.prussia_ddp = 1; Q.prussia_lvp = 1;}
+if (Q.in_grand_coalition_prussia) {
+Q.prussia_gov = "Grand"; Q.prussia_spd = 1; Q.prussia_z = 1; Q.prussia_ddp = 1; Q.prussia_dvp = 1;}
+if (Q.in_minority_grand_coalition_prussia) {
+Q.prussia_gov = "Grand"; Q.prussia_spd = 1; Q.prussia_z = 1; Q.prussia_ddp = 1; Q.prussia_dvp = 1;}
+if (Q.in_social_catholic_coalition_prussia) {
+Q.prussia_gov = "Social-Catholic"; Q.prussia_spd = 1; Q.prussia_z = 1;}
+if (Q.in_minortity_social_catholic_coalition_prussia) {
+Q.prussia_gov = "Social-Catholic"; Q.prussia_spd = 1; Q.prussia_z = 1;}
+if (Q.in_social_liberal_coalition_prussia) {
+Q.prussia_gov = "Social-Liberal"; Q.prussia_spd = 1; Q.prussia_lvp = 1; Q.prussia_ddp = 1}
+if (Q.in_minority_social_liberal_coalition_prussia) {
+Q.prussia_gov = "Social-Liberal"; Q.prussia_spd = 1; Q.prussia_lvp = 1; Q.prussia_ddp = 1}
+if (Q.in_popular_front_coalition_prussia) {
+Q.prussia_gov = "Popular-Front"; Q.prussia_spd = 1; Q.prussia_z = 1; Q.prussia_ddp = 1; Q.prussia_kpd = 1; Q.sapd_prussia = 1; Q.uspd_prussia = 1;}
+if (Q.in_left_front_coalition_prussia) {
+Q.prussia_gov = "Left"; Q.prussia_spd = 1; Q.prussia_sapd = 1; Q.prussia_uspd = 1; Q.prussia_kpd = 1;}
+if (Q.in_spd_majority_prussia) {
+Q.prussia_gov = "SPD"; Q.prussia_spd = 1;}
 
 // re-calculate dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
