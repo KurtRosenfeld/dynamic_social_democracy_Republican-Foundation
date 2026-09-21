@@ -894,6 +894,7 @@ Q.blutmai = 0;
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = - 0.5;
+Q.other_jud = - 1.5;
 Q.bavaria_jud = -2;
 Q.saxony_jud = -1;
 Q.prussia_jud = 0;
