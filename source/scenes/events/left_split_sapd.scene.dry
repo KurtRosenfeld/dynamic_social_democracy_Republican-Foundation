@@ -67,14 +67,17 @@ if (Q.centrists_resign == 1) {
     if (Q.breitscheid_advisor == 1) Q.n_advisors -= 1;
     if (Q.crispien_advisor == 1) Q.n_advisors -= 1;
     if (Q.sender_advisor == 1) Q.n_advisors -= 1;
+    if (Q.frolich_advisor == 1) Q.n_advisors -= 1;
 
     Q.breitscheid_advisor = 0;
     Q.crispien_advisor = 0;
     Q.sender_advisor = 0;
+    Q.frolich_advisor = 0;
 
     Q.breitscheid_in = "SAPD";
     Q.crispien_in = "SAPD";
     Q.sender_in = "SAPD";
+    Q.frolich_in = "SAPD";
 }
 
 Q.seydewitz_in = "SAPD";
