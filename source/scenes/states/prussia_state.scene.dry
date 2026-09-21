@@ -80,7 +80,7 @@ on-arrival: prussian_police_strength += 20; prussia_action_timer += 8
 We have increased the size of the Prussian police.
 
 @bureaucracy
-on-arrival: prussia_purge += 1; prussian_police_loyalty += 0.05; nationalism -= 3; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_z += 0.5; new_middle_ddp += 1; new_middle_lvp += 2; coup_progress += 0.5; dvp_left += 0.5; ddp_left += 0.25; lvp_left += 0.5
+on-arrival: prussia_purge += 1; prussian_police_loyalty += 0.05; nationalism -= 3; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_z += 0.5; new_middle_ddp += 1; new_middle_lvp += 2; coup_progress += 0.5; dvp_left += 0.5; ddp_left += 0.25; lvp_left += 0.5; prussia_jud += 1
 
 The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and many abuse their power to favor the <span style="color: #3E88B3;">political right</span>. By removing the <span style="color: #3E88B3;">pro-monarchy</span> and <span style="color: #7A3C00;">pro-dictatorship</span> elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
@@ -126,7 +126,7 @@ The <span style="color: [+ kpd_colour +];">Communists</span> are outraged despit
 
 @unban_ph
 view-if: ph_banned = 1 and not in_grand_coalition_prussia and year == 1923
-on-arrival: ph_banned = 0; rfb_strength += 6; prussian_police_loyalty -= 0.1; z_relation -= 3; prussia_action_timer += 6
+on-arrival: ph_banned = 0; rfb_strength += 6; prussian_police_loyalty -= 0.1; z_relation -= 3; prussia_action_timer += 6; prussia_jud -= 0.4
 
 Cool...?
 
@@ -138,7 +138,7 @@ The ban is enthusiastically carried out by the police, perhaps too enthusiastica
 
 @unban_rfb
 view-if: rfb_banned = 1 and not in_social_catholic_coalition_prussia and year >= 1924
-on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1; hindenburg_angry += 8; prussia_action_timer += 7
+on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1; hindenburg_angry += 8; prussia_action_timer += 7; prussia_jud -= 0.5
 
 The <span style="color: #700000;">Communist</span> <span style="color: #700000;">**RFB**</span> is no longer banned.
 
@@ -196,7 +196,7 @@ on-arrival: prussian_police_strength += 15; prussia_action_timer += 7
 We have increased the size of the Prussian police.
 
 @dbureaucracy
-on-arrival: prussia_purge += 1; prussian_police_loyalty += 0.03; nationalism -= 2; pacifism += 1; democratization += 1; pro_republic += 2*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 4; new_middle_z += 0.5; new_middle_ddp += 1; new_middle_dvp += 1; new_middle_lvp += 2; coup_progress += 0.5; ddp_left += 0.25; dvp_left += 0.5; lvp_left += 0.5; prussia_action_timer += 8
+on-arrival: prussia_purge += 1; prussian_police_loyalty += 0.03; nationalism -= 2; pacifism += 1; democratization += 1; pro_republic += 2*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 4; new_middle_z += 0.5; new_middle_ddp += 1; new_middle_dvp += 1; new_middle_lvp += 2; coup_progress += 0.5; ddp_left += 0.25; dvp_left += 0.5; lvp_left += 0.5; prussia_action_timer += 8; prussia_jud += 0.6
 
 The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and many abuse their power to favor the <span style="color: #3E88B3;">political right</span>. By removing the <span style="color: #3E88B3;">pro-monarchy</span> and <span style="color: #7A3C00;">pro-dictatorship</span> elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
@@ -245,7 +245,7 @@ The <span style="color: [+ kpd_colour +];">Communists</span> are outraged despit
 
 @dunban_ph
 view-if: ph_banned = 1 and not in_grand_coalition_prussia and year == 1923
-on-arrival: ph_banned = 0; rfb_strength += 6; prussian_police_loyalty -= 0.1; z_relation -= 3; prussia_action_timer += 7
+on-arrival: ph_banned = 0; rfb_strength += 6; prussian_police_loyalty -= 0.1; z_relation -= 3; prussia_action_timer += 7; prussia_jud -= 0.5
 
 Cool...?
 
@@ -257,7 +257,7 @@ The ban is enthusiastically carried out by the police, perhaps too enthusiastica
 
 @dunban_rfb
 view-if: rfb_banned = 1 and year >= 1924
-on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1; hindenburg_angry += 8; prussia_action_timer += 9
+on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1; hindenburg_angry += 8; prussia_action_timer += 9; prussia_jud -= 0.5
 
 The <span style="color: #700000;">Communist</span> <span style="color: #700000;">**RFB**</span> is no longer banned.
 
@@ -307,7 +307,7 @@ on-arrival: prussian_police_strength += 30; rfb_strength += 50; prussia_action_t
 We have increased the size of the Prussian police.
 
 @lbureaucracy
-on-arrival: prussia_purge += 1; prussian_police_loyalty += 0.08; nationalism -= 5; pacifism += 1; democratization += 2; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5; dvp_left += 2; ddp_left += 1; lvp_left += 1.5; reichsexekution += 1; bureaucracy_goal_prussia -= 1; new_middle_kpd += 2; prussia_action_timer += 6
+on-arrival: prussia_purge += 1; prussian_police_loyalty += 0.08; nationalism -= 5; pacifism += 1; democratization += 2; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5; dvp_left += 2; ddp_left += 1; lvp_left += 1.5; reichsexekution += 1; bureaucracy_goal_prussia -= 1; new_middle_kpd += 2; prussia_action_timer += 6; prussia_jud += 0.8
 
 The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and many abuse their power to favor the <span style="color: #3E88B3;">political right</span>. By removing the <span style="color: #3E88B3;">pro-monarchy</span> and <span style="color: #7A3C00;">pro-dictatorship</span> elements, we can democratize it. The <span style="color: [+ kpd_colour +];">**KPD**</span> have also began to infiltrate some of their own into the state bureaucracy...
 
@@ -327,7 +327,7 @@ view-if: sh_banned == 0
 
 @lunban_rfb
 view-if: rfb_banned = 1
-on-arrival: rfb_banned = 0; rfb_strength += 100; prussian_police_loyalty -= 0.1; rfb_goal_prussia -= 1; hindenburg_angry += 8; prussia_action_timer += 3
+on-arrival: rfb_banned = 0; rfb_strength += 100; prussian_police_loyalty -= 0.1; rfb_goal_prussia -= 1; hindenburg_angry += 8; prussia_action_timer += 3; prussia_jud -= 0.3
 
 The <span style="color: #700000;">Communist</span> <span style="color: #700000;">**RFB**</span> is no longer banned.
 
@@ -374,7 +374,7 @@ on-arrival: prussian_police_strength += 35; prussia_action_timer += 6
 We have increased the size of the Prussian police.
 
 @sbureaucracy
-on-arrival: prussia_purge += 1; prussian_police_loyalty += 0.08; nationalism -= 4; pacifism += 1; democratization += 1; pro_republic += 4*(1-dissent); new_middle_spd += 3*(1-dissent) if democratization >= 3; prussia_action_timer += 6
+on-arrival: prussia_purge += 1; prussian_police_loyalty += 0.08; nationalism -= 4; pacifism += 1; democratization += 1; pro_republic += 4*(1-dissent); new_middle_spd += 3*(1-dissent) if democratization >= 3; prussia_action_timer += 6; prussia_jud += 1.5
 
 The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and many abuse their power to favor the <span style="color: #3E88B3;">political right</span>. By removing the <span style="color: #3E88B3;">pro-monarchy</span> and <span style="color: #7A3C00;">pro-dictatorship</span> elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
