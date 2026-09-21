@@ -1493,6 +1493,7 @@ Q.severing_in = 'SPD';
 Q.pfulf_in = 'SPD';
 Q.juchaz_in = 'SPD';
 
+Q.frolich_in = 'SPD';
 Q.seydewitz_in = 'SPD';
 Q.rosenfeld_in = 'USPD';
 Q.levi_in = 'USPD';
