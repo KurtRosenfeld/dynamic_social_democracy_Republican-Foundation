@@ -404,7 +404,7 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action_timer <= 0: #
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Prussia</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
     <p>We are in [+ prussia_spd : government +]</p>
-    <p></p>
+    <p>[? if prussia_spd == 1 and prussia_action_timer > 0: We have to wait [+ prussia_action_timer +] months before our next action. ?]</p>
   </div>
   </div>
   <div id="abavaria-tooltip" class="tooltip-group">
@@ -413,7 +413,7 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action_timer <= 0: #
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Bavaria</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
     <p>We are in [+ bavaria_spd : government +]</p>
-    <p></p>
+    <p>[? if bavaria_spd == 1 and bavaria_action_timer > 0: We have to wait [+ bavaria_action_timer +] months before our next action. ?]</p>
   </div>
   </div>
   <div id="ahesse-tooltip" class="tooltip-group">
@@ -422,7 +422,7 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action_timer <= 0: #
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Hesse</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
     <p>We are in [+ hesse_spd : government +]</p>
-    <p></p>
+    <p>[? if hesse_spd == 1 and hesse_action_timer > 0: We have to wait [+ hesse_action_timer +] months before our next action. ?]</p>
   </div>
   </div>
   <div id="abaden-tooltip" class="tooltip-group">
@@ -449,7 +449,7 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action_timer <= 0: #
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Hamburg</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
     <p>We are in [+ hamburg_spd : government +]</p>
-    <p></p>
+    <p>[? if hamburg_spd == 1 and hamburg_action_timer > 0: We have to wait [+ hamburg_action_timer +] months before our next action. ?]</p>
   </div>
   </div>
   <div id="athuringia-tooltip" class="tooltip-group">
