@@ -1359,6 +1359,86 @@ lippe: {
 },
 
 
+     schaum_lippe: {
+  totalSeatsKey: 'schaum_lippe_seats',
+  conditionalParties: [
+    {
+      id: 'kpd', legend: 'KPD', name: 'KPD',
+      qualityKey: 'kpd_r_schaumburg_lippe',
+      condition: function(Q) { return Q.kpd_r_schaumburg_lippe; }
+    },
+    {
+      id: 'uspd', legend: 'USPD', name: 'USPD',
+      qualityKey: 'uspd_r_schaumburg_lippe',
+      condition: function(Q) { return Q.uspd_r_schaumburg_lippe; }
+    },
+    {
+      id: 'spd', legend: 'SPD', name: 'SPD',
+      qualityKey: 'spd_r_schaumburg_lippe',
+      condition: function(Q) { return Q.spd_r_schaumburg_lippe; }
+    },
+    {
+      id: 'ddp',
+      legend: function(Q) { return Q.ddp_name; },
+      name: function(Q) { return Q.ddp_name; },
+      qualityKey: 'ddp_r_schaumburg_lippe',
+      condition: function(Q) { return Q.ddp_r_schaumburg_lippe; }
+    },
+    {
+      id: 'lvp', legend: 'LVP', name: 'LVP',
+      qualityKey: 'lvp_r_schaumburg_lippe',
+      condition: function(Q) { return Q.lvp_r_schaumburg_lippe; }
+    },
+    {
+      id: 'aspd', legend: 'HB', name: 'HB',
+      qualityKey: 'hb_r_schaumburg_lippe',
+      condition: function(Q) { return Q.hb_r_schaumburg_lippe; }
+    },
+    {
+      id: 'dvp', legend: 'DVP', name: 'DVP',
+      qualityKey: 'dvp_r_schaumburg_lippe',
+      condition: function(Q) { return Q.dvp_r_schaumburg_lippe; }
+    },
+    {
+      id: 'other', legend: 'Other', name: 'Others',
+      qualityKey: 'true_other_r_schaumburg_lippe',
+      condition: function(Q) { return Q.true_other_r_schaumburg_lippe; }
+    },
+    {
+      id: 'farm2', legend: 'LB', name: 'LB',
+      qualityKey: 'lb_r_schaumburg_lippe',
+      condition: function(Q) { return Q.lb_r_schaumburg_lippe; }
+    },
+    {
+      id: 'farm3', legend: 'CNBL', name: 'CNBL',
+      qualityKey: 'cnbl_r_schaumburg_lippe',
+      condition: function(Q) { return Q.cnbl_r_schaumburg_lippe; }
+    },
+    {
+      id: 'dnvp', legend: 'DNVP', name: 'DNVP',
+      qualityKey: 'dnvp_r_schaumburg_lippe',
+      condition: function(Q) { return Q.dnvp_r_schaumburg_lippe; }
+    },
+    
+    {
+      id: 'rl', legend: 'RL', name: 'Rl',
+      qualityKey: 'rl_r_schaumburg_lippe',
+      condition: function(Q) { return Q.rl_r_schaumburg_lippe; }
+    },
+    {
+      id: 'nsfb', legend: 'NSFB', name: 'NSFB',
+      qualityKey: 'nsfb_r_schaumburg_lippe',
+      condition: function(Q) { return Q.nsfb_r_schaumburg_lippe; }
+    },
+    {
+      id: 'nsdap', legend: 'NSDAP', name: 'NSDAP',
+      qualityKey: 'nsdap_r_schaumburg_lippe',
+      condition: function(Q) { return Q.nsdap_r_schaumburg_lippe; }
+    }
+  ]
+},
+
+
 anhalt: {
   totalSeatsKey: 'anhalt_seats',
   conditionalParties: [
