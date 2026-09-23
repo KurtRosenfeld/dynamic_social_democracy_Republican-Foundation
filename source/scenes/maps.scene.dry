@@ -1622,6 +1622,18 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   <div class="parliament-chart" data-state="schaum_lippe" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: plhl</p>
     <p>SPD: [+ schaum_lippe_spd : government +]</p>
+[? if kpd_r_schaum_lippe:     <p>KPD: [+ schaum_lippe_kpd : government +]</p>  ?]
+[? if uspd_r_schaum_lippe:     <p>USPD: [+ schaum_lippe_uspd : government +]</p>  ?]
+[? if ddp_r_schaum_lippe:     <p>[+ ddp_name +]: [+ schaum_lippe_ddp : government +]</p>  ?]
+[? if lvp_r_schaum_lippe:     <p>LVP: [+ schaum_lippe_lvp : government +]</p>  ?]
+[? if hb_r_schaum_lippe:     <p>Craftsmen: [+ schaum_lippe_hb : government +]</p>  ?]
+[? if dvp_r_schaum_lippe or rl_r_schaum_lippe:     <p>DVP: [+ schaum_lippe_dvp : government +]</p>  ?]
+[? if true_other_r_schaum_lippe:     <p>Others: [+ schaum_lippe_true_other : government +]</p>  ?]
+[? if lb_r_schaum_lippe or rl_r_schaum_lippe:     <p>LB: [+ schaum_lippe_lb : government +]</p>  ?]
+[? if cnbl_r_schaum_lippe:     <p>CNBL: [+ schaum_lippe_cnbl : government +]</p>  ?]
+[? if dnvp_r_schaum_lippe or rl_r_schaum_lippe:     <p>DNVP: [+ schaum_lippe_dnvp : government +]</p>  ?]
+[? if nsfb_r_schaum_lippe:     <p>NSFB: [+ schaum_lippe_nsfb : government +]</p>  ?]
+[? if nsdap_r_schaum_lippe:     <p>NSDAP: [+ schaum_lippe_nsdap : government +]</p>  ?]
 </div>
 <div id="danzig-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Danzig Politics</strong>
