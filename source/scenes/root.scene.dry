@@ -608,6 +608,12 @@ Q.spd_r_anhalt = 36; Q.anhalt_spd = 1;
 Q.ddp_r_anhalt = 17; Q.anhalt_ddp = 1;
 Q.dvp_r_anhalt = 14;
 Q.dnvp_r_anhalt = 17;
+Q.schaum_lippe_seats = 15; // Schaumburg-Lippe
+Q.spd_r_schaumburg_lippe = 53;
+Q.ddp_r_schaumburg_lippe = 13;
+Q.dvp_r_schaumburg_lippe = 6.7;
+Q.true_other_r_schaumburg_lippe = 13;
+Q.dnvp_r_schaumburg_lippe = 13;
 
 Q.spd_votes = 27.9;
 Q.uspd_votes = 0;
