@@ -18,7 +18,7 @@ Prussia has been a major state in Germany for years, dominating the North German
 
 In the Republic the Prussian Free State has turned into a republican center and the heart of Social Reformism quite quickly.
 
-Currently ruled by [+ prussian_minister_president +] ([+ prussian_minister_president_party +]) in a [+ prussia_gov +] Coalition with [+ prussia_coalition_r +]% support.
+Currently ruled by [+ prussian_leader +] ([+ prussian_leader_party +]) in a [+ prussia_gov +] Coalition with [+ prussia_coalition_r +]% support.
 
 
 <div id="prussia" style="width:500px; height:250px;"></div>
