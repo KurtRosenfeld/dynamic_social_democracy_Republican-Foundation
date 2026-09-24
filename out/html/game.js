@@ -412,7 +412,19 @@ window.updateSidebarRight = function() {
     'hesse-hub':     'hesse_state',
     'baden-hub':     'baden_state',
     'wurttemberg-hub':'wurttemberg_state',
-    'hamburg-hub':   'hamburg_state'
+    'hamburg-hub':   'hamburg_state',
+    'bremen-hub':    'bremen_state',
+    'luebeck-hub':    'luebeck_state',
+    'meck_sche-hub':  'meck_schwe_state',
+    'meck_stre-hub':  'meck_stre_state',
+    'oldenburg-hub':  'oldenburg_state',
+    'brunswick-hub':  'brunswick_state',
+    'anhalt-hub':    'anhalt_state',
+    'lippe-hub':     'lippe_state',
+    'schaum_lippe-hub': 'schaum_lippe_state',
+    'waldeck_hub':    'waldeck_state',
+    'danzig-hub':     'danzig_state',
+    'saar-hub':       'saar_state'
   };
 
   document.body.addEventListener('click', function (evt) {
