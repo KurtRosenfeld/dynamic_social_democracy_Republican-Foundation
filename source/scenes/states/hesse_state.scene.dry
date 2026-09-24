@@ -80,7 +80,7 @@ on-arrival: hesse_schoold += 1; urban_antisemitsm -= 0.2; rural_antisemitism -= 
 title: Investigate the right
 subtitle: They are always up to something
 view-if: hesse_reform >= 2
-on-arrival: ; hesse_action_timer += 12; catholic_nsdap -= 1; old_middle_nsdap -= 1; urban_antisemitsm -= 0.1; sa_strength -= 2
+on-arrival: hesse_action_timer += 12; catholic_nsdap -= 1; old_middle_nsdap -= 1; urban_antisemitsm -= 0.1; sa_strength -= 2
 
   
 
