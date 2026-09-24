@@ -259,7 +259,7 @@ if (Q.rl_r_schaumburg_lippe) Q.lb_r_schaumburg_lippe = 0;
 Q.left_coalition_schaumburg_lippe = parseFloat((Q.spd_r_schaumburg_lippe + Q.kpd_r_schaumburg_lippe + Q.uspd_r_schaumburg_lippe).toFixed(1));
 Q.dvp_coalition_schaumburg_lippe = parseFloat((Q.lvp_r_schaumburg_lippe + Q.dvp_r_schaumburg_lippe + Q.dnvp_r_schaumburg_lippe + Q.other_r_schaumburg_lippe + Q.rl_r_schaumburg_lippe).toFixed(1));
 Q.right_coalition_schaumburg_lippe = parseFloat((Q.dnvp_r_schaumburg_lippe + Q.dvp_r_schaumburg_lippe + Q.nsdap_r_schaumburg_lippe + Q.other_r_schaumburg_lippe + Q.nsfb_r_schaumburg_lippe).toFixed(1));
-Q.socmon_coalition_schaumburg_lippe = parseFloat((Q.lvp_r_schaumburg_lippe + Q.dvp_r_schaumburg_lippe + Q.dnvp_r_schaumburg_lippe + Q.lb_r_schaumburg_lippe + Q.dnvp_r_schaumburg_lippe + Q.ddp_r_schaumburg_lippe + Q.spd_r_schaumburg_lippe + Q.rl_r_schaumburg_lippe).toFixed(1));
+Q.socmon_coalition_schaumburg_lippe = parseFloat((Q.lvp_r_schaumburg_lippe + Q.dvp_r_schaumburg_lippe + Q.lb_r_schaumburg_lippe + Q.dnvp_r_schaumburg_lippe + Q.ddp_r_schaumburg_lippe + Q.spd_r_schaumburg_lippe + Q.rl_r_schaumburg_lippe).toFixed(1));
 
 Q.hb_schaumburg_lippe_elections_vote = (Q.hb_schaumburg_lippe_elections_vote != undefined ? parseFloat(Q.hb_schaumburg_lippe_elections_vote.toFixed(1)) : 0);
 Q.true_other_schaumburg_lippe_elections_vote = (Q.true_other_schaumburg_lippe_elections_vote != undefined ? parseFloat(Q.true_other_schaumburg_lippe_elections_vote.toFixed(1)) : 0);
@@ -457,14 +457,14 @@ Schaumburg-Lippe results:
 @spd_majority_slippe
 title: We can form a majority government on our own.
 view-if: spd_r_schaumburg_lippe >= 50
-on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "SPD"; schaum_lippe_spd = 1; ddp_relation -= 2
+on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "SPD"; schaum_lippe_spd = 1; ddp_relation -= 2; schaum_lippe_coalition_r = spd_r_schaumburg_lippe
 
 
 @soc_lib_slippe
 title: A coalition with the DDP
 subtitle: Classic one.
 view-if: (spd_r_schaumburg_lippe + ddp_r_schaumburg_lippe) >= 50 and ddp_relation > 15
-on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "Social-Liberal"; schaum_lippe_spd = 1; schaum_lippe_ddp = 1
+on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "Social-Liberal"; schaum_lippe_spd = 1; schaum_lippe_ddp = 1; schaum_lippe_coalition_r = (spd_r_schaumburg_lippe + ddp_r_schaumburg_lippe)
 
 
 
@@ -472,20 +472,20 @@ on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_g
 title: We could form a government with the KPD?
 subtitle: Odd one.
 view-if: left_coalition_schaumburg_lippe >= 50 and kpd_relation >= 85
-on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "Left"; schaum_lippe_spd = 1; schaum_lippe_kpd = 1
+on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "Left"; schaum_lippe_spd = 1; schaum_lippe_kpd = 1; schaum_lippe_coalition_r = left_coalition_schaumburg_lippe
 
 
 @dvp_slippe
 title: The DVP can assemble a majority
 view-if: dvp_coalition_schaumburg_lippe >= 50
-on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "Right"; schaum_lippe_dvp = 1; schaum_lippe_dnvp = 1; schaum_lippe_lvp = 1; schaum_lippe_lb = 2; schaum_lippe_cnbl = 2; schaum_lippe_hb = 2; schaum_lippe_true_other = 2
+on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "Right"; schaum_lippe_dvp = 1; schaum_lippe_dnvp = 1; schaum_lippe_lvp = 1; schaum_lippe_lb = 2; schaum_lippe_cnbl = 2; schaum_lippe_hb = 2; schaum_lippe_true_other = 2; schaum_lippe_coalition_r = dvp_coalition_schaumburg_lippe
 
 
 @nsdap_slippe
 title: The Fascists will rule in our former stronghold
 subtitle: The end is neigh...
 view-if: right_coalition_schaumburg_lippe >= 50
-on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "Far-Right"; schaum_lippe_dvp = 1; schaum_lippe_dnvp = 1; schaum_lippe_nsdap = 1; schaum_lippe_nsfb = 1; schaum_lippe_lb = 2; schaum_lippe_cnbl = 2; schaum_lippe_hb = 2; schaum_lippe_true_other = 2
+on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "Far-Right"; schaum_lippe_dvp = 1; schaum_lippe_dnvp = 1; schaum_lippe_nsdap = 1; schaum_lippe_nsfb = 1; schaum_lippe_lb = 2; schaum_lippe_cnbl = 2; schaum_lippe_hb = 2; schaum_lippe_true_other = 2; schaum_lippe_coalition_r = right_coalition_schaumburg_lippe
 
 
 @social_monarchism_lets_gooooooooo
@@ -494,7 +494,7 @@ subtitle: We could need their support...
 view-if: socmon_coalition_schaumburg_lippe >= 50 and schaum_prussia >= 1
 choose-if: ddp_relation > 15 and dvp_relation > 15 and dnvp_relation > 0
 unavailable-subtitle: [? if ddp_relation <= 15: The DDP thinks you're crazy. ?][? if dvp_relation <= 15: The DVP is opposed to this ?][? if dnvp_relation <= 0: We need better relations with the DNVP ?]  
-on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "Social-Monarchist"; schaum_lippe_spd = 1; schaum_lippe_ddp = 1; schaum_lippe_dvp = 1; schaum_lippe_dnvp = 1; schaum_lippe_lb = 2; kpd_relation -= 2
+on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "Social-Monarchist"; schaum_lippe_spd = 1; schaum_lippe_ddp = 1; schaum_lippe_dvp = 1; schaum_lippe_dnvp = 1; schaum_lippe_lb = 2; kpd_relation -= 2; schaum_lippe_coalition_r = socmon_coalition_schaumburg_lippe
 
 Social-Fascism confirmed, something, something...
 
