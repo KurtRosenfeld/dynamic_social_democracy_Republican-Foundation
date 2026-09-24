@@ -426,7 +426,7 @@ Schaumburg-Lippe results:
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td!} **[+ lvp_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ lvp_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
 
-[? if hb_schaumburg_lippe_elections_vote: {!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} Workmen: {!</td><td!} **[+ hb_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ hb_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
+[? if hb_schaumburg_lippe_elections_vote: {!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} Craftsmen: {!</td><td!} **[+ hb_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ hb_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
 
 [? if not lvp_formed and dvp_r_schaumburg_lippe: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td!} **[+ dvp_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ dvp_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
 
@@ -491,10 +491,9 @@ on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_g
 @social_monarchism_lets_gooooooooo
 title: What about a coalition with the DNVP?
 subtitle: We could need their support...
-view-if: socmon_coalition_schaumburg_lippe >= 50
+view-if: socmon_coalition_schaumburg_lippe >= 50 and schaum_prussia >= 1
 choose-if: ddp_relation > 15 and dvp_relation > 15 and dnvp_relation > 0
-unavailable-subtitle: [? if ddp_relation <= 15: The DDP thinks you're crazy. ?][? if dvp_relation <= 15: The DVP is opposed to this ?][? if dnvp_relation <= 0: We need better relations with the DNVP ?]
-  
+unavailable-subtitle: [? if ddp_relation <= 15: The DDP thinks you're crazy. ?][? if dvp_relation <= 15: The DVP is opposed to this ?][? if dnvp_relation <= 0: We need better relations with the DNVP ?]  
 on-arrival: schaumburg_lippe_election_2_trigger_time = time + 48; schaum_lippe_gov = "Social-Monarchist"; schaum_lippe_spd = 1; schaum_lippe_ddp = 1; schaum_lippe_dvp = 1; schaum_lippe_dnvp = 1; schaum_lippe_lb = 2; kpd_relation -= 2
 
 Social-Fascism confirmed, something, something...
