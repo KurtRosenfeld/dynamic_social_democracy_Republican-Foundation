@@ -1,0 +1,87 @@
+title: Go to Hesse
+new-page: true
+is-special: true
+face-image: img/land/Hesse.svg.webp
+on-arrival: {!
+  setTimeout(function() {
+    var el = document.getElementById('hesse');
+    if (!el || typeof d3 === 'undefined' || !window.ParliamentData) return;
+    el.removeAttribute('data-parliament');
+    el.innerHTML = '';
+    window.ParliamentData.renderParliament('hesse', el);
+  }, 0);
+!}
+
+= Hesse
+
+Hesse can be called the little Prussia, it has a similar religious make-up and republican spirit.
+
+The November Revolution brought a Weimar coalition to power headed by Carl Ulrich, an old fighter of the SPD born in 1853.
+
+Currently ruled by [+ hesse_mp +] ([+ hesse_mp_party +]) in a [+ hesse_gov +] Coalition with [+ hesse_coalition_r +]% support.
+
+
+<div id="baden" style="width:500px; height:250px;"></div>
+
+
+
+
+
+
+- @coalition_hesse: Coalition
+- @toleration_hesse: Toleration
+- @policies_hesse: Policies
+- @states: Exit Hesse
+
+
+@coalition_hesse
+choose-if: hesse_spd == 1
+unavailable-subtitle: We are not part of the Coalition
+
+@toleration_hesse
+choose-if: hesse_spd == 2
+unavailable-subtitle: We are not in toleration
+
+@policies_hesse
+choose-if: hesse_spd == 1 and hesse_action_timer <= 0
+unavailable-subtitle: [? if not hesse_spd == 1: We are not part of the Coalition. ?][? if hesse_spd == 1 and hesse_action_timer > 0: We have to wait [+ hesse_action_timer +] months before our next action. ?]
+
+  
+- @reform_hesse
+- @improve_weimar
+- @school_policy
+- @investigate_right
+
+
+@reform_hesse
+title: Reform the administration of Hesse
+subtitle: There is always somehting to do...
+view-if: hesse_reform < 5
+on-arrival: hesse_reform += 1; hesse_action_timer += 8; other_jud += 0.1
+go-to: saxony_state
+
+
+@improve_weimar
+title: Improve relations with the Weimar parties
+subtitle: Friends will be Friends?
+choose-if: hesse_z == 1 or hesse_ddp == 1
+unavailable-subtitle: We aren't in a coalition with the Weimar parties
+on-arrival: z_relation += 5; ddp_relation += 5; hesse_action_timer += 8
+
+
+@school_policy
+title: Establish a commonly binding school
+view-if: hesse_school <= 5
+subtitle: Education for all
+on-arrival: hesse_schoold += 1; urban_antisemitsm -= 0.2; rural_antisemitism -= 0.2; old_middle_spd += 1*(1-dissent); hesse_action_timer += 7
+
+
+@investigate_right
+title: Investigate the right
+subtitle: They are always up to something
+view-if: hesse_reform >= 2
+on-arrival: ; hesse_action_timer += 12; catholic_nsdap -= 1; old_middle_nsdap -= 1; urban_antisemitsm -= 0.1; sa_strength -= 2
+
+  
+
+  
