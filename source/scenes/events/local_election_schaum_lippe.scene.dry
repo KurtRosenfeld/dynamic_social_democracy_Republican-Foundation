@@ -183,7 +183,7 @@ let total_share = cnbl_share + hb_share + true_other_share + lb_share;
 
 cnbl_share = (cnbl_share / total_share);
 hb_share = (hb_share / total_share);
-lb_share = (lbvrp_share / total_share);
+lb_share = (lb_share / total_share);
 true_other_share = (true_other_share / total_share);
 
 Q.cnbl_schaumburg_lippe_elections_vote = Q.other_schaumburg_lippe_elections_vote*cnbl_share;
@@ -250,14 +250,14 @@ Q[party] = parseFloat(((allocatedSeats[party] * 100) / 15).toFixed(1));
 
 Q.other_r_schaumburg_lippe = Q.true_other_r_schaumburg_lippe + Q.hb_r_schaumburg_lippe + Q.lb_r_schaumburg_lippe + Q.cnbl_r_schaumburg_lippe;
 
-if (Q.year == 1925) Q.rl_schaumburg_lippe_elections_votes = (Q.dnvp_schaumburg_lippe_elections_votes + Q.dvp_schaumburg_lippe_elections_votes + Q.lb_schaumburg_lippe_elections_votes);             
+if (Q.year == 1925) Q.rl_schaumburg_lippe_elections_vote = (Q.dnvp_schaumburg_lippe_elections_vote + Q.dvp_schaumburg_lippe_elections_vote + Q.lb_schaumburg_lippe_elections_vote);             
 if (Q.year == 1925) Q.rl_r_schaumburg_lippe = (Q.dnvp_r_schaumburg_lippe + Q.dvp_r_schaumburg_lippe + Q.lb_r_schaumburg_lippe);
 if (Q.rl_r_schaumburg_lippe) Q.dnvp_r_schaumburg_lippe = 0;
 if (Q.rl_r_schaumburg_lippe) Q.dvp_r_schaumburg_lippe = 0;
 if (Q.rl_r_schaumburg_lippe) Q.lb_r_schaumburg_lippe = 0;
              
 Q.left_coalition_schaumburg_lippe = parseFloat((Q.spd_r_schaumburg_lippe + Q.kpd_r_schaumburg_lippe + Q.uspd_r_schaumburg_lippe).toFixed(1));
-Q.dvp_coalition_schaumburg_lippe = parseFloat((Q.lvp_r_schaumburg_lippe + Q.dvp_r_schaumburg_lippe + Q.dnvp_r_schaumburg_lippe + Q.dnvp_r_schaumburg_lippe + Q.other_r_schaumburg_lippe + Q.rl_r_schaumburg_lippe).toFixed(1));
+Q.dvp_coalition_schaumburg_lippe = parseFloat((Q.lvp_r_schaumburg_lippe + Q.dvp_r_schaumburg_lippe + Q.dnvp_r_schaumburg_lippe + Q.other_r_schaumburg_lippe + Q.rl_r_schaumburg_lippe).toFixed(1));
 Q.right_coalition_schaumburg_lippe = parseFloat((Q.dnvp_r_schaumburg_lippe + Q.dvp_r_schaumburg_lippe + Q.nsdap_r_schaumburg_lippe + Q.other_r_schaumburg_lippe + Q.nsfb_r_schaumburg_lippe).toFixed(1));
 Q.socmon_coalition_schaumburg_lippe = parseFloat((Q.lvp_r_schaumburg_lippe + Q.dvp_r_schaumburg_lippe + Q.dnvp_r_schaumburg_lippe + Q.lb_r_schaumburg_lippe + Q.dnvp_r_schaumburg_lippe + Q.ddp_r_schaumburg_lippe + Q.spd_r_schaumburg_lippe + Q.rl_r_schaumburg_lippe).toFixed(1));
 
@@ -268,7 +268,7 @@ Q.cnbl_schaumburg_lippe_elections_vote = (Q.cnbl_schaumburg_lippe_elections_vote
 Q.hb_r_schaumburg_lippe = (Q.hb_r_schaumburg_lippe != undefined ? parseFloat(Q.hb_r_schaumburg_lippe.toFixed(1)) : 0);
 Q.true_other_r_schaumburg_lippe = (Q.true_other_r_schaumburg_lippe != undefined ? parseFloat(Q.true_other_r_schaumburg_lippe.toFixed(1)) : 0);
 Q.lb_r_schaumburg_lippe = (Q.lb_r_schaumburg_lippe != undefined ? parseFloat(Q.lb_r_schaumburg_lippe.toFixed(1)) : 0);
-Q.cnbl_r_schaumburg_lippe = (Q.farm_r_schaumburg_lippe != undefined ? parseFloat(Q.cnbl_r_schaumburg_lippe.toFixed(1)) : 0);             
+Q.cnbl_r_schaumburg_lippe = (Q.cnbl_r_schaumburg_lippe != undefined ? parseFloat(Q.cnbl_r_schaumburg_lippe.toFixed(1)) : 0);             
              
 !}
 on-display: {!
@@ -420,7 +420,7 @@ Schaumburg-Lippe results:
 
 [? if uspd_joined < 3: {!<tr><td><div class="box" style='background-color: {{ Q.uspd_colour }}'> </div> !}USPD: {!</td><td!} **[+ uspd_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ uspd_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td!} **[+ kpd_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ kpd_r_schaumburg_lippe +]**% {!</td></tr>!}
+[? if kpd_schaumburg_lippe_elections_vote: {!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td!} **[+ kpd_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ kpd_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
 
 [? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td!} **[+ ddp_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ ddp_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
 
