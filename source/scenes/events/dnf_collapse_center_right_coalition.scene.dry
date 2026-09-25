@@ -79,7 +79,7 @@ And so we remain.
 
 @new_prussia_election_called
 view-if: center_right_coalition_prussia < 50
-on-arrival: former_prussia_gov = "Weimar" if (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia == 1); former_prussia_gov = "Grand" if (prussia_gov == "Grand" or in_minority_grand_coalition_prussia == 1); prussia_gov == "Right" = 0; prussia_gov == "Weimar" = 0; prussia_gov == "Grand" = 0; in_minority_grand_coalition_prussia = 0; prussia_gov == "Popular-Front" = 0; prussia_gov == "Left" = 0; prussia_gov == "SPD" = 0; prussia_gov == "Bourgeois" = 0; prussia_gov == "Far-Right" = 0; in_minority_weimar_coalition_prussia = 0; spd_prussia = 0; right_prussia = 0; ddp_prussia_gov == "Popular-Front" = 0; spd_toleration_prussia = 0; kpd_goals_seen_prussia = 0
+on-arrival: former_prussia_gov = "Weimar" if (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia == 1); former_prussia_gov = "Grand" if (prussia_gov == "Grand" or in_minority_grand_coalition_prussia == 1); prussia_gov == "Right" = 0; prussia_gov == "Weimar" = 0; prussia_gov == "Grand" = 0; in_minority_grand_coalition_prussia = 0; prussia_gov == "Popular-Front" = 0; prussia_gov == "Left" = 0; prussia_gov == "SPD" = 0; prussia_gov == "Bourgeois" = 0; prussia_gov == "Far-Right" = 0; in_minority_weimar_coalition_prussia = 0; spd_prussia = 0; right_prussia = 0; ddp_in_poular_front_prussia = 0; spd_toleration_prussia = 0; kpd_goals_seen_prussia = 0
 call: set_next_election_time_prussia
 
 New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].
