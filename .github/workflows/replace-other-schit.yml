@@ -31,8 +31,65 @@ jobs:
               ('<span style="color: #C0A054;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
               ('<span style="color: #D5AC27;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
 
-              # Reichsbanner variations
-              ('Reichsbanner', '<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>'),
+              # Weimar Coalitions
+              ('was_in_weimar_coalition_prussia = 1', 'former_prussia_gov = "Weimar"'),
+              ('was_in_weimar_coalition_prussia == 1', 'former_prussia_gov == "Weimar"'),
+              ('in_weimar_coalition_prussia = 1', 'prussia_gov = "Weimar"'),
+              ('in_weimar_coalition_prussia == 1', 'prussia_gov == "Weimar"'),
+
+              # Grand Coalitions
+              ('was_in_grand_coalition_prussia = 1', 'former_prussia_gov = "Grand"'),
+              ('was_in_grand_coalition_prussia == 1', 'former_prussia_gov == "Grand"'),
+              ('in_grand_coalition_prussia = 1', 'prussia_gov = "Grand"'),
+              ('in_grand_coalition_prussia == 1', 'prussia_gov == "Grand"'),
+
+              # SocLib Coalitions
+              ('was_in_social_liberal_coalition_prussia = 1', 'former_prussia_gov = "Social-Liberal"'),
+              ('was_in_social_liberal_coalition_prussia == 1', 'former_prussia_gov == "Social-Liberal"'),
+              ('in_social_liberal_coalition_prussia = 1', 'prussia_gov = "Social-Liberal"'),
+              ('in_social_liberal_coalition_prussia == 1', 'prussia_gov == "Social-Liberal"'),
+
+              # SocCath Coalitions
+              ('was_in_social_catholic_coalition_prussia = 1', 'former_prussia_gov = "Social-Catholic"'),
+              ('was_in_social_catholic_coalition_prussia == 1', 'former_prussia_gov == "Social-Catholic"'),
+              ('in_social_catholic_coalition_prussia = 1', 'prussia_gov = "Social-Catholic"'),
+              ('in_social_catholic_coalition_prussia == 1', 'prussia_gov == "Social-Catholic"'),
+
+              # Bourgeois Coalitions
+              ('was_in_center_right_coalition_prussia = 1', 'former_prussia_gov = "Bourgeois"'),
+              ('was_in_center_right_coalition_prussia == 1', 'former_prussia_gov == "Bourgeois"'),
+              ('in_center_right_coalition_prussia = 1', 'prussia_gov = "Bourgeois"'),
+              ('in_center_right_coalition_prussia == 1', 'prussia_gov == "Bourgeois"'),
+
+              # Right Coalitions
+              ('was_in_right_coalition_prussia = 1', 'former_prussia_gov = "Right"'),
+              ('was_in_right_coalition_prussia == 1', 'former_prussia_gov == "Right"'),
+              ('in_right_coalition_prussia = 1', 'prussia_gov = "Right"'),
+              ('in_right_coalition_prussia == 1', 'prussia_gov == "Right"'),
+
+              # PopFront Coalitions
+              ('was_in_popular_front_coalition_prussia = 1', 'former_prussia_gov = "Popular-Front"'),
+              ('was_in_popular_front_coalition_prussia == 1', 'former_prussia_gov == "Popular-Front"'),
+              ('in_popular_front_coalition_prussia = 1', 'prussia_gov = "Popular-Front"'),
+              ('in_popular_front_coalition_prussia == 1', 'prussia_gov == "Popular-Front"'),
+
+              # Left Coalitions
+              ('was_in_left_front_coalition_prussia = 1', 'former_prussia_gov = "Left"'),
+              ('was_in_left_front_coalition_prussia == 1', 'former_prussia_gov == "Left"'),
+              ('in_left_front_coalition_prussia = 1', 'prussia_gov = "Left"'),
+              ('in_left_front_coalition_prussia == 1', 'prussia_gov == "Left"'),
+
+              # SPD Coalitions
+              ('was_in_spd_majority_prussia = 1', 'former_prussia_gov = "SPD"'),
+              ('was_in_spd_majority_prussia == 1', 'former_prussia_gov == "SPD"'),
+              ('in_spd_majority_prussia = 1', 'prussia_gov = "SPD"'),
+              ('in_spd_majority_prussia == 1', 'prussia_gov == "SPD"'),
+
+              # NSDAP Coalitions
+              ('was_in_far_right_coalition_prussia = 1', 'former_prussia_gov = "Far-Right"'),
+              ('was_in_far_right_coalition_prussia == 1', 'former_prussia_gov == "Far-Right"'),
+              ('in_far_right_coalition_prussia = 1', 'prussia_gov = "Far-Right"'),
+              ('in_far_right_coalition_prussia == 1', 'prussia_gov == "Far-Right"'),
           ]
           
           total_replacements = 0
