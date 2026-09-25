@@ -27,16 +27,16 @@ The Schaumburg-Lippe state elections are to be held now.
 on-arrival: {!
 
 var schaumburg_lippe_adjustment_factors = {
-spd: 1.65,
+spd: 1.58,
 uspd: 0.8,
 kpd: 0.0,
-ddp: 1.55,
+ddp: 1.35,
 lvp: 1.2,
 dvp: 0.9,
 dnvp: 0.63,
 nsdap: 0.0,
 nsfb: 0.0,
-other: 1.4
+other: 1.43
 };
 
 Q.spd_r_schaumburg_lippe = 0;
@@ -63,12 +63,14 @@ Q.other_schaumburg_lippe_elections_vote = 0;
 
 if (Q.spd_votes < 30) schaumburg_lippe_adjustment_factors.spd += 0.1;
 if (Q.spd_votes < 20) schaumburg_lippe_adjustment_factors.spd += 0.2;
+if (Q.spd_votes < 15) schaumburg_lippe_adjustment_factors.spd += 0.1;
 if (Q.rural_spd_normalized >= 30) schaumburg_lippe_adjustment_factors.spd += 0.1;
 Q.spd_schaumburg_lippe_elections_vote = Q.spd_votes*schaumburg_lippe_adjustment_factors.spd;
 Q.uspd_schaumburg_lippe_elections_vote = Q.uspd_votes*schaumburg_lippe_adjustment_factors.uspd;
 if (Q.year >= 1925) schaumburg_lippe_adjustment_factors.kpd += 0.3;
 Q.kpd_schaumburg_lippe_elections_vote = Q.kpd_votes*schaumburg_lippe_adjustment_factors.kpd;
-if (Q.year < 1925) schaumburg_lippe_adjustment_factors.ddp -= 0.8;
+if (Q.ddp_votes < 6) schaumburg_lippe_adjustment_factors.ddp += 0.1;
+if (Q.year < 1925) schaumburg_lippe_adjustment_factors.ddp -= 0.7;
 Q.ddp_schaumburg_lippe_elections_vote = Q.ddp_votes*schaumburg_lippe_adjustment_factors.ddp;
 Q.lvp_schaumburg_lippe_elections_vote = Q.lvp_votes*schaumburg_lippe_adjustment_factors.lvp;
 if (Q.dvp_votes < 6) schaumburg_lippe_adjustment_factors.dvp += 0.1;
@@ -79,6 +81,8 @@ if (Q.nsdap_votes >= 20) schaumburg_lippe_adjustment_factors.nsdap += 0.55;
 Q.nsdap_schaumburg_lippe_elections_vote = Q.nsdap_votes*schaumburg_lippe_adjustment_factors.nsdap;
 Q.nsfb_schaumburg_lippe_elections_vote = Q.nsfb_votes*schaumburg_lippe_adjustment_factors.nsfb;
 if (Q.nsdap_votes >= 20) schaumburg_lippe_adjustment_factors.other -= 0.8;
+if (Q.other_votes < 8) schaumburg_lippe_adjustment_factors.other += 0.3;
+if (Q.other_votes < 6) schaumburg_lippe_adjustment_factors.other += 0.1;
 Q.other_schaumburg_lippe_elections_vote = Q.other_votes*schaumburg_lippe_adjustment_factors.other;
 
 Q.total_votes_schaumburg_lippe = Q.spd_schaumburg_lippe_elections_vote + Q.kpd_schaumburg_lippe_elections_vote + Q.ddp_schaumburg_lippe_elections_vote + Q.lvp_schaumburg_lippe_elections_vote + Q.dvp_schaumburg_lippe_elections_vote + Q.dnvp_schaumburg_lippe_elections_vote + Q.nsdap_schaumburg_lippe_elections_vote + Q.other_schaumburg_lippe_elections_vote + Q.uspd_schaumburg_lippe_elections_vote + Q.nsfb_schaumburg_lippe_elections_vote;
