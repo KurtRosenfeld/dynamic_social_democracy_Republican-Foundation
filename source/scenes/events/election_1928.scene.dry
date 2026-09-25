@@ -4001,7 +4001,7 @@ As expected, the [? if not lvp_formed: <span style="color: [+ dvp_colour +];">**
 
 @dvp_prussia
 subtitle: This will restrict our actions in Prussia.
-view-if: year <= 1929 and prussia_gov == "Grand" = 0 and (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia) and dvp_was_in_prussia == 0 and not lvp_formed and dvp_exist
+view-if: year <= 1929 and not prussia_gov == "Grand" and (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia) and dvp_was_in_prussia == 0 and not lvp_formed and dvp_exist
 on-arrival: prussia_gov = "Grand"; in_minority_grand_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; spd_prussia = 1; right_prussia = 0; ddp_in_poular_front_prussia = 0; kpd_goals_seen_prussia = 0; spd_toleration_prussia = 0; leverage += 5; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent = -1; left_dissent += 5; dvp_left += 3; new_middle_dvp += 3; dvp_prussia_asked = 1
 go-to: join_bruning
 
@@ -4689,7 +4689,7 @@ go-to: ministries
 
 @dvp_prussia_1
 subtitle: This will restrict our actions in Prussia.
-view-if: year <= 1929 and prussia_gov == "Grand" = 0 and (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia) and not in_left_front and not in_popular_front and not in_weimar_coalition and not in_emergency_government and dvp_was_in_prussia == 0 and not lvp_formed and dvp_exist
+view-if: year <= 1929 and not prussia_gov == "Grand" and (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia) and not in_left_front and not in_popular_front and not in_weimar_coalition and not in_emergency_government and dvp_was_in_prussia == 0 and not lvp_formed and dvp_exist
 on-arrival: prussia_gov = "Grand"; in_minority_grand_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; ddp_in_poular_front_prussia = 0; kpd_goals_seen_prussia = 0; spd_toleration_prussia = 0; leverage += 5; dvp_relation += 7; z_relation -= 5; coalition_dissent = -1; left_dissent += 5; dvp_left += 3; new_middle_dvp += 3
 go-to: ministries
 
