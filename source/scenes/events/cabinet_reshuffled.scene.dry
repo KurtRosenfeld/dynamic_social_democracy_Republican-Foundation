@@ -34,7 +34,7 @@ How do we assuage our partners?
 - @menu: Never mind. What are our options?
 
 @dvp_prussia_2
-view-if: year <= 1929 and prussia_gov == "Grand" = 0 and (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia) and in_grand_coalition = 1 and dvp_was_in_prussia == 0 and not lvp_formed
+view-if: year <= 1929 and not prussia_gov == "Grand" and (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia) and in_grand_coalition = 1 and dvp_was_in_prussia == 0 and not lvp_formed
 choose-if: z_leader != "Kaas"
 unavailable-subtitle: [? if z_leader = "Kaas": Kaas and the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] strongly dissents against. ?]
 on-arrival: prussia_gov = "Grand"; in_minority_grand_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; ddp_in_poular_front_prussia = 0; kpd_goals_seen_prussia = 0; spd_toleration_prussia = 0; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent -= 1; left_dissent += 5; prussia_gov = "Grand"; dvp_left += 3; new_middle_dvp += 3
