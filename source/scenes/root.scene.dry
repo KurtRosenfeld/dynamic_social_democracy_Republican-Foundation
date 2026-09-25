@@ -809,7 +809,7 @@ Q.in_center_right_coalition = 0;
 Q.in_social_catholic_coalition = 0;
 Q.in_social_liberal_coalition = 0;
 
-Q.prussia_gov = "Weimar";
+Q.prussia_gov = "Grand";
 Q.in_minority_weimar_coalition_prussia = 0;
 Q.in_minority_grand_coalition_prussia = 0;
 Q.dvp_prussia_asked = 0;
