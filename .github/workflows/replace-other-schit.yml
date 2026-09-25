@@ -80,20 +80,20 @@ jobs:
               ('was_in_right_coalition_prussia', 'former_prussia_gov == "Right"'),
 
               # PopFront Coalitions
-              ('was_in_popular_front_coalition_prussia = 1', 'former_prussia_gov = "Popular-Front"'),
-              ('was_in_popular_front_coalition_prussia == 1', 'former_prussia_gov == "Popular-Front"'),
-              ('in_popular_front_coalition_prussia = 1', 'prussia_gov = "Popular-Front"'),
-              ('in_popular_front_coalition_prussia == 1', 'prussia_gov == "Popular-Front"'),
-              ('was_in_popular_front_coalition_prussia', 'former_prussia_gov == "Popular-Front"'),
-              ('in_popular_front_coalition_prussia', 'prussia_gov == "Popular-Front"'),
+              ('was_in_popular_front_prussia = 1', 'former_prussia_gov = "Popular-Front"'),
+              ('was_in_popular_front_prussia == 1', 'former_prussia_gov == "Popular-Front"'),
+              ('in_popular_front_prussia = 1', 'prussia_gov = "Popular-Front"'),
+              ('in_popular_front_prussia == 1', 'prussia_gov == "Popular-Front"'),
+              ('was_in_popular_front_prussia', 'former_prussia_gov == "Popular-Front"'),
+              ('in_popular_front_prussia', 'prussia_gov == "Popular-Front"'),
 
               # Left Coalitions
-              ('was_in_left_front_coalition_prussia = 1', 'former_prussia_gov = "Left"'),
-              ('was_in_left_front_coalition_prussia == 1', 'former_prussia_gov == "Left"'),
-              ('in_left_front_coalition_prussia = 1', 'prussia_gov = "Left"'),
-              ('in_left_front_coalition_prussia == 1', 'prussia_gov == "Left"'),
-              ('was_in_left_front_coalition_prussia', 'former_prussia_gov == "Left"'),
-              ('in_left_front_coalition_prussia', 'prussia_gov == "Left"'),
+              ('was_in_left_front_prussia = 1', 'former_prussia_gov = "Left"'),
+              ('was_in_left_front_prussia == 1', 'former_prussia_gov == "Left"'),
+              ('in_left_front_prussia = 1', 'prussia_gov = "Left"'),
+              ('in_left_front_prussia == 1', 'prussia_gov == "Left"'),
+              ('was_in_left_front_prussia', 'former_prussia_gov == "Left"'),
+              ('in_left_front_prussia', 'prussia_gov == "Left"'),
 
               # SPD Coalitions
               ('was_in_spd_majority_prussia = 1', 'former_prussia_gov = "SPD"'),
