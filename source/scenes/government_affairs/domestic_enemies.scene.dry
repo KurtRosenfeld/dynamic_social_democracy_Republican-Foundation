@@ -32,7 +32,7 @@ As it turns out, the <span style="color: #7A3C00;">Nazi</span> <span style="colo
 [? if coup_progress >= 6: There are reports of an imminent coup by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. We have disrupted some of these plans, but the threat is still present. ?]
 
 @unban_sa
-view-if: sa_banned = 1 and prussia_gov == "Popular-Front" == 0 and prussia_gov == "Left" == 0
+view-if: sa_banned = 1 and not prussia_gov == "Popular-Front" and not prussia_gov == "Left"
 on-arrival: sa_banned = 0; sa_strength += 100; sa_militancy += 0.05; coup_progress += 2 if sa_coup_progress >= 6
 
 The <span style="color: #7A3C00;">**SA**</span> is no longer banned. They immediately go on a recruiting spree.
@@ -55,7 +55,7 @@ view-if: sh_banned == 0
 [? if president == "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with President Hindenburg, as well as the political right and the police. ?][? if president != "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with the political right and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the right wing of our coalition. ?] In addition, the <span style="color: #3E88B3;">**Stahlhelm**</span> still operates out of public sight.
 
 @unban_sh
-view-if: sh_banned = 1 and prussia_gov == "Popular-Front" == 0 and prussia_gov == "Left" == 0
+view-if: sh_banned = 1 and not prussia_gov == "Popular-Front" and not prussia_gov == "Left"
 on-arrival: sh_banned = 0; sh_strength += 100; coup_progress += 2 if sh_coup_progress >= 6; hindenburg_angry -= 5
 
 The <span style="color: #3E88B3;">**Stahlhelm**</span> is no longer banned.
@@ -72,7 +72,7 @@ We have arrested more of the <span style="color: #3E88B3;">**Stahlhelm**</span>'
 [? if coup_progress >= 4: There are reports of a planned coup by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. We have cracked down on some of these plans, but the threat still lingers. ?]
 
 @ban_rfb
-view-if: communist_coalition < 3 and rfb_banned = 0 and prussia_gov == "Popular-Front" == 0 and prussia_gov == "Left" == 0
+view-if: communist_coalition < 3 and rfb_banned = 0 and not prussia_gov == "Popular-Front" and not prussia_gov == "Left"
 on-arrival: kpd_relation -= 15; rfb_strength -= 50; rfb_banned = 1; communist_coalition -= 1; z_relation += 5; dvp_relation += 5; lvp_relation += 5; prussian_police_loyalty += 0.1; interior_police_loyalty += 0.1; kpd_coalition_dissent += 2; coalition_dissent -= 1 if coalition_dissent > 0 and n_rfb_banned = 0; n_rfb_banned += 1; hindenburg_angry -= 8
 
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The <span style="color: #700000;">Communists</span> take this as one more reason why the <span style="color: #c00000;">Socialists</span> are traitors to the left. However, the <span style="color: #000000;">moderate</span> and <span style="color: #C0A054;">center-right</span> parties approve, as do the police.
@@ -85,7 +85,7 @@ The <span style="color: #700000;">Communist</span> <span style="color: #8B0000;"
 
 @persecute_rfb
 title: Further persecute the <span style="color: #8B0000;">**RFB**</span>.
-view-if: rfb_banned = 1 and prussia_gov == "Popular-Front" == 0 and prussia_gov == "Left" == 0
+view-if: rfb_banned = 1 and not prussia_gov == "Popular-Front" and not prussia_gov == "Left"
 on-arrival: rfb_strength *= 0.7; rfb_militancy -= 0.05; kpd_relation -= 10; kpd_coalition_dissent += 1; z_relation += 2; dvp_relation += 2; lvp_relation += 2; prussian_police_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 1 if coalition_dissent > 0 and n_rfb_persecuted = 0; n_rfb_persecuted += 1; hindenburg_angry -= 5
 
 We have arrested more of the <span style="color: #8B0000;">**RFB**</span>'s leaders and confiscated their weapons.
