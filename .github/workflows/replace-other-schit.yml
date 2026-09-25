@@ -40,7 +40,7 @@ jobs:
               (' prussia_gov == "Left" = 0;', ''),
               (' prussia_gov == "Far-Right" = 0;', ''),
               (' prussia_gov == "SPD" = 0;', ''),
-              (' prussia_gov == "Bourgeois" = 0;', '')
+              (' prussia_gov == "Bourgeois" = 0;', ''),
           ]
           
           total_replacements = 0
