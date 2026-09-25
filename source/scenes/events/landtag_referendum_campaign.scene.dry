@@ -44,8 +44,8 @@ We have a variety of options to choose from.
 @bourgeois
 title: Request assistance from our coalition partners.
 view-if: spd_prussia and not bourgeois_campaign_landtag
-choose-if: not in_popular_front_prussia and not in_left_front_prussia and z_relation >= 50
-unavailable-subtitle: [? if in_popular_front_prussia or in_left_front_prussia: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] sees no reason to intervene in saving the incumbent government. ?] [? if z_relation < 50: We lack sufficient relations with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. ?]
+choose-if: not prussia_gov == "Popular-Front" and not prussia_gov == "Left" and z_relation >= 50
+unavailable-subtitle: [? if prussia_gov == "Popular-Front" or prussia_gov == "Left": The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] sees no reason to intervene in saving the incumbent government. ?] [? if z_relation < 50: We lack sufficient relations with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. ?]
 on-arrival: pro_republic += 3; catholics_nsdap -= 4; catholics_z += 3; catholics_spd += 1; z_relation += 3; dvp_relation += 3; ddp_relation += 3; ddp_left += 2; ddp_cohesion += 2; dvp_left += 3; bourgeois_campaign_landtag = 1
 face-image: img/weimar_coalition.jpg
 go-to: do_campaign
@@ -56,7 +56,7 @@ The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][?
 title: Request assistance from the <span style="color: [+ kpd_colour +];">**KPD**</span>.
 subtitle: The bourgeois parties will not be pleased by our cooperation.
 view-if: spd_prussia and not landtag_ref_kpd and not communist_campaign_landtag
-choose-if: in_popular_front_prussia or in_left_front_prussia
+choose-if: prussia_gov == "Popular-Front" or prussia_gov == "Left"
 unavailable-subtitle: The <span style="color: #700000;">KPD</span> sees no reason to intervene in saving a government in which they have no involvement.
 on-arrival: pro_republic += 3; workers_kpd += 2; workers_spd += 2; workers_nsdap -= 2; unemployed_nsdap -= 4; unemployed_kpd += 4; kpd_relation += 10; z_relation -= 5; dvp_relation -= 5; ddp_relation -= 3; ddp_right += 2; ddp_cohesion -= 2; dvp_right += 5; communist_campaign_landtag = 1
 face-image: img/kpd_march.jpg

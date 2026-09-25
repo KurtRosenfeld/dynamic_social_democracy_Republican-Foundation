@@ -1,4 +1,4 @@
-title: The <span style="color: #FFCC00;">**LVP**</span> leaves the Popular Front government[? if in_popular_front_prussia and not in_popular_front:&nbsp;in Prussia?]!
+title: The <span style="color: #FFCC00;">**LVP**</span> leaves the Popular Front government[? if prussia_gov == "Popular-Front" and not in_popular_front:&nbsp;in Prussia?]!
 subtitle: As expected.
 new-page: true
 on-arrival: lvp_relation -= 6; lvp_right += 3 {! 
@@ -18,26 +18,26 @@ if (Q.lvp_formed) {
     Q.popular_front_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia + Q.z_r_prussia + Q.sapd_r_prussia).toFixed(1));
 }
 !}
-view-if: ((in_popular_front and ddp_in_popular_front) or (in_popular_front_prussia and ddp_in_popular_front_prussia)) and lvp_formed 
+view-if: ((in_popular_front and ddp_in_popular_front) or (prussia_gov == "Popular-Front" and ddp_prussia_gov == "Popular-Front")) and lvp_formed 
 tags: event
 
 = The <span style="color: #FFCC00;">**LVP**</span> leaves the Popular Front government!
 
-With the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> dissolving itself and joining with the <span style="color: [+ dvp_colour +];">**DVP**</span> in a significantly more right-wing party, they have expectedly withdrawn their support of our incumbent Popular Front[? if in_popular_front_prussia and not in_popular_front:&nbsp;in Prussia?][? if in_popular_front_prussia and in_popular_front:&nbsp;in Prussia, and nationally?]. 
+With the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> dissolving itself and joining with the <span style="color: [+ dvp_colour +];">**DVP**</span> in a significantly more right-wing party, they have expectedly withdrawn their support of our incumbent Popular Front[? if prussia_gov == "Popular-Front" and not in_popular_front:&nbsp;in Prussia?][? if prussia_gov == "Popular-Front" and in_popular_front:&nbsp;in Prussia, and nationally?]. 
 
 [? if in_popular_front: [? if popular_front_coalition >= 50: Fortunately, we still possess a majority without their votes, and they are able to leave government without causing much of a ruckus. ?][? if popular_front_coalition < 50: Unfortunately, the former <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>'s votes was key for the survival of the Popular Front, and now our government lacks a majority without them. [? if constructive_vonc: We can continue on as a minority government however due to our constitutional reforms. ?]?] ?]
 
-[? if in_popular_front_prussia: [? if popular_front_coalition_prussia >= 50: In Prussia, we luckily possess a majority without their votes, and they are able to leave the state government while we still govern with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. ?][? if popular_front_coalition_prussia < 50: In Prussia, the former <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>'s votes was key for the survival of its Popular Front, and now our government lacks a majority without them. ?] ?]
+[? if prussia_gov == "Popular-Front": [? if popular_front_coalition_prussia >= 50: In Prussia, we luckily possess a majority without their votes, and they are able to leave the state government while we still govern with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. ?][? if popular_front_coalition_prussia < 50: In Prussia, the former <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>'s votes was key for the survival of its Popular Front, and now our government lacks a majority without them. ?] ?]
 
 - @popular_front_lives: Ok then.
 - @collapse: Our government faces a vote of no confidence!
 - @collapse_prussia: Our Prussian government faces a vote of no confidence!
 
 @popular_front_lives
-view-if: ((popular_front_coalition >= 50 or not ddp_in_popular_front or constructive_vonc) and (popular_front_coalition_prussia >= 50 or not ddp_in_popular_front_prussia)) and not (popular_front_coalition >= 50 and popular_front_coalition_prussia < 50 and ddp_in_popular_front_prussia)
-on-arrival: ddp_in_popular_front = 0; ddp_in_popular_front_prussia = 0
+view-if: ((popular_front_coalition >= 50 or not ddp_in_popular_front or constructive_vonc) and (popular_front_coalition_prussia >= 50 or not ddp_prussia_gov == "Popular-Front")) and not (popular_front_coalition >= 50 and popular_front_coalition_prussia < 50 and ddp_prussia_gov == "Popular-Front")
+on-arrival: ddp_in_popular_front = 0; ddp_prussia_gov == "Popular-Front" = 0
 
-Their former cabinet positions [? if in_popular_front and in_popular_front_prussia: nationally and in Prussia?][? if not in_popular_front and in_popular_front_prussia: in Prussia?] (if they had any) have been transferred to the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+Their former cabinet positions [? if in_popular_front and prussia_gov == "Popular-Front": nationally and in Prussia?][? if not in_popular_front and prussia_gov == "Popular-Front": in Prussia?] (if they had any) have been transferred to the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 
 @collapse
 view-if: popular_front_coalition < 50 and ddp_in_popular_front and not constructive_vonc
@@ -54,22 +54,22 @@ The vote succeeds with [+ 100 - popular_front_coalition +]% of the vote, and our
 
 @elections
 call: set_next_election_time
-go-to: collapse_prussia if (popular_front_coalition_prussia < 50 and ddp_in_popular_front_prussia)
+go-to: collapse_prussia if (popular_front_coalition_prussia < 50 and ddp_prussia_gov == "Popular-Front")
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @let_it_happen_braun
 on-arrival: spd_caretaker = 1
 call: set_next_election_time
-go-to: collapse_prussia if (popular_front_coalition_prussia < 50 and ddp_in_popular_front_prussia)
+go-to: collapse_prussia if (popular_front_coalition_prussia < 50 and ddp_prussia_gov == "Popular-Front")
 
 The vote succeeds, and our government has resigned. Chancellor [+ chancellor +] remains as the head of a caretaker government, but no longer has the power to enact new policies.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @collapse_prussia
-view-if: (popular_front_coalition_prussia < 50 and ddp_in_popular_front_prussia) and not (in_popular_front and ddp_in_popular_front and popular_front_coalition < 50 and not constructive_vonc)
-on-arrival: former_prussia_gov == "Social-Catholic" = 0; was_prussia_gov == "Social-Liberal" = 0; was_prussia_gov == "Weimar" = 0; was_prussia_gov == "Grand" = 0; former_prussia_gov = "Social-Catholic" if prussia_gov == "Social-Catholic" or in_minority_social_catholic_coalition_prussia == 1; former_prussia_gov = "Social-Liberal" if prussia_gov == "Social-Liberal" or in_minority_social_liberal_coalition_prussia == 1; former_prussia_gov = "Weimar" if ((prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia == 1) or (prussia_gov == "Grand" and lvp_formed)); former_prussia_gov = "Grand" if (prussia_gov == "Grand" or in_minority_grand_coalition_prussia == 1); prussia_gov == "Right" = 0; prussia_gov == "Social-Catholic" = 0; prussia_gov == "Social-Liberal" = 0; prussia_gov == "Weimar" = 0; prussia_gov == "Grand" = 0; in_minority_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; prussia_gov == "SPD" = 0; prussia_gov == "Bourgeois" = 0; prussia_gov == "Far-Right" = 0; in_minority_weimar_coalition_prussia = 0; in_minority_social_catholic_coalition_prussia = 0; in_minority_social_liberal_coalition_prussia = 0; spd_prussia = 0; right_prussia = 0; ddp_in_popular_front_prussia = 0; kpd_goals_seen_prussia = 0; spd_toleration_prussia = 0
+view-if: (popular_front_coalition_prussia < 50 and ddp_prussia_gov == "Popular-Front") and not (in_popular_front and ddp_in_popular_front and popular_front_coalition < 50 and not constructive_vonc)
+on-arrival: former_prussia_gov == "Social-Catholic" = 0; was_prussia_gov == "Social-Liberal" = 0; was_prussia_gov == "Weimar" = 0; was_prussia_gov == "Grand" = 0; former_prussia_gov = "Social-Catholic" if prussia_gov == "Social-Catholic" or in_minority_social_catholic_coalition_prussia == 1; former_prussia_gov = "Social-Liberal" if prussia_gov == "Social-Liberal" or in_minority_social_liberal_coalition_prussia == 1; former_prussia_gov = "Weimar" if ((prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia == 1) or (prussia_gov == "Grand" and lvp_formed)); former_prussia_gov = "Grand" if (prussia_gov == "Grand" or in_minority_grand_coalition_prussia == 1); prussia_gov == "Right" = 0; prussia_gov == "Social-Catholic" = 0; prussia_gov == "Social-Liberal" = 0; prussia_gov == "Weimar" = 0; prussia_gov == "Grand" = 0; in_minority_grand_coalition_prussia = 0; prussia_gov == "Popular-Front" = 0; prussia_gov == "Left" = 0; prussia_gov == "SPD" = 0; prussia_gov == "Bourgeois" = 0; prussia_gov == "Far-Right" = 0; in_minority_weimar_coalition_prussia = 0; in_minority_social_catholic_coalition_prussia = 0; in_minority_social_liberal_coalition_prussia = 0; spd_prussia = 0; right_prussia = 0; ddp_prussia_gov == "Popular-Front" = 0; kpd_goals_seen_prussia = 0; spd_toleration_prussia = 0
 call: set_next_election_time_prussia
 
 New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]. 

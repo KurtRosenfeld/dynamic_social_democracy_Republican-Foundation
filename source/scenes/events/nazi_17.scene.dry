@@ -76,8 +76,8 @@ if (Q.prussia_leader == "Schleicher") {
     Q.prussia_gov == "Weimar" = 0;
     Q.prussia_gov == "Grand" = 0;
     Q.in_minority_grand_coalition_prussia = 0;
-    Q.in_popular_front_prussia = 0;
-    Q.in_left_front_prussia = 0;
+    Q.prussia_gov == "Popular-Front" = 0;
+    Q.prussia_gov == "Left" = 0;
     Q.prussia_gov == "SPD" = 0;
     Q.prussia_gov == "Bourgeois" = 0;
     Q.in_minority_weimar_coalition_prussia = 0;

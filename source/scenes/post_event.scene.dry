@@ -5385,7 +5385,7 @@ if (Q.kpd_relation >= 30 && Q.sapd_formed == 1) {
     Q.weimar_coalition_prussia += Q.sapd_r_prussia;
 }
 
-if (Q.prussia_gov == "Social-Catholic" || Q.prussia_gov == "Social-Liberal" || Q.prussia_gov == "Weimar" || Q.prussia_gov == "Grand" || Q.in_popular_front_prussia == 1 || Q.in_left_front_prussia == 1 || Q.prussia_gov == "SPD" || Q.in_minority_weimar_coalition_prussia == 1 || Q.in_minority_grand_coalition_prussia == 1) {
+if (Q.prussia_gov == "Social-Catholic" || Q.prussia_gov == "Social-Liberal" || Q.prussia_gov == "Weimar" || Q.prussia_gov == "Grand" || Q.prussia_gov == "Popular-Front" || Q.prussia_gov == "Left" || Q.prussia_gov == "SPD" || Q.in_minority_weimar_coalition_prussia == 1 || Q.in_minority_grand_coalition_prussia == 1) {
     Q.spd_prussia = 1;
     Q.right_prussia = 0;
 } else if (Q.prussia_gov == "Right" || Q.prussia_gov == "Bourgeois" || Q.prussia_leader == "Papen" || Q.prussia_leader == "Goring" || Q.prussia_gov == "Far-Right") {

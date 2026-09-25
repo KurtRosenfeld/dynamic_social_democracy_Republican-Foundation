@@ -281,7 +281,7 @@ We have signed a Concordat between the Free State of Prussia and the Roman Catho
 @left_policies_prussia
 choose-if: prussia_spd == 1 and prussia_action_timer <= 0
 unavailable-subtitle: [? if not prussia_spd == 1: We are not part of the Coalition. ?][? if prussia_spd == 1 and prussia_action_timer > 0: We have to wait [+ prussia_action_timer +] months before our next action. ?]
-view-if: in_popular_front_prussia = 1 or in_left_front_prussia = 1
+view-if: prussia_gov = "Popular-Front" or prussia_gov = "Left"
 
 
 - @lpolice_loyalty: Bolster the loyalty of the police.
