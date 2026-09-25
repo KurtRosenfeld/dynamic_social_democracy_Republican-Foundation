@@ -3172,8 +3172,8 @@ if (
     (
         Q.in_grand_coalition == 0 || 
         (
-            (Q.in_grand_coalition == 1 && Q.in_grand_coalition_prussia == 1 && Q.coalition_dissent < 1 && Q.foreign_minister_party == "DVP") || 
-            (Q.in_grand_coalition == 1 && Q.in_grand_coalition_prussia == 1 && Q.coalition_dissent < 2 && Q.foreign_minister_party != "DVP")
+            (Q.in_grand_coalition == 1 && Q.prussia_gov == "Grand" && Q.coalition_dissent < 1 && Q.foreign_minister_party == "DVP") || 
+            (Q.in_grand_coalition == 1 && Q.prussia_gov == "Grand" && Q.coalition_dissent < 2 && Q.foreign_minister_party != "DVP")
         )
     )
 ) {
@@ -5385,10 +5385,10 @@ if (Q.kpd_relation >= 30 && Q.sapd_formed == 1) {
     Q.weimar_coalition_prussia += Q.sapd_r_prussia;
 }
 
-if (Q.in_social_catholic_coalition_prussia || Q.in_social_liberal_coalition_prussia || Q.in_weimar_coalition_prussia == 1 || Q.in_grand_coalition_prussia == 1 || Q.in_popular_front_prussia == 1 || Q.in_left_front_prussia == 1 || Q.in_spd_majority_prussia == 1 || Q.in_minority_weimar_coalition_prussia == 1 || Q.in_minority_grand_coalition_prussia == 1) {
+if (Q.in_social_catholic_coalition_prussia || Q.in_social_liberal_coalition_prussia || Q.prussia_gov == "Weimar" || Q.prussia_gov == "Grand" || Q.in_popular_front_prussia == 1 || Q.in_left_front_prussia == 1 || Q.prussia_gov == "SPD" || Q.in_minority_weimar_coalition_prussia == 1 || Q.in_minority_grand_coalition_prussia == 1) {
     Q.spd_prussia = 1;
     Q.right_prussia = 0;
-} else if (Q.in_right_coalition_prussia == 1 || Q.in_center_right_coalition_prussia == 1 || Q.prussia_leader == "Papen" || Q.prussia_leader == "Goring" || Q.in_far_right_coalition_prussia == 1) {
+} else if (Q.prussia_gov == "Right" || Q.prussia_gov == "Bourgeois" || Q.prussia_leader == "Papen" || Q.prussia_leader == "Goring" || Q.prussia_gov == "Far-Right") {
     Q.right_prussia = 1;
     Q.spd_prussia = 0;
 }

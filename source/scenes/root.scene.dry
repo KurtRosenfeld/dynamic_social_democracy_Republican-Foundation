@@ -811,7 +811,7 @@ Q.in_social_liberal_coalition = 0;
 
 Q.in_right_coalition_prussia = 0;
 Q.in_weimar_coalition_prussia = 0;
-Q.in_grand_coalition_prussia = 1;
+Q.prussia_gov = "Grand";
 Q.in_popular_front_prussia = 0;
 Q.in_left_front_prussia = 0;
 Q.in_spd_majority_prussia = 0;
