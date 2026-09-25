@@ -32,14 +32,14 @@ jobs:
               ('<span style="color: #D5AC27;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
 
               # Your mom
-              (' prussia_gov == "Right" = 0;', '')
-              (' prussia_gov == "Social-Catholic" = 0;', '')
-              (' prussia_gov == "Weimar" = 0;', '')
-              (' prussia_gov == "Grand" = 0;', '')
-              (' prussia_gov == "Popular-Front" = 0;', '')
-              (' prussia_gov == "Left" = 0;', '')
-              (' prussia_gov == "Far-Right" = 0;', '')
-              (' prussia_gov == "SPD" = 0;', '')
+              (' prussia_gov == "Right" = 0;', ''),
+              (' prussia_gov == "Social-Catholic" = 0;', ''),
+              (' prussia_gov == "Weimar" = 0;', ''),
+              (' prussia_gov == "Grand" = 0;', ''),
+              (' prussia_gov == "Popular-Front" = 0;', ''),
+              (' prussia_gov == "Left" = 0;', ''),
+              (' prussia_gov == "Far-Right" = 0;', ''),
+              (' prussia_gov == "SPD" = 0;', ''),
               (' prussia_gov == "Bourgeois" = 0;', '')
           ]
           
