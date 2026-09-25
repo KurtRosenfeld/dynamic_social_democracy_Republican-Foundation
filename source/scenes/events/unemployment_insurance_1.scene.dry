@@ -32,7 +32,7 @@ go-to: what_do
 This is a gift to the <span style="color: #700000;">Communists</span>, a boost to their theory that parliamentary democracy will never benefit the working class.
 
 @what_do
-on-arrival: dvp_relation += 3 if chancellor = "Braun"; lvp_relation += 3 if chancellor = "Braun"; dvp_relation += 3 if in_grand_coalition_prussia
+on-arrival: dvp_relation += 3 if chancellor = "Braun"; lvp_relation += 3 if chancellor = "Braun"; dvp_relation += 3 if prussia_gov == "Grand"
 
 But the crux of the matter is, what can we do?
 

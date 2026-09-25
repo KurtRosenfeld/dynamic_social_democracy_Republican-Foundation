@@ -23,7 +23,7 @@ title: The <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> shal
 subtitle: The coalition will live for another day.
 view-if: center_right_coalition >= 50
 on-arrival: spd_in_government = 0; in_center_right_coalition = 1; in_right_coalition = 0; old_middle_dnf -= 2; rural_dnf -= 2; ddp_right += 2; ddp_cohesion -= 1.5; liberal_cooperation += 1; bourgeois_cooperation += 2
-go-to: new_prussia_election if (in_center_right_coalition_prussia or in_right_coalition_prussia)
+go-to: new_prussia_election if (prussia_gov == "Bourgeois" or prussia_gov == "Right")
 
 The bourgeois has survived without our toleration, but it's unlikely that this governing arrangement will last much longer.
 
@@ -33,7 +33,7 @@ subtitle: The government will collapse, and there will be new elections.
 view-if: cordon_sanitaire >= 50 and center_right_coalition < 50
 on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 2; dvp_relation -= 4; z_relation -= 4; dnvp_relation -= 4; ddp_relation -= 4; ddp_cohesion -= 1; ddp_right += 1; old_middle_dnf += 3; rural_dnf += 3
 call: set_next_election_time
-go-to: new_prussia_election if (in_center_right_coalition_prussia or in_right_coalition_prussia)
+go-to: new_prussia_election if (prussia_gov == "Bourgeois" or prussia_gov == "Right")
 
 The right-wing coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
@@ -44,7 +44,7 @@ view-if: cordon_sanitaire >= 50 and center_right_coalition < 50
 choose-if: (reformist_strength >= center_strength + left_strength)
 unavailable-subtitle: [? if (center_strength + left_strength >= reformist_strength) : Most of the party is in complete opposition to this. ?]
 on-arrival: spd_toleration = 1; spd_toleration_right = 1; in_right_coalition = 0; in_center_right_coalition = 0; left_dissent += 30; center_dissent += 25; labor_dissent += 20; reformist_dissent += 10; workers_spd -= 3; new_middle_spd -= 6; old_middle_spd -= 6; rural_spd -= 4; catholics_spd -= 5; dvp_left += 1; ddp_left += 1; liberal_cooperation += 1; bourgeois_cooperation += 2
-go-to: new_prussia_election if (in_center_right_coalition_prussia or in_right_coalition_prussia)
+go-to: new_prussia_election if (prussia_gov == "Bourgeois" or prussia_gov == "Right")
 
 By supporting the government, we have essentially entered into a "toleration" arrangement with the [+ chancellor +] government. We do not have a voice in the government, but we are responsible for its continued stability. This is wildly unpopular within the party and our supporters, as we allowed a right-wing government to form twice now.
 
@@ -54,7 +54,7 @@ subtitle: The anti-government parties have over 50% of the vote, no matter our c
 view-if: cordon_sanitaire < 50
 call: set_next_election_time
 on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 5
-go-to: new_prussia_election if (in_center_right_coalition_prussia or in_right_coalition_prussia)
+go-to: new_prussia_election if (prussia_gov == "Bourgeois" or prussia_gov == "Right")
 
 The right-wing coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
@@ -85,13 +85,13 @@ We have successfully bribed the <span style="color: [+ ddp_colour +];">**[+ ddp_
 
 @new_prussia_election_oppo
 view-if: center_right_coalition_prussia >= 50
-on-arrival: in_right_coalition_prussia = 0; prussia_gov = "Bourgeois"; right_prussia = 1; bourgeois_cooperation += 1; liberal_cooperation += 1
+on-arrival: prussia_gov == "Right" = 0; prussia_gov = "Bourgeois"; right_prussia = 1; bourgeois_cooperation += 1; liberal_cooperation += 1
 
 And so we remain.
 
 @new_prussia_election_called
 view-if: center_right_coalition_prussia < 50
-on-arrival: former_prussia_gov = "Weimar" if (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia == 1); former_prussia_gov = "Grand" if (prussia_gov == "Grand" or in_minority_grand_coalition_prussia == 1); in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; in_center_right_coalition_prussia = 0; in_far_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; spd_prussia = 0; right_prussia = 0; ddp_in_popular_front_prussia = 0; spd_toleration_prussia = 0; kpd_goals_seen_prussia = 0
+on-arrival: former_prussia_gov = "Weimar" if (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia == 1); former_prussia_gov = "Grand" if (prussia_gov == "Grand" or in_minority_grand_coalition_prussia == 1); prussia_gov == "Right" = 0; prussia_gov == "Weimar" = 0; prussia_gov == "Grand" = 0; in_minority_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; prussia_gov == "SPD" = 0; prussia_gov == "Bourgeois" = 0; prussia_gov == "Far-Right" = 0; in_minority_weimar_coalition_prussia = 0; spd_prussia = 0; right_prussia = 0; ddp_in_popular_front_prussia = 0; spd_toleration_prussia = 0; kpd_goals_seen_prussia = 0
 call: set_next_election_time_prussia
 
 New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].

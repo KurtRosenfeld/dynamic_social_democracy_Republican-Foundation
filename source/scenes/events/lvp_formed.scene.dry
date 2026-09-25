@@ -45,8 +45,8 @@ Q.dvp_normalized = 0;
 Q.ddp_normalized = 0;
 Q.bourgeois_parliament_ddp = 0;
 
-if (Q.in_grand_coalition_prussia) {
-    Q.in_grand_coalition_prussia = 0;
+if (Q.prussia_gov == "Grand") {
+    Q.prussia_gov == "Grand" = 0;
     Q.in_minority_grand_coalition_prussia = 0;
     Q.prussia_gov = "Weimar";
     if (Q.weimar_coalition_prussia < 50) {

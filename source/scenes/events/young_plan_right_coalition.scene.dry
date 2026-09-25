@@ -25,7 +25,7 @@ subtitle: The government will collapse, and there will be new elections.
 view-if: neo_weimar_coalition >= 50
 on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_center_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; spd_toleration_right = 0; dvp_relation -= 3; z_relation -= 3; ddp_relation -= 3; lvp_relation -= 3; dvp_right += 1; ddp_right += 0.5; lvp_right += 1
 call: set_next_election_time
-go-to: new_prussia_election if (in_center_right_coalition_prussia or in_right_coalition_prussia)
+go-to: new_prussia_election if (prussia_gov == "Bourgeois" or prussia_gov == "Right")
 
 The <span style="color: #000000;">bourgeois</span>-<span style="color: #3E88B3;">right</span> coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
@@ -34,7 +34,7 @@ title: Support the rump [? if z_party_name != "CVP": <span style="color: #000000
 subtitle: We would essentially provide "toleration" to a bourgeois government.
 view-if: neo_weimar_coalition >= 50
 on-arrival: spd_toleration = 1; in_right_coalition = 0; in_center_right_coalition = 0; left_dissent += 8; ddp_left += 0.5
-go-to: new_prussia_election if (in_center_right_coalition_prussia or in_right_coalition_prussia)
+go-to: new_prussia_election if (prussia_gov == "Bourgeois" or prussia_gov == "Right")
 
 By supporting the government, we have essentially entered into a "toleration" arrangement with the [+ chancellor +] government. We do not have a voice in the government, but we are responsible for its continued stability. The left of our party opposes this plan, and would rather that we hold new elections.
 
@@ -44,7 +44,7 @@ subtitle: The anti-government parties have over 50% of the vote, no matter our c
 view-if: neo_weimar_coalition < 50
 call: set_next_election_time
 on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_center_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 5
-go-to: new_prussia_election if (in_center_right_coalition_prussia or in_right_coalition_prussia)
+go-to: new_prussia_election if (prussia_gov == "Bourgeois" or prussia_gov == "Right")
 
 The <span style="color: #000000;">bourgeois</span>-<span style="color: #3E88B3;">right</span> coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 

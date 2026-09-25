@@ -48,7 +48,7 @@ unavailable-subtitle: We are not in toleration
 @policies_prussia
 choose-if: prussia_spd == 1 and prussia_action_timer <= 0
 unavailable-subtitle: [? if not prussia_spd == 1: We are not part of the Coalition. ?][? if prussia_spd == 1 and prussia_action_timer > 0: We have to wait [+ prussia_action_timer +] months before our next action. ?]
-view-if: (in_weimar_coalition_prussia or in_social_liberal_coalition_prussia or in_social_catholic_coalition_prussia)
+view-if: (prussia_gov == "Weimar" or prussia_gov == "Social-Liberal" or prussia_gov == "Social-Catholic")
 
 - @police_loyalty: Bolster the loyalty of the police.
 - @police_strength: Recruit additional police.
@@ -107,8 +107,8 @@ on-arrival: sa_banned = 0; sa_strength += 100; sa_militancy += 0.05; coup_progre
 The <span style="color: #7A3C00;">**SA**</span> is no longer banned. They immediately go on a recruiting spree.
 
 @ban_sh
-on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if prussian_police_loyalty >= 0.75; sh_banned = 1; dvp_relation -= 5; lvp_relation -= 2; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; coalition_dissent += 1 if in_social_catholic_coalition_prussia and cvp_formed; sh_ban_timer = 6; sh_coup_progress = coup_progress; coup_progress -= 1 if coup_progress >= 6; hindenburg_angry += 5; prussia_action_timer += 11
-view-if: sh_banned == 0 and not in_social_catholic_coalition_prussia
+on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if prussian_police_loyalty >= 0.75; sh_banned = 1; dvp_relation -= 5; lvp_relation -= 2; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; coalition_dissent += 1 if prussia_gov == "Social-Catholic" and cvp_formed; sh_ban_timer = 6; sh_coup_progress = coup_progress; coup_progress -= 1 if coup_progress >= 6; hindenburg_angry += 5; prussia_action_timer += 11
+view-if: sh_banned == 0 and not prussia_gov == "Social-Catholic"
 
 [? if president == "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with President Hindenburg, as well as the political <span style="color: #3E88B3;">right</span> and the police. ?][? if president != "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with the political <span style="color: #3E88B3;">right</span> and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the <span style="color: #C0A054;">right</span> wing of our coalition. ?] In addition, the <span style="color: #3E88B3;">**Stahlhelm**</span> still operates out of public sight. 
 
@@ -125,7 +125,7 @@ on-arrival: kpd_relation -= 10; rfb_strength -= 10; ph_banned = 1; z_relation +=
 The <span style="color: [+ kpd_colour +];">Communists</span> are outraged despite having expected such a thing.
 
 @unban_ph
-view-if: ph_banned = 1 and not in_grand_coalition_prussia and year == 1923
+view-if: ph_banned = 1 and not prussia_gov == "Grand" and year == 1923
 on-arrival: ph_banned = 0; rfb_strength += 6; prussian_police_loyalty -= 0.1; z_relation -= 3; prussia_action_timer += 6; prussia_jud -= 0.4
 
 Cool...?
@@ -137,7 +137,7 @@ on-arrival: kpd_relation -= 15; rfb_strength -= 50; rfb_banned = 1; communist_co
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The <span style="color: #700000;">Communists</span> take this as one more reason why the <span style="color: #c00000;">Socialists</span> are traitors to the <span style="color: #9B0000;">left</span>. However, the <span style="color: #000000;">moderate</span> and <span style="color: #C0A054;">center-right</span> parties approve, as do the police.
 
 @unban_rfb
-view-if: rfb_banned = 1 and not in_social_catholic_coalition_prussia and year >= 1924
+view-if: rfb_banned = 1 and not prussia_gov == "Social-Catholic" and year >= 1924
 on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1; hindenburg_angry += 8; prussia_action_timer += 7; prussia_jud -= 0.5
 
 The <span style="color: #700000;">Communist</span> <span style="color: #700000;">**RFB**</span> is no longer banned.
@@ -226,7 +226,7 @@ The <span style="color: #7A3C00;">**SA**</span> is no longer banned. They immedi
 
 @dban_sh
 subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> won't like this.
-on-arrival: sh_strength *= 0.9; sh_strength *= 0.75 if prussian_police_loyalty >= 0.75; sh_banned = 1; dvp_relation -= 6; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; sh_ban_timer = 6; coalition_dissent += 1 if in_social_catholic_coalition_prussia and cvp_formed; coalition_dissent += 1 if in_grand_coalition; sh_coup_progress = coup_progress; coup_progress -= 1 if coup_progress >= 6; hindenburg_angry += 8; prussia_action_timer += 714
+on-arrival: sh_strength *= 0.9; sh_strength *= 0.75 if prussian_police_loyalty >= 0.75; sh_banned = 1; dvp_relation -= 6; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; sh_ban_timer = 6; coalition_dissent += 1 if prussia_gov == "Social-Catholic" and cvp_formed; coalition_dissent += 1 if in_grand_coalition; sh_coup_progress = coup_progress; coup_progress -= 1 if coup_progress >= 6; hindenburg_angry += 8; prussia_action_timer += 714
 view-if: sh_banned == 0
 
 [? if president == "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with President Hindenburg, as well as the political <span style="color: #3E88B3;">right</span> and the police. ?][? if president != "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with the political <span style="color: #3E88B3;">right</span> and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the <span style="color: #C0A054;">right</span> wing of our coalition. ?] In addition, the <span style="color: #3E88B3;">**Stahlhelm**</span> still operates out of public sight. 
@@ -244,7 +244,7 @@ on-arrival: kpd_relation -= 10; rfb_strength -= 10; ph_banned = 1; z_relation +=
 The <span style="color: [+ kpd_colour +];">Communists</span> are outraged despite having expected such a thing.
 
 @dunban_ph
-view-if: ph_banned = 1 and not in_grand_coalition_prussia and year == 1923
+view-if: ph_banned = 1 and not prussia_gov == "Grand" and year == 1923
 on-arrival: ph_banned = 0; rfb_strength += 6; prussian_police_loyalty -= 0.1; z_relation -= 3; prussia_action_timer += 7; prussia_jud -= 0.5
 
 Cool...?
@@ -341,7 +341,7 @@ Restrictions are lifted and police are deployed to protect <span style="color: #
 @spd_policies_prussia
 choose-if: prussia_spd == 1 and prussia_action_timer <= 0
 unavailable-subtitle: [? if not prussia_spd == 1: We are not part of the Coalition. ?][? if prussia_spd == 1 and prussia_action_timer > 0: We have to wait [+ prussia_action_timer +] months before our next action. ?]
-view-if: in_spd_majority_prussia
+view-if: prussia_gov == "SPD"
 
 
 - @spolice_loyalty: Bolster the loyalty of the police.
@@ -401,8 +401,8 @@ on-arrival: sa_banned = 0; sa_strength += 100; sa_militancy += 0.05; coup_progre
 The <span style="color: #7A3C00;">**SA**</span> is no longer banned. They immediately go on a recruiting spree.
 
 @sban_sh
-on-arrival: sh_strength *= 0.8; sh_strength *= 0.7 if prussian_police_loyalty >= 0.75; sh_banned = 1; dvp_relation -= 5; lvp_relation -= 2; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; coalition_dissent += 1 if in_social_catholic_coalition_prussia and cvp_formed; sh_ban_timer = 6; sh_coup_progress = coup_progress; coup_progress -= 1 if coup_progress >= 6; hindenburg_angry += 5; prussia_action_timer += 7
-view-if: sh_banned == 0 and not in_social_catholic_coalition_prussia
+on-arrival: sh_strength *= 0.8; sh_strength *= 0.7 if prussian_police_loyalty >= 0.75; sh_banned = 1; dvp_relation -= 5; lvp_relation -= 2; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; coalition_dissent += 1 if prussia_gov == "Social-Catholic" and cvp_formed; sh_ban_timer = 6; sh_coup_progress = coup_progress; coup_progress -= 1 if coup_progress >= 6; hindenburg_angry += 5; prussia_action_timer += 7
+view-if: sh_banned == 0 and not prussia_gov == "Social-Catholic"
 
 [? if president == "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with President Hindenburg, as well as the political <span style="color: #3E88B3;">right</span> and the police. ?][? if president != "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with the political <span style="color: #3E88B3;">right</span> and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the <span style="color: #C0A054;">right</span> wing of our coalition. ?] In addition, the <span style="color: #3E88B3;">**Stahlhelm**</span> still operates out of public sight. 
 
@@ -419,7 +419,7 @@ on-arrival: kpd_relation -= 10; rfb_strength -= 10; ph_banned = 1; z_relation +=
 The <span style="color: [+ kpd_colour +];">Communists</span> are outraged despite having expected such a thing.
 
 @sunban_ph
-view-if: ph_banned = 1 and not in_grand_coalition_prussia and year == 1923
+view-if: ph_banned = 1 and not prussia_gov == "Grand" and year == 1923
 on-arrival: ph_banned = 0; rfb_strength += 6; prussian_police_loyalty -= 0.1; z_relation -= 3; prussia_action_timer += 7
 
 Cool...?
@@ -431,7 +431,7 @@ on-arrival: kpd_relation -= 15; rfb_strength -= 50; rfb_banned = 1; communist_co
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The <span style="color: #700000;">Communists</span> take this as one more reason why the <span style="color: #c00000;">Socialists</span> are traitors to the <span style="color: #9B0000;">left</span>. However, the <span style="color: #000000;">moderate</span> and <span style="color: #C0A054;">center-right</span> parties approve, as do the police.
 
 @sunban_rfb
-view-if: rfb_banned = 1 and not in_social_catholic_coalition_prussia and year >= 1924
+view-if: rfb_banned = 1 and not prussia_gov == "Social-Catholic" and year >= 1924
 on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1; hindenburg_angry += 8; prussia_action_timer += 7
 
 The <span style="color: #700000;">Communist</span> <span style="color: #700000;">**RFB**</span> is no longer banned.

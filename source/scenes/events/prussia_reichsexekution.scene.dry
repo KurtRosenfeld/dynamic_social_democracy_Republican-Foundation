@@ -1,6 +1,6 @@
 title: Prussian Government Dismissed
 subtitle: The President had enough over the political deadlock.
-view-if: president = "Hindenburg" and no_majority_elections_prussia >= 2 and (not in_weimar_coalition_prussia and not in_grand_coalition_prussia and not in_far_right_coalition_prussia and not in_popular_front_prussia and not in_left_front_prussia and not in_center_right_coalition_prussia and not in_right_coalition_prussia and not prussia_leader == "Papen" and chancellor != nsdap_chancellor) and not presidential_powers and prussian_coup_seen = 0 and prussian_reichsexekution = 0
+view-if: president = "Hindenburg" and no_majority_elections_prussia >= 2 and (not prussia_gov == "Weimar" and not prussia_gov == "Grand" and not prussia_gov == "Far-Right" and not in_popular_front_prussia and not in_left_front_prussia and not prussia_gov == "Bourgeois" and not prussia_gov == "Right" and not prussia_leader == "Papen" and chancellor != nsdap_chancellor) and not presidential_powers and prussian_coup_seen = 0 and prussian_reichsexekution = 0
 on-arrival: prussian_reichsexekution = 1; no_majority_reichsexekution = 1; strife += 1; hindenburg_angry += 10
 new-page: true
 tags: event
@@ -18,7 +18,7 @@ Although the action has decent justification behind it, rumor has it that Presid
 @surrender
 title: There is nothing we can do.
 subtitle: This isn't worth dying over.
-on-arrival: in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; spd_prussia = 0; prussia_leader = "Goerdeler"; workers_spd -= 3; workers_kpd -= 3; unemployed_kpd -= 3; unemployed_spd -= 3; left_dissent += 5; labor_dissent += 5; rb_militancy = rb_militancy/1.5; rb_strength -= 300; rfb_banned = 1; rfb_strength -= 100; rfb_militancy -= 0.1; prussian_reichsexekution_timer = 12; next_election_time_prussia = time + 48; next_election_year_prussia = year + 4
+on-arrival: prussia_gov == "Right" = 0; prussia_gov == "Weimar" = 0; prussia_gov == "Grand" = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; prussia_gov == "SPD" = 0; prussia_gov == "Bourgeois" = 0; in_minority_weimar_coalition_prussia = 0; spd_prussia = 0; prussia_leader = "Goerdeler"; workers_spd -= 3; workers_kpd -= 3; unemployed_kpd -= 3; unemployed_spd -= 3; left_dissent += 5; labor_dissent += 5; rb_militancy = rb_militancy/1.5; rb_strength -= 300; rfb_banned = 1; rfb_strength -= 100; rfb_militancy -= 0.1; prussian_reichsexekution_timer = 12; next_election_time_prussia = time + 48; next_election_year_prussia = year + 4
 
 Hindenburg appoints the <span style="color: #3E88B3;">nationalist</span> Carl Friedrich Goerdeler, who renounces his party affiliation, to govern over Prussia as a <i>Reichskommissar</i>, charged with dismantling the democratic systems we worked hard to build.
 
