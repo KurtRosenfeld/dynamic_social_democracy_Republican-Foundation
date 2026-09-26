@@ -27,20 +27,21 @@ jobs:
           
           # Define all replacements
           replacements = [
-              # DVP variations
-              ('<span style="color: #C0A054;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
-              ('<span style="color: #D5AC27;">**DVP**</span>', '<span style="color: [+ dvp_colour +];">**DVP**</span>'),
+              # DVP variations, lazy town
+              ('DVP', 'DVP'),
 
-              # Your mom
-              (' prussia_gov == "Right" = 0;', ''),
-              (' prussia_gov == "Social-Catholic" = 0;', ''),
-              (' prussia_gov == "Weimar" = 0;', ''),
-              (' prussia_gov == "Grand" = 0;', ''),
-              (' prussia_gov == "Popular-Front" = 0;', ''),
-              (' prussia_gov == "Left" = 0;', ''),
-              (' prussia_gov == "Far-Right" = 0;', ''),
-              (' prussia_gov == "SPD" = 0;', ''),
-              (' prussia_gov == "Bourgeois" = 0;', ''),
+              # lil boxes
+              ('<div class="box" style='background-color:#9B0000'> </div>', '<div class="box sapd"></div>'),
+              ('<div class="box" style='background-color:#AA0000'> </div>', '<div class="box uspd"></div>'),
+              ('<div class="box" style='background-color:#700000'> </div>', '<div class="box kpd"></div>'),
+              ('<div class="box" style='background-color:#D3C24D'> </div>', '<div class="box ddp"></div>'),
+              ('<div class="box" style='background-color:#000'> </div>', '<div class="box z"></div>'),
+              ('<div class="box" style='background-color:#000000'> </div>', '<div class="box z"></div>'),
+              ('<div class="box" style='background-color:#A2D8E0'> </div>', '<div class="box bvp"></div>'),
+              ('<div class="box" style='background-color:#D5AC27'> </div>', '<div class="box dvp"></div>'),
+              ('<div class="box" style='background-color:#3E88B3'> </div>', '<div class="box dnvp"></div>'),
+              ('<div class="box" style='background-color:#7A3C00'> </div>', '<div class="box nsdap"></div>'),
+              
           ]
           
           total_replacements = 0
