@@ -466,7 +466,7 @@ go-to: wurttemberg_coalition_menu
 
 [? if sapd_formed : {!<tr><td><div class="box sapd"></div> !}SAPD: {!</td><td!} **[+ sapd_wurttemberg_elections_vote +]%** {!</td><td!} **[+ sapd_r_wurttemberg +]%** {!</td></tr>!} ?]
 
-[? if uspd_joined < 3: {!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td!} **[+ uspd_wurttemberg_elections_vote +]%** {!</td><td!} **[+ uspd_r_wurttemberg +]%** {!</td></tr>!} ?]
+[? if uspd_joined < 3: {!<tr><td><div class="box uspd"></div> !}USPD: {!</td><td!} **[+ uspd_wurttemberg_elections_vote +]%** {!</td><td!} **[+ uspd_r_wurttemberg +]%** {!</td></tr>!} ?]
 
 {!<tr><td><div class="box kpd"></div> !}KPD: {!</td><td!} **[+ kpd_wurttemberg_elections_vote +]%** {!</td><td!} **[+ kpd_r_wurttemberg +]%**  {!</td></tr>!}
 
