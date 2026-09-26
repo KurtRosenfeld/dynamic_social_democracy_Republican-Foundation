@@ -1,0 +1,98 @@
+title: Go to Schaumburg-Lippe
+new-page: true
+is-special: true
+face-image: img/land/Schaumburg-Lippe.svg.webp
+on-arrival: {!
+  setTimeout(function() {
+    var el = document.getElementById('schaum_lippe');
+    if (!el || typeof d3 === 'undefined' || !window.ParliamentData) return;
+    el.removeAttribute('data-parliament');
+    el.innerHTML = '';
+    window.ParliamentData.renderParliament('schaum_lippe', el);
+  }, 0);
+!}
+
+= Schaumburg-Lippe
+
+Schaumburg-Lippe is the smallest state in the Reich, yet we are a major political force.
+
+Historical Note: This state is so poorly documented that it is sometimes hard to tell how and why things happened - you can't even really know who was part of what party precisely.
+  
+Currently ruled by [+ schaum_lippe_mp +] ([+ schaum_lippe_mp_party +]) in a [+ schaum_lippe_gov +] Coalition with [+ schaum_lippe_coalition_r +]% support.
+
+
+<div id="baden" style="width:500px; height:250px;"></div>
+
+
+
+
+
+
+- @coalition_schaum: Coalition
+- @toleration_schaum: Toleration
+- @policies_schaum: Policies
+- @states: Exit Schaumburg-Lippe
+
+
+@coalition_schaum
+choose-if: schaum_lippe_spd == 1
+unavailable-subtitle: We are not part of the Coalition
+
+@toleration_schaum
+choose-if: schaum_lippe_spd == 2
+unavailable-subtitle: We are not in toleration
+
+@policies_schaum
+choose-if: schaum_lippe_spd == 1 and schaum_lippe_action_timer <= 0
+unavailable-subtitle: [? if not schaum_lippe_spd == 1: We are not part of the Coalition. ?][? if schaum_lippe_spd == 1 and schaum_lippe_action_timer > 0: We have to wait [+ schaum_lippe_action_timer +] months before our next action. ?]
+
+
+- @prussian_schaum
+- @prussia_is_schaum
+- @dvp_schaum
+- @dnvp_schaum
+
+
+@prussian_schaum
+title: Work towards a referendum on joining Prussia
+subtitle: This state needs to be abolished
+view-if: schaum_prussia < 5
+on-arrival: schaum_lippe_action_timer += 10; schaum_prussia += 1
+
+
+@prussia_is_schaum
+title: Hold a referndum on joining Prussia
+subtitle: May we do our best...
+view-if: schaum_prussia >= 5
+on-arrival: schaum_lippe_action_timer += 12; schaum_prussia = 0; dnvp_relation -= 1
+
+The referndum fails, back to black...
+
+
+@dvp_schaum
+title: Improve relations with the <span style="color: [+ dvp_colour +];">**DVP**</span>
+subtitle: Why not?
+choose-if: schaum_lippe_dvp == 1 and schaum_lippe_spd == 1
+unavailable-subtitle: We need to be in a coalition with them
+on-arrival: schaum_lippe_action_timer += 11; dvp_relation += 2
+
+
+@dnvp_schaum
+title: Improve relations with the <span style="color: [+ dnvp_colour +];">**DNVP**</span>
+subtitle: Why not?
+choose-if: schaum_lippe_dnvp == 1 and schaum_lippe_spd == 1
+unavailable-subtitle: We need to be in a coalition with them
+on-arrival: schaum_lippe_action_timer += 18; dnvp_relation += 1
+
+
+
+
+
+
+
+
+
+
+
+
+  
