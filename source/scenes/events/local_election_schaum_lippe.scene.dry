@@ -422,9 +422,9 @@ Schaumburg-Lippe results:
 {!<tr><td>Party</th><th>Vote share</th><th>Landtag Seats</th></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} SPD: {!</td><td!} **[+ spd_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ spd_r_schaumburg_lippe +]**% {!</td></tr>!}
 
-[? if uspd_joined < 3: {!<tr><td><div class="box" style='background-color: {{ Q.uspd_colour }}'> </div> !}USPD: {!</td><td!} **[+ uspd_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ uspd_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
+[? if uspd_joined < 3: {!<tr><td><div class="box uspd"></div> !}USPD: {!</td><td!} **[+ uspd_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ uspd_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
 
-[? if kpd_schaumburg_lippe_elections_vote: {!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td!} **[+ kpd_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ kpd_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
+[? if kpd_schaumburg_lippe_elections_vote: {!<tr><td><div class="box kpd"></div> !}KPD: {!</td><td!} **[+ kpd_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ kpd_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
 
 [? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td!} **[+ ddp_schaumburg_lippe_elections_vote +]**% {!</td><td!} **[+ ddp_r_schaumburg_lippe +]**% {!</td></tr>!} ?]
 
