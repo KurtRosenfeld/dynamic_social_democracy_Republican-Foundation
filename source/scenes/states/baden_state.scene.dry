@@ -81,7 +81,7 @@ unavailable-subtitle: The judiciary is quite fond of killing people people
 @death_to_death
 title: Abolish the death penalty in Baden
 view-if: baden_death_penal > 3
-coose-if: judiciary_reform >= 3
+choose-if: judiciary_reform >= 3
 unavailable-subtitle: The National Judiciary opposes this.
 on-arrival: unemployed_spd += 3; uspd_relation += 5; catholic_spd += 2; baden_action_timer += 12
   
