@@ -392,23 +392,23 @@ go-to: saxony_coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:spd_colour; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_saxony_elections_vote +]%** {!</td><td>!} [+ spd_r_saxony +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color: var(--uspd_colour)'> </div> !}USPD: {!</td><td>!} [+ uspd_saxony_elections_vote +]% {!</td><td>!} [+ uspd_r_saxony +]% {!</td></tr>!}
+{!<tr><td><div class="box uspd"></div> !}USPD: {!</td><td>!} [+ uspd_saxony_elections_vote +]% {!</td><td>!} [+ uspd_r_saxony +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color: var(--kpd_colour)'> </div> !}KPD: {!</td><td>!} [+ kpd_saxony_elections_vote +]% {!</td><td>!} [+ kpd_r_saxony +]%  {!</td></tr>!}
+{!<tr><td><div class="box kpd"></div> </div> !}KPD: {!</td><td>!} [+ kpd_saxony_elections_vote +]% {!</td><td>!} [+ kpd_r_saxony +]%  {!</td></tr>!}
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:[+ ddp_colour +]'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_saxony_elections_vote +]% {!</td><td>!} [+ ddp_r_saxony +]%  {!</td></tr>!} ?]
+[? if not lvp_formed: {!<tr><td><div class="box ddp"></div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_saxony_elections_vote +]% {!</td><td>!} [+ ddp_r_saxony +]%  {!</td></tr>!} ?]
 
-[? if lvp_formed: {!<tr><td><div class="box" style='background-color:[+ lvpcolour +]'> </div> !} LVP: {!</td><td>!} [+ lvp_saxony_elections_vote +]% {!</td><td>!} [+ lvp_r_saxony +]%  {!</td></tr>!} ?]
+[? if lvp_formed: {!<tr><td><div class="box lvp"></div> !} LVP: {!</td><td>!} [+ lvp_saxony_elections_vote +]% {!</td><td>!} [+ lvp_r_saxony +]%  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_saxony_elections_vote +]% {!</td><td>!} [+ z_r_saxony +]%  {!</td></tr>!}
+{!<tr><td><div class="box z"></div> !} Z: {!</td><td>!} [+ z_saxony_elections_vote +]% {!</td><td>!} [+ z_r_saxony +]%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td>!} [+ wp_saxony_elections_vote +]% {!</td><td>!} [+ wp_r_saxony +]%  {!</td></tr>!}
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:[+ dvp_colour +]'> </div> !} DVP: {!</td><td>!} [+ dvp_saxony_elections_vote +]% {!</td><td>!} [+ dvp_r_saxony +]%  {!</td></tr>!} ?]
+[? if not lvp_formed: {!<tr><td><div class="box dvp"></div> !} DVP: {!</td><td>!} [+ dvp_saxony_elections_vote +]% {!</td><td>!} [+ dvp_r_saxony +]%  {!</td></tr>!} ?]
 
 [? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_saxony_elections_vote +]% {!</td><td>!} [+ kvp_r_saxony +]%  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:[+ dnvp_colour +]'> </div> !} DNVP: {!</td><td>!} [+ dnvp_saxony_elections_vote +]% {!</td><td>!} [+ dnvp_r_saxony +]%  {!</td></tr>!}
+{!<tr><td><div class="box dnvp"></div> !} DNVP: {!</td><td>!} [+ dnvp_saxony_elections_vote +]% {!</td><td>!} [+ dnvp_r_saxony +]%  {!</td></tr>!}
 
 {!</table>!}
 <hr id="read-marker">
