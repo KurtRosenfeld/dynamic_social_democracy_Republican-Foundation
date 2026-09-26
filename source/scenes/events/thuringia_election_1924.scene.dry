@@ -319,17 +319,17 @@ go-to: thuringia_coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_thuringia_elections_vote +]%** {!</td><td>!} [+ spd_r_thuringia +]% {!</td></tr>!}
 
-[? if uspd_r_thuringia > 0 : {!<tr><td><div class="box" style='background-color:#AA0000'> </div> !}USPD: {!</td><td>!} [+ uspd_thuringia_elections_vote +]% {!</td><td>!} [+ uspd_r_thuringia +]% {!</td></tr>!} ?]
+[? if uspd_r_thuringia > 0 : {!<tr><td><div class="box uspd"></div> !}USPD: {!</td><td>!} [+ uspd_thuringia_elections_vote +]% {!</td><td>!} [+ uspd_r_thuringia +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_thuringia_elections_vote +]% {!</td><td>!} [+ kpd_r_thuringia +]%  {!</td></tr>!}
+{!<tr><td><div class="box kpd"></div> !}KPD: {!</td><td>!} [+ kpd_thuringia_elections_vote +]% {!</td><td>!} [+ kpd_r_thuringia +]%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_thuringia_elections_vote +]% {!</td><td>!} 0%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#0D2AC9'> </div> !} OB: {!</td><td>!} [+ bl_thuringia_elections_vote +]% {!</td><td>!} [+ bl_r_thuringia +]%  {!</td></tr>!}
 
-[? if nsfb_exists: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} VVL: {!</td><td>!} [+ nsfb_thuringia_elections_vote +]% {!</td><td>!} [+ nsfb_r_thuringia +]%  {!</td></tr>!} ?]
+[? if nsfb_exists: {!<tr><td><div class="box nsdap"></div> !} VVL: {!</td><td>!} [+ nsfb_thuringia_elections_vote +]% {!</td><td>!} [+ nsfb_r_thuringia +]%  {!</td></tr>!} ?]
 
-[? if not nsfb_exists: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_thuringia_elections_vote +]% {!</td><td>!} [+ nsdap_r_thuringia +]%  {!</td></tr>!} ?]
+[? if not nsfb_exists: {!<tr><td><div class="box nsdap"></div> !} NSDAP: {!</td><td>!} [+ nsdap_thuringia_elections_vote +]% {!</td><td>!} [+ nsdap_r_thuringia +]%  {!</td></tr>!} ?]
 {!</table>!}
 <hr id="read-marker">
 Thuringia used to be ruled by left coalitions up to now.

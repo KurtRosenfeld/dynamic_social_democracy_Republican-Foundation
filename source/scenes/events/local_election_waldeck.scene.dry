@@ -376,9 +376,9 @@ go-to: waldeck_coalition_menu
 
 [? if year == 1922: {!<tr><td><div class="box" style='background-color:#CEDD8A'> </div> !} WV: {!</td><td!} **[+ dvp_waldeck_elections_vote +]%** {!</td><td!} **[+ wv_r_waldeck +]%**  {!</td></tr>!} ?]
 
-[? if not lvp_formed and year == 1925: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td!} **[+ dvp_waldeck_elections_vote +]%** {!</td><td!} **[+ dvp_r_waldeck +]%**  {!</td></tr>!} ?]
+[? if not lvp_formed and year == 1925: {!<tr><td><div class="box dvp"></div> !} DVP: {!</td><td!} **[+ dvp_waldeck_elections_vote +]%** {!</td><td!} **[+ dvp_r_waldeck +]%**  {!</td></tr>!} ?]
 
-[? if year == 1925: {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td!} **[+ dnvp_waldeck_elections_vote +]%** {!</td><td!} **[+ dnvp_r_waldeck +]%**  {!</td></tr>!} ?]
+[? if year == 1925: {!<tr><td><div class="box dnvp"></div> !} DNVP: {!</td><td!} **[+ dnvp_waldeck_elections_vote +]%** {!</td><td!} **[+ dnvp_r_waldeck +]%**  {!</td></tr>!} ?]
 
 [? if year == 1922: {!<tr><td><div class="box" style='background-color:#567098'> </div> !} RL: {!</td><td!} **[+ other_waldeck_elections_vote +]%** {!</td><td!} **[+ rl_r_waldeck +]%**  {!</td></tr>!} ?]
 

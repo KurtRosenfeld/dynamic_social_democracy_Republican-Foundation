@@ -484,37 +484,37 @@ go-to: bavaria_coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_bavaria_elections_vote +]%** {!</td><td>!} [+ spd_r_bavaria +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#AA0000'> </div> !}USPD: {!</td><td>!} [+ uspd_bavaria_elections_vote +]% {!</td><td>!} [+ uspd_r_bavaria +]%  {!</td></tr>!}
+{!<tr><td><div class="box uspd"></div> !}USPD: {!</td><td>!} [+ uspd_bavaria_elections_vote +]% {!</td><td>!} [+ uspd_r_bavaria +]%  {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_bavaria_elections_vote +]% {!</td><td>!} [+ sapd_r_bavaria +]% {!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box sapd"></div> !}SAPD: {!</td><td>!} [+ sapd_bavaria_elections_vote +]% {!</td><td>!} [+ sapd_r_bavaria +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_bavaria_elections_vote +]% {!</td><td>!} [+ kpd_r_bavaria +]%  {!</td></tr>!}
+{!<tr><td><div class="box kpd"></div> !}KPD: {!</td><td>!} [+ kpd_bavaria_elections_vote +]% {!</td><td>!} [+ kpd_r_bavaria +]%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#79209D'> </div> !} CSP: {!</td><td>!} [+ csp_bavaria_elections_vote +]% {!</td><td>!} [+ csp_r_bavaria +]%  {!</td></tr>!}
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_bavaria_elections_vote +]% {!</td><td>!} [+ ddp_r_bavaria +]%  {!</td></tr>!} ?]
+[? if not lvp_formed: {!<tr><td><div class="box ddp"></div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_bavaria_elections_vote +]% {!</td><td>!} [+ ddp_r_bavaria +]%  {!</td></tr>!} ?]
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_bavaria_elections_vote +]% {!</td><td>!} [+ lvp_r_bavaria +]%  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#38C538'> </div> !} Peasants: {!</td><td>!} [+ farm_bavaria_elections_vote +]% {!</td><td>!} [+ farm_r_bavaria +]%  {!</td></tr>!}
 
-[? if true_z_bavaria_elections_vote > 0.5: {!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ true_z_bavaria_elections_vote +]% {!</td><td>!} [+ true_z_r_bavaria +]%  {!</td></tr>!} ?]
+[? if true_z_bavaria_elections_vote > 0.5: {!<tr><td><div class="box z"></div> !} Z: {!</td><td>!} [+ true_z_bavaria_elections_vote +]% {!</td><td>!} [+ true_z_r_bavaria +]%  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ non_farm_bavaria_elections_vote +]% {!</td><td>!} [+ non_farm_r_bavaria +]%  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#A2D8E0'> </div> !} BVP: {!</td><td>!} [+ bvp_bavaria_elections_vote +]% {!</td><td>!} [+ bvp_r_bavaria +]%  {!</td></tr>!}
+{!<tr><td><div class="box bvp"></div> !} BVP: {!</td><td>!} [+ bvp_bavaria_elections_vote +]% {!</td><td>!} [+ bvp_r_bavaria +]%  {!</td></tr>!}
 
-[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_bavaria_elections_vote +]% {!</td><td>!} [+ dvp_r_bavaria +]%  {!</td></tr>!} ?]
+[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box dvp"></div> !} DVP: {!</td><td>!} [+ dvp_bavaria_elections_vote +]% {!</td><td>!} [+ dvp_r_bavaria +]%  {!</td></tr>!} ?]
 
 [? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_bavaria_elections_vote +]% {!</td><td>!} [+ kvp_r_bavaria +]%  {!</td></tr>!} ?]
 
-[? if not cvp_formed: {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_bavaria_elections_vote +]% {!</td><td>!} [+ dnvp_r_bavaria +]%  {!</td></tr>!}?]
+[? if not cvp_formed: {!<tr><td><div class="box dnvp"></div> !} DNVP: {!</td><td>!} [+ dnvp_bavaria_elections_vote +]% {!</td><td>!} [+ dnvp_r_bavaria +]%  {!</td></tr>!}?]
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_bavaria_elections_vote +]% {!</td><td>!} [+ dnf_r_bavaria +]%  {!</td></tr>!} ?]
 
-[? if nsfb_exists: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} VSB: {!</td><td>!} [+ nsfb_bavaria_elections_vote +]% {!</td><td>!} [+ nsfb_r_bavaria +]%  {!</td></tr>!} ?]
+[? if nsfb_exists: {!<tr><td><div class="box nsdap"></div> !} VSB: {!</td><td>!} [+ nsfb_bavaria_elections_vote +]% {!</td><td>!} [+ nsfb_r_bavaria +]%  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_bavaria_elections_vote +]% {!</td><td>!} [+ nsdap_r_bavaria +]%  {!</td></tr>!}
+{!<tr><td><div class="box nsdap"></div> !} NSDAP: {!</td><td>!} [+ nsdap_bavaria_elections_vote +]% {!</td><td>!} [+ nsdap_r_bavaria +]%  {!</td></tr>!}
 {!</table>!}
 <hr id="read-marker">
 The <span style="color: #38C538;">Bavarian Peasants’ League</span> serves as the nucleus of the federal <span style="color: #007A00;">German Peasants' Party</span> and is surprisingly liberal and <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> compared to other agricultural parties and organizations, such as the <span style="color: #7FCEB1;">**CNBLP**</span>. Recently, they even exited the <span style="color: #A2D8E0;">**BVP**</span>'s cabinet over a dispute about taxes. [? if cvp_formed: <br><br> With the formation of the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span>, the <span style="color: [+ dnvp_colour +];">**DNVP**</span>'s Bavarian branch has largely merged into the <span style="color: #A2D8E0;">**BVP**</span>, although some elements have instead chosen to align with the <span style="color: #003755;">**DNF**</span>. ?]

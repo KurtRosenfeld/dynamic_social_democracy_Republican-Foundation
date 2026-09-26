@@ -195,27 +195,27 @@ if (Q.z_local_elections_vote + Q.ddp_local_elections_vote + Q.dvp_local_election
 {!<tr><td>Party</td><td>Vote share</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_local_elections_vote +]%** {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_local_elections_vote +]% {!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box sapd"></div> !}SAPD: {!</td><td>!} [+ sapd_local_elections_vote +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_local_elections_vote +]% {!</td></tr>!}
+{!<tr><td><div class="box kpd"></div> !}KPD: {!</td><td>!} [+ kpd_local_elections_vote +]% {!</td></tr>!}
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_local_elections_vote +]% {!</td></tr>!} ?]
+[? if not lvp_formed: {!<tr><td><div class="box ddp"></div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_local_elections_vote +]% {!</td></tr>!} ?]
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_local_elections_vote +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#000'> </div> !} [+ z_party_name +] + BVP: {!</td><td>!} [+ z_local_elections_vote +]% {!</td></tr>!}
+{!<tr><td><div class="box z"></div> !} [+ z_party_name +] + BVP: {!</td><td>!} [+ z_local_elections_vote +]% {!</td></tr>!}
 
-[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_local_elections_vote +]% {!</td></tr>!} ?]
+[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box dvp"></div> !} DVP: {!</td><td>!} [+ dvp_local_elections_vote +]% {!</td></tr>!} ?]
  
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_local_elections_vote +]% {!</td></tr>!}
 
 [? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_local_elections_vote +]% {!</td></tr>!} ?]
 
-[? if not cvp_formed: {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_local_elections_vote +]% {!</td></tr>!}?]
+[? if not cvp_formed: {!<tr><td><div class="box dnvp"></div> !} DNVP: {!</td><td>!} [+ dnvp_local_elections_vote +]% {!</td></tr>!}?]
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_local_elections_vote +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_local_elections_vote +]% {!</td></tr>!}
+{!<tr><td><div class="box nsdap"></div> !} NSDAP: {!</td><td>!} [+ nsdap_local_elections_vote +]% {!</td></tr>!}
 {!</table>!}
 
 [? if nsdap_local_elections_vote >= 20: The strong performance of the <span style="color: #7A3C00;">**NSDAP**</span> leaves little room for a democratic coalition in many Landtags, and may force the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to negotiate with them as a last resort. ?]
@@ -582,17 +582,17 @@ go-to: bavaria_coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_bavaria_elections_vote +]%** {!</td><td>!} [+ spd_r_bavaria +]% {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_bavaria_elections_vote +]% {!</td><td>!} [+ sapd_r_bavaria +]% {!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box sapd"></div> !}SAPD: {!</td><td>!} [+ sapd_bavaria_elections_vote +]% {!</td><td>!} [+ sapd_r_bavaria +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_bavaria_elections_vote +]% {!</td><td>!} [+ kpd_r_bavaria +]%  {!</td></tr>!}
+{!<tr><td><div class="box kpd"></div> !}KPD: {!</td><td>!} [+ kpd_bavaria_elections_vote +]% {!</td><td>!} [+ kpd_r_bavaria +]%  {!</td></tr>!}
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_bavaria_elections_vote +]% {!</td><td>!} [+ ddp_r_bavaria +]%  {!</td></tr>!} ?]
+[? if not lvp_formed: {!<tr><td><div class="box ddp"></div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_bavaria_elections_vote +]% {!</td><td>!} [+ ddp_r_bavaria +]%  {!</td></tr>!} ?]
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_bavaria_elections_vote +]% {!</td><td>!} [+ lvp_r_bavaria +]%  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#A2D8E0'> </div> !} BVP: {!</td><td>!} [+ z_bavaria_elections_vote +]% {!</td><td>!} [+ z_r_bavaria +]%  {!</td></tr>!}
+{!<tr><td><div class="box bvp"></div> !} BVP: {!</td><td>!} [+ z_bavaria_elections_vote +]% {!</td><td>!} [+ z_r_bavaria +]%  {!</td></tr>!}
 
-[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_bavaria_elections_vote +]% {!</td><td>!} [+ dvp_r_bavaria +]%  {!</td></tr>!} ?]
+[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box dvp"></div> !} DVP: {!</td><td>!} [+ dvp_bavaria_elections_vote +]% {!</td><td>!} [+ dvp_r_bavaria +]%  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#38C538'> </div> !} Peasants: {!</td><td>!} [+ farm_bavaria_elections_vote +]% {!</td><td>!} [+ farm_r_bavaria +]%  {!</td></tr>!}
 
@@ -600,11 +600,11 @@ go-to: bavaria_coalition_menu
 
 [? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_bavaria_elections_vote +]% {!</td><td>!} [+ kvp_r_bavaria +]%  {!</td></tr>!} ?]
 
-[? if not cvp_formed: {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_bavaria_elections_vote +]% {!</td><td>!} [+ dnvp_r_bavaria +]%  {!</td></tr>!}?]
+[? if not cvp_formed: {!<tr><td><div class="box dnvp"></div> !} DNVP: {!</td><td>!} [+ dnvp_bavaria_elections_vote +]% {!</td><td>!} [+ dnvp_r_bavaria +]%  {!</td></tr>!}?]
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_bavaria_elections_vote +]% {!</td><td>!} [+ dnf_r_bavaria +]%  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_bavaria_elections_vote +]% {!</td><td>!} [+ nsdap_r_bavaria +]%  {!</td></tr>!}
+{!<tr><td><div class="box nsdap"></div> !} NSDAP: {!</td><td>!} [+ nsdap_bavaria_elections_vote +]% {!</td><td>!} [+ nsdap_r_bavaria +]%  {!</td></tr>!}
 {!</table>!}
 <hr id="read-marker">
 The <span style="color: #38C538;">Bavarian Peasants’ League</span> serves as the nucleus of the federal <span style="color: #007A00;">German Peasants' Party</span> and is surprisingly liberal and <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> compared to other agricultural parties and organizations, such as the <span style="color: #7FCEB1;">**CNBLP**</span>. Recently, they even exited the <span style="color: #A2D8E0;">**BVP**</span>'s cabinet over a dispute about taxes. [? if cvp_formed: <br><br> With the formation of the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span>, the <span style="color: [+ dnvp_colour +];">**DNVP**</span>'s Bavarian branch has largely merged into the <span style="color: #A2D8E0;">**BVP**</span>, although some elements have instead chosen to align with the <span style="color: #003755;">**DNF**</span>. ?]
@@ -1057,17 +1057,17 @@ go-to: wurttemberg_coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_wurttemberg_elections_vote +]%** {!</td><td>!} [+ spd_r_wurttemberg +]% {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_wurttemberg_elections_vote +]% {!</td><td>!} [+ sapd_r_wurttemberg +]% {!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box sapd"></div> !}SAPD: {!</td><td>!} [+ sapd_wurttemberg_elections_vote +]% {!</td><td>!} [+ sapd_r_wurttemberg +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_wurttemberg_elections_vote +]% {!</td><td>!} [+ kpd_r_wurttemberg +]%  {!</td></tr>!}
+{!<tr><td><div class="box kpd"></div> !}KPD: {!</td><td>!} [+ kpd_wurttemberg_elections_vote +]% {!</td><td>!} [+ kpd_r_wurttemberg +]%  {!</td></tr>!}
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_wurttemberg_elections_vote +]% {!</td><td>!} [+ ddp_r_wurttemberg +]%  {!</td></tr>!} ?]
+[? if not lvp_formed: {!<tr><td><div class="box ddp"></div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_wurttemberg_elections_vote +]% {!</td><td>!} [+ ddp_r_wurttemberg +]%  {!</td></tr>!} ?]
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_wurttemberg_elections_vote +]% {!</td><td>!} [+ lvp_r_wurttemberg +]%  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#000000'> </div> !} [+ z_party_name +]: {!</td><td>!} [+ z_wurttemberg_elections_vote +]% {!</td><td>!} [+ z_r_wurttemberg +]%  {!</td></tr>!}
+{!<tr><td><div class="box z"></div> !} [+ z_party_name +]: {!</td><td>!} [+ z_wurttemberg_elections_vote +]% {!</td><td>!} [+ z_r_wurttemberg +]%  {!</td></tr>!}
 
-[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_wurttemberg_elections_vote +]% {!</td><td>!} [+ dvp_r_wurttemberg +]%  {!</td></tr>!} ?]
+[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box dvp"></div> !} DVP: {!</td><td>!} [+ dvp_wurttemberg_elections_vote +]% {!</td><td>!} [+ dvp_r_wurttemberg +]%  {!</td></tr>!} ?]
  
 {!<tr><td><div class="box" style='background-color:#006400'> </div> !} WBWB: {!</td><td>!} [+ farm_wurttemberg_elections_vote +]% {!</td><td>!} [+ farm_r_wurttemberg +]%  {!</td></tr>!}
 
@@ -1075,11 +1075,11 @@ go-to: wurttemberg_coalition_menu
 
 [? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_wurttemberg_elections_vote +]% {!</td><td>!} [+ kvp_r_wurttemberg +]%  {!</td></tr>!} ?]
 
-[? if not cvp_formed: {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_wurttemberg_elections_vote +]% {!</td><td>!} [+ dnvp_r_wurttemberg +]%  {!</td></tr>!}?]
+[? if not cvp_formed: {!<tr><td><div class="box dnvp"></div> !} DNVP: {!</td><td>!} [+ dnvp_wurttemberg_elections_vote +]% {!</td><td>!} [+ dnvp_r_wurttemberg +]%  {!</td></tr>!}?]
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_wurttemberg_elections_vote +]% {!</td><td>!} [+ dnf_r_wurttemberg +]%  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_wurttemberg_elections_vote +]% {!</td><td>!} [+ nsdap_r_wurttemberg +]%  {!</td></tr>!}
+{!<tr><td><div class="box nsdap"></div> !} NSDAP: {!</td><td>!} [+ nsdap_wurttemberg_elections_vote +]% {!</td><td>!} [+ nsdap_r_wurttemberg +]%  {!</td></tr>!}
 {!</table>!}
 <hr id="read-marker">
 The <span style="color: #006400;">Württemberg Farmers' and Winegrowers' Association</span> (<span style="color: #006400;">**WBWB**</span>) is a regional branch of the National Rural League (RLB), and closely cooperates with the regional party of the <span style="color: [+ dnvp_colour +];">**DNVP**</span>, the <span style="color: #3E88B3;">Württemberg Citizens' Party</span>.[? if cvp_formed: However, the formation of the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> has prompted a merger between the <span style="color: #3E88B3;">Citizens' Party</span> and the <span style="color: #000000;">Center Party</span>. ?]

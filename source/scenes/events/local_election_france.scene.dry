@@ -493,7 +493,7 @@ go-to: france_coalition_menu
 
 <tr><td colspan="5" style="text-align: center;"><strong>French Section of the Communist International</strong></td></tr>
 
-{!<tr><td><div class="box" style='background-color:#700000'> </div> !}<span class="tooltip-text" title="French Communist Party">PCF</span>: {!</td><td>!} [+ pcf_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_pcf_france +] {!</td><td>!} [+ pcf_r_france +]% {!</td><td>!} [+ str_change_pcf_france +] {!</td></tr>!}
+{!<tr><td><div class="box kpd"></div> !}<span class="tooltip-text" title="French Communist Party">PCF</span>: {!</td><td>!} [+ pcf_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_pcf_france +] {!</td><td>!} [+ pcf_r_france +]% {!</td><td>!} [+ str_change_pcf_france +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#B22222'> </div> !}<span class="tooltip-text" title="Proletarian Unity Party">PUP</span>: {!</td><td>!} [+ pup_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_pup_france +] {!</td><td>!} [+ pup_r_france +]% {!</td><td>!} [+ str_change_pup_france +] {!</td></tr>!}
 
