@@ -186,14 +186,19 @@
         nsdap: qualities.nsdap_colour
     };
     
-    for (const [party, color] of Object.entries(colorMap)) {
-        if (color) {
-            document.querySelectorAll('.seat.' + party).forEach(function(seat) {
-                seat.style.fill = color;
-            });
-        }
-    }
-  };
+   for (const [party, color] of Object.entries(colorMap)) {
+    if (!color) continue;
+
+    document.querySelectorAll('.seat.' + party).forEach(function(seat) {
+      seat.style.fill = color;
+    });
+
+     // random box shit, I hope this will finally work, stupid shit, damn that, wtf
+    document.querySelectorAll('.box.' + party).forEach(function(box) {
+      box.style.backgroundColor = color;
+    });
+  }
+};
 
   window.setupColorObserver = function() {
     const observer = new MutationObserver(function(mutations) {
