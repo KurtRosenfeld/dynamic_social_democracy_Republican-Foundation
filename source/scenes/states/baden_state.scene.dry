@@ -18,7 +18,7 @@ Baden sits at the sweet-spot between high catholicism and republicanism.
 
 In a 1919 referndum 93% of the population have voted in favour of the constitution that was drafted by a constituent assambley of combined 90% Weimar Coalition parties' support.
 
-Currently ruled by [+ baden_mp +] ([+ baden_mp_party +]) in a [+ baden_gov +]-Coalition with [+ baden_support +]% support.
+Currently ruled by [+ baden_mp +] ([+ baden_mp_party +]) in a [+ baden_gov +] Coalition with [+ baden_coalition_r +]% support.
 
 
 <div id="baden" style="width:500px; height:250px;"></div>
@@ -48,6 +48,10 @@ unavailable-subtitle: [? if not baden_spd == 1: We are not part of the Coalition
 
 
 - @reform_the_administration
+- @womensrights
+- @death_penalty
+- @death_to_death
+- @persecute_left
 - @negotiate_concordat
 - @sign_baden_concordat
 - @give_tax_breaks_to_local_buisnesses
@@ -55,8 +59,31 @@ unavailable-subtitle: [? if not baden_spd == 1: We are not part of the Coalition
 
 @reform_the_administration
 title: Reform the administration of Baden
-on-arrival: baden_reform += 1; baden_action_timer += 7
+subtitle: Replace some imperial judges, reform the police.
+view-if: baden reform <= 7
+on-arrival: baden_reform += 1; baden_action_timer += 7; other_jud += 0.1
 go-to: baden_state
+
+@womensrights
+title: Improve women's rights
+subtitle: Make progress towards equal pay
+view-if: womens_rights <= 8
+on-arrival: baden_action_timer += 7; womens_rights += 0.2; new_middle_spd += 1; catholic_spd += 1
+go-to: baden_state
+
+@death_penalty
+title: Work towards the abolition of the death penalty
+view-if: baden_death_penal <= 3
+on-arrival: baden_action_timer += 7; baden_death_penal += 1
+choose-if: baden_reform >= 3
+unavailable-subtitle: The judiciary is quite fond of killing people people
+
+@death_to_death
+title: Abolish the death penalty in Baden
+view-if: baden_death_penal > 3
+coose-if: judiciary_reform >= 3
+unavailable-subtitle: The National Judiciary opposes this.
+on-arrival: unemployed_spd += 3; uspd_relation += 5; catholic_spd += 2; baden_action_timer += 12
   
 @negotiate_concordat
 title: Negotiate a concordat with the Holy See
@@ -64,11 +91,17 @@ on-arrival: z_relation += 5; kpd_relation -= 3; baden_concordat_progress += 1*(1
 choose-if: not baden_gov == "Left"
 view-if: baden_concordat_progress < 4
 go-to: baden_state
+
+@persecute_left
+title: Persecute Left-wing organisations
+choose-if: not (baden_gov == "Social-Democratic" or baden_gov == "Left")
+on-arrival: z_relation += 3; ddp_relation += 3; dvp_relation += 2; kpd_relation -= 5; anarchist_media -= 0.2; communist_media -= 0.3; baden_action_timer += 7
   
 @sign_baden_concordat
 title: Sign a concordat
+subtitle: We have succesfully negotiated a concordat for Baden.
 view-if: baden_concordat_progress >= 4
-on-arrival: z_relation += 5; vatican_relation += 10; left_dissent += 3; center_dissent += 1; baden_action_timer += 12
+on-arrival: z_relation += 5; vatican_relation += 10; left_dissent += 3; center_dissent += 1; baden_action_timer += 12; catholic_spd += 3
 go-to: baden_state
   
 @give_tax_breaks_to_local_buisnesses
