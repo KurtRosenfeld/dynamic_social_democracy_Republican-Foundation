@@ -60,7 +60,7 @@ unavailable-subtitle: [? if not baden_spd == 1: We are not part of the Coalition
 @reform_the_administration
 title: Reform the administration of Baden
 subtitle: Replace some imperial judges, reform the police.
-view-if: baden reform <= 7
+view-if: baden_reform <= 7
 on-arrival: baden_reform += 1; baden_action_timer += 7; other_jud += 0.1
 go-to: baden_state
 
