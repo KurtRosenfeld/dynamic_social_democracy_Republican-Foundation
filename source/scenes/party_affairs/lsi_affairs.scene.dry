@@ -3,8 +3,8 @@ new-page: true
 is-card: true
 tags: party_affairs
 view-if: lsi_timer <= 0 and lsi_founded == 1
-on-arrival: month_actions += 1; lsi_timer += 12;
-card-image: img/Labour_and_Socialist_International_logo.jpg
+on-arrival: month_actions += 1; lsi_timer += 13;
+card-image: img/Labour_and_Socialist_International_logo.png
 
 
 
@@ -12,51 +12,68 @@ card-image: img/Labour_and_Socialist_International_logo.jpg
 
 We are an important part of the current Socialist International. We can try out a few things. 
 
-(Note: This doesn't do anything yet)
 
 - @increase_founding: Put party resources into the International
 - @colonial_stance: Work towards a clear position on Colonialism
 - @comintern_relation: Improve relations with the Comintern
 - @fourth_relation: Improve relation with the Trotskyist Fourth International
+- @send_funds: Placeholder for supporting allies in foreign elections
 
 
 
 @increase_founding
-subtitle: This organ is severly underfounded compared to the ammount of it's membership.
-
+subtitle: This organ is severly underfounded compared to the ammount of it's membership. (-1 resource)
+on-arrival: resources-= 1; lsi_founding += 1
 
 We are still laking behind the Comintern's resources founded by the Soviet Union.
 
 
 @colonial_stance
 subtitle: Our organisation can't agitate coherently on the colonial question.
+view-if: not uk_colonial_adopted and not austria_colonial_adopted
 
 - @british: Support the British position
 - @austrian: Support the Austrian position
 - @french: Support the French position
+- @adopt_uk: Adopt the British position
+- @adopt_austria: Adopt the Austrian position
 
 
 @british
 subtitle: The colonial administration should be reformed but it is not sensible to give them independence (in the near future).
+on-arrival: uk_relation += 2; bad_colonial += 1; good_colonial -= 1
 
 @french
 subtitle: What position?
+on-arrival: france_relation += 1; bad_colonial -= 1; good_colonial -= 1
 
 @austrian
 subtitle: Colonies should be abolished, self-determination for all.
+on-arrival: austria_relation += 1; bad_colonial -= 1; good_colonial += 1; sweden_relation += 1; norway_relation += 1
 
+@adopt_uk
+subtitle: Colonial reform will be the way.
+view-if: bad_colonial >= 2
+on-arrival: uk_colonial_adopted = 1
+
+@adopt_austria
+subtitle: Colonies should be abolished altogether.
+view-if: good_colonial >= 2
+on-arrival: austria_colonial_adopted = 1
 
 @comintern_relation
 subtitle: We should not be rivals, we have more in common than we want to admit.
+on-arrival: soviet_relation += 1; kpd_relation += 2; comintern_relation += 1
 
 
 @fourth_relation
 subtitle: They aren't that influential.
+on-arrival: comintern_relation -= 0.2
 
 
-
-
-
+@send_funds
+choose-if: nsdap_relation >= 999
+unavailable-subtitle: Just imagine an SDAPÖ majority in Austria...
 
 
 
