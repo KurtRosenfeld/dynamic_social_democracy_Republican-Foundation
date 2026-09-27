@@ -161,7 +161,7 @@
         dnvp: '{{ Q.dnvp_colour }}',
         z: '{{ Q.z_colour }}',
         bvp: '{{ Q.bvp_colour }}',
-        other: '{{ Q.i_colour }}',
+        other: '{{ Q.other_colour }}',
         nsdap: '{{ Q.nsdap_colour }}'
     };
     
@@ -186,7 +186,7 @@
         lvp: qualities.lvp_colour,
         z: qualities.z_colour,
         bvp: qualities.bvp_colour,
-        other: qualities.i_colour,
+        other: qualities.other_colour,
         nsdap: qualities.nsdap_colour
     };
     
