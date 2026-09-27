@@ -272,8 +272,7 @@ style="display:inline;fill:[? if lippe_spd == 1 and lippe_action_timer <= 0: #43
          id="path72" />
     </g>
     <g
-       id="g73"
-       class="trigger-group" data-tooltip="aschaum_lippe-tooltip"
+id="schaum_lippe-hub" class="door trigger-group" data-scene="schaum_lippe_state" cursor="pointer"
 style="display:inline;fill:[? if schaum_lippe_spd == 1 and schaum_lippe_action_timer <= 0: #43C431 ?][? if schaum_lippe_spd == 1 and schaum_lippe_action_timer == 1: #DDB93C ?][? if schaum_lippe_spd == 1 and schaum_lippe_action_timer > 1: #932424 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
