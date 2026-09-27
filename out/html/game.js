@@ -153,6 +153,7 @@
     const colors = {
         kpd: '{{ Q.kpd_colour }}',
         sapd: '{{ Q.sapd_colour }}',
+        spd: '{{ Q.spd_colour }}',
         uspd: '{{ Q.uspd_colour }}',
         aspd: '{{ Q.aspd_colour }}',
         ddp: '{{ Q.ddp_colour }}',
@@ -178,6 +179,7 @@
     
     const colorMap = {
         uspd: qualities.uspd_colour,
+        spd: qualities.spd_colour,
         ddp: qualities.ddp_colour,
         kpd: qualities.kpd_colour,
         dvp: qualities.dvp_colour,
