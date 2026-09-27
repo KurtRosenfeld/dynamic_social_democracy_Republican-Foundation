@@ -268,7 +268,7 @@ if (Q.spd_party_leader_1 == "Breitscheid" && Q.belgium_relation < 20) Q.belgium_
 if (Q.spd_party_leader_2 == "Müller" && Q.ddp_relation < 30) Q.ddp_relation += 0.5;
 if (Q.spd_party_leader_2 == "Müller" && Q.dvp_relation < 25) Q.dvp_relation += 0.5;
 if (Q.spd_party_leader_3 == "Crispien") {
-Q.left_dissent -= 0.05;
+Q.left_dissent -= 0.02;
 Q.center_dissent -= 0.1;
 }
 
