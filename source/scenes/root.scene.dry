@@ -1342,6 +1342,7 @@ Q.dnf_colour = '#003755';
 Q.dvfb_colour = '#3D3D3D';
 Q.nsdap_colour = '#7A3C00';
 Q.i_colour = '#808080';
+Q.other_colour = '#707070';
 
 // Political Compass
 // 30 social (x) is communist; 30 republican (y) is anti republican
