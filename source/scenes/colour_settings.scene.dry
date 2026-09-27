@@ -60,9 +60,6 @@ go-to: jimmy
 @uspd_design
 
 
-- @disable_uspd_c_2: Disable secondary colour
-
-
 - @uspd_pink: <span style="color: #D47B9B;">**USPD**</span>
 - @uspd_lavender: <span style="color: #B790D3;">**USPD**</span>
 - @uspd_red: <span style="color: #AA0000;">**USPD**</span>
@@ -86,8 +83,6 @@ go-to: jimmy
 on-arrival: uspd_colour = "#B3133A"
 go-to: jimmy
   
-  
-
 @disable_uspd_c
 subtitle: Events can change a party's colour - this option retains the chosen colour for the entire game
 on-arrival: no_uspd_cc = 1
