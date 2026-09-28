@@ -1,0 +1,63 @@
+title: The Reparation Question
+subtitle: [+ chancellor +]'s dilemma...
+new-page: true
+tags: event
+view-if: year == 1922 and month == 11 and spd_in_government = 1 and not chancellor == "Cuno"
+max-visits: 1
+priority: -1
+
+= The Reparation Question
+
+
+About since the murder of <span style="color: [+ ddp_colour +];">**Rathenau**</span> Germany's already dangerous inflation has skyrocketed. Meanwhile tons of coal and timber are shipped to the Western Allies as reparation payments. So far the government has tried to show the impossibility of fulfilling the demands by trying to fulfill them - a heavily criticised policy by many voices from about all directions.
+
+Yet not all hope is lost, the British government has shown itself willing to lower the reparation demands seeing the initial ammount mostly as an internal propaganda win - though the French government still needs to be convinced of that approach.
+
+- @deal_questionmark
+
+@deal_questionmark
+title: Can we settle the matter?
+subtitle: We should at least arrange a plan to stabilize our currency and reduce the payments.
+
+
+Raymond Poincaré, primer-minister of France, opposes any deal that will mess with Versailles.
+
+- @menu_for_december_1922: What should we do next?
+
+@menu_for_december_1922
+  
+- @french_election_maybe: When are the next elections in France?
+- @protest_with_coal: Protest!
+- @nothing_ever_happens_guess_so: There is nothing we can do now...
+
+
+@french_election_maybe
+on-arrival: asked_for_elections = 1
+view-if: asked_for_elections == 0
+
+We expect the next legislative elections in France to be held in 1924.
+
+- @menu_for_december_1922: Damn.
+
+  
+@protest_with_coal
+subtitle: We can default on our coal and timber deliveries.
+on-arrival: ruhr_occupation_imminent = 1; france_relation -= 5; dvp_relation += 4; kpd_relation += 2*(1-dissent); inflation += 2
+
+Let's see how long those frog-eaters can keep their factories warm without our resources...
+
+
+@nothing_ever_happens_guess_so
+subtitle: We will keep up our deliveries until another deal can be arranged.
+on-arrival: dvp_relation -= 2; old_middle_ddp -= 2; new_middle_spd -= 2; rural_z -= 2; unemployed_spd -= 2; unemployed += 0.1; inflation += 1
+
+This decision might be unpopular but it is necessary, Erfüllungspolitik continues.
+
+
+
+
+
+
+
+
+  
