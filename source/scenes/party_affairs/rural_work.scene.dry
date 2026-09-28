@@ -1,0 +1,58 @@
+title: Rural work
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: rural_timer <= 0 and year >= 1924 and rural_strategy
+on-arrival: month_actions += 1; rural_timer += 14;
+card-image: img/MinRural.jpg
+
+= Rural work
+
+The rural demography has historically had a complicated relationship to the <span style="color: [+ spd_colour +];">**SPD**</span>, long timer leader <span class="tooltip-text" title="one of the first Center Marxists, the goat, the legend" style="color: #c10000;">**August Bebel**</span> tried to get the party to adopt an agricultural programme in his time and failed stating this will throw the reconcialitation back by 50 years...
+
+How do we want not to mess up this time?
+
+- @tell_about_programme: Rebuild farmers' trust in our party by pointing out our programme.
+- @educate_on_antisemtism: Combat Antisemtism by holding conventions.
+- @agitate_class: Build class anger among peasants.
+
+  
+@tell_about_programme
+subtitle: (-1 resource)
+choose-if: rural_strategy == "Reformism" and resources >= 1
+on-arrival resources -= 1; rural_trust += 0.5; rural_trust += 0.5 if (editorial_line == "reformist" and socialist_media >= 9)
+
+
+@educate_on_antisemtism
+subtitle: (-1 resource)
+choose-if: rural_strategy == "Education" and resources >= 1
+on-arrival resources -= 1; rural_antisemitism -= 1*(rural_trust*0.4)
+
+[? if rural_trust < 4: The peasants don't trust us enough to really consider our points. ?][? if rural_trust >= 4: Some peasants consider what we have to say, but we are working against centuries of predjudice. ?]
+
+@agitate_class
+subtitle: (-1 resource)
+choose-if: rural_strategy == "Class War" and resources >= 1
+on-arrival resources -= 1; peasant_conciousness += 0.5; peasant_conciousness += 0.5 if ideology == "left"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
