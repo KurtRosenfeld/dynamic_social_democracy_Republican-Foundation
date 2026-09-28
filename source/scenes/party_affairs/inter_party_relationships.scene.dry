@@ -25,7 +25,7 @@ The <span style="color: [+ spd_colour +];">**SPD**</span> cannot govern by itsel
 
 
 @neighbours
-subtitle: [? if not spd_party_leader_1 == "Breitscheid": -1 resources ?][? if spd_party_leader_1 == "Breitscheid": Free due to Rufold Breitscheid. ?]
+subtitle: [? if not spd_party_leader_1 == "Breitscheid": -1 resources ?][? if spd_party_leader_1 == "Breitscheid": Free due to Rudolf Breitscheid. ?]
 choose-if: resources >= 1 or spd_party_leader_1 == "Breitscheid"
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1 if not spd_party_leader_1 == "Breitscheid"; uspd_relation += 9*(1 - dissent); ddp_relation += 9*(1 - dissent); lvp_relation += 6*(1 - dissent); sapd_relation += 5 
@@ -33,7 +33,7 @@ on-arrival: resources -= 1 if not spd_party_leader_1 == "Breitscheid"; uspd_rela
 We have improved our relations with the parties that were historically closest to us.
 
 @uspd
-subtitle: [? if not spd_party_leader_1 == "Breitscheid": -1 resources ?][? if spd_party_leader_1 == "Breitscheid": Free due to Rufold Breitscheid. ?]
+subtitle: [? if not spd_party_leader_1 == "Breitscheid": -1 resources ?][? if spd_party_leader_1 == "Breitscheid": Free due to Rudolf Breitscheid. ?]
 choose-if: resources >= 1 or spd_party_leader_1 == "Breitscheid"
 view-if: not uspd_leader == "gone" or uspd_joined == 3
 unavailable-subtitle: Not enough resources.
@@ -42,7 +42,7 @@ on-arrival: resources -= 1 if not spd_party_leader_1 == "Breitscheid"; uspd_rela
 We have improved our relations with the <span style="color: [+ uspd_colour +];">USPD</span>.
 
 @left
-subtitle: [? if not spd_party_leader_1 == "Breitscheid": -1 resources ?][? if spd_party_leader_1 == "Breitscheid": Free due to Rufold Breitscheid. ?]
+subtitle: [? if not spd_party_leader_1 == "Breitscheid": -1 resources ?][? if spd_party_leader_1 == "Breitscheid": Free due to Rudolf Breitscheid. ?]
 choose-if: resources >= 1 or spd_party_leader_1 == "Breitscheid"
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1 if not spd_party_leader_1 == "Breitscheid"
