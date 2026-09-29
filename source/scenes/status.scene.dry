@@ -286,6 +286,8 @@ Q.rb_strength_2 = Q.rb_strength.toFixed(1);
 Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
 Q.sh_strength_2 = Q.sh_strength.toFixed(1);
 Q.sa_strength_2 = Q.sa_strength.toFixed(1);
+Q.fk_strength_2 = Q.fk_strength.toFixed(1);
+Q.brw_strength_2 = Q.brw_strength.toFixed(1);
 !}
 
 = Paramilitaries
@@ -310,11 +312,11 @@ Q.sa_strength_2 = Q.sa_strength.toFixed(1);
 
 <span style="color: [+ nsdap_colour +];">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 
-<span class="tooltip-text" title="The Freikorps used to rule the streets of Germany but most have been turned to other organisations." style="color: #B6BEC1;">**Freikorps**</span> Strength: [+ fk_strength +] thousand
+<span class="tooltip-text" title="The Freikorps used to rule the streets of Germany but most have been turned to other organisations." style="color: #B6BEC1;">**Freikorps**</span> Strength: [+ fk_strength_2 +] thousand
 
 <span style="color: #B6BEC1;">**Freikorps**</span> Militarization: [+ fk_militancy : militancy +]
 
-<span class="tooltip-text" title="The Black Reichswehr is a government project to avoid military sanctions - yet they aren't loyal in any capacity." style="color: #303337;">**Black Reichswher**</span> Strength: [+ brw_strength +] thousand
+<span class="tooltip-text" title="The Black Reichswehr is a government project to avoid military sanctions - yet they aren't loyal in any capacity." style="color: #303337;">**Black Reichswher**</span> Strength: [+ brw_strength_2 +] thousand
 
 <span style="color: #303337;">**Black Reichswehr**</span> Militarization: [+ brw_militancy : militancy +]
 
