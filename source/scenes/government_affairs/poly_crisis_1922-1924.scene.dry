@@ -1,0 +1,87 @@
+title: Dealing with the crisis
+new-page: true
+is-card: true
+tags: government_affairs
+view-if: deep_crisis_timer <= 0 and year <= 1924 and imma_have_to_finish_this_someday == 9
+on-arrival: month_actions += 1; deep_crisis_timer += 2;
+card-image: img/MinIDK.jpg
+
+
+= Dealing with the crisis
+
+- @improve_relations: Improve relations with the Western Allies
+- @beg_ussr: Ask the Soviets for more supplies
+- @draw_currency_plan: Work on a plan to stabilize the currency
+- @bruning_impressed: Enact austerity measures
+
+
+@improve_relations
+subtitle: We need to show our good will to the West if we want to reduce the reparation burden.
+
+
+
+@beg_ussr
+subtitle: We are trading military expertise against raw materials.
+choose_if: no_soviet_famine == 1
+unavailable-subtitle: They might be experiencing a famine at the moment...
+
+
+@draw_currency_plan
+subtitle: The currency comes first, we can't deal with anything before inflation is dealt with.
+
+
+
+@bruning_impressed
+subtile: This would be suicide.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
