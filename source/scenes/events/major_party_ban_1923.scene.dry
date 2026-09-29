@@ -1,0 +1,42 @@
+title: Major party ban
+subtitle: Seeckt bans the <span style="color: [+ nsdap_colour +];">**NSDAP**</span>, <span style="color: #3D3D3D;">**DVFP**</span> and <span style="color: [+ kpd_colour +];">**KPD**</span>.
+new-page: true
+max-visits: 1
+view-if: month >= 11 and bavaria_coup == 3
+on-arrival: catholic_nsdap -= 3; workers_nsdap -= 2; rural_nsdap -= 2; new_middle_dvfp -= 2; unemployed_dvfp -= 3; unemployed_nsdap -= 2; workers_kpd -= 3; unemployed_kpd -= 2; workers_dnvp += 2; unemployed_dnvp += 2; new_middle_dnvp += 2; old_middle_dnvp += 2
+priority: -1
+tags: event
+face-image: img/portraits/seeckt.jpg
+
+= Major party ban
+
+After the <span style="color: [+ nsdap_colour +];">**NSDAP**</span>-lead coup attempt in <span style="color: #00CCFF;">Bavaria</span>, the party and their ally <span style="color: #3D3D3D;">**DVFP**</span> are banned. Both as a reaction to the uprising in Hamburg and in an effort to appease conservatives the <span style="color: [+ kpd_colour +];">**KPD**</span> will be banned as well.
+
+The <span style="color: [+ dnvp_colour +];">**DNVP**</span> profits a lot of being the strongest anti-establishement party now.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
