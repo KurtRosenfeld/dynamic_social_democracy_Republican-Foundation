@@ -304,7 +304,7 @@ Q.brw_strength_2 = Q.brw_strength.toFixed(1);
 
 [? if rfb_founded == 1: <span style="color: [+ kpd_colour +];">**RFB**</span> Militarization: [+ rfb_militancy : militancy +] ?]
 
-<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP." style="color: [+ dnvp_colour +;">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
+<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP." style="color: [+ dnvp_colour +];">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
 
 <span style="color: [+ dnvp_colour +];">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 
