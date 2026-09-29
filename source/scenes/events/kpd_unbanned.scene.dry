@@ -1,0 +1,37 @@
+title: <span style="color: [+ kpd_colour +];">**KPD**</span> unbanned!
+subtitle: Both the <span style="color: [+ kpd_colour +];">**KPD**</span> and the <span style="color: #3D3D3D;">**DVFP**</span> will be unbanned.
+new-page: true
+max-visits: 1
+view-if: month == 3 and bavaria_coup == 3
+on-arrival: rural_nsdap -= 1; new_middle_dvfp += 3; unemployed_dvfp += 1; workers_kpd += 2; unemployed_kpd += 2; workers_dnvp -= 1; unemployed_dnvp -= 2; new_middle_nsdap -= 1; workers_dvfp += 2
+priority: 4
+tags: event
+
+= <span style="color: [+ kpd_colour +];">**KPD**</span> unbanned!
+
+
+While both parties were banned alongside the <span style="color: [+ nsdap_colour +];">**NSDAP**</span> but they appear less controversial to the government. There might be an effort to draw voters away from clandestine <span style="color: [+ nsdap_colour +];">**NSDAP**</span> organisations and drive a wedge between the unforeseen working-middle-class coalition - since the <span style="color: [+ kpd_colour +];">**KPD**</span> is largely proletarian and the <span style="color: #3D3D3D;">**DVFP**</span> fairly bourgeois...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
