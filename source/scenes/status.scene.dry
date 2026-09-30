@@ -725,7 +725,7 @@ Postal Office:
 
 Foreign Office: 
 
-<span id="nat-jud" style="cursor:pointer">⇊ National Judiciary: </span> [+ judiciary_reform : judiciary +]
+<span id="nat-jud" style="cursor:pointer">⇊ National Judiciary: </span> [+ judicial_reform : judiciary +]
 
 <div id="jud-breakdown" style="display:none">
 
