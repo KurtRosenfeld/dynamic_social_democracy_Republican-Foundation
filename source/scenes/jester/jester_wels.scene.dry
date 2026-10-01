@@ -2,6 +2,7 @@ title: Otto Wels
 is-pinned-card: true
 tags: jester
 card-image: img/portraits/WelsOtto.jpg
+face-image: img/portraits/WelsOtto.jpg
 view-if: spd_party_leader_1 == "Wels"
 new-page: true
 
@@ -11,9 +12,9 @@ new-page: true
 
 Reformist dissent reduction
 
-[? if rb_strength: <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> member increase ?]
+[? if rb_exists == 1: <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> member increase ?]
 
-
+Free campaign among new middle class
 
 
   
