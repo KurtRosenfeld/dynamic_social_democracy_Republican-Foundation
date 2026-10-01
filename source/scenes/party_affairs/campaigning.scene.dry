@@ -30,10 +30,10 @@ on-arrival: workers_spd += 6*(1-dissent); workers_spd -= 1 if unemployed >= 20; 
 We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract workers. ?]
 
 @new_middle
-subtitle: -1 resources
-choose-if: resources >= 1
+subtitle: [? if not spd_party_leader_1 == "Wels": -1 resources ?][? if spd_party_leader_1 == "Wels": Free due to Otto Wels. ?]
+choose-if: resources >= 1 or spd_party_leader_1 == "Wels"
 unavailable-subtitle: Not enough resources.
-on-arrival: new_middle_spd += 6*(1-dissent); new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1;
+on-arrival: new_middle_spd += 6*(1-dissent); new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1  if not spd_party_leader_1 == "Wels"; peoples_party_support += 1;
 
 We have increased our campaigning among the new middle class. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards <span style="color: #c00000;">socialism</span> among this group makes our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
 
