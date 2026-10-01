@@ -35,9 +35,13 @@ Germany is divided into a number of states, each of which have their own governm
 @weimar_timeline
 go-to: menu
 
-= Timeline of the SPD and the Republic (until 1928)
+= Timeline of the SPD and the Republic (until 1922)
 
 **1875**: The SPD is formed as a merger of the General German Workers' Association, founded by Ferdinand Lassalle, and the Social Democratic Workers' Party of Germany, led by Wilhelm Liebknecht and August Bebel. Eventually, the SPD grows to become the largest party in the German Empire.
+
+**1912**: The last election in the Kaiserreich (German Empire) saw the SPD emerge as the strongest party in the Reichstag. A portion of the social-liberal Democratic Union joins the SPD after their poor performance.
+
+**1913**: August Bebel dies and Friedrich Ebert replaces him as party chairman.
 
 **1914**: The Great War begins. The SPD votes in favor of war credits, with substantial internal dissent. This begins a policy of *Burgfriedenspolitik*, a general peace between all political parties and trade unions.
 
@@ -45,11 +49,11 @@ go-to: menu
 
 **1918**: Following defeats in the war and uprisings by soldiers, sailors, and workers, SPD leader Philip Scheidemann proclaims the German Republic, and Kaiser Wilhelm II abdicates from his throne. An armistice is declared, ending the Great War. Conflict between center-left social democrats and far-left radicals erupts in the streets of Berlin and elsewhere.
 
-**1919**: The Spartacist Uprising, in which communist workers attempt to seize control of government, is launched. The uprising is defeated by the Social Democratic government, now led by President Friedrich Ebert and Chancellor Philipp Scheidemann, with the support of the far-right Freikorps militas. The two key leaders of the uprising, Rosa Luxemburg and Karl Liebknecht, are murdered by the Freikorps. The Treaty of Versailles is signed under great protest from all political factions in Germany, officially ending the Great War. The Weimar Constitution is signed. The first "Weimar Coalition" government is formed, led by the SPD, DDP, and Center (Z) parties.
+**1919**: The Spartacist Uprising (January Uprising), in which communist workers attempt to seize control of government, is launched. The uprising is defeated by the Social Democratic government, now led by President Friedrich Ebert and Chancellor Philipp Scheidemann, with the support of the far-right Freikorps militas. The two key leaders of the uprising, Rosa Luxemburg and Karl Liebknecht, are murdered by the Freikorps. The Treaty of Versailles is signed under great protest from all political factions in Germany, officially ending the Great War. The Weimar Constitution is signed. The first "Weimar Coalition" government is formed, led by the SPD, DDP, and Center (Z) parties.
 
 **1920**: The Kapp Putsch, an attempt by reactionary actors within the military to take power, is launched, and is defeated by the workers with a general strike. This is followed by left-wing uprisings in the Ruhr, which are defeated by the Reichswehr and Freikorps. The Weimar Coalition is defeated in the elections, with the right and far left increasing in vote share. Elected governments in this period are very unstable, often only lasting a matter of months. There is a split in the USPD, with the majority faction joining with the KPD and the Soviet Union's Communist International (Comintern) alliance.
 
-**1921**: Communist uprisings in Saxony and Hamburg are defeated. Matthias Erzberger, the Center Party leader who signed the Versailles Treaty, is assassinated.
+**1921**: Communist uprisings in Saxony and Hamburg are defeated. Matthias Erzberger, the Center Party leader who signed the Versailles Treaty, is assassinated. The Wirt cabinet sees a return of the SPD to government.
 
 @curr_gov
 go-to: cabinet if spd_in_government; menu if not spd_in_government
@@ -592,11 +596,10 @@ go-to: menu
 
 **Paramilitary groups:**
 
-**<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>** <span style="color: #000000;"><b>Schwarz</b></span>-<span style="color: #DD0000;"><b>Rot</b></span>-<span style="color: #FFCC00;"><b>Gold</b></span>: The <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> is an organization affiliated with all of the democratic parties - the <span style="color: [+ spd_colour +];">**SPD**</span>, <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span>, and [? if lvp_formed: the former ?]<span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>, but primarily with the <span style="color: [+ spd_colour +];">**SPD**</span>. Historically, this has been an unarmed organization.
-
+[? if rb_exists: **<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>**: We have founded the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
 Strength: [+ rb_strength +] thousand
 
-Militarization: [+ rb_militancy : militancy +]
+Militarization: [+ rb_militancy : militancy +] ?]
 
 **Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the <span style="color: [+ kpd_colour +];">**KPD**</span>.
 
@@ -615,6 +618,18 @@ Militarization: [+ sh_militancy : militancy +]
 Strength: [+ sa_strength +] thousand
 
 Militarization: [+ sa_militancy : militancy +]
+
+[? if fk_strength > 0: **Freikorps**: The Freikorps have been established when the Reichswehr largely disbanded. Most members have barely ever known anything but the Great War (often being conscripted before having their first proper job).
+
+Strength: [+ fk_strength +] thousand
+
+Militarization: [+ fk_militancy : militancy +] ?]
+
+[? if brw_strength: **Black Reichswehr**: The Black Reichswehr was established to re-militarize Germany outside of the Treaty of Versailles. Yet still the government fails to control these troops.
+
+Strength: [+ brw_strength +] thousand
+
+Militarization: [+ brw_militancy : militancy +] ?]
 
 **Official military/paramilitary groups:**
 
