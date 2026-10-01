@@ -314,13 +314,13 @@ Q.brw_strength_2 = Q.brw_strength.toFixed(1);
 
 <span style="color: [+ nsdap_colour +];">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 
-<span class="tooltip-text" title="The Freikorps used to rule the streets of Germany but most have been turned to other organisations." style="color: #B6BEC1;">**Freikorps**</span> Strength: [+ fk_strength_2 +] thousand
+[? if fk_strength_2 > 0: <span class="tooltip-text" title="The Freikorps used to rule the streets of Germany but most have been turned to other organisations." style="color: #B6BEC1;">**Freikorps**</span> Strength: [+ fk_strength_2 +] thousand ?]
 
-<span style="color: #B6BEC1;">**Freikorps**</span> Militarization: [+ fk_militancy : militancy +]
+[? if fk_strength_2 > 0: <span style="color: #B6BEC1;">**Freikorps**</span> Militarization: [+ fk_militancy : militancy +] ?]
 
-<span class="tooltip-text" title="The Black Reichswehr is a government project to avoid military sanctions - yet they aren't loyal in any capacity." style="color: #303337;">**Black Reichswher**</span> Strength: [+ brw_strength_2 +] thousand
+[? if brw_strength_2 > 0: <span class="tooltip-text" title="The Black Reichswehr is a government project to avoid military sanctions - yet they aren't loyal in any capacity." style="color: #303337;">**Black Reichswher**</span> Strength: [+ brw_strength_2 +] thousand ?]
 
-<span style="color: #303337;">**Black Reichswehr**</span> Militarization: [+ brw_militancy : militancy +]
+[? if brw_strength_2 > 0: <span style="color: #303337;">**Black Reichswehr**</span> Militarization: [+ brw_militancy : militancy +] ?]
 
 [? if year >= 1930 and not streetfighting_joever: <h1>Distribution of Power</h1> ?]
 
