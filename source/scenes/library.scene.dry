@@ -625,7 +625,7 @@ Strength: [+ fk_strength +] thousand
 
 Militarization: [+ fk_militancy : militancy +] ?]
 
-[? if brw_strength: **Black Reichswehr**: The Black Reichswehr was established to re-militarize Germany outside of the Treaty of Versailles. Yet still the government fails to control these troops.
+[? if brw_strength > 0: **Black Reichswehr**: The Black Reichswehr was established to re-militarize Germany outside of the Treaty of Versailles. Yet still the government fails to control these troops.
 
 Strength: [+ brw_strength +] thousand
 
