@@ -596,10 +596,11 @@ go-to: menu
 
 **Paramilitary groups:**
 
-[? if rb_exists: <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>: We have founded the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
-Strength: [+ rb_strength +] thousand
+[? if rb_exists: <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>: We have founded the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>. ?]
 
-Militarization: [+ rb_militancy : militancy +] ?]
+[? if rb_exists: <span style="color: Strength: [+ rb_strength +] thousand ?]
+
+[? if rb_exists: <span style="color: Militarization: [+ rb_militancy : militancy +] ?]
 
 **Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the <span style="color: [+ kpd_colour +];">**KPD**</span>.
 
@@ -619,17 +620,17 @@ Strength: [+ sa_strength +] thousand
 
 Militarization: [+ sa_militancy : militancy +]
 
-[? if fk_strength > 0: **Freikorps**: The Freikorps have been established when the Reichswehr largely disbanded. Most members have barely ever known anything but the Great War (often being conscripted before having their first proper job).
+[? if fk_strength > 0: **Freikorps**: The Freikorps have been established when the Reichswehr largely disbanded. Most members have barely ever known anything but the Great War (often being conscripted before having their first proper job). ?]
 
-Strength: [+ fk_strength +] thousand
+[? if fk_strength > 0: Strength: [+ fk_strength +] thousand ?]
 
-Militarization: [+ fk_militancy : militancy +] ?]
+[? if fk_strength > 0: Militarization: [+ fk_militancy : militancy +] ?]
 
-[? if brw_strength > 0: **Black Reichswehr**: The Black Reichswehr was established to re-militarize Germany outside of the Treaty of Versailles. Yet still the government fails to control these troops.
+[? if brw_strength > 0: **Black Reichswehr**: The Black Reichswehr was established to re-militarize Germany outside of the Treaty of Versailles. Yet still the government fails to control these troops. ?]
 
-Strength: [+ brw_strength +] thousand
+[? if brw_strength > 0: Strength: [+ brw_strength +] thousand ?]
 
-Militarization: [+ brw_militancy : militancy +] ?]
+[? if brw_strength > 0: Militarization: [+ brw_militancy : militancy +] ?]
 
 **Official military/paramilitary groups:**
 
