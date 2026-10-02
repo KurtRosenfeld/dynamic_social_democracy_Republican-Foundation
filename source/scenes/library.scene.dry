@@ -607,7 +607,7 @@ Strength: [+ rfb_strength +] thousand
 
 Militarization: [+ rfb_militancy : militancy +]
 
-**Der Stahlhelm**: A <span style="color: #3E88B3;">right-wing nationalist</span> organization of primarily Great War veterans, descended from the *Freikorps* that emerged after the war. [? if not cvp_formed: Associated with the <span style="color: [+ dnvp_colour +];">**DNVP**</span>.?][? if cvp_formed: Associated with the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> and <span style="color: #003755;">**DNF**</span>. ?]
+**Der Stahlhelm**: A <span style="color: #3E88B3;">right-wing nationalist</span> organization of primarily Great War veterans, descended from the *Freikorps* that emerged after the war. Historically asociated with the <span style="color: [+ dnvp_colour +];">**DNVP**</span>.
 
 Strength: [+ sh_strength +] thousand
 
