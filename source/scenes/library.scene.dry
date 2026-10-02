@@ -596,7 +596,7 @@ go-to: menu
 
 **Paramilitary groups:**
 
-[? if rb_exists: **<span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>**: We have founded the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
+[? if rb_exists: <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>: We have founded the <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>.
 Strength: [+ rb_strength +] thousand
 
 Militarization: [+ rb_militancy : militancy +] ?]
