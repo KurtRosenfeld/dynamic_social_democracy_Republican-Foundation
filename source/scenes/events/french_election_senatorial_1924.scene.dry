@@ -1,6 +1,10 @@
 title: French Senatorials 1924
 new-page: true
-is-special: true
+view-if: year == 1924 and month == 1
+new-page: true
+tags: event
+priority: 5
+max-visits: 1
 
 = French Senatorials 1924
 
@@ -10,7 +14,7 @@ The Third French Republic has a system with two chambers that elect the presiden
 - @result_button: Let's see what it will show...
 
 @result_button
-go-to: left_sweep if ruhr_occupied == 1 else go-to: left_victory
+go-to: left_sweep if ruhr_occupied == 1; left_victory if ruhr_occupied == 0
 
 
 
@@ -29,10 +33,10 @@ Q.senat_droit = 34;
 Q.senat_cons = 14;
 
 Q.senat_socs_r = 4.4;
-Q.senat_rads = 152;
-Q.senat_reps = 101;
-Q.senat_droit = 34;
-Q.senat_cons = 14;
+Q.senat_rads_r = 48.3;
+Q.senat_reps_r = 32.1;
+Q.senat_droit_r = 10.8;
+Q.senat_cons_r = 4.4;
              
   setTimeout(function() {
     var el = document.getElementById('france_senat');
@@ -68,7 +72,11 @@ Q.senat_reps = 79;
 Q.senat_droit = 64;
 Q.senat_cons = 15;
 
-
+Q.senat_socs_r = 4.4;
+Q.senat_rads_r = 45.4;
+Q.senat_reps_r = 25.1
+Q.senat_droit_r = 20.3;
+Q.senat_cons_r = 4.8;
              
   setTimeout(function() {
     var el = document.getElementById('france_senat');
