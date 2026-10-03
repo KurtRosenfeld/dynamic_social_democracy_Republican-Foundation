@@ -10,7 +10,7 @@ The Third French Republic has a system with two chambers that elect the presiden
 - @result_button: Let's see what it will show...
 
 @result_button
-go-to: left_sweep if ruhr_occupied == 1 else left_victory
+go-to: left_sweep if ruhr_occupied == 1 else go-to: left_victory
 
 
 
@@ -28,7 +28,11 @@ Q.senat_reps = 101;
 Q.senat_droit = 34;
 Q.senat_cons = 14;
 
-
+Q.senat_socs_r = 4.4;
+Q.senat_rads = 152;
+Q.senat_reps = 101;
+Q.senat_droit = 34;
+Q.senat_cons = 14;
              
   setTimeout(function() {
     var el = document.getElementById('france_senat');
