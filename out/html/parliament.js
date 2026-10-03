@@ -1611,11 +1611,80 @@ anhalt: {
       condition: function(Q) { return Q.senat_droit_r; }
     },
     {
-      id: 'far_right',
+      id: 'fr2',
       legend: 'Cons',
       name: 'Cons',
       qualityKey: 'senat_cons_r',
       condition: function(Q) { return Q.senat_cons_r; }
+    }
+  ]
+},
+
+        france_assembly: {
+  totalSeatsKey: 'french_assembly_seats',
+  conditionalParties: [
+    {
+      id: 'pcf',
+      legend: 'PCF',
+      name: 'PCF',
+      qualityKey: 'assembly_r_pcf',
+      condition: function(Q) { return Q.assembly_r_pcf; }
+    },
+    {
+      id: 'sfio',
+      legend: 'SFIO',
+      name: 'SFIO',
+      qualityKey: 'assembly_r_sfio',
+      condition: function(Q) { return Q.assembly_r_sfio; }
+    },
+    {
+      id: 'prs',
+      legend: 'PRS',
+      name: 'PRS',
+      qualityKey: 'assembly_r_prs',
+      condition: function(Q) { return Q.assembly_r_prs; }
+    },
+    {
+      id: 'rad',
+      legend: 'PRRRS',
+      name: 'PRRRS',
+      qualityKey: 'assembly_r_prrrs',
+      condition: function(Q) { return Q.assembly_r_prrrs; }
+    },
+    {
+      id: 'rad2',
+      legend: 'IndepRads',
+      name: 'IndepRads',
+      qualityKey: 'assembly_r_i_rad',
+      condition: function(Q) { return Q.assembly_r_i_rad; }
+    },
+    {
+      id: 'ad',
+      legend: 'AD',
+      name: 'AD',
+      qualityKey: 'assembly_r_ad',
+      condition: function(Q) { return Q.assembly_r_ad; }
+    },
+     {
+      id: 'pdp',
+      legend: 'PDP',
+      name: 'PDP',
+      qualityKey: 'assembly_r_pdp',
+      condition: function(Q) { return Q.assembly_r_pdp; }
+    },
+    {
+      id: 'fr',
+      legend: 'FR',
+      name: 'FR',
+      qualityKey: 'assembly_r_fr',
+      condition: function(Q) { return Q.assembly_r_fr; }
+    },
+    {
+      id: 'fr2',
+      legend: 'Cons',
+      name: 'Cons',
+      qualityKey: 'assembly_r_cons',
+      condition: function(Q) { return Q.assembly_r_cons; }
     }
   ]
 },
