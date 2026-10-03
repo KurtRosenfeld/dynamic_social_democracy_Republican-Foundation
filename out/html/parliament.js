@@ -1580,7 +1580,7 @@ anhalt: {
 
 
    france_senat: {
-  totalSeatsKey: '315',
+  totalSeatsKey: 'french_senat_seats',
   conditionalParties: [
     {
       id: 'sfio',
@@ -1607,15 +1607,15 @@ anhalt: {
       id: 'fr',
       legend: 'RR',
       name: 'RR',
-      qualityKey: 'senat_cons_r ',
-      condition: function(Q) { return Q.senat_cons_r ; }
+      qualityKey: 'senat_droit_r',
+      condition: function(Q) { return Q.senat_droit_r; }
     },
     {
       id: 'far_right',
       legend: 'Cons',
       name: 'Cons',
-      qualityKey: 'lvp_r_anhalt',
-      condition: function(Q) { return Q.lvp_r_anhalt; }
+      qualityKey: 'senat_cons_r',
+      condition: function(Q) { return Q.senat_cons_r; }
     }
   ]
 },
