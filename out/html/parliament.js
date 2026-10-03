@@ -1579,6 +1579,47 @@ anhalt: {
 },
 
 
+   france_senat: {
+  totalSeatsKey: '315',
+  conditionalParties: [
+    {
+      id: 'sfio',
+      legend: 'Social',
+      name: 'Social',
+      qualityKey: 'senat_socs_r',
+      condition: function(Q) { return Q.senat_socs_r; }
+    },
+    {
+      id: 'prs',
+      legend: 'Rad',
+      name: 'Rad',
+      qualityKey: 'senat_rads_r',
+      condition: function(Q) { return Q.senat_rads_r; }
+    },
+    {
+      id: 'ad',
+      legend: 'Reps',
+      name: 'Reps',
+      qualityKey: 'senat_reps_r',
+      condition: function(Q) { return Q.senat_reps_r; }
+    },
+    {
+      id: 'fr',
+      legend: 'RR',
+      name: 'RR',
+      qualityKey: 'senat_cons_r ',
+      condition: function(Q) { return Q.senat_cons_r ; }
+    },
+    {
+      id: 'far_right',
+      legend: 'Cons',
+      name: 'Cons',
+      qualityKey: 'lvp_r_anhalt',
+      condition: function(Q) { return Q.lvp_r_anhalt; }
+    }
+  ]
+},
+
       
       waldeck: {
         totalSeatsKey: 'waldeck_seats',
