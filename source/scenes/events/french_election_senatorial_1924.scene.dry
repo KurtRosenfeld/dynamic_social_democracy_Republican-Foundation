@@ -1,7 +1,6 @@
 title: French Senatorials 1924
 new-page: true
 view-if: year == 1924 and month == 1
-new-page: true
 tags: event
 priority: 5
 max-visits: 1
