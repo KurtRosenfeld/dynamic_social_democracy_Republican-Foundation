@@ -628,6 +628,17 @@ Q.senat_rads_r = 41.6;
 Q.senat_reps_r = 20.6;
 Q.senat_droit_r = 22.5;
 Q.senat_cons_r = 8.9;
+Q.french_assembly_seats = 613;
+Q.assembly_r_pcf = 0;
+Q.assembly_r_sfio = 14.8;
+Q.assembly_r_prs = 4.3;
+Q.assembly_r_prrrs = 14.3;
+Q.assembly_r_i_rad = 15.5;
+Q.assembly_r_ad = 17.8;
+Q.assembly_r_pdp = 0;
+Q.assembly_r_fr = 30.4;
+Q.assembly_r_cons = 4.8;
+Q.french_hos = "Millerand"; Q.french_hos_party = "I";
 
 Q.spd_votes = 27.9;
 Q.uspd_votes = 0;
