@@ -476,24 +476,26 @@ window.initTooltips = function() {
   
   // Render parliament chart inside tooltip
 function renderTooltipChart(tooltip) {
-  var chartContainer = tooltip.querySelector('.parliament-chart');
-  if (!chartContainer) return;
+  var chartContainers = tooltip.querySelectorAll('.parliament-chart');
+  if (!chartContainers.length) return;
   
-  var stateId = chartContainer.getAttribute('data-state');
-  if (!stateId) return;
-  
-  // Check if already rendered with data for this state
-  if (chartContainer.getAttribute('data-rendered') === stateId) return;
-  chartContainer.setAttribute('data-rendered', stateId);
-  
-  // Clear completely before rendering
-  while (chartContainer.firstChild) {
-    chartContainer.removeChild(chartContainer.firstChild);
-  }
-  
-  if (window.ParliamentData) {
-    window.ParliamentData.renderParliament(stateId, chartContainer);
-  }
+  chartContainers.forEach(function(chartContainer) {
+    var stateId = chartContainer.getAttribute('data-state');
+    if (!stateId) return;
+    
+
+    if (chartContainer.getAttribute('data-rendered') === stateId) return;
+    chartContainer.setAttribute('data-rendered', stateId);
+    
+
+    while (chartContainer.firstChild) {
+      chartContainer.removeChild(chartContainer.firstChild);
+    }
+    
+    if (window.ParliamentData) {
+      window.ParliamentData.renderParliament(stateId, chartContainer);
+    }
+  });
 }
   
   document.body.addEventListener('mouseover', function(e) {
