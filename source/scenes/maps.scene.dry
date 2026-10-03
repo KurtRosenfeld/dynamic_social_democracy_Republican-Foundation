@@ -3461,7 +3461,7 @@ class="trigger-group" data-tooltip="netherlands-tooltip"
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
 <p>National Assembly:</p>
 <div class="parliament-chart" data-state="france_assembly" style="width: 340px; height: 170px;"></div>
-<p>Senat:</p>
+<p>Senate:</p>
 <div class="parliament-chart" data-state="france_senat" style="width: 340px; height: 170px;"></div>
     <p>Population: ~37.900.000</p>
     <p>Head of State: [+ french_hos +] ([+ french_hos_party +])</p>
