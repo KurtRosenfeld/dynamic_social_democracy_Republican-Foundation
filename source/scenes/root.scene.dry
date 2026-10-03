@@ -623,11 +623,11 @@ Q.dnvp_r_schaumburg_lippe = 13;
 
 // France
 Q.french_senat_seats = 215;
-Q.senat_socs_r 4.4;
-Q.senat_rads_r 41.6;
-Q.senat_reps_r 20.6;
-Q.senat_droit_r 22.5;
-Q.senat_cons_r 8.9;
+Q.senat_socs_r = 4.4;
+Q.senat_rads_r = 41.6;
+Q.senat_reps_r = 20.6;
+Q.senat_droit_r = 22.5;
+Q.senat_cons_r = 8.9;
 
 Q.spd_votes = 27.9;
 Q.uspd_votes = 0;
