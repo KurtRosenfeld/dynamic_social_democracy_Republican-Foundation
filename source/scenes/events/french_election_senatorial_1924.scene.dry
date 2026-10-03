@@ -1,0 +1,88 @@
+title: French Senatorials 1924
+new-page: true
+is-special: true
+
+= French Senatorials 1924
+
+The Third French Republic has a system with two chambers that elect the president.
+
+
+- @result_button: Let's see what it will show...
+
+@result_button
+go-to: left_sweep if ruhr_occupied == 1 else left_victory
+
+
+
+
+
+
+
+
+
+@left_sweep
+on-arrival: {!
+Q.senat_socs = 14;
+Q.senat_rads = 152;
+Q.senat_reps = 101;
+Q.senat_droit = 34;
+Q.senat_cons = 14;
+
+
+             
+  setTimeout(function() {
+    var el = document.getElementById('france_senat');
+    if (!el || typeof d3 === 'undefined' || !window.ParliamentData) return;
+    el.removeAttribute('data-parliament');
+    el.innerHTML = '';
+    window.ParliamentData.renderParliament('france_senat', el);
+  }, 0);
+!}
+  
+<div id="france_senat" style="width:500px; height:250px;"></div>
+
+
+
+
+{!<tr><td><div class="box" style='background-color:#ff0000; outline: 2px; outline-style: solid;'> </div> !} Socialists: {!</td><td>!}  14 seats {!</td><td>!} <img src="img/steady.png"> 0 {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#FF6699'> </div> !} Radicals: {!</td><td>!} 152 seats {!</td><td>!} <img src="img/arrowup.png"> 21 {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#FFBF00'> </div> !} Republicans: {!</td><td>!} 101 seats {!</td><td>!} <img src="img/arrowup.png"> 36 {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#005ACA'> </div> !} Right Republicans: {!</td><td>!} 34 seats {!</td><td>!} <img src="img/arrowdown.png"> 51 {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#ADC1FD'> </div> !} Conservatives: {!</td><td>!}  14 seats {!</td><td>!} <img src="img/arrowdown.png"> 14 {!</td></tr>!}
+
+  
+
+@left_victory
+on-arrival: {!
+Q.senat_socs = 14;
+Q.senat_rads = 143;
+Q.senat_reps = 79;
+Q.senat_droit = 64;
+Q.senat_cons = 15;
+
+
+             
+  setTimeout(function() {
+    var el = document.getElementById('france_senat');
+    if (!el || typeof d3 === 'undefined' || !window.ParliamentData) return;
+    el.removeAttribute('data-parliament');
+    el.innerHTML = '';
+    window.ParliamentData.renderParliament('france_senat', el);
+  }, 0);
+!}
+  
+<div id="france_senat" style="width:500px; height:250px;"></div>
+
+{!<tr><td><div class="box" style='background-color:#ff0000; outline: 2px; outline-style: solid;'> </div> !} Socialists: {!</td><td>!}  14 seats {!</td><td>!} <img src="img/steady.png"> 0 {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#FF6699'> </div> !} Radicals: {!</td><td>!} 143 seats {!</td><td>!} <img src="img/arrowup.png"> 12 {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#FFBF00'> </div> !} Republicans: {!</td><td>!} 79 seats {!</td><td>!} <img src="img/arrowup.png"> 14 {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#005ACA'> </div> !} Right Republicans: {!</td><td>!} 64 seats {!</td><td>!} <img src="img/arrowdown.png"> 21 {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#ADC1FD'> </div> !} Conservatives: {!</td><td>!}  15 seats {!</td><td>!} <img src="img/arrowdown.png"> 13 {!</td></tr>!}
