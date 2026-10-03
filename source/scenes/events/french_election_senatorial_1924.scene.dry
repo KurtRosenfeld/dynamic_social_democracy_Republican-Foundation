@@ -73,7 +73,7 @@ Q.senat_cons = 15;
 
 Q.senat_socs_r = 4.4;
 Q.senat_rads_r = 45.4;
-Q.senat_reps_r = 25.1
+Q.senat_reps_r = 25.1;
 Q.senat_droit_r = 20.3;
 Q.senat_cons_r = 4.8;
              
