@@ -40,15 +40,15 @@ Q.old_prs_assembly_vote = 5.2;
 Q.old_pdp_assembly_vote = 0.0;
 Q.old_cons_assembly_vote = 6.1;
 
-Q.old_assembly_r_sfio = 14.5;
-Q.old_assembly_r_prrrs = 14.0;
-Q.old_assembly_r_i_rad = 15.2;
-Q.old_assembly_r_ad = 17.5;
-Q.old_assembly_r_fr = 29.9;
-Q.old_assembly_r_pcf = 0;
-Q.old_assembly_r_prs = 4.2;
-Q.old_assembly_r_pdp = 0.0;
-Q.old_assembly_r_cons = 4.7;
+Q.old_sfio_assembly_r = 14.5;
+Q.old_prrrs_assembly_r = 14.0;
+Q.old_i_rad_assembly_r = 15.2;
+Q.old_ad_assembly_r = 17.5;
+Q.old_fr_assembly_r = 29.9;
+Q.old_pcf_assembly_r = 0;
+Q.old_prs_assembly_r = 4.2;
+Q.old_pdp_assembly_r = 0.0;
+Q.old_cons_assembly_r = 4.7;
 
 var france_adjustment_factors = {
     sfio: 1.0,
