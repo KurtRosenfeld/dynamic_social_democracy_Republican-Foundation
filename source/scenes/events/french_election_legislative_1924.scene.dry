@@ -52,13 +52,14 @@ Q.old_assembly_r_cons = 4.7;
 
 var france_adjustment_factors = {
     sfio: 1.0,
-    rad: 1.0,
+    i_rad: 1.0,
+    prrrs: 1.0,
     ad: 1.0,
     fr: 1.0,
     pcf: 1.0,
     prs: 1.0,
     pdp: 1.0,
-    pup: 1.0,
+    cons: 1.0,
 };
 
 Q.sfio_assembly_vote = 20.1;
@@ -80,15 +81,15 @@ Q.cons_assembly_vote = 4.2;
 
 
 
-Q.sfio_assembly_vote = Q.sfio_assembly_vote*france_adjustment_factors.sfio;
-Q.ad_assembly_vote = Q.ad_assembly_vote*france_adjustment_factors.ad;
-Q.fr_assembly_vote = Q.fr_assembly_vote*france_adjustment_factors.fr;
-Q.pcf_assembly_vote = Q.pcf_assembly_vote*france_adjustment_factors.pcf;
-Q.prs_assembly_vote = Q.prs_assembly_vote*france_adjustment_factors.prs;
-Q.pdp_assembly_vote = Q.pdp_assembly_vote*france_adjustment_factors.pdp;
-Q.prrrs_assembly_vote = Q.prrrs_assembly_vote*france_adjustment_factors.prrrs;
-Q.i_rad_assembly_vote = Q.i_rad_assembly_vote*france_adjustment_factors.i_rad;
-Q.cons_assembly_vote = Q.cons_assembly_vote*france_adjustment_factors.cons;
+Q.sfio_assembly_vote = Q.sfio_assembly_vote * france_adjustment_factors.sfio;
+Q.ad_assembly_vote   = Q.ad_assembly_vote   * france_adjustment_factors.ad;
+Q.fr_assembly_vote   = Q.fr_assembly_vote   * france_adjustment_factors.fr;
+Q.pcf_assembly_vote  = Q.pcf_assembly_vote  * france_adjustment_factors.pcf;
+Q.prs_assembly_vote  = Q.prs_assembly_vote  * france_adjustment_factors.prs;
+Q.pdp_assembly_vote  = Q.pdp_assembly_vote  * france_adjustment_factors.pdp;
+Q.prrrs_assembly_vote = Q.prrrs_assembly_vote * france_adjustment_factors.prrrs;
+Q.i_rad_assembly_vote = Q.i_rad_assembly_vote * france_adjustment_factors.i_rad;
+Q.cons_assembly_vote  = Q.cons_assembly_vote  * france_adjustment_factors.cons;
 
 Q.total_votes_france = Q.sfio_assembly_vote + Q.ad_assembly_vote + Q.fr_assembly_vote + Q.pcf_assembly_vote + Q.prs_assembly_vote + Q.pdp_assembly_vote + Q.prrrs_assembly_vote + Q.i_rad_assembly_vote + Q.cons_assembly_vote;
 
@@ -324,11 +325,11 @@ go-to: france_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#FF6699'> </div> !} <span class="tooltip-text" title="Republican-Socialist Party">PRS</span>: {!</td><td>!} [+ prs_assembly_vote +]% {!</td><td>!} [+ str_votes_change_prs_france +] {!</td><td>!} [+ prs_assembly_r +]% {!</td><td>!} [+ str_change_prs_france +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E0B0FF'> </div> !} <span class="tooltip-text" title="Republican, Radical and Radical-Socialist Party">PRRRS</span>: {!</td><td>!} [+ prrrs_assembly_vote +]% {!</td><td>!} [+ str_votes_change_prrrs_france +] {!</td><td>!} [+ disp_rad_assembly_r +]% {!</td><td>!} [+ str_change_prrrs_france +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E0B0FF'> </div> !} <span class="tooltip-text" title="Republican, Radical and Radical-Socialist Party">PRRRS</span>: {!</td><td>!} [+ prrrs_assembly_vote +]% {!</td><td>!} [+ str_votes_change_prrrs_france +] {!</td><td>!} [+ prrrs_assembly_r +]% {!</td><td>!} [+ str_change_prrrs_france +] {!</td></tr>!}
 
 <tr><td colspan="5" style="text-align: center;"><strong>Democratic Republican List</strong></td></tr>
 
-{!<tr><td><div class="box" style='background-color:#F4ED96'> </div> !} <span class="tooltip-text" title="Independent Radicals">RI</span>: {!</td><td>!} [+ i_rad_assembly_vote +]% {!</td><td>!} [+ str_votes_change_i_rad_france +] {!</td><td>!} [+ disp_ind_rad_assembly_r +]% {!</td><td>!} [+ str_change_i_rad_france +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#F4ED96'> </div> !} <span class="tooltip-text" title="Independent Radicals">RI</span>: {!</td><td>!} [+ i_rad_assembly_vote +]% {!</td><td>!} [+ str_votes_change_i_rad_france +] {!</td><td>!} [+ i_rad_assembly_r +]% {!</td><td>!} [+ str_change_i_rad_france +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#EFD746'> </div> !} <span class="tooltip-text" title="Democratic Alliance">AD</span>: {!</td><td>!} [+ ad_assembly_vote +]% {!</td><td>!} [+ str_votes_change_ad_france +] {!</td><td>!} [+ ad_assembly_r +]% {!</td><td>!} [+ str_change_ad_france +] {!</td></tr>!}
 
@@ -336,9 +337,9 @@ go-to: france_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#00CCCC'> </div> !} <span class="tooltip-text" title="Popular Democratic Party">PDP</span>: {!</td><td>!} [+ pdp_assembly_vote +]% {!</td><td>!} [+ str_votes_change_pdp_france +] {!</td><td>!} [+ pdp_assembly_r +]% {!</td><td>!} [+ str_change_pdp_france +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:##233259'> </div> !} <span class="tooltip-text" title=" Republican Federation">FR</span>: {!</td><td>!} [+ fr_assembly_vote +]% {!</td><td>!} [+ str_votes_change_fr_france +] {!</td><td>!} [+ disp_fr_assembly_r +]% {!</td><td>!} [+ str_change_fr_france +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#233259'> </div> !} <span class="tooltip-text" title=" Republican Federation">FR</span>: {!</td><td>!} [+ fr_assembly_vote +]% {!</td><td>!} [+ str_votes_change_fr_france +] {!</td><td>!} [+ fr_assembly_r +]% {!</td><td>!} [+ str_change_fr_france +] {!</td></tr>!}
 
-<br>
+{!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#ADC1FD'> </div> !} <span class="tooltip-text" title="Conservatives and Independents">Cons</span>: {!</td><td>!} [+ cons_assembly_vote +]% {!</td><td>!} [+ str_votes_change_cons_france +] {!</td><td>!} [+ cons_assembly_r +]% {!</td><td>!} [+ str_change_cons_france +] {!</td></tr>!}
 
