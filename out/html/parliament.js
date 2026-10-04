@@ -1627,63 +1627,63 @@ anhalt: {
       id: 'pcf',
       legend: 'PCF',
       name: 'PCF',
-      qualityKey: 'assembly_r_pcf',
+      qualityKey: 'pcf_assembly_r',
       condition: function(Q) { return Q.assembly_r_pcf; }
     },
     {
       id: 'sfio',
       legend: 'SFIO',
       name: 'SFIO',
-      qualityKey: 'assembly_r_sfio',
+      qualityKey: 'sfio_assembly_r',
       condition: function(Q) { return Q.assembly_r_sfio; }
     },
     {
       id: 'prs',
       legend: 'PRS',
       name: 'PRS',
-      qualityKey: 'assembly_r_prs',
+      qualityKey: 'prs_assembly_r',
       condition: function(Q) { return Q.assembly_r_prs; }
     },
     {
       id: 'rad',
       legend: 'PRRRS',
       name: 'PRRRS',
-      qualityKey: 'assembly_r_prrrs',
+      qualityKey: 'prrrs_assembly_r',
       condition: function(Q) { return Q.assembly_r_prrrs; }
     },
     {
       id: 'rad2',
       legend: 'IndepRads',
       name: 'IndepRads',
-      qualityKey: 'assembly_r_i_rad',
+      qualityKey: 'i_rad_assembly_r',
       condition: function(Q) { return Q.assembly_r_i_rad; }
     },
     {
       id: 'ad',
       legend: 'AD',
       name: 'AD',
-      qualityKey: 'assembly_r_ad',
+      qualityKey: 'ad_assembly_r',
       condition: function(Q) { return Q.assembly_r_ad; }
     },
      {
       id: 'pdp',
       legend: 'PDP',
       name: 'PDP',
-      qualityKey: 'assembly_r_pdp',
+      qualityKey: 'pdp_assembly_r',
       condition: function(Q) { return Q.assembly_r_pdp; }
     },
     {
       id: 'fr',
       legend: 'FR',
       name: 'FR',
-      qualityKey: 'assembly_r_fr',
+      qualityKey: 'fr_assembly_r',
       condition: function(Q) { return Q.assembly_r_fr; }
     },
     {
       id: 'fr2',
       legend: 'Cons',
       name: 'Cons',
-      qualityKey: 'assembly_r_cons',
+      qualityKey: 'cons_assembly_r',
       condition: function(Q) { return Q.assembly_r_cons; }
     }
   ]
