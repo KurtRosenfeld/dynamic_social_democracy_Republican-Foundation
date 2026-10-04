@@ -1628,63 +1628,63 @@ anhalt: {
       legend: 'PCF',
       name: 'PCF',
       qualityKey: 'pcf_assembly_r',
-      condition: function(Q) { return Q.assembly_r_pcf; }
+      condition: function(Q) { return Q.pcf_assembly_r; }
     },
     {
       id: 'sfio',
       legend: 'SFIO',
       name: 'SFIO',
       qualityKey: 'sfio_assembly_r',
-      condition: function(Q) { return Q.assembly_r_sfio; }
+      condition: function(Q) { return Q.sfio_assembly_r; }
     },
     {
       id: 'prs',
       legend: 'PRS',
       name: 'PRS',
       qualityKey: 'prs_assembly_r',
-      condition: function(Q) { return Q.assembly_r_prs; }
+      condition: function(Q) { return Q.prs_assembly_r; }
     },
     {
       id: 'rad',
       legend: 'PRRRS',
       name: 'PRRRS',
       qualityKey: 'prrrs_assembly_r',
-      condition: function(Q) { return Q.assembly_r_prrrs; }
+      condition: function(Q) { return Q.prrrs_assembly_r; }
     },
     {
       id: 'rad2',
       legend: 'IndepRads',
       name: 'IndepRads',
       qualityKey: 'i_rad_assembly_r',
-      condition: function(Q) { return Q.assembly_r_i_rad; }
+      condition: function(Q) { return Q.i_rad_assembly_r; }
     },
     {
       id: 'ad',
       legend: 'AD',
       name: 'AD',
       qualityKey: 'ad_assembly_r',
-      condition: function(Q) { return Q.assembly_r_ad; }
+      condition: function(Q) { return Q.ad_assembly_r; }
     },
      {
       id: 'pdp',
       legend: 'PDP',
       name: 'PDP',
       qualityKey: 'pdp_assembly_r',
-      condition: function(Q) { return Q.assembly_r_pdp; }
+      condition: function(Q) { return Q.pdp_assembly_r; }
     },
     {
       id: 'fr',
       legend: 'FR',
       name: 'FR',
       qualityKey: 'fr_assembly_r',
-      condition: function(Q) { return Q.assembly_r_fr; }
+      condition: function(Q) { return Q.fr_assembly_r; }
     },
     {
       id: 'fr2',
       legend: 'Cons',
       name: 'Cons',
       qualityKey: 'cons_assembly_r',
-      condition: function(Q) { return Q.assembly_r_cons; }
+      condition: function(Q) { return Q.cons_assembly_r; }
     }
   ]
 },
