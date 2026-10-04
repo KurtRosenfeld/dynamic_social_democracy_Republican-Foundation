@@ -328,15 +328,15 @@ go-to: france_coalition_menu
 
 <tr><td colspan="5" style="text-align: center;"><strong>Democratic Republican List</strong></td></tr>
 
-{!<tr><td><div class="box" style='background-color:#aa4fff'> </div> !} <span class="tooltip-text" title="Independent Radicals">RI</span>: {!</td><td>!} [+ i_rad_assembly_vote +]% {!</td><td>!} [+ str_votes_change_i_rad_france +] {!</td><td>!} [+ disp_ind_rad_assembly_r +]% {!</td><td>!} [+ str_change_i_rad_france +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#F4ED96'> </div> !} <span class="tooltip-text" title="Independent Radicals">RI</span>: {!</td><td>!} [+ i_rad_assembly_vote +]% {!</td><td>!} [+ str_votes_change_i_rad_france +] {!</td><td>!} [+ disp_ind_rad_assembly_r +]% {!</td><td>!} [+ str_change_i_rad_france +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#FFBF00'> </div> !} <span class="tooltip-text" title="Democratic Alliance">AD</span>: {!</td><td>!} [+ ad_assembly_vote +]% {!</td><td>!} [+ str_votes_change_ad_france +] {!</td><td>!} [+ ad_assembly_r +]% {!</td><td>!} [+ str_change_ad_france +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#EFD746'> </div> !} <span class="tooltip-text" title="Democratic Alliance">AD</span>: {!</td><td>!} [+ ad_assembly_vote +]% {!</td><td>!} [+ str_votes_change_ad_france +] {!</td><td>!} [+ ad_assembly_r +]% {!</td><td>!} [+ str_change_ad_france +] {!</td></tr>!}
 
 <tr><td colspan="5" style="text-align: center;"><strong>Republican Democratic List</strong></td></tr>
 
 {!<tr><td><div class="box" style='background-color:#00CCCC'> </div> !} <span class="tooltip-text" title="Popular Democratic Party">PDP</span>: {!</td><td>!} [+ pdp_assembly_vote +]% {!</td><td>!} [+ str_votes_change_pdp_france +] {!</td><td>!} [+ pdp_assembly_r +]% {!</td><td>!} [+ str_change_pdp_france +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#005ACA'> </div> !} <span class="tooltip-text" title=" Republican Federation">FR</span>: {!</td><td>!} [+ fr_assembly_vote +]% {!</td><td>!} [+ str_votes_change_fr_france +] {!</td><td>!} [+ disp_fr_assembly_r +]% {!</td><td>!} [+ str_change_fr_france +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:##233259'> </div> !} <span class="tooltip-text" title=" Republican Federation">FR</span>: {!</td><td>!} [+ fr_assembly_vote +]% {!</td><td>!} [+ str_votes_change_fr_france +] {!</td><td>!} [+ disp_fr_assembly_r +]% {!</td><td>!} [+ str_change_fr_france +] {!</td></tr>!}
 
 <br>
 
@@ -345,9 +345,9 @@ go-to: france_coalition_menu
 {!</table>!}
 <hr id="read-marker">
 
-Left Cartel (<span style="color: #FF6699;" class="tooltip-text" title="Republican-Socialist Party">**PRS**</span> + <span style="color: #E0B0FF;" class="tooltip-text" title="Republican, Radical and Radical-Socialist Party">**PRRRS**</span> + <span style="color: #aa4fff;" class="tooltip-text" title="Independent Radicals">**RI**</span> + <span style="color: #F0001C;" class="tooltip-text" title="French Section of the Workers' International">**SFIO**</span> *(toleration)*): [+ left_cartel_coalition +]% 
+Left Cartel (<span style="color: #FF6699;" class="tooltip-text" title="Republican-Socialist Party">**PRS**</span> + <span style="color: #E0B0FF;" class="tooltip-text" title="Republican, Radical and Radical-Socialist Party">**PRRRS**</span> + <span style="color: #F4ED96;" class="tooltip-text" title="Independent Radicals">**RI**</span> + <span style="color: #F0001C;" class="tooltip-text" title="French Section of the Workers' International">**SFIO**</span> *(toleration)*): [+ left_cartel_coalition +]% 
 
-Millerand Coalition (<span style="color: #aa4fff;" class="tooltip-text" title="Independent Radicals">**RI**</span> + <span style="color: #FFBF00;" class="tooltip-text" title="Democratic Alliance">**AD**</span> + <span style="color: #005ACA;" class="tooltip-text" title="Republican Federation">**FR**</span>): [+ millerand_coalition +]%
+Millerand Coalition (<span style="color: #F4ED96;" class="tooltip-text" title="Independent Radicals">**RI**</span> + <span style="color: #FFBF00;" class="tooltip-text" title="Democratic Alliance">**AD**</span> + <span style="color: #005ACA;" class="tooltip-text" title="Republican Federation">**FR**</span>): [+ millerand_coalition +]%
 
 @france_coalition_menu
 
@@ -378,7 +378,7 @@ set-bg: img/map_2.jpg
 @minority_millerand
 view-if: left_cartel_coalition >= 50
 title: A minority Republican Right Coalition will be formed.
-subtitle:  <span style="color: #FFBF00;">**AD**</span> + <span style="color: #005ACA;">**FR**</span> + <span style="color: #00CCCC;">**PDP**</span> + <span style="color: #aa4fff;">**RI**</span> ([+ realistic_millerand_coalition +]%)
+subtitle:  <span style="color: #FFBF00;">**AD**</span> + <span style="color: #005ACA;">**FR**</span> + <span style="color: #00CCCC;">**PDP**</span> + <span style="color: #F4ED96;">**RI**</span> ([+ realistic_millerand_coalition +]%)
 set-bg: img/map_2.jpg
 
 Frédéric Francois-Marsal will form a government that can only rely on the support of three parties as many of the Conservative Monarchists oppose any Republican government. The Radicals that have supported previous governments wont tolerate any government that is not formed around the Left Cartel.
