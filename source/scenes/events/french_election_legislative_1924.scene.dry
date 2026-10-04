@@ -1,5 +1,5 @@
 title: 1924 French Legislative Elections
-view-if: year == 1922 and month == 4
+view-if: year == 1924 and month == 5
 new-page: true
 tags: event
 on-arrival: french_assembly_seats = 581
