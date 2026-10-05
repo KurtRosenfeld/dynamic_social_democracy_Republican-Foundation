@@ -53,7 +53,7 @@ subtitle: The bourgeois will welcome this kind of plan.
 
 @bruning_impressed
 subtitle: This would be suicide.
-on-arrival: workers_spd -= 7; unemployed_spd -= 7; left_dissent += 15; labor_dissent += 15; center_dissent += 9; reformist_dissent += 6; kpd_relation -
+on-arrival: workers_spd -= 7; unemployed_spd -= 7; left_dissent += 15; labor_dissent += 15; center_dissent += 9; reformist_dissent += 6; kpd_relation -= 15; uspd_relation -= 15; dvp_relation += 5; z_relation += 3; ddp_relation += 4
 
 
 @adopt_currency_plan
