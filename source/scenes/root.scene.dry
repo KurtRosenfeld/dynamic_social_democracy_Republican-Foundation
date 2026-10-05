@@ -998,7 +998,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'war_guilt', 'womens_rights', 'economic_democracy',
     'dealing_with_toleration', 'transport_policy',
     'constitutional_reform', 'labor_rights', 'spd_government_burden',
-    'education_science', 'curriculum',
+    'education_science', 'curriculum', 'deep_crisis',
     // local govt
     'saxony_action', 'thuringia_action', 'hamburg_action', 'bavaria_action', 'baden_action',
     'wurttemberg_action', 'meck_schwe_action', 'hesse_action', 'prussia_action',
@@ -1042,6 +1042,7 @@ Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
 Q.crisis_program_timer = 0;
+Q.deep_crisis_timer = 8;
 Q.fundraising_timer = 0;
 Q.ideology_timer = 0;
 Q.lsi_timer = 0;
