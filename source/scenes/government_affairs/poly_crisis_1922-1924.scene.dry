@@ -2,7 +2,7 @@ title: Dealing with the crisis
 new-page: true
 is-card: true
 tags: government_affairs
-view-if: deep_crisis_timer <= 0 and year <= 1924 and imma_have_to_finish_this_someday == 9
+view-if: deep_crisis_timer <= 0 and year <= 1924 and inflation >= 25
 on-arrival: month_actions += 1; deep_crisis_timer += 2;
 card-image: img/MinIDK.jpg
 
@@ -12,12 +12,13 @@ card-image: img/MinIDK.jpg
 - @improve_relations: Improve relations with the Western Allies
 - @beg_ussr: Ask the Soviets for more supplies
 - @draw_currency_plan: Work on a plan to stabilize the currency
+- @adopt_currency_plan: Establish a new currency
 - @bruning_impressed: Enact austerity measures
 
 
 @improve_relations
 subtitle: We need to show our good will to the West if we want to reduce the reparation burden.
-
+on-arrival: france_relation += 1; belgium_relation += 1; uk_relation += 3; us_relation += 2
 
 
 @beg_ussr
@@ -28,19 +29,38 @@ unavailable-subtitle: They might be experiencing a famine at the moment...
 
 @draw_currency_plan
 subtitle: The currency comes first, we can't deal with anything before inflation is dealt with.
+view-if: rentemark_plan < 3
+
+- @socialize_everything: We need a massive socialization program.
+- @currency_reform: We need a currency refrom to combat inflation.
+
+
+@socialize_everything
+choose-if: in_left_front == 1 or in_spd_majority_government == 1
+unavailable-subtitle: Who is supposed to agree to this?
+subtitle: stop cheating, this button does nothing...
+
+@currency_reform
+on-arrival: rentemark_plan += 1
+subtitle: The bourgeois will welcome this kind of plan.
+
+[? if rentemark_plan == 1: This will be quite some work to draw up but the brightest minds (we can access) are already on it. Also we have to hope that the bourgeois specialists will agree to stopping inflation in the first place as some are convinced it's going to *burn* our debt. ?]
+[? if rentemark_plan == 2: Maybe Henry George was right?? ?]
+[? if rentemark_plan == 3: We will just establish an alternate currency with a set exchange rate of pre-inflation levels. ?]
+
 
 
 
 @bruning_impressed
 subtitle: This would be suicide.
+on-arrival: workers_spd -= 7; unemployed_spd -= 7; left_dissent += 15; labor_dissent += 15; center_dissent += 9; reformist_dissent += 6; kpd_relation -
 
 
+@adopt_currency_plan
+subtitle: The Rentenmark will go into circulation.
+on-arrival: inlation -= 34; currency = "Rentenmark"; workers_spd += 4; unemployed_spd += 2; new_middle_spd += 2; new_middle_ddp += 2; rural_z += 1; old_middle_dvp += 2; workers_z += 2
 
-
-
-
-
-
+Despite barely anyone being obliged to accept the currency it is widely regarded as the securest kind of payment - even more popular than cigrattes.
 
 
 
