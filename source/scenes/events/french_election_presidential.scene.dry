@@ -1,0 +1,41 @@
+title: French president resigns
+subtitle: Millerand can't form majority governments anymore, so someone else has to do the job
+new-page: true
+view-if: year == 1924 and month == 6 and left_cartel_coalition >= 50
+tags: event
+priority: 3
+max-visits: 1
+
+= French president resigns
+
+The independent president Alexandre Millerand won't appoint a leftist government and the leftist assembly won't collaborate with him, thus there is no other way but for him to resign from his post.
+
+The French president is not electet directly but by both chambers, the Senate and the National Assembly.
+  
+The Radicals and Radical-Socialists have agreed to run Paul Painlevé (<span style="color: #FF6699;" class="tooltip-text" title="Republican-Socialist Party">**PRS**</span>), an anti-clerical <span style="color: #FF6699;" class="tooltip-text" title="A non-marxist socialist focused on achieving a "fair deal" between capital and labour">*Utopian Socialist*</span>. Yet some view him as too radical for the office of president and a counter candidacy has been proposed by Gaston Doumerge (<span style="color: #E0B0FF;" class="tooltip-text" title="Republican, Radical and Radical-Socialist Party">**PRRRS**</span>) who is more moderate.
+
+- @frfr: Let's hope for the best...
+
+@frfr
+on-arrival: french_hos = "Doumerge"; french_hos_party = "PRRRS"
+  
+Doumerge wins!
+
+Due to the high abstention rate in the first round, Painlevé was close to securing a majority of the votes. All the conservative parties threw their support behind Doumerge who secured a clear win in the end. Altogether this is still very good news for us...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
