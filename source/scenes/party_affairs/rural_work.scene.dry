@@ -15,27 +15,28 @@ How do we want not to mess up this time?
 - @tell_about_programme: Rebuild farmers' trust in our party by pointing out our programme.
 - @educate_on_antisemtism: Combat Antisemtism by holding conventions.
 - @agitate_class: Build class anger among peasants.
+- @nothing_lol: Do nothing...
 
   
 @tell_about_programme
 subtitle: (-1 resource)
-choose-if: rural_strategy == "Reformism" and resources >= 1
-on-arrival: resources -= 1; rural_trust += 0.5; rural_trust += 0.5 if (editorial_line == "reformist" and socialist_media >= 9)
+choose-if: resources >= 1
+on-arrival: resources -= 1; rural_trust += 0.5; rural_trust += 0.5 if (editorial_line == "reformist" and socialist_media >= 9); ; rural_trust += 0.8 if rural_strategy == "Reformism"
 
 
 @educate_on_antisemtism
 subtitle: (-1 resource)
-choose-if: rural_strategy == "Education" and resources >= 1
-on-arrival: resources -= 1; rural_antisemitism -= 1*(rural_trust*0.4)
+choose-if: resources >= 1
+on-arrival: resources -= 1; rural_antisemitism -= 1*(rural_trust*0.4);  rural_antisemitism -= 1 if rural_strategy == "Education"
 
 [? if rural_trust < 4: The peasants don't trust us enough to really consider our points. ?][? if rural_trust >= 4: Some peasants consider what we have to say, but we are working against centuries of predjudice. ?]
 
 @agitate_class
 subtitle: (-1 resource)
-choose-if: rural_strategy == "Class War" and resources >= 1
-on-arrival: resources -= 1; peasant_conciousness += 0.5; peasant_conciousness += 0.5 if ideology == "left"
+choose-if: resources >= 1
+on-arrival: resources -= 1; peasant_conciousness += 0.5; peasant_conciousness += 0.5 if ideology == "left"; peasant_conciousness += 0.8 if rural_strategy == "Class War"
 
-
+@nothing_lol
 
 
 
