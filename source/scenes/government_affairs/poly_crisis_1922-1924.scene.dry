@@ -2,7 +2,7 @@ title: Dealing with the crisis
 new-page: true
 is-card: true
 tags: government_affairs
-view-if: deep_crisis_timer <= 0 and year <= 1924 and inflation >= 25 and spd_in_government
+view-if: deep_crisis_timer <= 0 and year <= 1924 and inflation >= 10 and spd_in_government
 on-arrival: month_actions += 1; deep_crisis_timer += 2;
 card-image: img/MinIDK.jpg
 
