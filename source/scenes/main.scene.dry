@@ -1388,6 +1388,7 @@ max-cards: 3
 
 - @party
 - @govt
+- @criiii
 - @eco
 - @time
 - @time_2
@@ -2800,6 +2801,7 @@ max-cards: 4
 
 - @party
 - @govt
+- @criiii
 - @eco
 - @time
 - @time_2
@@ -2844,8 +2846,17 @@ is-deck: true
 @eco
 title: Economic Policy
 view-if: spd_in_government = 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and economic_policy_timer <= 0 and economic_plan > 0 and black_thursday_seen
-card-image: img/portraits/SchmidtRobert.jpg
+card-image: img/MINEconProg.jpg
 is-deck: true
 
 - @economic_policy
+
+
+@criiii
+title: Dealing with the crisis
+view-if: deep_crisis_timer <= 0 and year <= 1924 and inflation >= 10 and spd_in_government
+card-image: img/MinIDK.jpg
+is-deck: true
+
+- @poly_crisis_1922-1924
 
