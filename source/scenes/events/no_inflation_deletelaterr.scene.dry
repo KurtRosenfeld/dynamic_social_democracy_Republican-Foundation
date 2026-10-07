@@ -1,12 +1,12 @@
 title: YOOO
 subtitle: So based
 new-page: true
-on-arrival: inflation = 3
+on-arrival: inflation = 3; ruhr_occupied = 0; z_relation += 1; kpd_relation += 1
 tags: event
 view-if: year == 1924 and month == 12
 max-visits: 1
 priority: 1
-face-image: img/portraits/HilfderingRudolf.jpg
+face-image: img/portraits/HilferdingRudolf.jpg
 
 = YOOO
 
