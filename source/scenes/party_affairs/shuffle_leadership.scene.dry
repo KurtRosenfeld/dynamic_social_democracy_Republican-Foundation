@@ -858,7 +858,7 @@ title: Fritz Baade
 subtitle: Fritz Baade is one of the few agricultural policy experts in the <span style="color: [+ spd_colour +];">**SPD**</span>. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Rural Campaigning, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/BaadeFritz.jpg
-view-if: baade_advisor = 0 and n_advisors < 4
+view-if: baade_advisor = 0 and n_advisors < 4 and baade_in == "SPD"
 on-arrival: baade_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: nonfactional_advisor
