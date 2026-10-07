@@ -53,13 +53,13 @@ subtitle: The bourgeois will welcome this kind of plan.
 
 @bruning_impressed
 subtitle: This would be suicide.
-on-arrival: workers_spd -= 7; unemployed_spd -= 7; left_dissent += 15; labor_dissent += 15; center_dissent += 9; reformist_dissent += 6; kpd_relation -= 15; uspd_relation -= 15; dvp_relation += 5; z_relation += 3; ddp_relation += 4
+on-arrival: workers_spd -= 7; unemployed_spd -= 7; left_dissent += 15; labor_dissent += 15; center_dissent += 9; reformist_dissent += 6; kpd_relation -= 15; uspd_relation -= 15; dvp_relation += 5; z_relation += 3; ddp_relation += 4; inflation -= 5
 
 
 @adopt_currency_plan
 view-if: rentemark_plan == 3 and not currency == "Rentenmark"
 subtitle: The Rentenmark will go into circulation.
-on-arrival: inlation -= 34; currency = "Rentenmark"; workers_spd += 4; unemployed_spd += 2; new_middle_spd += 2; new_middle_ddp += 2; rural_z += 1; old_middle_dvp += 2; workers_z += 2
+on-arrival: inflation -= 34; currency = "Rentenmark"; workers_spd += 4; unemployed_spd += 2; new_middle_spd += 2; new_middle_ddp += 2; rural_z += 1; old_middle_dvp += 2; workers_z += 2
 
 Despite barely anyone being obliged to accept the currency it is widely regarded as the securest kind of payment - even more popular than cigrattes.
 
