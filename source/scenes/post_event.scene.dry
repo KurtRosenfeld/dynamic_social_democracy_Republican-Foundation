@@ -392,10 +392,17 @@ if (Q.economic_minister == "Tarnow") Q.economic_minister_party = Q.tarnow_in;
 // hyperinflation removed because of weird time loops - though it will be added again at some point
 
 
+if (Q.ruhr_occupied == 1) Q.inflation += 0.2;
+if (Q.inflation >= 14 && Q.left_dissent >= 30) Q.left_dissent -= 2;
+if (Q.inflation >= 14 && Q.labor_dissent >= 30) Q.labor_dissent -= 2;
+if (Q.inflation >= 14 && Q.center_dissent >= 30) Q.center_dissent -= 1;
+if (Q.inflation >= 14 && Q.reformist_dissent >= 30) Q.reformist_dissent -= 1;
+
+
 // foreign relations I guess
 Q.west_relation = (Q.us_relation + Q.uk_relation + Q.france_relation + Q.belgium_relation + Q.netherlands_relation)/5;
 
-Q.east_relation = (Q.poland_relation + Q.czech_relation + Q.austria_relation + Q.hungary_relation)/4;
+Q.east_relation = (Q.poland_relation + Q.czech_relation + Q.austria_relation + Q.lithuania_relation)/4;
 
 Q.north_relation = (Q.sweden_relation + Q.denmark_relation + Q.norway_relation + Q.finland_relation + Q.iceland_relation)/5;
 
@@ -418,9 +425,10 @@ if (Q.us_relation >= 65) Q.soviet_relation -= 0.3;
 if (Q.soviet_relation >= 60) Q.us_relation -= 0.5;
 if (Q.soviet_relation >= 70) {
 Q.italy_relation -= 0.4;
-Q.hungary_relation -= 0.4;
 Q.poland_relation -= 0.4;
 }
+
+if (Q.french_hos == "Millerand && france_relation >= 43) Q.france_relation -= 0.5;
 
 // add France relation decrease during Ruhr occupationn ?
 
