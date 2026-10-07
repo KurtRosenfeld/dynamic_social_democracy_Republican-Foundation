@@ -1539,7 +1539,7 @@ Q.leber_in = 'SPD';
 Q.schumacher_in = 'SPD';
 Q.wirth_in = 'Z';
 
-Q.baade_in = 'SPD';
+Q.baade_in = 'USPD';
 Q.sollman_in = 'SPD';
 Q.schmidt_in = 'SPD';
 Q.stampfer_in = 'SPD';
