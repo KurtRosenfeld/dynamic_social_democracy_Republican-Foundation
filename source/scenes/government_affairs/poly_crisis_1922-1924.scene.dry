@@ -57,6 +57,7 @@ on-arrival: workers_spd -= 7; unemployed_spd -= 7; left_dissent += 15; labor_dis
 
 
 @adopt_currency_plan
+view-if: rentemark_plan == 3 and not currency == "Rentenmark"
 subtitle: The Rentenmark will go into circulation.
 on-arrival: inlation -= 34; currency = "Rentenmark"; workers_spd += 4; unemployed_spd += 2; new_middle_spd += 2; new_middle_ddp += 2; rural_z += 1; old_middle_dvp += 2; workers_z += 2
 
