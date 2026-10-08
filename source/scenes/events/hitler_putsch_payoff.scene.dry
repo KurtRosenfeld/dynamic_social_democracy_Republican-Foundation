@@ -1,12 +1,20 @@
 title: Hitler vs <span style="color: #00CCFF;">Bavaria</span>
 subtitle: A major standoff
 view-if: bavaria_coup == 3
-on-arrival: bvp_relation += 2
 max-visits: 1
 priority: 4
 tags: event
 face-image: img/standoff1923.jpg
 new-page: true
+on-arrival: {!
+  const r = Math.random();
+  if (r < 0.1) {
+    Q.hitler_oofs_himself_in_1923 = 1;
+    Q.bvp_relation += 3
+  } else {
+    Q.hitler_oofs_himself_in_1923 = 0;
+  }
+!}
 
 = Hitler vs <span style="color: #00CCFF;">Bavaria</span>
 
@@ -15,8 +23,10 @@ Right on the next morning the mutineers started marching through various streets
 Ludendorff, Göring, Hitler and their troops are now met with a police blockade. Fire is opened.
 
 - @hitler_putsch_done: Counting the dead
+- @the_very_good_outcome: Counting the dead
 
 @hitler_putsch_done
+view-if: hitler_oofs_himself_in_1923 == 0
 audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3 music/1928_1933/SozialistenMarsch.mp3
 
 The coup has failed. Four policemen, 15 <span style="color: [+ nsdap_colour +];">Völkische</span> and a bystander died on that day.  Max Erwin von Scheubner-Richter, a major <span style="color: [+ nsdap_colour +];">NSDAP</span> figure, was among the shot. Ludendorff was aressted on the spot while Hitler managed to hide for two days. The only major coup-leader yet to be found is Rudolf Heß.
@@ -28,15 +38,49 @@ The coup has failed. Four policemen, 15 <span style="color: [+ nsdap_colour +];"
 One thing is sure the legal battle will be harsh. We just don't know who will face whom yet...
 
 
+@the_very_good_outcome
+view-if: hitler_oofs_himself_in_1923 == 1
+audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3 music/1928_1933/SozialistenMarsch.mp3
 
+The coup has failed. Four policemen, 15 <span style="color: [+ nsdap_colour +];">Völkische</span> and a bystander died on that day.  Max Erwin von Scheubner-Richter, a major <span style="color: [+ nsdap_colour +];">NSDAP</span> figure, was among the shot. Ludendorff was aressted on the spot while Hitler managed to hide. The only major coup-leader yet to be found is Rudolf Heß.
 
+- @what_happened_to_hitler: What happened to Hitler?
 
+@what_happened_to_hitler
+on-arrival: hitler_dead = 1; new_middle_nsdap -= 2; catholic_nsdap -= 3; old_middle_nsdap -= 1
 
+After the police managed to get a hold of Hitlers hiding spot, they have stormed his house to arrest him. They were suprised to find only a body with a bullet in its head. It seems the *Führer*, the shining star of the <span style="color: [+ nsdap_colour +];">Völkisch-movement</span> has ended his life after his defeat.
 
-
-
-
-
-
+Let's just hope that the other conspirators will face consequences as well... in a judicial way preferabily....
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
