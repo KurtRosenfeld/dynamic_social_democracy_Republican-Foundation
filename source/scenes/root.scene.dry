@@ -1518,6 +1518,8 @@ Q.braun_in = 'SPD';
 Q.severing_in = 'SPD';
 Q.pfulf_in = 'SPD';
 Q.juchaz_in = 'SPD';
+Q.buck_in = 'SPD';
+Q.greszinski_in = 'SPD';
 
 Q.frolich_in = 'SPD';
 Q.seydewitz_in = 'SPD';
@@ -1527,6 +1529,8 @@ Q.sender_in = 'USPD';
 Q.siemsen_in = 'USPD';
 Q.liebknecht_in = 'USPD';
 Q.ledebour_in = 'USPD';
+Q.fleissner_in = 'USPD';
+Q.zeigner_in = 'SPD';
 
 Q.woytinsky_in = 'SPD';
 Q.tarnow_in = 'SPD';
@@ -1545,13 +1549,15 @@ Q.schmidt_in = 'SPD';
 Q.stampfer_in = 'SPD';
 Q.radbruch_in = 'SPD';
 
+Q.heldt_in = 'SPD';
+
 Q.thalheimer_in = 'KPD';
 Q.fischer_in = 'KPD';
 Q.brandler_in = 'KPD';
 
 Q.hugenberg_in = 'DNVP';
 
-// all the initial advisors are centrists.
+// all the initial advisors were centrists...
 Q.wels_advisor = 1; // Otto Wels
 Q.muller_advisor = 1; // Hermann Müller
 Q.muller_dead = 0;
