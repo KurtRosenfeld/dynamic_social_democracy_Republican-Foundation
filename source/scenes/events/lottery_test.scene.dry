@@ -66,10 +66,36 @@ on-arrival: {!
 
 [+ roll3 +]
 
+- @pick_baade: Fritz Baade
+- @pick_woytinsky
+- @pick_hirschfeld
 
 
 
 
+@pick_baade
+is-card: true
+card-image: img/portaits/BaadeFritz.jpg
+on-arrival: {!
+  Q.baade_picked = 1;
+  Q.lottery_chosen.push('baade');
+!}
+
+@pick_woytinsky
+is-card: true
+card-image: img/portaits/BaadeFritz.jpg
+on-arrival: {!
+  Q.baade_picked = 1;
+  Q.lottery_chosen.push('baade');
+!}
+
+@pick_hirschfeld
+is-card: true
+card-image: img/portaits/BaadeFritz.jpg
+on-arrival: {!
+  Q.baade_picked = 1;
+  Q.lottery_chosen.push('baade');
+!}
 
 
 
