@@ -1,0 +1,66 @@
+title: Wanna play the lottery?
+subtitle: This is only some test that does nothing real yet
+view-if: hidden_for_now == 99
+max-visits: 1
+priority: 8
+tags: event
+new-page: true
+on-arrival: {!
+  const roll 1 = Math.random();
+  if (roll 1 < 0.1 && roll 1 > 0) {
+    if (!Q.fleissner_rolled) Q.fleissner_rolled = 1;
+  } else if (roll 1 < 0.2 && roll 1 > 0.1) {
+    if (!Q.zeigner_rolled) Q.zeigner_rolled = 1;
+  } else if (roll 1 < 0.3 && roll 1 > 0.2) {
+    if (!Q.woytinsky_rolled) Q.woytinsky_rolled = 1;
+    } else if (roll 1 < 0.4 && roll 1 > 0.3) {
+    if (!Q.baade_rolled) Q.baade_rolled = 1;
+    } else if (roll 1 < 0.55 && roll 1 > 0.4) {
+    if (!Q.heldt_rolled) Q.heldt_rolled = 1;
+    } else if (roll 1 < 0.7 && roll 1 > 0.55) {
+    if (!Q.buck_rolled) Q.buck_rolled = 1;
+    } else if (roll 1 < 0.85 && roll 1 > 0.7) {
+    if (!Q.greszinski_rolled) Q.greszinski_rolled = 1;
+    } else if (roll 1 < 1 && roll 1 > 0.85) {
+    if (!Q.hirschfeld_rolled) Q.hirschfeld_rolled = 1;
+  }
+
+     const roll 2 = Math.random();
+  if (roll 2 < 0.1 && roll 2 > 0) {
+    if (!Q.fleissner_rolled) Q.fleissner_rolled = 1;
+  } else if (roll 2 < 0.2 && roll 2 > 0.1) {
+    if (!Q.zeigner_rolled) Q.zeigner_rolled = 1;
+  } else if (roll 2 < 0.3 && roll 2 > 0.2) {
+    if (!Q.woytinsky_rolled) Q.woytinsky_rolled = 1;
+    } else if (roll 2 < 0.4 && roll 2 > 0.3) {
+    if (!Q.baade_rolled) Q.baade_rolled = 1;
+    } else if (roll 2 < 0.55 && roll 2 > 0.4) {
+    if (!Q.heldt_rolled) Q.heldt_rolled = 1;
+    } else if (roll 2 < 0.7 && roll 2 > 0.55) {
+    if (!Q.buck_rolled) Q.buck_rolled = 1;
+    } else if (roll 2 < 0.85 && roll 2 > 0.7) {
+    if (!Q.greszinski_rolled) Q.greszinski_rolled = 1;
+    } else if (roll 2 < 1 && roll 2 > 0.85) {
+    if (!Q.hirschfeld_rolled) Q.hirschfeld_rolled = 1;
+  }
+
+     const roll 3 = Math.random();
+  if (roll 3 < 0.1 && roll 3 > 0) {
+    if (!Q.fleissner_rolled) Q.fleissner_rolled = 1;
+  } else if (roll 3 < 0.2 && roll 3 > 0.1) {
+    if (!Q.zeigner_rolled) Q.zeigner_rolled = 1;
+  } else if (roll 3 < 0.3 && roll 3 > 0.2) {
+    if (!Q.woytinsky_rolled) Q.woytinsky_rolled = 1;
+    } else if (roll 3 < 0.4 && roll 3 > 0.3) {
+    if (!Q.baade_rolled) Q.baade_rolled = 1;
+    } else if (roll 3 < 0.55 && roll 3 > 0.4) {
+    if (!Q.heldt_rolled) Q.heldt_rolled = 1;
+    } else if (roll 3 < 0.7 && roll 3 > 0.55) {
+    if (!Q.buck_rolled) Q.buck_rolled = 1;
+    } else if (roll 3 < 0.85 && roll 3 > 0.7) {
+    if (!Q.greszinski_rolled) Q.greszinski_rolled = 1;
+    } else if (roll 3 < 1 && roll 3 > 0.85) {
+    if (!Q.hirschfeld_rolled) Q.hirschfeld_rolled = 1;
+  }
+             
+!}
