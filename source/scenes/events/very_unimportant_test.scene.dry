@@ -6,16 +6,16 @@ view-if: year == 1922 and month == 4
 tags: event
 face-image: img/portraits/RosenfeldKurt.jpg
 new-page: true
-on-arrival: |
-  // Does anyone know about randomness
+on-arrival: {!
   const r = Math.random();
   if (r < 0.5) {
     Q.le_dice_roll = "Congrats you have won!";
     Q.workers_spd += 12;
-    Q.kpd_relation += 60
+    Q.kpd_relation += 60;
   } else {
     Q.le_dice_roll = "You could win here";
   }
+!}
 
 = This is a title
 
