@@ -70,7 +70,7 @@ on-arrival: {!
 
 [? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld": ** Magnus Hirschfeld** ?]
 
-[? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld":  {!<img src="img/portaits/HirschfeldMagnus.jpg" class="face-img face-figure" style="float:right; margin-right:0; margin-left:1em;" onclick="window.dendryUI.dendryEngine.setQuality('hirschfeld_picked', 1); window.dendryUI.dendryEngine.goToScene('check_again_mon_vieux')">!} ?]
+[? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld":  {!<img src="img/portaits/HirschfeldMagnus.jpg" class="face-img face-figure" style="float:right; margin-right:0; margin-left:1em;" onclick="window.dendryUI.dendryEngine.state.qualities.hirschfeld_picked = 1; window.dendryUI.dendryEngine.goToScene('check_again_mon_vieux')">!} ?]
 
 [? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade": ** Fritz Baade** ?]
 
@@ -78,7 +78,7 @@ on-arrival: {!
 
 [? if roll1 == "woytinsky" or roll2 == "woytinsky" or roll3 == "woytinsky": **Vladimir Woytinsky** ?]
 
-[? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade":  {!<img src="img/portaits/WoytinskyWladimir.jpg" class="face-img face-figure" style="float:right; margin-right:0; margin-left:1em;" onclick="window.dendryUI.dendryEngine.setQuality('woytinsky_picked', 1); window.dendryUI.dendryEngine.goToScene('check_again_mon_vieux')">!} ?]
+[? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade":  {!<img src="img/portaits/WoytinskyWladimir.jpg" class="face-img face-figure" style="float:right; margin-right:0; margin-left:1em;" onclick="window.dendryUI.dendryEngine.state.qualities.woytinsky_picked = 1; window.dendryUI.dendryEngine.goToScene('check_again_mon_vieux')">!} ?]
 
 
 @check_again_mon_vieux
