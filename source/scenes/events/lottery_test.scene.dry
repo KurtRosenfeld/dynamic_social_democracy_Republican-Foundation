@@ -68,18 +68,19 @@ on-arrival: {!
 
 = Lottery - What I actually wanna see
 
-[? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld": **Magnus Hirschfeld**
-<img src="img/portaits/HirschfeldMagnus.jpg" class="face-img face-figure" style="float:right; margin-right:0; margin-left:1em;" onclick="window.dendryUI.dendryEngine.state.qualities.hirschfeld_picked = 1; window.dendryUI.dendryEngine.goToScene('check_again_mon_vieux')">
-?]
+[? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld": **Magnus Hirschfeld** ?]
+
+[? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld":
+<img src="img/portaits/HirschfeldMagnus.jpg" onclick="dendryUI.dendryEngine.state.qualities.hirschfeld_picked = 1"/> ?]
 
 [? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade": **Fritz Baade**
-<img src="img/portaits/BaadeFritz.jpg" class="face-img face-figure" style="float:right; margin-right:0; margin-left:1em;" onclick="window.dendryUI.dendryEngine.state.qualities.baade_picked = 1; window.dendryUI.dendryEngine.goToScene('check_again_mon_vieux')">
-?]
+<img src="img/portaits/BaadeFritz.jpg" onclick="dendryUI.dendryEngine.state.qualities.baade_picked = 1"/> ?]
 
 [? if roll1 == "woytinsky" or roll2 == "woytinsky" or roll3 == "woytinsky": **Wladimir Woytinsky**
-<img src="img/portaits/WoytinskyWladimir.jpg" class="face-img face-figure" style="float:right; margin-right:0; margin-left:1em;" onclick="window.dendryUI.dendryEngine.state.qualities.woytinsky_picked = 1; window.dendryUI.dendryEngine.goToScene('check_again_mon_vieux')">
+<img src="img/portaits/WoytinskyWladimir.jpg" onclick="dendryUI.dendryEngine.state.qualities.woytinsky_picked = 1"/>
 ?]
 
+- @check_again_mon_vieux
 
 @check_again_mon_vieux
 title: Check Out
