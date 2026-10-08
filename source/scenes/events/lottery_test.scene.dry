@@ -25,7 +25,7 @@ on-arrival: {!
     baade:       Q.baade_in     === "SPD",
     heldt:       Q.heldt_in === "SPD",
     buck:        true,
-    greszinski:  Q.greszinski_in  === "SPD"
+    greszinski:  Q.greszinski_in  === "SPD",
     hirschfeld:  true
   };
 
