@@ -1,6 +1,6 @@
 title: Wanna play the lottery?
 subtitle: This is only some test that does nothing real yet
-view-if: year == 1922 and month == 4
+view-if: year == 1922 and month == 4 and hidden_for_huuuuuuhuuhuh
 max-visits: 1
 priority: 8
 tags: event
