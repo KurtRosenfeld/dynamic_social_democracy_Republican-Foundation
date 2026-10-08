@@ -71,13 +71,13 @@ on-arrival: {!
 [? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld": **Magnus Hirschfeld** ?]
 
 [? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld":
-<img src="img/portraits/HirschfeldMagnus.jpg" onclick="dendryUI.dendryEngine.state.qualities.hirschfeld_picked = 1"/> ?]
+<img src="img/portraits/HirschfeldMagnus.jpg" style="width: 100%; max-width: 260px;" onclick="dendryUI.dendryEngine.state.qualities.hirschfeld_picked = 1"/> ?]
 
 [? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade": **Fritz Baade**
-<img src="img/portraits/BaadeFritz.jpg" onclick="dendryUI.dendryEngine.state.qualities.baade_picked = 1"/> ?]
+<img src="img/portraits/BaadeFritz.jpg" style="width: 100%; max-width: 260px;" onclick="dendryUI.dendryEngine.state.qualities.baade_picked = 1"/> ?]
 
 [? if roll1 == "woytinsky" or roll2 == "woytinsky" or roll3 == "woytinsky": **Wladimir Woytinsky**
-<img src="img/portraits/WoytinskyWladimir.jpg" onclick="dendryUI.dendryEngine.state.qualities.woytinsky_picked = 1"/>
+<img src="img/portraits/WoytinskyWladimir.jpg" style="width: 100%; max-width: 260px;" onclick="dendryUI.dendryEngine.state.qualities.woytinsky_picked = 1"/>
 ?]
 
 - @check_again_mon_vieux
