@@ -67,8 +67,8 @@ on-arrival: {!
 [+ roll3 +]
 
 - @pick_baade: Fritz Baade
-- @pick_woytinsky
-- @pick_hirschfeld
+- @pick_woytinsky: Vladimir Woytinsky
+- @pick_hirschfeld: Magnus Hirschfeld
 
 
 
