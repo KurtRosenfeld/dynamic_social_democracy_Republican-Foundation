@@ -84,7 +84,7 @@ on-arrival: {!
 
 [? if roll1 == "zeigner" or roll2 == "zeigner" or roll3 == "zeigner"  and not new_advisor_pick_made: **Erich Zeigner** ?]
 
-[? if roll1 == "zeigner" or roll2 == "zeigner" or roll3 == "zeigner"  and not new_advisor_pick_made: <img src="img/portraits/ZeignerErich.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.zeigner_picked = 1; dendryUI.dendryEngine.state.qualities.new_advisor_pick_made = 1"/> ?]
+[? if roll1 == "zeigner" or roll2 == "zeigner" or roll3 == "zeigner"  and not new_advisor_pick_made: <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/ZeignerErich.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.zeigner_picked = 1; dendryUI.dendryEngine.state.qualities.new_advisor_pick_made = 1"/>  <div> Zeigner is an important figure in Saxon Politics<br/> Faction: Left </div>?]
 
 
 - @check_again_mon_vieux
