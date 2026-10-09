@@ -1,6 +1,7 @@
 title: Leave Lottery
 tags: event
 new-page: true
+view-if: your_mother == "President of America" or in_other_words == "never"
 
 = Good times
 
