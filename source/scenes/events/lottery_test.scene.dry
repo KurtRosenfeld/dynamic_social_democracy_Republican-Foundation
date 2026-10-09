@@ -7,26 +7,26 @@ tags: event
 new-page: true
 on-arrival: {!
   const WEIGHTS = {
-    fleissner:   0.10,
-    zeigner:     0.10,
-    woytinsky:   0.10,
-    baade:       0.10,
-    heldt:       0.15,
-    buck:        0.15,
-    grzesinski:  0.15,
-    hirschfeld:  0.15
+    fleissner:   13,
+    zeigner:     22,
+    woytinsky:   10,
+    baade:       11,
+    heldt:       20,
+    buck:        19,
+    grzesinski:  15,
+    hirschfeld:  13
   };
 
   // You have to a member to be voted in
   const ELIGIBLE = {
-    fleissner:   Q.fleissner_in   === "SPD",
-    zeigner:     Q.zeigner_in    === "SPD",
+    fleissner:   Q.fleissner_in   === "SPD" && !Q.fleissner_picked,
+    zeigner:     Q.zeigner_in    === "SPD" && !Q.zeigner_picked,
     woytinsky:   Q.woytinsky_in   === "SPD" && !Q.woytinsky_picked,
-    baade:       Q.baade_in     === "SPD",
-    heldt:       Q.heldt_in === "SPD",
-    buck:        Q.buck_in === "SPD",
-    grzesinski:  Q.grzesinski_in  === "SPD",
-    hirschfeld:  Q.hirschfeld_in === "SPD"
+    baade:       Q.baade_in     === "SPD" && !Q.baade_picked,
+    heldt:       Q.heldt_in === "SPD" && !Q.heldt_picked,
+    buck:        Q.buck_in === "SPD" && !Q.buck_picked,
+    grzesinski:  Q.grzesinski_in  === "SPD" && !Q.grzesinski_picked,
+    hirschfeld:  Q.hirschfeld_in === "SPD" && !Q.hirschfled_picked
   };
 
   if (!Q.lottery_chosen) Q.lottery_chosen = [];
@@ -68,30 +68,30 @@ on-arrival: {!
 
 = Lottery - What I actually wanna see
 
-[? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld": **Magnus Hirschfeld** ?]
+[? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld" and not new_advisor_pick_made: **Magnus Hirschfeld** ?]
 
-[? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld":
-<img src="img/portraits/HirschfeldMagnus.jpg" style="width: 100%; max-width: 260px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.hirschfeld_picked = 1"/> ?]
+[? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld"  and not new_advisor_pick_made:
+<img src="img/portraits/HirschfeldMagnus.jpg" style="width: 100%; max-width: 190px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.hirschfeld_picked = 1; dendryUI.dendryEngine.state.qualities.new_advisor_pick_made = 1"/> ?]
 
-[? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade": **Fritz Baade** ?]
+[? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade"  and not new_advisor_pick_made: **Fritz Baade** ?]
 
-[? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade": <img src="img/portraits/BaadeFritz.jpg" style="width: 100%; max-width: 260px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.baade_picked = 1"/> ?]
+[? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade"  and not new_advisor_pick_made: <img src="img/portraits/BaadeFritz.jpg" style="width: 100%; max-width: 190px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.baade_picked = 1; dendryUI.dendryEngine.state.qualities.new_advisor_pick_made = 1"/> ?]
 
-[? if roll1 == "woytinsky" or roll2 == "woytinsky" or roll3 == "woytinsky": **Wladimir Woytinsky** ?]
+[? if roll1 == "woytinsky" or roll2 == "woytinsky" or roll3 == "woytinsky"  and not new_advisor_pick_made: **Wladimir Woytinsky** ?]
 
-[? if roll1 == "woytinsky" or roll2 == "woytinsky" or roll3 == "woytinsky": <img src="img/portraits/WoytinskyWladimir.jpg" style="width: 100%; max-width: 260px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.woytinsky_picked = 1"/>
+[? if roll1 == "woytinsky" or roll2 == "woytinsky" or roll3 == "woytinsky"  and not new_advisor_pick_made: <img src="img/portraits/WoytinskyWladimir.jpg" style="width: 100%; max-width: 190px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.woytinsky_picked = 1; dendryUI.dendryEngine.state.qualities.new_advisor_pick_made = 1"/>
 ?]
 
-[? if roll1 == "zeigner" or roll2 == "zeigner" or roll3 == "zeigner": **Erich Zeigner** ?]
+[? if roll1 == "zeigner" or roll2 == "zeigner" or roll3 == "zeigner"  and not new_advisor_pick_made: **Erich Zeigner** ?]
 
-[? if roll1 == "zeigner" or roll2 == "zeigner" or roll3 == "zeigner": <img src="img/portraits/ZeignerErich.jpg" style="width: 100%; max-width: 260px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.zeigner_picked = 1"/> ?]
+[? if roll1 == "zeigner" or roll2 == "zeigner" or roll3 == "zeigner"  and not new_advisor_pick_made: <img src="img/portraits/ZeignerErich.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.zeigner_picked = 1; dendryUI.dendryEngine.state.qualities.new_advisor_pick_made = 1"/> ?]
 
 
 - @check_again_mon_vieux
 
 @check_again_mon_vieux
 title: Check Out
-
+view-if:  and not new_advisor_pick_made == 1
 
 [+ hirschfeld_picked +]
 [+ baade_picked +]
