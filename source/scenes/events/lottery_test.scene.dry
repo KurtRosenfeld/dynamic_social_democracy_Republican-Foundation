@@ -7,14 +7,15 @@ tags: event
 new-page: true
 on-arrival: {!
   const WEIGHTS = {
-    fleissner:   13,
-    zeigner:     22,
-    woytinsky:   10,
-    baade:       11,
-    heldt:       20,
-    buck:        19,
-    grzesinski:  15,
-    hirschfeld:  13
+    fleissner:   10,
+    zeigner:     5,
+    woytinsky:   24,
+    baade:       22,
+    heldt:       6,
+    buck:        16,
+    grzesinski:  18,
+    ludemann:    14,
+    hirschfeld:  19
   };
 
   // You have to a member to be voted in
@@ -26,6 +27,7 @@ on-arrival: {!
     heldt:       Q.heldt_in === "SPD" && !Q.heldt_picked,
     buck:        Q.buck_in === "SPD" && !Q.buck_picked,
     grzesinski:  Q.grzesinski_in  === "SPD" && !Q.grzesinski_picked,
+    ludemann:    Q.ludemann_in  === "SPD" && !Q.ludemann_picked,
     hirschfeld:  Q.hirschfeld_in === "SPD" && !Q.hirschfled_picked
   };
 
@@ -92,5 +94,21 @@ Pick a new advisor to be added to your list (they won't be automatically picked 
 
 [? if roll1 == "buck" or roll2 == "buck" or roll3 == "buck": **Wilhelm Buck** ?]
 
-[? if roll1 == "buck" or roll2 == "buck" or roll3 == "buck": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/BuckWilhelm.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.zeigner_picked = 1; window.dendryUI.dendryEngine.goToScene('leave_lottery');"/>  <div> Buck is an important figure in Saxon Poilitics<br/> Faction: Reformist </div> </div>?]
+[? if roll1 == "buck" or roll2 == "buck" or roll3 == "buck": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/BuckWilhelm.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.buck_picked = 1; window.dendryUI.dendryEngine.goToScene('leave_lottery');"/>  <div> Buck is an important figure in Saxon Poilitics<br/> Faction: Reformist </div> </div>?]
+
+[? if roll1 == "heldt" or roll2 == "heldt" or roll3 == "heldt": **Max Heldt** ?]
+
+[? if roll1 == "heldt" or roll2 == "heldt" or roll3 == "heldt": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/Max Heldt.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.heldtr_picked = 1; window.dendryUI.dendryEngine.goToScene('leave_lottery');"/>  <div> Heldt is an important figure in Saxon Poilitics<br/> Faction: Social-Patriot </div> </div>?]
+
+[? if roll1 == "ludemann" or roll2 == "ludemann" or roll3 == "ludemann": **Hermann Lüdemann** ?]
+
+[? if roll1 == "ludemann" or roll2 == "ludemann" or roll3 == "ludemann": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/LüdemannHermann.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.ludemann_picked = 1; window.dendryUI.dendryEngine.goToScene('leave_lottery');"/>  <div> Lüdemann is an important figure in Prussian Poilitics<br/> Faction: Neorevisionist </div> </div>?]
+
+[? if roll1 == "fleissner" or roll2 == "fleissner" or roll3 == "fleissner": **Hermann Fleißner** ?]
+
+[? if roll1 == "fleissner" or roll2 == "fleissner" or roll3 == "fleissner": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/FleißnerHermann.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.fleissner_picked = 1; window.dendryUI.dendryEngine.goToScene('leave_lottery');"/>  <div> Fleißner is an important figure in Saxon Poilitics<br/> Faction: Left </div> </div>?]
+
+[? if roll1 == "grzesinski" or roll2 == "grzesinski" or roll3 == "grzesinski": **Albert Grzesinski** ?]
+
+[? if roll1 == "grzesinski" or roll2 == "grzesinski" or roll3 == "grzesinski": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/GrzesinskiAlbert.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.grzesinski_picked = 1; window.dendryUI.dendryEngine.goToScene('leave_lottery');"/>  <div> Grzesinski is an important figure in Prussian Poilitics<br/> Faction: Reformist </div> </div>?]
 
