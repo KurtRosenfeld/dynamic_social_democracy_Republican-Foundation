@@ -75,22 +75,22 @@ Pick a new advisor to be added to your list (they won't be automatically picked 
 [? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld": **Magnus Hirschfeld** ?]
 
 [? if roll1 == "hirschfeld" or roll2 == "hirschfeld" or roll3 == "hirschfeld":
-<div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/HirschfeldMagnus.jpg" style="width: 100%; max-width: 190px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.hirschfeld_picked = 1;  dendryUI.dendryEngine.goTo.leave_lottery"/>  <div> Hirschfeld is a doctor<br/> Faction: None </div> ?]
+<div style="margin-bottom: 1em; overflow: hidden;"> <img src="img/portraits/HirschfeldMagnus.jpg" style="width: 100%; max-width: 190px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.hirschfeld_picked = 1;  window.dendryUI.dendryEngine.goToScene('events/leave_lottery');"/>  <div> Hirschfeld is a doctor<br/> Faction: None </div> ?]
 
 [? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade": **Fritz Baade** ?]
 
-[? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/BaadeFritz.jpg" style="width: 100%; max-width: 190px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.baade_picked = 1;  dendryUI.dendryEngine.goTo.leave_lottery"/>  <div> Baade is an expert on agriculture<br/> Faction: None </div> ?]
+[? if roll1 == "baade" or roll2 == "baade" or roll3 == "baade": <div style="margin-bottom: 1em; overflow: hidden;"> <img src="img/portraits/BaadeFritz.jpg" style="width: 100%; max-width: 190px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.baade_picked = 1;  window.dendryUI.dendryEngine.goToScene('events/leave_lottery');"/>  <div> Baade is an expert on agriculture<br/> Faction: None </div> ?]
 
 [? if roll1 == "woytinsky" or roll2 == "woytinsky" or roll3 == "woytinsky": **Wladimir Woytinsky** ?]
 
-[? if roll1 == "woytinsky" or roll2 == "woytinsky" or roll3 == "woytinsky": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/WoytinskyWladimir.jpg" style="width: 100%; max-width: 190px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.woytinsky_picked = 1; dendryUI.dendryEngine.goTo.leave_lottery"/>   <div> Woytinsky is a former Menshevik economist<br/> Faction: Labor </div>
+[? if roll1 == "woytinsky" or roll2 == "woytinsky" or roll3 == "woytinsky": <div style="margin-bottom: 1em; overflow: hidden;"> <img src="img/portraits/WoytinskyWladimir.jpg" style="width: 100%; max-width: 190px; cursor : pointer;" onclick="dendryUI.dendryEngine.state.qualities.woytinsky_picked = 1; window.dendryUI.dendryEngine.goToScene('events/leave_lottery');"/>   <div> Woytinsky is a former Menshevik economist<br/> Faction: Labor </div>
 ?]
 
 [? if roll1 == "zeigner" or roll2 == "zeigner" or roll3 == "zeigner": **Erich Zeigner** ?]
 
-[? if roll1 == "zeigner" or roll2 == "zeigner" or roll3 == "zeigner": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/ZeignerErich.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.zeigner_picked = 1; dendryUI.dendryEngine.goTo.leave_lottery"/>  <div> Zeigner is an important figure in Saxon Politics<br/> Faction: Left </div>?]
+[? if roll1 == "zeigner" or roll2 == "zeigner" or roll3 == "zeigner": <div style="margin-bottom: 1em; overflow: hidden;"> <img src="img/portraits/ZeignerErich.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.zeigner_picked = 1; window.dendryUI.dendryEngine.goToScene('events/leave_lottery');"/>  <div> Zeigner is an important figure in Saxon Politics<br/> Faction: Left </div>?]
 
 [? if roll1 == "buck" or roll2 == "buck" or roll3 == "buck": **Wilhelm Buck** ?]
 
-[? if roll1 == "buck" or roll2 == "buck" or roll3 == "buck": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/BuckWilhelm.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.zeigner_picked = 1; dendryUI.dendryEngine.goTo.leave_lottery"/>  <div> Buck is an important figure in Saxon Poilitics<br/> Faction: Reformist </div>?]
+[? if roll1 == "buck" or roll2 == "buck" or roll3 == "buck": <div style="margin-bottom: 1em; overflow: hidden;"> <img src="img/portraits/BuckWilhelm.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.zeigner_picked = 1; window.dendryUI.dendryEngine.goToScene('events/leave_lottery');"/>  <div> Buck is an important figure in Saxon Poilitics<br/> Faction: Reformist </div>?]
 
