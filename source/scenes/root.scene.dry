@@ -1519,7 +1519,7 @@ Q.severing_in = 'SPD';
 Q.pfulf_in = 'SPD';
 Q.juchaz_in = 'SPD';
 Q.buck_in = 'SPD';
-Q.greszinski_in = 'SPD';
+Q.grzesinski_in = 'SPD';
 
 Q.frolich_in = 'SPD';
 Q.seydewitz_in = 'SPD';
@@ -1542,12 +1542,15 @@ Q.mierendorff_in = 'SPD';
 Q.leber_in = 'SPD';
 Q.schumacher_in = 'SPD';
 Q.wirth_in = 'Z';
+Q.vogel_in = 'SPD';
+Q.ludemann_in = 'SPD';
 
 Q.baade_in = 'USPD';
 Q.sollman_in = 'SPD';
 Q.schmidt_in = 'SPD';
 Q.stampfer_in = 'SPD';
 Q.radbruch_in = 'SPD';
+Q.hirschfeld_in = 'SPD';
 
 Q.heldt_in = 'SPD';
 
