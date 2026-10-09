@@ -98,7 +98,7 @@ Pick a new advisor to be added to your list (they won't be automatically picked 
 
 [? if roll1 == "heldt" or roll2 == "heldt" or roll3 == "heldt": **Max Heldt** ?]
 
-[? if roll1 == "heldt" or roll2 == "heldt" or roll3 == "heldt": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/Max Heldt.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.heldtr_picked = 1; window.dendryUI.dendryEngine.goToScene('leave_lottery');"/>  <div> Heldt is an important figure in Saxon Poilitics<br/> Faction: Social-Patriot </div> </div>?]
+[? if roll1 == "heldt" or roll2 == "heldt" or roll3 == "heldt": <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/HeldtMax.jpg" style="width: 100%; max-width: 190px; cursor: pointer;" onclick="dendryUI.dendryEngine.state.qualities.heldtr_picked = 1; window.dendryUI.dendryEngine.goToScene('leave_lottery');"/>  <div> Heldt is an important figure in Saxon Poilitics<br/> Faction: Social-Patriot </div> </div>?]
 
 [? if roll1 == "ludemann" or roll2 == "ludemann" or roll3 == "ludemann": **Hermann Lüdemann** ?]
 
