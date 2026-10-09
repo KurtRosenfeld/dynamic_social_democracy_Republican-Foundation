@@ -1,6 +1,6 @@
 title: Wanna play the lottery?
 subtitle: This is only some test that does nothing real yet
-view-if: year == 1922 and month == 4 and hidden_for_huuuuuuhuuhuh
+view-if: year == 1922 and month == 4
 max-visits: 1
 priority: 8
 tags: event
@@ -13,7 +13,7 @@ on-arrival: {!
     baade:       0.10,
     heldt:       0.15,
     buck:        0.15,
-    greszinski:  0.15,
+    grzesinski:  0.15,
     hirschfeld:  0.15
   };
 
@@ -21,12 +21,12 @@ on-arrival: {!
   const ELIGIBLE = {
     fleissner:   Q.fleissner_in   === "SPD",
     zeigner:     Q.zeigner_in    === "SPD",
-    woytinsky:   Q.woytinsky_in   === "SPD",
+    woytinsky:   Q.woytinsky_in   === "SPD" && !Q.woytinsky_picked,
     baade:       Q.baade_in     === "SPD",
     heldt:       Q.heldt_in === "SPD",
-    buck:        true,
-    greszinski:  Q.greszinski_in  === "SPD",
-    hirschfeld:  true
+    buck:        Q.buck_in === "SPD",
+    grzesinski:  Q.grzesinski_in  === "SPD",
+    hirschfeld:  Q.hirschfeld_in === "SPD"
   };
 
   if (!Q.lottery_chosen) Q.lottery_chosen = [];
