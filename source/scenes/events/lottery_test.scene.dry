@@ -91,7 +91,7 @@ on-arrival: {!
 
 @check_again_mon_vieux
 title: Check Out
-view-if:  and not new_advisor_pick_made == 1
+view-if: not new_advisor_pick_made == 1
 
 [+ hirschfeld_picked +]
 [+ baade_picked +]
