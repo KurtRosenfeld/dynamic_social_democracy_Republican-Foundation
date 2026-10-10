@@ -387,7 +387,7 @@ Q.catholics_nsdap = 1;
 Q.catholics_dvfp = 0;
 Q.catholics_other = 6;
 Q.catholics_nsfb = 0;
-Q.catholic_dtsp = 2;
+Q.catholics_dtsp = 2;
 
 Q.workers_spd_old = 44;
 Q.new_middle_spd_old = 7;
