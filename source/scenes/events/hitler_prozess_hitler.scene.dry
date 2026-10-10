@@ -1,0 +1,54 @@
+title: The Hitler-Ludendorff trial
+subtitle: The coup leaders wait for their judgement in [+ hitler_prozess_court +].
+view-if: bavaria_coup == 3 and year == 1924 and month == 4 and hitler_dead == 0 and hitler_prozess_court and immmmmmmmma_finnish_that_later == 23
+max-visits: 1
+priority: 0
+tags: event
+new-page: true
+
+
+= The Hitler-Ludendorff trial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
