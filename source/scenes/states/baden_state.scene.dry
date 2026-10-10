@@ -76,7 +76,7 @@ title: Work towards the abolition of the death penalty
 view-if: baden_death_penal <= 3
 on-arrival: baden_action_timer += 7; baden_death_penal += 1
 choose-if: baden_reform >= 3
-unavailable-subtitle: The judiciary is quite fond of killing people people
+unavailable-subtitle: The judiciary is quite fond of killing people.
 
 @death_to_death
 title: Abolish the death penalty in Baden
