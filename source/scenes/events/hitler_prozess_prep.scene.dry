@@ -1,0 +1,63 @@
+title: What to do about the coup leaders?
+subtitle: There is some trouble with preparing the trial...
+view-if: bavaria_coup == 3 and year == 1924
+max-visits: 1
+priority: 1
+tags: event
+new-page: true
+
+
+= What to do about the coup leaders?
+
+[? if not hitler_dead == 1: Hitler, ?] Ludendorff and the other coup leaders are currently under arrest in <span style="color: #00CCFF;">Bavaria</span>. Since they expect a regular trial would harm their own personal (mainly Kahr), who prepared their own coup, they won't send the captives to Leipzig but illegally try them in Munich.
+
+- @stop_them_bitches: We won't let this happen!
+- @noooooooooooooope: There is nothing we can do...
+
+@stop_them_bitches
+choose-if: (judiciary_minister_party == "SPD" and interior_minister_party == "SPD") or chancellor_party == "SPD"
+unavailable-subtitle: We neither occupy the neccessary ministries nor the chancellorship.
+
+<span style="color: #00CCFF;">Bavaria</span> has proven that they don't really listen to the National Government, how do we want to get them to obey our orders?
+
+- @rrrrrrrrreichssexxekkkution: We will call a Reichsexekution of Bavaria.
+- @lil_concesssssionss: We will make some concessions.
+
+
+@rrrrrrrrreichssexxekkkution
+choose-if: reichswehr-loyalty >= 0.42
+unavailable-subtitle: The Reichswehr will probably not execute that order just as during the Kapp Putsch. Truppe schießt nicht auf Truppe.
+on-arrival: hitler_prozess_court = "Leipzig"
+
+@lil_concesssssionss
+subtitle: Who says they have really planned a coup...
+on-arrival: hitler_prozess_court = "Leipzig"
+  
+We will promise not to investigate members of the <span style="color: [+ bvp_colour +];">**BVP**</span> knowing that this is the only way to persecute anyone.
+
+
+@noooooooooooooope
+on-arrival: hitler_prozess_court = "Munich"
+  
+[? if not justice_minister_party == "DDP" and not justice_minister_party == "Z": [+ justice_minister +] ([+ justice_minister_party +]) will glady ignore the actions of the Conservative South citing that there is nothing to do anyways. ?]
+[? if justice_minister_party == "DDP" or justice_minister_party == "Z": [+ justice_minister +] ([+ justice_minister_party +]) protests the disobetion of National Law but nothing can be done. There is no support from the coalition and [+ chancellor +] would prefer fast reconciliation with the <span style="color: [+ bvp_colour +];">**BVP**</span>. ?]
+
+The trial will take place in Munich.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
