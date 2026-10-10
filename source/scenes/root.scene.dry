@@ -441,6 +441,7 @@ Q.previous_ddp_last_election_votes = 8.3;
 Q.previous_dvp_last_election_votes = 13.9;
 Q.previous_dnvp_last_election_votes = 15.1;
 Q.previous_dvfp_last_election_votes = 0;
+Q.previous_dtsp_last_election_votes = 0;
 Q.previous_nsdap_last_election_votes = 0;
 Q.previous_other_last_election_votes = 3.3;
 Q.previous_bvp_last_election_votes = 4.1;
@@ -476,6 +477,7 @@ Q.dnvp_r_prussia = 18.1;
 Q.dvfp_r_prussia = 0;
 Q.nsdap_r_prussia = 0;
 Q.nsfb_r_prussia = 0;
+Q.dtsp_r_prussia = 0;
 Q.other_r_prussia = 3.1;
 
 // diff from prev PRUSSIA
@@ -488,7 +490,9 @@ Q.old_dvp_r_prussia = 14.2;
 Q.old_wp_r_prussia = 1.0;
 Q.old_dnvp_r_prussia = 18.1;
 Q.old_dvfp_r_prussia = 0;
+Q.old_dtsp_r_prussia = 0;
 Q.old_nsdap_r_prussia = 0;
+Q.old_dtsp_r_prussia = 0;
 Q.old_other_r_prussia = 4.0;
 
 // old election votes PRUSSIA
@@ -501,6 +505,7 @@ Q.previous_dvp_last_election_votes_prussia = 14.0;
 Q.previous_wp_last_election_votes_prussia = 1.2;
 Q.previous_dnvp_last_election_votes_prussia = 18.0;
 Q.previous_dvfp_election_votes_prussia = 0;
+Q.previous_dtsp_election_votes_prussia = 0;
 Q.previous_nsdap_last_election_votes_prussia = 0;
 Q.previous_other_last_election_votes_prussia = 4.4;
 
@@ -661,6 +666,7 @@ Q.lb_votes = 0;
 Q.aspd_votes = 0;
 Q.dnvp_votes = 15.2;
 Q.dvfp_votes = 0;
+Q.dtsp_votes = 0;
 Q.nsdap_votes = 2.6;
 Q.other_votes = 14.5;
 Q.bvp_votes = 0;
@@ -759,7 +765,7 @@ Q.adjustmentFactors_lvp_prussia = 1.0;
 Q.adjustmentFactors_dnvp_prussia = 1.0;
 Q.adjustmentFactors_dvfp_prussia = 1.1;
 Q.adjustmentFactors_nsdap_prussia = 1.0;
-Q.adjustmentFactors_dtsp_prussia = 1.1;
+Q.adjustmentFactors_dtsp_prussia = 1.0;
 Q.adjustmentFactors_dnf_prussia = 1.0;
 Q.adjustmentFactors_dnef_prussia = 1.0;
 Q.adjustmentFactors_kvp_prussia = 1.0;
