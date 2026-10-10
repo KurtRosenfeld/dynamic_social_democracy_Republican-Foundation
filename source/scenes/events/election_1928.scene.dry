@@ -1199,7 +1199,7 @@ if (Q.kvp_formed && Q.lvp_formed) {
 
 Q.hitler_right_coalition = parseFloat((Q.z_r + Q.nsdap_r).toFixed(1));
 
-Q.killer_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.dnvp_r + Q.others_r + Q.nsfb_r + Q.dvfp_r + Q.nsdap_r).toFixed(1));
+Q.killer_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.dnvp_r + Q.others_r + Q.nsfb_r + Q.dvfp_r + Q.nsdap_r + Q.dtsp_r).toFixed(1));
 
 Q.goerdeler_right_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.lvp_r + Q.other_r + Q.kvp_r + Q.dnvp_r + Q.dnf_r).toFixed(1));
 
@@ -1696,6 +1696,15 @@ if (Q.dnf_formed && Q.dnf_r) {
     });
 }
 
+if (Q.dtsp_r) {
+    data.push({
+        "id": "dtsp",
+        "legend": "DtSP",
+        "name": "DtSP",
+        "seats": Math.round(Q.dtsp_r * Q.reichstag_size),
+    });
+}
+
 if (Q.dsu_exist && Q.dsu_r) {
     data.push({
         "id": "dsu",
@@ -1758,8 +1767,8 @@ if (window && d3) {
 
     var lines = d3.linegraph(false, false,
             Q.parties_graph,
-            {'spd': '#E3000F', 'uspd': '#AA0000', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF', 'dvfp': '#3D3D3D', 'nsfb': '#7A3C00'},
-            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP', 'dvfp': 'DVFP', 'nsdap': 'NSFB'});
+            {'spd': '#E3000F', 'uspd': '#AA0000', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF', 'dvfp': '#3D3D3D', 'nsfb': '#7A3C00', 'nsdap': '#7A3C00', 'dtsp': '#AA6E4F'},
+            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP', 'dvfp': 'DVFP', 'nsdap': 'NSDAP', 'nsfb': 'NSFB', 'dtsp': 'DtSP'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     d3.select("#election_history").datum(Q.election_records).call(lines);
@@ -1770,7 +1779,7 @@ if (window && d3) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties_graph,
             {'spd': '#E3000F', 'uspd': '#AA0000', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF', 'dvfp': '#3D3D3D', 'nsfb': '#7A3C00'},
-            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP', 'dvfp': 'DVFP', 'nsdap': 'NSFB'});
+            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP', 'dvfp': 'DVFP', 'nsfb': 'NSFB'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
@@ -1864,6 +1873,8 @@ go-to: achievement_check_e
 [? if dvfp_formed = 1 and nsfb_exists = 0: {!<tr><td><div class="box" style='background-color:#3D3D3D'> </div> !} DVFP: {!</td><td>!} [+ dvfp_votes +]% {!</td><td>!} [+ str_votes_change_dvfp +] {!</td><td>!} [+ dvfp_r +]% {!</td><td>!} [+ str_change_dvfp +] {!</td></tr>!} ?]
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_votes +]% {!</td><td>!} [+ str_votes_change_dnf +] {!</td><td>!} [+ dnf_r +]% {!</td><td>!} [+ str_change_dnf +] {!</td></tr>!} ?]
+
+[? if dtsp_votes > 0: {!<tr><td><div class="box" style='background-color:#AA6E4F'> </div> !} DtSP: {!</td><td>!} [+ dtsp_votes +]% {!</td><td>!} [+ str_votes_change_dtsp +] {!</td><td>!} [+ dtsp_r +]% {!</td><td>!} [+ str_change_dtsp +] {!</td></tr>!} ?]
 
 [? if dsu_exist: {!<tr><td><div class="box" style='background-color:#6A1E1E'> </div> !} DSU: {!</td><td>!} [+ dsu_votes +]% {!</td><td>!} [+ str_votes_change_dsu +] {!</td><td>!} [+ dsu_r +]% {!</td><td>!} [+ str_change_dsu +] {!</td></tr>!} ?]
 
