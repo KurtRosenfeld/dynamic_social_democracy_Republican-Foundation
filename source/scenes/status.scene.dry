@@ -400,7 +400,7 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
 [? if dvfp_formed = 1 and nsfb_exists == 0: <span style="color: #3D3D3D;">**DVFP**</span>: [+ dvfp_votes +]% ?]
 
-[? if not dsp_dead: <span style="color: #AA6E4F;">**DtSP**</span>: [+ dsp_votes +]% ?]
+[? if not dsp_dead: <span style="color: #AA6E4F;">**DtSP**</span>: [+ dtsp_votes +]% ?]
 
 [? if nsfb_exists = 1: <span style="color: [+ nsdap_colour +];">**NSFB**</span>: [+ nsfb_votes +]% ?]
 
