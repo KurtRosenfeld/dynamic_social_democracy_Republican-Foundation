@@ -798,6 +798,10 @@ fill: #D5AC27;
   fill: #3D3D3D;
 }
 
+.seat.dtsp {
+  fill: #AA6E4F;
+}
+
 .seat.nsdap {
   fill: #7A3C00;
 }
