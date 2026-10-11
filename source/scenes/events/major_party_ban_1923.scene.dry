@@ -3,7 +3,7 @@ subtitle: Seeckt bans the <span style="color: [+ nsdap_colour +];">**NSDAP**</sp
 new-page: true
 max-visits: 1
 view-if: month >= 11 and bavaria_coup == 3
-on-arrival: catholic_nsdap -= 3; workers_nsdap -= 2; rural_nsdap -= 2; new_middle_dvfp -= 2; unemployed_dvfp -= 3; unemployed_nsdap -= 2; workers_kpd -= 3; unemployed_kpd -= 2; workers_dnvp += 2; unemployed_dnvp += 2; new_middle_dnvp += 2; old_middle_dnvp += 2
+on-arrival: catholics_nsdap = catholics_nsdap*0.3; workers_nsdap -= 3; rural_nsdap -= 2; new_middle_dvfp -= 2; unemployed_dvfp -= 3; unemployed_nsdap = unemployed_nsdap*0.3; workers_kpd -= 4; unemployed_kpd -= 3; workers_dnvp += 2; unemployed_dnvp += 2; new_middle_dnvp += 4; old_middle_dnvp += 4; catholic_dnvp += 2; catholic_dvp += 2; workers_dtsp += 2
 priority: -1
 tags: event
 face-image: img/portraits/seeckt.jpg
