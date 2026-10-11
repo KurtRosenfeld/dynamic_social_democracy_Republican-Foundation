@@ -1,35 +1,32 @@
-title: The Hitler-Ludendorff trial
+title: The Hitler-Ludendorff Trial
 subtitle: The coup leaders wait for their judgement in [+ hitler_prozess_court +].
 view-if: bavaria_coup == 3 and year == 1924 and month == 4 and hitler_dead == 0 and hitler_prozess_court and immmmmmmmma_finnish_that_later == 23
 max-visits: 1
 priority: 0
 tags: event
 new-page: true
+face-image: img/hitler_prozess.jpg
 
+= The Hitler-Ludendorff Trial
 
-= The Hitler-Ludendorff trial
+[? if hitler_prozess_court == "Munich": Ludenforff was immediadetly freed from custody - there are rumors that his honest testimony was replaced with one that makes him appear innocent. Meanwhile Hitler claimed full responsibility for the coup attempt turning the court room into a stage for his only moderately interesting, quite uncreative, speeches attacking both the <style="color: [+ spd_colour +];">**SPD**</span> and *unpatriotic* <span style="color: [+ bvp_colour +];">Triumvirate</span>. ?]
 
-
-
-
-
-
-
+[? if hitler_prozess_court == "Munich": The coup leaders return for their ruling, Ludendorff is even wearing his wartime uniform. Let's hope for a somewhat sensible sentence... ?]
 
 
 
 
 
+- @hit_leipzig_ruling: The judge rules...
+- @hit_munich_ruling: The judge rules...
 
+@hit_munich_ruling
+view-if: hitler_prozess_court == "Munich"
+on-arrival: old_middle_nsdap += 3; rural_nsdap += 2
 
+Ludendorff is freed of all charges - he immediately protests feeling insulted by the ignorance towards his perceived honour and hard work. Hitler who should be deported to Austria according to law is only given the basic sentence of five years in prison with a possibility of being freed earlier. Most other leaders have gotten similar rulings.
 
-
-
-
-
-
-
-
+- @tffffffffff: This is stupid.
 
 
 
@@ -51,4 +48,16 @@ new-page: true
 
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+  @tffffffffff
