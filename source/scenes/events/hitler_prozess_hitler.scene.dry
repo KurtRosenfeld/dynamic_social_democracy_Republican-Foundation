@@ -1,6 +1,6 @@
 title: The Hitler-Ludendorff Trial
 subtitle: The coup leaders wait for their judgement in [+ hitler_prozess_court +].
-view-if: bavaria_coup == 3 and year == 1924 and month == 4 and hitler_dead == 0 and hitler_prozess_court and immmmmmmmma_finnish_that_later == 23
+view-if: bavaria_coup == 3 and year == 1924 and month == 4 and hitler_dead == 0 and hitler_prozess_court
 max-visits: 1
 priority: 0
 tags: event
@@ -13,7 +13,7 @@ face-image: img/hitler_prozess.jpg
 
 [? if hitler_prozess_court == "Munich": The coup leaders return for their ruling, Ludendorff is even wearing his wartime uniform. Let's hope for a somewhat sensible sentence... ?]
 
-
+[? if hitler_prozess_court == "Leipzig": Somehow we have actually gotten the coup leaders to Leipzig, the heart of the Republican Judiciary. (This is one of those points where I would make up some kind of text but I'm just going with the coding holding this open for another day - use your imagination, you little waffel) ?]
 
 
 
@@ -29,32 +29,32 @@ Ludendorff is freed of all charges - he immediately protests feeling insulted by
 - @tffffffffff: This is stupid.
 
 
+@hit_leipzig_ruling
+view-if: hitler_prozess_court == "Leipzig"
+on-arrival: bvp_relation -= 4; dvp_relation -= 3; dnvp_relation -= 2; hitler_prozess_chances += judiciary_reform; hitler_deported = 1
 
+Hitler will be deported to Austria. As a foreign citizen charged for high treason he has no right to remain in the Reich.
 
+- @ludendorff_does_nothing: And the others?
+- @milder_sentence: And the others?
+- @harsher_sentence: And the others?
 
+@ludendorff_does_nothing
+view-if: hitler_prozess_chances <= 0
+on-arrival: old_middle_nsdap += 2; old_middle_dvfp += 2
 
+While most <span style="color: [+ nsdap_colour +];">**NSDAP**</span>-members are given a moderate prison sentence, Ludendorff goes free. It appears some of the judges might still hold respect for the veteran. Ludendorff protests loudly claiming full responsibility for the coup but nobody seems to listen... 
 
+@milder_sentence
+view-if: hitler_prozess_chances > 0 and hitler_prozess_chances < 6
+on-arrival: ludendorff_prison_timer = 96
 
+The conspirators are given a prison sentence of eight years each and some moderate fines. While there is an outcry among sympathizers, Ludendorff especially seems to very proud of his jail time.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@harsher_sentence
+view-if: hitler_prozess_chances >= 6
+on-arrival: ludendorff_prison_timer = 144
+The conspirators are given a prison sentence of twelve years each and some moderate fines. The outcry among sympathizers is immense while the condemmend seem to accept their newfound political irrelevance as punishment for their terribly planned coup...
 
 
 
