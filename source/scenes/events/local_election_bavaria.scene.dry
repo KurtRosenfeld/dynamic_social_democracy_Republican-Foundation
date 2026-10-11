@@ -547,7 +547,7 @@ United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <
 title: The <span style="color: #A2D8E0;">**BVP**</span> has fallen short of a majority, but continue to rule in caretaker capacity.
 subtitle: Electing a new Minister-President—or dissolving the Landtag—requires an absolute majority. Deep antagonism between the opposition parties has made clearing that hurdle all but impossible.
 view-if: bourgeois_coalition_bavaria < 50
-on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "Bourgeois"; bavaria_coalition_r = bvp_r_bavaria; bavaria_bvp = 1; bavaria_ddp = 2; ; bavaria_others = 2
+on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "Bourgeois"; bavaria_coalition_r = bvp_r_bavaria; bavaria_bvp = 1; bavaria_ddp = 2; bavaria_others = 2
 
 Despite the <span style="color: #A2D8E0;">**BVP**</span> falling short of a majority, even with the inclusion of other bourgeois parties, they continue to rule in as a caretaker government. [? if nsdap_bavaria_elections_vote >= 15: Negotiations with the <span style="color: #7A3C00;">**NSDAP**</span> has collapsed, due to their disdain for Catholics. ?]
 
