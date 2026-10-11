@@ -54,6 +54,7 @@ The conspirators are given a prison sentence of eight years each and some modera
 @harsher_sentence
 view-if: hitler_prozess_chances >= 6
 on-arrival: ludendorff_prison_timer = 144
+
 The conspirators are given a prison sentence of twelve years each and some moderate fines. The outcry among sympathizers is immense while the condemmend seem to accept their newfound political irrelevance as punishment for their terribly planned coup...
 
 
