@@ -624,7 +624,7 @@ The legacy of the Bavarian Worker’s Republic has been avenged, but at what cos
 title: Custom Coalition Creator
 subtitle: Some options micht be a little unorthodox...
 on-arrival: bavaria_coalition_r = spd_r_bavaria; bavaria_spd = 1
-go-to: baden_coalition_creator
+go-to: bavaria_coalition_creator
 
 @bavaria_coalition_creator
 title: Coalition Creator
