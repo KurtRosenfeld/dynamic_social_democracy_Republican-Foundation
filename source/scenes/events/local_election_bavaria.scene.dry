@@ -538,9 +538,8 @@ United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <
 - @bvp2_coalition
 - @spd_majority
 - @traffic_coalition
-- @antibvp_coalition
 - @united_left
-
+- @bavaria_coalition_creator_option
 
 
 @bvp_toleration
@@ -621,13 +620,13 @@ on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_spd = 1; bavari
 The conservative stronghold of the republic, home to the largest concentration of Catholics and general forces of <span style="color: #808080;">reaction</span> has finally fallen to the forces of the <span style="color: #700000;">Left</span>. Few could have expected the seeds of <span style="color: #c00000;">socialism</span>, much less <span style="color: #700000;">communism</span> to once again take root in Bavaria, but the election results showed have made this impossibility into a living nightmare for the right. <span style="color: #3E88B3;">**Stahlhelm**</span> brigands, along with the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> are already rushing to prepare a coup against what they see as a <span style="color: #700000;">communist</span> takeover in progress, and we may soon have a civil war on our hands.
 The legacy of the Bavarian Worker’s Republic has been avenged, but at what cost?
 
-@baden_coalition_creator_option
+@bavaria_coalition_creator_option
 title: Custom Coalition Creator
 subtitle: Some options micht be a little unorthodox...
 on-arrival: bavaria_coalition_r = spd_r_bavaria; bavaria_spd = 1
 go-to: baden_coalition_creator
 
-@baden_coalition_creator
+@bavaria_coalition_creator
 title: Coalition Creator
 
 Current support: [+ bavaria_coalition_r +]%
