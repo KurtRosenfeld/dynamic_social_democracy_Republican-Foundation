@@ -653,7 +653,7 @@ Current support: [+ bavaria_coalition_r +]%
 - @bavaria_drop_others: Drop the <span style="color: [+ other_colour +];">**Others**</span>
 - @bavaria_drop_bvp: Drop the <span style="color: [+ bvp_colour +];">**BVP**</span>
 - @bavaria_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
-- @return_to_baden: Return
+- @return_to_bavaria: Return
 
 
 @bavaria_invite_kpd
@@ -796,7 +796,7 @@ go-to: bavaria_coalition_creator
 
 
 @return_to_bavaria
-on-arrival: bavaria_spd = 0; bavaria_kpd = 0; bavaria_sapd = 0; bavaria_uspd = 0; bavaria_ddp = 0; bavaria_z = 0; bavaria_dvp = 0; bavaria_true_others = 0; bavaria_lvp = 0; bavaria_wp = 0
+on-arrival: bavaria_spd = 0; bavaria_kpd = 0; bavaria_uspd = 0; bavaria_sapd = 0; bavaria_ddp = 0; bavaria_csp = 0; bavaria_z = 0; bavaria_dbp = 0; bavaria_bvp = 0; bavaria_others = 0; bavaria_dvp = 0; bavaria_dnvp = 0; bavaria_nsdap = 0; bavaria_nsfb = 0; bavaria_dnf = 0
 go-to: bavaria_coalition_menu
 
 
