@@ -641,7 +641,6 @@ Current support: [+ bavaria_coalition_r +]%
 - @bavaria_invite_others: Invite the <span style="color: [+ other_colour +];">**Others**</span>
 - @bavaria_invite_bvp: Invite the <span style="color: [+ bvp_colour +];">**BVP**</span>
 - @bavaria_invite_dvp: Invite the <span style="color: [+ dvp_colour +];">**DVP**</span>
-- @bavaria_invite_wp: Invite the <span style="color: #b8996f;">**WP**</span>
 - @bavaria_invite_dnvp: Invite the <span style="color: [+ dnvp_colour +];">**BMP**</span>
 - @bavaria_check_out: Check out.
 - @bavaria_drop_kpd: Drop the <span style="color: [+ kpd_colour +];">**KPD**</span>
@@ -654,7 +653,6 @@ Current support: [+ bavaria_coalition_r +]%
 - @bavaria_drop_others: Drop the <span style="color: [+ other_colour +];">**Others**</span>
 - @bavaria_drop_bvp: Drop the <span style="color: [+ bvp_colour +];">**BVP**</span>
 - @bavaria_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
-- @bavaria_drop_wp: Drop the <span style="color: #b8996f;">**WP**</span>
 - @return_to_baden: Return
 
 
