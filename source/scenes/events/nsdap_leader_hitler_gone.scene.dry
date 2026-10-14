@@ -19,7 +19,7 @@ new-page: true
 face-image:img/portraits/strasser.jpg
 on-arrival: nsdap_leader = "Strasser"; nsdap_ideology = "National Socialism"
 
-With Hermann Göring being abroad and most other participants of the coup imprisonned, the natural leader of the <span style="color: [+ nsdap_colour +];">**NSDAP**</span> appears to be Gregor Strasser, a pharmacist who is both set on maintaining the National Socialist party line of the base and to opening the party towards cooperation with other parties of the <span style="color: [+ nsdap_colour +];">*Völkisch*</span> movement - be they more bourgeois. ?]
+With Hermann Göring being abroad and most other participants of the coup imprisonned, the natural leader of the <span style="color: [+ nsdap_colour +];">**NSDAP**</span> appears to be Gregor Strasser, a pharmacist who is both set on maintaining the National Socialist party line of the base and to opening the party towards cooperation with other parties of the <span style="color: [+ nsdap_colour +];">*Völkisch*</span> movement - be they more bourgeois.
 
 Anti-bourgeois purists like Hermann Esser are outraged about the loss of purity but no one listens anyway, so we don't care either...
 
