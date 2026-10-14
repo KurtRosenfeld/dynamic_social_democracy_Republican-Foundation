@@ -1,0 +1,69 @@
+title: Who will lead the <span style="color: [+ nsdap_colour +];">**NSDAP**</span> now?
+subtitle: As if anyone cared that much...
+view-if: hitler_dead == 1 or hitler_deported == 1 and year <= 1925
+max-visits: 1
+priority: 0
+tags: event
+new-page: true
+
+
+= Who will lead the <span style="color: [+ nsdap_colour +];">**NSDAP**</span> now?
+
+[? if hitler_deported: The deported *Führer* has tried to steer the party from Austrian exile before disappearing unexpectedly. Furthermore the left-wing of the party around Joseph Goebbelshas even called for officially condemming the "little bourgeois" whos politcal line was too impure for a true national worker's party. ?]
+
+[? if hitler_dead: The death of Hitler is widely mourned with several factions claiming to represent his legacy. ?]
+
+- @strasser_duh: Gregor Strasser will lead the party.
+
+@strasser_duh
+face-image:img/portraits/strasser.jpg
+on-arrival: nsdap_leader == "Strasser"; nsdap_ideology == "National Socialism"
+
+With Hermann Göring being abroad and most other participants of the coup imprisonned, the natural leader of the <span style="color: [+ nsdap_colour +];">**NSDAP**</span> appears to be Gregor Strasser, a pharmacist who is both set on maintaining the National Socialist party line of the base and to opening the party towards cooperation with other parties of the <span style="color: [+ nsdap_colour +];">*Völkisch*</span> movement - be they more bourgeois. ?]
+
+Anti-bourgeois purists like Hermann Esser are outraged about the loss of purity but no one listens anyway, so we don't care either...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
