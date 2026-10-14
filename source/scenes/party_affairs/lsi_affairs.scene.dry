@@ -100,7 +100,7 @@ on-arrival: lsi_founding -= 1; resources += 1; austria_relation -= 3; france_rel
 
 We have taken some money from the LSI - the other parties are displeased.
 
- @uspd
+@uspd
 choose-if: lsi_founding >= 1
 unavailable-subtitle: We are broke.
 on-arrival: lsi_founding -= 1; workers_uspd += 3; unemployed_uspd += 4; new_middle_uspd += 1
