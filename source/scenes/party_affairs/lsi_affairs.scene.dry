@@ -17,7 +17,7 @@ We are an important part of the current Socialist International. We can try out 
 - @colonial_stance: Work towards a clear position on Colonialism
 - @comintern_relation: Improve relations with the Comintern
 - @fourth_relation: Improve relation with the Trotskyist Fourth International
-- @send_funds: Placeholder for supporting allies in foreign elections
+- @send_funds: Fund parties
 
 
 
@@ -72,14 +72,52 @@ on-arrival: comintern_relation -= 0.2
 
 
 @send_funds
-choose-if: nsdap_relation >= 999
-unavailable-subtitle: Just imagine an SDAPÖ majority in Austria...
+subtitle: Use LSI resources to support member parties.
 
-
-
-
-
+- @sfio: Support <span style="color: #ff0000;">**SFIO**</span> in France
+- @sdapo: Support <span style="color: #cc0000;">**SDAPÖ**</span> in Austria
+- @psi: Support <span style="color: #fc0000;">**PSI**</span> in Italy
+- @psu: Support <span style="color: #c10000;">**PSU**</span> in Italy
+- @spd: Support <span style="color: [+ spd_colour +];">**SPD**</span> in Germany
+- @uspd: Support <span style="color: [+ uspd_colour +];">**USPD**</span> in Germany
  
+@sfio
+choose-if: gfdgdgdfsdgrgs == 23
+
+@sdapo
+choose-if: gfdgdgdfsdgrgs == 23
+
+@psi
+choose-if: gfdgdgdfsdgrgs == 23
+
+@psu
+choose-if: gfdgdgdfsdgrgs == 23
+
+@spd
+choose-if: lsi_founding >= 1
+unavailable-subtitle: We are broke.
+on-arrival: lsi_founding -= 1; resources += 1; austria_relation -= 3; france_relation -= 4; belgium_relation -= 3; uspd_relation -= 5
+
+We have taken some money from the LSI - the other parties are displeased.
+
+ @uspd
+choose-if: lsi_founding >= 1
+unavailable-subtitle: We are broke.
+on-arrival: lsi_founding -= 1; workers_uspd += 3; unemployed_uspd += 4; new_middle_uspd += 1
+
+We have funded the <span style="color: [+ uspd_colour +];">**USPD**</span>. For some reason. OK...
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
