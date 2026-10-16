@@ -30,9 +30,65 @@ jobs:
               # DVP variations, lazy town
               ('DVP', 'DVP'),
 
-              # lil boxes
-              ('''<div class="box" style='background-color:#D47B9B'> </div>''', '<div class="box uspd"></div>'),
-              ('''<div class="box" style='background-color:#A10000'> </div>''', '<div class="box uspd"></div>'),
+           # Weimar Coalitions
+          ('in_weimar_coalition = 1', 'national_gov = "Weimar"'),
+          ('in_weimar_coalition == 1', 'national_gov == "Weimar"'),
+          ('in_weimar_coalition', 'national_gov == "Weimar"'),
+
+
+          # Grand Coalitions
+
+          ('in_grand_coalition = 1', 'national_gov = "Grand"'),
+          ('in_grand_coalition == 1', 'national_gov == "Grand"'),
+          ('in_grand_coalition', 'national_gov == "Grand"'),
+
+
+          # SocLib Coalitions
+
+          ('in_social_liberal_coalition = 1', 'national_gov = "Social-Liberal"'),
+          ('in_social_liberal_coalition == 1', 'national_gov == "Social-Liberal"'),
+          ('in_social_liberal_coalition', 'national_gov == "Social-Liberal"'),
+
+
+          # SocCath Coalitions
+
+          ('in_social_catholic_coalition_prussia = 1', 'national_gov = "Social-Catholic"'),
+          ('in_social_catholic_coalition_prussia == 1', 'national_gov == "Social-Catholic"'),
+          ('in_social_catholic_coalition_prussia', 'national_gov == "Social-Catholic"'),
+
+
+          # Bourgeois Coalitions
+          
+          ('in_center_right_coalition = 1', 'national_gov = "Bourgeois"'),
+          ('in_center_right_coalition == 1', 'national_gov == "Bourgeois"'),
+          ('in_center_right_coalition', 'national_gov == "Bourgeois"'),
+
+          # Right Coalitions
+
+          ('in_right_coalition = 1', 'national_gov = "Right"'),
+          ('in_right_coalition == 1', 'national_gov == "Right"'),
+          ('in_right_coalition', 'national_gov == "Right"'),
+
+
+          # PopFront Coalitions
+
+          ('in_popular_front = 1', 'national_gov = "Popular-Front"'),
+          ('in_popular_front == 1', 'national_gov == "Popular-Front"'),
+          ('in_popular_front', 'national_gov == "Popular-Front"'),
+
+          # Left Coalitions
+
+          ('in_left_front = 1', 'national_gov = "Left"'),
+          ('in_left_front == 1', 'national_gov == "Left"'),
+          ('in_left_front', 'national_gov == "Left"'),
+
+          # SPD Coalitions
+
+          ('in_spd_majority = 1', 'national_gov = "SPD"'),
+          ('in_spd_majority == 1', 'national_gov == "SPD"'),
+          ('in_spd_majority', 'national_gov == "SPD"'),
+
+         
               
           ]
           
