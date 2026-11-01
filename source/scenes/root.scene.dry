@@ -651,6 +651,22 @@ Q.fr_assembly_r = 30.4;
 Q.cons_assembly_r = 4.8;
 Q.french_hos = "Millerand"; Q.french_hos_party = "I";
 
+// Italy
+
+Q.italian_parliament_seats = 535;
+Q.it_pci_seats = 1.7;
+Q.it_psi_seats = 23.2;
+Q.it_pri_seats = 1.1;
+Q.it_pdr_seats = 2.1;
+Q.it_min_seats = 2.5;
+Q.it_pp_seats = 20.2;
+Q.it_pldi_seats = 12.7;
+Q.it_pl_seats = 8;
+Q.it_idc_seats = 2.8;
+Q.it_lassale_seats = 5.4;
+Q.it_bn_seats = 19.6;
+Q.it_fidc_seats = 0.6;
+
 Q.spd_votes = 27.9;
 Q.uspd_votes = 0;
 Q.kpd_votes = 11.4;
