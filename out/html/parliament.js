@@ -1623,6 +1623,11 @@ anhalt: {
             qualityKey: 'ddp_r',
             condition: function(Q) { return Q.ddp_r && !Q.lvp_formed; }
           },
+               {
+            id: 'farm', legend: 'DBP', name: 'DBP',
+            qualityKey: 'dbp_r',
+            condition: function(Q) { return Q.dbp_r; }
+          },
           {
             id: 'lvp', legend: 'LVP', name: 'LVP',
             qualityKey: 'lvp_r',
@@ -1637,6 +1642,11 @@ anhalt: {
             id: 'dvp', legend: 'DVP', name: 'DVP',
             qualityKey: 'dvp_r',
             condition: function(Q) { return Q.dvp_r && !Q.lvp_formed && Q.dvp_exist; }
+          },
+               {
+            id: 'dhp', legend: 'DHP', name: 'DHP',
+            qualityKey: 'dhp_r',
+            condition: function(Q) { return Q.dhp_r; }
           },
           {
             id: 'other', legend: 'Other', name: 'Others',
@@ -1657,7 +1667,8 @@ anhalt: {
             id: 'farm3', legend: 'CNBL', name: 'CNBL',
             qualityKey: 'cnbl_r',
             condition: function(Q) { return Q.cnbl_r; }
-          },{
+          },
+               {
             id: 'csvd', legend: 'CSVD', name: 'CSVD',
             qualityKey: 'csvd_r',
             condition: function(Q) { return Q.csvd_exists && Q.csvd_r; }
