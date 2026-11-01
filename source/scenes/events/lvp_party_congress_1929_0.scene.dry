@@ -59,7 +59,7 @@ As a result of the left-liberal <span style="color: [+ ddp_colour +];">**[+ ddp_
 - @groko: Maintain the Grand Coalition.
 
 @weimar
-on-arrival: lvp_relation -= 3; z_relation -= 3; lvp_right += 1; national_gov = "Weimar"; ; coalition_dissent += 1
+on-arrival: lvp_relation -= 3; z_relation -= 3; lvp_right += 1; national_gov = "Weimar"; coalition_dissent += 1
 go-to: cabinet_reformation
 
 Expected, but the bourgeois parties are displeased by the exclusion of the <span style="color: #A2D8E0;">**BVP**</span> from the ruling coalition.

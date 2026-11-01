@@ -94,12 +94,12 @@ achievement: einheitsfront_2
 
 @no_vonc
 view-if: constructive_vonc
-on-arrival: national_gov == "Popular-Front" = 0; ; in_minority_government = 1;
+on-arrival: national_gov == "Popular-Front" = 0; in_minority_government = 1;
 
 We have been effectively made a minority government, and the <span style="color: [+ kpd_colour +];">**KPD**</span> intends to obstruct our attempts to pass policy.
 
 @spd_majority
 view-if: spd_r >= 50
-on-arrival: national_gov == "Popular-Front" = 0; ; national_gov = "SPD";
+on-arrival: national_gov == "Popular-Front" = 0; national_gov = "SPD";
 
 We were so kind.

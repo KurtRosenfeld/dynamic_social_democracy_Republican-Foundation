@@ -19,7 +19,7 @@ With the Young Plan not providing the necessary fiscal relief as many have hoped
 - @compromise: Surely there is some compromise to be had?
 
 @destroy
-on-arrival: spd_in_government = 0; grand_coalition_collapsed = 1 if national_gov == "Grand"; ; ; chancellor = "Brüning"; chancellor_party = "Z"; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; spd_toleration_right = 0; left_strength += 8; pro_republic -= 5; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 5; dvp_right += 3; grand_coalition_collapsed = 1; economic_growth -= 0.3
+on-arrival: spd_in_government = 0; grand_coalition_collapsed = 1 if national_gov == "Grand"; ; chancellor = "Brüning"; chancellor_party = "Z"; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; spd_toleration_right = 0; left_strength += 8; pro_republic -= 5; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 5; dvp_right += 3; grand_coalition_collapsed = 1; economic_growth -= 0.3
 
 Fine. If the bourgeoisie wish to blow up the government, let them do so. <span style="color: #c00000;">Socialists</span> will not be complicit in the destruction of the working class.
 
