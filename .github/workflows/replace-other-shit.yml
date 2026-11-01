@@ -30,65 +30,22 @@ jobs:
               # DVP variations, lazy town
               ('DVP', 'DVP'),
 
-           # Weimar Coalitions
-          ('in_weimar_coalition = 1', 'national_gov = "Weimar"'),
-          ('in_weimar_coalition == 1', 'national_gov == "Weimar"'),
-          ('in_weimar_coalition', 'national_gov == "Weimar"'),
+           # One more correction
+          ('was_national_gov == "Bourgeois"', 'former_national_gov = "Bourgeois"'),
+          ('was_national_gov == "Bourgeois" = 0', 'former_national_gov = "empty for stupid coding reasons"'),
 
+          ('was_national_gov == "Right"', 'former_national_gov = "Right"'),
+          ('was_national_gov == "Right" = 0', 'former_national_gov = "empty for stupid coding reasons"'),
 
-          # Grand Coalitions
+          ('was_national_gov == "Grand"', 'former_national_gov = "Grand"'),
+          ('was_national_gov == "Grand" = 0', 'former_national_gov = "empty for stupid coding reasons"'),
 
-          ('in_grand_coalition = 1', 'national_gov = "Grand"'),
-          ('in_grand_coalition == 1', 'national_gov == "Grand"'),
-          ('in_grand_coalition', 'national_gov == "Grand"'),
+          ('was_national_gov == "Weimar"', 'former_national_gov = "Weimar"'),
+          ('was_national_gov == "Weimar" = 0', 'former_national_gov = "empty for stupid coding reasons"'),
 
+          ('was_national_gov == "Popular Front"', 'former_national_gov = "Popular Front"'),
+          ('was_national_gov == "Polular Front" = 0', 'former_national_gov = "empty for stupid coding reasons"'),
 
-          # SocLib Coalitions
-
-          ('in_social_liberal_coalition = 1', 'national_gov = "Social-Liberal"'),
-          ('in_social_liberal_coalition == 1', 'national_gov == "Social-Liberal"'),
-          ('in_social_liberal_coalition', 'national_gov == "Social-Liberal"'),
-
-
-          # SocCath Coalitions
-
-          ('in_social_catholic_coalition_prussia = 1', 'national_gov = "Social-Catholic"'),
-          ('in_social_catholic_coalition_prussia == 1', 'national_gov == "Social-Catholic"'),
-          ('in_social_catholic_coalition_prussia', 'national_gov == "Social-Catholic"'),
-
-
-          # Bourgeois Coalitions
-          
-          ('in_center_right_coalition = 1', 'national_gov = "Bourgeois"'),
-          ('in_center_right_coalition == 1', 'national_gov == "Bourgeois"'),
-          ('in_center_right_coalition', 'national_gov == "Bourgeois"'),
-
-          # Right Coalitions
-
-          ('in_right_coalition = 1', 'national_gov = "Right"'),
-          ('in_right_coalition == 1', 'national_gov == "Right"'),
-          ('in_right_coalition', 'national_gov == "Right"'),
-
-
-          # PopFront Coalitions
-
-          ('in_popular_front = 1', 'national_gov = "Popular-Front"'),
-          ('in_popular_front == 1', 'national_gov == "Popular-Front"'),
-          ('in_popular_front', 'national_gov == "Popular-Front"'),
-
-          # Left Coalitions
-
-          ('in_left_front = 1', 'national_gov = "Left"'),
-          ('in_left_front == 1', 'national_gov == "Left"'),
-          ('in_left_front', 'national_gov == "Left"'),
-
-          # SPD Coalitions
-
-          ('in_spd_majority = 1', 'national_gov = "SPD"'),
-          ('in_spd_majority == 1', 'national_gov == "SPD"'),
-          ('in_spd_majority', 'national_gov == "SPD"'),
-
-         
               
           ]
           
