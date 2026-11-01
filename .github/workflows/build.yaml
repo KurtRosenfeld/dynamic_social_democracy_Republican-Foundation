@@ -33,7 +33,7 @@ jobs:
       - name: Dem Karl Liebknecht haben wirs geschworen
         uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 24
       - name: Der Rosa Luxemburg reichen wir die Hand
         run: npm install
       - name: Vote for USPD
