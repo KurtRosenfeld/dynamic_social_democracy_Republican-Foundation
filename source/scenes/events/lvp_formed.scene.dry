@@ -1,5 +1,7 @@
 on-arrival: {!
 
+Q.random_silly_thing = 124;
+
 Q.lvp_formed = 1;
 Q.parties.push('lvp');
 Q.parties_graph.push('lvp');
