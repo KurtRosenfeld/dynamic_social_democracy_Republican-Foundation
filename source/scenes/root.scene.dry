@@ -844,26 +844,7 @@ Q.nsdap_in_government = 0;
 
 Q.spd_prussia_time = 0;
 
-Q.national_gov == "Right" = 0;
-// Weimar coalition = SPD + Z + DDP
 Q.national_gov = "Weimar";
-// Grand coalition = SPD + Z + BVP + DDP + DVP
-// also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
-Q.national_gov == "Grand" = 0;
-// Popular front = SPD + KPD + Z + DDP
-Q.national_gov == "Popular-Front" = 0;
-// left coalition = SPD + KPD + left-splinters
-Q.national_gov == "Left" = 0;
-// emergency government containing the SPD: only president Braun can do this.
-Q.in_emergency_government = 0;
-Q.national_gov == "SPD" = 0;
-Q.grand_coalition_failed = 0;
-// if the SPD is ruling as part of a minority government
-Q.in_minority_government = 0;
-// national unity governmet
-Q.national_gov == "Bourgeois" = 0;
-Q.in_social_catholic_coalition = 0;
-Q.national_gov == "Social-Liberal" = 0;
 
 Q.prussia_gov = "Grand";
 Q.in_minority_weimar_coalition_prussia = 0;
