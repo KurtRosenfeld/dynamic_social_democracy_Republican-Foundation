@@ -20,7 +20,7 @@ With the bourgeois-right holding a majority coalition, it is now up to them to r
 
 @bruning_collapse
 view-if: bruning_coalition_dissent >= 4
-on-arrival: time_to_election = 3; spd_in_government = 0; national_gov == "Grand" = 0; spd_toleration = 0; rural_dvp -= 2; rural_dnvp -= 4
+on-arrival: time_to_election = 3; spd_in_government = 0; ; spd_toleration = 0; rural_dvp -= 2; rural_dnvp -= 4
 call: set_next_election_time
 
 The [? if not lvp_formed and dvp_exist:<span style="color: [+ dvp_colour +];">**DVP**</span> and the?][? if lvp_formed: right <span style="color: #FFCC00;">**LVP**</span> and the?] <span style="color: [+ dnvp_colour +];">**DNVP**</span> have broken with Brüning, voting against the act when it came to a vote in the Reichstag. However, this decision has ignited fierce internal divisions within both parties. A significant pro-Brüning faction—including figures like Westarp, [? if not lvp_formed: Curtius?][? if lvp_formed: Dietrich?], and several influential industrialists such as Hans Luther—pushed for continued support, convincing a sizable minority in both parties to back the act as the bitter medicine for Germany’s economic woes.

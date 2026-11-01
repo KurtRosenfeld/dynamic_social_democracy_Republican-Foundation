@@ -61,7 +61,7 @@ No. We will not do this.
 @bring_down
 subtitle: Bring down this government before our opponents do.
 view-if: not constructive_vonc
-on-arrival: spd_in_government = 0; grand_coalition_collapsed = 1 if national_gov == "Grand"; national_gov == "Grand" = 0; national_gov == "Weimar" = 0; chancellor = "Brüning"; chancellor_party = "Z"; spd_toleration = 0; spd_toleration_right = 0; left_strength += 8; pro_republic -= 5; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 5; bruning_event_timer = 6 if not bruning_event_seen and year >= 1930
+on-arrival: spd_in_government = 0; grand_coalition_collapsed = 1 if national_gov == "Grand"; ; ; chancellor = "Brüning"; chancellor_party = "Z"; spd_toleration = 0; spd_toleration_right = 0; left_strength += 8; pro_republic -= 5; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 5; bruning_event_timer = 6 if not bruning_event_seen and year >= 1930
 go-to: elections if bruning_event_seen or year < 1930
 
 We have called for a vote of no confidence in ourselves, and have brought down this government. Chancellor [+ chancellor +] currently rules as acting chancellor.

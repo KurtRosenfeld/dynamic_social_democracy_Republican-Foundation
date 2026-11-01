@@ -14,6 +14,6 @@ The Young Plan has been ratified, and the controversy surrounding it has largely
 
 @center_right_coalition
 title: The <span style="color: [+ dnvp_colour +];">**DNVP**</span> replaces us in government.
-on-arrival: spd_toleration = 0; national_gov == "Right" = 0; national_gov = "Bourgeois"
+on-arrival: spd_toleration = 0; ; national_gov = "Bourgeois"
 
 There is nothing we can do. Well actually, you, the player, could've done something. Why did you do this?

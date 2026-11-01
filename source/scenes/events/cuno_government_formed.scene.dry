@@ -4,7 +4,7 @@ view-if: year == 1922 and month == 11 and wirth_2_failed == 1
 max-visits: 1 
 tags: event 
 new-page: true 
-on-arrival: chancellor = 'Cuno'; chancellor_party = 'I'; national_gov == "Weimar" = 0
+on-arrival: chancellor = 'Cuno'; chancellor_party = 'I'; 
 face-image: img/ebertcuno.jpg
   
 = <span style="color: [+ i_colour +];">**Cuno**</span> to become Chancellor!

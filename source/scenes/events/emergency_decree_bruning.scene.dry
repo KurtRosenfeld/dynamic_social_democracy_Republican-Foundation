@@ -78,7 +78,7 @@ view-if: spd_toleration
 on-arrival: {!
 Q.time_to_election = 3;
 Q.spd_in_government = 0;
-Q.national_gov == "Grand" = 0;
+Q.;
 Q.spd_toleration = 0
 Q.unemployed += 3;
 Q.budget += 1;

@@ -20,7 +20,7 @@ We can either vote to bring down the government and hold new elections, or "tole
 title: A bourgeois coalition shall be formed.
 subtitle: The coalition will live for another day.
 view-if: bourgeois_coalition >= 50
-on-arrival: spd_in_government = 0; national_gov == "Bourgeois" = 0; national_gov == "Right" = 0; old_middle_dnf -= 2; rural_dnf -= 2; ddp_right += 2; ddp_cohesion -= 1.5; liberal_cooperation += 3; bourgeois_cooperation += 10; secret_mode = 1
+on-arrival: spd_in_government = 0; ; ; old_middle_dnf -= 2; rural_dnf -= 2; ddp_right += 2; ddp_cohesion -= 1.5; liberal_cooperation += 3; bourgeois_cooperation += 10; secret_mode = 1
 go-to: new_prussia_election if (prussia_gov == "Bourgeois" or prussia_gov == "Right")
 
 Secret mode is on.
@@ -29,7 +29,7 @@ Secret mode is on.
 title: Support the vote of no confidence, voting against the government.
 subtitle: The government will collapse, and there will be new elections.
 view-if: cordon_sanitaire >= 50 and right_coalition < 50
-on-arrival: time_to_election = 3; spd_in_government = 0; national_gov == "Right" = 0; national_gov == "Grand" = 0; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 2; dvp_relation -= 4; z_relation -= 4; dnvp_relation -= 4; ddp_relation -= 4; lvp_relation -= 4; old_middle_dnf += 3; rural_dnf += 3
+on-arrival: time_to_election = 3; spd_in_government = 0; ; ; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 2; dvp_relation -= 4; z_relation -= 4; dnvp_relation -= 4; ddp_relation -= 4; lvp_relation -= 4; old_middle_dnf += 3; rural_dnf += 3
 call: set_next_election_time
 go-to: new_prussia_election if (prussia_gov == "Bourgeois" or prussia_gov == "Right")
 
@@ -41,7 +41,7 @@ subtitle: We would essentially provide "toleration" to a bourgeois government.
 view-if: cordon_sanitaire >= 50 and right_coalition < 50
 choose-if: (reformist_strength >= center_strength + left_strength)
 unavailable-subtitle: [? if (center_strength + left_strength >= reformist_strength) : Most of the party is in complete opposition to this. ?]
-on-arrival: spd_toleration = 1; spd_toleration_right = 1; national_gov == "Right" = 0; national_gov = "Bourgeois"; left_dissent += 30; center_dissent += 25; labor_dissent += 20; reformist_dissent += 10; workers_spd -= 3; new_middle_spd -= 6; old_middle_spd -= 6; rural_spd -= 4; catholics_spd -= 5; dvp_left += 1; lvp_left += 1; ddp_left += 1; liberal_cooperation += 1; bourgeois_cooperation += 2
+on-arrival: spd_toleration = 1; spd_toleration_right = 1; ; national_gov = "Bourgeois"; left_dissent += 30; center_dissent += 25; labor_dissent += 20; reformist_dissent += 10; workers_spd -= 3; new_middle_spd -= 6; old_middle_spd -= 6; rural_spd -= 4; catholics_spd -= 5; dvp_left += 1; lvp_left += 1; ddp_left += 1; liberal_cooperation += 1; bourgeois_cooperation += 2
 go-to: new_prussia_election if (prussia_gov == "Bourgeois" or prussia_gov == "Right")
 
 By supporting the government, we have essentially entered into a "toleration" arrangement with the [+ chancellor +] government. We do not have a voice in the government, but we are responsible for its continued stability. This is wildly unpopular within the party and our supporters, as we allowed a right-wing government to form twice now.
@@ -51,7 +51,7 @@ title: It does not matter what we do.
 subtitle: The anti-government parties have over 50% of the vote, no matter our choices.
 view-if: cordon_sanitaire < 50
 call: set_next_election_time
-on-arrival: time_to_election = 3; spd_in_government = 0; national_gov == "Right" = 0; national_gov == "Grand" = 0; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 5
+on-arrival: time_to_election = 3; spd_in_government = 0; ; ; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 5
 go-to: new_prussia_election if (prussia_gov == "Bourgeois" or prussia_gov == "Right")
 
 The right-wing coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
