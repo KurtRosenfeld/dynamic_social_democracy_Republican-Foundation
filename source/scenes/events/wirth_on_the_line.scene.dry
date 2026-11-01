@@ -32,7 +32,7 @@ We can sustain a <span style="color: #000000;">**We**</span><span style="color: 
 subtitle: <span style="color: #000000;">**Wirth**</span> tries to form a Grand Coalition
 unavailable-subtitle: [? if reformist_strength < (left_strength + labor_strength) or early_dvp_cooperation < 3:  Our party is opposed to this. ?][? if dvp_relation < 45: The DVP doesn't want to enter a coalition with us. ?]
 choose-if: dvp_relation >= 45 and reformist_strength >= (left_strength + labor_strength) and early_dvp_cooperation >= 3
-on-arrival: kpd_relation -= 15; uspd_relation -= 10; workers_spd -= 3; unemployed_spd -= 3; in_grand_coalition = 1; in_weimar_coalition = 0; dvp_in_government = 1; foreign_minister_party = "DVP"; foreign_minister = "Stresemann"; left_dissent += 10; center_dissent += 2; labor_dissent += 2
+on-arrival: kpd_relation -= 15; uspd_relation -= 10; workers_spd -= 3; unemployed_spd -= 3; national_gov = "Grand"; national_gov == "Weimar" = 0; dvp_in_government = 1; foreign_minister_party = "DVP"; foreign_minister = "Stresemann"; left_dissent += 10; center_dissent += 2; labor_dissent += 2
 
 We are now working with the <span style="color: [+ dvp_colour +];">**DVP**</span>, let's hope this new coalition will give us the room to negotiate more easily.
 

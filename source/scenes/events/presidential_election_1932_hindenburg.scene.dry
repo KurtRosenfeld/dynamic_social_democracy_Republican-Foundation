@@ -16,7 +16,7 @@ if (Q.dnvp_ideology == "Radical") {
 }
 if (Q.schleicher_spd) Q.hindenburg_run_points += 8;
 if (Q.bruning_toleration_time) Q.hindenburg_run_points += 3;
-if (Q.in_center_right_coalition || Q.in_right_coalition) Q.hindenburg_run_points -= 1;
+if (Q.national_gov == "Bourgeois" || Q.national_gov == "Right") Q.hindenburg_run_points -= 1;
 if (Q.spd_votes >= 26) Q.hindenburg_run_points += 1;
 if (Q.spd_votes >= 29) Q.hindenburg_run_points += 1;
 if (Q.spd_votes >= 32) Q.hindenburg_run_points += 1;

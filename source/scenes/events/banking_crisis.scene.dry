@@ -41,7 +41,7 @@ on-arrival: welfare -= 1 if budget <= 0; workers_spd -= 3; workers_spd += 2 if b
 
 @end_toleration
 view-if: spd_toleration = 1
-on-arrival: time_to_election = 3; spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 3; reformist_dissent += 4; left_dissent -= 4; dvp_relation -= 4; z_relation -= 4; ddp_relation -= 4; lvp_relation -= 4; ddp_right += 1; dvp_right += 2
+on-arrival: time_to_election = 3; spd_in_government = 0; national_gov == "Grand" = 0; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 3; reformist_dissent += 4; left_dissent -= 4; dvp_relation -= 4; z_relation -= 4; ddp_relation -= 4; lvp_relation -= 4; ddp_right += 1; dvp_right += 2
 call: set_next_election_time
 go-to: new_prussia_election if prussia_gov == "Social-Catholic" or prussia_gov == "Weimar" or prussia_gov == "Grand" or prussia_gov == "Popular-Front" and ((center_right_coalition_prussia < 50 and dnvp_ideology == "Moderate") or dnvp_ideology == "Radical"); center_right_coalition_prussia if prussia_gov == "Social-Catholic" or prussia_gov == "Weimar" or prussia_gov == "Grand" or prussia_gov == "Popular-Front" and (((center_right_coalition_prussia >= 50 or right_coalition_prussia >= 50) and dnvp_ideology == "Moderate") or bourgeois_coalition_prussia >= 50)
 

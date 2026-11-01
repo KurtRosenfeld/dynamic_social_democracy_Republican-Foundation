@@ -2,7 +2,7 @@ title: Bourgeois Parliamentary Group Collapses!
 new-page: true
 subtitle: Crazy stuffs.
 tags: event
-view-if: bruning_time >= 6 and (in_center_right_coalition or in_right_coalition or spd_toleration_right) and (bourgeois_parliament or bourgeois_parliament_no_liberals) and bruning_coalition_dissent >= 3 and not cvp_formed
+view-if: bruning_time >= 6 and (national_gov == "Bourgeois" or national_gov == "Right" or spd_toleration_right) and (bourgeois_parliament or bourgeois_parliament_no_liberals) and bruning_coalition_dissent >= 3 and not cvp_formed
 on-arrival: pro_republic -= 3; dvp_right += 5; ddp_cohesion -= 3 if bourgeois_coalition_ddp; ddp_right += 3 if bourgeois_coalition_ddp; lvp_right += 3
 max-visits: 1
 

@@ -249,4 +249,4 @@ for (var record of Q.party_support_records) {
     record['dnf'] = 0;
 }
 !}
-go-to: dnf_collapse_right_coalition if right_coalition < 50 and in_right_coalition == 1; dnf_collapse_center_right_coalition if center_right_coalition < 50 and in_center_right_coalition == 1
+go-to: dnf_collapse_right_coalition if right_coalition < 50 and national_gov == "Right"; dnf_collapse_center_right_coalition if center_right_coalition < 50 and national_gov == "Bourgeois"

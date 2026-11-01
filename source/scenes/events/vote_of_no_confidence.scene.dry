@@ -1,15 +1,15 @@
 title: The Right calls a vote of no confidence against the current government!
 subtitle: We have angered our coalition partners too much...
 new-page: true
-on-arrival: tried_supporting_kpd = 0; z_relation -= 5 if not in_social_catholic_coalition; dvp_relation -= 5 if in_grand_coalition; ddp_relation -= 5 if not in_social_catholic_coalition; lvp_relation -= 5 if in_weimar_coalition and not in_social_catholic_coalition or in_grand_coalition; lvp_right += 2 if in_weimar_coalition or in_grand_coalition; dvp_right += 2 if in_grand_coalition; ddp_right += 1; hindenburg_angry += 20
+on-arrival: tried_supporting_kpd = 0; z_relation -= 5 if not in_social_catholic_coalition; dvp_relation -= 5 if national_gov == "Grand"; ddp_relation -= 5 if not in_social_catholic_coalition; lvp_relation -= 5 if national_gov == "Weimar" and not in_social_catholic_coalition or national_gov == "Grand"; lvp_right += 2 if national_gov == "Weimar" or national_gov == "Grand"; dvp_right += 2 if national_gov == "Grand"; ddp_right += 1; hindenburg_angry += 20
 on-departure: secularized = 0
-view-if: chancellor_party == "SPD" and spd_in_government = 1 and ((in_grand_coalition = 1 or in_popular_front = 1 or in_minority_government = 1 or (in_social_catholic_coalition and cvp_formed) and coalition_dissent >= 3)) or (in_weimar_coalition = 1 and not (in_social_catholic_coalition and cvp_formed) and coalition_dissent >= 4) and spd_r < 50 and not constructive_vonc
+view-if: chancellor_party == "SPD" and spd_in_government = 1 and ((national_gov = "Grand" or national_gov = "Popular-Front" or in_minority_government = 1 or (in_social_catholic_coalition and cvp_formed) and coalition_dissent >= 3)) or (national_gov = "Weimar" and not (in_social_catholic_coalition and cvp_formed) and coalition_dissent >= 4) and spd_r < 50 and not constructive_vonc
 tags: event
 go-to: vonc_menu
 
 = Vote of No Confidence
 
-[? if in_grand_coalition and not lvp_formed: The <span style="color: [+ dvp_colour +];">**DVP**</span> ?][? if (in_grand_coalition or in_social_liberal_coalition) and lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> ?][? if in_weimar_coalition or in_popular_front or in_minority_government and not in_social_liberal_coalition: The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?][? if lvp_formed and not in_social_catholic_coalition:&nbsp;and <span style="color: #FFCC00;">**LVP**</span>?]?][? if in_social_liberal_coalition and not lvp_formed: The <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> ?] has called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will likely be an election in a few months.
+[? if national_gov == "Grand" and not lvp_formed: The <span style="color: [+ dvp_colour +];">**DVP**</span> ?][? if (national_gov == "Grand" or national_gov == "Social-Liberal") and lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> ?][? if national_gov == "Weimar" or national_gov == "Popular-Front" or in_minority_government and not national_gov == "Social-Liberal": The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?][? if lvp_formed and not in_social_catholic_coalition:&nbsp;and <span style="color: #FFCC00;">**LVP**</span>?]?][? if national_gov == "Social-Liberal" and not lvp_formed: The <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> ?] has called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will likely be an election in a few months.
 
 @vonc_menu
 
@@ -31,7 +31,7 @@ How do we assuage our partners?
 - @let_it_happen: Never mind. Let the vote happen.
 
 @dvp_prussia_2
-view-if: year <= 1929 and not prussia_gov == "Grand" and (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia) and in_grand_coalition = 1 and dvp_was_in_prussia == 0 and not lvp_formed
+view-if: year <= 1929 and not prussia_gov == "Grand" and (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia) and national_gov = "Grand" and dvp_was_in_prussia == 0 and not lvp_formed
 choose-if: z_leader != "Kaas" and not secularized
 unavailable-subtitle: [? if z_leader = "Kaas": Kaas and the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] strongly dissents against. ?]
 on-arrival: prussia_gov = "Grand"; in_minority_grand_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; ddp_in_poular_front_prussia = 0; kpd_goals_seen_prussia = 0; spd_toleration_prussia = 0; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent -= 1; left_dissent += 5; prussia_gov = "Grand"; dvp_left += 3; new_middle_dvp += 3
@@ -51,24 +51,24 @@ The Minister-President position is transferred to the [? if z_party_name != "CVP
 
 @austerity
 view-if: welfare >= 0 and not secularized
-on-arrival: coalition_dissent = 0; workers_spd -= 10; unemployed_spd -= 10; workers_kpd += 7; workers_nsdap += 3; unemployed_kpd += 5; unemployed_nsdap += 5; left_dissent += 15; center_dissent += 10; labor_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployed += 3; kpd_coalition_dissent += 1; kpd_relation -= 10 if in_popular_front; goal_spd_cancel += 1; social_welfare_timer = 10
+on-arrival: coalition_dissent = 0; workers_spd -= 10; unemployed_spd -= 10; workers_kpd += 7; workers_nsdap += 3; unemployed_kpd += 5; unemployed_nsdap += 5; left_dissent += 15; center_dissent += 10; labor_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployed += 3; kpd_coalition_dissent += 1; kpd_relation -= 10 if national_gov == "Popular-Front"; goal_spd_cancel += 1; social_welfare_timer = 10
 
 Fine. We enacted a massive austerity program to cut welfare, in order to maintain the stability of our coalition. The vote has been called off.
 
 @resources
 view-if: secularized = 0
-choose-if: (resources >= 3 and in_weimar_coalition or in_popular_front or in_minority_government) or ((resources >= 3 and in_grand_coalition and not (dvp_ideology == "Right" and year >= 1930) and not lvp_formed) or (resources >= 3 and (in_grand_coalition or in_weimar_coalition) and not (lvp_ideology == "Right" and year >= 1930) and lvp_formed))
-unavailable-subtitle: [? if resources < 3: We do not have enough resources. ?] [? if in_grand_coalition and (dvp_ideology == "Right" and year >= 1930) and not lvp_formed: The <span style="color: [+ dvp_colour +];">**DVP**</span> doesn't want our resources anymore. ?] [? if (in_grand_coalition or in_weimar_coalition) and (lvp_ideology == "Right" and year >= 1930) and lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> doesn't want our resources anymore. ?]
+choose-if: (resources >= 3 and national_gov == "Weimar" or national_gov == "Popular-Front" or in_minority_government) or ((resources >= 3 and national_gov == "Grand" and not (dvp_ideology == "Right" and year >= 1930) and not lvp_formed) or (resources >= 3 and (national_gov == "Grand" or national_gov == "Weimar") and not (lvp_ideology == "Right" and year >= 1930) and lvp_formed))
+unavailable-subtitle: [? if resources < 3: We do not have enough resources. ?] [? if national_gov == "Grand" and (dvp_ideology == "Right" and year >= 1930) and not lvp_formed: The <span style="color: [+ dvp_colour +];">**DVP**</span> doesn't want our resources anymore. ?] [? if (national_gov == "Grand" or national_gov == "Weimar") and (lvp_ideology == "Right" and year >= 1930) and lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> doesn't want our resources anymore. ?]
 subtitle: -3 resources
 on-arrival: resources -= 3; coalition_dissent -= 1;
 
 By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
 
 @support_kpd
-choose-if: ((in_grand_coalition and communist_coalition >= 3 and kpd_relation >= 50 and kpd_r >= dvp_r and not lvp_formed) or (in_grand_coalition and communist_coalition >= 3 and kpd_relation >= 50 and kpd_r >= (lvp_r / 2) and lvp_formed)) or (in_weimar_coalition and kpd_relation >= 50 and kpd_r >= z_r and communist_coalition >= 3)
-view-if: tried_supporting_kpd = 0 and not in_popular_front
+choose-if: ((national_gov == "Grand" and communist_coalition >= 3 and kpd_relation >= 50 and kpd_r >= dvp_r and not lvp_formed) or (national_gov == "Grand" and communist_coalition >= 3 and kpd_relation >= 50 and kpd_r >= (lvp_r / 2) and lvp_formed)) or (national_gov == "Weimar" and kpd_relation >= 50 and kpd_r >= z_r and communist_coalition >= 3)
+view-if: tried_supporting_kpd = 0 and not national_gov == "Popular-Front"
 on-arrival: tried_supporting_kpd = 1
-unavailable-subtitle: [? if communist_coalition < 3 : The <span style="color: #700000;">KPD</span> won't take part in parliamentary government. ?] [? if kpd_relation < 50 : The <span style="color: #700000;">KPD</span> is not friendly enough with us. ?] [? if ((in_grand_coalition and kpd_r < dvp_r and not lvp_formed) or (in_grand_coalition and kpd_r < (lvp_r / 2) and lvp_formed)) or (in_weimar_coalition and kpd_r < z_r): The <span style="color: #700000;">KPD</span> does not have enough votes. ?] [? if in_popular_front : We are already in a Popular Front with the <span style="color: #700000;">KPD</span>. ?]
+unavailable-subtitle: [? if communist_coalition < 3 : The <span style="color: #700000;">KPD</span> won't take part in parliamentary government. ?] [? if kpd_relation < 50 : The <span style="color: #700000;">KPD</span> is not friendly enough with us. ?] [? if ((national_gov == "Grand" and kpd_r < dvp_r and not lvp_formed) or (national_gov == "Grand" and kpd_r < (lvp_r / 2) and lvp_formed)) or (national_gov == "Weimar" and kpd_r < z_r): The <span style="color: #700000;">KPD</span> does not have enough votes. ?] [? if national_gov == "Popular-Front" : We are already in a Popular Front with the <span style="color: #700000;">KPD</span>. ?]
 
 If the <span style="color: #700000;">**Communists**</span> abstain, then we essentially can maintain a minority government[? if president=="Hindenburg":, although it would be very difficult to make policy without the support of President Hindenburg, which we do not have ?]. If this happens, then we will own a massive debt to the <span style="color: [+ kpd_colour +];">**KPD**</span>. This could lead to broader cooperation in the future, for better or for worse.
 
@@ -77,7 +77,7 @@ If the <span style="color: #700000;">**Communists**</span> abstain, then we esse
 
 @support_kpd_2
 on-arrival: communist_coalition += 1; workers_kpd += 3; kpd_relation += 5
-go-to: support_kpd_weimar if in_weimar_coalition; support_kpd_grand if in_grand_coalition
+go-to: support_kpd_weimar if national_gov == "Weimar"; support_kpd_grand if national_gov == "Grand"
 
 
 The <span style="color: [+ kpd_colour +];">**KPD**</span> is not interested in a "toleration" arrangement; they will only support us if they can participate in the government as part of a coalition. And, if this toleration agreement happens, the right-wing parties will not be inclined to support us. 
@@ -98,12 +98,12 @@ on-arrival: support_kpd_weimar = 1
 @support_kpd_left
 subtitle: <span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] ([+ left_coalition +]%)
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?] [? if rubicon: - Why the hell would Hindenburg allow this? ?] [? if president_ideology != "Left" and president != "Hindenburg": - President [+ president +] is fiercely opposed to <span style="color: #9B0000;">socialist</span> governance. ?]
-view-if: in_popular_front
+view-if: national_gov == "Popular-Front"
 choose-if: left_coalition >= 50 and (kpd_relation >= 50 or (kpd_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3 and not rubicon and president_ideology == "Left" or president == "Hindenburg"
 go-to: election_1928.left_coalition_success
 
 @let_it_happen
-on-arrival: time_to_election = 3; spd_in_government = 0; grand_coalition_collapsed = 1 if in_grand_coalition; in_grand_coalition = 0; in_weimar_coalition = 0; in_popular_front = 0; spd_toleration = 0; spd_toleration_right = 0; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; labor_minister = "Stegerwald"; interior_minister = "Wirth"; finance_minister = "Moldenhauer"; economic_minister = "Curtius"; justice_minister = "Koch-Weser"; foreign_minister = "Stresemann" if not stresemann_dead; foreign_minister = "Curtius" if stresemann_dead; agriculture_minister = "Dietrich"; reichswehr_minister = "Groener"; coalition_dissent = 0; pro_republic -= 4; old_middle_spd -= 3; new_middle_spd -= 2; workers_spd -= 3 if pro_republic < 50; workers_spd -= 4 if pro_republic < 40; old_middle_nsdap += 4 if pro_republic < 50; new_middle_nsdap += 3 if pro_republic < 50
+on-arrival: time_to_election = 3; spd_in_government = 0; grand_coalition_collapsed = 1 if national_gov == "Grand"; national_gov == "Grand" = 0; national_gov == "Weimar" = 0; national_gov == "Popular-Front" = 0; spd_toleration = 0; spd_toleration_right = 0; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; labor_minister = "Stegerwald"; interior_minister = "Wirth"; finance_minister = "Moldenhauer"; economic_minister = "Curtius"; justice_minister = "Koch-Weser"; foreign_minister = "Stresemann" if not stresemann_dead; foreign_minister = "Curtius" if stresemann_dead; agriculture_minister = "Dietrich"; reichswehr_minister = "Groener"; coalition_dissent = 0; pro_republic -= 4; old_middle_spd -= 3; new_middle_spd -= 2; workers_spd -= 3 if pro_republic < 50; workers_spd -= 4 if pro_republic < 40; old_middle_nsdap += 4 if pro_republic < 50; new_middle_nsdap += 3 if pro_republic < 50
 go-to: let_it_happen_hindenburg if president_ideology != "Left"; let_it_happen_braun if president_ideology == "Left"
 
 @let_it_happen_hindenburg

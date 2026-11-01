@@ -1,5 +1,5 @@
 title: The <span style="color: [+ kpd_colour +];">**KPD**</span> checks upon our progress in accomplishing the coalition's goals...
-view-if: (in_popular_front or in_left_front) and (kpd_ultimatum_timer = 0 or (welfare_goal_completed and agriculture_goal_completed and economy_goal_completed and finance_goal_completed and labor_goal_completed and reichswehr_goal_completed)) and kpd_goals_seen = 1 and kpd_ultimatum_seen = 0 and spd_in_government
+view-if: (national_gov == "Popular-Front" or national_gov == "Left") and (kpd_ultimatum_timer = 0 or (welfare_goal_completed and agriculture_goal_completed and economy_goal_completed and finance_goal_completed and labor_goal_completed and reichswehr_goal_completed)) and kpd_goals_seen = 1 and kpd_ultimatum_seen = 0 and spd_in_government
 on-arrival: {!
 Q.kpd_ultimatum_seen = 1;
 Q.kpd_goals_completed = 1;
@@ -79,7 +79,7 @@ We argue that we are working hard to achieve the coalition's goals, and in the n
 
 @goals_success
 on-arrival: workers_spd += 8; unemployed_spd += 8; kpd_relation += 10; workers_kpd += 5; kpd_coalition_success += 1
-go-to: popular_front_achievement if in_popular_front; united_front_achievement if in_left_front
+go-to: popular_front_achievement if national_gov == "Popular-Front"; united_front_achievement if national_gov == "Left"
 
 Against all expectations, the <span style="color: [+ kpd_colour +];">**KPD**</span>'s goals have all been met! Apparently the <span style="color: #700000;">**Communists**</span> did not prepare for this eventuality, a worker's government successfully built through democratic means. They will continue to "tolerate" our government for the rest of our term, while still acting as a watchdog against bourgeois backsliding.
 
@@ -94,12 +94,12 @@ achievement: einheitsfront_2
 
 @no_vonc
 view-if: constructive_vonc
-on-arrival: in_popular_front = 0; in_left_front = 0; in_minority_government = 1;
+on-arrival: national_gov == "Popular-Front" = 0; national_gov == "Left" = 0; in_minority_government = 1;
 
 We have been effectively made a minority government, and the <span style="color: [+ kpd_colour +];">**KPD**</span> intends to obstruct our attempts to pass policy.
 
 @spd_majority
 view-if: spd_r >= 50
-on-arrival: in_popular_front = 0; in_left_front = 0; in_spd_majority = 1;
+on-arrival: national_gov == "Popular-Front" = 0; national_gov == "Left" = 0; national_gov = "SPD";
 
 We were so kind.

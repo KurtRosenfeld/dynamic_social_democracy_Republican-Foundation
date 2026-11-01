@@ -1247,14 +1247,14 @@ if (!Q.spd_in_government) {
 }
 if (Q.spd_in_government) Q.hindenburg_angry_old = Q.hindenburg_angry;
 Q.spd_in_government = 0;
-Q.in_weimar_coalition = 0;
-Q.in_grand_coalition = 0;
+Q.national_gov == "Weimar" = 0;
+Q.national_gov == "Grand" = 0;
 Q.in_wholesome_coalition = 0;
 Q.in_social_catholic_coalition = 0;
 Q.in_social_catholic_coalition = 0;
-Q.in_left_front = 0;
+Q.national_gov == "Left" = 0;
 Q.in_social_democratic_coalition = 0;
-Q.in_popular_front = 0;
+Q.national_gov == "Popular-Front" = 0;
 Q.in_emergency_government = 0;
 Q.in_minority_government = 0;
 Q.in_unity_government = 0;
@@ -1273,7 +1273,7 @@ if (Q.lvp_formed) Q.finance_minister_party = 'LVP';
 if (!Q.lvp_formed) Q.finance_minister_party = 'DVP';
 Q.agriculture_minister_party = 'Z';
 
-Q.ddp_in_popular_front = 0;
+Q.ddp_national_gov == "Popular-Front" = 0;
 
 // reset KPD goals
 Q.kpd_goals_seen = 0;
@@ -2177,7 +2177,7 @@ subtitle: <span style ="color: #c00000;">**SPD**</span>[? if sapd_formed:  + <sp
 view-if: social_democratic_coalition >= 50
 choose-if: uspd_relation >= 40
 unavailable-subtitle: We have lost the trust of our former ideological sister parties.
-on-arrival: leverage += 10; in_social_democratic_coalition = 1; spd_in_government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not sapd_formed; labor_minister_party = "SAPD" if sapd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD"; in_grand_coalition = 0; in_weimar_coalition = 0
+on-arrival: leverage += 10; in_social_democratic_coalition = 1; spd_in_government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not sapd_formed; labor_minister_party = "SAPD" if sapd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD"; national_gov == "Grand" = 0; national_gov == "Weimar" = 0
 
 We must choose a chancelor now.
 
@@ -2229,7 +2229,7 @@ Our allies approve of this choice.
 title: Another minority Weimar-Coalition
 view-if: weimar_coalition < 50 and year <= 1923
 subtitle: This is the most sensible option.
-on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; in_weimar_coalition = 1; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; spd_in_government = 1
+on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; national_gov = "Weimar"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; spd_in_government = 1
 go-to: ministries if vspd_parliament; begging_toleration if vspd_parliament == 0
 
 Wirth is the only chancellor acceptable. We need to secure some majority
@@ -2284,7 +2284,7 @@ subtitle: <span style="color: [+ spd_colour +];">**SPD**</span> + <span style="c
 view-if: cordon_sanitaire >= 50 and ((dnvp_leader == "Treviranus" and true_christian_democracy) or (dnvp_leader == "Lambach" and lambach_stays)) and wacky_weimar
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">[+ z_party_name +]</span> + <span style="color: #A2D8E0;">BVP</span>[? if not lvp_formed:&nbsp;+ <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">DVP</span>?]?][? if lvp_formed:&nbsp;+ <span style="color: #FFCC00;">LVP</span>?]+[? if lvp_formed:&nbsp;+ <span style="color: #FFCC00;">LVP</span>?] + <span style="color: #3E88B3;">DNVP</span> + Others ([+ cordon_sanitaire +]%) [? if dnvp_relation < 50: We need higher relations with the <span style="color: #3E88B3;">DNVP</span>. ?][? if z_relation < 50: We need higher relations with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">CVP</span>?]. ?]
 choose-if: dnvp_relation >= 50 and z_relation >= 50
-on-arrival: leverage -= 10; in_wholesome_coalition = 1; in_grand_coalition = 1; spd_in_government = 1; foreign_minister_party = "DNVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "DNVP"; reichswehr_minister_party = "DNVP"; economic_minister_party = "DNVP"; finance_minister_party = "DNVP"; agriculture_minister_party = "DNVP"; pro_republic += 100; hindenburg_angry = -500; 
+on-arrival: leverage -= 10; in_wholesome_coalition = 1; national_gov = "Grand"; spd_in_government = 1; foreign_minister_party = "DNVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "DNVP"; reichswehr_minister_party = "DNVP"; economic_minister_party = "DNVP"; finance_minister_party = "DNVP"; agriculture_minister_party = "DNVP"; pro_republic += 100; hindenburg_angry = -500; 
 
 We have successfully formed a "wholesome" coalition of all the """constitutional""" parties. Who should be chancellor?
 
@@ -2438,21 +2438,21 @@ The right will be more active in resisting our rule considering we are going to 
 
 @great_popular_front
 view-if: z_ideology == "Left" and kpd_leader == "Conciliators"
-on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; kpd_relation += 10; coup_progress += 1; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0; coup_progress += 1 if prussia_gov == "Popular-Front"; capital_strike_progress += 1 if prussia_gov == "Popular-Front"; hindenburg_angry = 70
+on-arrival: spd_in_government = 1; national_gov = "Popular-Front"; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; kpd_relation += 10; coup_progress += 1; national_gov == "Left" = 0; national_gov == "Weimar" = 0; national_gov == "Grand" = 0; coalition_dissent = 0; coup_progress += 1 if prussia_gov == "Popular-Front"; capital_strike_progress += 1 if prussia_gov == "Popular-Front"; hindenburg_angry = 70
 achievement: grosse_volksfront
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 
 Somehow, the coalition is successfully formed! The conciliatory leadership of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: [+ kpd_colour +];">**KPD**</span> helped make the negotiations possible. We still need a chancellor; the only acceptable choice among the parties was Rudolf Breitscheid of the <span style="color: [+ spd_colour +];">**SPD**</span>, acceptable to the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: [+ kpd_colour +];">**KPD**</span> [? if president == "Hindenburg" or president_ideology == "Moderate": as well as President [+ president +], albeit extremely reluctantly ?].
 
 @popular_front_success
-on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; kpd_relation += 10; coup_progress += 1; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0; coup_progress += 1 if prussia_gov == "Popular-Front"; capital_strike_progress += 1 if prussia_gov == "Popular-Front"; hindenburg_angry = 75
+on-arrival: spd_in_government = 1; national_gov = "Popular-Front"; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; kpd_relation += 10; coup_progress += 1; national_gov == "Left" = 0; national_gov == "Weimar" = 0; national_gov == "Grand" = 0; coalition_dissent = 0; coup_progress += 1 if prussia_gov == "Popular-Front"; capital_strike_progress += 1 if prussia_gov == "Popular-Front"; hindenburg_angry = 75
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 achievement: volksfront
 
 Somehow, surprisingly, the coalition is successfully formed! We still need a chancellor; the only acceptable choice among the parties was Rudolf Breitscheid of the <span style="color: [+ spd_colour +];">**SPD**</span>, acceptable to the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: [+ kpd_colour +];">**KPD**</span> [? if president == "Hindenburg" or president_ideology == "Moderate": as well as President [+ president +], albeit extremely reluctantly ?].
 
 @popular_front_no_civil_war
-on-arrival: kpd_goals_seen = 0; finance_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = "Z"; ddp_in_popular_front = 1 if (liberal_parliament = 0 and bourgeois_parliament_ddp == 0 and not lvp_formed); justice_minister_party = ddp_name if ddp_in_popular_front; economic_minister_party = "Z"; economic_minister_party = ddp_name if ddp_in_popular_front; labor_minister_party = "Z"; foreign_minister_party = "Z"; agriculture_minister_party = "Z"; reichswehr_minister = "I"; leverage += kpd_r; leverage += ddp_r if liberal_parliament = 1 or bourgeois_parliament_ddp == 1; dvp_right += 6; ddp_right += 3; lvp_right += 5; ddp_cohesion -= 2 if liberal_parliament = 0; liberal_cooperation += 5 if liberal_parliament = 1 or bourgeois_parliament_ddp == 1; bourgeois_cooperation += 5; liberal_cooperation += 3 if ((liberal_parliament = 1 or bourgeois_parliament_ddp == 1) and (prussia_gov == "Popular-Front" or prussia_gov == "Left")); bourgeois_cooperation += 3 if (prussia_gov == "Popular-Front" or prussia_gov == "Left"); dvp_relation -= 5; ddp_relation -= 5 if liberal_parliament = 1 or bourgeois_parliament_ddp == 1; lvp_relation -= 5; reformist_dissent += 20; reformist_strength -= 10; left_dissent -= 20; left_strength += 15; leverage += spd_r if support_kpd_grand; leverage += kpd_r if support_kpd_grand; hindenburg_angry += 10 if (prussia_gov == "Popular-Front" or prussia_gov == "Left"); 
+on-arrival: kpd_goals_seen = 0; finance_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = "Z"; ddp_national_gov = "Popular-Front" if (liberal_parliament = 0 and bourgeois_parliament_ddp == 0 and not lvp_formed); justice_minister_party = ddp_name if ddp_national_gov == "Popular-Front"; economic_minister_party = "Z"; economic_minister_party = ddp_name if ddp_national_gov == "Popular-Front"; labor_minister_party = "Z"; foreign_minister_party = "Z"; agriculture_minister_party = "Z"; reichswehr_minister = "I"; leverage += kpd_r; leverage += ddp_r if liberal_parliament = 1 or bourgeois_parliament_ddp == 1; dvp_right += 6; ddp_right += 3; lvp_right += 5; ddp_cohesion -= 2 if liberal_parliament = 0; liberal_cooperation += 5 if liberal_parliament = 1 or bourgeois_parliament_ddp == 1; bourgeois_cooperation += 5; liberal_cooperation += 3 if ((liberal_parliament = 1 or bourgeois_parliament_ddp == 1) and (prussia_gov == "Popular-Front" or prussia_gov == "Left")); bourgeois_cooperation += 3 if (prussia_gov == "Popular-Front" or prussia_gov == "Left"); dvp_relation -= 5; ddp_relation -= 5 if liberal_parliament = 1 or bourgeois_parliament_ddp == 1; lvp_relation -= 5; reformist_dissent += 20; reformist_strength -= 10; left_dissent -= 20; left_strength += 15; leverage += spd_r if support_kpd_grand; leverage += kpd_r if support_kpd_grand; hindenburg_angry += 10 if (prussia_gov == "Popular-Front" or prussia_gov == "Left"); 
 achievement: volksfront
 
 In response to the <span style="color: [+ kpd_colour +];">**KPD**</span>'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that the Popular Front government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and center and eventually enabling the destruction of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. Our task is to prove them wrong. [? if prussia_gov == "Popular-Front": The right will be more active in resisting our rule considering we are also ruling with the <span style="color: [+ kpd_colour +];">**KPD**</span> in Prussia too. ?]
@@ -2554,7 +2554,7 @@ The <span style="color: [+ kpd_colour +];">**KPD**</span> is still very reluctan
 @thalmann_chancellor
 choose-if: president_ideology == "Left" and reformist_strength + neorevisionist_strength < left_strength
 unavailable-subtitle: [? if president_ideology != "Left": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as chancellor. ?]
-on-arrival: chancellor = "Thälmann"; chancellor_party = "KPD"; kpd_relation = 80; in_left_front = 1; spd_in_government = 1 
+on-arrival: chancellor = "Thälmann"; chancellor_party = "KPD"; kpd_relation = 80; national_gov = "Left"; spd_in_government = 1 
 
 With great reluctance, President [+ president +] appoints [+ chancellor +] as chancellor.
 
@@ -2632,7 +2632,7 @@ The right will be more active in resisting our rule considering we are going to 
 - @prussia_election_1928.kpd_goals_prussia: The <span style="color: [+ kpd_colour +];">**KPD**</span> presents us with a list of demands.
 
 @left_coalition_success
-on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; coup_progress += 3; capital_strike_progress += 2; coup_progress += 1 if prussia_gov == "Left"; capital_strike_progress += 1 if prussia_gov == "Left"; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 10; lvp_relation -= 8; hindenburg_angry = 85
+on-arrival: spd_in_government = 1; national_gov = "Left"; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; coup_progress += 3; capital_strike_progress += 2; coup_progress += 1 if prussia_gov == "Left"; capital_strike_progress += 1 if prussia_gov == "Left"; national_gov == "Popular-Front" = 0; national_gov == "Grand" = 0; national_gov == "Weimar" = 0; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 10; lvp_relation -= 8; hindenburg_angry = 85
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
@@ -2691,7 +2691,7 @@ go-to: right_coalition_2
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 view-if: right_coalition >= 50  and not cvp_formed
 choose-if: (dnvp_ideology == "Moderate" or dnvp_westarp) and not (year = 1929 and month >= 7)
-on-arrival: spd_in_government = 0; spd_toleration = 0; spd_toleration_right = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_right_coalition = 1; dvp_right += 2; lvp_right += 2; liberal_cooperation -= 3 if liberal_parliament > 0; liberal_parliament = 0 if liberal_parliament > 0; bourgeois_cooperation += 1; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5
+on-arrival: spd_in_government = 0; spd_toleration = 0; spd_toleration_right = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; national_gov = "Right"; dvp_right += 2; lvp_right += 2; liberal_cooperation -= 3 if liberal_parliament > 0; liberal_parliament = 0 if liberal_parliament > 0; bourgeois_cooperation += 1; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5
 
 [? if dnvp_ideology == "Radical": Even though the <span style="color: [+ dnvp_colour +];">**DNVP**</span> is very reluctant to participate in such a coalition, they still accede to President [+ president +]'s wishes. Thus, a majority center-right coalition is formed, with Brüning as chancellor. [? if grand_coalition >= 50: This move also has the side effect of pressuring the <span style="color: [+ dnvp_colour +];">**DNVP**</span> to maintain this arrangement against the impulses of their radical right faction, lest a <span style="color: #c00000;">socialists</span> government would replace them. ?]?][? if dnvp_ideology == "Moderate": The <span style="color: [+ dnvp_colour +];">**DNVP**</span> is happy to participate in such a coalition, to keep out the <span style="color: #c00000;">socialists</span> from government. Thus, a majority center-right coalition is formed, with Brüning as chancellor. ?]
 
@@ -2724,7 +2724,7 @@ go-to: center_right_coalition_2
 view-if: center_right_coalition >= 50 and right_coalition < 50 and dnvp_ideology == "Moderate"
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 choose-if: center_right_coalition >= 50 and not (year = 1929 and month >= 7)
-on-arrival: spd_in_government = 0; spd_toleration = 0; spd_toleration_right = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "DNVP"; justice_minister_party = ddp_name; justice_minister_party  = "LVP" if lvp_formed; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_center_right_coalition = 1; dvp_right += 1; liberal_cooperation += 1; ddp_cohesion -= 1; ddp_right += 1; lvp_right += 1; bourgeois_cooperation += 2; z_relation -= 3; ddp_relation -= 3; dvp_relation -= 3; lvp_relation -= 3
+on-arrival: spd_in_government = 0; spd_toleration = 0; spd_toleration_right = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "DNVP"; justice_minister_party = ddp_name; justice_minister_party  = "LVP" if lvp_formed; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; national_gov = "Bourgeois"; dvp_right += 1; liberal_cooperation += 1; ddp_cohesion -= 1; ddp_right += 1; lvp_right += 1; bourgeois_cooperation += 2; z_relation -= 3; ddp_relation -= 3; dvp_relation -= 3; lvp_relation -= 3
 
 [? if not cvp_formed: Even though the opposing ends of the coalition parties are reluctant to participate in a coalition with each other, they still accede to President [+ president +]'s wishes. ?][? if cvp_formed: This is the <span style="color: #000000;">**CVP**</span>'s preferred coalition, as they are keen to avoid governing with <span style="color: #c00000;">socialists</span>. ?] Thus, a majority center-right coalition is formed, with Brüning as chancellor.
 
@@ -2854,7 +2854,7 @@ The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</spa
 
 @unity_government_2
 title: Accept the offer!
-on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; in_grand_coalition = 1; in_unity_government = 1; leverage = 15; z_relation += 5; dvp_relation += 5; ddp_relation += 5; dvp_left += 3; lvp_left += 3; lvp_relation += 5; hindenburg_angry = 35
+on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; national_gov = "Grand"; in_unity_government = 1; leverage = 15; z_relation += 5; dvp_relation += 5; ddp_relation += 5; dvp_left += 3; lvp_left += 3; lvp_relation += 5; hindenburg_angry = 35
 achievement: constitutional_coalition
 go-to: ministries
 
@@ -3193,7 +3193,7 @@ There is no path to a majority government for now. The scheming around President
 title: <span style="color: [+ spd_colour +];">**SPD**</span> majority alone
 subtitle: <span style="color: [+ spd_colour +];">**SPD**</span>: [+ spd_r +]%
 view-if: spd_r >= 50
-on-arrival: chancellor = "Empty"; chancellor_party = "SPD"; spd_in_government = 1; in_spd_majority = 1; pro_republic += 5; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"; interior_minister_party = "SPD"; interior_minister = "Severing"; justice_minister_party = "SPD"; justice_minister = "Radbruch"; labor_minister_party = "SPD"; labor_minister = "Wissell"; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"; economic_minister_party = "SPD"; economic_minister = "Schmidt"; finance_minister_party = "SPD"; finance_minister = "Hilferding"; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"; reichswehr_loyalty -= 0.05;  ddp_right += 3; lvp_right += 4; dvp_right += 5; liberal_cooperation += 8; bourgeois_cooperation += 8; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5; hindenburg_angry = 70; comeback = 1 if (n_elections - comeback_a == 1); catastrophepolitik = 1 if n_elections >= 5 and not catastrophepolitik_cancel; mit_allen_notwendigen_stimmen = 1 if rb_militancy <= 0.01; seeheimer = 1 if workers_spd_normalized < 10
+on-arrival: chancellor = "Empty"; chancellor_party = "SPD"; spd_in_government = 1; national_gov = "SPD"; pro_republic += 5; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"; interior_minister_party = "SPD"; interior_minister = "Severing"; justice_minister_party = "SPD"; justice_minister = "Radbruch"; labor_minister_party = "SPD"; labor_minister = "Wissell"; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"; economic_minister_party = "SPD"; economic_minister = "Schmidt"; finance_minister_party = "SPD"; finance_minister = "Hilferding"; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"; reichswehr_loyalty -= 0.05;  ddp_right += 3; lvp_right += 4; dvp_right += 5; liberal_cooperation += 8; bourgeois_cooperation += 8; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5; hindenburg_angry = 70; comeback = 1 if (n_elections - comeback_a == 1); catastrophepolitik = 1 if n_elections >= 5 and not catastrophepolitik_cancel; mit_allen_notwendigen_stimmen = 1 if rb_militancy <= 0.01; seeheimer = 1 if workers_spd_normalized < 10
 achievement: majority_party
 go-to: achievement_check if (dynamic_mode or historical_mode or difficulty == 1); spd_majority_2 if not (dynamic_mode or historical_mode or difficulty == 1)
 
@@ -3438,7 +3438,7 @@ subtitle: <span style="color: [+ spd_colour +];">**SPD**</span> + <span style="c
 view-if: social_catholic_coalition >= 50 and ((liberal_parliament == 1 or bourgeois_parliament_ddp == 1) or return_to_normalcy or (ddp_r < 1.5 and not lvp_formed) or (lvp_r < 4 and lvp_formed) or (lvp_relation < 20 and lvp_formed) or (ddp_relation < 20 and not lvp_formed)) and not cvp_formed
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">[+ z_party_name +]</span> ([+ social_catholic_coalition +]%) [? if not (((((ddp_relation < 40 and ddp_ideology == "Right") or (ddp_relation < 30 and ddp_ideology == "Moderate") or (ddp_relation < 20 and ddp_ideology == "Left")) and not lvp_formed) or (((lvp_relation < 40 and lvp_ideology == "Right") or (lvp_relation < 30 and lvp_ideology == "Moderate") or (lvp_relation < 25 and lvp_ideology == "Left")) and lvp_formed)) or (not ddp_r and not lvp_formed) or (not lvp_r and lvp_formed) or (liberal_parliament or bourgeois_list_ddp)): - The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">CVP</span>?] wants the [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed:<span style="color: #FFCC00;">LVP</span>?] to be included in order to form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition, strengthening the bourgeois counterweight. ?] [? if not ((z_relation >= 45 and z_ideology == "Right") or (z_relation >= 30 and z_leader == "Joos") or z_leader == "Kaiser"): - We do not have the adequate relations with the <span style="color: #000000;">[+ z_party_name +]</span>. ?] [? if rubicon: - President Hindenburg will not allow a return to <span style="color: #c00000;">socialist</span> governance. ?]
 choose-if: ((((((ddp_relation < 40 and ddp_ideology == "Right") or (ddp_relation < 30 and ddp_ideology == "Moderate") or (ddp_relation < 20 and ddp_ideology == "Left")) and not lvp_formed) or (((lvp_relation < 40 and lvp_ideology == "Right") or (lvp_relation < 30 and lvp_ideology == "Moderate") or (lvp_relation < 25 and lvp_ideology == "Left")) and lvp_formed)) or (ddp_r < 1.5 and not lvp_formed) or (lvp_r < 4 and lvp_formed) or (liberal_parliament or bourgeois_parliament_ddp)) and ((z_relation >= 45 and z_ideology == "Right") or (z_relation >= 30 and z_leader == "Joos") or z_leader == "Kaiser")) and not rubicon
-on-arrival: leverage += 5; leverage += 5 if z_ideology == "Left"; leverage -= 10 if stegerwald_path; in_weimar_coalition = 1; in_social_catholic_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = "Z"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; finance_minister_party = "Z"; economic_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Guérard"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Brüning"; finance_minister = "Köhler"; agriculture_minister = "Hermes"; dvp_right += 2; ddp_right += 4; ddp_cohesion -= 3; lvp_right += 3; hindenburg_angry = 50; liberal_cooperation += 3
+on-arrival: leverage += 5; leverage += 5 if z_ideology == "Left"; leverage -= 10 if stegerwald_path; national_gov = "Weimar"; in_social_catholic_coalition = 1; spd_in_government = 1; national_gov == "Popular-Front" = 0; national_gov == "Left" = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = "Z"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; finance_minister_party = "Z"; economic_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Guérard"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Brüning"; finance_minister = "Köhler"; agriculture_minister = "Hermes"; dvp_right += 2; ddp_right += 4; ddp_cohesion -= 3; lvp_right += 3; hindenburg_angry = 50; liberal_cooperation += 3
 achievement: sozialchristliche_koalition
 
 We have enough votes to form a "<span style="color: #c00000;">Social</span>-[? if not stegerwald_path: <span style="color: #000000;">Catholic</span>?][? if stegerwald_path: <span style="color: #000000;">Christian</span>?] Coalition" government consisting of the <span style="color: [+ spd_colour +];">**SPD**</span> and the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]! This type of coalition has never been tested before[? if ddp_relation < 40: and is only possible as a last resort after our fallout with the [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?].
@@ -3459,7 +3459,7 @@ subtitle: <span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_
 view-if: social_liberal_coalition >= 50 and liberal_parliament == 0 and bourgeois_parliament_ddp == 0 and (return_to_normalcy or not z_r) and not cvp_formed
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed:<span style="color: #FFCC00;">LVP</span>?] ([+ social_liberal_coalition +]%) [? if not ((z_relation < 40 and z_ideology == "Right") or (z_relation < 25 and z_leader == "Joos") or (z_relation < 20 and z_leader == "Kaiser")) and z_r: - The [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed:<span style="color: #FFCC00;">LVP</span>?] wants the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">CVP</span>?] to be included in order to form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition, strengthening the bourgeois counterweight. ?] [? if not ((ddp_relation >= 55 and ddp_ideology == "Right") or (ddp_relation >= 45 and ddp_ideology == "Moderate") or (ddp_relation >= 35 and ddp_ideology == "Left")) and not lvp_formed: - We do not have the adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?] [? if not ((lvp_relation >= 65 and lvp_ideology == "Right") or (lvp_relation >= 55 and lvp_ideology == "Moderate") or (lvp_relation >= 45 and lvp_ideology == "Left")) and lvp_formed: - We do not have adequate relations with the <span style="color: #FFCC00;">**LVP**</span>. ?] [? if rubicon: - President Hindenburg will not support a return to <span style="color: #c00000;">socialist</span> governance. ?][? if president_ideology == "Right": - President [+ president +] is fiercely opposed to <span style="color: #c00000;">socialist</span> governance. ?]
 choose-if: ((z_relation < 40 and z_ideology == "Right") or (z_relation < 25 and z_leader == "Joos") or (z_relation < 20 and z_leader == "Kaiser") or not z_r) and ((((ddp_relation >= 55 and ddp_ideology == "Right") or (ddp_relation >= 45 and ddp_ideology == "Moderate") or (ddp_relation >= 35 and ddp_ideology == "Left")) and not lvp_formed) or (((lvp_relation >= 65 and lvp_ideology == "Right") or (lvp_relation >= 55 and lvp_ideology == "Moderate") or (lvp_relation >= 45 and lvp_ideology == "Left")) and lvp_formed)) and not rubicon and president_ideology != "Right"
-on-arrival: leverage += 10; leverage += 5 if not lvp_formed; leverage += 5 if lvp_formed and lvp_ideology == "Left"; leverage -= 5 if lvp_formed and lvp_ideology != "Left"; leverage -= 5 if not lvp_formed and ddp_ideology != "Left"; in_weimar_coalition = 1; in_social_liberal_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = ddp_name; interior_minister_party = ddp_name; justice_minister_party = ddp_name; labor_minister_party = ddp_name; reichswehr_minister_party = "I"; finance_minister_party = ddp_name; economic_minister_party = ddp_name; agriculture_minister_party = ddp_name; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "LVP" if lvp_formed; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "LVP" if lvp_formed; finance_minister_party = "LVP" if lvp_formed; economic_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "LVP" if lvp_formed; foreign_minister = "Prittwitz"; interior_minister = "Külz"; justice_minister = "Koch-Weser"; labor_minister = "Lemmer"; reichswehr_minister = "Groener"; economic_minister = "Trendelenburg"; finance_minister = "Reinhold"; agriculture_minister = "Dietrich"; dvp_right += 3; ddp_left += 3; ddp_cohesion += 1; bourgeois_cooperation += 5; lvp_left += 3; hindenburg_angry = 50; liberal_cooperation -= 2
+on-arrival: leverage += 10; leverage += 5 if not lvp_formed; leverage += 5 if lvp_formed and lvp_ideology == "Left"; leverage -= 5 if lvp_formed and lvp_ideology != "Left"; leverage -= 5 if not lvp_formed and ddp_ideology != "Left"; national_gov = "Weimar"; national_gov = "Social-Liberal"; spd_in_government = 1; national_gov == "Popular-Front" = 0; national_gov == "Left" = 0; foreign_minister_party = ddp_name; interior_minister_party = ddp_name; justice_minister_party = ddp_name; labor_minister_party = ddp_name; reichswehr_minister_party = "I"; finance_minister_party = ddp_name; economic_minister_party = ddp_name; agriculture_minister_party = ddp_name; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "LVP" if lvp_formed; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "LVP" if lvp_formed; finance_minister_party = "LVP" if lvp_formed; economic_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "LVP" if lvp_formed; foreign_minister = "Prittwitz"; interior_minister = "Külz"; justice_minister = "Koch-Weser"; labor_minister = "Lemmer"; reichswehr_minister = "Groener"; economic_minister = "Trendelenburg"; finance_minister = "Reinhold"; agriculture_minister = "Dietrich"; dvp_right += 3; ddp_left += 3; ddp_cohesion += 1; bourgeois_cooperation += 5; lvp_left += 3; hindenburg_angry = 50; liberal_cooperation -= 2
 achievement: sozialliberale_koalition
 go-to: soc_lib_chancellor_menu if not (secularized and abortion_rights and womens_work and family_law and trans_rights and reformed_183 and repealed_175); kulturkampf if (secularized and abortion_rights and womens_work and family_law and trans_rights and reformed_183 and repealed_175)
 
@@ -3485,7 +3485,7 @@ subtitle: <span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_
 view-if: social_liberal_coalition >= 50 and liberal_parliament == 0 and bourgeois_parliament_ddp == 0 and cvp_formed
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed:<span style="color: #FFCC00;">LVP</span>?] ([+ social_liberal_coalition +]%) [? if not ((ddp_relation >= 65 and ddp_ideology == "Right") or (ddp_relation >= 55 and ddp_ideology == "Moderate") or (ddp_relation >= 45 and ddp_ideology == "Left")) and not lvp_formed: - We do not have the adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?] [? if not ((lvp_relation >= 75 and lvp_ideology == "Right") or (lvp_relation >= 65 and lvp_ideology == "Moderate") or (lvp_relation >= 55 and lvp_ideology == "Left")) and lvp_formed: - We do not have adequate relations with the <span style="color: #FFCC00;">**LVP**</span> ?]
 choose-if: ((((ddp_relation >= 65 and ddp_ideology == "Right") or (ddp_relation >= 55 and ddp_ideology == "Moderate") or (ddp_relation >= 45 and ddp_ideology == "Left")) and not lvp_formed) or (((lvp_relation >= 75 and lvp_ideology == "Right") or (lvp_relation >= 65 and lvp_ideology == "Moderate") or (lvp_relation >= 55 and lvp_ideology == "Left")) and lvp_formed))
-on-arrival: leverage += 5; leverage += 5 if not lvp_formed; leverage += 5 if lvp_formed and lvp_ideology == "Left"; leverage -= 5 if lvp_formed and lvp_ideology != "Left"; leverage -= 5 if not lvp_formed and ddp_ideology != "Left"; in_weimar_coalition = 1; in_social_liberal_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = ddp_name; interior_minister_party = ddp_name; justice_minister_party = ddp_name; labor_minister_party = ddp_name; reichswehr_minister_party = "I"; finance_minister_party = ddp_name; economic_minister_party = ddp_name; agriculture_minister_party = ddp_name; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "LVP" if lvp_formed; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "LVP" if lvp_formed; finance_minister_party = "LVP" if lvp_formed; economic_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "LVP" if lvp_formed; foreign_minister = "Prittwitz"; interior_minister = "Külz"; justice_minister = "Koch-Weser"; labor_minister = "Lemmer"; reichswehr_minister = "Groener"; economic_minister = "Trendelenburg"; finance_minister = "Reinhold"; agriculture_minister = "Dietrich"; dvp_right += 3; ddp_left += 3; ddp_cohesion += 1; bourgeois_cooperation += 3; lvp_left += 3; hindenburg_angry = 50; liberal_cooperation -= 4
+on-arrival: leverage += 5; leverage += 5 if not lvp_formed; leverage += 5 if lvp_formed and lvp_ideology == "Left"; leverage -= 5 if lvp_formed and lvp_ideology != "Left"; leverage -= 5 if not lvp_formed and ddp_ideology != "Left"; national_gov = "Weimar"; national_gov = "Social-Liberal"; spd_in_government = 1; national_gov == "Popular-Front" = 0; national_gov == "Left" = 0; foreign_minister_party = ddp_name; interior_minister_party = ddp_name; justice_minister_party = ddp_name; labor_minister_party = ddp_name; reichswehr_minister_party = "I"; finance_minister_party = ddp_name; economic_minister_party = ddp_name; agriculture_minister_party = ddp_name; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "LVP" if lvp_formed; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "LVP" if lvp_formed; finance_minister_party = "LVP" if lvp_formed; economic_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "LVP" if lvp_formed; foreign_minister = "Prittwitz"; interior_minister = "Külz"; justice_minister = "Koch-Weser"; labor_minister = "Lemmer"; reichswehr_minister = "Groener"; economic_minister = "Trendelenburg"; finance_minister = "Reinhold"; agriculture_minister = "Dietrich"; dvp_right += 3; ddp_left += 3; ddp_cohesion += 1; bourgeois_cooperation += 3; lvp_left += 3; hindenburg_angry = 50; liberal_cooperation -= 4
 achievement: sozialliberale_koalition
 go-to: soc_lib_chancellor_menu if not (secularized and abortion_rights and womens_work and family_law and trans_rights and reformed_183 and repealed_175); kulturkampf if (secularized and abortion_rights and womens_work and family_law and trans_rights and reformed_183 and repealed_175)
 
@@ -3682,7 +3682,7 @@ go-to: social_catholic_coalition_cvp_3
 achievement: frahm_und_brandt
 
 @social_catholic_coalition_cvp_3
-on-arrival: leverage -= 10; leverage += 5 if cvp_ideology == "Left"; in_weimar_coalition = 1; in_social_catholic_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = "Z"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; finance_minister_party = "Z"; economic_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Guérard"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Brüning"; finance_minister = "Köhler"; agriculture_minister = "Hermes"; dvp_right += 2; ddp_right += 4; ddp_cohesion -= 3; lvp_right += 3; hindenburg_angry = 30; liberal_cooperation += 5; z_relation += 10; workers_z += 3; unemployed_z += 3; new_middle_z -= 6; old_middle_z -= 10; rural_z -= 6; catholics_z += 4; new_middle_dnf += 2; new_middle_dvp += 2; new_middle_ddp += 2; new_middle_lvp += 4; old_middle_dnf += 6; old_middle_dvp += 4; old_middle_dvp += 4; rural_dnf += 4; rural_dvp += 2; rural_lvp += 2
+on-arrival: leverage -= 10; leverage += 5 if cvp_ideology == "Left"; national_gov = "Weimar"; in_social_catholic_coalition = 1; spd_in_government = 1; national_gov == "Popular-Front" = 0; national_gov == "Left" = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = "Z"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; finance_minister_party = "Z"; economic_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Guérard"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Brüning"; finance_minister = "Köhler"; agriculture_minister = "Hermes"; dvp_right += 2; ddp_right += 4; ddp_cohesion -= 3; lvp_right += 3; hindenburg_angry = 30; liberal_cooperation += 5; z_relation += 10; workers_z += 3; unemployed_z += 3; new_middle_z -= 6; old_middle_z -= 10; rural_z -= 6; catholics_z += 4; new_middle_dnf += 2; new_middle_dvp += 2; new_middle_ddp += 2; new_middle_lvp += 4; old_middle_dnf += 6; old_middle_dvp += 4; old_middle_dvp += 4; rural_dnf += 4; rural_dvp += 2; rural_lvp += 2
 achievement: sozialchristliche_koalition
 
 We have somehow convinced the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> to enter in a <span style="color: #c00000;">Social</span>-<span style="color: #000000;">Christian</span> Coalition with us! The <span style="color: #3E88B3;">nationalist</span> elements within the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> are disgusted by this, never actually expecting the negotiations to have a successful conclusion. They're refusing to participate in government through cabinet positions as to not be associated with the <span style="color: #c00000;">socialists</span>.
@@ -3723,7 +3723,7 @@ subtitle: <span style="color: [+ spd_colour +];">**SPD**</span> + <span style="c
 view-if: (weimar_coalition >= 50 or (weimar_coalition >= 49.5 and other_r >= 8 and (year < 1930 or year > 1932))) and liberal_parliament == 0 and bourgeois_parliament_ddp == 0 and not cvp_formed
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">[+ z_party_name +]</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed:<span style="color: #FFCC00;">LVP</span>?][? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">SAPD</span> toleration?] ([+ weimar_coalition +]%) [? if not ((z_relation >= 30 and z_ideology == "Right" and year < 1930) or (z_relation >= 40 and z_ideology == "Right" and year >= 1930) or (z_relation >= 25 and z_leader == "Joos") or (z_relation >= 20 and z_leader == "Kaiser")): - We do not have the adequate relations with the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">CVP</span>?]. ?] [? if not ((ddp_relation >= 30 and ddp_ideology == "Right") or (ddp_relation >= 25 and ddp_ideology == "Moderate") or (ddp_relation >= 20 and ddp_ideology == "Left")) and not lvp_formed: - We do not have the adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?] [? if not ((lvp_relation >= 40 and lvp_ideology == "Right") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 30 and lvp_ideology == "Left")) and lvp_formed: - We do not have adequate relations with the <span style="color: #FFCC00;">**LVP**</span> ?] [? if rubicon: - President Hindenburg will not allow a return to <span style="color: #c00000;">socialist</span> governance. ?][? if president_ideology == "Right": - President [+ president +] is fiercely opposed to <span style="color: #c00000;">socialist</span> governance. ?]
 choose-if: ((z_relation >= 30 and z_ideology == "Right" and year < 1930) or (z_relation >= 40 and z_ideology == "Right" and year >= 1930) or (z_relation >= 25 and z_leader == "Joos") or (z_relation >= 20 and z_leader == "Kaiser")) and ((((ddp_relation >= 30 and ddp_ideology == "Right") or (ddp_relation >= 25 and ddp_ideology == "Moderate") or (ddp_relation >= 20 and ddp_ideology == "Left")) and not lvp_formed) or (((lvp_relation >= 40 and lvp_ideology == "Right") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 30 and lvp_ideology == "Left")) and lvp_formed)) and not rubicon and president_ideology != "Right"
-on-arrival: leverage += 5 if not lvp_formed; leverage += 5 if z_ideology == "Left"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = ddp_name; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes"; dvp_right += 2; ddp_left += 2; ddp_cohesion += 2; bourgeois_cooperation += 2; lvp_left += 2; hindenburg_angry = 40; liberal_cooperation -= 2 if not liberal_parliament_seen; grosse_weimarer_koalition = 1 if z_leader == "Kaiser" and lvp_leader == "Heuss" and lvp_formed
+on-arrival: leverage += 5 if not lvp_formed; leverage += 5 if z_ideology == "Left"; national_gov = "Weimar"; spd_in_government = 1; national_gov == "Popular-Front" = 0; national_gov == "Left" = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = ddp_name; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes"; dvp_right += 2; ddp_left += 2; ddp_cohesion += 2; bourgeois_cooperation += 2; lvp_left += 2; hindenburg_angry = 40; liberal_cooperation -= 2 if not liberal_parliament_seen; grosse_weimarer_koalition = 1 if z_leader == "Kaiser" and lvp_leader == "Heuss" and lvp_formed
 achievement: weimar_coalition
 go-to: achievement_check_weimar if (dynamic_mode or historical_mode or difficulty == 1); weimar_coalition_2 if not (dynamic_mode or historical_mode or difficulty == 1)
 
@@ -3818,7 +3818,7 @@ Brüning is not opposed to a coalition with us. Alternatively, we could enter a 
 
 @join_bruning
 view-if: grand_coalition >= 50 or neo_weimar_coalition >= 50 and dvp_exist
-on-arrival: spd_in_government = 1; spd_toleration = 0; spd_toleration_right = 0; in_grand_coalition = 1; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "Z"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "Z"; finance_minister_party = "Z"; agriculture_minister_party = "Z"; leverage = 25 if leverage >= 25; leverage -= 5 if bourgeois_parliament; leverage += 5 if prussia_gov == "Grand" and in_grand_coalition and dvp_prussia_asked = 0; hindenburg_angry = 50
+on-arrival: spd_in_government = 1; spd_toleration = 0; spd_toleration_right = 0; national_gov = "Grand"; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "Z"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "Z"; finance_minister_party = "Z"; agriculture_minister_party = "Z"; leverage = 25 if leverage >= 25; leverage -= 5 if bourgeois_parliament; leverage += 5 if prussia_gov == "Grand" and national_gov == "Grand" and dvp_prussia_asked = 0; hindenburg_angry = 50
 go-to: ministries
 
 Heinrich Brüning welcomes us into his new cabinet. Now, we have our pick of ministries. [? if prussia_gov == "Grand" and dvp_prussia_asked = 0: The <span style="color: [+ dvp_colour +];">**DVP**</span> are willing to grant us more cabinet posts as a result of including them in the Prussian cabinet. ?]
@@ -4040,10 +4040,10 @@ Who should be the chancellor?
 @muller
 title: Hermann Müller for Chancellor
 view-if: muller_dead = 0
-subtitle: Müller is popular within the party, and is the preferred candidate of the [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] and other parties.
+subtitle: Müller is popular within the party, and is the preferred candidate of the [? if not national_gov == "Social-Liberal": [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if national_gov == "Social-Liberal": [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] and other parties.
 choose-if: not cvp_chancellor_accepted
 unavailable-subtitle: We've promised to forfeit the Chancellorship to the <span style="color: #000000;">[+ z_party_name +]</span>.
-on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = muller_in; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (prussia_gov == "Grand" and in_grand_coalition)
+on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = muller_in; national_gov = "Grand" if national_gov == "Weimar" == 0; leverage += 5 if (prussia_gov == "Grand" and national_gov == "Grand")
 go-to: ministries
 
 Müller's appointment as chancellor is approved by all our potential allies.
@@ -4054,7 +4054,7 @@ view-if: muller_dead = 1
 subtitle: Otto Wels is a party leader, but can he also be chancellor?
 choose-if: not cvp_chancellor_accepted
 unavailable-subtitle: We've promised to forfeit the Chancellorship to the <span style="color: #000000;">[+ z_party_name +]</span>.
-on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = wels_in; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (prussia_gov == "Grand" and in_grand_coalition)
+on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = wels_in; national_gov = "Grand" if national_gov == "Weimar" == 0; leverage += 5 if (prussia_gov == "Grand" and national_gov == "Grand")
 go-to: ministries
 
 Otto Wels's appointment as chancellor is approved by our potential allies.
@@ -4070,22 +4070,22 @@ go-to: braun_2 if prussia_leader == "Braun"; braun_4 if prussia_leader != "Braun
 
 @braun_2
 
-The [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] has significant qualms about appointing Braun as chancellor, given that he is already Minister-President of Prussia. They ask for either more cabinet positions, or for Braun to resign his state government role. The latter is completely unacceptable.
+The [? if not national_gov == "Social-Liberal": [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if national_gov == "Social-Liberal": [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] has significant qualms about appointing Braun as chancellor, given that he is already Minister-President of Prussia. They ask for either more cabinet positions, or for Braun to resign his state government role. The latter is completely unacceptable.
 
 - @muller
 - @wels
-- @braun_3: Let the [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] have their cabinet positions.
+- @braun_3: Let the [? if not national_gov == "Social-Liberal": [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if national_gov == "Social-Liberal": [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] have their cabinet positions.
 
 @braun_3
 subtitle: Otto Braun will be Chancellor.
 view-if: not historical_mode
-on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = braun_in; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (prussia_gov == "Grand" and in_grand_coalition); hindenburg_angry += 10
+on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = braun_in; leverage -= 10; national_gov = "Grand" if national_gov == "Weimar" == 0; leverage += 5 if (prussia_gov == "Grand" and national_gov == "Grand"); hindenburg_angry += 10
 go-to: ministries
 
-We have promised to let the [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] have more influence in the government in response to the appointment of Braun as chancellor.
+We have promised to let the [? if not national_gov == "Social-Liberal": [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if national_gov == "Social-Liberal": [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] have more influence in the government in response to the appointment of Braun as chancellor.
 
 @braun_4
-on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = braun_in; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (prussia_gov == "Grand" and in_grand_coalition)
+on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = braun_in; national_gov = "Grand" if national_gov == "Weimar" == 0; leverage += 5 if (prussia_gov == "Grand" and national_gov == "Grand")
 go-to: ministries
 
 Braun's appointment as chancellor is approved by all our potential allies.
@@ -4094,7 +4094,7 @@ Braun's appointment as chancellor is approved by all our potential allies.
 @z_chancellor
 title: Let the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] have their chancellor.
 subtitle: [? if not return_to_normalcy or not stegerwald_path: Heinrich Brüning?][? if return_to_normalcy and stegerwald_path: Konrad Adenauer?] will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; z_relation += 10; dvp_relation += 5; ddp_relation += 5; lvp_relation += 5; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Brüning"; chancellor = "Adenauer" if stegerwald_path and return_to_normalcy; chancellor_party = "Z"; spd_in_government = 1; leverage += 5; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 1; lvp_left += 1; hindenburg_angry -= 10
+on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; z_relation += 10; dvp_relation += 5; ddp_relation += 5; lvp_relation += 5; kpd_relation -= 5; national_gov = "Grand" if national_gov == "Weimar" == 0; chancellor = "Brüning"; chancellor = "Adenauer" if stegerwald_path and return_to_normalcy; chancellor_party = "Z"; spd_in_government = 1; leverage += 5; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 1; lvp_left += 1; hindenburg_angry -= 10
 go-to: ministries
 
 This is highly unexpected, and many in the left and center of our party are criticizing this decision.
@@ -4107,7 +4107,7 @@ This is highly unexpected, and many in the left and center of our party are crit
 title: Let Joseph Wirth of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] be chancellor.
 view-if: z_ideology == "Left"
 subtitle: Wirth is on the left wing of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 2; z_relation += 6; ddp_relation += 5; ddp_relation += 5; lvp_relation += 5; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5; dvp_left += 0.5; ddp_left += 0.5; ddp_cohesion += 1.5; lvp_left += 1; hindenburg_angry -= 10
+on-arrival: left_dissent += 2; z_relation += 6; ddp_relation += 5; ddp_relation += 5; lvp_relation += 5; kpd_relation -= 5; national_gov = "Grand" if national_gov == "Weimar" == 0; chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5; dvp_left += 0.5; ddp_left += 0.5; ddp_cohesion += 1.5; lvp_left += 1; hindenburg_angry -= 10
 go-to: ministries
 
 @z_chancellor_cvp
@@ -4149,7 +4149,7 @@ go-to: no_govt_2
 
 
 @no_govt_2
-on-arrival: reformist_dissent += 25; center_dissent += 10; labor_dissent += 25; neorevisionist_dissent += 25; in_weimar_coalition = 0; in_grand_coalition = 0; chancellor = "Brüning" if chancellor == "Marx"; spd_in_government = 0; grand_coalition_failed = 1
+on-arrival: reformist_dissent += 25; center_dissent += 10; labor_dissent += 25; neorevisionist_dissent += 25; national_gov == "Weimar" = 0; national_gov == "Grand" = 0; chancellor = "Brüning" if chancellor == "Marx"; spd_in_government = 0; grand_coalition_failed = 1
 go-to: right_coalition_post_spd if right_coalition >= 50 and ((dnvp_ideology == "Moderate" or dnvp_westarp) and not (year = 1929 and month >= 7)) and president_ideology != "Left"; new_elections_spd if right_coalition < 50 or (right_coalition >= 50 and ((dnvp_ideology == "Radical" and not dnvp_westarp) or (year = 1929 and month >= 7))) and president_ideology != "Left"; brauns_dilemma if president_ideology == "Left"
 
 
@@ -4166,7 +4166,7 @@ We are seen as responsible for the failure to form a government, and many of our
 
 @ministries
 
-We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the <span style="color: [+ kpd_colour +];">**KPD**</span>. ?] [? if in_left_front and reichswehr_minister_party == "KPD" : If the <span style="color: [+ kpd_colour +];">**KPD**</span> controls the Reichswehr Ministry, the army will most likely revolt. ?]
+We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if national_gov == "Left" : Any ministry that we do not take will be given to the <span style="color: [+ kpd_colour +];">**KPD**</span>. ?] [? if national_gov == "Left" and reichswehr_minister_party == "KPD" : If the <span style="color: [+ kpd_colour +];">**KPD**</span> controls the Reichswehr Ministry, the army will most likely revolt. ?]
 
 - @dvp_prussia_1: Offer the <span style="color: [+ dvp_colour +];">**DVP**</span> a spot in the Prussian government for more leverage.
 - #mins_1928
@@ -4336,7 +4336,7 @@ Tony Sender of the <span style="color: [+ spd_colour +];">**SPD**</span> has bee
 title: Cancel & Go Back
 subtitle: Return without appointing
 choose-if: true
-on-arrival: economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; economic_minister = "Curtius"; economic_minister_party = ddp_name if in_weimar_coalition or in_popular_front; economic_minister = "Dietrich" if in_weimar_coalition or in_popular_front
+on-arrival: economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; economic_minister = "Curtius"; economic_minister_party = ddp_name if national_gov == "Weimar" or national_gov == "Popular-Front"; economic_minister = "Dietrich" if national_gov == "Weimar" or national_gov == "Popular-Front"
 go-to: ministries
 
 @justice
@@ -4400,7 +4400,7 @@ Wilhelm Sollmann of the <span style="color: [+ spd_colour +];">**SPD**</span> ha
 title: Cancel & Go Back
 subtitle: Return without appointing
 choose-if: true
-on-arrival: foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; foreign_minister_party = "Z" if in_weimar_coalition or in_popular_front; foreign_minister = "Wirth" if in_weimar_coalition or in_popular_front;
+on-arrival: foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; foreign_minister_party = "Z" if national_gov == "Weimar" or national_gov == "Popular-Front"; foreign_minister = "Wirth" if national_gov == "Weimar" or national_gov == "Popular-Front";
 go-to: ministries
 
 @agriculture
@@ -4481,9 +4481,9 @@ Robert Schmidt of the <span style="color: [+ spd_colour +];">**SPD**</span> has 
 @postal
 title: Postal Ministry
 subtitle: 
-unavailable-subtitle: [? if leverage < 5: We do not have enough leverage. ?] [? if in_grand_coalition: The BVP needs to get a ministry and this is to only one we can afford to give to them. ?]
+unavailable-subtitle: [? if leverage < 5: We do not have enough leverage. ?] [? if national_gov == "Grand": The BVP needs to get a ministry and this is to only one we can afford to give to them. ?]
 tags: mins_1928
-choose-if: leverage >= 5 and not in_grand_coalition
+choose-if: leverage >= 5 and not national_gov == "Grand"
 view-if: postal_minister_party != "SPD"
 on-arrival: leverage -= 5; postal_minister_party = "SPD"; postal_minister = "Schmidt"
 go-to: ministries
@@ -4496,41 +4496,41 @@ title: No more ministries.
 on-arrival: {!
 if (Q.labor_minister_party !== "SPD") {Q.labor_minister_party = "Z"; Q.labor_minister = "Stegerwald"};
 
-if (Q.labor_minister_party !== "SPD" && Q.in_social_liberal_coalition) {Q.labor_minister_party = Q.ddp_name; Q.labor_minister = "Lemmer"};
-if (Q.labor_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) {Q.labor_minister_party = "LVP"; Q.labor_minister = "Lemmer"};
+if (Q.labor_minister_party !== "SPD" && Q.national_gov == "Social-Liberal") {Q.labor_minister_party = Q.ddp_name; Q.labor_minister = "Lemmer"};
+if (Q.labor_minister_party !== "SPD" && Q.national_gov == "Social-Liberal" && Q.lvp_formed) {Q.labor_minister_party = "LVP"; Q.labor_minister = "Lemmer"};
 
 if (Q.interior_minister_party !== "SPD") {Q.interior_minister_party = "Z"; Q.interior_minister = "Wirth"};
 
-if (Q.interior_minister_party !== "SPD" && Q.in_social_liberal_coalition) {Q.interior_minister_party = Q.ddp_name; Q.interior_minister = "Külz"};
-if (Q.interior_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) {Q.interior_minister_party = "LVP"; Q.interior_minister = "Külz"};
+if (Q.interior_minister_party !== "SPD" && Q.national_gov == "Social-Liberal") {Q.interior_minister_party = Q.ddp_name; Q.interior_minister = "Külz"};
+if (Q.interior_minister_party !== "SPD" && Q.national_gov == "Social-Liberal" && Q.lvp_formed) {Q.interior_minister_party = "LVP"; Q.interior_minister = "Külz"};
 
-if (Q.finance_minister_party !== "SPD" && Q.in_grand_coalition && !Q.lvp_formed) {
+if (Q.finance_minister_party !== "SPD" && Q.national_gov == "Grand" && !Q.lvp_formed) {
     {Q.finance_minister_party = "DVP"; Q.finance_minister = "Moldenhauer";}
-} else if (Q.finance_minister_party !== "SPD" && (Q.in_grand_coalition || Q.in_weimar_coalition) && Q.lvp_formed) {
+} else if (Q.finance_minister_party !== "SPD" && (Q.national_gov == "Grand" || Q.national_gov == "Weimar") && Q.lvp_formed) {
     {Q.finance_minister_party = "LVP"; Q.finance_minister = "Moldenhauer";}
 }
 
-if (Q.finance_minister_party !== "SPD" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) {Q.finance_minister_party = "Z"; Q.finance_minister = "Köhler"};
+if (Q.finance_minister_party !== "SPD" && (Q.national_gov == "Weimar" && !Q.lvp_formed || Q.national_gov == "Popular-Front" || Q.in_social_catholic_coalition)) {Q.finance_minister_party = "Z"; Q.finance_minister = "Köhler"};
 
-if (Q.finance_minister_party !== "SPD" && Q.in_social_liberal_coalition) {Q.finance_minister_party = Q.ddp_name;  Q.finance_minister = "Reinhold"};
-if (Q.finance_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) {Q.finance_minister_party = "LVP"; Q.finance_minister = "Moldenhauer"};
+if (Q.finance_minister_party !== "SPD" && Q.national_gov == "Social-Liberal") {Q.finance_minister_party = Q.ddp_name;  Q.finance_minister = "Reinhold"};
+if (Q.finance_minister_party !== "SPD" && Q.national_gov == "Social-Liberal" && Q.lvp_formed) {Q.finance_minister_party = "LVP"; Q.finance_minister = "Moldenhauer"};
 
-if (Q.economic_minister_party !== "SPD" && Q.in_grand_coalition && !Q.lvp_formed) {
+if (Q.economic_minister_party !== "SPD" && Q.national_gov == "Grand" && !Q.lvp_formed) {
     {Q.economic_minister_party = "DVP"; Q.economic_minister = "Curtius";}
-} else if (Q.economic_minister_party !== "SPD" && (Q.in_grand_coalition || Q.in_weimar_coalition) && Q.lvp_formed) {
+} else if (Q.economic_minister_party !== "SPD" && (Q.national_gov == "Grand" || Q.national_gov == "Weimar") && Q.lvp_formed) {
     {Q.economic_minister_party = "LVP"; Q.economic_minister = "Curtius";}
 }
 
-if (Q.economic_minister_party !== "SPD" && (Q.in_weimar_coalition && !Q.lvp_formed || (Q.in_popular_front && Q.liberal_parliament === 0 && Q.bourgeois_parliament_ddp == 0 && !Q.lvp_formed))) {Q.economic_minister_party = Q.ddp_name; Q.economic_minister = "Dietrich"};
-if (Q.economic_minister_party !== "SPD" && (Q.in_weimar_coalition && Q.lvp_formed || (Q.in_popular_front && Q.liberal_parliament === 0 && Q.lvp_formed))) {Q.economic_minister_party = "LVP"; Q.economic_minister = "Dietrich"};
+if (Q.economic_minister_party !== "SPD" && (Q.national_gov == "Weimar" && !Q.lvp_formed || (Q.national_gov == "Popular-Front" && Q.liberal_parliament === 0 && Q.bourgeois_parliament_ddp == 0 && !Q.lvp_formed))) {Q.economic_minister_party = Q.ddp_name; Q.economic_minister = "Dietrich"};
+if (Q.economic_minister_party !== "SPD" && (Q.national_gov == "Weimar" && Q.lvp_formed || (Q.national_gov == "Popular-Front" && Q.liberal_parliament === 0 && Q.lvp_formed))) {Q.economic_minister_party = "LVP"; Q.economic_minister = "Dietrich"};
 
-if (Q.economic_minister_party !== "SPD" && (Q.in_popular_front && (Q.liberal_parliament || Q.bourgeois_parliament_ddp) && !Q.lvp_formed)) {Q.economic_minister_party = "Z"; Q.economic_minister = "Brüning"};
-if (Q.economic_minister_party !== "SPD" && (Q.in_popular_front && Q.lvp_formed)) {Q.economic_minister_party = "Z"; Q.economic_minister = "Brüning"};
+if (Q.economic_minister_party !== "SPD" && (Q.national_gov == "Popular-Front" && (Q.liberal_parliament || Q.bourgeois_parliament_ddp) && !Q.lvp_formed)) {Q.economic_minister_party = "Z"; Q.economic_minister = "Brüning"};
+if (Q.economic_minister_party !== "SPD" && (Q.national_gov == "Popular-Front" && Q.lvp_formed)) {Q.economic_minister_party = "Z"; Q.economic_minister = "Brüning"};
 
-if (Q.economic_minister_party !== "SPD" && Q.in_social_liberal_coalition) {Q.economic_minister_party = Q.ddp_name; Q.economic_minister = "Trendelenburg"};
-if (Q.economic_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) {Q.economic_minister_party = "LVP"; Q.economic_minister = "Curtius"};
+if (Q.economic_minister_party !== "SPD" && Q.national_gov == "Social-Liberal") {Q.economic_minister_party = Q.ddp_name; Q.economic_minister = "Trendelenburg"};
+if (Q.economic_minister_party !== "SPD" && Q.national_gov == "Social-Liberal" && Q.lvp_formed) {Q.economic_minister_party = "LVP"; Q.economic_minister = "Curtius"};
 
-if (Q.economic_minister_party !== "SPD" && (Q.in_social_catholic_coalition || (Q.in_popular_front && (Q.liberal_parliament === 1 || Q.bourgeois_parliament_ddp == 1 || Q.lvp_formed)))) {Q.economic_minister_party = "Z"; Q.economic_minister = "Brüning"};
+if (Q.economic_minister_party !== "SPD" && (Q.in_social_catholic_coalition || (Q.national_gov == "Popular-Front" && (Q.liberal_parliament === 1 || Q.bourgeois_parliament_ddp == 1 || Q.lvp_formed)))) {Q.economic_minister_party = "Z"; Q.economic_minister = "Brüning"};
 
 if (Q.justice_minister_party !== "SPD" && !Q.lvp_formed) {
     {Q.justice_minister_party = Q.ddp_name; Q.justice_minister = "Koch-Weser";}
@@ -4538,10 +4538,10 @@ if (Q.justice_minister_party !== "SPD" && !Q.lvp_formed) {
     {Q.justice_minister_party = "LVP"; Q.justice_minister = "Koch-Weser";}
 }
 
-if (Q.justice_minister_party !== "SPD" && (Q.in_popular_front && (Q.liberal_parliament === 1 || Q.bourgeois_parliament_ddp == 1 || Q.lvp_formed) || Q.in_social_catholic_coalition)) {Q.justice_minister_party = "Z"; Q.justice_minister = "Guérard";}
+if (Q.justice_minister_party !== "SPD" && (Q.national_gov == "Popular-Front" && (Q.liberal_parliament === 1 || Q.bourgeois_parliament_ddp == 1 || Q.lvp_formed) || Q.in_social_catholic_coalition)) {Q.justice_minister_party = "Z"; Q.justice_minister = "Guérard";}
 
-if (Q.justice_minister_party !== "SPD" && Q.in_social_liberal_coalition) {Q.justice_minister_party = Q.ddp_name; Q.justice_minister = "Koch-Weser";}
-if (Q.justice_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) {Q.justice_minister_party = "LVP"; Q.justice_minister = "Koch-Weser";}
+if (Q.justice_minister_party !== "SPD" && Q.national_gov == "Social-Liberal") {Q.justice_minister_party = Q.ddp_name; Q.justice_minister = "Koch-Weser";}
+if (Q.justice_minister_party !== "SPD" && Q.national_gov == "Social-Liberal" && Q.lvp_formed) {Q.justice_minister_party = "LVP"; Q.justice_minister = "Koch-Weser";}
 
 if (Q.foreign_minister_party !== "SPD" && !Q.lvp_formed) {
     {Q.foreign_minister_party = "DVP"; Q.foreign_minister = "Stresemann";}
@@ -4549,11 +4549,11 @@ if (Q.foreign_minister_party !== "SPD" && !Q.lvp_formed) {
     {Q.foreign_minister_party = "LVP"; Q.foreign_minister = "Stresemann";}
 }
 if (Q.foreign_minister_party !== "SPD" && Q.stresemann_dead === 1) Q.foreign_minister = "Curtius";
-if (Q.foreign_minister_party !== "SPD" && (Q.in_weimar_coalition && Q.lvp_formed)) Q.foreign_minister_party = "LVP";
-if (Q.foreign_minister_party !== "SPD" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) {Q.foreign_minister_party = "Z"; Q.foreign_minister = "Wirth"};
+if (Q.foreign_minister_party !== "SPD" && (Q.national_gov == "Weimar" && Q.lvp_formed)) Q.foreign_minister_party = "LVP";
+if (Q.foreign_minister_party !== "SPD" && (Q.national_gov == "Weimar" && !Q.lvp_formed || Q.national_gov == "Popular-Front" || Q.in_social_catholic_coalition)) {Q.foreign_minister_party = "Z"; Q.foreign_minister = "Wirth"};
 
-if (Q.foreign_minister_party !== "SPD" && Q.in_social_liberal_coalition) {Q.foreign_minister_party = Q.ddp_name; Q.foreign_minister = "Prittwitz"};
-if (Q.foreign_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) {Q.foreign_minister_party = "LVP"; Q.foreign_minister = "Prittwitz"};
+if (Q.foreign_minister_party !== "SPD" && Q.national_gov == "Social-Liberal") {Q.foreign_minister_party = Q.ddp_name; Q.foreign_minister = "Prittwitz"};
+if (Q.foreign_minister_party !== "SPD" && Q.national_gov == "Social-Liberal" && Q.lvp_formed) {Q.foreign_minister_party = "LVP"; Q.foreign_minister = "Prittwitz"};
 
 if (Q.agriculture_minister_party !== "SPD" && !Q.lvp_formed) {
     {Q.agriculture_minister_party = Q.ddp_name; Q.agriculture_minister = "Dietrich";}
@@ -4561,17 +4561,17 @@ if (Q.agriculture_minister_party !== "SPD" && !Q.lvp_formed) {
     {Q.agriculture_minister_party = "LVP"; Q.agriculture_minister = "Dietrich";}
 }
 
-if (Q.agriculture_minister_party !== "SPD" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) {Q.agriculture_minister_party = "Z"; Q.agriculture_minister = "Hermes"};
+if (Q.agriculture_minister_party !== "SPD" && (Q.national_gov == "Weimar" && !Q.lvp_formed || Q.national_gov == "Popular-Front" || Q.in_social_catholic_coalition)) {Q.agriculture_minister_party = "Z"; Q.agriculture_minister = "Hermes"};
 
-if (Q.agriculture_minister_party !== "SPD" && Q.in_social_liberal_coalition) {Q.agriculture_minister_party = Q.ddp_name; Q.agriculture_minister = "Dietrich"};
-if (Q.agriculture_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) {Q.agriculture_minister_party = "LVP"; Q.agriculture_minister = "Dietrich"};
+if (Q.agriculture_minister_party !== "SPD" && Q.national_gov == "Social-Liberal") {Q.agriculture_minister_party = Q.ddp_name; Q.agriculture_minister = "Dietrich"};
+if (Q.agriculture_minister_party !== "SPD" && Q.national_gov == "Social-Liberal" && Q.lvp_formed) {Q.agriculture_minister_party = "LVP"; Q.agriculture_minister = "Dietrich"};
 
 if (Q.reichswehr_minister_party !== "SPD") {Q.reichswehr_minister_party = "I"; Q.reichswehr_minister = "Groener"};
 
 if (Q.transport_minister_party !== "SPD") {Q.transport_minister_party = "DDP"; Q.transport_minister = "Oeser"};
 
-if (Q.postal_minister_party !== "SPD" && Q.in_grand_coalition) {Q.postal_minister_party = "BVP"; Q.postal_minister = "Schätzel"};
-if (Q.postal_minister_party !== "SPD" && !Q.in_grand_coalition) {Q.postal_minister_party = "Z"; Q.postal_minister = "Höfle"};
+if (Q.postal_minister_party !== "SPD" && Q.national_gov == "Grand") {Q.postal_minister_party = "BVP"; Q.postal_minister = "Schätzel"};
+if (Q.postal_minister_party !== "SPD" && !Q.national_gov == "Grand") {Q.postal_minister_party = "Z"; Q.postal_minister = "Höfle"};
 
 if (Q.labor_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.labor_minister_party = "USPD"; Q.labor_minister = "Aufhäuser"};
 
@@ -4659,14 +4659,14 @@ go-to: ministries
 @drop_finance
 title: Drop the Finance Ministry.
 view-if: finance_minister_party = "SPD"
-on-arrival: finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; finance_minister = "Moldenhauer"; leverage += 10; finance_minister_party = "Z" if in_weimar_coalition or in_popular_front; finance_minister = "Köhler" if in_weimar_coalition or in_popular_front
+on-arrival: finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; finance_minister = "Moldenhauer"; leverage += 10; finance_minister_party = "Z" if national_gov == "Weimar" or national_gov == "Popular-Front"; finance_minister = "Köhler" if national_gov == "Weimar" or national_gov == "Popular-Front"
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_economic
 title: Drop the Economic Ministry.
 view-if: economic_minister_party = "SPD"
-on-arrival: economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; economic_minister = "Curtius"; leverage += 10; economic_minister_party = ddp_name if in_weimar_coalition or in_popular_front; economic_minister = "Dietrich" if in_weimar_coalition or in_popular_front;
+on-arrival: economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; economic_minister = "Curtius"; leverage += 10; economic_minister_party = ddp_name if national_gov == "Weimar" or national_gov == "Popular-Front"; economic_minister = "Dietrich" if national_gov == "Weimar" or national_gov == "Popular-Front";
 tags: drop_mins_1928
 go-to: ministries
 
@@ -4680,14 +4680,14 @@ go-to: ministries
 @drop_foreign
 title: Drop the Foreign Ministry.
 view-if: foreign_minister_party = "SPD"
-on-arrival: foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 10; foreign_minister_party = "Z" if in_weimar_coalition or in_popular_front; foreign_minister = "Wirth" if in_weimar_coalition or in_popular_front;
+on-arrival: foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 10; foreign_minister_party = "Z" if national_gov == "Weimar" or national_gov == "Popular-Front"; foreign_minister = "Wirth" if national_gov == "Weimar" or national_gov == "Popular-Front";
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_agriculture
 title: Drop the Agriculture Ministry.
 view-if: agriculture_minister_party = "SPD"
-on-arrival: agriculture_minister_party = ddp_name; agriculture_minister = "Dietrich"; leverage += 10; agriculture_minister_party = "Z" if in_weimar_coalition; agriculture_minister = "Hermes" if in_weimar_coalition
+on-arrival: agriculture_minister_party = ddp_name; agriculture_minister = "Dietrich"; leverage += 10; agriculture_minister_party = "Z" if national_gov == "Weimar"; agriculture_minister = "Hermes" if national_gov == "Weimar"
 tags: drop_mins_1928
 go-to: ministries
 
@@ -4700,7 +4700,7 @@ go-to: ministries
 
 @dvp_prussia_1
 subtitle: This will restrict our actions in Prussia.
-view-if: year <= 1929 and not prussia_gov == "Grand" and (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia) and not in_left_front and not in_popular_front and not in_weimar_coalition and not in_emergency_government and dvp_was_in_prussia == 0 and not lvp_formed and dvp_exist
+view-if: year <= 1929 and not prussia_gov == "Grand" and (prussia_gov == "Weimar" or in_minority_weimar_coalition_prussia) and not national_gov == "Left" and not national_gov == "Popular-Front" and not national_gov == "Weimar" and not in_emergency_government and dvp_was_in_prussia == 0 and not lvp_formed and dvp_exist
 on-arrival: prussia_gov = "Grand"; in_minority_grand_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; ddp_in_poular_front_prussia = 0; kpd_goals_seen_prussia = 0; spd_toleration_prussia = 0; leverage += 5; dvp_relation += 7; z_relation -= 5; coalition_dissent = -1; left_dissent += 5; dvp_left += 3; new_middle_dvp += 3
 go-to: ministries
 

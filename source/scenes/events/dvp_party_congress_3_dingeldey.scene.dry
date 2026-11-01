@@ -1,7 +1,7 @@
 title: <span style="color: [+ dvp_colour +];">**DVP**</span> Party Vote
 subtitle: The Kunz-Dohna group ousts Dingeldey!
 view-if: ((year == 1931 and month == 12) or year >= 1932) and dvp_leader == "Dingeldey" and (dvp_ideology == "Left" or (dvp_ideology == "Moderate" and pro_republic >= 60)) and dvp_exist and (dnvp_ideology == "Radical" or dnvp_leader == "Lambach") and not lvp_formed and not (lvp_timer_1_trigger and (lvp_merger_1_timer or lvp_trigger_1_time))
-on-arrival: dvp_right += 3 if dvp_relation < 30; dvp_left += 2 if dvp_relation >= 50; dvp_right += 2 if not in_grand_coalition
+on-arrival: dvp_right += 3 if dvp_relation < 30; dvp_left += 2 if dvp_relation >= 50; dvp_right += 2 if not national_gov == "Grand"
 max-visits: 1
 tags: event
 face-image: img/dvp.jpg

@@ -9,10 +9,10 @@ Q.curtius_points = 0;
 Q.dingeldey_points = 0;
 Q.opposition_points = 0;
 
-if (Q.in_grand_coalition || Q.in_weimar_coalition) {
+if (Q.national_gov == "Grand" || Q.national_gov == "Weimar") {
     Q.lvp_relation += 3;
     Q.lvp_left += 1;
-} else if (Q.in_popular_front || Q.in_left_front) {
+} else if (Q.national_gov == "Popular-Front" || Q.national_gov == "Left") {
     Q.lvp_right += 3;
     Q.lvp_relation -= 5;
 }

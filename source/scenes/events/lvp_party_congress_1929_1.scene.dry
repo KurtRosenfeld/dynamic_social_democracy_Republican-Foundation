@@ -9,10 +9,10 @@ Q.curtius_points = 1;
 Q.dingeldey_points = 0;
 Q.opposition_points = 0;
 
-if (Q.in_grand_coalition || Q.in_weimar_coalition) {
+if (Q.national_gov == "Grand" || Q.national_gov == "Weimar") {
     Q.lvp_relation += 5;
     Q.lvp_left += 2;
-} else if (Q.in_popular_front || Q.in_left_front) {
+} else if (Q.national_gov == "Popular-Front" || Q.national_gov == "Left") {
     Q.lvp_right += 4;
     Q.lvp_relation -= 8;
 }
@@ -143,7 +143,7 @@ new-page: true
 
 The merger of two notoriously factionalized parties has unsurprisingly introduced great dysfunction into the internal politics of the <span style="color: #FFCC00;">**LVP**</span>. Not even a unifying figure like Hans Luther has been able to quell the endless bickering among the party's factions. The economic depression has only deepened these divisions, with disagreements arising even on broadly supported issues like parliamentary government, making unified action nearly impossible.
 
-[? if chancellor == "Brüning" and not spd_in_government: The <span style="color: #FFCC00;">**LVP**</span> has shifted significantly to the right due to their participation in [? if in_right_coalition: Brüning's center-right coalition?][? if not in_right_coalition: Brüning's emergency government?]. This election will be pivotal in determining their policy of cooperation with us in the foreseeable future.?] While Hans Luther is expected to secure re-election, scattered candidates from across the party could emerge if the majority loses confidence in Luther's leadership.
+[? if chancellor == "Brüning" and not spd_in_government: The <span style="color: #FFCC00;">**LVP**</span> has shifted significantly to the right due to their participation in [? if national_gov == "Right": Brüning's center-right coalition?][? if not national_gov == "Right": Brüning's emergency government?]. This election will be pivotal in determining their policy of cooperation with us in the foreseeable future.?] While Hans Luther is expected to secure re-election, scattered candidates from across the party could emerge if the majority loses confidence in Luther's leadership.
 
 - @luther: The party votes...
 - @luther_fail: The party votes...

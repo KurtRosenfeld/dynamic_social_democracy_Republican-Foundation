@@ -828,26 +828,26 @@ Q.nsdap_in_government = 0;
 
 Q.spd_prussia_time = 0;
 
-Q.in_right_coalition = 0;
+Q.national_gov == "Right" = 0;
 // Weimar coalition = SPD + Z + DDP
-Q.in_weimar_coalition = 1;
+Q.national_gov = "Weimar";
 // Grand coalition = SPD + Z + BVP + DDP + DVP
 // also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
-Q.in_grand_coalition = 0;
+Q.national_gov == "Grand" = 0;
 // Popular front = SPD + KPD + Z + DDP
-Q.in_popular_front = 0;
+Q.national_gov == "Popular-Front" = 0;
 // left coalition = SPD + KPD + left-splinters
-Q.in_left_front = 0;
+Q.national_gov == "Left" = 0;
 // emergency government containing the SPD: only president Braun can do this.
 Q.in_emergency_government = 0;
-Q.in_spd_majority = 0;
+Q.national_gov == "SPD" = 0;
 Q.grand_coalition_failed = 0;
 // if the SPD is ruling as part of a minority government
 Q.in_minority_government = 0;
 // national unity governmet
-Q.in_center_right_coalition = 0;
+Q.national_gov == "Bourgeois" = 0;
 Q.in_social_catholic_coalition = 0;
-Q.in_social_liberal_coalition = 0;
+Q.national_gov == "Social-Liberal" = 0;
 
 Q.prussia_gov = "Grand";
 Q.in_minority_weimar_coalition_prussia = 0;
@@ -1180,8 +1180,8 @@ Q.young_plan_signatures = 0;
 Q.young_plan_votes = 0;
 Q.weimar_ref_signatures = 0;
 Q.weimar_ref_votes = 0;
-Q.was_in_center_right_coalition = 0;
-Q.was_in_right_coalition = 0;
+Q.was_national_gov == "Bourgeois" = 0;
+Q.was_national_gov == "Right" = 0;
 Q.dvp_left = 0;
 Q.dvp_right = 0;
 Q.dvp_was_in_prussia = 0;

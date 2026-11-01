@@ -98,7 +98,7 @@ Reichstag composition:
 **Others**: [+ other_r +]%
 
 <span style="color: [+ spd_colour +];">**SPD**</span> position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
-[? if in_weimar_coalition and not in_social_catholic_coalition and not in_social_liberal_coalition and spd_in_government: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition ?][? if in_social_democratic_coalition: Social Democratic Coalition ?][? if in_social_catholic_coalition and spd_in_government: <span style="color: #c00000;">Social</span>-[? if not stegerwald_path: <span style="color: #000000;">Catholic</span>?][? if stegerwald_path: <span style="color: #000000;">Christian</span>?] Coalition ?][? if in_social_liberal_coalition and spd_in_government: <span style="color: #c00000;">Ketchup</span> and [? if not lvp_formed: <span style="color: #D3C24D;">Mustard</span>?][? if lvp_formed: <span style="color: #FFCC00;">Mustard</span>?] Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: [+ spd_colour +];">**SPD**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
+[? if national_gov == "Weimar" and not in_social_catholic_coalition and not national_gov == "Social-Liberal" and spd_in_government: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition ?][? if in_social_democratic_coalition: Social Democratic Coalition ?][? if in_social_catholic_coalition and spd_in_government: <span style="color: #c00000;">Social</span>-[? if not stegerwald_path: <span style="color: #000000;">Catholic</span>?][? if stegerwald_path: <span style="color: #000000;">Christian</span>?] Coalition ?][? if national_gov == "Social-Liberal" and spd_in_government: <span style="color: #c00000;">Ketchup</span> and [? if not lvp_formed: <span style="color: #D3C24D;">Mustard</span>?][? if lvp_formed: <span style="color: #FFCC00;">Mustard</span>?] Coalition ?][? if national_gov == "Grand" and spd_in_government: Grand Coalition ?][? if national_gov == "Popular-Front" and spd_in_government: Popular Front ?][? if national_gov == "Left" and spd_in_government: Left Front ?][? if national_gov == "SPD" and spd_in_government: <span style="color: [+ spd_colour +];">**SPD**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
 
 [? if bruning_time and spd_toleration: Bruning's reichstag backing: [+ bruning_coalition +]% ?]
 
@@ -108,11 +108,11 @@ Reichstag composition:
 
 [? if spd_government_burden_peoples: Secondary Government Goals: [? if goal_spd_cancel_peoples == 0: [+ goal_spd_total_peoples +]?][? if goal_spd_cancel_peoples >= 1: Failed?] / 1 completed, due in [+ spd_government_burden_timer +] months ?]
 
-[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and not national_gov == "SPD" and not national_gov == "Left" : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 [? if spd_in_government and president == "Hindenburg" : Hindenburg's approval: [+ hindenburg_angry : hindenburg_angry +] ?]
 
-[? if spd_in_government and (in_left_front or in_popular_front): <span style="color: [+ kpd_colour +];">**KPD**</span> coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and (national_gov == "Left" or national_gov == "Popular-Front"): <span style="color: [+ kpd_colour +];">**KPD**</span> coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu

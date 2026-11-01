@@ -107,7 +107,7 @@ subtitle: -1 budget
 unavailable-subtitle: -1 budget - requires a majority of parties to support secular schools.
 choose-if: budget >= 1 and ((progressive_coalition + dvp_r >= 50 and not lvp_formed) or (kpd_r + spd_r + lvp_r >= 50 and lvp_formed))
 view-if: secularized = 0
-go-to: secularize_menu if not in_social_liberal_coalition and not in_spd_majority and not in_left_front; secularize_2 if in_social_liberal_coalition or in_spd_majority or in_left_front
+go-to: secularize_menu if not national_gov == "Social-Liberal" and not national_gov == "SPD" and not national_gov == "Left"; secularize_2 if national_gov == "Social-Liberal" or national_gov == "SPD" or national_gov == "Left"
 
 @secularize_menu
 
@@ -118,14 +118,14 @@ Are you sure about this? The <span style="color: #000000;">We</span><span style=
 - @cancel_advisor_action
 
 @secularize_2
-on-arrival: secularized = 1; secularized_a = 1; budget -= 1; catholics_spd -= 15; catholics -= 5; z_relation -= 15; dvp_relation += 6*(1-dissent); ddp_relation += 6*(1-dissent); lvp_relation += 6*(1-dissent); kpd_relation += 6*(1-dissent); new_middle_spd += 3*(1-dissent); workers_spd += 3*(1-dissent); education_science += 0.5; new_middle_ddp += 4; new_middle_dvp += 4; new_middle_lvp += 8; dvp_left += 3; ddp_left += 3; ddp_cohesion += 2; lvp_left += 5; education_goal_spd += 1; coalition_dissent += 3 if constructive_vonc and ((in_weimar_coalition and not in_social_liberal_coalition) or in_grand_coalition or in_popular_front or in_emergency_government)
-go-to: vote_of_no_confidence.vonc_menu if ((in_weimar_coalition and not in_social_liberal_coalition) or in_grand_coalition or in_popular_front or in_emergency_government) and not constructive_vonc
+on-arrival: secularized = 1; secularized_a = 1; budget -= 1; catholics_spd -= 15; catholics -= 5; z_relation -= 15; dvp_relation += 6*(1-dissent); ddp_relation += 6*(1-dissent); lvp_relation += 6*(1-dissent); kpd_relation += 6*(1-dissent); new_middle_spd += 3*(1-dissent); workers_spd += 3*(1-dissent); education_science += 0.5; new_middle_ddp += 4; new_middle_dvp += 4; new_middle_lvp += 8; dvp_left += 3; ddp_left += 3; ddp_cohesion += 2; lvp_left += 5; education_goal_spd += 1; coalition_dissent += 3 if constructive_vonc and ((national_gov == "Weimar" and not national_gov == "Social-Liberal") or national_gov == "Grand" or national_gov == "Popular-Front" or in_emergency_government)
+go-to: vote_of_no_confidence.vonc_menu if ((national_gov == "Weimar" and not national_gov == "Social-Liberal") or national_gov == "Grand" or national_gov == "Popular-Front" or in_emergency_government) and not constructive_vonc
 
 # instant VONC from zentrum
 
 The <span style="color: [+ spd_colour +];">**SPD**</span>, [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>, [? if not dvp_exist: former ?]<span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], and <span style="color: [+ kpd_colour +];">**KPD**</span> vote in favor of secular education, overcoming the opposition of the religiously-oriented [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: [+ dnvp_colour +];">**DNVP**</span>. We have funded secular community schools to replace some previous denominational schools.
 
-[? if in_weimar_coalition or in_grand_coalition or in_popular_front or in_emergency_government: Of course, the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is in revolt at this proposal[? if not constructive_vonc: , and have called for a vote of no confidence in our government?]. ?]
+[? if national_gov == "Weimar" or national_gov == "Grand" or national_gov == "Popular-Front" or in_emergency_government: Of course, the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is in revolt at this proposal[? if not constructive_vonc: , and have called for a vote of no confidence in our government?]. ?]
 
 
 
@@ -170,7 +170,7 @@ What should be the major focus of our new curriculum?
 @dem_major
 title: Democratic curriculum
 subtitle: Critical thinking, democratic citizenship, and collaboration
-on-arrival: curriculum_timer = 50; major_curriculum = "democratic"; pro_republic += 5*(1-dissent); workers_spd += 3*(1-dissent); democratization += 1; z_relation -= 3; ddp_relation += 3; lvp_relation += 3 if lvp_ideology != "Right"; lvp_relation -= 3 if lvp_ideology == "Right"; dvp_relation -= 5; ddp_left += 2; ddp_cohesion += 1; dvp_right += 2; lvp_left += 1; coalition_dissent += 1 if in_grand_coalition; pacifism += 1; education_science += 0.3
+on-arrival: curriculum_timer = 50; major_curriculum = "democratic"; pro_republic += 5*(1-dissent); workers_spd += 3*(1-dissent); democratization += 1; z_relation -= 3; ddp_relation += 3; lvp_relation += 3 if lvp_ideology != "Right"; lvp_relation -= 3 if lvp_ideology == "Right"; dvp_relation -= 5; ddp_left += 2; ddp_cohesion += 1; dvp_right += 2; lvp_left += 1; coalition_dissent += 1 if national_gov == "Grand"; pacifism += 1; education_science += 0.3
 go-to: curriculum_minor
 
 We should teach students how to be citizens of a democratic republic, by teaching them to critically evaluate politics and current events, to exercise their rights and to respect the rights of other citizens. Traditionalists of all stripes are critical of this curriculum.
@@ -178,7 +178,7 @@ We should teach students how to be citizens of a democratic republic, by teachin
 @science_major
 title: Scientific curriculum
 subtitle: Modern science, mathematics, and technical skills
-on-arrival: curriculum_timer = 50; major_curriculum = "scientific"; education_science += 1; coalition_dissent += 1 if in_weimar_coalition; z_relation -= 5; ddp_relation += 4*(1-dissent); lvp_relation += 2*(1-dissent); kpd_relation += 3*(1-dissent); new_middle_spd += 3*(1-dissent); workers_spd += 2*(1-dissent); ddp_left += 1; ddp_cohesion += 0.5; lvp_left += 0.5
+on-arrival: curriculum_timer = 50; major_curriculum = "scientific"; education_science += 1; coalition_dissent += 1 if national_gov == "Weimar"; z_relation -= 5; ddp_relation += 4*(1-dissent); lvp_relation += 2*(1-dissent); kpd_relation += 3*(1-dissent); new_middle_spd += 3*(1-dissent); workers_spd += 2*(1-dissent); ddp_left += 1; ddp_cohesion += 0.5; lvp_left += 0.5
 go-to: curriculum_minor
 
 Our educational system should reflect the modern age, and we should teach science and rational thinking. Religious conservatives tend to react negatively against this. 

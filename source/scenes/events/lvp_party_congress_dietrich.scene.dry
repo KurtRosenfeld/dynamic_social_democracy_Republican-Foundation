@@ -11,10 +11,10 @@ Q.heuss_points = 0;
 Q.maier_points = 0;
 Q.dingeldey_points = 1;
 
-if (Q.in_grand_coalition || Q.in_weimar_coalition) {
+if (Q.national_gov == "Grand" || Q.national_gov == "Weimar") {
     Q.lvp_relation += 5;
     Q.lvp_left += 3;
-} else if (Q.in_popular_front || Q.in_left_front) {
+} else if (Q.national_gov == "Popular-Front" || Q.national_gov == "Left") {
     Q.lvp_right += 4;
     Q.lvp_relation -= 10;
 }
@@ -26,7 +26,7 @@ if (Q.spd_votes >= 30) {
 if (Q.chancellor == "Brüning" && Q.spd_toleration) {
     Q.dingeldey_points += 2;
     Q.lvp_right += 3;
-} else if (Q.in_right_coalition || Q.in_center_right_coalition) {
+} else if (Q.national_gov == "Right" || Q.national_gov == "Bourgeois") {
     Q.maier_points += 2;
     Q.lvp_right += 1;
 }

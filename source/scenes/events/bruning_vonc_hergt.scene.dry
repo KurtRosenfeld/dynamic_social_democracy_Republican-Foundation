@@ -10,7 +10,7 @@ max-visits: 1
 
 Following the collapse of our coalition, President [+ president +] has appointed Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] in a government supported by bourgeois forces. [? if center_right_coalition < 50: However, they cannot survive without the support from us, considering that the <span style="color: #7A3C00;">**NSDAP**</span> won't participate. ?]
 
-Brüning, has reorganized his cabinet to include the parties to the right of the [? if not lvp_formed and dvp_exist: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if not lvp_formed and not dvp_exist: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], such as the <span style="color: #b8996f;">**WP**</span> and <span style="color: [+ dnvp_colour +];">**DNVP**</span>, to create [? if was_in_center_right_coalition == 0:a?][? if was_in_center_right_coalition == 1:another?] center-right coalition. [? if center_right_coalition < 50: We are left with the choice to "tolerate" the government to prevent the gains of extremists within the Reichstag or vote to oust Brüning for new elections. ?]
+Brüning, has reorganized his cabinet to include the parties to the right of the [? if not lvp_formed and dvp_exist: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if not lvp_formed and not dvp_exist: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], such as the <span style="color: #b8996f;">**WP**</span> and <span style="color: [+ dnvp_colour +];">**DNVP**</span>, to create [? if was_national_gov == "Bourgeois" == 0:a?][? if was_national_gov == "Bourgeois":another?] center-right coalition. [? if center_right_coalition < 50: We are left with the choice to "tolerate" the government to prevent the gains of extremists within the Reichstag or vote to oust Brüning for new elections. ?]
 
 - @vote_no
 - @vote_yes
@@ -21,7 +21,7 @@ Brüning, has reorganized his cabinet to include the parties to the right of the
 title: Support the vote of no confidence, voting against the government.
 subtitle: The government will collapse, and there will be new elections.
 view-if: cordon_sanitaire >= 50 and center_right_coalition < 50
-on-arrival: time_to_election = 3; spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0; spd_toleration_right = 0; in_right_coalition = 0; in_center_right_coalition = 0; pro_republic -= 3; bruning_event_timer = 0; z_relation -= 5
+on-arrival: time_to_election = 3; spd_in_government = 0; national_gov == "Grand" = 0; spd_toleration = 0; spd_toleration_right = 0; national_gov == "Right" = 0; national_gov == "Bourgeois" = 0; pro_republic -= 3; bruning_event_timer = 0; z_relation -= 5
 call: set_next_election_time
 
 We have broken with the [+ chancellor +] government, and have voted against them in a vote of no confidence. We also repealed their emergency powers.
@@ -41,7 +41,7 @@ title: It does not matter what we do.
 subtitle: The anti-government parties have over 50% of the vote, no matter our choices.
 view-if: cordon_sanitaire < 50
 call: set_next_election_time
-on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_center_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 5; bruning_event_timer = 0
+on-arrival: time_to_election = 3; spd_in_government = 0; national_gov == "Right" = 0; national_gov == "Bourgeois" = 0; national_gov == "Grand" = 0; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 5; bruning_event_timer = 0
 
 The right-wing coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
@@ -49,6 +49,6 @@ The right-wing coalition has fallen. New elections have been set for [+ next_ele
 title: It does not matter what we do.
 subtitle: Brüning will form a center-right coalition.
 view-if: center_right_coalition >= 50
-on-arrival: spd_in_government = 0; spd_toleration = 0; spd_toleration_right = 0; in_grand_coalition = 0; in_center_right_coalition = 1; in_right_coalition = 0; ddp_relation -= 5; dvp_relation -= 5; z_relation -= 5; lvp_relation -= 5; old_middle_dnf -= 2; ddp_right += 1; bourgeois_cooperation += 2; liberal_cooperation += 1
+on-arrival: spd_in_government = 0; spd_toleration = 0; spd_toleration_right = 0; national_gov == "Grand" = 0; national_gov = "Bourgeois"; national_gov == "Right" = 0; ddp_relation -= 5; dvp_relation -= 5; z_relation -= 5; lvp_relation -= 5; old_middle_dnf -= 2; ddp_right += 1; bourgeois_cooperation += 2; liberal_cooperation += 1
 
 The bourgeois has survived without our toleration, leaving us as an opposition party. 

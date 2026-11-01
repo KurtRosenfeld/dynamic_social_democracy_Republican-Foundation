@@ -1,7 +1,7 @@
 title: <span style="color: [+ dvp_colour +];">**DVP**</span> Party Vote
 subtitle: The industrialists attempt to force the resignation of [+ dvp_leader +]...
 view-if: year = 1930 and month = 12 and (dvp_leader == "Luther" or dvp_leader == "Curtius") and not lvp_formed
-on-arrival: dvp_right += 3 if dvp_relation < 25; dvp_left += 3 if dvp_relation >= 45; dvp_left += 2 if in_grand_coalition; dvp_left += 3 if dvp_leader == "Luther"; dvp_right += 3 if foreign_minister_party == "DVP" and dvp_leader == "Curtius"; dvp_left += 3 if liberal_parliament; dvp_right += 3 if bourgeois_parliament
+on-arrival: dvp_right += 3 if dvp_relation < 25; dvp_left += 3 if dvp_relation >= 45; dvp_left += 2 if national_gov == "Grand"; dvp_left += 3 if dvp_leader == "Luther"; dvp_right += 3 if foreign_minister_party == "DVP" and dvp_leader == "Curtius"; dvp_left += 3 if liberal_parliament; dvp_right += 3 if bourgeois_parliament
 max-visits: 1
 tags: event
 face-image: img/dvp.jpg
@@ -36,7 +36,7 @@ Julius Curtius has once again won the vote to retain his position against the ri
 This is more than excellent news for us and our relationship with the <span style="color: [+ dvp_colour +];">**DVP**</span>, sending notable ripple effects throughout the entire party system. In response to their loss, the industrialists have shifted their donations toward the <span style="color: [+ dnvp_colour +];">**DNVP**</span> and even the <span style="color: #7A3C00;">**NSDAP**</span>, hoping to establish a new political home for their interests.
 
 @luther
-on-arrival: dvp_leader = "Luther"; dvp_left += 3 if in_grand_coalition; liberal_cooperation += 3; bourgeois_cooperation += 5; dvp_relation += 3 if in_grand_coalition; new_middle_dvp += 3; catholics_dvp += 5; catholics_other -= 3; catholics_z -= 2; rural_dvp += 3; pro_republic += dvp_votes; ddp_right += 5 if ddp_ideology != "Right"
+on-arrival: dvp_leader = "Luther"; dvp_left += 3 if national_gov == "Grand"; liberal_cooperation += 3; bourgeois_cooperation += 5; dvp_relation += 3 if national_gov == "Grand"; new_middle_dvp += 3; catholics_dvp += 5; catholics_other -= 3; catholics_z -= 2; rural_dvp += 3; pro_republic += dvp_votes; ddp_right += 5 if ddp_ideology != "Right"
 face-image: img/portraits/luther.jpg
 
 Hans Luther has, as expected, won his re-election for the <span style="color: [+ dvp_colour +];">**DVP**</span>'s chairmanship. Despite his tarnished reputation among the party’s right wing, his broad support was sufficient for a decisive victory in the vote of no confidence. His plans for a united liberal—and even bourgeois—party to presumably counter the influence of the <span style="color: #c00000;">socialists</span> have reassured most industrial donors, though some have begun shifting their funding toward the <span style="color: [+ dnvp_colour +];">**DNVP**</span>.
