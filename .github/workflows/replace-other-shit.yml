@@ -30,10 +30,10 @@ jobs:
               # DVP variations, lazy town
               ('DVP', 'DVP'),
 
-           # One more correction (en plus)
-          (';;', ';'),
-          ('; ;', ';'),
-          (';  ;', ';'),
+           # few more
+          ('Q.former_national_gov = "Bourgeois" == 0', '!Q.former_national_gov = "Bourgeois"'),
+          ('Q.former_national_gov = "Right" == 0', '!Q.former_national_gov = "Right"'),
+          ('Q.former_national_gov = "Grand" == 0', '!Q.former_national_gov = "Grand"'),
          
 
               
