@@ -30,21 +30,18 @@ jobs:
               # DVP variations, lazy town
               ('DVP', 'DVP'),
 
-           # One more correction
-          ('was_national_gov == "Bourgeois"', 'former_national_gov = "Bourgeois"'),
-          ('was_national_gov == "Bourgeois" = 0', 'former_national_gov = "empty for stupid coding reasons"'),
-
-          ('was_national_gov == "Right"', 'former_national_gov = "Right"'),
-          ('was_national_gov == "Right" = 0', 'former_national_gov = "empty for stupid coding reasons"'),
-
-          ('was_national_gov == "Grand"', 'former_national_gov = "Grand"'),
-          ('was_national_gov == "Grand" = 0', 'former_national_gov = "empty for stupid coding reasons"'),
-
-          ('was_national_gov == "Weimar"', 'former_national_gov = "Weimar"'),
-          ('was_national_gov == "Weimar" = 0', 'former_national_gov = "empty for stupid coding reasons"'),
-
-          ('was_national_gov == "Popular Front"', 'former_national_gov = "Popular Front"'),
-          ('was_national_gov == "Polular Front" = 0', 'former_national_gov = "empty for stupid coding reasons"'),
+           # One more correction (en plus)
+          ('national_gov == "Grand" = 0', ''),
+          ('national_gov == "Weimar" = 0', ''),
+          ('national_gov == "SPD" = 0', ''),
+          ('national_gov == "Left" = 0', ''),
+          ('national_gov == "Popular Front" = 0', ''),
+          ('national_gov == "Social-Liberal" = 0', ''),
+          ('national_gov == "Social-Catholic" = 0', ''),
+          ('national_gov == "Bourgeois" = 0', ''),
+          ('national_gov == "Right" = 0', ''),
+          ('national_gov == "Far Right" = 0', ''),
+          ('national_gov == "NSDAP" = 0', ''),
 
               
           ]
