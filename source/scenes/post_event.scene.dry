@@ -1285,8 +1285,6 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
 
 Q.month_actions_checked = Q.month_actions;
 
-if (Q.ddp_national_gov == "Popular-Front" && !Q.national_gov == "Popular-Front") Q.ddp_national_gov == "Popular-Front" = 0;
-
 // 1. update dates
 if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon)) {
     Q.time += 1;
