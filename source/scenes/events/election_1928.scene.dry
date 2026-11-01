@@ -2438,14 +2438,14 @@ The right will be more active in resisting our rule considering we are going to 
 
 @great_popular_front
 view-if: z_ideology == "Left" and kpd_leader == "Conciliators"
-on-arrival: spd_in_government = 1; national_gov = "Popular-Front"; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; kpd_relation += 10; coup_progress += 1; ; coalition_dissent = 0; coup_progress += 1 if prussia_gov == "Popular-Front"; capital_strike_progress += 1 if prussia_gov == "Popular-Front"; hindenburg_angry = 70
+on-arrival: spd_in_government = 1; national_gov = "Popular-Front"; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; kpd_relation += 10; coup_progress += 1; coalition_dissent = 0; coup_progress += 1 if prussia_gov == "Popular-Front"; capital_strike_progress += 1 if prussia_gov == "Popular-Front"; hindenburg_angry = 70
 achievement: grosse_volksfront
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 
 Somehow, the coalition is successfully formed! The conciliatory leadership of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: [+ kpd_colour +];">**KPD**</span> helped make the negotiations possible. We still need a chancellor; the only acceptable choice among the parties was Rudolf Breitscheid of the <span style="color: [+ spd_colour +];">**SPD**</span>, acceptable to the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: [+ kpd_colour +];">**KPD**</span> [? if president == "Hindenburg" or president_ideology == "Moderate": as well as President [+ president +], albeit extremely reluctantly ?].
 
 @popular_front_success
-on-arrival: spd_in_government = 1; national_gov = "Popular-Front"; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; kpd_relation += 10; coup_progress += 1; ; coalition_dissent = 0; coup_progress += 1 if prussia_gov == "Popular-Front"; capital_strike_progress += 1 if prussia_gov == "Popular-Front"; hindenburg_angry = 75
+on-arrival: spd_in_government = 1; national_gov = "Popular-Front"; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; kpd_relation += 10; coup_progress += 1; coalition_dissent = 0; coup_progress += 1 if prussia_gov == "Popular-Front"; capital_strike_progress += 1 if prussia_gov == "Popular-Front"; hindenburg_angry = 75
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 achievement: volksfront
 
@@ -2632,7 +2632,7 @@ The right will be more active in resisting our rule considering we are going to 
 - @prussia_election_1928.kpd_goals_prussia: The <span style="color: [+ kpd_colour +];">**KPD**</span> presents us with a list of demands.
 
 @left_coalition_success
-on-arrival: spd_in_government = 1; national_gov = "Left"; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; coup_progress += 3; capital_strike_progress += 2; coup_progress += 1 if prussia_gov == "Left"; capital_strike_progress += 1 if prussia_gov == "Left"; national_gov == "Popular-Front" = 0; ; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 10; lvp_relation -= 8; hindenburg_angry = 85
+on-arrival: spd_in_government = 1; national_gov = "Left"; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; coup_progress += 3; capital_strike_progress += 2; coup_progress += 1 if prussia_gov == "Left"; capital_strike_progress += 1 if prussia_gov == "Left"; national_gov == "Popular-Front" = 0; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 10; lvp_relation -= 8; hindenburg_angry = 85
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
@@ -4149,7 +4149,7 @@ go-to: no_govt_2
 
 
 @no_govt_2
-on-arrival: reformist_dissent += 25; center_dissent += 10; labor_dissent += 25; neorevisionist_dissent += 25; ; chancellor = "Brüning" if chancellor == "Marx"; spd_in_government = 0; grand_coalition_failed = 1
+on-arrival: reformist_dissent += 25; center_dissent += 10; labor_dissent += 25; neorevisionist_dissent += 25; chancellor = "Brüning" if chancellor == "Marx"; spd_in_government = 0; grand_coalition_failed = 1
 go-to: right_coalition_post_spd if right_coalition >= 50 and ((dnvp_ideology == "Moderate" or dnvp_westarp) and not (year = 1929 and month >= 7)) and president_ideology != "Left"; new_elections_spd if right_coalition < 50 or (right_coalition >= 50 and ((dnvp_ideology == "Radical" and not dnvp_westarp) or (year = 1929 and month >= 7))) and president_ideology != "Left"; brauns_dilemma if president_ideology == "Left"
 
 
