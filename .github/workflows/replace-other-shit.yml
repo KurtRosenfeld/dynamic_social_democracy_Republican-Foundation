@@ -31,17 +31,10 @@ jobs:
               ('DVP', 'DVP'),
 
            # One more correction (en plus)
-          ('national_gov == "Grand" = 0', ''),
-          ('national_gov == "Weimar" = 0', ''),
-          ('national_gov == "SPD" = 0', ''),
-          ('national_gov == "Left" = 0', ''),
-          ('national_gov == "Popular Front" = 0', ''),
-          ('national_gov == "Social-Liberal" = 0', ''),
-          ('national_gov == "Social-Catholic" = 0', ''),
-          ('national_gov == "Bourgeois" = 0', ''),
-          ('national_gov == "Right" = 0', ''),
-          ('national_gov == "Far Right" = 0', ''),
-          ('national_gov == "NSDAP" = 0', ''),
+          (';;', ';'),
+          ('; ;', ';'),
+          (';  ;', ';'),
+         
 
               
           ]
