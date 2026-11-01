@@ -1578,6 +1578,123 @@ anhalt: {
   ]
 },
 
+      germany: {
+  totalSeatsKey: 'total_seats',
+             conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r',
+            condition: function(Q) { return Q.kpd_r; }
+          },
+          {
+            id: 'kag', legend: 'KAG', name: 'KAG', 
+            qualityKey: 'kag_r',
+            condition: function(Q) { return Q.kag_r; }
+          },
+          {
+            id: 'sapd', legend: 'SAPD', name: 'SAPD', 
+            qualityKey: 'sapd_r',
+            condition: function(Q) { return Q.sapd_formed && Q.sapd_r; }
+          },
+          {
+            id: 'uspd', legend: 'USPD', name: 'USPD',
+            qualityKey: 'uspd_r',
+            condition: function(Q) { return Q.uspd_r; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r',
+            condition: function(Q) { return Q.spd_r; }
+          },
+          {
+            id: 'right_spd', legend: 'I', name: 'I', 
+            qualityKey: 'right_spd_r',
+            condition: function(Q) { return Q.right_spd_r; }
+          },
+          {
+            id: 'aspd', legend: 'ASPD', name: 'ASPD', 
+            qualityKey: 'aspd_r',
+            condition: function(Q) { return Q.aspd_r; }
+          },
+          {
+            id: 'ddp', 
+            legend: function(Q) { return Q.ddp_name; },
+            name: function(Q) { return Q.ddp_name; },
+            qualityKey: 'ddp_r',
+            condition: function(Q) { return Q.ddp_r && !Q.lvp_formed; }
+          },
+          {
+            id: 'lvp', legend: 'LVP', name: 'LVP',
+            qualityKey: 'lvp_r',
+            condition: function(Q) { return Q.lvp_r && Q.lvp_formed; }
+          },
+          {
+            id: 'z', legend: 'Z', name: 'Z',
+            qualityKey: 'z_r',
+            condition: function(Q) { return Q.z_r; }
+          },
+          {
+            id: 'dvp', legend: 'DVP', name: 'DVP',
+            qualityKey: 'dvp_r',
+            condition: function(Q) { return Q.dvp_r && !Q.lvp_formed && Q.dvp_exist; }
+          },
+          {
+            id: 'other', legend: 'Other', name: 'Others',
+            qualityKey: 'other_r',
+            condition: function(Q) { return Q.other_r; }
+          },
+          {
+            id: 'wp', legend: 'WP', name: 'WP',
+            qualityKey: 'wp_r',
+            condition: function(Q) { return Q.wp_r; }
+          },
+          {
+            id: 'vrp', legend: 'VRP', name: 'VRP',
+            qualityKey: 'vrp_r',
+            condition: function(Q) { return Q.vrp_r }
+          },
+          {
+            id: 'farm3', legend: 'CNBL', name: 'CNBL',
+            qualityKey: 'cnbl_r',
+            condition: function(Q) { return Q.cnbl_r; }
+          },{
+            id: 'csvd', legend: 'CSVD', name: 'CSVD',
+            qualityKey: 'csvd_r',
+            condition: function(Q) { return Q.csvd_exists && Q.csvd_r; }
+          },
+          {
+            id: 'kvp', legend: 'KVP', name: 'KVP',
+            qualityKey: 'kvp_r_saxony',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_saxony; }
+          },
+          {
+            id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
+            qualityKey: 'dnvp_r',
+            condition: function(Q) { return Q.dnvp_r; }
+          },
+          {
+            id: 'dnf', legend: 'DNF', name: 'DNF',
+            qualityKey: 'dnf_r',
+            condition: function(Q) { return Q.dnf_formed && Q.dnf_r; }
+          },
+          {
+            id: 'dvfp', legend: 'DVFP', name: 'DVFP', 
+            qualityKey: 'dvfp_r',
+            condition: function(Q) { return Q.dvfp_r; }
+          },
+          {
+            id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
+            qualityKey: 'nsfb_r',
+            condition: function(Q) { return Q.nsfb_r; }
+          },
+          {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r',
+            condition: function(Q) { return Q.nsdap_r; }
+          }
+        ]
+      },
+
 
    france_senat: {
   totalSeatsKey: 'french_senat_seats',
