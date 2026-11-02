@@ -2625,7 +2625,7 @@ The right will be more active in resisting our rule considering we are going to 
 - @prussia_election_1928.kpd_goals_prussia: The <span style="color: [+ kpd_colour +];">**KPD**</span> presents us with a list of demands.
 
 @left_coalition_success
-on-arrival: spd_in_government = 1; national_gov = "Left"; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; coup_progress += 3; capital_strike_progress += 2; coup_progress += 1 if prussia_gov == "Left"; capital_strike_progress += 1 if prussia_gov == "Left"; national_gov == "Popular-Front" = 0; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 10; lvp_relation -= 8; hindenburg_angry = 85
+on-arrival: spd_in_government = 1; national_gov = "Left"; chancellor = "Breitscheid"; chancellor_party = breitscheid_in; coup_progress += 3; capital_strike_progress += 2; coup_progress += 1 if prussia_gov == "Left"; capital_strike_progress += 1 if prussia_gov == "Left"; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 10; lvp_relation -= 8; hindenburg_angry = 85
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
