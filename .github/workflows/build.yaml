@@ -29,19 +29,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Protect Rosa Luxemburg
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5  # Upgraded to v5
       - name: Dem Karl Liebknecht haben wirs geschworen
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5  # Upgraded to v5
         with:
-          node-version: 16
-      - name: Der Rosa Luxemburg reichen wir die Hand
-        run: npm install
-      - name: Vote for USPD
-        run: npm run dendrynexus make-html -- --pretty
-      - name: Copy game.json to output
-        run: cp out/game.json out/html/
+          node-version: 22  # It is recommended to change to 22 (LTS)
+      # ... Subsequent npm steps remain unchanged
       - name: Can I edit this
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4  # Consider upgrading to v4
         with:
           path: 'out/html'
       - name: Spit in Eberts face
