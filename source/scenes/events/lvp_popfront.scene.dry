@@ -35,7 +35,7 @@ With the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> dissol
 
 @popular_front_lives
 view-if: ((popular_front_coalition >= 50 or not ddp_national_gov == "Popular-Front" or constructive_vonc) and (popular_front_coalition_prussia >= 50 or not ddp_in_poular_front_prussia)) and not (popular_front_coalition >= 50 and popular_front_coalition_prussia < 50 and ddp_in_poular_front_prussia)
-on-arrival: ddp_national_gov == "Popular-Front" = 0; ddp_in_poular_front_prussia = 0
+on-arrival: ddp_in_popular_front = 0; ddp_in_poular_front_prussia = 0
 
 Their former cabinet positions [? if national_gov == "Popular-Front" and prussia_gov == "Popular-Front": nationally and in Prussia?][? if not national_gov == "Popular-Front" and prussia_gov == "Popular-Front": in Prussia?] (if they had any) have been transferred to the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 
