@@ -106,7 +106,7 @@ view-if: constructive_vonc and president_ideology == "Left"
 choose-if: presidential_powers != 1
 unavailable-subtitle: We don't have that power anymore. You really screwed us here with your reforms, you know that?
 call: set_next_election_time
-on-arrival: time_to_election = 3; spd_in_government = 0; national_gov == "Popular-Front"; spd_toleration = 0; spd_toleration_right = 0; coalition_dissent = 0; pro_republic -= 5; old_middle_spd -= 3; new_middle_spd -= 2; workers_spd -= 3 if pro_republic < 50; workers_spd -= 4 if pro_republic < 40; old_middle_nsdap += 4 if pro_republic < 50; new_middle_nsdap += 3 if pro_republic < 50; lvp_right += 3; ddp_right += 2; ddp_cohesion -= 1; dvp_right += 3
+on-arrival: time_to_election = 3; spd_in_government = 0; national_gov = "Popular-Front"; spd_toleration = 0; spd_toleration_right = 0; coalition_dissent = 0; pro_republic -= 5; old_middle_spd -= 3; new_middle_spd -= 2; workers_spd -= 3 if pro_republic < 50; workers_spd -= 4 if pro_republic < 40; old_middle_nsdap += 4 if pro_republic < 50; new_middle_nsdap += 3 if pro_republic < 50; lvp_right += 3; ddp_right += 2; ddp_cohesion -= 1; dvp_right += 3
 
 We have sacked Brüning and called for new elections for [+ next_election_month : month +] [+ next_election_year +].
 
