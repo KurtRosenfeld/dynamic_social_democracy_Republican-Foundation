@@ -2,26 +2,20 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
@@ -29,16 +23,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Protect Rosa Luxemburg
-        uses: actions/checkout@v5  # Upgraded to v5
+        uses: actions/checkout@v5
+
       - name: Dem Karl Liebknecht haben wirs geschworen
-        uses: actions/setup-node@v5  # Upgraded to v5
+        uses: actions/setup-node@v5
         with:
-          node-version: 22  # It is recommended to change to 22 (LTS)
-      # ... Subsequent npm steps remain unchanged
+          node-version: 22
+
+      - name: Der Rosa Luxemburg reichen wir die Hand
+        run: npm install
+
+      - name: Vote for USPD
+        run: npm run dendrynexus make-html -- --pretty
+
+      - name: Copy game.json to output
+        run: cp out/game.json out/html/
+
       - name: Can I edit this
-        uses: actions/upload-pages-artifact@v4  # Consider upgrading to v4
+        uses: actions/upload-pages-artifact@v4
         with:
           path: 'out/html'
+
       - name: Spit in Eberts face
         id: deployment
         uses: actions/deploy-pages@v4
