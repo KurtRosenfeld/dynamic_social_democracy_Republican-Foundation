@@ -75,7 +75,6 @@ Q.ddp_right += 1;
 Q.lvp_right += 3;
 Q.time_to_election = 3;
 Q.spd_in_government = 0;
-Q.;
 }
 !}
 go-to: election_set if anti_bruning_dnvp >= pro_bruning_dnvp
