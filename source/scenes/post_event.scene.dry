@@ -5508,13 +5508,13 @@ if (this.ui && this.ui.show_portraits) {
 if (typeof window !== "undefined" && window.generateBar) {
 }
 !}
-go-to: bg_change if rubicon; events_choice if has_event = 1 and not rubicon
+go-to: bg_change if rubicon; events_choice if has_event = 1 and not rubicon; main.main_easy if has_event = 0 and difficulty < 0 and not rubicon
 
 = [+ month : month +] [+ year +][? if rubicon:, Week [+ week +]?]
 
 @bg_change
 set-bg: img/street.jpg
-go-to: events_choice if has_event = 1
+go-to: events_choice if has_event = 1; main if has_event = 0 and difficulty >= 0; main.main_easy if has_event = 0 and difficulty < 0
 
 @events_choice
 
