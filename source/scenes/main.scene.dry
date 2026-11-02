@@ -74,7 +74,7 @@ if (Q.spd_in_government && Q.hindenburg_angry >= 100 && Q.president == "Hindenbu
         Q.flavour_4_trigger = 0;
     }
 }
-if (Q.national_gov == "Grand" && (Q.liberal_vote < 12.5 || Q.peoples_party_support >= 2) && (!Q.national_gov == "Right" && !Q.national_gov == "Weimar") && Q.next_election_time - Q.time >= 3 && Q.month >= 7 && Q.time !== Q.last_time_updated) {
+if (Q.national_gov == "Grand" && (Q.liberal_vote < 12.5 || Q.peoples_party_support >= 2) && (Q.national_gov != "Right" && Q.national_gov != "Weimar") && Q.next_election_time - Q.time >= 3 && Q.month >= 7 && Q.time !== Q.last_time_updated) {
     Q.flavour_5_trigger += 1;
     if (Q.flavour_5_trigger && !Q.flavour_5_trigger_shown) {
         Q.flavour_5_trigger_time = Q.time;
@@ -134,7 +134,7 @@ if (Q.bruning_toleration_time == 1 && Q.spd_toleration && Q.year >= 1930 && Q.ti
     }
 }
 // irl austerity
-if (Q.total_bruning_time >= 12 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time >= 12 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
     Q.flavour_13_trigger += 1;
     if (Q.flavour_13_trigger && !Q.flavour_13_trigger_shown) {
         Q.flavour_13_trigger_time = Q.time;
@@ -150,7 +150,7 @@ if (Q.total_bruning_time >= 12 && (Q.national_gov == "Bourgeois" || Q.national_g
     }
 }
 // cnblp pt 1
-if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.spd_toleration_right && !Q.bourgeois_parliament_no_liberals && Q.time !== Q.last_time_updated) {
+if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.spd_toleration_right && !Q.bourgeois_parliament_no_liberals && Q.time !== Q.last_time_updated) {
     Q.flavour_15_trigger += 1;
     if (Q.flavour_15_trigger && !Q.flavour_15_trigger_shown) {
         Q.flavour_15_trigger_time = Q.time;
@@ -174,7 +174,7 @@ if (Q.year >= 1930 && Q.ddp_factionless && !Q.liberal_parliament && !Q.bourgeois
     }
 }
 // wp pt 1
-if (Q.year >= 1930 && Q.total_bruning_time >= 7 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && Q.time !== Q.last_time_updated) {
+if (Q.year >= 1930 && Q.total_bruning_time >= 7 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && Q.time !== Q.last_time_updated) {
     Q.flavour_18_trigger += 1;
     if (Q.flavour_18_trigger && !Q.flavour_18_trigger_shown) {
         Q.flavour_18_trigger_time = Q.time;
@@ -206,7 +206,7 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && !Q.flavou
     }
 }
 // dingeldey complains bout emergency decree
-if (Q.emergency_decree_seen && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.emergency_decree_seen && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_22_trigger += 1; 
     if (Q.flavour_22_trigger == 1 && !Q.flavour_22_trigger_shown) {
         Q.flavour_22_trigger_time = Q.time;
@@ -214,7 +214,7 @@ if (Q.emergency_decree_seen && !Q.national_gov == "Bourgeois" && !Q.national_gov
     }
 }
 // dingeldey schemes to remove curtius, wirth, dietrich, but postponed
-if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time == 9 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_23_trigger += 1; 
     if (Q.flavour_23_trigger == 1 && !Q.flavour_23_trigger_shown) {
         Q.flavour_23_trigger_time = Q.time;
@@ -222,7 +222,7 @@ if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_g
     }
 }
 // dingeldey complains about banking crisis, precursor to curtius resigning
-if (Q.total_bruning_time > 0 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_24_trigger += 1; 
     if (Q.flavour_24_trigger == 1 && !Q.flavour_24_trigger_shown) {
         Q.flavour_24_trigger_time = Q.time;
@@ -302,7 +302,7 @@ if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp &
     }
 }
 // dingeldey complains bout emergency decree, alt his
-if (Q.emergency_decree_alt_seen && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.emergency_decree_alt_seen && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_34_trigger += 1; 
     if (Q.flavour_34_trigger == 1 && !Q.flavour_34_trigger_shown) {
         Q.flavour_34_trigger_time = Q.time;
@@ -334,7 +334,7 @@ if (Q.total_bruning_time > 0 && (Q.national_gov == "Bourgeois" || Q.national_gov
     }
 }
 // lvp complains bout emergency decree
-if ((Q.emergency_decree_seen || Q.emergency_decree_alt_seen) && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right"  && !Q.spd_toleration_right && Q.lvp_formed && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if ((Q.emergency_decree_seen || Q.emergency_decree_alt_seen) && Q.national_gov != "Bourgeois" && Q.national_gov != "Right"  && !Q.spd_toleration_right && Q.lvp_formed && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_38_trigger += 1; 
     if (Q.flavour_38_trigger == 1 && !Q.flavour_38_trigger_shown) {
         Q.flavour_38_trigger_time = Q.time;
@@ -342,7 +342,7 @@ if ((Q.emergency_decree_seen || Q.emergency_decree_alt_seen) && !Q.national_gov 
     }
 }
 // lvp gets mad over bruning
-if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && Q.lvp_formed && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time == 9 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && Q.lvp_formed && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_39_trigger += 1; 
     if (Q.flavour_39_trigger == 1 && !Q.flavour_39_trigger_shown) {
         Q.flavour_39_trigger_time = Q.time;
@@ -350,7 +350,7 @@ if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_g
     }
 }
 // lvp complains about banking crisis, precursor to curtius resigning
-if (Q.total_bruning_time > 0 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_40_trigger += 1; 
     if (Q.flavour_40_trigger == 1 && !Q.flavour_40_trigger_shown) {
         Q.flavour_40_trigger_time = Q.time;
@@ -471,7 +471,7 @@ if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.lvp_formed && !Q.dvp_
     }
 }
 // non-dingeldey complains bout emergency decree
-if (Q.emergency_decree_seen && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.emergency_decree_seen && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_55_trigger += 1; 
     if (Q.flavour_55_trigger == 1 && !Q.flavour_55_trigger_shown) {
         Q.flavour_55_trigger_time = Q.time;
@@ -479,7 +479,7 @@ if (Q.emergency_decree_seen && !Q.national_gov == "Bourgeois" && !Q.national_gov
     }
 }
 // non-dingeldey schemes to remove curtius, wirth, dietrich
-if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time == 9 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_56_trigger += 1; 
     if (Q.flavour_56_trigger == 1 && !Q.flavour_56_trigger_shown) {
         Q.flavour_56_trigger_time = Q.time;
@@ -487,7 +487,7 @@ if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_g
     }
 }
 // non-dingeldey complains about banking crisis, precursor to curtius resigning
-if (Q.total_bruning_time > 0 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_57_trigger += 1; 
     if (Q.flavour_57_trigger == 1 && !Q.flavour_57_trigger_shown) {
         Q.flavour_57_trigger_time = Q.time;
@@ -495,7 +495,7 @@ if (Q.total_bruning_time > 0 && !Q.national_gov == "Bourgeois" && !Q.national_go
     }
 }
 // rlb takeover by extremists
-if (Q.total_bruning_time >= 7 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && !Q.spd_toleration_right && Q.year >= 1930 && !Q.kvp_cnblp_sister && Q.dnvp_ideology == "Radical" && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time >= 7 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && !Q.spd_toleration_right && Q.year >= 1930 && !Q.kvp_cnblp_sister && Q.dnvp_ideology == "Radical" && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_58_trigger += 1;
     if (Q.flavour_58_trigger && !Q.flavour_58_trigger_shown) {
         Q.flavour_58_trigger_time = Q.time;
@@ -503,7 +503,7 @@ if (Q.total_bruning_time >= 7 && !Q.national_gov == "Bourgeois" && !Q.national_g
     }
 }
 // bruning hitler coalition
-if (Q.total_bruning_time >= 21 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time >= 21 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_59_trigger += 1;
     if (Q.flavour_59_trigger && !Q.flavour_59_trigger_shown) {
         Q.flavour_59_trigger_time = Q.time;
@@ -1473,7 +1473,7 @@ if (Q.spd_in_government && Q.hindenburg_angry >= 100 && Q.president == "Hindenbu
         Q.flavour_4_trigger = 0;
     }
 }
-if (Q.national_gov == "Grand" && (Q.liberal_vote < 12.5 || Q.peoples_party_support >= 2) && (!Q.national_gov == "Right" && !Q.national_gov == "Weimar") && Q.next_election_time - Q.time >= 3 && Q.month >= 7 && Q.time !== Q.last_time_updated) {
+if (Q.national_gov == "Grand" && (Q.liberal_vote < 12.5 || Q.peoples_party_support >= 2) && (Q.national_gov != "Right" && Q.national_gov != "Weimar") && Q.next_election_time - Q.time >= 3 && Q.month >= 7 && Q.time !== Q.last_time_updated) {
     Q.flavour_5_trigger += 1;
     if (Q.flavour_5_trigger && !Q.flavour_5_trigger_shown) {
         Q.flavour_5_trigger_time = Q.time;
@@ -1533,7 +1533,7 @@ if (Q.bruning_toleration_time == 1 && Q.spd_toleration && Q.year >= 1930 && Q.ti
     }
 }
 // irl austerity
-if (Q.total_bruning_time >= 12 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time >= 12 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
     Q.flavour_13_trigger += 1;
     if (Q.flavour_13_trigger && !Q.flavour_13_trigger_shown) {
         Q.flavour_13_trigger_time = Q.time;
@@ -1549,7 +1549,7 @@ if (Q.total_bruning_time >= 12 && (Q.national_gov == "Bourgeois" || Q.national_g
     }
 }
 // cnblp pt 1
-if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.spd_toleration_right && !Q.bourgeois_parliament_no_liberals && Q.time !== Q.last_time_updated) {
+if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.spd_toleration_right && !Q.bourgeois_parliament_no_liberals && Q.time !== Q.last_time_updated) {
     Q.flavour_15_trigger += 1;
     if (Q.flavour_15_trigger && !Q.flavour_15_trigger_shown) {
         Q.flavour_15_trigger_time = Q.time;
@@ -1573,7 +1573,7 @@ if (Q.year >= 1930 && Q.ddp_factionless && !Q.liberal_parliament && !Q.bourgeois
     }
 }
 // wp pt 1
-if (Q.year >= 1930 && Q.total_bruning_time >= 7 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && Q.time !== Q.last_time_updated) {
+if (Q.year >= 1930 && Q.total_bruning_time >= 7 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && Q.time !== Q.last_time_updated) {
     Q.flavour_18_trigger += 1;
     if (Q.flavour_18_trigger && !Q.flavour_18_trigger_shown) {
         Q.flavour_18_trigger_time = Q.time;
@@ -1605,7 +1605,7 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && !Q.flavou
     }
 }
 // dingeldey complains bout emergency decree
-if (Q.emergency_decree_seen && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.emergency_decree_seen && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_22_trigger += 1; 
     if (Q.flavour_22_trigger == 1 && !Q.flavour_22_trigger_shown) {
         Q.flavour_22_trigger_time = Q.time;
@@ -1613,7 +1613,7 @@ if (Q.emergency_decree_seen && !Q.national_gov == "Bourgeois" && !Q.national_gov
     }
 }
 // dingeldey schemes to remove curtius, wirth, dietrich, but postponed
-if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time == 9 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_23_trigger += 1; 
     if (Q.flavour_23_trigger == 1 && !Q.flavour_23_trigger_shown) {
         Q.flavour_23_trigger_time = Q.time;
@@ -1621,7 +1621,7 @@ if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_g
     }
 }
 // dingeldey complains about banking crisis, precursor to curtius resigning
-if (Q.total_bruning_time > 0 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_24_trigger += 1; 
     if (Q.flavour_24_trigger == 1 && !Q.flavour_24_trigger_shown) {
         Q.flavour_24_trigger_time = Q.time;
@@ -1701,7 +1701,7 @@ if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp &
     }
 }
 // dingeldey complains bout emergency decree, alt his
-if (Q.emergency_decree_alt_seen && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.emergency_decree_alt_seen && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_34_trigger += 1; 
     if (Q.flavour_34_trigger == 1 && !Q.flavour_34_trigger_shown) {
         Q.flavour_34_trigger_time = Q.time;
@@ -1733,7 +1733,7 @@ if (Q.total_bruning_time > 0 && (Q.national_gov == "Bourgeois" || Q.national_gov
     }
 }
 // lvp complains bout emergency decree
-if ((Q.emergency_decree_seen || Q.emergency_decree_alt_seen) && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right"  && !Q.spd_toleration_right && Q.lvp_formed && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if ((Q.emergency_decree_seen || Q.emergency_decree_alt_seen) && Q.national_gov != "Bourgeois" && Q.national_gov != "Right"  && !Q.spd_toleration_right && Q.lvp_formed && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_38_trigger += 1; 
     if (Q.flavour_38_trigger == 1 && !Q.flavour_38_trigger_shown) {
         Q.flavour_38_trigger_time = Q.time;
@@ -1741,7 +1741,7 @@ if ((Q.emergency_decree_seen || Q.emergency_decree_alt_seen) && !Q.national_gov 
     }
 }
 // lvp gets mad over bruning
-if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && Q.lvp_formed && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time == 9 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && Q.lvp_formed && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_39_trigger += 1; 
     if (Q.flavour_39_trigger == 1 && !Q.flavour_39_trigger_shown) {
         Q.flavour_39_trigger_time = Q.time;
@@ -1749,7 +1749,7 @@ if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_g
     }
 }
 // lvp complains about banking crisis, precursor to curtius resigning
-if (Q.total_bruning_time > 0 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && Q.chancellor == "Brüning" && !Q.cvp_formed && Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_40_trigger += 1; 
     if (Q.flavour_40_trigger == 1 && !Q.flavour_40_trigger_shown) {
         Q.flavour_40_trigger_time = Q.time;
@@ -1870,7 +1870,7 @@ if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.lvp_formed && !Q.dvp_
     }
 }
 // non-dingeldey complains bout emergency decree
-if (Q.emergency_decree_seen && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.emergency_decree_seen && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.liberal_parliament && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_55_trigger += 1; 
     if (Q.flavour_55_trigger == 1 && !Q.flavour_55_trigger_shown) {
         Q.flavour_55_trigger_time = Q.time;
@@ -1878,7 +1878,7 @@ if (Q.emergency_decree_seen && !Q.national_gov == "Bourgeois" && !Q.national_gov
     }
 }
 // non-dingeldey schemes to remove curtius, wirth, dietrich
-if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time == 9 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.dvp_defect && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_56_trigger += 1; 
     if (Q.flavour_56_trigger == 1 && !Q.flavour_56_trigger_shown) {
         Q.flavour_56_trigger_time = Q.time;
@@ -1886,7 +1886,7 @@ if (Q.total_bruning_time == 9 && !Q.national_gov == "Bourgeois" && !Q.national_g
     }
 }
 // non-dingeldey complains about banking crisis, precursor to curtius resigning
-if (Q.total_bruning_time > 0 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && Q.banking_crisis_seen && (Q.dvp_leader != "Dingeldey" && Q.dvp_leader != "Scholz") && !Q.lvp_formed && Q.dvp_exist && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_57_trigger += 1; 
     if (Q.flavour_57_trigger == 1 && !Q.flavour_57_trigger_shown) {
         Q.flavour_57_trigger_time = Q.time;
@@ -1894,7 +1894,7 @@ if (Q.total_bruning_time > 0 && !Q.national_gov == "Bourgeois" && !Q.national_go
     }
 }
 // rlb takeover by extremists
-if (Q.total_bruning_time >= 7 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && !Q.spd_toleration_right && Q.year >= 1930 && !Q.kvp_cnblp_sister && Q.dnvp_ideology == "Radical" && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time >= 7 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && !Q.spd_toleration_right && Q.year >= 1930 && !Q.kvp_cnblp_sister && Q.dnvp_ideology == "Radical" && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_58_trigger += 1;
     if (Q.flavour_58_trigger && !Q.flavour_58_trigger_shown) {
         Q.flavour_58_trigger_time = Q.time;
@@ -1902,7 +1902,7 @@ if (Q.total_bruning_time >= 7 && !Q.national_gov == "Bourgeois" && !Q.national_g
     }
 }
 // bruning hitler coalition
-if (Q.total_bruning_time >= 21 && !Q.national_gov == "Bourgeois" && !Q.national_gov == "Right" && !Q.spd_toleration_right && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time >= 21 && Q.national_gov != "Bourgeois" && Q.national_gov != "Right" && !Q.spd_toleration_right && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_59_trigger += 1;
     if (Q.flavour_59_trigger && !Q.flavour_59_trigger_shown) {
         Q.flavour_59_trigger_time = Q.time;
