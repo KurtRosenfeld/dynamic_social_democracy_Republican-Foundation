@@ -56,7 +56,6 @@ if (Q.prussia_gov == "Grand") {
 }
 
 if (Q.national_gov == "Bourgeois") {
-    Q.;
     Q.national_gov = "Right";
 }
 
