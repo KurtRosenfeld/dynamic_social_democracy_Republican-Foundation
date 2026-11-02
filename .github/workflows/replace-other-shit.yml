@@ -31,7 +31,9 @@ jobs:
               ('DVP', 'DVP'),
 
            # main
-          ('main.main', 'main.main'),
+          ('!Q.national_gov == "Right"', 'Q.national_gov != "Right"'),
+          ('!Q.national_gov == "Bourgeois"', 'Q.national_gov != "Bourgeois"'),
+          ('!Q.national_gov == "Weimar"', 'Q.national_gov != "Weimar"'),
 
          
 
