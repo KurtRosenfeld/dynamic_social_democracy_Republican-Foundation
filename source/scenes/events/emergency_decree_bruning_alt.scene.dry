@@ -79,7 +79,6 @@ view-if: spd_toleration
 on-arrival: {!
 Q.time_to_election = 3;
 Q.spd_in_government = 0;
-Q.; 
 Q.spd_toleration = 0;
 Q.budget += 1;
 Q.inflation -= 1.5;
