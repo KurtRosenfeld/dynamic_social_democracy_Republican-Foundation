@@ -77,7 +77,7 @@ Q.reformist_strength = 35;
 Q.reformist_dissent = 0;
 Q.neorevisionist_strength = 5;
 Q.neorevisionist_dissent = 10;
-Q.social_patriot_strength = 0
+Q.social_patriot_strength = 0;
 Q.social_patriot_dissent = 0;
 
 Q.left_spd_r = 1;
