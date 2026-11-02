@@ -4047,7 +4047,7 @@ view-if: muller_dead = 1
 subtitle: Otto Wels is a party leader, but can he also be chancellor?
 choose-if: not cvp_chancellor_accepted
 unavailable-subtitle: We've promised to forfeit the Chancellorship to the <span style="color: #000000;">[+ z_party_name +]</span>.
-on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = wels_in; national_gov = "Grand" if national_gov == "Weimar" == 0; leverage += 5 if (prussia_gov == "Grand" and national_gov == "Grand")
+on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = wels_in; national_gov = "Grand" if not national_gov == "Weimar"; leverage += 5 if (prussia_gov == "Grand" and national_gov == "Grand")
 go-to: ministries
 
 Otto Wels's appointment as chancellor is approved by our potential allies.
