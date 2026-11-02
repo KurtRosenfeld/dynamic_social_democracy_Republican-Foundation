@@ -1247,14 +1247,7 @@ if (!Q.spd_in_government) {
 }
 if (Q.spd_in_government) Q.hindenburg_angry_old = Q.hindenburg_angry;
 Q.spd_in_government = 0;
-Q.;
-Q.;
-Q.in_wholesome_coalition = 0;
-Q.in_social_catholic_coalition = 0;
-Q.in_social_catholic_coalition = 0;
-Q.;
-Q.in_social_democratic_coalition = 0;
-Q.national_gov == "Popular-Front" = 0;
+Q.national_gov = "vacant"
 Q.in_emergency_government = 0;
 Q.in_minority_government = 0;
 Q.in_unity_government = 0;
