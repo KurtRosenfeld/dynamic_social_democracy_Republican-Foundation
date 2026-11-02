@@ -30,14 +30,9 @@ jobs:
               # DVP variations, lazy town
               ('DVP', 'DVP'),
 
-           # few more
-          (';;', ';'),
-          ('; ;', ';'),
+           # main
+          ('main.main', 'main.main'),
 
-          # this will only make it worse
-
-          ('''year = 1928 and month = 11 and not (national_gov == "Grand" == 0 or ((national_gov == "Grand" and prussia_gov == "Grand" and coalition_dissent < 1 and (foreign_minister_party = "DVP" or foreign_minister_party = "LVP")) or (national_gov == "Grand" and prussia_gov == "Grand" and coalition_dissent < 2 and (foreign_minister_party != "DVP" and foreign_minister_party != "LVP")))) and not lvp_formed and lvp_timer_trigger == 0''', ''' '''),
-         
          
 
               
