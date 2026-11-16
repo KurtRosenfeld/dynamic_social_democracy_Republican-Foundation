@@ -73,11 +73,13 @@ on-arrival: comintern_relation -= 0.2
 
 @send_funds
 subtitle: Use LSI resources to support member parties.
+choose-if: lsi_founding >= 1
+on-arrival: lsi_founding -= 1
 
 - @sfio: Support <span style="color: #ff0000;">**SFIO**</span> in France
 - @sdapo: Support <span style="color: #cc0000;">**SDAPÖ**</span> in Austria
-- @psi: Support <span style="color: #fc0000;">**PSI**</span> in Italy
-- @psu: Support <span style="color: #c10000;">**PSU**</span> in Italy
+- @psi: Support <span style="color: #E02051;">**PSI**</span> in Italy
+- @psu: Support <span style="color: #DD462D;">**PSU**</span> in Italy
 - @spd: Support <span style="color: [+ spd_colour +];">**SPD**</span> in Germany
 - @uspd: Support <span style="color: [+ uspd_colour +];">**USPD**</span> in Germany
  
@@ -88,22 +90,26 @@ choose-if: gfdgdgdfsdgrgs == 23
 choose-if: gfdgdgdfsdgrgs == 23
 
 @psi
-choose-if: gfdgdgdfsdgrgs == 23
+subtitle: This party is not part of the LSI.
+view-if: strong_communism_italy == 0
+choose-if: italian_ally = "PSI" or italian_ally = "PSU and PSI" or italian_ally = "The working class"
+unavailable-subtitle: Why should we support them?
+on-arrival: psi_boost += 1
 
 @psu
-choose-if: gfdgdgdfsdgrgs == 23
+choose-if: italian_ally = "PSU" or italian_ally = "PSU and PSI" or italian_ally = "The working class"
+unavailable-subtitle: Why should we support them?
+on-arrival: psu_boost += 1.2
 
 @spd
-choose-if: lsi_founding >= 1
 unavailable-subtitle: We are broke.
-on-arrival: lsi_founding -= 1; resources += 1; austria_relation -= 3; france_relation -= 4; belgium_relation -= 3; uspd_relation -= 5
+on-arrival: resources += 1; austria_relation -= 3; france_relation -= 4; belgium_relation -= 3; uspd_relation -= 5
 
 We have taken some money from the LSI - the other parties are displeased.
 
 @uspd
-choose-if: lsi_founding >= 1
 unavailable-subtitle: We are broke.
-on-arrival: lsi_founding -= 1; workers_uspd += 3; unemployed_uspd += 4; new_middle_uspd += 1
+on-arrival: workers_uspd += 3; unemployed_uspd += 4; new_middle_uspd += 1
 
 We have funded the <span style="color: [+ uspd_colour +];">**USPD**</span>. For some reason. OK...
 
