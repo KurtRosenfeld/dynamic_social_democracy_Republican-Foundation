@@ -2,7 +2,7 @@ title: Union of Socialist Soviet Republics established
 view-if: year == 1922 and month == 12
 max-visits: 1
 tags: event
-on-arrival: ussr_formed = 1; soviet_relation -= 1; unemployed_kpd += 1; russia = "#750e0e"; belarus = "#750e0e"; ukraine = "#750e0e"; caucasia = "#750e0e"
+on-arrival: ussr_formed = 1; soviet_relation -= 1; unemployed_kpd += 1; russia = "#750e0e"; belarus = "#750e0e"; ukraine = "#750e0e"; caucasia = "#750e0e"; ussr_cpsu_r = 94.0379; ussr_poale_zion_r = 0.0903; ussr_sspsp = 0.0903; ussr_anarchists = 0,04515; ussr_indep = 5,7362
 new-page: true
 face-image: img/sovussr.jpg
 
