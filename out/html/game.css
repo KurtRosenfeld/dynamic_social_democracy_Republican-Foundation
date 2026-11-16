@@ -987,6 +987,42 @@ fill: #D5AC27;
   fill: #233259;
 }
 
+.seat.psi {
+  fill: #E02051;
+}
+
+  .seat.pri {
+  fill: #18B20F;
+}
+
+  .seat.itmin {
+  fill: #B4351D;
+}
+
+  .seat.pp {
+  fill: #72E7E2;
+}
+
+    .seat.pl {
+  fill: #28A3DD;
+}
+
+    .seat.italian_other {
+  fill: #837BA5;
+}
+
+    .seat.lassale_respect {
+  fill: #4A50D8;
+}
+
+    .seat.blocco {
+  fill: #172159;
+}
+
+    .seat.pnf {
+  fill: #212121;
+}
+
 .seat.left_pas {
  fill: #960000;
 }
