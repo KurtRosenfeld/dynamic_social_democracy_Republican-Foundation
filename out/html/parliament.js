@@ -1689,6 +1689,97 @@ anhalt: {
   ]
 },
 
+
+
+      italy: {
+  totalSeatsKey: 'italian_parliament_seats',
+  conditionalParties: [
+    {
+      id: 'pcf',
+      legend: 'PCI',
+      name: 'PCI',
+      qualityKey: 'it_pci_seats',
+      condition: function(Q) { return Q.it_pci_seats; }
+    },
+    {
+      id: 'psi',
+      legend: 'PSI',
+      name: 'PSI',
+      qualityKey: 'it_psi_seats',
+      condition: function(Q) { return Q.it_psi_seats; }
+    },
+    {
+      id: 'pri',
+      legend: 'PRI',
+      name: 'PRI',
+      qualityKey: 'it_pri_seats',
+      condition: function(Q) { return Q.it_pri_seats; }
+    },
+    {
+      id: 'prs',
+      legend: 'PDR',
+      name: 'PDR',
+      qualityKey: 'it_pdr_seats',
+      condition: function(Q) { return Q.it_pdr_seats; }
+    },
+    {
+      id: 'itmin',
+      legend: 'Minorities',
+      name: 'Minorities',
+      qualityKey: 'it_min_seats',
+      condition: function(Q) { return Q.it_min_seats; }
+    },
+    {
+      id: 'pp',
+      legend: 'PP',
+      name: 'PP',
+      qualityKey: 'it_pp_seats',
+      condition: function(Q) { return Q.it_pp_seats; }
+    },
+     {
+      id: 'ad',
+      legend: 'PLDI',
+      name: 'PLDI',
+      qualityKey: 'it_pldi_seats',
+      condition: function(Q) { return Q.it_pldi_seats; }
+    },
+    {
+      id: 'pl',
+      legend: 'PL',
+      name: 'PL',
+      qualityKey: 'it_pl_seats',
+      condition: function(Q) { return Q.it_pl_seats; }
+    },
+    {
+      id: 'italian_other',
+      legend: 'brrrrrrrrrr',
+      name: 'Others',
+      qualityKey: 'it_idc_seats',
+      condition: function(Q) { return Q.it_idc_seats; }
+    },
+    {
+      id: 'lassale_respect',
+      legend: 'ISDP',
+      name: 'ISDP',
+      qualityKey: 'it_lassale_seats',
+      condition: function(Q) { return Q.it_lassale_seats; }
+    },
+    {
+      id: 'blocco',
+      legend: 'BN',
+      name: 'BN',
+      qualityKey: 'it_bn_seats',
+      condition: function(Q) { return Q.it_bn_seats; }
+    },
+    {
+      id: 'pnf',
+      legend: 'PNF',
+      name: 'PNF',
+      qualityKey: 'it_fidc_seats',
+      condition: function(Q) { return Q.it_fidc_seats; }
+    }
+  ]
+},
       
       waldeck: {
         totalSeatsKey: 'waldeck_seats',
