@@ -23,7 +23,7 @@ We are an important part of the current Socialist International. We can try out 
 
 @increase_founding
 subtitle: This organ is severly underfounded compared to the ammount of it's membership. (-1 resource)
-on-arrival: resources-= 1; lsi_founding += 1
+on-arrival: resources-= 1; lsi_funding += 1
 
 We are still laking behind the Comintern's resources founded by the Soviet Union.
 
@@ -73,8 +73,8 @@ on-arrival: comintern_relation -= 0.2
 
 @send_funds
 subtitle: Use LSI resources to support member parties.
-choose-if: lsi_founding >= 1
-on-arrival: lsi_founding -= 1
+choose-if: lsi_funding >= 1
+on-arrival: lsi_funding -= 1
 
 - @sfio: Support <span style="color: #ff0000;">**SFIO**</span> in France
 - @sdapo: Support <span style="color: #cc0000;">**SDAPÖ**</span> in Austria
