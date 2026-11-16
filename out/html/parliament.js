@@ -1579,7 +1579,7 @@ anhalt: {
 },
 
 
-      germany: {
+      reichstag: {
   totalSeatsKey: 'reichstag_seats_for_smart_people',
              conditionalParties: [
           {
@@ -1931,7 +1931,7 @@ anhalt: {
       condition: function(Q) { return Q.ussr_sspsp_r; }
     },
     {
-      id: 'independet',
+      id: 'independent',
       legend: 'I',
       name: 'I',
       qualityKey: 'ussr_indep_r',
