@@ -1651,7 +1651,7 @@ anhalt: {
           },
           {
             id: 'other', legend: 'Other', name: 'Others',
-            qualityKey: 'other_r',
+            qualityKey: 'true_other_r',
             condition: function(Q) { return Q.other_r; }
           },
           {
