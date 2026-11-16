@@ -1,0 +1,48 @@
+title: Trouble in Italy
+subtitle: The <span style="color: #E02051;">**PSI**</span> is about to split.
+view-if: year == 1922 and month == 10
+priority: 2
+new-page: true
+max-visits: 1
+on-arrival: it_psi_seats -= 15; it_psu_seats = 15
+tags: event
+
+= <span style="color: #E02051;">**PSI**</span> split
+
+The 19th <span style="color: #E02051;">**PSI**</span> Party Congress saw the formal expulsion of the reformist current around Filippo Turati and Giacomo Matteotti which viewed parliamentary cooperation with the Bourgeois as the means to prevent a fascist takeover in Italy. They went on to found their own party called PSU (Unitary Socialist Party).
+
+Meanwhile the Maximalist <span style="color: #E02051;">**PSI**</span> tried to get to join Comintern which explicitly required the expulsion of said reformists resulting in an earlier split establishing the <span style="color: #88001A;">**PCd'I**</span>. While some (including the Comintern) argue for a formal merger, the <span style="color: #88001A;">**PCd'I**</span> would prefer individual memmbers to join as some Maximalists seem to attempt a Ledebourist course and become the Italian <span style="color: [+ uspd_colour +];">**USPD**</span>...
+
+- @succesful_merger: The <span style="color: #E02051;">**PSI**</span> will merge with the <span style="color: #88001A;">**PCd'I**</span>.
+- @historical_shit: No arrangment can be made.
+
+
+@succesful_merger
+view-if: kpd_relation >= 85 and uspd_relation >= 70
+subtitle: Our succesful inter-left cooperation inspired the Italian Socialists.
+on-arrival: it_psi_seats += it_pci_seats; it_pci_seats = 0; strong_communism_italy = 1
+
+While some <span style="color: #E02051;">**PSI**</span> members are sceptical of the merger it seems most important to fight fascism by all means.
+
+@historical_shit
+
+As it seems the Socialist movement in Italy has split in three now, with no current clearly on top. Let's just hope they will stop Mussolini somehow...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
