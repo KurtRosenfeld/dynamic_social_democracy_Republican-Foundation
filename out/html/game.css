@@ -1055,6 +1055,14 @@ fill: #D5AC27;
   fill: #6D4B60;
 }
 
+  .seat.anarchist {
+  fill: #020202;
+}
+
+  .seat.independent {
+  fill: #D0D0D0;
+}
+
 
 .tooltip-text {
   text-decoration: underline;
