@@ -3357,7 +3357,7 @@ class="trigger-group" data-tooltip="netherlands-tooltip"
   <strong style="display: block; text-align: center; margin-bottom: 8px;">German Reich (Weimar Republic)</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
 <p>Reichstag:</p>
-<div class="parliament-chart" data-state="germany" style="width: 340px; height: 170px;"></div>
+<div class="parliament-chart" data-state="reichstag" style="width: 340px; height: 170px;"></div>
 <p>Reichsrat (TBA - WIP):</p>
     <p>Population: ~62.411.000</p>
     <p>Head of State: [+ president +] ([+ president_party +])</p>
@@ -3536,7 +3536,7 @@ class="trigger-group" data-tooltip="netherlands-tooltip"
 <p>Chamber of Deputies:</p>
 <div class="parliament-chart" data-state="italy" style="width: 340px; height: 170px;"></div>
     <p>Population: ~38.000.000</p>
-    <p>Head of State: Vittoria Emmanuele III</p>
+    <p>Head of State: Vittorio Emmanuele III</p>
     <p>*Parliamentary* Monarchy</p>
     <p>Relations: [+ italy_relation : relationships +]</p>
   </div>
