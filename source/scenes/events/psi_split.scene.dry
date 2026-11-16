@@ -9,7 +9,7 @@ tags: event
 
 = <span style="color: #E02051;">**PSI**</span> split
 
-The 19th <span style="color: #E02051;">**PSI**</span> Party Congress saw the formal expulsion of the reformist current around Filippo Turati and Giacomo Matteotti which viewed parliamentary cooperation with the Bourgeois as the means to prevent a fascist takeover in Italy. They went on to found their own party called PSU (Unitary Socialist Party).
+The 19th <span style="color: #E02051;">**PSI**</span> Party Congress saw the formal expulsion of the reformist current around Filippo Turati and Giacomo Matteotti which viewed parliamentary cooperation with the Bourgeois as the means to prevent a fascist takeover in Italy. They went on to found their own party called <span style="color: #DD462D;">**PSU**</span> (Unitary Socialist Party).
 
 Meanwhile the Maximalist <span style="color: #E02051;">**PSI**</span> tried to get to join Comintern which explicitly required the expulsion of said reformists resulting in an earlier split establishing the <span style="color: #88001A;">**PCd'I**</span>. While some (including the Comintern) argue for a formal merger, the <span style="color: #88001A;">**PCd'I**</span> would prefer individual memmbers to join as some Maximalists seem to attempt a Ledebourist course and become the Italian <span style="color: [+ uspd_colour +];">**USPD**</span>...
 
@@ -30,6 +30,52 @@ As it seems the Socialist movement in Italy has split in three now, with no curr
 
 
 
+@alignment_italy
+
+Who should we align ourselves with now?
+
+- @psu: The reformist <span style="color: #DD462D;">**PSU**</span>
+- @psi: The maximalist <span style="color: #E02051;">**PSI**</span>
+- @psi_left: The radical <span style="color: #E02051;">**PSI**</span>
+- @psu_and_psi: The <span style="color: #DD462D;">**PSU**</span> and the <span style="color: #E02051;">**PSI**</span>
+- @psu_and_psi_left: The <span style="color: #DD462D;">**PSU**</span> and the <span style="color: #E02051;">**PSI**</span>
+- @psi_and_pci: The <span style="color: #E02051;">**PSI**</span> and the <span style="color: #88001A;">**PCd'I**</span>
+- @all_of_them: We will support all the Italian Workers' Parties in their struggle against Fascism.
+
+
+@psu
+choose-if: reformist_strength >= 25 and left_strength <= 20
+on-arrival: italian_ally = "PSU"
+unavailable-subtitle: The reformist faction lacks the influence to convince the party of this.
+
+
+@psi
+choose-if: (center_strength + left_strength) > reformist_strength
+on-arrival: italian_ally = "PSI"
+unavailable-subtitle: The reformist faction doesn't want to support the PSI.
+
+@psi_left
+choose-if: left_strength >= 50
+on-arrival: italian_ally = "PSI"
+unavailable-subtitle: Our left wing lacks the influence to convince the party of this.
+
+@psu_and_psi
+on-arrival: italian_ally = "PSU and PSI"
+
+@psu_and_psi_left
+choose-if: (center_strength + left_strength) > reformist_strength
+on-arrival: italian_ally = "PSU and PSI"
+unavailable-subtitle: The reformist faction doesn't want to support the PSI.
+
+@psi_and_pci
+choose-if: left_strength >= 87
+on-arrival: italian_ally = "PSI and PCd'I"
+unavailable-subtitle: Our left wing lacks the influence to convince the party of this.
+
+@all_of_them
+choose-if: (center_strength >= 75 or labour_strength >= 80) and reformist_strength < 30 and left_strength < 30
+on-arrival: italian_ally = "The working class"
+unavailable-subtitle: This position is too centrist for our party... (Kautsky would be proud though)
 
 
 
@@ -45,4 +91,3 @@ As it seems the Socialist movement in Italy has split in three now, with no curr
 
 
 
-  
