@@ -991,6 +991,10 @@ fill: #D5AC27;
   fill: #E02051;
 }
 
+  .seat.psu {
+  fill: #DD462D;
+}
+
   .seat.pri {
   fill: #18B20F;
 }
