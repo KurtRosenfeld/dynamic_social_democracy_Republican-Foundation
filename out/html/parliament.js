@@ -1898,6 +1898,54 @@ anhalt: {
     }
   ]
 },
+
+      ussr: {
+  totalSeatsKey: 'ussr_aucs_seats',
+  conditionalParties: [
+    {
+      id: 'pcf',
+      legend: 'CPSU',
+      name: 'CPSU',
+      qualityKey: 'ussr_cpsu_r',
+      condition: function(Q) { return Q.ussr_cpsu_r; }
+    },
+    {
+      id: 'anarchist',
+      legend: 'A',
+      name: 'A',
+      qualityKey: 'ussr_anarchists_r',
+      condition: function(Q) { return Q.ussr_anarchists_r; }
+    },
+    {
+      id: 'itmin',
+      legend: 'Poale',
+      name: 'Poale',
+      qualityKey: 'ussr_poale_zion_r',
+      condition: function(Q) { return Q.ussr_poale_zion_r; }
+    },
+    {
+      id: 'italian_other',
+      legend: 'SSPSP',
+      name: 'SSPSP',
+      qualityKey: 'ussr_sspsp_r',
+      condition: function(Q) { return Q.ussr_sspsp_r; }
+    },
+    {
+      id: 'independet',
+      legend: 'I',
+      name: 'I',
+      qualityKey: 'ussr_indep_r',
+      condition: function(Q) { return Q.ussr_indep_r; }
+    },
+     {
+      id: 'psi',
+      legend: 'Komosol',
+      name: 'Komosol',
+      qualityKey: 'ussr_komosol_r',
+      condition: function(Q) { return Q.ussr_komosol_r; }
+    }
+  ]
+},
       
       waldeck: {
         totalSeatsKey: 'waldeck_seats',
