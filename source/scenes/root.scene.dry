@@ -667,6 +667,10 @@ Q.it_lassale_seats = 5.4;
 Q.it_bn_seats = 19.6;
 Q.it_fidc_seats = 0.6;
 
+// USSR
+
+Q.ussr_aucs_seats = 2214;
+
 Q.spd_votes = 27.9;
 Q.uspd_votes = 0;
 Q.kpd_votes = 11.4;
