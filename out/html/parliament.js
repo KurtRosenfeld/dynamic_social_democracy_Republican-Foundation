@@ -1629,6 +1629,7 @@ anhalt: {
             qualityKey: 'dbp_r',
             condition: function(Q) { return Q.dbp_r; }
                },
+               {
             id: 'lvp', legend: 'LVP', name: 'LVP',
             qualityKey: 'lvp_r',
             condition: function(Q) { return Q.lvp_r && Q.lvp_formed; }
