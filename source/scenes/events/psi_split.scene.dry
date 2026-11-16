@@ -44,36 +44,42 @@ Who should we align ourselves with now?
 
 
 @psu
-choose-if: reformist_strength >= 25 and left_strength <= 20
+choose-if: (reformist_strength >= 25 and left_strength <= 20) or labor_strength >= 40
 on-arrival: italian_ally = "PSU"
 unavailable-subtitle: The reformist faction lacks the influence to convince the party of this.
 
 
 @psi
+view-if: strong_communism_italy == 0
 choose-if: (center_strength + left_strength) > reformist_strength
 on-arrival: italian_ally = "PSI"
 unavailable-subtitle: The reformist faction doesn't want to support the PSI.
 
 @psi_left
+view-if: strong_communism_italy == 1
 choose-if: left_strength >= 50
 on-arrival: italian_ally = "PSI"
 unavailable-subtitle: Our left wing lacks the influence to convince the party of this.
 
 @psu_and_psi
+view-if: strong_communism_italy == 0
 on-arrival: italian_ally = "PSU and PSI"
 
 @psu_and_psi_left
+view-if: strong_communism_italy == 1
 choose-if: (center_strength + left_strength) > reformist_strength
 on-arrival: italian_ally = "PSU and PSI"
 unavailable-subtitle: The reformist faction doesn't want to support the PSI.
 
 @psi_and_pci
+view-if: strong_communism_italy == 0
 choose-if: left_strength >= 87
 on-arrival: italian_ally = "PSI and PCd'I"
 unavailable-subtitle: Our left wing lacks the influence to convince the party of this.
 
 @all_of_them
-choose-if: (center_strength >= 75 or labour_strength >= 80) and reformist_strength < 30 and left_strength < 30
+view-if: strong_communism_italy == 0
+choose-if: (center_strength >= 75 or labor_strength >= 80) and reformist_strength < 30 and left_strength < 30
 on-arrival: italian_ally = "The working class"
 unavailable-subtitle: This position is too centrist for our party... (Kautsky would be proud though)
 
