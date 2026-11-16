@@ -546,6 +546,10 @@ Q.prussia_gov = "Left"; Q.prussia_spd = 1; Q.prussia_sapd = 1; Q.prussia_uspd = 
 if (Q.prussia_gov == "SPD") {
 Q.prussia_gov = "SPD"; Q.prussia_spd = 1;}
 
+// Giga Chad Moves
+
+Q.reichstag_seats_for_smart_people = Q.reichstag_seats*100;
+
 // re-calculate dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
 if (Q.neorevisionism) {
