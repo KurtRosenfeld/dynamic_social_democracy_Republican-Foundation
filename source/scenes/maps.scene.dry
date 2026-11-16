@@ -3434,7 +3434,7 @@ class="trigger-group" data-tooltip="netherlands-tooltip"
   <div style="text-align: center;">
     <img src="img/sovussr.jpg" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
   </div>
-  <strong style="display: block; text-align: center; margin-bottom: 8px;">Russian Soviet Federative Socialist Republic</strong>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Union of Socialist Soviet Republics</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
 <p>All-Union Congress of Soviets:</p>
 <div class="parliament-chart" data-state="ussr" style="width: 340px; height: 170px;"></div>
