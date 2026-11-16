@@ -58,7 +58,7 @@ unavailable-subtitle: The reformist faction doesn't want to support the PSI.
 @psi_left
 view-if: strong_communism_italy == 1
 choose-if: left_strength >= 50
-on-arrival: italian_ally = "PSI"
+on-arrival: italian_ally = "PSI"; comintern_relation += 2
 unavailable-subtitle: Our left wing lacks the influence to convince the party of this.
 
 @psu_and_psi
@@ -74,13 +74,13 @@ unavailable-subtitle: The reformist faction doesn't want to support the PSI.
 @psi_and_pci
 view-if: strong_communism_italy == 0
 choose-if: left_strength >= 87
-on-arrival: italian_ally = "PSI and PCd'I"
+on-arrival: italian_ally = "PSI and PCd'I"; comintern_relation += 3
 unavailable-subtitle: Our left wing lacks the influence to convince the party of this.
 
 @all_of_them
 view-if: strong_communism_italy == 0
 choose-if: (center_strength >= 75 or labor_strength >= 80) and reformist_strength < 30 and left_strength < 30
-on-arrival: italian_ally = "The working class"
+on-arrival: italian_ally = "The working class"; comintern_relation += 1
 unavailable-subtitle: This position is too centrist for our party... (Kautsky would be proud though)
 
 
