@@ -1580,7 +1580,7 @@ anhalt: {
 
 
       germany: {
-  totalSeatsKey: 'total_seats',
+  totalSeatsKey: 'reichstag_seats_for_smart_people',
              conditionalParties: [
           {
             id: 'kpd', legend: 'KPD', name: 'KPD', 
