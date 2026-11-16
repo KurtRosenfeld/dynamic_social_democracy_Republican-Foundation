@@ -1628,7 +1628,6 @@ anhalt: {
             id: 'farm', legend: 'DBP', name: 'DBP',
             qualityKey: 'dbp_r',
             condition: function(Q) { return Q.dbp_r; }
-          {
                },
             id: 'lvp', legend: 'LVP', name: 'LVP',
             qualityKey: 'lvp_r',
