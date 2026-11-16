@@ -1838,6 +1838,13 @@ anhalt: {
       condition: function(Q) { return Q.it_psi_seats; }
     },
     {
+      id: 'psu',
+      legend: 'PSU',
+      name: 'PSU',
+      qualityKey: 'it_psu_seats',
+      condition: function(Q) { return Q.it_psu_seats; }
+    },
+    {
       id: 'pri',
       legend: 'PRI',
       name: 'PRI',
