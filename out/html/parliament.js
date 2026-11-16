@@ -1935,7 +1935,7 @@ anhalt: {
       condition: function(Q) { return Q.ussr_poale_zion_r; }
     },
     {
-      id: 'italian_other',
+      id: 'lassale_respect',
       legend: 'SSPSP',
       name: 'SSPSP',
       qualityKey: 'ussr_sspsp_r',
