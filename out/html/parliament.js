@@ -1880,11 +1880,11 @@ anhalt: {
       condition: function(Q) { return Q.it_pldi_seats; }
     },
     {
-      id: 'pl',
-      legend: 'PL',
-      name: 'PL',
-      qualityKey: 'it_pl_seats',
-      condition: function(Q) { return Q.it_pl_seats; }
+      id: 'lassale_respect',
+      legend: 'ISDP',
+      name: 'ISDP',
+      qualityKey: 'it_lassale_seats',
+      condition: function(Q) { return Q.it_lassale_seats; }
     },
     {
       id: 'italian_other',
@@ -1894,11 +1894,11 @@ anhalt: {
       condition: function(Q) { return Q.it_idc_seats; }
     },
     {
-      id: 'lassale_respect',
-      legend: 'ISDP',
-      name: 'ISDP',
-      qualityKey: 'it_lassale_seats',
-      condition: function(Q) { return Q.it_lassale_seats; }
+      id: 'pl',
+      legend: 'PL',
+      name: 'PL',
+      qualityKey: 'it_pl_seats',
+      condition: function(Q) { return Q.it_pl_seats; }
     },
     {
       id: 'blocco',
