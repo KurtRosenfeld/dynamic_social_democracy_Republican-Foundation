@@ -1,10 +1,10 @@
 title: <span style="color: #000000;">Center Party</span> Conference
 subtitle: Joseph Joos has been forced to resign...
-view-if: year >= 1930 and z_leader = "Joos" and not kaas_explode_seen and ((z_relation < 40 or spd_break_toleration) or ((not reichskonkordat_progress and in_weimar_coalition and foreign_minister_party == "SPD" and spd_in_foreign_time >= 24) and (spd_prussia_time >= 30 and not prussian_concordat_progress and not prussian_concordat)) or secularized_a or abortion_rights or homosexual_rights) 
+view-if: year >= 1930 and z_leader = "Joos" and not kaas_explode_seen and ((z_relation < 40 or spd_break_toleration) or ((not reichskonkordat_progress and national_gov == "Weimar" and foreign_minister_party == "SPD" and spd_in_foreign_time >= 24) and (spd_prussia_time >= 30 and not prussian_concordat_progress and not prussian_concordat)) or secularized_a or abortion_rights or homosexual_rights) 
 on-arrival: {!
 Q.z_relation -= 10;
 
-if ((Q.spd_in_foreign_time >= 24 && (!Q.reichskonkordat_progress && Q.in_weimar_coalition && Q.foreign_minister_party == "SPD")) && (Q.spd_prussia_time >= 30 && !Q.prussian_concordat_progress)) {
+if ((Q.spd_in_foreign_time >= 24 && (!Q.reichskonkordat_progress && Q.national_gov == "Weimar" && Q.foreign_minister_party == "SPD")) && (Q.spd_prussia_time >= 30 && !Q.prussian_concordat_progress)) {
     Q.concordat_explode = 1;
 }
 
@@ -30,7 +30,7 @@ Ludwig Kaas, a devoted Catholic priest is expected to succeed him, but Adam Steg
 - @stegerwald: The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] elects Adam Stegerwald as the party chair.
 
 @kaas
-view-if: not prussia_leader == "Stegerwald" and ((spd_in_government_time >= 36 and (not reichskonkordat_progress and in_weimar_coalition and foreign_minister_party == "SPD")) or (spd_prussia_time >= 30 and not prussian_concordat_progress))
+view-if: not prussia_leader == "Stegerwald" and ((spd_in_government_time >= 36 and (not reichskonkordat_progress and national_gov == "Weimar" and foreign_minister_party == "SPD")) or (spd_prussia_time >= 30 and not prussian_concordat_progress))
 on-arrival: z_leader = "Kaas"; z_relation -= 5; prussian_concordat_progress += 1; z_ideology = "Right"
 face-image: img/portraits/Ludwig_Kaas.jpg
 
@@ -40,7 +40,7 @@ Despite this, Kaas is committed to the current constitutional order and the repu
 
 @stegerwald
 choose-if: prussia_leader == "Stegerwald" or not concordat_explode
-unavailable-subtitle: [? if prussia_leader != "Stegerwald": Stegerwald lacks the influence necessary to have a real chance. ?][? if ((spd_in_government_time >= 36 and (not reichskonkordat_progress and in_weimar_coalition and foreign_minister_party == "SPD")) or (spd_prussia_time >= 30 and not prussian_concordat_progress)): The clerical wing of the <span style="color: #000000;">Center Party</span> would much rather elect one of their own. ?]
+unavailable-subtitle: [? if prussia_leader != "Stegerwald": Stegerwald lacks the influence necessary to have a real chance. ?][? if ((spd_in_government_time >= 36 and (not reichskonkordat_progress and national_gov == "Weimar" and foreign_minister_party == "SPD")) or (spd_prussia_time >= 30 and not prussian_concordat_progress)): The clerical wing of the <span style="color: #000000;">Center Party</span> would much rather elect one of their own. ?]
 on-arrival: z_leader = "Stegerwald"; stegerwald_transformation_timer = 12; z_ideology = "Right"; stegerwald_path = 1; z_relation -= 8; zentrum_disintegration += 2; new_middle_z -= 5; old_middle_z -= 3; rural_z -= 1; catholics_z -= 5; workers_z += 5; unemployed_z += 3; catholics_spd += 8; catholics_other += 4; catholics_dnvp += 2 if dnvp_ideology == "Moderate"; catholics_dvp += 4; catholics_ddp += 2; catholics_lvp += 4; dvp_right += 1; ddp_left += 1; ddp_cohesion += 1; liberal_cooperation += 1; bourgeois_cooperation += 1; catholics -= 5; new_middle_dnvp -= 2 if dnvp_ideology == "Radical"; old_middle_dnvp -= 3 if dnvp_ideology == "Radical"; rural_dnvp -= 3 if dnvp_ideology == "Radical"; new_middle_z += 2 if dnvp_ideology == "Radical"; old_middle_z += 3 if dnvp_ideology == "Radical"; rural_z += 3 if dnvp_ideology == "Radical"; prussia_leader = "Brüning" if prussia_leader == "Stegerwald"
 face-image: img/portraits/stegerwald.jpg
 

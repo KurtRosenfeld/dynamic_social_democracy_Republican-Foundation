@@ -44,7 +44,7 @@ if (Q.spd_in_government) {
 }
 
 if (Q.bruning_time) {
-    if (Q.dnvp_ideology == "Moderate" && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right)) {
+    if (Q.dnvp_ideology == "Moderate" && (Q.national_gov == "Bourgeois" || Q.national_gov == "Right" || Q.spd_toleration_right)) {
         Q.workers_dnvp += 2;
         Q.new_middle_dnvp += 4;
         Q.old_middle_dnvp += 4;
@@ -134,7 +134,7 @@ General Schleicher has demanded that we raise the issue of rearmament, which rem
 
 @military_parity_bruning
 title: [? if not cvp_formed: But of course, the <span style="color: [+ dnvp_colour +];">**DNVP**</span>, in Brüning's coalition demands the right to rearm. ?][? if cvp_formed: But of course, the <span style="color: #3E88B3;">nationalists</span> in the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> demands the right to rearm. ?]
-view-if: bruning_time and (in_right_coalition or in_center_right_coalition or spd_toleration_right or cvp_formed) and president == "Hindenburg" and not cvp_reparations_left
+view-if: bruning_time and (national_gov == "Right" or national_gov == "Bourgeois" or spd_toleration_right or cvp_formed) and president == "Hindenburg" and not cvp_reparations_left
 on-arrival: west_relation -= 2; eu_progress -= 1; bruning_coalition_dissent += 2; dnvp_angry += 3; old_middle_dnvp -= 5; old_middle_dnf += 3; old_middle_nsdap += 3; rural_dnvp -= 3; rural_dnf += 3; workers_dnvp -= 2; workers_nsdap += 2; unemployed_dnvp -= 2; unemployed_nsdap += 2; catholics_dnvp -= 2; catholics_nsdap += 2
 
 General Schleicher, [? if president == "Hindenburg": the [? if not cvp_formed: <span style="color: [+ dnvp_colour +];">**DNVP**</span>?][? if cvp_formed: <span style="color: #3E88B3;">nationalists</span>?], and President Hindenburg?][? if president != "Hindenburg": and the [? if not cvp_formed: <span style="color: [+ dnvp_colour +];">**DNVP**</span>?][? if cvp_formed: <span style="color: #3E88B3;">nationalists</span>?]?] have pressured Brüning to raise the issue of rearmament, which remains restricted under the Treaty of Versailles, and the hated "war guilt" clause. However, <span style="color: #002654;">French</span> Premier Édouard Herriot seized on this as an admission that Germany is indeed capable of paying reparations and would simply redirect any freed-up funds toward rearmament.

@@ -36,7 +36,7 @@ view-if: rentemark_plan < 3
 
 
 @socialize_everything
-choose-if: in_left_front == 1 or in_spd_majority_government == 1
+choose-if: national_gov == "Left" or national_gov == "SPD"_government == 1
 unavailable-subtitle: Who is supposed to agree to this?
 subtitle: stop cheating, this button does nothing...
 
