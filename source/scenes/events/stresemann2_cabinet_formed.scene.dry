@@ -9,14 +9,14 @@ face-image: img/portraits/StresemannGustav.jpg
   
 = Stresemann to be Chancellor
 
-Ebert asks us to join Stresemann's cabinet
+Ebert asks us to join Stresemann's cabinet. This time we are asked to pass and enabling act allowing the chanellor to pass laws by decree around parliament support. Thus we wouldn't have to vote for measures hurting our base, we'd just allow Stresemann to do it without us.
 
 - @join_stresemann: The SPD joins the Stresemann government.
 - @tolerate_stress: The SPD tolerates Stresemann but won't participate.
 - @fuck_stressy: We won't elect this government.
   
 @join_stresemann
-on-arrival: spd_in_government = 1; dvp_in_government = 1; z_in_government = 1; ddp_in_government = 1; national_gov = "Grand"; leverage = spd_votes; workers_spd -= 3; unemployed_spd -= 2; new_middle_spd -= 1; eight_hours = 4.3; kpd_relation -= 7; uspd_relation -= 4; sb_relation -= 4; ddp_relation += 2; dvp_relation += 3; z_relation += 1; economic_growth += 0.05; left_dissent += 5; labor_dissent = 5; center_dissent += 2; workers_dtsp += 2; new_middle_other += 2
+on-arrival: early_enabling_act = 1; spd_in_government = 1; dvp_in_government = 1; z_in_government = 1; ddp_in_government = 1; national_gov = "Grand"; leverage = spd_votes; workers_spd -= 5; unemployed_spd -= 4; new_middle_spd -= 2; eight_hours = 4.3; kpd_relation -= 9; uspd_relation -= 5; sb_relation -= 5; ddp_relation += 2; dvp_relation += 3; z_relation += 1; economic_growth += 0.05; left_dissent += 5; labor_dissent = 5; center_dissent += 2; workers_dtsp += 2; new_middle_other += 2
 subtitle: We'd have to accept a compromise on the eight hour question.
 choose-if: reformist_strength >= (left_strength) and early_dvp_cooperation >= 1 and dvp_relation >= 25
 unavailable-subtitle: [? if (reformist_strength < (left_strength) or early_dvp_cooperation < 1): Our party does not support this. ?][? if dvp_relation < 25: The DVP doesn't want us to join the coalition. ?]
@@ -301,7 +301,7 @@ Robert Schmidt of the <span style="color: [+ spd_colour +];">**SPD**</span> has 
 title: End negotiations
 
 @tolerate_stress
-on-arrival: in_toleration = 1; kpd_relation -= 4; z_relation += 2; unemployed_spd -= 3
+on-arrival: early_enabling_act = 1; in_toleration = 1; kpd_relation -= 7; z_relation += 2; unemployed_spd -= 5; workers_spd -= 3; new_middle_spd -= 1; sb_relation -= 3
 
 @fuck_stressy
 subtitle: The DNVP would profit from that
