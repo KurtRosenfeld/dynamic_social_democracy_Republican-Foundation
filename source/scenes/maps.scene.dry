@@ -3615,7 +3615,7 @@ class="trigger-group" data-tooltip="egypt-tooltip"
   </div>
   </div>
 
-<div id="greeece-tooltip" class="tooltip-group">
+<div id="greece-tooltip" class="tooltip-group">
   <div style="text-align: center;">
     <img src="img/land/Greece.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
   </div>
@@ -3692,6 +3692,7 @@ class="trigger-group" data-tooltip="egypt-tooltip"
     <p>Population: ~2.600.000</p>
     <p>Head of State: Haakon VII</p>
     <p>Unitary Parliamentary Constitutional Monarchy</p>
+    <p>Relations: [+ norway_relation : relationships +]</p>
   </div>
   </div>
 
@@ -3704,6 +3705,7 @@ class="trigger-group" data-tooltip="egypt-tooltip"
     <p>Population: ~5.990.000</p>
     <p>Head of State: Gustaf V</p>
     <p>Unitary Parliamentary Constitutional Monarchy</p>
+    <p>Relations: [+ sweden_relation : relationships +]</p>
   </div>
   </div>
 
@@ -3716,6 +3718,7 @@ class="trigger-group" data-tooltip="egypt-tooltip"
     <p>Population: ~3.300.000</p>
     <p>Head of State: Christian X</p>
     <p>Unitary Parliamentary Constitutional Monarchy</p>
+    <p>Relations: [+ denmark_relation : relationships +]</p>
   </div>
   </div>
 
@@ -3728,6 +3731,7 @@ class="trigger-group" data-tooltip="egypt-tooltip"
     <p>Population: ~3.210.000</p>
     <p>Head of State: Ståhlberg (NPP)</p>
     <p>Republic</p>
+    <p>Relations: [+ finland_relation : relationships +]</p>
   </div>
   </div>
 
