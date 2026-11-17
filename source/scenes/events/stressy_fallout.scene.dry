@@ -1,0 +1,42 @@
+title: Troubles with the coalition
+subtitle: Our partners won't call a Reichsexekution on Bavaria.
+tags: event
+is-card: true
+priority: 1
+on-arrival: workers_kpd += 2; rural_dvfp += 2; left_dissent += 7; labor_dissent += 5; center_dissent += 3; reformist_dissent += 2
+face-image: img/Freiberg_Bloodbath.jpg
+view-if: freiberg_bloodbath_seen == 1 and spd_in_government and month >= 11
+new-page: true
+
+= Troubles with the coalition
+
+
+While [+ spd_party_leader_2 +] declared his conditional support for the Reichkommisar in Saxony while calling for an end to the state of emergency and similar measures in Bavaira. Our bourgeois partners have proven that they value the <span style="color: [+ bvp_colour +];">**BVP**</span> higher than the <span style="color: [+ spd_colour +];">**SPD**</span>.
+
+Nearly everyone in our party is outraged over this. We need to act now.
+
+
+- @pull_out: Fine. We will end this coalition.
+- @stay_stressy: We can't give up our ministries...
+
+@pull_out
+on-arrival: spd_in_government = 0; left_dissent -= 2; labor_dissent -= 2; sb_relation += 2; workers_spd += 3; bourgeois_united_fron += 2
+
+
+  
+@stay_stressy
+on-arrival: left_dissent += 4; labor_dissent += 2; sb_relation -= 3; workers_spd -= 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
