@@ -1,0 +1,54 @@
+title: Marx new Chancellor
+subtitle: (not that Marx)
+view-if: stegerwald_failed_unity = 1
+max-visits: 1 
+tags: event 
+new-page: true 
+face-image: img/portraits/MarxWilhelm.jpg 
+
+
+= Marx new Chancellor
+
+With Stegerwald failing his attempt at government formation, Ebert has turned to Wilhelm Marx, the leader of the Center Party, to form a government.
+
+
+- @make_use_of_ea: Marx will form a minority cabinet
+- @dnvp_enters_prussia: We will be expelled from Prussia
+- @no_compromise: There appears to be no workable governing coalition...
+
+
+@make_use_of_ea
+choose-if: early_enabling_act == 1
+subtitle: The enabling act we've helped pass allows for a minority government.
+unavailable-subtitle: There is no viable way to a minority government.
+on-arrival: bourgeois_united_front += 1; national_gov = "Bourgeois"; chancellor = 'Marx'; chancellor_party = 'Z';  in_toleration = 0; foreign_minister = 'Stresemann'; foreign_minister_party = 'DVP'; interior_minister = 'Jarres'; interior_minister_party = 'DVP'; justice_minister = 'Emminger'; justice_minister_party = 'BVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Hamm'; economic_minister_party = 'DDP'; finance_minister = 'Luther'; finance_minister_party = 'I'; agriculture_minister = 'von Kanitz'; agriculture_minister_party = 'I'; transport_minister = 'Oeser'; transport_minister_party = 'DDP'; postal_minister = 'Höfle'; postal_minister_party = 'Z'; workers_kpd += 1; unemployed_kpd += 1; old_middle_nsdap += 3; rural_dvfp += 3; new_middle_dtsp += 2
+
+Marx has decided to make few changes to established policy. Event though the <span style="color: [+ bvp_colour +];">**BVP**</span> has not even pledged support to the coalition they have received the justice ministry - we have to view this as an attempt at fast reconcilliation between the Bourgeois parties ignoring the Republican spirit and justice as a whole...
+
+
+@dnvp_enters_prussia
+choose-if:  bourgeois_united_front >= 5 or z_relation <= 40 and early_enabling_act == 0
+unavailable-subtitle: The Centrists prefer us over the <span style="color: [+ dnvp_colour +];">**DNVP**</span>
+on-arrival: bourgeois_united_front += 2; national_gov = "Right"; chancellor = 'Marx'; chancellor_party = 'Z';  in_toleration = 0; foreign_minister = 'von Rosenberg'; foreign_minister_party = 'I'; interior_minister = 'Jarres'; interior_minister_party = 'DVP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Hergt'; economic_minister_party = 'DNVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Schiele'; agriculture_minister_party = 'DNVP'; transport_minister = 'Oeser'; transport_minister_party = 'DDP'; postal_minister = 'Höfle'; postal_minister_party = 'Z'; workers_kpd += 4; unemployed_kpd += 3; prussia_gov = "Right"; prussia_spd = 0; prussia_ddp = 0; prussia_dnvp = 1
+
+We have angered the bourgeois parties enough for them to seek a Bourgeois coalition in Prussia and the Reich.
+  
+@no_compromise
+view-if: bourgeois_united_front < 5 and z_relation > 40 and early_enabling_act == 0
+on-arrival: marx_failed_minority = 1; rural_z -= 4; old_middle_z -= 2; new_middle_ddp -= 3; catholic_dnvp += 2
+
+Another arrangement needs to be found...
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
