@@ -222,6 +222,7 @@ if (window && d3 && data.length > 0) {
 
 <svg id="berlin_parteitag" style="width: 500px; height: 250px;"> </svg>
 
+[+ left_pas_r +] - [+ center_pas_r +] - [+ non_inscrit_pas_r +] - [+ labor_pas_r +] - [+ reformist_pas_r +] - [+ neorev_pas_r +] - [+ other_pas_r +] --> [+ (left_pas_r + center_pas_r + non_inscrit_pas_r + labor_pas_r + reformist_pas_r + neorev_pas_r + other_pas_r) +]%
 
 - @berlin_menu
 
@@ -415,7 +416,7 @@ on-arrival: spd_party_leader_3 = "vacant"
 go-to: party_leader_election
 
 @do_not_challange
-go-to: party_leader_election
+go-to: elect_new_leader
 
 @elect_new_leader
 go-to: berlin_menu if not (spd_party_leader_3 == "vacant" or spd_party_leader_2 == "vacant" or spd_party_leader_1 == "vacant")
