@@ -3,7 +3,7 @@ subtitle: The right-wing coalition has collapsed...
 new-page: true
 tags: event
 view-if: dnvp_ideology == "Radical" and year == 1928 and month >= 11 and national_gov == "Right"
-on-arrival: was_national_gov = "Right"
+on-arrival: former_national_gov = "Right"
 max-visits: 1
 
 = Hugenberg's exit from the coalition
