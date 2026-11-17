@@ -1636,18 +1636,23 @@ anhalt: {
           },
           {
             id: 'z', legend: 'Z', name: 'Z',
-            qualityKey: 'z_r',
-            condition: function(Q) { return Q.z_r; }
+            qualityKey: 'z_minus_bvp_r',
+            condition: function(Q) { return Q.z_minus_bvp_r; }
+          },
+               {
+            id: 'bvp', legend: 'BVP', name: 'BVP',
+            qualityKey: 'bvp_r',
+            condition: function(Q) { return Q.bvp_r; }
+          },
+                   {
+            id: 'dhp', legend: 'DHP', name: 'DHP',
+            qualityKey: 'dhp_r',
+            condition: function(Q) { return Q.dhp_r; }
           },
           {
             id: 'dvp', legend: 'DVP', name: 'DVP',
             qualityKey: 'dvp_r',
             condition: function(Q) { return Q.dvp_r && !Q.lvp_formed && Q.dvp_exist; }
-          },
-               {
-            id: 'dhp', legend: 'DHP', name: 'DHP',
-            qualityKey: 'dhp_r',
-            condition: function(Q) { return Q.dhp_r; }
           },
           {
             id: 'other', legend: 'Other', name: 'Others',
