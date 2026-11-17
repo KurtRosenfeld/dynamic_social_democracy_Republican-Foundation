@@ -49,8 +49,8 @@ Q.socpat_pas_r = Q.socpat_pas;
 Q.other_pas_r = Q.other_pas;
 Q.non_inscrit_pas_r = Q.non_inscrit_pas;
 
-Q.anti_ebert_r = Math.round(Q.left_pas + Q.labor_pas*0.05);
-Q.pro_ebert_r = Math.round(100 - Q.anti_ebert_r)
+Q.anti_ebert_r = Math.round((Q.left_pas + Q.labor_pas*0.05)*100)/100;
+Q.pro_ebert_r = Math.round((100 - Q.anti_ebert_r)*100)/100
 
 function allocateSeats(percentages, totalSeats = 390) {
     const exactSeats = {};
