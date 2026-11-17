@@ -241,7 +241,6 @@ if (window && d3 && data.length > 0) {
 
 <svg id="berlin_parteitag" style="width: 500px; height: 250px;"> </svg>
 
-[+ left_pas_r +] - [+ center_pas_r +] - [+ non_inscrit_pas_r +] - [+ labor_pas_r +] - [+ reformist_pas_r +] - [+ neorev_pas_r +] - [+ other_pas_r +] --> [+ (left_pas_r + center_pas_r + non_inscrit_pas_r + labor_pas_r + reformist_pas_r + neorev_pas_r + other_pas_r) +]%
 
 - @berlin_menu
 
@@ -443,16 +442,18 @@ go-to: elect_new_leader
 @elect_new_leader
 go-to: berlin_menu if not (spd_party_leader_3 == "vacant" or spd_party_leader_2 == "vacant" or spd_party_leader_1 == "vacant")
 
-The vacant spots will be filled
+The vacant spots will be filled.
 
 - @elect_wels: Elect Otto Wels (center)
 - @elect_seydewitz: Elect Max Seydewitz (left)
 - @elect_breitscheid: Elect Rudolf Breitscheid (centrist)
 - @elect_vogel: Elect Hans Vogel (neorevisionist)
 - @elect_braun: Elect Otto Braun (reformist)
+- @elect_muller: Elect Hermann Müller (center)
+- @elect_ledebour: Elect Georg Ledebour (left)
 - @elect_tarnow: Elect Fritz Tarnow (labour)
 - @elect_rosenfeld: Elect Kurt Rosenfeld (left)
-- @berlin_menu
+- @dont_elect_bitches: We are done.
 
 
 @elect_wels
@@ -490,6 +491,13 @@ choose-if: (neorev_pas_r + scheidemann_center_pas_r + reformist_pas_r) > 50
 on-arrival: spd_party_leader_2 = "Braun"
 go-to: elect_new_leader
 
+@elect_ledebour
+view-if: spd_party_leader_2 == "vacant" and ledebour_in = "SPD"
+subtitle: [+ left_pas_r +]% support
+choose-if: (left_pas_r) > 50
+on-arrival: spd_party_leader_2 = "Ledebour"
+go-to: elect_new_leader
+
 @elect_muller
 view-if: spd_party_leader_2 == "vacant" and muller_in = "SPD"
 subtitle: [+ labor_pas_r + center_pas_r + reformist_pas_r + non_inscrit_pas_r +]% support
@@ -511,6 +519,8 @@ choose-if: (left_pas_r + auhauser_labor_pas_r) > 50
 on-arrival: spd_party_leader_3 = "Rosenfeld"
 go-to: elect_new_leader
 
+@dont_elect_bitches
+go-to: berlin_menu
 
 @free_advisor
 view-if: berlin_point_six == 1
