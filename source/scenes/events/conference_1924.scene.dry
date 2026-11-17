@@ -19,6 +19,10 @@ Q.non_inscrit_pas = 0;
 Q.neorevisionist_strength = Q.neorevisionist_strength || 0;
 Q.neorevisionist_dissent  = Q.neorevisionist_dissent  || 0;
 Q.social_patriot_dissent  = Q.social_patriot_dissent  || 0;
+Q.social_patriot_strength  = Q.social_patriot_strength  || 0;
+
+Q.neorevisionist_spd_r = Q.neorevisionist_spd_r || 0;
+Q.social_patriot_spd_r  = Q.social_patriot_spd_r  || 0;
 
 
 Q.left_pas = (Q.left_strength + Q.left_spd_r)*((100-Q.left_dissent)/100);
