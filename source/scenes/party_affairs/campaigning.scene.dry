@@ -22,10 +22,10 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 - @easy_discard
 
 @workers
-subtitle: -1 resources
-choose-if: resources >= 1
+subtitle: [? if not spd_party_leader_2 == "Aufhäuser": -1 resources ?][? if spd_party_leader_1 == "Aufhäuser": Free due to Siegfred Aufhäuser. ?]
+choose-if: resources >= 1 or spd_party_leader_2 == "Aufhäuser"
 unavailable-subtitle: Not enough resources.
-on-arrival: workers_spd += 6*(1-dissent); workers_spd -= 1 if unemployed >= 20; workers_spd -= 1 if unemployed >= 30; workers_spd += 3*(1-dissent) if wtb_adopted = 1; resources -= 1; workers_spd += 3*(1-dissent) if nationalization_progress >= 1;
+on-arrival: workers_spd += 6*(1-dissent); workers_spd -= 1 if unemployed >= 20; workers_spd -= 1 if unemployed >= 30; workers_spd += 3*(1-dissent) if wtb_adopted = 1; resources -= 1  if not spd_party_leader_2 == "Aufhäuser"; workers_spd += 3*(1-dissent) if nationalization_progress >= 1;
 
 We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract workers. ?]
 
