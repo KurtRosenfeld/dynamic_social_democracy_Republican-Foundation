@@ -265,12 +265,31 @@ if (Q.spd_party_leader_1 == "Breitscheid" && Q.uspd_relation < 25) Q.uspd_relati
 if (Q.spd_party_leader_1 == "Breitscheid" && Q.france_relation < 20) Q.france_relation += 0.5;
 if (Q.spd_party_leader_1 == "Breitscheid" && Q.uk_relation < 20) Q.uk_relation += 0.5;
 if (Q.spd_party_leader_1 == "Breitscheid" && Q.belgium_relation < 20) Q.belgium_relation += 0.5;
+if (Q.spd_party_leader_1 == "Seydewitz" && Q.unemployed_spd < 9) Q.unemployed_spd += 0.5;
+if (Q.spd_party_leader_1 == "Seydewitz") Q.left_dissent -= 0.2;
+if (Q.spd_party_leader_2 == "Ledebour" && Q.workers_spd < 12) Q.workers_spd += 0.5;
 if (Q.spd_party_leader_2 == "Müller" && Q.ddp_relation < 30) Q.ddp_relation += 0.5;
 if (Q.spd_party_leader_2 == "Müller" && Q.dvp_relation < 25) Q.dvp_relation += 0.5;
+if (Q.spd_party_leader_2 == "Braun" && Q.old_middle_spd < 5) Q.old_middle_spd += 0.4;
+if (Q.spd_party_leader_2 == "Braun" && Q.new_middle_spd < 7) Q.new_middle_spd += 0.4;
+if (Q.spd_party_leader_2 == "Braun" && Q.rural_spd < 6) Q.rural += 0.5;
 if (Q.spd_party_leader_3 == "Crispien") {
 Q.left_dissent -= 0.02;
 Q.center_dissent -= 0.1;
 }
+if (Q.spd_party_leader_3 == "Rosenfeld" && Q.kpd_relation < 50) Q.kpd_relation += 0.5;
+if (Q.spd_party_leader_3 == "Rosenfeld" && Q.sb_relation < 70) Q.sb_relation += 2;
+
+// left leaders confront reformists
+
+if (Q.spd_party_leader_3 == "Rosenfeld") Q.reformist_dissent += 0.4;
+if (Q.spd_party_leader_2 == "Ledebour") Q.reformist_dissent += 0.4;
+if (Q.spd_party_leader_1 == "Seydewitz") Q.reformist_dissent += 0.4;
+
+// reformist leaders confront leftists
+
+if (Q.spd_party_leader_2 == "Braun") Q.left_dissent += 0.4;
+if (Q.spd_party_leader_3 == "Tarnow") Q.left_dissent += 0.2;
 
 // danymic party colouring
 
