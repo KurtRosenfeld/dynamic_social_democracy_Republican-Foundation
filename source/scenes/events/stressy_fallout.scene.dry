@@ -20,7 +20,7 @@ Nearly everyone in our party is outraged over this. We need to act now.
 - @stay_stressy: We can't give up our ministries...
 
 @pull_out
-on-arrival: spd_in_government = 0; left_dissent -= 2; labor_dissent -= 2; sb_relation += 2; workers_spd += 3; bourgeois_united_fron += 2
+on-arrival: spd_in_government = 0; left_dissent -= 2; labor_dissent -= 2; sb_relation += 2; workers_spd += 3; bourgeois_united_front += 2
 
 
   
