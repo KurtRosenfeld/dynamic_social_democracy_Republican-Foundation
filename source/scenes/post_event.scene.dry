@@ -279,6 +279,8 @@ Q.center_dissent -= 0.1;
 }
 if (Q.spd_party_leader_3 == "Rosenfeld" && Q.kpd_relation < 50) Q.kpd_relation += 0.5;
 if (Q.spd_party_leader_3 == "Rosenfeld" && Q.sb_relation < 70) Q.sb_relation += 2;
+if (Q.spd_party_leader_3 == "Vogel" && Q.rb_strength < 2000) Q.rb_strength += 2.5;
+if (Q.spd_party_leader_3 == "Vogel") Q.rb_strength += 0.1;
 
 // left leaders confront reformists
 
