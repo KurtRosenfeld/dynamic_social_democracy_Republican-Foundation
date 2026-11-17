@@ -393,25 +393,25 @@ If the party is fine with the current leadership they will remain in office, sho
 subtitle: [+ reformist_pas_r + center_pas_r +]% support
 view-if: spd_party_leader_1 == "Wels"
 choose-if: (left_pas_r + non_inscrit_pas_r) > (reformist_pas_r + center_pas_r)
-on-arrival: spd_party_leader_1 == "vacant"
+on-arrival: spd_party_leader_1 = "vacant"
 go-to: party_leader_election
 
 @challange_breitscheid
 view-if: spd_party_leader_1 == "Breitscheid"
 choose-if: (reformist_pas_r + left_pas_r*0.8) > (left_pas_r*0.3 + center_pas_r + non_inscrit_pas_r)
-on-arrival: spd_party_leader_1 == "vacant"
+on-arrival: spd_party_leader_1 = "vacant"
 go-to: party_leader_election
 
 @challange_muller
 view-if: spd_party_leader_2 == "Müller"
 choose-if: (left_pas_r) > (reformist_pas_r + center_pas_r + non_inscrit_pas_r + labor_pas_r)
-on-arrival: spd_party_leader_2 == "vacant"
+on-arrival: spd_party_leader_2 = "vacant"
 go-to: party_leader_election
 
 @challange_crispien
 view-if: spd_party_leader_3 == "Crispien"
 choose-if: (left_pas_r > (left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r)) or (reformist_pas_r > (left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r))
-on-arrival: spd_party_leader_3 == "vacant"
+on-arrival: spd_party_leader_3 = "vacant"
 go-to: party_leader_election
 
 @do_not_challange
