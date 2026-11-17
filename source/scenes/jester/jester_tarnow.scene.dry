@@ -1,0 +1,11 @@
+title: Fritz Tarnow
+is-pinned-card: true
+tags: jester
+card-image: img/portraits/TarnowFritz.jpg
+face-image: img/portraits/TarnowFritz.jpg
+view-if: spd_party_leader_3 == "Tarnow"
+new-page: true
+
+= Fritz Tarnow
+
+**Active bonusses:**
