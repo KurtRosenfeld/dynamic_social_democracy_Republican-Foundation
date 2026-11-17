@@ -1684,6 +1684,11 @@ anhalt: {
             qualityKey: 'kvp_r_saxony',
             condition: function(Q) { return Q.kvp_formed && Q.kvp_r_saxony; }
           },
+            {
+            id: 'farm2', legend: 'LB', name: 'LB',
+            qualityKey: 'lb_r',
+            condition: function(Q) { return Q.lb_r; }
+          }, 
           {
             id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
             qualityKey: 'dnvp_r',
