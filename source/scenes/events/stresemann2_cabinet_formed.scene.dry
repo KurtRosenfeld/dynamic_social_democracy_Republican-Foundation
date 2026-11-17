@@ -13,7 +13,7 @@ Ebert asks us to join Stresemann's cabinet
 
 - @join_stresemann: The SPD joins the Stresemann government.
 - @tolerate_stress: The SPD tolerates Stresemann but won't participate.
-- @fuck_stressy: We won't elect this government but we will support sensible policies.
+- @fuck_stressy: We won't elect this government.
   
 @join_stresemann
 on-arrival: spd_in_government = 1; dvp_in_government = 1; z_in_government = 1; ddp_in_government = 1; national_gov = "Grand"; leverage = spd_votes; workers_spd -= 3; unemployed_spd -= 2; new_middle_spd -= 1; eight_hours = 4.3; kpd_relation -= 7; uspd_relation -= 4; sb_relation -= 4; ddp_relation += 2; dvp_relation += 3; z_relation += 1; economic_growth += 0.05; left_dissent += 5; labor_dissent = 5; center_dissent += 2; workers_dtsp += 2; new_middle_other += 2
@@ -305,9 +305,9 @@ on-arrival: in_toleration = 1; kpd_relation -= 4; z_relation += 2; unemployed_sp
 
 @fuck_stressy
 subtitle: The DNVP would profit from that
-on-arrival: old_middle_dnvp += 3; catholic_nsdap += 2; new_middle_dvfp += 2; unemployed_spd += 1; workers_spd += 1
+on-arrival: old_middle_dnvp += 3; catholic_nsdap += 2; new_middle_dvfp += 2; unemployed_spd += 1; workers_spd += 1; bourgeois_united_front += 4; chancellor = "vacant"
 
-The DNVP sort of tolerates the government now.
+The DNVP won't support Stresemann either, so there needs to be another one to attempt government formation.
 
 
 
