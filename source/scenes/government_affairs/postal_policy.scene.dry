@@ -24,8 +24,8 @@ We have sent a few old Bavarians into retirement.
 @reduce_radio_dues
 title: - 1 budget Reduce public radio dues
 subtitle: We should allow more people to listen to public news.
-unavailable-subtitle: [? if radio_dues == "free": We have already made the radio free. ?][? if radio_dues == "low" and (in_grand_colation or in_weimar_coalition): The liberals oppose this measure. ?]
-choose-if: not radio_dues == "free" and (not radio_dues == "low" and not in_grand_colation and not in_weimar_coalition)
+unavailable-subtitle: [? if radio_dues == "free": We have already made the radio free. ?][? if radio_dues == "low" and (in_grand_colation or national_gov == "Weimar"): The liberals oppose this measure. ?]
+choose-if: not radio_dues == "free" and (not radio_dues == "low" and not in_grand_colation and not national_gov == "Weimar")
 on-arrival: radio_dues = "free" if radio_dues = "low"; radio_dues = "low" if radio_dues = "medium"; radio_dues = "medium" if radio_dues = "high"; radio_dues = "high" if radio_dues = "pure luxury"; state_media_share += 2; new_middle_spd += 2; workers_spd += 1; budget -= 1
 
 @increase_radio_dues
@@ -38,8 +38,8 @@ on-arrival: radio_dues = "low" if radio_dues = "medium"; radio_dues = "medium" i
 @push_state_publications_leftwards
 title: Push state publications to a leftist course (WIP)
 subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> would love this.
-choose-if: postal_reform >= 3 and not in_grand_coalition and not in_weimar_coalition
-unavailable-subtitle: [? if postal_reform < 3: The internal postal administration would revolt immediatly. ?][? if in_grand_coalition: The <span style="color: [+ dvp_colour +];">**DVP**</span> would kill us. ?][? if in_weimar_coalition: Our coalition partners are opposed to this. ?]
+choose-if: postal_reform >= 3 and not national_gov == "Grand" and not national_gov == "Weimar"
+unavailable-subtitle: [? if postal_reform < 3: The internal postal administration would revolt immediatly. ?][? if national_gov == "Grand": The <span style="color: [+ dvp_colour +];">**DVP**</span> would kill us. ?][? if national_gov == "Weimar": Our coalition partners are opposed to this. ?]
 on-arrival: postal_reform += 1; kpd_relation += 5; communist_state_media += 1
 
 

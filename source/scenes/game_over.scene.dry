@@ -198,7 +198,7 @@ if ((Q.dynamic_mode || Q.historical_mode || Q.difficulty == 1) && !((Q.year == 1
       this.achieve('warum_kampfen_wir_immer_noch');
   }
 
-  if (Q.gov_burden_fail >= 10 && Q.in_spd_majority) {
+  if (Q.gov_burden_fail >= 10 && Q.national_gov == "SPD") {
       this.achieve('leere_parolen');
   }
 
@@ -283,7 +283,7 @@ if ((Q.dynamic_mode || Q.historical_mode || Q.difficulty == 1) && !((Q.year == 1
   }
 
   if (Q.president != "Hammerstein" && Q.president != "Hitler" && Q.president !=   "Göring" && Q.president != "Seldte" && Q.chancellor != "Hitler" && !Q.hammerstein_win && !(Q.president == "Hergt" && Q.chancellor == "Seldte")) {
-    if ((Q.president == "Rosenfeld" || Q.president == "Thälmann" || Q.president == "Münzenberg" || Q.president == "Ossietzky" || Q.president == "Mann") && Q.in_left_front && !Q.civil_war_seen) {
+    if ((Q.president == "Rosenfeld" || Q.president == "Thälmann" || Q.president == "Münzenberg" || Q.president == "Ossietzky" || Q.president == "Mann") && Q.national_gov == "Left" && !Q.civil_war_seen) {
       Q.kpd_points_calc = 0;
       Q.kpd_points_calc += Q.rfb_force;
       Q.kpd_points_calc += (100 - Q.pro_republic) / 2;
@@ -314,13 +314,13 @@ if ((Q.dynamic_mode || Q.historical_mode || Q.difficulty == 1) && !((Q.year == 1
   } else {
     Q.weimar_win_calc = 0;
   }
-  if ((Q.in_left_front || Q.in_popular_front) && Q.kpd_coalition_success && Q.wurttemberg_kpd && Q.bavaria_kpd && Q.red_thuringia && Q.red_saxony && Q.weimar_win_calc && !Q.kpd_points_calc && !Q.civil_war_seen && Q.year >= 1934) {
+  if ((Q.national_gov == "Left" || Q.national_gov == "Popular-Front") && Q.kpd_coalition_success && Q.wurttemberg_kpd && Q.bavaria_kpd && Q.red_thuringia && Q.red_saxony && Q.weimar_win_calc && !Q.kpd_points_calc && !Q.civil_war_seen && Q.year >= 1934) {
     this.achieve('eurokommunismus');
   }
   if (Q.reichswehr_strength >= 200 && Q.unemployed < 15 && Q.budget > 0 && Q.tariffs > 5 && (Q.spd_in_government || Q.chancellor_party == "SPD")) {
     this.achieve('kriegswirtschaft');
   }
-  if (Q.spd_votes >= 67 && Q.spd_r >= 67 && Q.in_social_liberal_coalition) {
+  if (Q.spd_votes >= 67 && Q.spd_r >= 67 && Q.national_gov == "Social-Liberal") {
     this.achieve('sechs_sieben');
   }
   if (Q.rubicon_mini_trigger && Q.rubicon_mini_leave && Q.chancellor == "Hitler") {
