@@ -417,7 +417,7 @@ go-to: party_leader_election
 @challange_breitscheid
 subtitle: [+ center_pas_r + non_inscrit_pas_r + sender_left_pas +]% support
 view-if: spd_party_leader_1 == "Breitscheid"
-choose-if: (reformist_pas_r + left_pas_r*0.8) > (left_pas_r*0.3 + center_pas_r + non_inscrit_pas_r)
+choose-if: (reformist_pas_r + left_pas_r*0.8) > (left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r)
 on-arrival: spd_party_leader_1 = "vacant"
 go-to: party_leader_election
 
@@ -431,7 +431,7 @@ go-to: party_leader_election
 @challange_crispien
 subtitle: above [+ center_pas_r + non_inscrit_pas_r + sender_left_pas +]% support
 view-if: spd_party_leader_3 == "Crispien"
-choose-if: (left_pas_r > (left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r)) or (reformist_pas_r > (left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r))
+choose-if: (left_pas_r > (center_pas_r + non_inscrit_pas_r)) or (reformist_pas_r > (left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r))
 on-arrival: spd_party_leader_3 = "vacant"
 go-to: party_leader_election
 
@@ -456,56 +456,56 @@ The vacant spots will be filled
 @elect_wels
 subtitle: [+ reformist_pas_r + center_pas_r +]% support
 view-if: spd_party_leader_1 == "vacant" and wels_in = "SPD"
-choose-if: (reformist_pas_r + center_pas_r) < 50
+choose-if: (reformist_pas_r + center_pas_r) > 50
 on-arrival: spd_party_leader_1 = "Wels"
 go-to: elect_new_leader
 
 @elect_seydewitz
 view-if: spd_party_leader_1 == "vacant" and seydewitz_in = "SPD"
 subtitle: [+ left_pas_r + aufhauser_labor_pas_r +]% support
-choose-if: (left_pas_r + aufhauser_labor_pas_r) < 50
+choose-if: (left_pas_r + aufhauser_labor_pas_r) > 50
 on-arrival: spd_party_leader_1 = "Seydewitz"
 go-to: elect_new_leader
 
 @elect_breitscheid
 view-if: spd_party_leader_1 == "vacant" and breitscheid_in =  "SPD"
 subtitle: [+ sender_left_pas_r + center_pas_r + non_inscrit_pas_r +]% support
-choose-if: (sender_left_pas_r + center_pas_r + non_inscrit_pas_r) < 50
+choose-if: (sender_left_pas_r + center_pas_r + non_inscrit_pas_r) > 50
 on-arrival: spd_party_leader_1 = "Breitscheid"
 go-to: elect_new_leader
 
 @elect_vogel
 view-if: spd_party_leader_2 == "vacant" and vogel_in = "SPD" and neorevisionism
 subtitle: [+ neorev_pas_r + center_pas_r + reformist_pas_r +]% support
-choose-if: (neorev_pas_r + center_pas_r + reformist_pas_r) < 50
+choose-if: (neorev_pas_r + center_pas_r + reformist_pas_r) > 50
 on-arrival: spd_party_leader_2 = "Vogel"
 go-to: elect_new_leader
 
 @elect_braun
 view-if: spd_party_leader_2 == "vacant" and braun_in = "SPD"
 subtitle: [+ neorev_pas_r + scheidemann_center_pas_r + reformist_pas_r +]% support
-choose-if: (neorev_pas_r + scheidemann_center_pas_r + reformist_pas_r) < 50
+choose-if: (neorev_pas_r + scheidemann_center_pas_r + reformist_pas_r) > 50
 on-arrival: spd_party_leader_2 = "Braun"
 go-to: elect_new_leader
 
 @elect_muller
 view-if: spd_party_leader_2 == "vacant" and muller_in = "SPD"
 subtitle: [+ labor_pas_r + center_pas_r + reformist_pas_r + non_inscrit_pas_r +]% support
-choose-if: (labor_pas_r + center_pas_r + reformist_pas_r + non_inscrit_pas_r) < 50
+choose-if: (labor_pas_r + center_pas_r + reformist_pas_r + non_inscrit_pas_r) > 50
 on-arrival: spd_party_leader_2 = "Müller"
 go-to: elect_new_leader
 
 @elect_tarnow
 view-if: spd_party_leader_3 == "vacant" and tarnow_in = "SPD"
 subtitle: [+ labor_pas_r + reformist_pas_r +]% support
-choose-if: (labor_pas_r + reformist_pas_r) < 50
+choose-if: (labor_pas_r + reformist_pas_r) > 50
 on-arrival: spd_party_leader_3 = "Tarnow"
 go-to: elect_new_leader
 
 @elect_rosenfeld
 view-if: spd_party_leader_3 == "vacant" and rosenfeld_in = "SPD"
 subtitle: [+ left_pas_r + auhauser_labor_pas_r +]% support
-choose-if: (left_pas_r + auhauser_labor_pas_r) < 50
+choose-if: (left_pas_r + auhauser_labor_pas_r) > 50
 on-arrival: spd_party_leader_3 = "Rosenfeld"
 go-to: elect_new_leader
 
