@@ -498,14 +498,14 @@ on-arrival: spd_party_leader_2 = "Müller"
 go-to: elect_new_leader
 
 @elect_tarnow
-view-if: spd_party_leader_3 == "vacant" and tarnow_in = "SPD"
+view-if: spd_party_leader_3 == "vacant" and tarnow_in = "SPD" and spd_party_leader_n > 2
 subtitle: [+ labor_pas_r + reformist_pas_r +]% support
 choose-if: (labor_pas_r + reformist_pas_r) > 50
 on-arrival: spd_party_leader_3 = "Tarnow"
 go-to: elect_new_leader
 
 @elect_rosenfeld
-view-if: spd_party_leader_3 == "vacant" and rosenfeld_in = "SPD"
+view-if: spd_party_leader_3 == "vacant" and rosenfeld_in = "SPD" and spd_party_leader_n > 2
 subtitle: [+ left_pas_r + auhauser_labor_pas_r +]% support
 choose-if: (left_pas_r + auhauser_labor_pas_r) > 50
 on-arrival: spd_party_leader_3 = "Rosenfeld"
