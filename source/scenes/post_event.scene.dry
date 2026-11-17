@@ -550,6 +550,10 @@ Q.prussia_gov = "SPD"; Q.prussia_spd = 1;}
 
 Q.reichstag_seats_for_smart_people = Q.reichstag_size*100;
 
+Q.z_minus_bvp_votes = parseFloat((Q.z_votes - Q.bvp_votes).toFixed(1));
+Q.z_minus_bvp_r = parseFloat((Q.z_r - Q.bvp_r).toFixed(1));
+if (Q.bvp_r == Q.z_r) Q.z_minus_bvp_r = 0;
+
 // re-calculate dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
 if (Q.neorevisionism) {
