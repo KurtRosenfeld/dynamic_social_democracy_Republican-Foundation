@@ -430,7 +430,7 @@ on-arrival: spd_party_leader_2 = "vacant"
 go-to: party_leader_election
 
 @challange_crispien
-subtitle: above [+ center_pas_r + non_inscrit_pas_r + sender_left_pas +]% support
+subtitle: [+ center_pas_r + non_inscrit_pas_r + sender_left_pas +]% support
 view-if: spd_party_leader_3 == "Crispien"
 choose-if: (left_pas_r > (center_pas_r + non_inscrit_pas_r)) or (reformist_pas_r > (left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r))
 on-arrival: spd_party_leader_3 = "vacant"
