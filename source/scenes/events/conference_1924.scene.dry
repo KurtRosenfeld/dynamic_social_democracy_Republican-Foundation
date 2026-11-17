@@ -379,10 +379,74 @@ on-arrival: berlin_point_six += 1; rural_strategy = "Class War"
 
 @party_leader_election
 view-if: berlin_point_seven == 0
-on-arrival: berlin_point_seven += 1
-go-to: berlin_menu
+on-arrival: berlin_point_seven = 1
 
-Placeholder lÖl
+If the party is fine with the current leadership they will remain in office, should they have become controversial they can be challanged.
+
+- @challange_wels: Challange Wels
+- @challange_breitscheid: Challange Breitscheid
+- @challange_muller: Challange Müller
+- @challange_crispien: Challange Crispien
+- @do_not_challange: Don't challange anyone
+
+@challange_wels
+subtitle: [+ reformist_pas_r + center_pas_r +]% support
+view-if: spd_party_leader_1 == "Wels"
+choose-if: (left_pas_r + non_inscrit_pas_r) > (reformist_pas_r + center_pas_r)
+on-arrival: spd_party_leader_1 == "vacant"
+go-to: party_leader_election
+
+@challange_breitscheid
+view-if: spd_party_leader_1 == "Breitscheid"
+choose-if: (reformist_pas_r + left_pas_r*0.8) > (left_pas_r*0.3 + center_pas_r + non_inscrit_pas_r)
+on-arrival: spd_party_leader_1 == "vacant"
+go-to: party_leader_election
+
+@challange_muller
+view-if: spd_party_leader_2 == "Müller"
+choose-if: (left_pas_r) > (reformist_pas_r + center_pas_r + non_inscrit_pas_r + labor_pas_r)
+on-arrival: spd_party_leader_2 == "vacant"
+go-to: party_leader_election
+
+@challange_crispien
+view-if: spd_party_leader_3 == "Crispien"
+choose-if: (left_pas_r > (left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r)) or (reformist_pas_r > (left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r))
+on-arrival: spd_party_leader_3 == "vacant"
+go-to: party_leader_election
+
+@do_not_challange
+go-to: party_leader_election
+
+@elect_new_leader
+go-to: berlin_menu if not (spd_party_leader_3 == "vacant" or spd_party_leader_2 == "vacant" or spd_party_leader_1 == "vacant")
+
+The vacant spots will be filled
+
+- @elect_seydewitz: Elect Max Seydewitz (left)
+- @elect_breitscheid: Elect Rudolf Breitscheid (centrist)
+- @elect_vogel: Elect Hans Vogel (neorevisionist)
+- @elect_braun: Elect Otto Braun (reformist)
+- @elect_tarnow: Elect Fritz Tarnow (labour)
+- @elect_rosenfeld: Elect Kurt Rosenfeld (left)
+
+@elect_seydewitz
+view-if: spd_party_leader_1 == "vacant"
+
+@elect_breitscheid
+view-if: spd_party_leader_1 == "vacant"
+
+@elect_vogel
+spd_party_leader_2 == "vacant"
+
+@elect_braun
+spd_party_leader_2 == "vacant"
+
+@elect_tarnow
+spd_party_leader_3 == "vacant"
+
+@elect_rosenfeld
+spd_party_leader_3 == "vacant"
+
 
 
 @free_advisor
