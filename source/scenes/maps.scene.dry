@@ -3131,6 +3131,7 @@ go-to: map_menu
        cy="129.25694"
        inkscape:label="London"
        r="0.5" /><circle
+[? if year >= 1923: class="trigger-group" data-tooltip="ireland-tooltip" ?]
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-8"
        cx="40.122124"
@@ -3157,24 +3158,28 @@ class="trigger-group" data-tooltip="netherlands-tooltip"
        cy="128.5284"
        inkscape:label="Amsterdam"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="denmark-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-85"
        cx="80.300858"
        cy="118.83129"
        inkscape:label="Copenhagen"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="norway-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-9"
        cx="76.555954"
        cy="106.0976"
        inkscape:label="Oslo"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="sweden-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-4"
        cx="91.83709"
        cy="107.43005"
        inkscape:label="Stockholm"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="finland-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-3"
        cx="105.73318"
@@ -3240,54 +3245,63 @@ class="trigger-group" data-tooltip="netherlands-tooltip"
        cy="155.29318"
        inkscape:label="Rome"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="spain-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-59"
        cx="46.842247"
        cy="159.19586"
        inkscape:label="Madrid"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="portugal-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-6"
        cx="36.238724"
        cy="163.97693"
        inkscape:label="Lisbon"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="hungary-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-42"
        cx="94.079483"
        cy="141.57767"
        inkscape:label="Budapest"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="yugoslavia-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-7"
        cx="96.877625"
        cy="148.47137"
        inkscape:label="Belgrade"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="albania-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-65"
        cx="95.510117"
        cy="157.34973"
        inkscape:label="Tirana"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="greece-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-20"
        cx="103.19802"
        cy="165.34268"
        inkscape:label="Athens"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="bulgaria-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-07"
        cx="102.644"
        cy="153.3734"
        inkscape:label="Sofia"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="romania-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-73"
        cx="107.99309"
        cy="148.7852"
        inkscape:label="Bucharest"
        r="0.5" /><circle
+class="trigger-group" data-tooltip="turkey-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-81"
        cx="121.78224"
@@ -3336,6 +3350,7 @@ class="trigger-group" data-tooltip="netherlands-tooltip"
        cy="117.92487"
        inkscape:label="Moscow-USSR"
        r="0.5" /> ?]<circle
+class="trigger-group" data-tooltip="egypt-tooltip"
        style="display:inline;fill:#800066;fill-opacity:1;stroke:#000000;stroke-width:0.143765;stroke-opacity:1"
        id="path242-841-8"
        cx="119.35952"
@@ -3539,6 +3554,180 @@ class="trigger-group" data-tooltip="netherlands-tooltip"
     <p>Head of State: Vittorio Emmanuele III</p>
     <p>*Parliamentary* Monarchy</p>
     <p>Relations: [+ italy_relation : relationships +]</p>
+  </div>
+  </div>
+
+<div id="hungary-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Hungary.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of Hungary</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~8.100.000</p>
+    <p>Head of State: Horthy</p>
+    <p>Monarchy without Monarch</p>
+  </div>
+  </div>
+
+<div id="romania-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Romania.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of Romania</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Head of State: Ferdinand I</p>
+    <p>Monarchy</p>
+  </div>
+  </div>
+
+<div id="albania-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/empty.jpg" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Principality of Albania</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~979.000</p>
+    <p>Head of State: Wilhelm I</p>
+    <p>Monarchy</p>
+  </div>
+  </div>
+
+<div id="yugoslavia-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Yugo.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of Serbs, Croats and Slovenes (Yugoslavia)</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~12.200.000</p>
+    <p>Head of State: Alexander I</p>
+    <p>Unitary Parliamentary Constitutional Monarchy</p>
+  </div>
+  </div>
+
+<div id="bulgaria-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Bulgaria.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Third Bulgarian Tsardom</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Head of State: Boris III</p>
+    <p>Constitutional Monarchy</p>
+  </div>
+  </div>
+
+<div id="greeece-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Greece.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of Greece</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Parliamentary Semi-Constitutional Monarchy</p>
+  </div>
+  </div>
+
+<div id="turkey-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Turkey.png" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Sublime Ottoman State</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Head of State: Mehmed VI</p>
+    <p>Absolute Monarchy</p>
+  </div>
+  </div>
+
+<div id="egypt-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Egypt.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of Egypt</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~13.900.000</p>
+    <p>Head of State: Fuad I</p>
+    <p>Unitary Parliamentary Semi-Constitutional Monarchy</p>
+  </div>
+  </div>
+
+<div id="spain-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Spain.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of Spain</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Head of State: Alfonso XIII</p>
+    <p>Unitary Parliamentary Semi-Constitutional Monarchy</p>
+    <p>Relations: [+ spain_relation : relationships +]</p>
+  </div>
+  </div>
+
+<div id="portugal-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Portugal.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Portuguese Republic</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Head of State: Teixeira Gomes</p>
+    <p>Republic</p>
+  </div>
+  </div>
+
+<div id="ireland-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Ireland.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Irish Free State</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~2.500.000</p>
+    <p>Head of State: George V</p>
+    <p>Unitary Parliamentary Constitutional Monarchy</p>
+  </div>
+  </div>
+
+<div id="norway-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Norway.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of Norway</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~2.600.000</p>
+    <p>Head of State: Haakon VII</p>
+    <p>Unitary Parliamentary Constitutional Monarchy</p>
+  </div>
+  </div>
+
+<div id="sweden-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Sweden.jpg" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of Sweden</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~5.990.000</p>
+    <p>Head of State: Gustaf V</p>
+    <p>Unitary Parliamentary Constitutional Monarchy</p>
+  </div>
+  </div>
+
+<div id="denmark-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Denmark.jpg" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Kingdom of Denmark</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~3.300.000</p>
+    <p>Head of State: Christian X</p>
+    <p>Unitary Parliamentary Constitutional Monarchy</p>
+  </div>
+  </div>
+
+<div id="finland-tooltip" class="tooltip-group">
+  <div style="text-align: center;">
+    <img src="img/land/Finland.svg.webp" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
+  </div>
+  <strong style="display: block; text-align: center; margin-bottom: 8px;">Republic of Finland</strong>
+  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
+    <p>Population: ~3.210.000</p>
+    <p>Head of State: Ståhlberg (NPP)</p>
+    <p>Republic</p>
   </div>
   </div>
 
