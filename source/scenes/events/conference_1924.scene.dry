@@ -43,17 +43,17 @@ if (Q.reformists_resigned ) Q.non_inscrit_pas += 1;
 
 Q.total_pas = (Q.left_pas + Q.center_pas + Q.non_inscrit_pas + Q.labor_pas + Q.reformist_pas + Q.neorev_pas + Q.other_pas + Q.socpat_pas);
 
-Q.left_pas_r = ((Q.left_pas/Q.total_pas)*100);
-Q.center_pas_r = ((Q.center_pas/Q.total_pas)*100);
-Q.labor_pas_r = ((Q.labor_pas/Q.total_pas)*100);
-Q.reformist_pas_r = ((Q.reformist_pas/Q.total_pas)*100);
-Q.neorev_pas_r = ((Q.neorev_pas/Q.total_pas)*100);
-Q.socpat_pas_r = ((Q.socpat_pas/Q.total_pas)*100);
-Q.other_pas_r = ((Q.other_pas/Q.total_pas)*100);
-Q.non_inscrit_pas_r = ((Q.non_inscrit_pas/Q.total_pas)*100);
+Q.left_pas_r = ((Q.left_pas / Q.total_pas ) * 100);
+Q.center_pas_r = ((Q.center_pas / Q.total_pas ) * 100);
+Q.labor_pas_r = ((Q.labor_pas / Q.total_pas ) * 100);
+Q.reformist_pas_r = ((Q.reformist_pas / Q.total_pas) * 100);
+Q.neorev_pas_r = ((Q.neorev_pas / Q.total_pas ) * 100);
+Q.socpat_pas_r = ((Q.socpat_pas / Q.total_pas ) * 100);
+Q.other_pas_r = ((Q.other_pas / Q.total_pas ) * 100);
+Q.non_inscrit_pas_r = ((Q.non_inscrit_pas / Q.total_pas ) * 100);
 
-Q.anti_ebert_r = Math.round((Q.left_pas + Q.labor_pas*0.05)*100)/100;
-Q.pro_ebert_r = Math.round((100 - Q.anti_ebert_r)*100)/100
+Q.anti_ebert_r = Math.round((Q.left_pas + Q.labor_pas*0.05) * 100) / 100;
+Q.pro_ebert_r = Math.round((100 - Q.anti_ebert_r) * 100) / 100
 
 function allocateSeats(percentages, totalSeats = 390) {
     const exactSeats = {};
@@ -385,7 +385,7 @@ on-arrival: berlin_point_six += 1; rural_strategy = "Class War"
 view-if: berlin_point_seven == 0
 on-arrival: berlin_point_seven = 1
 
-If the party is fine with the current leadership they will remain in office, should they have become controversial they can be challanged.
+If the party is fine with the current leadership they will remain in office, should they have become controversial they can be challanged. But be careful ousting a leader without a majority for a replacement can be fatal...
 
 - @challange_wels: Challange Wels
 - @challange_breitscheid: Challange Breitscheid
@@ -401,18 +401,21 @@ on-arrival: spd_party_leader_1 = "vacant"
 go-to: party_leader_election
 
 @challange_breitscheid
+subtitle: [+ left_pas_r*0.3 + center_pas_r + non_inscrit_pas_r +]% support
 view-if: spd_party_leader_1 == "Breitscheid"
 choose-if: (reformist_pas_r + left_pas_r*0.8) > (left_pas_r*0.3 + center_pas_r + non_inscrit_pas_r)
 on-arrival: spd_party_leader_1 = "vacant"
 go-to: party_leader_election
 
 @challange_muller
+subtitle: [+ reformist_pas_r + center_pas_r + non_inscrit_pas_r + labor_pas_r +]% support
 view-if: spd_party_leader_2 == "Müller"
 choose-if: (left_pas_r) > (reformist_pas_r + center_pas_r + non_inscrit_pas_r + labor_pas_r)
 on-arrival: spd_party_leader_2 = "vacant"
 go-to: party_leader_election
 
 @challange_crispien
+subtitle: [+ left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r +]% support
 view-if: spd_party_leader_3 == "Crispien"
 choose-if: (left_pas_r > (left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r)) or (reformist_pas_r > (left_pas_r*0.2 + center_pas_r + non_inscrit_pas_r))
 on-arrival: spd_party_leader_3 = "vacant"
@@ -426,30 +429,39 @@ go-to: berlin_menu if not (spd_party_leader_3 == "vacant" or spd_party_leader_2 
 
 The vacant spots will be filled
 
+- @elect_wels: Elect Otto Wels (center)
 - @elect_seydewitz: Elect Max Seydewitz (left)
 - @elect_breitscheid: Elect Rudolf Breitscheid (centrist)
 - @elect_vogel: Elect Hans Vogel (neorevisionist)
 - @elect_braun: Elect Otto Braun (reformist)
 - @elect_tarnow: Elect Fritz Tarnow (labour)
 - @elect_rosenfeld: Elect Kurt Rosenfeld (left)
+- @berlin_menu
+
+
+@elect_wels
+view-if: spd_party_leader_1 == "vacant" and wels_in = "SPD"
+choose-if: (reformist_pas_r + center_pas_r) < 50
+on-arrival: spd_party_leader_1 = "Wels"
+go-to: elect_new_leader
 
 @elect_seydewitz
-view-if: spd_party_leader_1 == "vacant"
+view-if: spd_party_leader_1 == "vacant" and seydewitz_in = "SPD"
 
 @elect_breitscheid
-view-if: spd_party_leader_1 == "vacant"
+view-if: spd_party_leader_1 == "vacant" and breitscheid_in =  "SPD"
 
 @elect_vogel
-view-if: spd_party_leader_2 == "vacant"
+view-if: spd_party_leader_2 == "vacant" and vogel_in = "SPD" and neorevisionism
 
 @elect_braun
-view-if: spd_party_leader_2 == "vacant"
+view-if: spd_party_leader_2 == "vacant" and braun_in = "SPD"
 
 @elect_tarnow
-view-if: spd_party_leader_3 == "vacant"
+view-if: spd_party_leader_3 == "vacant" and tarnow_in = "SPD"
 
 @elect_rosenfeld
-view-if: spd_party_leader_3 == "vacant"
+view-if: spd_party_leader_3 == "vacant" and rosenfeld_in = "SPD"
 
 
 
