@@ -1,0 +1,35 @@
+title: Stegerwald new Chancellor
+subtitle: Ebert appoints Adam Stegerwald of the Z chnacellor.
+view-if: bourgeois_united_front >= 1 and year <= 1924
+max-visits: 1 
+tags: event 
+new-page: true 
+face-image: img/portraits/StegerwaldAdam.jpg 
+
+= Stegerwald to be Chancellor
+
+With our party out of government talks, the <span style="color: [+ dnvp_colour +];">**DNVP**</span> will be approached for discussing a majority bourgeois coalition. They have shown themselves ready to compromise after having rebuffed some other offers before but they still demand to be included in Prussia which would naturally kick us out of the coalition.
+
+- @dnvp_enters_prussia: We will be expelled from Prussia
+- @no_compromise: The Centrists prefer us over the <span style="color: [+ dnvp_colour +];">**DNVP**</span>
+
+@dnvp_enters_prussia
+view-if: bourgeois_united_front >= 5 or z_relation <= 40
+on-arrival: bourgeois_united_front += 2; national_gov = "Right"; chancellor = 'Stegerwald'; chancellor_party = 'Z';  in_toleration = 0; national_gov = "Right"; foreign_minister = 'von Rosenberg'; foreign_minister_party = 'I'; interior_minister = 'Jarres'; interior_minister_party = 'DVP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Hergt'; economic_minister_party = 'DNVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Schiele'; agriculture_minister_party = 'DNVP'; transport_minister = 'Oeser'; transport_minister_party = 'DDP'; postal_minister = 'Höfle'; postal_minister_party = 'Z'; workers_kpd += 4; unemployed_kpd += 3; prussia_gov = "Right"; prussia_spd = 0; prussia_ddp = 0; prussia_dnvp = 1
+
+We have angered the bourgeois parties enough for them to seek a Bourgeois coalition in Prussia and the Reich.
+
+@no_compromise
+view-if: bourgeois_united_front < 5 and z_relation > 40
+on-arrival: national_gov = "Bourgeois"; chancellor = 'vacant'; bourgeois_united_front += 1; stegerwald_failed_unity = 1
+
+We might have not accepted every compromise but we are still preferable to the <span style="color: [+ dnvp_colour +];">**DNVP**</span>.
+
+
+
+
+
+
+
+
+
