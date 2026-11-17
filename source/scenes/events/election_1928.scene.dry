@@ -2177,7 +2177,7 @@ subtitle: <span style ="color: #c00000;">**SPD**</span>[? if sapd_formed:  + <sp
 view-if: social_democratic_coalition >= 50
 choose-if: uspd_relation >= 40
 unavailable-subtitle: We have lost the trust of our former ideological sister parties.
-on-arrival: leverage += 10; in_social_democratic_coalition = 1; spd_in_government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not sapd_formed; labor_minister_party = "SAPD" if sapd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD";  national_gov == "Weimar" = 0
+on-arrival: leverage += 10; in_social_democratic_coalition = 1; spd_in_government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not sapd_formed; labor_minister_party = "SAPD" if sapd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD"; national_gov = "Social-Democratic"
 
 We must choose a chancelor now.
 
