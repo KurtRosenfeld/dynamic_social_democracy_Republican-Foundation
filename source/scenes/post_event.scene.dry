@@ -3202,7 +3202,7 @@ if (
     Q.month == 11 && 
     !Q.lvp_formed &&
     (
-        Q.not national_gov = "Grand" || 
+        Q.national_gov !== "Grand" || 
         (
             (Q.national_gov == "Grand" && Q.prussia_gov == "Grand" && Q.coalition_dissent < 1 && Q.foreign_minister_party == "DVP") || 
             (Q.national_gov == "Grand" && Q.prussia_gov == "Grand" && Q.coalition_dissent < 2 && Q.foreign_minister_party != "DVP")
