@@ -326,7 +326,8 @@ go-to: selection_of_ministries_stresemann
 The bourgeois parties agreed to let [+ chancellor +] ([+ chancellor_party +]) be chancellor.
 
 @fuck_monarchism
-choose-if: ddp_relation <= 50 and left_strength > reformist_strength
+choose-if: (ddp_relation <= 50 or z_relation < 30)and left_strength > reformist_strength
 unavailable-subtitle: The DNVP is in favour of the Ruhrkampf. We need to find a way to end it.
+on-arrival: bourgeois_united_front += 2
                                                                                                                                      
-I have yet to figure out better paths for this                                                                                                                        
+Stresemann can't form a majority goverment without our support. The <span style="color: [+ dnvp_colour +];">**DNVP**</span> won't support him either out of his *traitorous stance towards the nation*. Ebert will have to find another chancellor...                                                                                                                
