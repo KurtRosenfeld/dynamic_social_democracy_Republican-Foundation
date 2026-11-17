@@ -7,7 +7,7 @@ on-arrival: {!
 
 Q.parteitag_seats = 390; 
 
-Q.neorev_spd_r = 0.5; Q.socpat_strength = 1; Q.socpat_spd_r = 0.5;
+Q.neorevisionist_spd_r = 0.5; Q.social_patriot_strength = 1; Q.social_patriot_spd_r = 0.5;
 
 Q.left_pas = 0;
 Q.center_pas = 0;
@@ -18,17 +18,17 @@ Q.socpat_pas = 0;
 Q.other_pas = 0;
 Q.non_inscrit_pas = 0;
 
-Q.neorev_strength = Q.neorev_strength || 0;
-Q.neorev_dissent  = Q.neorev_dissent  || 0;
-Q.socpat_dissent  = Q.socpat_dissent  || 0;
+Q.neorevisionist_strength = Q.neorevisionist_strength || 0;
+Q.neorevisionist_dissent  = Q.neorevisionist_dissent  || 0;
+Q.social_patriot_dissent  = Q.social_patriot_dissent  || 0;
 
 
 Q.left_pas = (Q.left_strength + Q.left_spd_r)*((100-Q.left_dissent)/100);
 Q.center_pas = (Q.center_strength + Q.center_spd_r)*((100-Q.center_dissent)/100);
 Q.labor_pas = (Q.labor_strength + Q.labor_spd_r)*((100-Q.labor_dissent)/100);
 Q.reformist_pas = (Q.reformist_strength + Q.reformist_spd_r)*((100-Q.reformist_dissent)/100);
-Q.neorev_pas = (Q.neorev_strength + Q.neorev_spd_r)*((100-Q.neorev_dissent)/100);
-Q.socpat_pas = (Q.socpat_strength + Q.socpat_spd_r)*((100-Q.socpat_dissent)/100);
+Q.neorev_pas = (Q.neorevisionist_strength + Q.neorevisionist_spd_r)*((100-Q.neorevisionist_dissent)/100);
+Q.socpat_pas = (Q.social_patriot_strength + Q.social_patriot_spd_r)*((100-Q.social_patriot_dissent)/100);
 
 Q.other_pas = 3;
 if (Q.neorevisionism == 0) Q.other_pas += Q.neorev_pas + 1;
