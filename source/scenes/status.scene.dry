@@ -14,7 +14,7 @@ if (Q.economic_growth) {
 }
 !}
 
-= Status
+= Status like tf is this?
 
 [+ month : month +] [+ year +][? if rubicon:, Week [+ week +]?]
 
