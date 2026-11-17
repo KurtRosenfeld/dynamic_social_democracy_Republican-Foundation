@@ -436,16 +436,16 @@ view-if: spd_party_leader_1 == "vacant"
 view-if: spd_party_leader_1 == "vacant"
 
 @elect_vogel
-spd_party_leader_2 == "vacant"
+view-if: spd_party_leader_2 == "vacant"
 
 @elect_braun
-spd_party_leader_2 == "vacant"
+view-if: spd_party_leader_2 == "vacant"
 
 @elect_tarnow
-spd_party_leader_3 == "vacant"
+view-if: spd_party_leader_3 == "vacant"
 
 @elect_rosenfeld
-spd_party_leader_3 == "vacant"
+view-if: spd_party_leader_3 == "vacant"
 
 
 
