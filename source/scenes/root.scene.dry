@@ -81,9 +81,10 @@ Q.social_patriot_strength = 0
 Q.social_patriot_dissent = 0;
 
 Q.left_spd_r = 1;
-Q.center_spd_r = 8;
+Q.center_spd_r = 7.9;
 Q.labor_spd_r = 2.2;
-Q.reformist_spd_r = 11.2;
+Q.reformist_spd_r = 10.8;
+Q.neorevissionist_spd_r = 0.6
 
 Q.right_spd_r = 0;
 
