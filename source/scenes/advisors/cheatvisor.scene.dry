@@ -38,7 +38,7 @@ title: Scene Testing shortcuts
 - @1924_party_conference: 1924 Conference
 
 @1924_party_conference
-go-to: events.conference_1924.scene.dry
+go-to: conference_1924
 
 @make_nsfb
 title: Make NSFB
