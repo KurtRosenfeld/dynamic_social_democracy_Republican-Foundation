@@ -1,6 +1,6 @@
 title: Marx in trouble
 subtitle: (not that Marx)
-view-if: chancellor == "Marx"; early_enabling_act == 1; month == 2; year == 1924
+view-if: chancellor == "Marx" and early_enabling_act == 1 and month == 2 and year == 1924
 max-visits: 1 
 tags: event 
 new-page: true 
