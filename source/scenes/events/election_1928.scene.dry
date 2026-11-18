@@ -1106,7 +1106,7 @@ if (Q.z_r >= Q.spd_r && Q.z_r >= Q.nsdap_r && Q.z_r >= Q.kpd_r && Q.z_r >= (Q.dn
     Q.largest_party = 'Z';
 }
 
-if ((Q.dnvp_r + Q.lb_r) >= Q.spd_r && (Q.dnvp_r + Q.lb_r)) >= Q.nsdap_r && (Q.dnvp_r + Q.lb_r) >= Q.kpd_r && (Q.dnvp_r + Q.lb_r) >= Q.z_r) {
+if ((Q.dnvp_r + Q.lb_r) >= Q.spd_r && (Q.dnvp_r + Q.lb_r) >= Q.nsdap_r && (Q.dnvp_r + Q.lb_r) >= Q.kpd_r && (Q.dnvp_r + Q.lb_r) >= Q.z_r) {
     Q.largest_party = 'DNVP';
 }
 
