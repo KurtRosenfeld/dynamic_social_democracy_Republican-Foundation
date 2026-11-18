@@ -24,9 +24,9 @@ title: Try to establish Ledebour as unity candidate for the next presidential el
 choose-if: not ledebour_in == "KPD"
 unavailable-subtitle: A <span style="color: [+ kpd_colour +];">**KPD**</span> candidate is not really a compromise to begin with...
 view-if: ledebour_unity_support < 2
-on-arrival: ledebour_unity_support += 1 if left_strength > reformist_strength
+on-arrival: ledebour_unity_support += 1 if left_strength > reformist_strength; ledebour_unity_support += 1 if (uspd_relation >= 80 and ledebour_in == "USPD"); ledebour_unity_support += 1 if (sb_relation >= 65 and ledebour_in == "SB")
 
-[? if left_strength > reformist_strength: We are making progress to establish Ledebour as unity candidate of the left. ?][? if left_strength <= reformist_strength: The reformist faction has made any progress on this issue impossible... ?]
+[? if left_strength > reformist_strength: We are making progress to establish Ledebour as unity candidate of the left. ?][? if left_strength <= reformist_strength: The reformist faction has made any progress on this issue quite hard... ?]
 
 @sign_unity_candidate_ledebour
 title: Ledebour will do it!
