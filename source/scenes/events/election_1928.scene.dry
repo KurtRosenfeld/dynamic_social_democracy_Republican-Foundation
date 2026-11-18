@@ -2190,7 +2190,7 @@ Hergt has made an arrangement with the <span style="color: [+ z_colour +];">**Ce
 @bourgeois_unity
 title: A Bourgeois Unity coalition.
 subtitle: <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: [+ dvp_colour +];">**DVP**</span>?] + **Others** +[? if not cvp_formed:&nbsp;<span style="color: [+ dnvp_colour +];">**DNVP**</span>?] [? if not nsfb_exists and dvpf_r > 0: <span style="color: #3D3D3D;">**DVFP**</span>?] ([+ bourgeois_unity_coalition +]%)
-view-if: bourgeois_unity >= 10 and bourgeois_unity_coalition >= 50 and right_coalition < 50 and
+view-if: bourgeois_unity >= 10 and bourgeois_unity_coalition >= 50 and right_coalition < 50
 on-arrival: chancellor_party = "DNVP" if strongest_party == "DNVP"; chancellor = "Hergt" if strongest_party == "DNVP"; chancellor_party = "Z" if strongest_party == "Z"; chancellor = "Marx" if strongest_party == "Z"; chancellor = "Jarres" if strongest_party == "SPD"; chancellor_party = "DVP" if strongest_party == "SPD"; chancellor = "Luher" if strongest_party == "KPD"; chancellor_party = "I" if strongest_party == "KPD"; chancellor = "Westrap" if strongest_party == "NSDAP"; chancellor_party = "DNVP" if strongest_party == "NSDAP"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "DNVP"; justice_minister_party = ddp_name; justice_minister_party  = "LVP" if lvp_formed; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; national_gov = "Right"; z_relation -= 6; dvp_relation -= 4; ddp_relation -= 5
 
 Since there is no obvious majority for a government the Bourgeois parties have formed a unity government to keep external threats out of power.
@@ -2868,7 +2868,7 @@ The third option is to have new elections.
 
 
 @no_majority_marx
-view-if: ((bourgeois_united_front < 10 and bourgeois_unity_coalition < 50) or (bourgeois_united_front < 7 and right_coalition < 50)) and year < 1928
+view-if: ((bourgeois_united_front < 7 and right_coalition >= 50) or right_coalition < 50) and year < 1928
 on-arrival: bourgeois_united_front += 1; national_gov = "Bourgeois"; chancellor = 'Marx'; chancellor_party = 'Z';  in_toleration = 0; foreign_minister = 'Stresemann'; foreign_minister_party = 'DVP'; interior_minister = 'Jarres'; interior_minister_party = 'DVP'; justice_minister = 'Joel'; justice_minister_party = 'I'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Hamm'; economic_minister_party = 'DDP'; finance_minister = 'Luther'; finance_minister_party = 'I'; agriculture_minister = 'von Kanitz'; agriculture_minister_party = 'I'; transport_minister = 'Oeser'; transport_minister_party = 'DDP'; postal_minister = 'Höfle'; postal_minister_party = 'Z'; workers_kpd += 1; unemployed_kpd += 1
 
 
