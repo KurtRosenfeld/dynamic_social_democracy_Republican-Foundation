@@ -68,7 +68,7 @@ Q.aufhauser_labor_pas_r = Q.labor_pas_r*0.15;
 Q.tarnow_labor_pas_r = Q.labor_pas_r*0.85;
 
 
-Q.anti_ebert_r = Math.round((Q.left_pas + Q.aufhauser_labor_pas_r) * 100) / 100;
+Q.anti_ebert_r = Math.round((Q.left_pas_r + Q.aufhauser_labor_pas_r) * 100) / 100;
 Q.pro_ebert_r = Math.round((100 - Q.anti_ebert_r) * 100) / 100
 
 function allocateSeats(percentages, totalSeats = 390) {
