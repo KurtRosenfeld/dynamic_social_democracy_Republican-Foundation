@@ -1114,8 +1114,8 @@ Q.next_election_time_prussia = 12;
 Q.next_election_year_prussia = 1924;
 Q.next_election_month_prussia = 12;
 Q.next_election_year = 1924;
-Q.next_election_month = 4;
-Q.next_election_time = 4;
+Q.next_election_month = 6;
+Q.next_election_time = 6;
 // government affairs timers
 Q.campaigning_timer = 0;
 Q.spd_government_burden_timer = 0;
