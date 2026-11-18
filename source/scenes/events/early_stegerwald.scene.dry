@@ -1,6 +1,6 @@
 title: Stegerwald new Chancellor
 subtitle: Ebert appoints Adam Stegerwald of the Z chnacellor.
-view-if: view-if: bourgeois_united_front >= 1 and (year < 1924 or (year == 1924 and month <= 4))
+view-if: bourgeois_united_front >= 1 and (year < 1924 or (year == 1924 and month <= 4))
 max-visits: 1 
 tags: event 
 new-page: true 
