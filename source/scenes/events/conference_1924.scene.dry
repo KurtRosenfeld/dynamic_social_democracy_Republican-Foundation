@@ -60,12 +60,12 @@ Q.socpat_pas_r = ((Q.socpat_pas / Q.total_pas ) * 100);
 Q.other_pas_r = ((Q.other_pas / Q.total_pas ) * 100);
 Q.non_inscrit_pas_r = ((Q.non_inscrit_pas / Q.total_pas ) * 100);
 
-Q.sender_left_pas = Q.left_pas_r*0.2;
-Q.rosenfeld_left_pas = Q.left_pas_r*0.8;
-Q.breitscheid_center_pas = Q.center_pas_r*0.4;
-Q.scheidemann_center_pas = Q.center_pas_r*0.6;
-Q.aufhauser_labor_pas = Q.labor_pas_r*0.15;
-Q.tarnow_labor_pas = Q.labor_pas_r*0.85;
+Q.sender_left_pas_r = Q.left_pas_r*0.2;
+Q.rosenfeld_left_pas_r = Q.left_pas_r*0.8;
+Q.breitscheid_center_pas_r = Q.center_pas_r*0.4;
+Q.scheidemann_center_pas_r = Q.center_pas_r*0.6;
+Q.aufhauser_labor_pas_r = Q.labor_pas_r*0.15;
+Q.tarnow_labor_pas_r = Q.labor_pas_r*0.85;
 
 
 Q.anti_ebert_r = Math.round((Q.left_pas + Q.aufhauser_labor_pas) * 100) / 100;
@@ -437,10 +437,9 @@ on-arrival: spd_party_leader_3 = "vacant"
 go-to: party_leader_election
 
 @do_not_challange
-go-to: elect_new_leader
+go-to: berlin_menu if not ((spd_party_leader_3 == "vacant" and spd_party_leader_n > 2) or spd_party_leader_2 == "vacant" or spd_party_leader_1 == "vacant") else elect_new_leader
 
 @elect_new_leader
-go-to: berlin_menu if not (spd_party_leader_3 == "vacant" or spd_party_leader_2 == "vacant" or spd_party_leader_1 == "vacant")
 
 The vacant spots will be filled.
 
@@ -486,8 +485,8 @@ go-to: elect_new_leader
 
 @elect_braun
 view-if: spd_party_leader_2 == "vacant" and braun_in = "SPD"
-subtitle: [+ neorev_pas_r + scheidemann_center_pas_r + reformist_pas_r +]% support
-choose-if: (neorev_pas_r + scheidemann_center_pas_r + reformist_pas_r) > 50
+subtitle: [+ neorev_pas_r + scheidemann_center_pas_r + reformist_pas_r + other_pas_r +]% support
+choose-if: (neorev_pas_r + scheidemann_center_pas_r + reformist_pas_r + other_pas_r) > 50
 on-arrival: spd_party_leader_2 = "Braun"
 go-to: elect_new_leader
 
