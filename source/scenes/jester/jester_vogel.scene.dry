@@ -10,11 +10,11 @@ new-page: true
 
 **Active bonusses:**
 
-[? if rb_founded: <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>-member increase ?]
+[? if rb_exists: <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span>-member increase ?]
 
-[? if rb_founded: Strong increase for underfunded <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> ?]
+[? if rb_exists: Strong increase for underfunded <span style="color: [+ rb_colour +];">**[+ reichsbanner_name +]**</span> ?]
 
-[? if rb_founded: Nothing, this guy is useless ?]
+[? if not rb_exists: Nothing, this guy is useless ?]
 
 
 
