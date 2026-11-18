@@ -1,0 +1,32 @@
+title: Marx in trouble
+subtitle: (not that Marx)
+view-if: chancellor == "Marx"; early_enabling_act == 1; month == 2; year == 1924
+max-visits: 1 
+tags: event 
+new-page: true 
+face-image: img/portraits/MarxWilhelm.jpg 
+on-arrival: early_enabling_act == 0
+
+
+= Marx in trouble
+
+The enabling act that allowed Marx to form his minority government is about to expire. No party has showed itself willing to extend it - most parties have even presented demands on overturning the legislation of the current administration. We'd have to hold new elections.
+
+  
+- @new_election_shit: It will be new elections
+- @extend_for_some_reason: Actually we want to extend the enabling act
+
+
+@new_election_shit
+on-arrival: catholic_dnvp += 3; old_middle_dnvp += 3; rural_other += 2; next_election_time = 5; next_election_month = 5
+
+We will have new elections in May.
+
+@extend_for_some_reason
+choose-if: lassale_returned_from_grave_and_got_insanely_high == 67
+unavailable-subtitle: Why the fuck should we do this?
+
+
+
+
+  
