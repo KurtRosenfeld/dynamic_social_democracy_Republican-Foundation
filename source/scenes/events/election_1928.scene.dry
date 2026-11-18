@@ -2868,6 +2868,7 @@ The third option is to have new elections.
 
 
 @no_majority_marx
+title: There is no clear governing majority.
 view-if: ((bourgeois_united_front < 7 and right_coalition >= 50) or right_coalition < 50) and year < 1928
 on-arrival: bourgeois_united_front += 1; national_gov = "Bourgeois"; chancellor = 'Marx'; chancellor_party = 'Z';  in_toleration = 0; foreign_minister = 'Stresemann'; foreign_minister_party = 'DVP'; interior_minister = 'Jarres'; interior_minister_party = 'DVP'; justice_minister = 'Joel'; justice_minister_party = 'I'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Hamm'; economic_minister_party = 'DDP'; finance_minister = 'Luther'; finance_minister_party = 'I'; agriculture_minister = 'von Kanitz'; agriculture_minister_party = 'I'; transport_minister = 'Oeser'; transport_minister_party = 'DDP'; postal_minister = 'Höfle'; postal_minister_party = 'Z'; workers_kpd += 1; unemployed_kpd += 1
 
