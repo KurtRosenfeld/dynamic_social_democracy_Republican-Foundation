@@ -24,9 +24,9 @@ title: Try to establish Rosenfeld as unity candidate for the next presidential e
 choose-if: not rosenfeld_in == "KPD"
 unavailable-subtitle: A <span style="color: [+ kpd_colour +];">**KPD**</span> candidate is not really a compromise to begin with...
 view-if: rosenfeld_unity_support < 2
-on-arrival: rosenfeld_unity_support += 1 if left_strength > reformist_strength
+on-arrival: rosenfeld_unity_support += 1 if left_strength > reformist_strength; rosenfeld_unity_support += 1 if (uspd_relation >= 80 and rosenfeld_in == "USPD"); rosenfeld_unity_support += 1 if (sb_relation >= 70 and rosenfeld_in == "SB")
 
-[? if left_strength > reformist_strength: We are making progress to establish Rosenfeld as unity candidate of the left. ?][? if left_strength <= reformist_strength: The reformist faction has made any progress on this issue impossible... ?]
+[? if left_strength > reformist_strength: We are making progress to establish Rosenfeld as unity candidate of the left. ?][? if left_strength <= reformist_strength: The reformist faction has made any progress on this issue quite hard... ?]
 
 @sign_unity_candidate_rosenfeld
 title: Rosenfeld will do it!
