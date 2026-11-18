@@ -437,7 +437,7 @@ on-arrival: spd_party_leader_3 = "vacant"
 go-to: party_leader_election
 
 @do_not_challange
-go-to: berlin_menu if ((spd_party_leader_3 !== "vacant" and spd_party_leader_n <= 2) or spd_party_leader_2 !== "vacant" or spd_party_leader_1 !== "vacant"); elect_new_leader if ((spd_party_leader_3 == "vacant" and spd_party_leader_n > 2) or spd_party_leader_2 == "vacant" or spd_party_leader_1 == "vacant")
+go-to: berlin_menu if not ((spd_party_leader_3 == "vacant" and spd_party_leader_n > 2) or spd_party_leader_2 == "vacant" or spd_party_leader_1 == "vacant"); elect_new_leader if ((spd_party_leader_3 == "vacant" and spd_party_leader_n > 2) or spd_party_leader_2 == "vacant" or spd_party_leader_1 == "vacant")
 
 @elect_new_leader
 
