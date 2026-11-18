@@ -1092,18 +1092,22 @@ if (Q.election_boycott && Q.boycott_effect) {
     }
 }
 
-// The largest party can only be the NSDAP or the SPD.
+// The largest party can be basically anyone atp.
 Q.largest_party = 'SPD';
-if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.kpd_r && Q.nsdap_r >= Q.z_r) {
+if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.kpd_r && Q.nsdap_r >= Q.z_r && Q.nsdap_r >= (Q.dnvp_r + Q.lb_r)) {
     Q.largest_party = 'NSDAP';
 }
 
-if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r && Q.kpd_r >= Q.z_r) {
+if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r && Q.kpd_r >= Q.z_r && Q.kpd_r >= (Q.dnvp_r + Q.lb_r)) {
     Q.largest_party = 'KPD';
 }
 
-if (Q.z_r >= Q.spd_r && Q.z_r >= Q.nsdap_r && Q.z_r >= Q.kpd_r) {
+if (Q.z_r >= Q.spd_r && Q.z_r >= Q.nsdap_r && Q.z_r >= Q.kpd_r && Q.z_r >= (Q.dnvp_r + Q.lb_r)) {
     Q.largest_party = 'Z';
+}
+
+if ((Q.dnvp_r + Q.lb_r) >= Q.spd_r && (Q.dnvp_r + Q.lb_r)) >= Q.nsdap_r && (Q.dnvp_r + Q.lb_r) >= Q.kpd_r && (Q.dnvp_r + Q.lb_r) >= Q.z_r) {
+    Q.largest_party = 'DNVP';
 }
 
 // coalitions
@@ -1200,6 +1204,8 @@ if (Q.kvp_formed && Q.lvp_formed) {
 Q.hitler_right_coalition = parseFloat((Q.z_r + Q.nsdap_r).toFixed(1));
 
 Q.killer_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.dnvp_r + Q.others_r + Q.nsfb_r + Q.dvfp_r + Q.nsdap_r + Q.dtsp_r).toFixed(1));
+
+Q.bourgeois_unity_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.dnvp_r + Q.others_r + Q.ddp_r + Q.dvfp_r).toFixed(1));
 
 Q.goerdeler_right_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.lvp_r + Q.other_r + Q.kvp_r + Q.dnvp_r + Q.dnf_r).toFixed(1));
 
@@ -2140,6 +2146,7 @@ go-to: coalition_menu
 - @early_weimar_minority
 - @weimar_coalition_liberal_parliament
 - @wholesome_coalition
+- @bourgeois_unity
 - @schleicher_majority_coalition
 - @schleicher_left_coalition
 - @schleicher_right_coalition
@@ -2153,6 +2160,7 @@ go-to: coalition_menu
 - @no_majority
 - @no_majority_moderate
 - @no_majority_right
+- @no_majority_marx
 - @brauns_dilemma
 - @left_coalition
 - @social_democratic_coalition
@@ -2160,6 +2168,7 @@ go-to: coalition_menu
 - @right_coalition
 - @center_right_coalition
 - @bourgeois_coalition
+- @dnvp_coalition
 - @papen_coalition
 
 @papen_coalition
@@ -2169,6 +2178,22 @@ view-if: killer_coalition >= 50 and right_coalition < 50 and z_relation < 40
 choose-if: not nsdap_leader == "Hitler"
 unavailable-subtitle: Hitler does not support this.
 on-arrival: chancellor = "Papen"; chancellor_party = "Z"
+
+@dnvp_coalition
+title: The <span style="color: [+ dnvp_colour +];">**DNVP**</span> forms a right coalition.
+subtitle: <span style="color: [+ dnvp_colour +];">**DNVP**</span> + <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span>[? if dvp_exist:&nbsp;+ <span style="color: [+ dvp_colour +];">**DVP**</span>?] + **Others** ([+ right_coalition +]%)
+view-if: right_coalition >= 50 and bourgeois_unity >= 7 and strongest_party == "DNVP"
+on-arrival: national_gov = "Right"; chancellor = "Hergt"; chancellor_party = "DNVP"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "DNVP"; justice_minister_party = Z; labor_minister_party = "Z"; reichswehr_minister_party = "DNVP"; economic_minister_party = "WP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP" finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "DNVP"; z_relation -= 6; dvp_relation -= 4; new_middle_ddp -= 4; old_middle_ddp -= 3; new_middle_other += 4; old_middle_dnvp += 2
+
+Hergt has made an arrangement with the <span style="color: [+ z_colour +];">**Centrists**</span> and various other parties.
+
+@bourgeois_unity
+title: A Bourgeois Unity coalition.
+subtitle: <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: [+ dvp_colour +];">**DVP**</span>?] + **Others** +[? if not cvp_formed:&nbsp;<span style="color: [+ dnvp_colour +];">**DNVP**</span>?] [? if not nsfb_exists and dvpf_r > 0: <span style="color: #3D3D3D;">**DVFP**</span>?] ([+ bourgeois_unity_coalition +]%)
+view-if: bourgeois_unity >= 10 and bourgeois_unity_coalition >= 50 and right_coalition < 50 and
+on-arrival: chancellor_party = "DNVP" if strongest_party == "DNVP"; chancellor = "Hergt" if strongest_party == "DNVP"; chancellor_party = "Z" if strongest_party == "Z"; chancellor = "Marx" if strongest_party == "Z"; chancellor = "Jarres" if strongest_party == "SPD"; chancellor_party = "DVP" if strongest_party == "SPD"; chancellor = "Luher" if strongest_party == "KPD"; chancellor_party = "I" if strongest_party == "KPD"; chancellor = "Westrap" if strongest_party == "NSDAP"; chancellor_party = "DNVP" if strongest_party == "NSDAP"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "DNVP"; justice_minister_party = ddp_name; justice_minister_party  = "LVP" if lvp_formed; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; national_gov = "Right"; z_relation -= 6; dvp_relation -= 4; ddp_relation -= 5
+
+Since there is no obvious majority for a government the Bourgeois parties have formed a unity government to keep external threats out of power.
 
 
 @social_democratic_coalition
@@ -2840,6 +2865,15 @@ The third option is to have new elections.
 - @toleration_bruning_right: We will tolerate Brüning's right coalition.
 - @new_elections: We will have new elections.
 - @unity_government
+
+
+@no_majority_marx
+view-if: ((bourgeois_united_front < 10 and bourgeois_unity_coalition < 50) or (bourgeois_united_front < 7 and right_coalition < 50)) and year < 1928
+on-arrival: bourgeois_united_front += 1; national_gov = "Bourgeois"; chancellor = 'Marx'; chancellor_party = 'Z';  in_toleration = 0; foreign_minister = 'Stresemann'; foreign_minister_party = 'DVP'; interior_minister = 'Jarres'; interior_minister_party = 'DVP'; justice_minister = 'Joel'; justice_minister_party = 'I'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Hamm'; economic_minister_party = 'DDP'; finance_minister = 'Luther'; finance_minister_party = 'I'; agriculture_minister = 'von Kanitz'; agriculture_minister_party = 'I'; transport_minister = 'Oeser'; transport_minister_party = 'DDP'; postal_minister = 'Höfle'; postal_minister_party = 'Z'; workers_kpd += 1; unemployed_kpd += 1
+
+
+Marx has formed a minority cabinet relying on changing support of various other parties.
+
 
 
 @unity_government
