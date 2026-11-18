@@ -5,7 +5,7 @@ max-visits: 1
 tags: event 
 new-page: true 
 face-image: img/portraits/MarxWilhelm.jpg 
-on-arrival: early_enabling_act == 0
+on-arrival: early_enabling_act = 0
 
 
 = Marx in trouble
