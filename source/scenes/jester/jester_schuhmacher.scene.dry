@@ -1,0 +1,20 @@
+title: Kurt Schumacher
+is-pinned-card: true
+tags: jester
+card-image: img/portraits/SchuhmacherKurt.jpg
+face-image: img/portraits/SchuhmacherKurt.jpg
+view-if: spd_party_leader_1 == "Schuhmacher"
+new-page: true
+
+= Kurt Schumacher
+  
+**Active bonusses:**
+
+Moderate Dissent Reduction
+
+Immense Neorevisionist Dissent Reduction
+
+Left Dissent Increase
+
+
+  
