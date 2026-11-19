@@ -1,4 +1,5 @@
 title: Go to Thuringia
+subtitle: [? if thuringia_spd == 1 and thuringia_action_timer > 0: We have to wait [+ thuringia_action_timer +] months before our next action. ?]
 new-page: true
 face-image: img/land/Thuringia.svg.webp
 is-special: true
