@@ -36,10 +36,13 @@ on-arrival: rural_spd += 10; catholics_spd += 9; new_middle_spd += 2
 title: Scene Testing shortcuts
 
 - @1924_party_conference: 1924 Conference
-- @presidential_election_1925_candidate
+- @presidential_election_candidate: Presidential election
 
 @1924_party_conference
 go-to: conference_1924
+
+@presidential_election_1925_candidate
+go-to: presidential_election_1925_candidate
 
 @make_nsfb
 title: Make NSFB
