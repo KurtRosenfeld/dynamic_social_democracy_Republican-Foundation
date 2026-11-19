@@ -449,9 +449,10 @@ go-to: view_running_candidates
 
 (and maybe more, idk)
 
-<span id="mother-lowp" style="cursor:pointer">⇊ Who do the other worker's parties intend to back?:</span>
+- @minor_left_support: Who do the other worker's parties support?
 
-<div id="break-lowp" style="display:none">
+
+@minor_left_support
 
 [? if uspd_leader == "Ledebour" and not proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> ?]
 
@@ -468,19 +469,9 @@ go-to: view_running_candidates
 <span style="color: #3A0000;">**KAPD**</span>: abstain
 
 
-</div>
-
-<script>
-  let click_br_lowp = 0;
-  document.getElementById('mother-lowp').addEventListener('click', () => {
-    click_br_wo = 1 - click_br_lowp;
-    document.getElementById('break-lowp').style.display = click_br_lowp ? 'block' : 'none';
-  });
-</script>
-
 
 - @support_other_candidate
-
+- @conclude_candidacies
 
 
 
@@ -515,6 +506,7 @@ on-arrival: spd_supports_nobody
 
 @connclude_candidacies
 title: Title
+view-if: no_spd_participation == 0
 
 
 
