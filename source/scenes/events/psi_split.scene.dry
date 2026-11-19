@@ -60,7 +60,7 @@ unavailable-subtitle: The reformist faction doesn't want to support the PSI.
 
 @psi_left
 view-if: strong_communism_italy == 1
-choose-if: left_strength >= 50
+choose-if: left_strength >= 35
 on-arrival: italian_ally = "PSI"; comintern_relation += 2
 unavailable-subtitle: Our left wing lacks the influence to convince the party of this.
 
@@ -76,7 +76,7 @@ unavailable-subtitle: The reformist faction doesn't want to support the PSI.
 
 @psi_and_pci
 view-if: strong_communism_italy == 0
-choose-if: left_strength >= 87
+choose-if: left_strength >= 40
 on-arrival: italian_ally = "PSI and PCd'I"; comintern_relation += 3
 unavailable-subtitle: Our left wing lacks the influence to convince the party of this.
 
