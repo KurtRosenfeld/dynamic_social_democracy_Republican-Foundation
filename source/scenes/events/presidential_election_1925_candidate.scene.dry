@@ -1,17 +1,17 @@
 title: Presidential Election Candidates
-subtitle: Should we field our own candidate?
+subtitle: Who is going to run?
 new-page: true
 tags: event
 max-visits: 1
+view-if: your_mother == "President of America"
 
 
 
 
 
+= Presidential Election Candidates
 
-= Test Presidential Election Candidates
-
-Text, text, text, whatever
+Text, text, text, whatever - this could easily be such a long text, trvst.
 
 - @kpd_maintains_agreement
 - @kpd_says_fuck_you
@@ -79,11 +79,7 @@ go-to: view_candidate_runs
 
 - @reichsblock
 - @bourgeois
-- @center
-- @ddp
-- @communist
-- @volkisch
-- @proletarian
+
 
 
 @reichsblock
@@ -180,32 +176,33 @@ if (!Q.marx_run_1925 && Q.workers_z < 12) Q.hermes_run_1925;
 @marx_run
 view-if: marx_run_1925
 on-arrival: center_prescan = "Marx"
-go-to: ddp
+go-to: bvp
 
 
 @stegerwald_run
 view-if: stegerwald_run_2025
 on-arrival: center_prescan = "Stegerwald"
-go-to: ddp
+go-to: bvp
 
 
 @hermes_run
 view-if: hermes_run_1925
 on-arrival: center_prescan = "Hermes"
+go-to: bvp
+
+
+@bvp
+on-arrival: bvp_prescan = "Held"
+
+The BVP is expected to be supported by some other regionalist parties.
+
+- @held_run: Heinrich Held
+
+@held_run
 go-to: ddp
 
 
 @ddp
-
-
-
-- @simons: Walter Simons
-- @hellpach: Willy Hellpach
-- @gessler: Otto Gessler
-
-
-
-@simons
 on-arrival: {!
 
 if (Q.spd_support_simons == 1) Q.simons_run_1925;
@@ -213,6 +210,14 @@ if (!Q.simons_run_1925 && Q.france_relation >= 70) Q.gessler_run_1925;
 if (!Q.simons_run_1925 && Q.france_relation < 70) Q.hellpach_run_1925;
 
 !}
+
+
+- @simons_run: Walter Simons
+- @hellpach_run: Willy Hellpach
+- @gessler_run: Otto Gessler
+
+
+
 
 
 @simons_run
@@ -283,17 +288,19 @@ view-if: ledebour_unity_candidate == 1 or rosenfeld_unity_candidate == 1
 
 @stay_with_unity
 
-- @ledebour_run: Georg Ledebour
-- @rosenfeld_run: Kurt Rosenfeld
+- @ledebour_run: Georg Ledebour runs for the working class
+- @rosenfeld_run: Kurt Rosenfeld runs for the working class
 
 
 @ledebour_run
 on-arrival: proletarian_prescan = "Ledebour"
 view-if: ledebour_unity_candidate == 1
+go-to: view_running_candidates
 
 @rosenfeld_run
 on-arrival: proletarian_prescan = "Rosenfeld"
 view-if: rosenfeld_unity_candidate == 1
+go-to: view_running_candidates
 
 @abandon_unity_kpd
 view-if: kpd_unity_support == 1
@@ -325,24 +332,196 @@ view-if: ledebour_unity_candidate == 0 and rosenfeld_unity_candidate == 0
 - @rosenfeld_spd_run: Run Kurt Rosenfeld
 - @scheidemann_run: Run Philipp Scheidemann
 - @braun_run: Run Otto Braun
-
+- @dont_run_anyone: Don't run anyone
 
 
 @rosenfeld_spd_run
 subtitle: He is the preferred candidate of the left.
 choose-if: left_strength >= 65 or spd_party_leader_3 == "Rosenfeld"
 unavailable-subtitle: Rosenfeld is too left-wing for the party
+on-arrival: spd_prescan = "Rosenfeld"
+go-to: view_running_candidates
+
 
 @scheidemann_run
 subtitle: He is quite experienced and appeals to our center.
 choose-if: center_strength >= 50 or scheidemann_advisor == 1
 unavailable-subtitle: Scheidemann is just too old and boring.
+on-arrival: spd_prescan = "Rosenfeld"
+go-to: view_running_candidates
 
 
 @braun_run
 subtitle: He actually doesn't want to run but his qualification speaks for itself.
 choose-if: reformist_strength > left_strength or prussia_leader == "Braun"
 unavailable-subtitle: Braun is considered too right-wing by most party members.
+on-arrival: spd_prescan = "Rosenfeld"
+go-to: view_running_candidates
+
+
+@dont_run_anyone
+subtitle: Just endorse whoever our friends are running. This could save us costs...
+on-arrival: no_spd_participation = 1
+go-to: view_running_candidates
+
+
+@view_running_candidates
+
+
+[? if bourgeois_prescan == "Marx": <span style="color: [+ z_colour +];">**Marx**</span> ?][? if bourgeois_prescan == "Simons": <span style="color: [+ other_colour +];">**Simons**</span> ?][? if bourgeois_prescan == "Jarres": <span style="color: [+ dvp_colour +];">**Jarres**</span> ?][? if bourgeois_prescan == "von Karforff": <span style="color: [+ dvp_colour +];">**von Kardorff**</span> ?][? if bourgeois_prescan == "Luther": <span style="color: [+ other_colour +];">**Luther**</span> ?]
+
+[? if bourgeois_unity_candidate == 1: - <span style="color: [+ z_colour +];">**Z**</span> ?]
+
+[? if bourgeois_unity_candidate == 1: - <span style="color: [+ dvp_colour +];">**DVP**</span> ?]
+
+[? if bourgeois_unity_candidate == 1: - <span style="color: [+ dnvp_colour +];">**DNVP**</span> ?]
+
+[? if bourgeois_unity_candidate == 1: - <span style="color: [+ ddp_colour +];">**DDP**</span> ?]
+
+[? if bourgeois_unity_candidate == 1: - <span style="color: [+ bvp_colour +];">**BVP**</span> ?]
+
+[? if bourgeois_unity_candidate == 1: - <span style="color: [+ other_colour +];">**Others**</span> ?]
+
+
+[? if reichsblock_prescan == "Jarres" or reichsblock_prescan == "Heinze": <span style="color: [+ dvp_colour +];">**[? reichsblock_prescan ?]**</span> ?][? if reichsblock_prescan == "von Westrap": <span style="color: [+ dnvp_colour +];">**[? reichsblock_prescan ?]**</span> ?]
+
+[? if reichsblock_prescan: - <span style="color: [+ dvp_colour +];">**DVP**</span> ?]
+
+[? if reichsblock_prescan: - <span style="color: [+ dnvp_colour +];">**DNVP**</span> ?]
+
+[? if reichsblock_prescan: - <span style="color: #b8996f;">**WP**</span> ?]
+
+
+[? if proletarian_prescan == "Ledebour": <span style="color: [+ ledebour_colour +];">**Ledebour**</span> ?][? if proletarian_prescan == "Rosenfeld": <span style="color: [+ rosenfeld_colour +];">**Rosenfeld**</span> ?]
+
+[? if proletarian_prescan: - <span style="color: [+ spd_colour +];">**SPD**</span> ?]
+
+[? if kpd_unity_support == 1: - <span style="color: [+ kpd_colour +];">**KPD**</span> ?]
+
+[? if proletarian_prescan == "Ledebour" and ledebour_in == "USPD": - <span style="color: [+ uspd_colour +];">**USPD**</span> ?]
+
+[? if proletarian_prescan == "Rosenfeld" and rosenfeld_in == "USPD": - <span style="color: [+ uspd_colour +];">**USPD**</span> ?]
+
+[? if proletarian_prescan == "Ledebour" and ledebour_in == "SB": - <span style="color: [+ sb_colour +];">**SB**</span> ?]
+
+[? if proletarian_prescan == "Rosenfeld" and rosenfeld_in == "SB": - <span style="color: [+ sb_colour +];">**SB**</span> ?]
+
+
+[? if spd_prescan: <span style="color: [+ spd_colour +];">**[+ spd_prescan +]**</span> ?]
+
+[? if spd_prescan: - <span style="color: [+ spd_colour +];">**SPD**</span> ?]
+
+
+[? if spd_support_simons == 1: <span style="color: [+ other_colour +];">**Simons**</span ?]
+
+[? if spd_support_simons == 1: <span style="color: [+ spd_colour +];">**SPD**</span ?]
+
+[? if spd_support_simons == 1: <span style="color: [+ ddp_colour +];">**DDP**</span ?]
+
+
+[? if z_prescan: <span style="color: [+ z_colour +];">**[+ z_prescan +]**</span> ?]
+
+[? if z_prescan: - <span style="color: [+ z_colour +];">**Z**</span> ?]
+
+
+[? if kpd_prescan: <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> ?]
+
+[? if kpd_prescan: - <span style="color: [+ kpd_colour +];">**KPD**</span> ?]
+
+
+[? if not ddp_prescan == "Simons": <span style="color: [+ ddp_colour +];">**[+ ddp_prescan +]**</span ?]
+
+[? if ddp_prescan: - <span style="color: [+ ddp_colour +];">**DDP**</span> ?]
+
+
+[? if bvp_prescan: <span style="color: [+ bvp_colour +];">**[+ bvp_prescan +]**</span> ?]
+
+[? if bvp_prescan: - <span style="color: [+ bvp_colour +];">**BVP**</span> ?]
+
+[? if bvp_prescan: - <span style="color: #63C489;">**DHP**</span> ?]
+
+[? if bvp_prescan: - <span style="color: #38C538;">**[+ dbp_name +]**</span> ?]
+
+
+[? if nsdap_prescan: <span style="color: [+ nsdap_colour +];">**[+ nsdap_prescan +]**</span> ?]
+
+[? if nsdap_prescan: - <span style="color: [+ nsdap_colour +];">**NSDAP**</span> ?]
+
+- and maybe more, idk
+
+<span id="mother-lowp" style="cursor:pointer">⇊ Who do the other worker's parties intend to back?:</span>
+
+<div id="break-lowp" style="display:none">
+
+[? if uspd_leader == "Ledebour" and not proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> ?]
+
+[? if uspd_leader == "Liebknecht" and not proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: abstain ?]
+
+[? if (uspd_leader == "Breitscheid" or uspd_leader == "Crispien") and not proletarian_prescan and spd_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ spd_colour +];">**[+ spd_prescan +]**</span> ?][? if (uspd_leader == "Breitscheid" or uspd_leader == "Crispien") and not proletarian_prescan and not spd_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: unclear ?]
+
+[? if proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span> and ledebour_unity_candidate: <span style="color: [+ ledebour_colour +];">**Ledebour**</span> ?]
+
+[? if proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span> and rosenfeld_unity_candidate: <span style="color: [+ roisenfeld_colour +];">**Rosenfeld**</span> ?]
+
+[? if sb_exists and not proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> ?]
+
+<span style="color: #3A0000;">**KAPD**</span>: abstain
+
+
+</div>
+
+<script>
+  let click_br_lowp = 0;
+  document.getElementById('mother-lowp').addEventListener('click', () => {
+    click_br_wo = 1 - click_br_lowp;
+    document.getElementById('break-lowp').style.display = click_br_lowp ? 'block' : 'none';
+  });
+</script>
+
+
+- @support_other_candidate
+
+
+
+
+@support_other_candidate
+title: Who are we going to back?
+view-if: no_spd_participation == 1
+
+
+- @centrist: Let's hope <span style="color: [+ z_colour +];">**[+ z_prescan +]**</span> won't forget our help.
+- @the_ddp: Let's hope <span style="color: [+ ddp_colour +];">**[+ ddp_prescan +]**</span> won't forget our help.
+- @them_communists: Let's hope <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> won't forget our help.
+- @noone: We won't endorse anyone...
+
+
+@centrist
+go-to: conclude_candidacies
+on-arrival: spd_supports_center
+
+@the_ddp
+go-to: conclude_candidacies
+on-arrival: spd_supports_ddp
+
+@them_communists
+go-to: conclude_candidacies
+on-arrival: spd_supports_kpd
+
+@noone
+go-to: conclude_candidacies
+on-arrival: spd_supports_nobody
+
+
+
+@connclude_candidacies
+title: Title
+
+
+
+
+
+
+
 
 
 
