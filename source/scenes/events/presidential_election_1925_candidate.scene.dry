@@ -488,19 +488,19 @@ view-if: no_spd_participation == 1
 
 @centrist
 go-to: conclude_candidacies
-on-arrival: spd_supports_center
+on-arrival: spd_supports_center = 1
 
 @the_ddp
 go-to: conclude_candidacies
-on-arrival: spd_supports_ddp
+on-arrival: spd_supports_ddp = 1
 
 @them_communists
 go-to: conclude_candidacies
-on-arrival: spd_supports_kpd
+on-arrival: spd_supports_kpd = 1
 
 @noone
 go-to: conclude_candidacies
-on-arrival: spd_supports_nobody
+on-arrival: spd_supports_nobody = 1
 
 
 
