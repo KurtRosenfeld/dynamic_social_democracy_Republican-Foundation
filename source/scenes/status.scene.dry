@@ -16,6 +16,8 @@ if (Q.economic_growth) {
 
 = Status
 
+Test: [+ heinze_run_1925 +] - [+ jarres_run_1925 +] - [+ bourgeois_unity_candidate +]
+
 [+ month : month +] [+ year +][? if rubicon:, Week [+ week +]?]
 
 Resources available: [+ resources +]
