@@ -40,6 +40,7 @@ view-if: kpd_unity_support == 0
 view-if: ddp_relation >= 35 and bourgeois_united_front < 11
 title: The <span style="color: [+ ddp_colour +];">**DDP**</span> proposes a united WEIMAR candidate.
 subtitle: They think we should focus the republican vote in one candidate from the start.
+on-arrival: bourgeois_unity_candidate = 0
 
 The <span style="color: [+ ddp_colour +];">**DDP**</span> proposes the independent politician Walter Simons as a candidate for the Weimar Coalition. They have previously tried to rally the bourgeois parties behind him which didn't get much attention from other parties.
 
@@ -61,6 +62,7 @@ go-to: view_candidate_runs
 @nothing_special_here
 title: The bourgeois are likely to hold fragmented campaigns.
 view-if: bourgeois_united_front < 11 and ddp_relation < 35
+on-arrival: bourgeois_unity_candidate = 0
 go-to: view_candidate_runs
 
 With the presidential office up for grabs most bourgeois parties want to throw their hat into the race and try their luck.
