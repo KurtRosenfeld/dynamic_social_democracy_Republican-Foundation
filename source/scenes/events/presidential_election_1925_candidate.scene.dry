@@ -325,8 +325,8 @@ view-if: ledebour_unity_candidate == 0 and rosenfeld_unity_candidate == 0
 [? if scheidemann_in == "SPD":
 <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/ScheidemannPhilipp.jpg" style="width: 100%; max-width: 190px; cursor : pointer;"/>  <div>Scheidemann used to be both party leader and then Chancellor, in 1919 he even ran against Ebert for the presidential office. His politics are perfectly aligned with those of the centrist faction arguing for cooperation with the DVP when necessary but maintaining the principles of Marx.<br/> Faction: Center </div> </div> ?]
 
-[? if scheidemann_in == "SPD":
-<div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/BraunOtto.jpg" style="width: 100%; max-width: 190px; cursor : pointer;"/>  <div>[? prussia_leader == "Braun": Otto Braun doesn't want to run. Yet still his supporters value that he is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?][? prussia_leader == "Braun": Braun  is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?].<br/> Faction: Reformist </div> </div> ?]
+[? if braun_in == "SPD":
+<div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/BraunOtto.jpg" style="width: 100%; max-width: 190px; cursor : pointer;"/>  <div>[? prussia_leader == "Braun": Otto Braun doesn't want to run. Yet still his supporters value that he is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?][? not prussia_leader == "Braun": Braun  is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?].<br/> Faction: Reformist </div> </div> ?]
 
 
 - @rosenfeld_spd_run: Run Kurt Rosenfeld
