@@ -581,5 +581,37 @@ style="display:inline;fill:[? if danzig_spd == 1 and danzig_action_timer <= 0: #
 </div>
 
 - @backSpecialScene: Leave State actions...
+- @mobile_state_menu: Mobile? Click here
+
+
+@mobile_state_menu
+
+- @prussia_state
+- @bavaria_state
+- @wurttemberg_state
+- @baden_state
+- @hesse_state
+- @thuringia_state
+- @saxony_state
+- @schaum_lippe_state
+- @backSpecialScene: Leave state actions...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
