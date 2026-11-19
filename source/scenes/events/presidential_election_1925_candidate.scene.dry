@@ -31,6 +31,7 @@ go-to: bourgeois_set_up_1925
 Even though the <span style="color: [+ kpd_colour +];">**KPD**</span> has pledged support to a candidate uniting the worker's parties, our relations have suffered too much since the agreement was reached. Ernst Thälmann will run.
 
 @bourgeois_set_up_1925
+title: Who will the other parties run?
 view-if: kpd_unity_support == 0
 
 - @bourgeois_unity_in_1925
@@ -77,8 +78,8 @@ go-to: view_candidate_runs
 
 @view_candidate_runs
 
-- @reichsblock: Who will the other parties run?
-- @bourgeois: Who will the other parties run?
+- @reichsblock: What about the right?
+- @bourgeois: What about the bourgeois?
 
 
 
