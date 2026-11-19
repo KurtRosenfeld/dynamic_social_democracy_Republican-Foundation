@@ -1,4 +1,5 @@
 title: Go to Württemberg
+subtitle: [? if wurttemberg_spd == 1 and wurttemberg_action_timer > 0: We have to wait [+ wurttemberg_action_timer +] months before our next action. ?]
 new-page: true
 is-special: true
 face-image: img/land/Württemberg.svg.webp
