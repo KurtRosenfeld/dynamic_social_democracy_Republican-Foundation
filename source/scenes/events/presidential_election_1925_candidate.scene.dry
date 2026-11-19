@@ -77,8 +77,8 @@ go-to: view_candidate_runs
 
 @view_candidate_runs
 
-- @reichsblock
-- @bourgeois
+- @reichsblock: Who will the other parties run?
+- @bourgeois: Who will the other parties run?
 
 
 
@@ -161,6 +161,7 @@ go-to: communist
 
 
 @center
+title: for title
 on-arrival: {!
 
 if (Q.chancellor !== "Marx") Q.marx_run_1925;
@@ -192,6 +193,7 @@ go-to: bvp
 
 
 @bvp
+title: for title
 on-arrival: bvp_prescan = "Held"
 
 The BVP is expected to be supported by some other regionalist parties.
@@ -203,6 +205,7 @@ go-to: ddp
 
 
 @ddp
+title: for title
 on-arrival: {!
 
 if (Q.spd_support_simons == 1) Q.simons_run_1925;
@@ -250,6 +253,7 @@ go-to: volkisch
 
 
 @volkisch
+title: for title
 on-arrival: {!
 
 if (Q.nsdap_leader == "Strasser" && Q.bourgeois_unity_candidate == 1) Q.strasser_run_1925;
@@ -265,15 +269,17 @@ if (Q.bourgeois_unity_candidate == 0) Q.ludendorff_run_1925;
 @ludendorff_run
 view-if: ludendorff_run_1925
 on-arrival: nsdap_prescan = "Ludendorff"
-
+go-to: proletarian
 
 
 @strasser_run
 view-if: strasser_run_1925
 on-arrival: nsdap_prescan = "Strasser"
+go-to: proletarian
 
 
 @proletarian
+title: for title
 
 - @unity: And we will...
 - @spd_alone: And we will...
