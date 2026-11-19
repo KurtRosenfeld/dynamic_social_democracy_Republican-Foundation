@@ -123,14 +123,14 @@ if (!Q.jarres_run_1925) Q.kardorff_run_1925;
 
 !}
 
-- @marx_run: Wilhelm Marx
+- @marx_unity_run: Wilhelm Marx
 - @simons_unity_run: Walter Simons
 - @luther_run: Hans Luther
 - @jarres_unity_run: Karl Jarres
 - @kardorff_run: Siegfred von Kardorff
 
 
-@marx_run
+@marx_unity_run
 view-if: marx_run_1925
 on-arrival: bourgeois_prescan = "Marx"
 go-to: communist
