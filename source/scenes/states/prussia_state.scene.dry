@@ -1,4 +1,5 @@
 title: Go to Prussia
+subtitle: [? if prussia_spd == 1 and prussia_action_timer > 0: We have to wait [+ prussia_action_timer +] months before our next action. ?]
 new-page: true
 is-special: true
 face-image: img/land/Prussia.svg.webp
