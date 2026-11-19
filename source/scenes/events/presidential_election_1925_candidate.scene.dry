@@ -4,10 +4,35 @@ new-page: true
 tags: event
 max-visits: 1
 view-if: your_mother == "President of America"
+on-arrival: {!
 
+if (Q.bourgeois_unity_candidate == 0) {
+if (Q.freiberg_bloodbath_seen == 1 && Q.dnvp_votes < 25) Q.jarres_run_1925;
+if (Q.dnvp_votes >= 25) Q.westrap_run_1925;
+if (!Q.jarres_run_1925 && !Q.westrap_run_1925) Q.heinze_run_1925;
 
+if (Q.chancellor !== "Marx") Q.marx_run_1925;
+if (!Q.marx_run_1925 && Q.workers_z >= 12) Q.stegerwald_run_1925;
+if (!Q.marx_run_1925 && Q.workers_z < 12) Q.hermes_run_1925;
 
+if (Q.spd_support_simons == 1) Q.simons_run_1925;
+if (!Q.simons_run_1925 && Q.france_relation >= 70) Q.gessler_run_1925;
+if (!Q.simons_run_1925 && Q.france_relation < 70) Q.hellpach_run_1925;
+}
 
+if (Q.bourgeois_unity_candidate == 1) {
+if (Q.bourgeois_unity >= 16 && Q.bourgeois_unity < 20 && Q.z_relation < 30 && Q.pro_repulic >= 65 && Q.chancellor == "Luther") Q.marx_run_1925;
+if (Q.bourgeois_unity >= 20 && Q.z_relation < 30 && Q.pro_repulic >= 65 && Q.chancellor == "Luther") Q.simons_run_1925;
+if (Q.chancellor !== "Luther") Q.luther_run_1925;
+if (Q.freiberg_bloodbath_seen == 1 && !Q.luther_run && !Q.simons_run_1925 && !Q.luther_run_1925) Q.jarres_run_1925;
+if (!Q.jarres_run_1925) Q.kardorff_run_1925;
+}
+
+if (Q.nsdap_leader == "Strasser" && Q.bourgeois_unity_candidate == 1) Q.strasser_run_1925;
+if (Q.nsdap_leader == "Strasser" && Q.bourgeois_unity_candidate == 1) Q.ludendorff_run_1925;
+if (Q.bourgeois_unity_candidate == 0) Q.ludendorff_run_1925;
+
+!}
 
 = Presidential Election Candidates
 
@@ -85,13 +110,7 @@ go-to: view_candidate_runs
 
 @reichsblock
 view-if: bourgeois_unity_candidate == 0
-on-arrival: {!
 
-if (Q.freiberg_bloodbath_seen == 1 && Q.dnvp_votes < 25) Q.jarres_run_1925;
-if (Q.dnvp_votes >= 25) Q.westrap_run_1925;
-if (!Q.jarres_run_1925 && !Q.westrap_run_1925) Q.heinze_run_1925;
-
-!}
 
 - @jarres_run: Karl Jarres
 - @westrap_run: Kuno von Westrap
@@ -114,15 +133,6 @@ on-arrival: reichsblock_prescan = "Heinze"
 
 @bourgeois
 view-if: bourgeois_unity_candidate == 1
-on-arrival: {!
-
-if (Q.bourgeois_unity >= 16 && Q.bourgeois_unity < 20 && Q.z_relation < 30 && Q.pro_repulic >= 65 && Q.chancellor == "Luther") Q.marx_run_1925;
-if (Q.bourgeois_unity >= 20 && Q.z_relation < 30 && Q.pro_repulic >= 65 && Q.chancellor == "Luther") Q.simons_run_1925;
-if (Q.chancellor !== "Luther") Q.luther_run_1925;
-if (Q.freiberg_bloodbath_seen == 1 && !Q.luther_run && !Q.simons_run_1925 && !Q.luther_run_1925) Q.jarres_run_1925;
-if (!Q.jarres_run_1925) Q.kardorff_run_1925;
-
-!}
 
 - @marx_unity_run: Wilhelm Marx
 - @simons_unity_run: Walter Simons
@@ -163,13 +173,7 @@ go-to: communist
 
 @center
 title: for title
-on-arrival: {!
 
-if (Q.chancellor !== "Marx") Q.marx_run_1925;
-if (!Q.marx_run_1925 && Q.workers_z >= 12) Q.stegerwald_run_1925;
-if (!Q.marx_run_1925 && Q.workers_z < 12) Q.hermes_run_1925;
-
-!}
 
 - @marx_run: Wilhelm Marx
 - @stegerwald_run: Adam Stegerwald
@@ -207,13 +211,7 @@ go-to: ddp
 
 @ddp
 title: for title
-on-arrival: {!
 
-if (Q.spd_support_simons == 1) Q.simons_run_1925;
-if (!Q.simons_run_1925 && Q.france_relation >= 70) Q.gessler_run_1925;
-if (!Q.simons_run_1925 && Q.france_relation < 70) Q.hellpach_run_1925;
-
-!}
 
 
 - @simons_run: Walter Simons
@@ -255,13 +253,7 @@ go-to: volkisch
 
 @volkisch
 title: for title
-on-arrival: {!
 
-if (Q.nsdap_leader == "Strasser" && Q.bourgeois_unity_candidate == 1) Q.strasser_run_1925;
-if (Q.nsdap_leader == "Strasser" && Q.bourgeois_unity_candidate == 1) Q.ludendorff_run_1925;
-if (Q.bourgeois_unity_candidate == 0) Q.ludendorff_run_1925;
-
-!}
 
 - @ludendorff_run: The NSDAP will support Erich von Ludendorff
 - @strasser_run: The NSDAP will support Otto Strasser
