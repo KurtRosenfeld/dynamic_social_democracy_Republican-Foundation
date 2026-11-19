@@ -326,7 +326,7 @@ view-if: ledebour_unity_candidate == 0 and rosenfeld_unity_candidate == 0
 <div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/ScheidemannPhilipp.jpg" style="width: 100%; max-width: 190px; cursor : pointer;"/>  <div>Scheidemann used to be both party leader and then Chancellor, in 1919 he even ran against Ebert for the presidential office. His politics are perfectly aligned with those of the centrist faction arguing for cooperation with the DVP when necessary but maintaining the principles of Marx.<br/> Faction: Center </div> </div> ?]
 
 [? if braun_in == "SPD":
-<div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/BraunOtto.jpg" style="width: 100%; max-width: 190px; cursor : pointer;"/>  <div>[? prussia_leader == "Braun": Otto Braun doesn't want to run. Yet still his supporters value that he is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?][? not prussia_leader == "Braun": Braun  is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?].<br/> Faction: Reformist </div> </div> ?]
+<div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/BraunOtto.jpg" style="width: 100%; max-width: 190px; cursor : pointer;"/>  <div>[? if prussia_leader == "Braun": Otto Braun doesn't want to run. Yet still his supporters value that he is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?][? if not prussia_leader == "Braun": Braun  is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?].<br/> Faction: Reformist </div> </div> ?]
 
 
 - @rosenfeld_spd_run: Run Kurt Rosenfeld
@@ -383,7 +383,7 @@ go-to: view_running_candidates
 [? if bourgeois_unity_candidate == 1: - <span style="color: [+ other_colour +];">**Others**</span> ?]
 
 
-[? if reichsblock_prescan == "Jarres" or reichsblock_prescan == "Heinze": <span style="color: [+ dvp_colour +];">**[? reichsblock_prescan ?]**</span> ?][? if reichsblock_prescan == "von Westrap": <span style="color: [+ dnvp_colour +];">**[? reichsblock_prescan ?]**</span> ?]
+[? if reichsblock_prescan == "Jarres" or reichsblock_prescan == "Heinze": <span style="color: [+ dvp_colour +];">**[+ reichsblock_prescan +]**</span> ?][? if reichsblock_prescan == "von Westrap": <span style="color: [+ dnvp_colour +];">**[+ reichsblock_prescan +]**</span> ?]
 
 [? if reichsblock_prescan: - <span style="color: [+ dvp_colour +];">**DVP**</span> ?]
 
@@ -412,11 +412,11 @@ go-to: view_running_candidates
 [? if spd_prescan: - <span style="color: [+ spd_colour +];">**SPD**</span> ?]
 
 
-[? if spd_support_simons == 1: <span style="color: [+ other_colour +];">**Simons**</span ?]
+[? if spd_support_simons == 1: <span style="color: [+ other_colour +];">**Simons**</span> ?]
 
-[? if spd_support_simons == 1: <span style="color: [+ spd_colour +];">**SPD**</span ?]
+[? if spd_support_simons == 1: <span style="color: [+ spd_colour +];">**SPD**</span> ?]
 
-[? if spd_support_simons == 1: <span style="color: [+ ddp_colour +];">**DDP**</span ?]
+[? if spd_support_simons == 1: <span style="color: [+ ddp_colour +];">**DDP**</span> ?]
 
 
 [? if z_prescan: <span style="color: [+ z_colour +];">**[+ z_prescan +]**</span> ?]
@@ -429,7 +429,7 @@ go-to: view_running_candidates
 [? if kpd_prescan: - <span style="color: [+ kpd_colour +];">**KPD**</span> ?]
 
 
-[? if not ddp_prescan == "Simons": <span style="color: [+ ddp_colour +];">**[+ ddp_prescan +]**</span ?]
+[? if not ddp_prescan == "Simons": <span style="color: [+ ddp_colour +];">**[+ ddp_prescan +]**</span> ?]
 
 [? if ddp_prescan: - <span style="color: [+ ddp_colour +];">**DDP**</span> ?]
 
@@ -456,7 +456,7 @@ go-to: view_running_candidates
 
 [? if uspd_leader == "Ledebour" and not proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> ?]
 
-[? if uspd_leader == "Liebknecht" and not proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: abstain ?]
+[? if uspd_leader == "Liebknecht" and not proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: abstain ?]
 
 [? if (uspd_leader == "Breitscheid" or uspd_leader == "Crispien") and not proletarian_prescan and spd_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ spd_colour +];">**[+ spd_prescan +]**</span> ?][? if (uspd_leader == "Breitscheid" or uspd_leader == "Crispien") and not proletarian_prescan and not spd_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: unclear ?]
 
@@ -504,7 +504,7 @@ on-arrival: spd_supports_nobody
 
 
 
-@connclude_candidacies
+@conclude_candidacies
 title: Title
 view-if: no_spd_participation == 0
 
