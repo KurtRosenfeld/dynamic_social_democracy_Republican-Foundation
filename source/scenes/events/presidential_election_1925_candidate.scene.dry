@@ -447,7 +447,7 @@ go-to: view_running_candidates
 
 [? if nsdap_prescan: - <span style="color: [+ nsdap_colour +];">**NSDAP**</span> ?]
 
-- and maybe more, idk
+(and maybe more, idk)
 
 <span id="mother-lowp" style="cursor:pointer">⇊ Who do the other worker's parties intend to back?:</span>
 
