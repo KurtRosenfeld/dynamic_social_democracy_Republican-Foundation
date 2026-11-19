@@ -1,4 +1,5 @@
 title: Go to Baden
+subtitle: [? if baden_spd == 1 and baden_action_timer > 0: We have to wait [+ baden_action_timer +] months before our next action. ?]
 new-page: true
 is-special: true
 face-image: img/land/Baden.svg.webp
