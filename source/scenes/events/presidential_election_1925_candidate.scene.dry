@@ -125,6 +125,7 @@ on-arrival: reichsblock_prescan = "Karl Jarres"
 face-image: portraits/jarres.jpg
 go-to: center
 
+Karl Jarres has gained popularity as the "hero of the nation" during the Ruhrkampf.
 
 @westrap_run
 view-if: westrap_run_1925
@@ -132,12 +133,15 @@ on-arrival: reichsblock_prescan = "Kuno von Westrap"
 face-image: portraits/Kuno_von_Westrap.jpg
 go-to: center
 
+The immense popularity of the DNVP has led Westrap to be chosen by the right.
 
 @heinze_run
 view-if: heinze_run_1925
 on-arrival: reichsblock_prescan = "Rudolf Heinze"
 face-image: portraits/HeinzeRufolf.jpg
 go-to: center
+
+Rudolf Heinze is a DVP politican who took a leading role in Saxon politics.
 
 
 @bourgeois
@@ -156,6 +160,7 @@ on-arrival: bourgeois_prescan = "Wilhelm Marx"
 face-image: portraits/MarxWilhelm.jpg
 go-to: communist
 
+Wilhelm Marx is the well-established leader of the Center Party.
 
 @simons_unity_run
 view-if: simons_run_1925
@@ -163,6 +168,7 @@ on-arrival: bourgeois_prescan = "Walter Simons"
 face-image: portraits/SimonsWalter.jpg
 go-to: communist
 
+Walter Simons is the head of the Reichsgericht and embodies anti-socialist Republicanism.
 
 @luther_run
 view-if: luther_run_1925
@@ -170,12 +176,15 @@ on-arrival: bourgeois_prescan = "Hans Luther"
 face-image: portraits/luther.jpg
 go-to: communist
 
+Hans Luther is the perfect bourgeois candidate as he has both political experience and does not belong to any party.
 
 @jarres_unity_run
 view-if: jarres_run_1925
 on-arrival: bourgeois_prescan = "Karl Jarres"
 face-image: portraits/jarres.jpg
 go-to: communist
+
+Karl Jarres has gained popularity as the "hero of the nation" during the Ruhrkampf.
 
 
 @kardorff_run
@@ -184,6 +193,7 @@ on-arrival: bourgeois_prescan = "Siegfried von Kardorff"
 face-image: portraits/vonKardoffSiegfried.jpg
 go-to: communist
 
+Siegfried von Kardorff is a former DNVP, now DVP, politician who embodies conservatism and pragnatuc politics since the Kaiserreich.
 
 @center
 title: for title
@@ -199,6 +209,7 @@ on-arrival: center_prescan = "Wilhelm Marx"
 face-image: portraits/MArxWilhelm.jpg
 go-to: bvp
 
+Wilhelm Marx is the well-established leader of the Center Party.
 
 @stegerwald_run
 view-if: stegerwald_run_2025
@@ -206,6 +217,7 @@ on-arrival: center_prescan = "Adam Stegerwald"
 face-image: portraits/stegerwald.jpg
 go-to: bvp
 
+Adam Stegerwald is a catholic unionist open to cooperation with the DNVP.
 
 @hermes_run
 view-if: hermes_run_1925
@@ -213,6 +225,7 @@ on-arrival: center_prescan = "Andreas Hermes"
 face-image: portraits/HermesAndreas.jpg
 go-to: bvp
 
+Andreas Hermes is an established figure in the Center Party.
 
 @bvp
 title: for title
@@ -226,6 +239,7 @@ The BVP is expected to be supported by some other regionalist parties.
 @held_run
 go-to: ddp
 
+Heinrich Held is very Bavarian (idk).
 
 @ddp
 title: for title
@@ -246,6 +260,7 @@ on-arrival: ddp_prescan = "Walter Simons"
 face-image: portraits/SimonsWalter.jpg
 go-to: communist if kpd_unity_support == 0; volkisch if kpd_unity_support == 1
 
+Walter Simons is the head of the Reichsgericht and embodies anti-socialist Republicanism.
 
 @hellpach_run
 view-if: hellpach_run_1925
@@ -253,6 +268,7 @@ on-arrival: ddp_prescan = "Willy Hellpach"
 face-image: portraits/HellpachWilly.jpg
 go-to: communist if kpd_unity_support == 0; volkisch if kpd_unity_support == 1
 
+Willy Hellpach is the DDP's most important figure in Baden, their major stronghold.
 
 @gessler_run
 view-if: gessler_run_1925
@@ -260,6 +276,7 @@ on-arrival: ddp_prescan = "Otto Gessler"
 face-image: portraits/gessler.jpg
 go-to: communist if kpd_unity_support == 0; volkisch if kpd_unity_support == 1
 
+Otto Gessler is a DDP military expert.
 
 @communist
 view-if: kpd_unity_support == 0
@@ -272,6 +289,7 @@ on-arrival: kpd_prescan = "Ernst Thälmann"
 face-image: portraits/ThälmannErnst.jpg
 go-to: volkisch
 
+Ernst Thälmann used to be a dock worker in Hamburg.
 
 @volkisch
 title: for title
@@ -287,6 +305,7 @@ on-arrival: nsdap_prescan = "Erich von Ludendorff"
 face-image: portraits/Ludendorff.jpg
 go-to: proletarian
 
+Ludendorff is the weirdest guy to ever live.
 
 @strasser_run
 view-if: strasser_run_1925
@@ -294,6 +313,7 @@ on-arrival: nsdap_prescan = "Otto Strasser"
 face-image: portraits/StrasserOtto.jpg
 go-to: proletarian
 
+Otto Strasser is the brother of the current NSDAP leader and advocates vor radical anti-bourgeois National Socialism. He opposes Marxism categorically as a 'Liberal Ideology'.
 
 @proletarian
 title: for title
@@ -321,11 +341,15 @@ view-if: ledebour_unity_candidate == 1
 face-image: portraits/LedebourGeorg.jpg
 go-to: view_running_candidates
 
+Georg Ledebour is a longstanding principaled advocate for the worker's cause.
+
 @rosenfeld_run
 on-arrival: proletarian_prescan = "Kurt Rosenfeld"
 view-if: rosenfeld_unity_candidate == 1
 face-image: portraits/RosenfeldKurt.jpg
 go-to: view_running_candidates
+
+Rosenfeld is a lawyer and established politician in the outer left of our party. His politics are marked by clear opposition to cooperation with the Bourgeois parties and sympathy for the KPD.
 
 @abandon_unity_kpd
 view-if: kpd_unity_support == 1
