@@ -532,7 +532,7 @@ title: Who are we going to back?
 view-if: no_spd_participation == 1
 
 
-- @centrist: Let's hope <span style="color: [+ z_colour +];">**[+ z_prescan +]**</span> won't forget our help.
+- @centrist: Let's hope <span style="color: [+ z_colour +];">**[+ center_prescan +]**</span> won't forget our help.
 - @the_ddp: Let's hope <span style="color: [+ ddp_colour +];">**[+ ddp_prescan +]**</span> won't forget our help.
 - @them_communists: Let's hope <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> won't forget our help.
 - @noone: We won't endorse anyone...
