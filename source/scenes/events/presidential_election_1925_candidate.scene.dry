@@ -122,21 +122,21 @@ view-if: bourgeois_unity_candidate == 0
 @jarres_run
 view-if: jarres_run_1925
 on-arrival: reichsblock_prescan = "Karl Jarres"
-face-image: potraits/jarres.jpg
+face-image: portraits/jarres.jpg
 go-to: center
 
 
 @westrap_run
 view-if: westrap_run_1925
 on-arrival: reichsblock_prescan = "Kuno von Westrap"
-face-image: potraits/Kuno_von_Westrap.jpg
+face-image: portraits/Kuno_von_Westrap.jpg
 go-to: center
 
 
 @heinze_run
 view-if: heinze_run_1925
 on-arrival: reichsblock_prescan = "Rudolf Heinze"
-face-image: potraits/HeinzeRufolf.jpg
+face-image: portraits/HeinzeRufolf.jpg
 go-to: center
 
 
@@ -153,35 +153,35 @@ view-if: bourgeois_unity_candidate == 1
 @marx_unity_run
 view-if: marx_run_1925
 on-arrival: bourgeois_prescan = "Wilhelm Marx"
-face-image: potraits/MarxWilhelm.jpg
+face-image: portraits/MarxWilhelm.jpg
 go-to: communist
 
 
 @simons_unity_run
 view-if: simons_run_1925
 on-arrival: bourgeois_prescan = "Walter Simons"
-face-image: potraits/SimonsWalter.jpg
+face-image: portraits/SimonsWalter.jpg
 go-to: communist
 
 
 @luther_run
 view-if: luther_run_1925
 on-arrival: bourgeois_prescan = "Hans Luther"
-face-image: potraits/luther.jpg
+face-image: portraits/luther.jpg
 go-to: communist
 
 
 @jarres_unity_run
 view-if: jarres_run_1925
 on-arrival: bourgeois_prescan = "Karl Jarres"
-face-image: potraits/jarres.jpg
+face-image: portraits/jarres.jpg
 go-to: communist
 
 
 @kardorff_run
 view-if: kardorff_run_1925
 on-arrival: bourgeois_prescan = "Siegfried von Kardorff"
-face-image: potraits/vonKardoffSiegfried.jpg
+face-image: portraits/vonKardoffSiegfried.jpg
 go-to: communist
 
 
@@ -196,28 +196,28 @@ title: for title
 @marx_run
 view-if: marx_run_1925
 on-arrival: center_prescan = "Wilhelm Marx"
-face-image: potraits/MArxWilhelm.jpg
+face-image: portraits/MArxWilhelm.jpg
 go-to: bvp
 
 
 @stegerwald_run
 view-if: stegerwald_run_2025
 on-arrival: center_prescan = "Adam Stegerwald"
-face-image: potraits/stegerwald.jpg
+face-image: portraits/stegerwald.jpg
 go-to: bvp
 
 
 @hermes_run
 view-if: hermes_run_1925
 on-arrival: center_prescan = "Andreas Hermes"
-face-image: potraits/HermesAndreas.jpg
+face-image: portraits/HermesAndreas.jpg
 go-to: bvp
 
 
 @bvp
 title: for title
 on-arrival: bvp_prescan = "Heinrich Held"
-face-image: potraits/HeldHeinrich.jpg
+face-image: portraits/HeldHeinrich.jpg
 
 The BVP is expected to be supported by some other regionalist parties.
 
@@ -243,21 +243,21 @@ title: for title
 @simons_run
 view-if: simons_run_1925
 on-arrival: ddp_prescan = "Walter Simons"
-face-image: potraits/SimonsWalter.jpg
+face-image: portraits/SimonsWalter.jpg
 go-to: communist if kpd_unity_support == 0; volkisch if kpd_unity_support == 1
 
 
 @hellpach_run
 view-if: hellpach_run_1925
 on-arrival: ddp_prescan = "Willy Hellpach"
-face-image: potraits/HellpachWilly.jpg
+face-image: portraits/HellpachWilly.jpg
 go-to: communist if kpd_unity_support == 0; volkisch if kpd_unity_support == 1
 
 
 @gessler_run
 view-if: gessler_run_1925
 on-arrival: ddp_prescan = "Otto Gessler"
-face-image: potraits/gessler.jpg
+face-image: portraits/gessler.jpg
 go-to: communist if kpd_unity_support == 0; volkisch if kpd_unity_support == 1
 
 
@@ -269,7 +269,7 @@ view-if: kpd_unity_support == 0
 
 @thaelmann_run
 on-arrival: kpd_prescan = "Ernst Thälmann"
-face-image: potraits/ThälmannErnst.jpg
+face-image: portraits/ThälmannErnst.jpg
 go-to: volkisch
 
 
@@ -284,14 +284,14 @@ title: for title
 @ludendorff_run
 view-if: ludendorff_run_1925
 on-arrival: nsdap_prescan = "Erich von Ludendorff"
-face-image: potraits/Ludendorff.jpg
+face-image: portraits/Ludendorff.jpg
 go-to: proletarian
 
 
 @strasser_run
 view-if: strasser_run_1925
 on-arrival: nsdap_prescan = "Otto Strasser"
-face-image: potraits/StrasserOtto.jpg
+face-image: portraits/StrasserOtto.jpg
 go-to: proletarian
 
 
@@ -318,13 +318,13 @@ view-if: ledebour_unity_candidate == 1 or rosenfeld_unity_candidate == 1
 @ledebour_run
 on-arrival: proletarian_prescan = "Georg Ledebour"
 view-if: ledebour_unity_candidate == 1
-face-image: potraits/LedebourGeorg.jpg
+face-image: portraits/LedebourGeorg.jpg
 go-to: view_running_candidates
 
 @rosenfeld_run
 on-arrival: proletarian_prescan = "Kurt Rosenfeld"
 view-if: rosenfeld_unity_candidate == 1
-face-image: potraits/RosenfeldKurt.jpg
+face-image: portraits/RosenfeldKurt.jpg
 go-to: view_running_candidates
 
 @abandon_unity_kpd
