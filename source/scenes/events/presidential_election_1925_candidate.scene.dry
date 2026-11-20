@@ -138,7 +138,7 @@ The immense popularity of the DNVP has led Westrap to be chosen by the right.
 @heinze_run
 view-if: heinze_run_1925
 on-arrival: reichsblock_prescan = "Rudolf Heinze"
-face-image: img/portraits/HeinzeRufolf.jpg
+face-image: img/portraits/HeinzeRudolf.jpg
 go-to: center
 
 Rudolf Heinze is a DVP politican who took a leading role in Saxon politics.
