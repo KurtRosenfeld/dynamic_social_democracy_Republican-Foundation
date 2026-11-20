@@ -424,9 +424,9 @@ go-to: view_running_candidates
 [? if spd_support_simons == 1: <span style="color: [+ ddp_colour +];">**DDP**</span> ?]
 
 
-[? if z_prescan: <span style="color: [+ z_colour +];">**[+ z_prescan +]**</span> ?]
+[? if center_prescan: <span style="color: [+ z_colour +];">**[+ center_prescan +]**</span> ?]
 
-[? if z_prescan: - <span style="color: [+ z_colour +];">**Z**</span> ?]
+[? if center_prescan: - <span style="color: [+ z_colour +];">**Z**</span> ?]
 
 
 [? if kpd_prescan: <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> ?]
