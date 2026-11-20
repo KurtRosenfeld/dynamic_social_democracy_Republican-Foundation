@@ -230,13 +230,13 @@ Andreas Hermes is an established figure in the Center Party.
 @bvp
 title: for title
 on-arrival: bvp_prescan = "Heinrich Held"
-face-image: img/portraits/HeldHeinrich.jpg
 
 The BVP is expected to be supported by some other regionalist parties.
 
 - @held_run: The Bavarians will run Heinrich Held
 
 @held_run
+face-image: img/portraits/HeldHeinrich.jpg
 go-to: ddp
 
 Heinrich Held is very Bavarian (idk).
@@ -440,6 +440,8 @@ go-to: view_running_candidates
 [? if reichsblock_prescan: - <span style="color: [+ dvp_colour +];">**DVP**</span> ?]
 
 [? if reichsblock_prescan: - <span style="color: [+ dnvp_colour +];">**DNVP**</span> ?]
+
+[? if reichsblock_prescan: - <span style="color: #006400;">**RLB**</span> ?]
 
 [? if reichsblock_prescan: - <span style="color: #b8996f;">**WP**</span> ?]
 
