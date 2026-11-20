@@ -2,7 +2,7 @@ title: Bremen Landtag Election
 view-if: (year == 1923 and month == 11 and not bremen_election_seen) or (bremen_election_2_trigger_time == time and bremen_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: bremen_election_seen += 1 if bremen_election_seen; bremen_election_seen = 1 if not bremen_election_seen; bremen_election_seen_time = time; bremen_spd = 0; bremen_kpd = 0; bremen_sapd = 0; bremen_uspd = 0; bremen_ddp = 0; bremen_z = 0; bremen_true_others = 0; bremen_wp = 0; bremen_lvp = 0; bremen_hb = 0; bremen_dvp = 0; bremen_nsdap = 0; bremen_dnvp; bremen_nsfb = 0
+on-arrival: bremen_election_seen += 1 if bremen_election_seen; bremen_election_seen = 1 if not bremen_election_seen; bremen_election_seen_time = time; bremen_spd = 0; bremen_kpd = 0; bremen_sapd = 0; bremen_uspd = 0; bremen_ddp = 0; bremen_z = 0; bremen_true_others = 0; bremen_wp = 0; bremen_lvp = 0; bremen_hb = 0; bremen_dvp = 0; bremen_nsdap = 0; bremen_dnvp = 0; bremen_nsfb = 0
 priority: 3
 on-display: {!  
     var cardEl = document.createElement('div');  
