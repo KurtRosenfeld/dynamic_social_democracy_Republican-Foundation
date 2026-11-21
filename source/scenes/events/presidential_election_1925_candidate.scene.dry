@@ -628,7 +628,7 @@ view-if: no_spd_participation == 0
 @uspd_endorsement
 view-if: uspd_joined < 3 and uspd_prs_support == "none"
 choose-if: (uspd_relation >= 70 and uspd_leader == "Liebknecht" and left_strength > reformist_strength) or (not uspd_leader == "Liebknecht" and uspd_relation >= 55)
-on-arrival: uspd_spd_joint_campaign
+on-arrival: uspd_spd_joint_campaign = 1
 unavailable-subtitle: The USPD does not consider this. They will most likely abstain.
 
 @aspd_endorsment
