@@ -36,10 +36,14 @@ if (Q.reformist_strength < 10) {
     Q.rb_strength -= 400; 
 }
 
+if (Q.aspd_name != "ASPD") Q.aspd_countdown = 7;
+if (Q.aspd_name != "ASPD" && Q.nsdap_votes >= 15) Q.aspd_countdown = 4;
 
 Q.right_spd_r = Q.right_spd_r + Q.reformist_spd_r*0.95;
 Q.spd_r = Q.spd_r - Q.reformist_spd_r;
 Q.ddp_r = Q.ddp_r + Q.reformist_spd_r*0.05;
+
+
 
 
 Q.reformist_strength *= 0.3; 
