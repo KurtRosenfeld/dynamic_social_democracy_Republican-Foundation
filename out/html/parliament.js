@@ -1681,8 +1681,8 @@ anhalt: {
           },
           {
             id: 'kvp', legend: 'KVP', name: 'KVP',
-            qualityKey: 'kvp_r_saxony',
-            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_saxony; }
+            qualityKey: 'kvp_r',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r; }
           },
             {
             id: 'farm2', legend: 'LB', name: 'LB',
@@ -1703,6 +1703,11 @@ anhalt: {
             id: 'dvfp', legend: 'DVFP', name: 'DVFP', 
             qualityKey: 'dvfp_r',
             condition: function(Q) { return Q.dvfp_r; }
+          },
+               {
+            id: 'dtsp', legend: 'DtSP', name: 'DtSP', 
+            qualityKey: 'dtsp_r',
+            condition: function(Q) { return Q.dtsp_r; }
           },
           {
             id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
