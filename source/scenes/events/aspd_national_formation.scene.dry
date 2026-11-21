@@ -1,0 +1,22 @@
+title: New Social Democratic Party just dropped
+subtitle: The reformists won't just resign from politics alltogether.
+tags: event
+is-card: true
+priority: 3
+max-visits: 1
+view-if: aspd_countdown_timer == 0
+on-arrival: right_spd_r_ = aspd_r_; aspd_name = "RSPD"; full_aspd_name = "Republican-Social Party of Germany"; aspd_ideology = "Volkspartei Social Democracy"; aspd_leader = "Müller, Wels" if (not muller_in == "grave" and centrists_resign); aspd_leader = "Grezisnki, Buck" if (muller_in == "grave" or not centrists_resign); workers_aspd += 5; unemployed_aspd += 3; rural_aspd += 4; new_middle_aspd += 4; old_middle_aspd += 2; catholic_aspd += 2
+new-page: true
+
+= New Social Democratic Party just dropped
+
+I'll have to add a lot of stuff here.
+
+
+
+
+
+
+
+
+
