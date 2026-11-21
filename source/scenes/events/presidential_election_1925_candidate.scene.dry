@@ -85,7 +85,7 @@ if (Q.freiberg_bloodbath_seen == 1 && Q.dnvp_votes < 25) Q.jarres_run_1925 = 1;
 if (Q.dnvp_votes >= 25) Q.westrap_run_1925 = 1;
 if (!Q.jarres_run_1925 && !Q.westrap_run_1925) Q.heinze_run_1925 = 1;
 
-if (Q.chancellor != "Marx") Q.marx_run_1925;
+if (Q.chancellor != "Marx") Q.marx_run_1925 = 1;
 if (!Q.marx_run_1925 && Q.workers_z >= 12) Q.stegerwald_run_1925 = 1;
 if (!Q.marx_run_1925 && Q.workers_z < 12) Q.hermes_run_1925 = 1;
 
@@ -549,6 +549,19 @@ go-to: view_running_candidates
 
 
 @minor_left_support
+on-arrival: {!
+
+if (Q.uspd_leader == "Ledebour" && !Q.proletarian_prescan) Q.uspd_prs_support = "KPD";
+if (Q.uspd_leader == "Liebknecht" && !Q.proletarian_prescan) Q.uspd_prs_support = "none";
+if (Q.uspd_leader == "Breitscheid" && !Q.proletarian_prescan && Q.spd_prescan) Q.uspd_prs_support = "SPD";
+if (Q.uspd_leader == "Crispien" && !Q.proletarian_prescan && Q.spd_prescan) Q.uspd_prs_support = "SPD";
+if (Q.uspd_leader == "Breitscheid" && !Q.proletarian_prescan && !Q.spd_prescan) Q.uspd_prs_support = "none";
+if (Q.uspd_leader == "Crispien" && !Q.proletarian_prescan && !Q.spd_prescan) Q.uspd_prs_support = "none";
+if (Q.proletarian_prescan) Q.uspd_prs_support = "unity";
+if (Q.sb_exists && Q.proletarian_prescan) Q.sb_support = "unity";
+if (Q.sb_exists && !Q.proletarian_prescan) Q.sb_support = "KPD";
+
+!}
 
 [? if uspd_leader == "Ledebour" and not proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> ?]
 
@@ -556,11 +569,15 @@ go-to: view_running_candidates
 
 [? if (uspd_leader == "Breitscheid" or uspd_leader == "Crispien") and not proletarian_prescan and spd_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ spd_colour +];">**[+ spd_prescan +]**</span> ?][? if (uspd_leader == "Breitscheid" or uspd_leader == "Crispien") and not proletarian_prescan and not spd_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: unclear ?]
 
-[? if proletarian_prescan and ledebour_unity_candidate: <span style="color: [+ uspd_colour +];">**USPD**</span> <span style="color: [+ ledebour_colour +];">**Georg Ledebour**</span> ?]
+[? if proletarian_prescan and ledebour_unity_candidate: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ ledebour_colour +];">**Georg Ledebour**</span> ?]
 
-[? if proletarian_prescan and rosenfeld_unity_candidate: <span style="color: [+ uspd_colour +];">**USPD**</span> <span style="color: [+ rosenfeld_colour +];">**Kurt Rosenfeld**</span> ?]
+[? if proletarian_prescan and rosenfeld_unity_candidate: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ rosenfeld_colour +];">**Kurt Rosenfeld**</span> ?]
 
-[? if sb_exists and not proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> ?]
+[? if sb_exists and ledebour_unity_candidate: <span style="color: [+ sb_colour +];">**SB**</span>: <span style="color: [+ ledebour_colour +];">**Georg Ledebour**</span> ?]
+
+[? if sb_exists and rosenfeld_unity_candidate: <span style="color: [+ sb_colour +];">**SB**</span>: <span style="color: [+ rosenfeld_colour +];">**Kurt Rosenfeld**</span> ?]
+
+[? if sb_exists and not proletarian_prescan: <span style="color: [+ sb_colour +];">**SB**</span>: <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> ?]
 
 <span style="color: #3A0000;">**KAPD**</span>: abstain
 
@@ -601,21 +618,21 @@ on-arrival: spd_supports_nobody = 1
 
 
 @conclude_candidacies
-title: Title
+title: Scout out potential endorsments
 view-if: no_spd_participation == 0
 
 
+- @uspd_endorsement: Get the USPD to support us
+- @aspd_endorsment: Get the ASPD to support us
 
+@uspd_endorsement
+view-if: uspd_joined < 3 and uspd_prs_support == "none"
+choose-if: (uspd_relation >= 70 and uspd_leader == "Liebknecht" and left_strength > reformist_strength) or (not uspd_leader == "Liebknecht" and uspd_relation >= 55)
+on-arrival: uspd_spd_joint_campaign
+unavailable-subtitle: The USPD does not consider this. They will most likely abstain.
 
-
-
-
-
-
-
-
-
-
+@aspd_endorsment
+view-if: aspd == "Ferdinand Lassalle with a little bit of Bismarck"
 
 
 
