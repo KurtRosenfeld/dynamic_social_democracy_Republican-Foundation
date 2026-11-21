@@ -6,6 +6,7 @@ priority: 1
 max-visits: 1
 face-image: img/land/Sachsen.jpg
 view-if: year == 1924 and month == 1 and freiberg_bloodbath_seen
+on-arrival: saxony_dnvp = 0
 new-page: true
 
 = Saxony
@@ -131,7 +132,7 @@ on-arrival: uspd_r_saxony = uspd_r_saxony + spd_r_saxony*0.37; spd_r_saxony = sp
 
 
 @unity
-on-arrival: left_dissent -= 2; reformist_dissent -= 2; center_dissent -= 2; center_strength += 2
+on-arrival: left_dissent -= 2; reformist_dissent -= 2; center_dissent -= 2; center_strength += 2; internal_saxon_shit = 1
 
 It appears the Saxon <span style="color: [+ spd_colour +];">**SPD**</span> parliamentary faction has sort of split in two despite offcially remaining one party.
 
