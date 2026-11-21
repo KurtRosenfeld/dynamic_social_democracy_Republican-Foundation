@@ -36,13 +36,15 @@ if (Q.reformist_strength < 10) {
     Q.rb_strength -= 400; 
 }
 
-if (Q.aspd_name != "ASPD") Q.aspd_countdown = 7;
-if (Q.aspd_name != "ASPD" && Q.nsdap_votes >= 15) Q.aspd_countdown = 4;
+if (Q.aspd_name != "ASPD") Q.aspd_countdown_timer = 7;
+if (Q.aspd_name != "ASPD" && Q.nsdap_votes >= 15) Q.aspd_countdown_timer = 4;
 
 Q.right_spd_r = Q.right_spd_r + Q.reformist_spd_r*0.95;
 Q.spd_r = Q.spd_r - Q.reformist_spd_r;
 Q.ddp_r = Q.ddp_r + Q.reformist_spd_r*0.05;
 
+if (Q.spd_party_leader_2 == "Braun") Q.spd_party_leader_2 = "vacant";
+if (Q.spd_party_leader_3 == "Juchaz") Q.spd_party_leader_3 = "vacant";
 
 
 
@@ -70,6 +72,8 @@ if (Q.centrists_resign == 1) {
     Q.braun_advisor = 0; 
     Q.severing_advisor = 0; 
     Q.pfluf_advisor = 0;
+
+
 }
 if (Q.n_advisors < Q.n_advisors_start) Q.shuffle_leadership_timer = 0;
 !}
