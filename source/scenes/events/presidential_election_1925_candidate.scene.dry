@@ -52,6 +52,8 @@ The <span style="color: [+ ddp_colour +];">**DDP**</span> proposes the independe
 title: We will support Simons.
 subtitle: The <span style="color: [+ z_colour +];">**Centrists**</span> prefer running their own candidate. This decision is unpopular within our party.
 on-arrival: spd_support_simons = 1
+choose-if: ledebour_unity_candidate == 0 and rosenfeld_unity_candidate == 0
+unavailable-subtitle: We have commited ourselves to running for the working class.
 go-to: view_candidate_runs
 
 @the_ddp_was_so_dumb_really
@@ -83,7 +85,7 @@ if (Q.freiberg_bloodbath_seen == 1 && Q.dnvp_votes < 25) Q.jarres_run_1925 = 1;
 if (Q.dnvp_votes >= 25) Q.westrap_run_1925 = 1;
 if (!Q.jarres_run_1925 && !Q.westrap_run_1925) Q.heinze_run_1925 = 1;
 
-if (Q.chancellor !== "Marx") Q.marx_run_1925;
+if (Q.chancellor != "Marx") Q.marx_run_1925;
 if (!Q.marx_run_1925 && Q.workers_z >= 12) Q.stegerwald_run_1925 = 1;
 if (!Q.marx_run_1925 && Q.workers_z < 12) Q.hermes_run_1925 = 1;
 
@@ -95,7 +97,7 @@ if (!Q.simons_run_1925 && Q.france_relation < 70) Q.hellpach_run_1925 = 1;
 if (Q.bourgeois_unity_candidate == 1) {
 if (Q.bourgeois_unity >= 16 && Q.bourgeois_unity < 20 && Q.z_relation < 30 && Q.pro_repulic >= 65 && Q.chancellor == "Luther") Q.marx_run_1925 = 1;
 if (Q.bourgeois_unity >= 20 && Q.z_relation < 30 && Q.pro_repulic >= 65 && Q.chancellor == "Luther") Q.simons_run_1925 = 1;
-if (Q.chancellor !== "Luther") Q.luther_run_1925 = 1;
+if (Q.chancellor != "Luther") Q.luther_run_1925 = 1;
 if (Q.freiberg_bloodbath_seen == 1 && !Q.luther_run_1925 && !Q.simons_run_1925 && !Q.luther_run_1925) Q.jarres_run_1925 = 1;
 if (!Q.jarres_run_1925) Q.kardorff_run_1925 = 1;
 }
@@ -127,6 +129,8 @@ go-to: center
 
 Karl Jarres has gained popularity as the "hero of the nation" during the Ruhrkampf.
 
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+
 @westrap_run
 view-if: westrap_run_1925
 on-arrival: reichsblock_prescan = "Kuno von Westrap"
@@ -135,6 +139,8 @@ go-to: center
 
 The immense popularity of the DNVP has led Westrap to be chosen by the right.
 
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+
 @heinze_run
 view-if: heinze_run_1925
 on-arrival: reichsblock_prescan = "Rudolf Heinze"
@@ -142,6 +148,8 @@ face-image: img/portraits/HeinzeRudolf.jpg
 go-to: center
 
 Rudolf Heinze is a DVP politican who took a leading role in Saxon politics.
+
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 
 
 @bourgeois
@@ -162,6 +170,8 @@ go-to: communist
 
 Wilhelm Marx is the well-established leader of the Center Party.
 
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+
 @simons_unity_run
 view-if: simons_run_1925
 on-arrival: bourgeois_prescan = "Walter Simons"
@@ -169,6 +179,8 @@ face-image: img/portraits/SimonsWalter.jpg
 go-to: communist
 
 Walter Simons is the head of the Reichsgericht and embodies anti-socialist Republicanism.
+
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 
 @luther_run
 view-if: luther_run_1925
@@ -178,6 +190,8 @@ go-to: communist
 
 Hans Luther is the perfect bourgeois candidate as he has both political experience and does not belong to any party.
 
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+
 @jarres_unity_run
 view-if: jarres_run_1925
 on-arrival: bourgeois_prescan = "Karl Jarres"
@@ -186,6 +200,7 @@ go-to: communist
 
 Karl Jarres has gained popularity as the "hero of the nation" during the Ruhrkampf.
 
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 
 @kardorff_run
 view-if: kardorff_run_1925
@@ -194,6 +209,8 @@ face-image: img/portraits/vonKardoffSiegfried.jpg
 go-to: communist
 
 Siegfried von Kardorff is a former DNVP, now DVP, politician who embodies conservatism and pragnatuc politics since the Kaiserreich.
+
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 
 @center
 title: for title
@@ -211,6 +228,8 @@ go-to: bvp
 
 Wilhelm Marx is the well-established leader of the Center Party.
 
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+
 @stegerwald_run
 view-if: stegerwald_run_2025
 on-arrival: center_prescan = "Adam Stegerwald"
@@ -218,6 +237,8 @@ face-image: img/portraits/stegerwald.jpg
 go-to: bvp
 
 Adam Stegerwald is a catholic unionist open to cooperation with the DNVP.
+
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 
 @hermes_run
 view-if: hermes_run_1925
@@ -227,11 +248,12 @@ go-to: bvp
 
 Andreas Hermes is an established figure in the Center Party.
 
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+
 @bvp
 title: for title
 on-arrival: bvp_prescan = "Heinrich Held"
 
-The BVP is expected to be supported by some other regionalist parties.
 
 - @held_run: The Bavarians will run Heinrich Held
 
@@ -240,6 +262,10 @@ face-image: img/portraits/HeldHeinrich.jpg
 go-to: ddp
 
 Heinrich Held is very Bavarian (idk).
+
+The BVP is expected to be supported by some other regionalist parties.
+
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 
 @ddp
 title: for title
@@ -262,6 +288,8 @@ go-to: communist if kpd_unity_support == 0; volkisch if kpd_unity_support == 1
 
 Walter Simons is the head of the Reichsgericht and embodies anti-socialist Republicanism.
 
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+
 @hellpach_run
 view-if: hellpach_run_1925
 on-arrival: ddp_prescan = "Willy Hellpach"
@@ -270,6 +298,8 @@ go-to: communist if kpd_unity_support == 0; volkisch if kpd_unity_support == 1
 
 Willy Hellpach is the DDP's most important figure in Baden, their major stronghold.
 
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+
 @gessler_run
 view-if: gessler_run_1925
 on-arrival: ddp_prescan = "Otto Gessler"
@@ -277,6 +307,8 @@ face-image: img/portraits/gessler.jpg
 go-to: communist if kpd_unity_support == 0; volkisch if kpd_unity_support == 1
 
 Otto Gessler is a DDP military expert.
+
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 
 @communist
 view-if: kpd_unity_support == 0
@@ -291,6 +323,8 @@ go-to: volkisch
 
 Ernst Thälmann used to be a dock worker in Hamburg.
 
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+
 @volkisch
 title: for title
 
@@ -303,17 +337,21 @@ title: for title
 view-if: ludendorff_run_1925
 on-arrival: nsdap_prescan = "Erich von Ludendorff"
 face-image: img/portraits/Ludendorff.jpg
-go-to: proletarian
+go-to: proletarian if spd_support_simons == 0; view_running_candidates if spd_support_simons == 1
 
 Ludendorff is the weirdest guy to ever live.
+
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 
 @strasser_run
 view-if: strasser_run_1925
 on-arrival: nsdap_prescan = "Otto Strasser"
 face-image: img/portraits/StrasserOtto.jpg
-go-to: proletarian
+go-to: proletarian if spd_support_simons == 0; view_running_candidates if spd_support_simons == 1
 
 Otto Strasser is the brother of the current NSDAP leader and advocates vor radical anti-bourgeois National Socialism. He opposes Marxism categorically as a 'Liberal Ideology'.
+
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 
 @proletarian
 title: for title
@@ -343,6 +381,8 @@ go-to: view_running_candidates
 
 Georg Ledebour is a longstanding principaled advocate for the worker's cause.
 
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+
 @rosenfeld_run
 on-arrival: proletarian_prescan = "Kurt Rosenfeld"
 view-if: rosenfeld_unity_candidate == 1
@@ -350,6 +390,8 @@ face-image: img/portraits/RosenfeldKurt.jpg
 go-to: view_running_candidates
 
 Rosenfeld is a lawyer and established politician in the outer left of our party. His politics are marked by clear opposition to cooperation with the Bourgeois parties and sympathy for the KPD.
+
+///TEXTttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 
 @abandon_unity_kpd
 view-if: kpd_unity_support == 1
@@ -369,13 +411,13 @@ go-to: spd_alone
 view-if: ledebour_unity_candidate == 0 and rosenfeld_unity_candidate == 0
 
 [? if rosenfeld_in == "SPD":
-<div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/RosenfeldKurt.jpg" style="width: 100%; max-width: 190px; cursor : pointer;"/>  <div>Rosenfeld is a lawyer and established politician in the outer left of our party. His politics are marked by clear opposition to cooperation with the Bourgeois parties and sympathy for the KPD.<br/> Faction: Left </div> </div> ?]
+<div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/RosenfeldKurt.jpg" style="width: 100%; max-width: 190px;"/>  <div>Rosenfeld is a lawyer and established politician in the outer left of our party. His politics are marked by clear opposition to cooperation with the Bourgeois parties and sympathy for the KPD.<br/> Faction: Left </div> </div> ?]
 
 [? if scheidemann_in == "SPD":
-<div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/ScheidemannPhilipp.jpg" style="width: 100%; max-width: 190px; cursor : pointer;"/>  <div>Scheidemann used to be both party leader and then Chancellor, in 1919 he even ran against Ebert for the presidential office. His politics are perfectly aligned with those of the centrist faction arguing for cooperation with the DVP when necessary but maintaining the principles of Marx.<br/> Faction: Center </div> </div> ?]
+<div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/ScheidemannPhilipp.jpg" style="width: 100%; max-width: 190px;"/>  <div>Scheidemann used to be both party leader and then Chancellor, in 1919 he even ran against Ebert for the presidential office. His politics are perfectly aligned with those of the centrist faction arguing for cooperation with the DVP when necessary but maintaining the principles of Marx.<br/> Faction: Center </div> </div> ?]
 
 [? if braun_in == "SPD":
-<div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/BraunOtto.jpg" style="width: 100%; max-width: 190px; cursor : pointer;"/>  <div>[? if prussia_leader == "Braun": Otto Braun doesn't want to run. Yet still his supporters value that he is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?][? if not prussia_leader == "Braun": Braun  is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?].<br/> Faction: Reformist </div> </div> ?]
+<div style="display: flex; align-items: flex-start; gap: 1em; margin-bottom: 1em;"> <img src="img/portraits/BraunOtto.jpg" style="width: 100%; max-width: 190px;"/>  <div>[? if prussia_leader == "Braun": Otto Braun doesn't want to run. Yet still his supporters value that he is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?][? if not prussia_leader == "Braun": Braun  is already well known accross the Reich and mirrors Ebert's pragmatic politics (despite being a little more to the party center than him) ?].<br/> Faction: Reformist </div> </div> ?]
 
 
 - @rosenfeld_spd_run: Run Kurt Rosenfeld
