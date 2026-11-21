@@ -35,6 +35,11 @@ Q.n_advisors_start = Q.n_advisors;
 Q.center_strength *= 0.3; 
 Q.n_advisors_start = Q.n_advisors; 
 
+if (Q.spd_party_leader_2 == "Müller") Q.spd_party_leader_2 = "Müller";
+if (Q.spd_party_leader_1 == "Wels") Q.spd_party_leader_1 = "vacant";
+if (Q.spd_party_leader_1 == "Breitscheid") Q.spd_party_leader_1 = "vacant";
+if (Q.spd_party_leader_3 == "Crispien") Q.spd_party_leader_3 = "vacant";
+
 if (Q.reformists_resign == 1) {
     if (Q.wels_advisor == 1) Q.n_advisors -= 1;
     if (Q.muller_advisor == 1) Q.n_advisors -= 1;
