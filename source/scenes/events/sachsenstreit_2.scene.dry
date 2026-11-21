@@ -1,0 +1,18 @@
+title: Our Saxon faction is tearing itself apart
+subtitle: Why does it always have to be Saxony...
+tags: event
+is-card: true
+priority: 1
+max-visits: 1
+face-image: img/portraits/HeldtMax.jpg
+view-if: year == 1922 and month == 3 and right_spd_r_saxony == 0 and saxony_right_spd == 0 and internal_saxon_shit == 1
+on-arrival: right_spd_r_saxony = aspd_r_saxony; aspd_name = "ASPD"; heldt_in = aspd_name; buck_in = aspd_name; workers_spd -= 2; new_middle_spd -= 2; old_middle_spd -= 1; rural_spd -= 1; aspd_relation = 50 if ideology == "reformist"; aspd_relation = 40 if ideology == "labor"; aspd_relation = 40 if ideology == "centrist"; aspd_relation = 20 if ideology == "left"; aspd_leader = "Buck"; aspd_ideology = "Social Democratic Pragmatism"; wor_aspd_s = 0.5; un_aspd_s = 0.5; new_aspd = 0.2
+new-page: true
+
+= Our Saxon faction is tearing itself apart
+
+A majority of Saxon members wanted to expell to majority of parliamentary delegates in Saxony around Max Heldt and Wilhelm Buck from our party for refusing cooperation with the <span style="color: [+ kpd_colour +];">**KPD**</span> and forming a coalition with the bourgeois parties.
+  
+With the reformists in the Saxon Parliament expelled from the <span style="color: [+ spd_colour +];">**SPD**</span> they have decided to form their own party to compete with us and maintain their mandates. Since they claim to return to an older kind of less radical Social Democracy that focuses on making actual improvements for the people without ideological banter, the name they will carry is going to be <span style="color: [+ aspd_colour +];">**ASPD**</span> (Old Social-Democratic Party of Germany).
+
+[? if reformist_dissent >= 45: Many reformists in our own party have expressed large-scale sympathies for this party, some are even openly considering to join if they keep getting treated the way the are in the <span style="color: [+ spd_colour +];">**SPD**</span>. ?]
