@@ -176,6 +176,8 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if not uspd_joined = 3: <span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_relation : relationships +] ?]
 
+[? if national_right_spd: <span class="tooltip-text" title="[+ full_aspd_name +]" style="color: [+ aspd_colour +];">**[+ aspd_name +]**</span>: [+ aspd_relation : relationships +] ?]
+
 <span class="tooltip-text" title="Bavarian People's Party" style="color: [+ bvp_colour +];">**BVP**</span>: [+ bvp_relation : relationships +]
 
 [? if kvp_formed and not dnvp_dvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_relation : relationships +] ?]
@@ -219,6 +221,8 @@ Economic growth: [+ economic_growth_2 +]%
 [? if sapd_formed: <span class="tooltip-text" title="Socialist Worker's Party of Germany" style="color: [+ sapd_colour +];">**SAPD**</span>: [+ sapd_ideology +] ([+ sapd_leader +])?]
 
 [? if not uspd_joined = 3: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_ideology +] ([+ uspd_leader +])?]
+
+[? if national_right_spd: <span class="tooltip-text" title="[+ full_aspd_name +]" style="color: [+ aspd_colour +];">**[+ aspd_name +]**</span>: [+ aspd_ideology +] ([+ aspd_leader +])?]
 
 [? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Bavarian People's Party" style="color: [+ bvp_colour +];">**BVP**</span>: Bavarian Conservatism ([+ bvp_leader +]) ?]
 
@@ -379,6 +383,8 @@ Q.socialism_disp = Math.floor(Q.socialism);
 [? if not uspd_joined = 3: <span style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_votes +]% ?]
 
 [? if sapd_formed: <span style="color: [+ sapd_colour +];">**SAPD**</span>: [+ sapd_votes +]% ?]
+
+[? if national_right_spd: <span style="color: [+ aspd_colour +];">**[+ aspd_name +]**</span>: [+ aspd_votes +]% ?]
 
 <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span>: [+ z_votes +]%
 
