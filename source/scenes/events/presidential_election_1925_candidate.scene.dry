@@ -563,6 +563,10 @@ if (Q.sb_exists && !Q.proletarian_prescan) Q.sb_support = "KPD";
 
 !}
 
+[? if national_right_spd and (spd_prescan == "Braun" or spd_prescan == "Scheidemann"): <span style="color: [+ aspd_colour +];">**[+ aspd_name +]**</span>: <span style="color: [+ spd_colour +];">**[+ spd_prescan +]**</span> ?]
+
+[? if national_right_spd and not (spd_prescan == "Braun" or spd_prescan == "Scheidemann"): <span style="color: [+ aspd_colour +];">**[+ aspd_name +]**</span>: <span style="color: [+ ddp_colour +];">**[+ ddp_prescan +]**</span> ?]
+
 [? if uspd_leader == "Ledebour" and not proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: <span style="color: [+ kpd_colour +];">**[+ kpd_prescan +]**</span> ?]
 
 [? if uspd_leader == "Liebknecht" and not proletarian_prescan: <span style="color: [+ uspd_colour +];">**USPD**</span>: abstain ?]
@@ -622,17 +626,27 @@ title: Scout out potential endorsments
 view-if: no_spd_participation == 0
 
 
-- @uspd_endorsement: Get the USPD to support us
-- @aspd_endorsment: Get the ASPD to support us
+- @uspd_endorsement: Get the <span style="color: [+ uspd_colour +];">**USPD**</span> to support us
+- @aspd_endorsment: Get the <span style="color: [+ aspd_colour +];">**[+ aspd_name +]**</span> to support us
 
 @uspd_endorsement
 view-if: uspd_joined < 3 and uspd_prs_support == "none"
 choose-if: (uspd_relation >= 70 and uspd_leader == "Liebknecht" and left_strength > reformist_strength) or (not uspd_leader == "Liebknecht" and uspd_relation >= 55)
 on-arrival: uspd_spd_joint_campaign = 1
-unavailable-subtitle: The USPD does not consider this. They will most likely abstain.
+unavailable-subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> does not consider this. They will most likely abstain.
+go-to: conclude_candidacies
 
 @aspd_endorsment
-view-if: aspd == "Ferdinand Lassalle with a little bit of Bismarck"
+view-if: national_right_spd
+go-to: conclude_candidacies
+choose-if: spd_supports_center or spd_supports_ddp or spd_support_simons or spd_prescan == "Braun" or spd_prescan == "Scheidemann"
+on-arrival: aspd_spd_joint_campaign = 1
+unavailable-subtitle: The <span style="color: [+ aspd_colour +];">**[+ aspd_name +]**</span> would prefer to support a bourgeois candidate.
+
+
+
+
+
 
 
 
