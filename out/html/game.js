@@ -179,6 +179,7 @@
     
     const colorMap = {
         uspd: qualities.uspd_colour,
+      sapd: qualities.sapd_colour,
         spd: qualities.spd_colour,
         ddp: qualities.ddp_colour,
         kpd: qualities.kpd_colour,
