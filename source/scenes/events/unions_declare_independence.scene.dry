@@ -167,6 +167,9 @@ Q.woytinsky_in = "I";
 Q.leipart_in = "I";
 Q.tarnow_in = "I";
 
+if (Q.spd_party_leader_3 == "Tarnow") Q.spd_party_leader_3 = "vacant";
+if (Q.spd_party_leader_2 == "Aufhäuser") Q.spd_party_leader_2 = "vacant";
+
 if (Q.centrists_resign == 1) {
     if (Q.wissel_advisor == 1) Q.n_advisors -= 1;
 Q.wissel_advisor = 0; Q.wissel_in = "I";
