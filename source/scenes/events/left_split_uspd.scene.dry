@@ -62,6 +62,13 @@ if (Q.levi_advisor == 1) Q.n_advisors -= 1;
 Q.levi_advisor = 0; 
 Q.kpd_relation -= 8; 
 
+if (Q.spd_party_leader_3 == "Rosenfeld") Q.spd_party_leader_3 = "vacant";
+if (Q.spd_party_leader_2 == "Sender") Q.spd_party_leader_2 = "vacant";
+if (Q.spd_party_leader_2 == "Ledebour") Q.spd_party_leader_2 = "vacant";
+if (Q.spd_party_leader_1 == "Seydewitz") Q.spd_party_leader_1 = "vacant";
+if (Q.spd_party_leader_1 == "Levi") Q.spd_party_leader_1 = "vacant";
+
+
 if (Q.centrists_resign == 1) {
     if (Q.breitscheid_advisor == 1) Q.n_advisors -= 1;
     if (Q.crispien_advisor == 1) Q.n_advisors -= 1;
