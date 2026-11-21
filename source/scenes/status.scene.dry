@@ -1400,11 +1400,11 @@ Strategy: [+ kpd_strategy +]
 
 [? if sapd_formed: Orientation: [+ sapd_ideology +] ([+ sapd_leader +]) ?]
 
-[? if aspd_r: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: [+ aspd_colour +];">**ASPD**</span>: cool ?]
+[? if national_right_spd: <span class="tooltip-text" title="[+ full_aspd_name +]" style="color: [+ aspd_colour +];">**[+ aspd_name +]**</span>: cool ?]
 
-[? if aspd_r: support: [+ aspd_votes +]% ?]
+[? if national_right_spd: support: [+ aspd_votes +]% ?]
 
-[? if aspd_r: Orientation: [+ aspd_ideology +] ([+ aspd_leader +]) ?]
+[? if national_right_spd: Orientation: [+ aspd_ideology +] ([+ aspd_leader +]) ?]
 
 = Splinters
 
@@ -1414,11 +1414,11 @@ Strategy: [+ kpd_strategy +]
 
 [? if kag_r > 0: Orientation: Luxemburgism (Levi, Däumig) ?]
 
-[? if aspd_r_saxony and aspd_r == 0: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: [+ aspd_colour +];">**ASPD**</span>: cool ?]
+[? if aspd_r_saxony and not national_right_spd: <span class="tooltip-text" title="[+ full_aspd_name +]" style="color: [+ aspd_colour +];">**[+ aspd_name +]**</span>: cool ?]
 
-[? if aspd_r_saxony and aspd_r == 0: influence: [+ aspd_influence : influence +] ?]
+[? if aspd_r_saxony and not national_right_spd: [+ aspd_influence : influence +] ?]
 
-[? if aspd_r_saxony and aspd_r == 0: Orientation: National Social Democracy (Heldt) ?]
+[? if aspd_r_saxony and not national_right_spd: Orientation: [+ aspd_ideology +] ([+ aspd_leader +]) ?]
 
 [? if kpo_exists: <span class="tooltip-text" title="Communist Party Opposition" style="color: #C43988;">**KPO**</span>: [+ kpo_relation : relationships +] ?]
 
