@@ -24,7 +24,7 @@ view-if: nsdap_relation == 1933
 
 @pls_player
 
-Read. Toilet.
+Read. 
 
 - @modinfo.infotext: Mod Info - Last Updated 2026/01/25
 
@@ -147,6 +147,7 @@ Q.nsdap_relation = 0;
 Q.lvp_relation = 0;
 Q.nsfb_relation = 0;
 Q.dtsp_relation = 0;
+Q.aspd_relation = 0;
 
 Q.kpd_leader = "Meyer";
 Q.kpd_ideology = "Sparticism";
@@ -314,6 +315,7 @@ Q.cvp_formed = 0;
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_spd = 44;
 Q.workers_uspd = 15;
+Q.workers_aspd = 0;
 Q.workers_kpd = 14;
 Q.workers_z = 6;
 Q.workers_ddp = 0;
@@ -327,6 +329,7 @@ Q.workers_dtsp = 2;
 
 Q.new_middle_spd = 7;
 Q.new_middle_uspd = 1;
+Q.new_middle_aspd = 0;
 Q.new_middle_kpd = 0;
 Q.new_middle_z = 8;
 Q.new_middle_ddp = 35;
@@ -340,6 +343,7 @@ Q.new_middle_dtsp = 0;
 
 Q.old_middle_spd = 3;
 Q.old_middle_uspd = 0;
+Q.old_middle_aspd = 0;
 Q.old_middle_kpd = 0;
 Q.old_middle_z = 7;
 Q.old_middle_ddp = 28;
@@ -353,6 +357,7 @@ Q.old_middle_dtsp = 0;
 
 Q.rural_spd = 7;
 Q.rural_uspd = 0;
+Q.rural_aspd = 0;
 Q.rural_kpd = 0;
 Q.rural_z = 9;
 Q.rural_ddp = 4;
@@ -366,6 +371,7 @@ Q.rural_dtsp = 0;
 
 Q.unemployed_spd = 22;
 Q.unemployed_uspd = 29;
+Q.unemployed_aspd = 0;
 Q.unemployed_kpd = 26;
 Q.unemployed_z = 2;
 Q.unemployed_ddp = 2;
@@ -379,6 +385,7 @@ Q.unemployed_dtsp = 1;
 
 Q.catholics_spd = 10;
 Q.catholics_uspd = 4;
+Q.catholics_aspd = 0;
 Q.catholics_kpd = 1;
 Q.catholics_z = 62;
 Q.catholics_ddp = 2;
@@ -402,6 +409,7 @@ Q.catholics_spd_old = 12;
 // source: wikipedia
 Q.spd_r = 22.4;
 Q.uspd_r = 12.6;
+Q.aspd_r = 0;
 Q.kpd_r = 3.3;
 Q.kag_r = 2.4;
 Q.z_r = 18.3;
@@ -424,6 +432,7 @@ Q.landtag_size = 4.21;
 // diff from prev
 Q.old_spd_r = 22.4;
 Q.old_uspd_r = 12.6;
+Q.old_aspd_r = 0;
 Q.old_kpd_r = 3.3;
 Q.old_z_r = 18.3;
 Q.old_ddp_r = 8.5;
@@ -468,6 +477,7 @@ Q.previous_schleicher_dnef_last_election_votes_prussia = 0.0;
 // prussian gov right now
 Q.spd_r_prussia = 25.9;
 Q.uspd_r_prussia = 6.4;
+Q.aspd_r_prussia = 0;
 Q.kag_r_prussia = 1.2;
 Q.kpd_r_prussia = 6.2;
 Q.z_r_prussia = 18.1;
@@ -674,6 +684,7 @@ Q.ussr_aucs_seats = 2214;
 
 Q.spd_votes = 27.9;
 Q.uspd_votes = 0;
+Q.aspd_votes = 0;
 Q.kpd_votes = 11.4;
 Q.z_votes = 15.1;
 Q.ddp_votes = 4.7;
@@ -742,6 +753,7 @@ Q.cvp_left = 0;
 
 Q.adjustmentFactors_spd = 1.0;
 Q.adjustmentFactors_uspd = 0.8;
+Q.adjustmentFactors_aspd = 1.0;
 Q.adjustmentFactors_sapd = 1.0;
 Q.adjustmentFactors_kpd = 1.0;
 Q.adjustmentFactors_z = 1.0;
@@ -759,6 +771,7 @@ Q.adjustmentFactors_other = 0.75;
 
 Q.adjustmentFactors_votes_spd = 1.0;
 Q.adjustmentFactors_votes_uspd = 1.0;
+Q.adjustmentFactors_votes_aspd = 1.0;
 Q.adjustmentFactors_votes_sapd = 1.0;
 Q.adjustmentFactors_votes_kpd = 1.0;
 Q.adjustmentFactors_votes_z = 1.0;
@@ -776,6 +789,7 @@ Q.adjustmentFactors_votes_other = 1.0;
 
 Q.adjustmentFactors_spd_prussia = 1.0;
 Q.adjustmentFactors_uspd_prussia = 1.0;
+Q.adjustmentFactors_aspd_prussia = 1.0;
 Q.adjustmentFactors_sapd_prussia = 1.0;
 Q.adjustmentFactors_kpd_prussia = 1.0;
 Q.adjustmentFactors_z_prussia = 1.0;
@@ -2152,4 +2166,4 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1922
 
-Can I write here?
+
