@@ -23,7 +23,7 @@ Large industrialists cry about their crisis and loss of profit. The coalition is
 @co_give_in
 subtitle: This is suicide!
 view-if: spd_in_government == 1
-on-arrival: workers_spd -= 8; unemployed_spd -= 3; new_middle_spd -= 2; eight_hours = 0.5; kpd_relation -= 8; uspd_relation -= 10; sb_relation -= 7; ddp_relation += 6; dvp_relation += 10; z_relation += 4; economic_growth += 0.1; left_dissent += 8; labor_dissent = 8; center_dissent += 4; reformist_dissent += 3; workers_dtsp += 2
+on-arrival: workers_spd -= 15; unemployed_spd -= 7; new_middle_spd -= 5; eight_hours = 0.5; kpd_relation -= 8; uspd_relation -= 10; sb_relation -= 7; ddp_relation += 6; dvp_relation += 10; z_relation += 4; economic_growth += 0.1; left_dissent += 8; labor_dissent = 8; center_dissent += 4; reformist_dissent += 3; workers_dtsp += 2
 
 Oh boy...
 
@@ -31,7 +31,7 @@ Oh boy...
 @to_give_in
 subtitle: This is suicide!
 view-if: in_toleration == 1
-on-arrival: workers_spd -= 6; unemployed_spd -= 2; new_middle_spd -= 2; eight_hours = 0.5; kpd_relation -= 8; uspd_relation -= 8; sb_relation -= 8; ddp_relation += 6; dvp_relation += 8; z_relation += 4; economic_growth += 0.1; left_dissent += 8; labor_dissent = 8; center_dissent += 4; reformist_dissent += 3; workers_dtsp += 2
+on-arrival: workers_spd -= 12; unemployed_spd -= 4; new_middle_spd -= 4; eight_hours = 0.5; kpd_relation -= 8; uspd_relation -= 8; sb_relation -= 8; ddp_relation += 6; dvp_relation += 8; z_relation += 4; economic_growth += 0.1; left_dissent += 8; labor_dissent = 8; center_dissent += 4; reformist_dissent += 3; workers_dtsp += 2
 
 Oh boy...
 
@@ -69,7 +69,7 @@ We could allow for a loosening of the legal framework to up to ten hours while m
 
 @accept
 subtitle: Our base won't be happy.
-on-arrival: workers_spd -= 3; unemployed_spd -= 2; new_middle_spd -= 1; eight_hours = 4; kpd_relation -= 7; uspd_relation -= 5; sb_relation -= 5; ddp_relation += 3; dvp_relation += 4; z_relation += 2; economic_growth += 0.05; left_dissent += 5; labor_dissent = 5; center_dissent += 2; workers_dtsp += 2
+on-arrival: workers_spd -= 8; unemployed_spd -= 3; new_middle_spd -= 3; eight_hours = 4; kpd_relation -= 7; uspd_relation -= 5; sb_relation -= 5; ddp_relation += 3; dvp_relation += 4; z_relation += 2; economic_growth += 0.05; left_dissent += 5; labor_dissent = 5; center_dissent += 2; workers_dtsp += 2
 
 
 
