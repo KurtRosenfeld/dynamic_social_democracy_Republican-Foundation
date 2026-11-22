@@ -590,7 +590,7 @@ if (Q.bvp_r == Q.z_r) Q.z_minus_bvp_r = 0;
 // just testing coalition support out
 
 Q.baden_coalition_r =
-        ((Q.baden_spd == 1 || Q.baden_spd == 2) ? Q.spd_r_baden : 0) + ((Q.baden_z == 1 || Q.baden_z == 2) ? Q.z_z_baden : 0) + ((Q.baden_ddp == 1 || Q.baden_ddp == 2) ? Q.ddp_r_baden : 0);
+        ((Q.baden_spd == 1 || Q.baden_spd == 2) ? Q.spd_r_baden : 0) + ((Q.baden_z == 1 || Q.baden_z == 2) ? Q.z_r_baden : 0) + ((Q.baden_ddp == 1 || Q.baden_ddp == 2) ? Q.ddp_r_baden : 0);
         
 
 // re-calculate dissent.
