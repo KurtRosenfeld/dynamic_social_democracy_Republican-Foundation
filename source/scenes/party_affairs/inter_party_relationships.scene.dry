@@ -16,7 +16,7 @@ The <span style="color: [+ spd_colour +];">**SPD**</span> cannot govern by itsel
 - @liberals: Strengthen our bonds with the left-liberal [? if ddp_name == "DDP": <span style="color: #D3C24D;">German Democratic Party</span>?][? if ddp_name == "DStP": <span style="color: [+ ddp_colour +];">German State Party</span>?] and conservative-liberal <span style="color: [+ dvp_colour +];">German People's Party</span>.
 - @liberals_ddp: Strengthen our bonds with the left-liberal [? if ddp_name == "DDP": <span style="color: [+ ddp_colour +];">German Democratic Party</span>?][? if ddp_name == "DStP": <span style="color: [+ ddp_colour +];">German State Party</span>?].
 - @liberals_lvp: Strengthen our bonds with the <span style="color: #FFCC00;">Liberal People's Party</span>.
-- @center: Strengthen our bonds with the Catholic [? if z_party_name != "CVP": <span style="color: [+ z_colour +];">Catholic</span> <span style="color: [+ bvp_colour +];">Parties</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span> and <span style="color: [+ bvp_colour +];">**BVP**</span>?].
+- @center: Strengthen our bonds with the [? if z_party_name != "CVP": <span style="color: [+ z_colour +];">Catholic</span> <span style="color: [+ bvp_colour +];">Parties</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span> and <span style="color: [+ bvp_colour +];">**BVP**</span>?].
 - @cvp: Reconcile with the <span style="color: #000000;">Christian People's Party</span>.
 - @kpd: Work towards repairing relationships with the <span style="color: #700000;">Communist Party</span>.
 - @uspd: Focus on strengthening our relations with the <span style="color: [+ uspd_colour +];">Independent Social Democratic Party</span>.
