@@ -1,0 +1,14 @@
+title: End of Passive Resistance
+subtitle: The <span style="color: [+ dnvp_colour +];">**DNVP**</span> agrees to ending the Ruhrkampf.
+new-page: true
+max-visits: 1
+view-if: national_gov == "Right" and ruhr_occupied == 1 and month >= 3 and year >= 1924
+on-arrival: dvp_relation -= 5; new_middle_dvfp += 3; old_middle_nsdap += 2; rural_dvfp += 2; pro_republic -= 2
+tags: event
+
+
+= End of Passive Resistance
+
+The course of the <span style="color: [+ i_colour +];">**Cuno**</span> government has wrecked the state finances and contributed to the hyper inflation. Instead of passive resistance a more diplomatic approach is supposed to end the occupation of the Ruhr. The <span style="color: [+ dnvp_colour +];">**DNVP**</span> and <span style="color: [+ bvp_colour +];">**BVP**</span> which both denounced any dialogue with the Western Powers while in opposition have been pushed to accept negogiation talks by the agricultural interest groups behind them. Now they call on the people of Germany to hold the nation in dignity and widely publicize quotes of Goethe in their aligned newspapers. 
+
+Good news... probably?  
