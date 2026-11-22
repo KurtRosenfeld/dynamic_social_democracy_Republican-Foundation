@@ -1,0 +1,34 @@
+title: Memel Revolt
+view-if: year == 1923 and month == 1
+new-page: true
+max-visits: 1
+on-arrival: lithuanian_klaipeda = 1; rural_spd -= 2; old_middle_dnvp += 3; new_middle_dnvp += 1; memel = '#9EE036'; new_middle_other += 2
+tags: event
+
+= Memel Revolt
+
+
+A Lithuanian revolt has broken out in the independent Versailles mandate territory of Memeland (Klaipėda). The troops stationed there don't make any moves to resist it and a provisional administration has been set up to pave the way for joining Lithuania.
+
+It is expected that the territory will be given some autonomy within Lithuania. There isn't that much we can or do about this now.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
