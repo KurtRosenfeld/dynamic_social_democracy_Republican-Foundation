@@ -634,7 +634,7 @@ Current support: [+ bavaria_coalition_r +]%
 - @bavaria_invite_kpd: Invite the <span style="color: [+ kpd_colour +];">**KPD**</span>
 - @bavaria_invite_sapd: Invite the <span style="color: [+ sapd_colour +];">**SAPD**</span>
 - @bavaria_invite_uspd: Invite the <span style="color: [+ uspd_colour +];">**USPD**</span>
-- @bavaria_invite_csp: Invite the <span style="color: [+ other_colour +];">**CSP**</span>
+- @bavaria_invite_csp: Invite the <span style="color: #81125B;">**CSP**</span>
 - @bavaria_invite_ddp: Invite the <span style="color: [+ ddp_colour +];">**DDP**</span>
 - @bavaria_invite_z: Invite the <span style="color: [+ z_colour +];">Center Party</span>
 - @bavaria_invite_dbp: Invite the <span style="color: #226510;">**[+ dbp_name +]</span>
@@ -646,7 +646,7 @@ Current support: [+ bavaria_coalition_r +]%
 - @bavaria_drop_kpd: Drop the <span style="color: [+ kpd_colour +];">**KPD**</span>
 - @bavaria_drop_sapd: Drop the <span style="color: [+ sapd_colour +];">**SAPD**</span>
 - @bavaria_drop_uspd: Drop the <span style="color: [+ uspd_colour +];">**USPD**</span>
-- @bavaria_drop_csp: Drop the <span style="color: [+ other_colour +];">**CSP**</span>
+- @bavaria_drop_csp: Drop the <span style="color: #81125B;">**CSP**</span>
 - @bavaria_drop_ddp: Drop the <span style="color: [+ ddp_colour +];">**DDP**</span>
 - @bavaria_drop_z: Drop the <span style="color: [+ z_colour +];">Center Party</span>
 - @bavaria_drop_dbp: Drop the <span style="color: #226510;">**[+ dbp_name +]</span>
@@ -717,7 +717,7 @@ go-to: bavaria_coalition_creator
 view-if: bvp_r_bavaria > 0 and not bavaria_dvp = 1
 choose-if: bvp_relation >= 55 and bavaria_kpd == 0 and bavaria_sapd == 0
 subtitle: The <span style="color: [+ bvp_colour +];">**BVP**</span> demands no change in established policy
-on-arrival: bavaria_coalition_r = bavaria_coalition_r + dvp_r_bavaria; bavaria_dvp = 1
+on-arrival: bavaria_coalition_r = bavaria_coalition_r + bvp_r_bavaria; bavaria_dvp = 1
 go-to: bavaria_coalition_creator
 
 @bavaria_invite_others
