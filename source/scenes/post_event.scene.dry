@@ -589,12 +589,7 @@ if (Q.bvp_r == Q.z_r) Q.z_minus_bvp_r = 0;
 
 // just testing coalition support out
 
-Q.baden_coalition_r <-
-  ifelse(Q.baden_spd  %in% 1:2, Q.spd_baden_r,  0) +
-  ifelse(Q.baden_ddp  %in% 1:2, Q.ddp_baden_r,  0) +
-  ifelse(Q.baden_z    %in% 1:2, Q.z_baden_r,    0) +
-  ifelse(Q.baden_dvp  %in% 1:2, Q.dvp_baden_r,  0) +
-  ifelse(Q.baden_dnvp %in% 1:2, Q.dnvp_baden_r, 0)
+Q.baden_coalition_r = (0 + if (Q.baden_spd == 1 || Q.baden_spd == 2) Q.spd_baden_r + if (Q.baden_z == 1 || Q.baden_z == 2) Q.z_baden_r);
 
 // re-calculate dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
