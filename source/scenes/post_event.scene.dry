@@ -587,6 +587,11 @@ Q.z_minus_bvp_votes = parseFloat((Q.z_votes - Q.bvp_votes).toFixed(1));
 Q.z_minus_bvp_r = parseFloat((Q.z_r - Q.bvp_r).toFixed(1));
 if (Q.bvp_r == Q.z_r) Q.z_minus_bvp_r = 0;
 
+// just testing coalition support out
+
+Q.baden_coalition_r = ((Q.spd_baden_r if Q.baden_spd == 1 || 2) + (Q.ddp_baden_r if Q.baden_ddp == 1 || 2) + (Q.z_baden_r if Q.baden_z == 1 || 2) + (Q.dvp_baden_r if Q.baden_dvp == 1 || 2) + (Q.dnvp_baden_r if Q.baden_dnvp == 1 || 2));
+
+
 // re-calculate dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
 if (Q.neorevisionism) {
