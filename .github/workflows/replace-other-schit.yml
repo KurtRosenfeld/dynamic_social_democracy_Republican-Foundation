@@ -27,17 +27,9 @@ jobs:
           
           # Define all replacements
           replacements = [
-              # DVP variations, lazy town
-              ('DVP', 'DVP'),
-
-              # Weimar Coalitions
-          ('was_national_gov == "Right"', 'former_national_gov == "Right"'),
-          ('was_national_gov == "Bourgeois"', 'former_national_gov == "Bourgeois"'),
-          ('was_national_gov = "Right"', 'former_national_gov = "Right"'),
-          ('was_national_gov == "Bourgeois"', 'former_national_gov = "Bourgeois"'),
-
-          ('was_not national_gov', 'not former_national_gov'),
-          ('Q.was_not national_gov = "Bourgeois"', 'Q.former_national_gov !== "Bourgeois"'),
+             
+              # End the Schaumburg Lippe insanity
+          ('schaumburg_lippe', 'schaum_lippe'),
 
           
               
