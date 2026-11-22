@@ -589,8 +589,9 @@ if (Q.bvp_r == Q.z_r) Q.z_minus_bvp_r = 0;
 
 // just testing coalition support out
 
-Q.baden_coalition_r =
-        ((Q.baden_spd == 1 || Q.baden_spd == 2) ? Q.spd_baden_r : 0) + ((Q.baden_z == 1 || Q.baden_z == 2) ? Q.z_baden_r : 0) + ((Q.baden_ddp == 1 || Q.baden_ddp == 2) ? Q.ddp_baden_r : 0);
+Q.baden_coalition_r = 0;
+if (Q.baden_spd == 1 || Q.baden_spd == 2) { Q.baden_coalition_r += Q.spd_baden_r; } if (Q.baden_z == 1 || Q.baden_z == 2) { Q.baden_coalition_r += Q.z_baden_r; } if (Q.baden_ddp == 1 || Q.baden_ddp == 2) { Q.baden_coalition_r += Q.dpp_baden_r; } if (Q.baden_dvp == 1 || Q.baden_dvp == 2) { Q.baden_coalition_r += Q.dvp_baden_r; } if (Q.baden_dnvp == 1 || Q.baden_dnvp == 2) { Q.baden_coalition_r += Q.dnvp_baden_r; }
+
         
 
 // re-calculate dissent.
