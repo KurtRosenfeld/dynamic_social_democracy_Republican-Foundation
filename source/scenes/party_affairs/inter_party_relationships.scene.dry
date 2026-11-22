@@ -16,11 +16,11 @@ The <span style="color: [+ spd_colour +];">**SPD**</span> cannot govern by itsel
 - @liberals: Strengthen our bonds with the left-liberal [? if ddp_name == "DDP": <span style="color: #D3C24D;">German Democratic Party</span>?][? if ddp_name == "DStP": <span style="color: [+ ddp_colour +];">German State Party</span>?] and conservative-liberal <span style="color: [+ dvp_colour +];">German People's Party</span>.
 - @liberals_ddp: Strengthen our bonds with the left-liberal [? if ddp_name == "DDP": <span style="color: [+ ddp_colour +];">German Democratic Party</span>?][? if ddp_name == "DStP": <span style="color: [+ ddp_colour +];">German State Party</span>?].
 - @liberals_lvp: Strengthen our bonds with the <span style="color: #FFCC00;">Liberal People's Party</span>.
-- @center: Strengthen our bonds with the Catholic [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+- @center: Strengthen our bonds with the Catholic [? if z_party_name != "CVP": <span style="color: [+ z_colour +];">Catholic</span> <span style="color: [+ bvp_colour +];">Parties</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span> and <span style="color: [+ bvp_colour +];">**BVP**</span>?].
 - @cvp: Reconcile with the <span style="color: #000000;">Christian People's Party</span>.
 - @kpd: Work towards repairing relationships with the <span style="color: #700000;">Communist Party</span>.
 - @uspd: Focus on strengthening our relations with the <span style="color: [+ uspd_colour +];">Independent Social Democratic Party</span>.
-- @spd_alone: The <span style="color: #c00000;">SPD</span> can stand alone for now.
+- @spd_alone: The <span style="color: [+ spd_colour +];">SPD</span> can stand alone for now.
 - @easy_discard
 
 
@@ -111,22 +111,22 @@ on-arrival: resources -= 1; z_relation += 2 if z_ideology == "Left"
 go-to: center_op if not spd_in_government and chancellor != "Brüning" and ((chancellor != "Papen" and chancellor != "Schleicher" and chancellor != "Goerdeler") or (z_in_gov or z_in_gov_mini)); center_op_2 if not spd_in_government and (chancellor == "Papen" or chancellor == "Schleicher") and not z_in_gov; center_coalition if spd_in_government; center_bruning if chancellor = "Brüning" and not spd_in_government
 
 @center_op
-on-arrival: z_relation += 5*(1 - dissent)
+on-arrival: z_relation += 5*(1 - dissent); bvp_relation += 3 if dvp_relation >= 50
 
 We are currently in opposition to the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]-led government, but that does not preclude the general building of feelings of good will.
 
 @center_op_2
-on-arrival: z_relation += 6*(1 - dissent)
+on-arrival: z_relation += 6*(1 - dissent); bvp_relation += 4 if dvp_relation >= 40
 
 Together with the <span style="color: #000000;">Center</span>, we share a common opposition to the incumbent cabinet, making improving relations easier.
 
 @center_coalition
-on-arrival: z_relation += 8*(1 - dissent)
+on-arrival: z_relation += 8*(1 - dissent); bvp_relation += 5 if z_relation >= 50
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
 @center_bruning
-on-arrival: z_relation += 5*(1 - dissent)
+on-arrival: z_relation += 5*(1 - dissent); bvp_relation += 3 if z_relation >= 55
 
 The Brüning semi-<span style="color: #808080;">autocratic</span> regime makes building friendly relations difficult, but not impossible.
 
@@ -135,7 +135,7 @@ subtitle: -1 resources
 view-if: cvp_formed
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; z_relation += 6*(1 - dissent); cvp_left += 1
+on-arrival: resources -= 1; z_relation += 6*(1 - dissent); cvp_left += 1; bvp_relation += 4*(1 - dissent)
 
 It's not exactly easy to get the <span style="color: #000000;">Christians</span> to like us again—but it's not impossible either. We will leverage our connections with their <span style="color: #FF7F00;">Christian Left</span> and Labor factions to lay the groundwork for a potential reconciliation between our two parties.
 
