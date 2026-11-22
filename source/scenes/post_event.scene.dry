@@ -589,9 +589,8 @@ if (Q.bvp_r == Q.z_r) Q.z_minus_bvp_r = 0;
 
 // just testing coalition support out
 
-Q.baden_coalition_r = 0;
-if (Q.baden_spd == 1 || Q.baden_spd == 2) { Q.baden_coalition_r += Q.spd_baden_r; } if (Q.baden_aspd == 1 || Q.baden_aspd == 2) { Q.baden_coalition_r += Q.aspd_baden_r; } if (Q.baden_uspd == 1 || Q.baden_uspd == 2) { Q.baden_coalition_r += Q.uspd_baden_r; } if (Q.baden_kpd == 1 || Q.baden_kpd == 2) { Q.baden_coalition_r += Q.kpd_baden_r; } if (Q.baden_sapd == 1 || Q.baden_sapd == 2) { Q.baden_coalition_r += Q.sapd_baden_r; } if (Q.baden_z == 1 || Q.baden_z == 2) { Q.baden_coalition_r += Q.z_baden_r; } if (Q.baden_ddp == 1 || Q.baden_ddp == 2) { Q.baden_coalition_r += Q.dpp_baden_r; } if (Q.baden_dvp == 1 || Q.baden_dvp == 2) { Q.baden_coalition_r += Q.dvp_baden_r; } if (Q.baden_dnvp == 1 || Q.baden_dnvp == 2) { Q.baden_coalition_r += Q.dnvp_baden_r; } if (Q.baden_true_other == 1 || Q.baden_true_other == 2) { Q.baden_coalition_r += Q.true_other_baden_r; } if (Q.baden_kvp == 1 || Q.baden_kvp == 2) { Q.baden_coalition_r += Q.kvp_baden_r; } if (Q.baden_wp == 1 || Q.baden_wp == 2) { Q.baden_coalition_r += Q.wp_baden_r; } if (Q.baden_nsdap == 1 || Q.baden_nsdap == 2) { Q.baden_coalition_r += Q.nsdap_baden_r; }
-
+Q.baden_coalition_r =
+        ((Q.baden_spd == 1 || Q.baden_spd == 2) ? Q.spd_r_baden : 0) + ((Q.baden_z == 1 || Q.baden_z == 2) ? Q.z_z_baden : 0) + ((Q.baden_ddp == 1 || Q.baden_ddp == 2) ? Q.ddp_r_baden : 0);
         
 
 // re-calculate dissent.
