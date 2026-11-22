@@ -1,0 +1,96 @@
+
+
+
+
+
+
+
+
+
+
+
+
+- @invite_kpd: Invite the <span style="color: [+ kpd_colour +];">**KPD**</span>
+- @invite_sapd: Invite the <span style="color: [+ sapd_colour +];">**SAPD**</span>
+- @invite_uspd: Invite the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @invite_aspd: Invite the <span style="color: [+ aspd_colour +];">**[+ aspd_name +]**</span>
+- @invite_ddp: Invite the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @invite_dbp: Invite the <span style="color: #226510;">**[+ dbp_name +]</span>
+- @invite_z: Invite the <span style="color: [+ z_colour +];">Center Party</span>
+- @invite_bvp: Invite the <span style="color: [+ bvp_colour +];">**BVP**</span>
+- @invite_dhp: Invite the <span style="color: #0000;">**DHP**</span>
+- @invite_dvp: Invite the <span style="color: [+ dvp_colour +];">**DVP**</span>
+- @invite_dnvp: Invite the <span style="color: [+ kvp_colour +];">**KVP**</span>
+- @invite_others: Invite the <span style="color: [+ other_colour +];">**Others**</span>
+- @check_out: Check out.
+- @drop_kpd: Drop the <span style="color: [+ kpd_colour +];">**KPD**</span>
+- @drop_sapd: Drop the <span style="color: [+ sapd_colour +];">**SAPD**</span>
+- @drop_uspd: Drop the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @drop_csp: Drop the <span style="color: #81125B;">**CSP**</span>
+- @drop_ddp: Drop the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @drop_z: Drop the <span style="color: [+ z_colour +];">Center Party</span>
+- @drop_dbp: Drop the <span style="color: #226510;">**[+ dbp_name +]</span>
+- @drop_others: Drop the <span style="color: [+ other_colour +];">**Others**</span>
+- @drop_bvp: Drop the <span style="color: [+ bvp_colour +];">**BVP**</span>
+- @drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
+- @return_to_bavaria: Return
+
+
+// joining requirements
+
+good relations (as known)
+
+begging reduces leverage
+
+political trends (bourgeois_united_front vs. nazi urgency - left vs. reformist SPD)
+
+the inclusion of other parties (DDP and Z want each other, KVP demands DVP)
+
+availability of alternatives
+
+
+[ dvp_hurddle = 100 : dvp joins if dvp_relation + nazi_urgency (if dvp opposes nazis) + 15 (if no_other_option) > 100 ]
+
+[ z_hurdle = 70 : z joins if z_relation + 10 (if ddp included) + 20 (if no_other_option) > 70 ]
+
+
+// SPD leverage - Z leverage - DVP leverage
+
+seats increase leverage
+
+parties increase leverage (DDP, DBP, DHP, BVP? -> Z) (WP, true_others, KVP, BVP?, VRP -> DVP) (USPD -> SPD) (ASPD depends on relation - either SPD or Z (or even DVP for Heldt))
+
+bad relation + high leverage from other factions will challange the chosen chancellor
+
+harshness if hurdle was barely crossed??
+
+
+
+
+// tolerating vs. participating partners
+
+small parties won't get ministries but they put leverage behind their friends
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
