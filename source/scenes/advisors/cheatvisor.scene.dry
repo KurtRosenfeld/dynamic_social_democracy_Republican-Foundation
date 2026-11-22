@@ -37,12 +37,16 @@ title: Scene Testing shortcuts
 
 - @1924_party_conference: 1924 Conference
 - @presidential_election_candidate: Presidential election
+- @mecklen_strez: Mecklenburg-Strelitz Election
 
 @1924_party_conference
 go-to: conference_1924
 
 @presidential_election_candidate
 go-to: presidential_election_1925_candidate
+
+@mecklen_strez
+go-to: local_elections_meck_stre
 
 @make_nsfb
 title: Make NSFB
