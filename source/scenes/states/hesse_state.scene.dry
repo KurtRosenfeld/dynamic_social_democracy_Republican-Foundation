@@ -2,7 +2,7 @@ title: Go to Hesse
 subtitle: [? if hesse_spd == 1 and hesse_action_timer > 0: We have to wait [+ hesse_action_timer +] months before our next action. ?]
 new-page: true
 is-special: true
-face-image: img/land/Hesse.svg.webp
+face-image: img/land/Hessen.svg.webp
 on-arrival: {!
   setTimeout(function() {
     var el = document.getElementById('hesse');
