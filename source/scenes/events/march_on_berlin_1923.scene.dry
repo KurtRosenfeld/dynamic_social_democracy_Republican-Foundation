@@ -132,7 +132,7 @@ In the aftermath of the Kapp Putsch in 1920 Carl Severing started a large scale 
 
 @call_general_strike_central
 view-if: try_luck_in_saxony_1923 == 1 and that_strike_option == 0
-on-arrival: that_strike_option = 1; anti_coup_power += 0.8 if saxony_spd = 1; anti_coup_power += 0.8 if thuringia_spd = 1; anti_coup_power += 1 if kpd_relation >= 45; anti_coup_power += 1.5 if kpd_relation >= 75 ; anti_coup_power += 1 if uspd_joined > 2; anti_coup_power += 1 if (not uspd_joined and uspd_relation >= 30); anti_coup_power += 0.5 if uspd_relation >= 45; anti_coup_power += 0.5 if saxony_kpd == 1
+on-arrival: that_strike_option = 1; anti_coup_power += 3; anti_coup_power += 0.8 if saxony_spd = 1; anti_coup_power += 0.8 if thuringia_spd = 1; anti_coup_power += 1 if kpd_relation >= 45; anti_coup_power += 1.5 if kpd_relation >= 75 ; anti_coup_power += 1 if uspd_joined > 2; anti_coup_power += 1 if (not uspd_joined and uspd_relation >= 30); anti_coup_power += 0.5 if uspd_relation >= 45; anti_coup_power += 0.5 if saxony_kpd == 1; anti_coup_power += 0.5 if workers_nsdap < 5
 go-to: 1923_coup_menu
 
 We have called a general strike in Saxony and Thuringia.
