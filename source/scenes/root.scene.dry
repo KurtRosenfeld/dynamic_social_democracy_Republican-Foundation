@@ -1819,15 +1819,12 @@ on-display: {!
 set-bg: img/map_2.jpg
 new-page: true
 
-> *"If the Kaiser does not abdicate, the social revolution is inevitable. But I do not want it, I even hate it like sin."*
+>  *[Placeholder]*
 
- - Friedrich Ebert
+The struggles during the period of 1919 to 1933 have been fairly complicated, changing power-dynamics, parties emerging and disappearing. While the base game (Social Democracy: An Alternate History) has allowed an introduction to the world of the late Weimar Republic and it's eventual end, it held a sort of Determinism resulting from the narrow time frame - I believe that to make oneself an image of the times that led up to the catastrophe, it is necessary to to take a look at the first crisis that appeared to tear Germany up five years after the establishment of this very state: the year of 1923 and the events that led up to it. This version might still bring Hitler to power as in history but he may as well be forgotten as a minor party leader who shot himself in the head after failing at his coup attempt. The SPD could maintain it's historical course of dancing between bourgeois government and worker's opposition or fully commit to one to shape the nation by it's ideals or be replaced by a splinter and be forgotten...
 
-This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
+Also this game features a heck lot of maps!
 
-For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
-
-**If you are playing this mod via the Mod Loader in base game, there will be various items missing (parliament colours, images, arrows, etc.). For the intended experience, please play using <a href="https://originn0.github.io/dynamic_social_democracy/" style="color: #0077FF">this</a> link.**
 
 - @1928_mod_mode: Begin (<span style="color: #0077FF;">dynamic</span> mode)
 - @1928_easy: Begin (<span style="color: #5B9A8D;">easy</span> difficulty)
