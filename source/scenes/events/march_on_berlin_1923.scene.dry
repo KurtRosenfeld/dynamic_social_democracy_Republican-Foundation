@@ -48,14 +48,14 @@ We will stop them in the Bullwark of Republicanism, a state with a strong compar
 
 @appeal_to_the_kpd
 view-if: that_kpd_option == 0
-on-arrival: that_kpd_option = 1; anti_coup_power += 1 if kpd_relation >= 55; anti_coup_power += 1 if saxony_kpd == 1; anti_coup_power += 4 if rfb_strength_2 >= 58; bavaria_coup_power += 2 if freiberg_bloodbath_seen; anti_coup_power += 4.5 if rfb_strength_2 >= 61
+on-arrival: that_kpd_option = 1; anti_coup_power += 1 if kpd_relation >= 55; anti_coup_power += 1 if saxony_kpd == 1; anti_coup_power += 4 if rfb_strength_2 >= 58; bavaria_coup_power += 2 if freiberg_bloodbath_seen; anti_coup_power += 4.5 if rfb_strength_2 >= 61; anti_coup_power += 1 if rfb_strength_2 >= 59; anti_coup_power += 1.5 if rfb_strength_2 >= 55; anti_coup_power += 1.5 if rfb_strength_2 >= 60; anti_coup_power += 2 if kpd_relation >= 80
 go-to: 1923_coup_menu
 
 [? if freiberg_bloodbath_seen and kpd_relation >= 55: The <span style="color: [+ kpd_colour +];">KPD</span> is split on supporting us. Some are in favour of helping us knowing that a succesful coup would be infinetly worse for their course than everything they have wittnessed in the Republic. On the other hand the events of the last months have driven the <span style="color: [+ kpd_colour +];">KPD</span> to hate everyone. So a general strike is called against both the Republic and the Monarchists... ?]
 
 [? if freiberg_bloodbath_seen and kpd_relation < 55: The <span style="color: [+ kpd_colour +];">KPD</span> is firmly opposed to saving the Republic. In fact they have called a full scale insurection against everyone. The coup leaders welcome this since the The <span style="color: [+ kpd_colour +];">KPD</span> lacks the capacity to take on either us or the them. ?]
 
-[? if not freiberg_bloodbath_seen and kpd_relation >= 55: The <span style="color: [+ kpd_colour +];">KPD</span> is firmly on our side! They will call a general strike and organize their militias to fight of the reactionary forces. ?]
+[? if not freiberg_bloodbath_seen and kpd_relation >= 55: The <span style="color: [+ kpd_colour +];">KPD</span> is firmly on our side! They will call a general strike and organize their militias to fight off the reactionary forces. ?]
 
 [? if not freiberg_bloodbath_seen and kpd_relation < 55: The <span style="color: [+ kpd_colour +];">KPD</span> is split on supporting us. Most just watch the events waiting to strike when a situation might favour their cause. ?]
 
@@ -71,8 +71,10 @@ The <span style="color: [+ dvp_colour +];">DVP</span> had decided to wait things
 
 @appeal_to_anarchists
 view-if: that_anarchist_option == 0
-on-arrival: that_anarchist_option = 1; anti_coup_power += anarchist_media
+on-arrival: that_anarchist_option = 1; anti_coup_power += anarchist_media;  anti_coup_power += 0.5
 go-to: 1923_coup_menu
+
+The Anarchists gladly help our struggle despite their limited means.
 
 @appeal_to_farmers
 view-if: that_rural_option == 0
@@ -86,7 +88,7 @@ We can ask rural folk loyal to our cause or the Republic to help us. What exactl
 
 @confusion_rpw
 subtitle: Give the troops a few wrong directions and other safe actions.
-on-arrival: anti_coup_power += 1 if rural_spd >= 6; anti_coup_power += 0.5 if rural_spd >= 10
+on-arrival: anti_coup_power += 1 if rural_spd >= 6; anti_coup_power += 1.5 if rural_spd >= 10
 go-to: 1923_coup_menu
 
 [? if rural_spd >= 6: Some peasants have decided to confuse passing troops to disperse and slow them down whithout bringing themselves into danger. ?]
@@ -96,7 +98,7 @@ subtitle: Send the farmers into open combat.
 on-arrival: anti_coup_power += 5 if rural_spd >= 6 and rural_trust >= 4.5; rural_spd -= 5 if rural_trust < 4.5; bavaria_coup_power += 2 if rural_trust < 4.5
 go-to: 1923_coup_menu
 
-[? if rural_spd >= 6 and rural_trust >= 4.5: The peasants trust us enough to actually fight alongside our forces. ?][? if rural_trust < 4.5: The peasants don't trust us enough to even consider this. Yet since they know that a coup is hapening now, many will join the march on Berlin... ?]
+[? if rural_spd >= 6 and rural_trust >= 4.5: The peasants trust us enough to actually fight alongside our forces. ?][? if rural_trust < 4.5: The peasants don't trust us enough to even consider this. Yet since they know that a coup is taking place now, many will join the march on Berlin... ?]
 
 @burnt_soil_rpw
 subtitle: Ask farmers to burn their fields to defeat Kahr and Ludendorff on their way to Berlin like Napoleon on his way to Moscow.
