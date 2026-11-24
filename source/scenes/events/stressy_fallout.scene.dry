@@ -5,7 +5,7 @@ is-card: true
 priority: 1
 on-arrival: workers_kpd += 2; rural_dvfp += 2; left_dissent += 7; labor_dissent += 5; center_dissent += 3; reformist_dissent += 2
 face-image: img/Freiberg_Bloodbath.jpg
-view-if: freiberg_bloodbath_seen == 1 and spd_in_government and month >= 11
+view-if: freiberg_bloodbath_seen == 1 and spd_in_government and month >= 11 or year == 1924
 new-page: true
 
 = Troubles with the coalition
