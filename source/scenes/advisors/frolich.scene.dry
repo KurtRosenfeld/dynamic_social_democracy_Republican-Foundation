@@ -31,7 +31,7 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 We will have our class war when the time is ripe.
 
 @negotiate_left
-subtitle: Frölich is one of the most respected SPD members in the other worker's parties.
+subtitle: Frölich is one of the most respected SPD members with the other worker's parties.
 on-arrival: uspd_relation += 6; sb_relation += 5; kapd_relation += 1; kpd_relation += 3; sapd_relation += 5; advisor_action_timer = 6
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
