@@ -1,0 +1,228 @@
+title: Coalition Negot
+view-if: your_mother == "President of America"
+on-arrival: {!
+
+ Q.coalition_r = Q.spd_r;
+Q.spd_leverage = Q.spd_r;
+Q.z_leverage = 0;
+Q.dvp_leverage = 0;
+Q.total_bourgeois_leverage = 0;
+
+Q.ddp_coal_points = Q.ddp_relation;
+if (Q.ideology == "reformist") Q.ddp_coal_points += 15;
+if (Q.bourgeois_coalition_r < 50) Q.ddp_coal_points += 20;
+
+Q.z_coal_points = Q.z_relation;
+if (Q.ideology == "reformist") Q.z_coal_points += 10;
+if (Q.bourgeois_coalition_r < 50) Q.z_coal_points += 10;
+if (Q.right_coalition_r < 50) Q.z_coal_points += 10;
+if (Q.spd_votes < 20) Q.z_coal_points += 15;
+
+Q.dvp_coal_points = Q.dvp_relation;
+if (Q.ideology == "reformist") Q.dvp_coal_points += 10;
+if (Q.bourgeois_coalition_r < 50) Q.dvp_coal_points += 10;
+if (Q.right_coalition_r < 50) Q.dvp_coal_points += 10;
+if (Q.spd_votes < 20) Q.dvp_coal_points += 15;
+
+Q.dhp_coal_points = 0;
+if (Q.ideology == "reformist") Q.dhp_coal_points += 10;
+if (Q.bourgeois_coalition_r < 50) Q.dhp_coal_points += 5;
+if (Q.right_coalition_r < 50) Q.dhp_coal_points += 5;
+
+Q.dbp_coal_points = 0;
+if (Q.bavaria_gov == "Social-Agrarian") Q.dbp_points += 60;
+if (Q.bavaria_dbp == 1 && Q.bavaria_spd == 1) Q.dbp_points += 30;
+
+Q.wp_coal_points = Q.dvp_relation / 2;
+if (Q.ideology == "reformist") Q.wp_coal_points += 5;
+if (Q.bourgeois_coalition_r < 50) Q.wp_coal_points += 10;
+if (Q.right_coalition_r < 50) Q.wp_coal_points += 10;
+if (Q.spd_votes < 10) Q.wp_coal_points += 20;             
+             
+             
+!}
+
+Whether a party decides to enter the coalition or not depends on your relations, ideology, other options and which parties are invited as well.
+
+
+- @return_to_coalopt: Negotiate a coalition agreement
+  
+  @return_to_coalopt
+on-arrival: {!
+  Q.total_bourgeois_leverage = Q.z_leverage + Q.dvp_leverage;
+if (Q.national_z = 1) Q.dhp_coal_points += 30;
+if (Q.national_bvp = 1) Q.dhp_coal_points += 10;
+if (Q.national_ddp = 1) Q.dhp_coal_points += 10;
+
+if (Q.national_z = 1) Q.dbp_coal_points += 20;
+if (Q.national_bvp = 1) Q.dbp_coal_points += 50;
+
+if (Q.national_ddp = 1) Q.z_coal_points += 10;
+if (Q.national_z = 1) Q.ddp_coal_points += 10;
+if (Q.national_ddp = 1) Q.dvp_coal_points += 15;
+if (Q.national_z = 1) Q.dvp_coal_points += 15;
+
+if (Q.national_dvp = 1) Q.wp_coal_points += 15;
+
+             
+             !}
+
+Current support: [+ coalition_r +]%
+
+<svg
+   width="500"
+   height="50"
+   viewBox="0 0 132.29166 13.229166"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="autismbar.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.62"
+     inkscape:cx="242.59259"
+     inkscape:cy="136.7284"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#dc2d44;stop-opacity:1;"
+         offset="0.4623656"
+         id="stop1" />
+      <stop
+         style="stop-color:#f61397;stop-opacity:0;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="0"
+       y1="6.9197528"
+       x2="112.02376"
+       y2="6.9197528"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-0.49475923,-0.15525284)" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:0.826516;fill:url(#linearGradient2);stroke:#000106;stroke-width:0.8;stroke-opacity:1"
+       id="rect1"
+       width="100"
+       height="6"
+       x="11.0"
+       y="3.5" />
+    <rect
+       style="opacity:0.826516;fill:#f3f3e3;fill-opacity:1;stroke:none;stroke-width:0.8;stroke-opacity:1"
+       id="rect1-5"
+       width="[+ 100 - coalition_r +]"
+       height="6"
+       x="[+ 11 + coalition_r +]"
+       y="3.5" />
+    <rect
+       style="opacity:0.826516;fill:none;stroke:#000106;stroke-width:0.8;stroke-opacity:1"
+       id="rect1-4"
+       width="100"
+       height="6"
+       x="11.0"
+       y="3.5" />
+    <path
+       style="opacity:0.826516;fill:#000000;fill-opacity:1;stroke:#000106;stroke-width:0.8;stroke-opacity:1"
+       d="M 61.0,3.5 V 9.5429526 Z"
+       id="path2" />
+  </g>
+</svg>
+
+
+  
+       
+- @invite_ddp: Invite the **[+ ddp_name +]**
+- @invite_z: Invite the **[+ z_party_name +]**
+- @invite_dbp: Invite the **[+ dbp_name +]**
+- @invite_dvp: Invite the DVP
+- @beg_dvp: Beg the DVP
+
+
+
+
+
+
+@invite_ddp
+view-if: lvp_formed == 0
+choose-if: ddp_coal_points > 60
+on-arrival: national_ddp = 1; coalition_r = coalition_r += ddp_r
+subtitle: [? if ddp_r >= 1: The **[+ ddp_name +]** will demand a ministry. ?]
+go-to: return_to_coalopt
+  
+@invite_z
+choose-if: z_coal_points > 70
+on-arrival: national_z = 1; coalition_r = coalition_r += z_r
+subtitle: [? if z_r >= 1: The **[+ z_party_name +]** will demand a ministry. ?]
+go-to: return_to_coalopt
+
+@invite_dbp
+choose-if: dbp_coal_points > 60
+on-arrival: national_dbp = 1; coalition_r = coalition_r += dbp_r
+subtitle: [? if dbp_r >= 1: The **[+ dbp_name +]** will demand a ministry. ?]
+go-to: return_to_coalopt
+
+@invite_dvp
+view-if: lvp_formed == 0
+choose-if: dvp_coal_points > 100
+on-arrival: national_dvp = 1; coalition_r = coalition_r += dvp_r
+subtitle: [? if dvp_r >= 1: The **DVP** will demand a ministry. ?]
+go-to: return_to_coalopt
+
+@beg_dvp
+view-if: dvp_coal_points <= 100 and dvp_coal_points >= 85
+choose-if: dvp_coal_points > 90
+on-arrival: national_dvp = 1; coalition_r = coalition_r += dvp_r
+subtitle: This will give additional leverage to the DVP
+unavailable-subtitle: No chance.
+go-to: return_to_coalopt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
